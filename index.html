@@ -89,7 +89,13 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
 .proj-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,0.4);}
-.proj-thumb{height:110px;background:linear-gradient(135deg,var(--card2),var(--card));display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:800;color:rgba(255,255,255,0.025);letter-spacing:-0.04em;border-bottom:1px solid var(--border2);position:relative;overflow:hidden;}
+.proj-thumb{height:80px;background:linear-gradient(135deg,var(--card2),var(--card));display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:rgba(255,255,255,0.1);letter-spacing:-0.04em;border-bottom:1px solid var(--border2);position:relative;overflow:hidden;}
+.proj-thumb.prep-iq{background:linear-gradient(135deg,#a8243a,#c93a4d);}
+.proj-thumb.chaivours{background:linear-gradient(135deg,#d89a2a,#f5a623);}
+.proj-thumb.the-edge{background:linear-gradient(135deg,#8b1a1a,#c92a2a);}
+.proj-thumb.explore-valley{background:linear-gradient(135deg,#e8b71f,#ffc629);}
+.proj-thumb.atomik{background:linear-gradient(135deg,#1a1a1a,#333333);}
+.proj-thumb.shortform{background:linear-gradient(135deg,#667eea,#764ba2);}
 .proj-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,138,255,0.06),rgba(103,232,249,0.04));}
 .proj-body{padding:22px;flex:1;display:flex;flex-direction:column;}
 .proj-name{font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:-0.015em;}
@@ -258,7 +264,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
   </div>
   <div class="proj-grid" id="pg">
     <div class="proj-card fi" data-cat="strategy content brand">
-      <div class="proj-thumb">P</div>
+      <div class="proj-thumb prep-iq">📚</div>
       <div class="proj-body">
         <div class="proj-name">Prep IQ</div>
         <div class="proj-desc">Authority-led content system for a D2C education brand in a Tier-3 market. Built on trust where national giants competed on scale. First launch generated revenue with zero ad spend.</div>
@@ -267,7 +273,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       </div>
     </div>
     <div class="proj-card fi d1" data-cat="brand content">
-      <div class="proj-thumb">C</div>
+      <div class="proj-thumb chaivours">☕</div>
       <div class="proj-body">
         <div class="proj-name">Chaivours</div>
         <div class="proj-desc">Brand and content direction for a youth chai brand in Tier-3. The challenge was cultural relevance, not visibility. Grew to 1,500 organic followers with real UGC and zero ad spend.</div>
@@ -276,7 +282,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       </div>
     </div>
     <div class="proj-card fi d2" data-cat="content strategy">
-      <div class="proj-thumb">E</div>
+      <div class="proj-thumb the-edge">⚡</div>
       <div class="proj-body">
         <div class="proj-name">The Edge</div>
         <div class="proj-desc">Built a daily legal YouTube IP from scratch. Handled format design, scripting, on-camera anchoring, and team management. Grew to 37K subscribers through structure and consistency.</div>
@@ -285,7 +291,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       </div>
     </div>
     <div class="proj-card fi" data-cat="content">
-      <div class="proj-thumb">V</div>
+      <div class="proj-thumb explore-valley">📰</div>
       <div class="proj-body">
         <div class="proj-name">Explore Valley</div>
         <div class="proj-desc">News content production and digital presence building. Covered the Assam Legislative Assembly Election 2021 on ground. Grew to 100K Facebook followers organically.</div>
@@ -294,7 +300,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       </div>
     </div>
     <div class="proj-card fi d1" data-cat="strategy content">
-      <div class="proj-thumb">A</div>
+      <div class="proj-thumb atomik">🎙️</div>
       <div class="proj-body">
         <div class="proj-name">Atomik Growth</div>
         <div class="proj-desc">Video production for VC and founder podcasts. Built visual identity from scratch and ran ICP research across LinkedIn, Reddit, and YouTube. Short-form treated as a distribution layer, not just edits.</div>
@@ -303,7 +309,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       </div>
     </div>
     <div class="proj-card fi d2" data-cat="content">
-      <div class="proj-thumb">S</div>
+      <div class="proj-thumb shortform">📱</div>
       <div class="proj-body">
         <div class="proj-name">Short-form Content Work</div>
         <div class="proj-desc">Execution-focused content built for attention and retention. Each piece designed with a clear funnel role. Platform-native formats across Instagram, YouTube Shorts, and LinkedIn.</div>
@@ -387,6 +393,10 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
           <div class="ci-icon">📍</div>
           <div><span class="ci-lbl">Location</span><span class="ci-val">New Delhi, India</span></div>
         </div>
+        <a href="https://drive.google.com/file/d/1-mEIzePDUyYxil3vTSVufQITtH-dBOUo/view?usp=sharing" target="_blank" class="ci-link">
+          <div class="ci-icon">📄</div>
+          <div><span class="ci-lbl">Resume</span><span class="ci-val">Download PDF</span></div>
+        </a>
       </div>
     </div>
   </div>
