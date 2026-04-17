@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anupam Nath — Brand & Content Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#080810;--bg2:#0d0d1a;--card:#111120;--card2:#16162a;
+  --border:rgba(99,120,255,0.15);--border2:rgba(255,255,255,0.07);
+  --blue:#6c8aff;--blue2:#a5b4fc;--cyan:#67e8f9;
+  --glow:rgba(108,138,255,0.22);--glow2:rgba(108,138,255,0.08);
+  --white:#fff;--off:#dde1f5;--grey:#7a86a8;--dgrey:#404660;
+  --f:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--off);font-family:var(--f);font-weight:400;line-height:1.7;overflow-x:hidden;font-size:15px;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px;}
+body::before{content:'';position:fixed;top:-20%;left:50%;transform:translateX(-50%);width:1000px;height:700px;background:radial-gradient(ellipse,rgba(108,138,255,0.06) 0%,transparent 65%);pointer-events:none;z-index:0;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,16,0.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border2);}
+.nav-logo{font-size:17px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.015em;}
+.nav-logo span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
+.nav-links a{color:var(--grey);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;letter-spacing:-0.01em;}
+.nav-links a:hover{color:var(--white);}
+.nav-resume{background:linear-gradient(130deg,var(--blue),var(--cyan))!important;color:white!important;padding:9px 22px;border-radius:8px;font-weight:600!important;font-size:13px!important;box-shadow:0 0 22px var(--glow);transition:box-shadow 0.2s!important;letter-spacing:0!important;}
+.nav-resume:hover{box-shadow:0 0 36px rgba(108,138,255,0.45)!important;}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 60px 80px;position:relative;z-index:1;flex-direction:column;}
+.hero-welcome{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue2);margin-bottom:28px;font-weight:600;}
+.hero-h1{font-size:clamp(42px,6.5vw,76px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;color:var(--white);margin-bottom:14px;}
+.grad{background:linear-gradient(130deg,var(--blue) 0%,var(--cyan) 60%,var(--blue2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:g 5s ease infinite;}
+@keyframes g{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+.hero-sub{font-size:clamp(17px,2.2vw,22px);color:var(--grey);font-weight:500;margin-bottom:26px;letter-spacing:-0.01em;}
+.hero-desc{font-size:16px;color:var(--grey);max-width:520px;line-height:1.85;margin:0 auto 44px;font-weight:400;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;}
+.btn{padding:13px 30px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:var(--f);cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;letter-spacing:-0.01em;}
+.btn-fill{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 26px var(--glow);}
+.btn-fill:hover{box-shadow:0 0 44px rgba(108,138,255,0.5);transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--off);border:1px solid var(--border);}
+.btn-ghost:hover{border-color:var(--blue2);color:var(--white);background:var(--glow2);}
+.hero-social{display:flex;gap:24px;justify-content:center;}
+.hero-social a{color:var(--dgrey);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;display:flex;align-items:center;gap:7px;}
+.hero-social a:hover{color:var(--blue2);}
+.hero-social svg{width:16px;height:16px;fill:currentColor;}
+
+/* SECTIONS */
+section{padding:96px 64px;position:relative;z-index:1;}
+.s-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;font-weight:600;}
+.s-h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.025em;color:var(--white);margin-bottom:14px;line-height:1.1;}
+.s-h2 span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.s-sub{font-size:15px;color:var(--grey);max-width:480px;margin-bottom:56px;font-weight:400;line-height:1.7;}
+
+/* ABOUT */
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:80px;align-items:start;}
+.about-text p{font-size:15px;color:var(--grey);line-height:1.9;margin-bottom:18px;}
+.about-text strong{color:var(--off);font-weight:600;}
+.about-loc{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--dgrey);margin-top:22px;font-weight:500;}
+.about-loc svg{width:14px;height:14px;fill:var(--blue2);}
+.about-stats{display:flex;flex-direction:column;gap:14px;}
+.stat-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:30px 22px;text-align:center;transition:border-color 0.2s,box-shadow 0.2s;}
+.stat-card:hover{border-color:rgba(108,138,255,0.3);box-shadow:0 0 28px var(--glow2);}
+.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:7px;letter-spacing:-0.03em;}
+.stat-lbl{font-size:13px;color:var(--grey);}
+
+/* SKILLS */
+#skills{background:var(--bg);}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.skill-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:28px 24px;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
+.skill-card:hover{border-color:var(--border);transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,0.35);}
+.skill-cat{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.skill-cat::before{content:'';width:18px;height:1px;background:linear-gradient(to right,var(--blue),var(--cyan));}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.skill-tag{font-size:12px;padding:5px 12px;border-radius:7px;border:1px solid var(--border2);color:var(--grey);background:var(--bg2);transition:all 0.2s;}
+.skill-tag:hover{border-color:var(--border);color:var(--blue2);}
+
+/* PROJECTS */
+#projects{background:var(--bg2);}
+.filter-row{display:flex;gap:4px;margin-bottom:44px;background:var(--card);padding:4px;border-radius:10px;width:fit-content;border:1px solid var(--border2);}
+.f-btn{padding:9px 22px;border:none;background:transparent;color:var(--grey);font-family:var(--f);font-size:13px;font-weight:500;cursor:pointer;border-radius:7px;transition:all 0.2s;}
+.f-btn.active{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 18px var(--glow);}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
+.proj-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,0.4);}
+.proj-thumb{height:110px;background:linear-gradient(135deg,var(--card2),var(--card));display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:800;color:rgba(255,255,255,0.025);letter-spacing:-0.04em;border-bottom:1px solid var(--border2);position:relative;overflow:hidden;}
+.proj-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,138,255,0.06),rgba(103,232,249,0.04));}
+.proj-body{padding:22px;flex:1;display:flex;flex-direction:column;}
+.proj-name{font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:-0.015em;}
+.proj-desc{font-size:13px;color:var(--grey);line-height:1.75;flex:1;margin-bottom:16px;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.proj-tag{font-size:11px;padding:3px 9px;border-radius:5px;background:rgba(108,138,255,0.1);color:var(--blue2);border:1px solid rgba(108,138,255,0.2);font-weight:500;}
+.proj-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--blue2);text-decoration:none;font-weight:500;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);transition:all 0.2s;width:fit-content;}
+.proj-link:hover{border-color:var(--blue);background:var(--glow2);color:var(--white);}
+
+/* BEFORE THE BRAND EXISTS */
+#hop{background:var(--bg);}
+.hop-wrap{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:52px 48px;position:relative;overflow:hidden;}
+.hop-wrap::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(ellipse,rgba(108,138,255,0.07) 0%,transparent 65%);pointer-events:none;}
+.hop-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:56px;align-items:start;}
+.hop-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue2);background:rgba(108,138,255,0.1);border:1px solid rgba(108,138,255,0.25);padding:4px 13px;border-radius:20px;margin-bottom:16px;font-weight:700;}
+.hop-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hop-title{font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--white);letter-spacing:-0.03em;margin-bottom:14px;line-height:1.1;}
+.hop-title span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hop-note{font-size:12px;color:var(--dgrey);background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-style:italic;line-height:1.6;}
+.hop-desc{font-size:15px;color:var(--grey);line-height:1.85;margin-bottom:28px;}
+.hop-items{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+.hop-item{font-size:12px;padding:5px 12px;border-radius:6px;border:1px solid var(--border2);color:var(--grey);display:flex;align-items:center;gap:6px;}
+.hop-item::before{content:'✓';color:var(--blue2);font-weight:700;font-size:11px;}
+.hop-comps{display:flex;flex-direction:column;gap:10px;}
+.hop-comp{background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:13px 18px;display:flex;align-items:center;gap:14px;transition:border-color 0.2s;}
+.hop-comp:hover{border-color:var(--border);}
+.hop-num{font-size:11px;color:var(--blue);font-weight:700;min-width:26px;letter-spacing:0.02em;}
+.hop-lbl{font-size:13px;color:var(--grey);}
+.hop-lbl strong{color:var(--off);font-weight:600;}
+
+/* CONTACT */
+#contact{background:var(--bg2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);margin-bottom:7px;font-weight:600;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--card);border:1px solid var(--border2);border-radius:10px;padding:12px 16px;color:var(--off);font-family:var(--f);font-size:14px;transition:border-color 0.2s,box-shadow 0.2s;outline:none;-webkit-appearance:none;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(108,138,255,0.1);}
+.form-group textarea{height:108px;resize:none;}
+.form-group select option{background:var(--card);color:var(--off);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.ci-info h3{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:-0.01em;}
+.ci-info p{font-size:14px;color:var(--grey);margin-bottom:32px;line-height:1.85;}
+.ci-links{display:flex;flex-direction:column;gap:12px;}
+.ci-link{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 18px;background:var(--card);border:1px solid var(--border2);border-radius:12px;transition:all 0.2s;}
+.ci-link:hover{border-color:var(--border);background:var(--glow2);}
+.ci-icon{width:36px;height:36px;border-radius:8px;background:rgba(108,138,255,0.1);border:1px solid rgba(108,138,255,0.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.ci-lbl{font-size:11px;color:var(--dgrey);letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:2px;font-weight:500;}
+.ci-val{font-size:13px;color:var(--off);}
+
+/* FOOTER */
+footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;}
+.f-name{font-size:16px;font-weight:800;color:var(--white);letter-spacing:-0.015em;}
+.f-name span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.f-copy{font-size:12px;color:var(--dgrey);}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.fi.vis{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}
+
+@media(max-width:900px){
+  nav{padding:0 20px;}.nav-links{display:none;}
+  section{padding:68px 20px;}#hero{padding:100px 20px 60px;}
+  .about-grid,.hop-inner,.contact-grid{grid-template-columns:1fr;gap:40px;}
+  .skills-grid,.proj-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Anupam <span>Nath</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="nav-resume" href="https://drive.google.com/file/d/1-mEIzePDUyYxil3vTSVufQITtH-dBOUo/view?usp=sharing" target="_blank">↓ Resume</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <p class="hero-welcome">WELCOME TO MY PORTFOLIO</p>
+  <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam Nath</span></h1>
+  <p class="hero-sub">Brand Thinker &nbsp;·&nbsp; Brand & Content Strategist</p>
+  <p class="hero-desc">I build clean, strategic, and performance-driven content systems that help brands grow with clarity and consistency.</p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn btn-fill">View My Work</a>
+    <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+  </div>
+  <div class="hero-social">
+    <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="fi">
+      <div class="s-label">About Me</div>
+      <h2 class="s-h2">I work with brands that want <span>more than just content.</span></h2>
+      <div class="about-text">
+        <p>My focus is on building clarity in the brand, creating content that actually connects, and structuring it in a way that drives consistent results. I have over <strong>5 years of experience</strong> across journalism, YouTube IP, and D2C and B2C brand campaigns.</p>
+        <p>I design structured content systems, define clear content pillars, and align storytelling with business objectives. Working across funnel stages from awareness to conversion, I combine <strong>audience insight, positioning, and performance thinking</strong> to drive engagement, retention, and measurable growth not just visibility.</p>
+      </div>
+      <div class="about-loc">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        New Delhi, India
+      </div>
+    </div>
+    <div class="about-stats fi d1">
+      <div class="stat-card"><span class="stat-num">5+</span><span class="stat-lbl">Years Experience</span></div>
+      <div class="stat-card"><span class="stat-num">2+</span><span class="stat-lbl">Brands Built</span></div>
+      <div class="stat-card"><span class="stat-num">50+</span><span class="stat-lbl">Projects Completed</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="s-label">Skills & Expertise</div>
+  <h2 class="s-h2">What I <span>bring to the table.</span></h2>
+  <p class="s-sub">Built across real work over five years.</p>
+  <div class="skills-grid">
+    <div class="skill-card fi">
+      <div class="skill-cat">Strategy</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Brand Strategy</span><span class="skill-tag">Content Strategy</span>
+        <span class="skill-tag">Funnel Structuring</span><span class="skill-tag">Brand Positioning</span>
+        <span class="skill-tag">Audience Research</span><span class="skill-tag">Competitive Analysis</span>
+      </div>
+    </div>
+    <div class="skill-card fi d1">
+      <div class="skill-cat">Creative</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Creative Direction</span><span class="skill-tag">Short-form Content Systems</span>
+        <span class="skill-tag">Ad Creative Strategy</span><span class="skill-tag">Copywriting</span>
+        <span class="skill-tag">Hook Writing</span><span class="skill-tag">YouTube IP Development</span>
+      </div>
+    </div>
+    <div class="skill-card fi d2">
+      <div class="skill-cat">Performance Thinking</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Performance Marketing Thinking</span>
+        <span class="skill-tag">Content-led Growth Systems</span>
+        <span class="skill-tag">AI-powered Execution</span>
+        <span class="skill-tag">Meta Ads Strategy</span><span class="skill-tag">Signal Metrics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="s-label">My Work</div>
+  <h2 class="s-h2">Projects that <span>moved the needle.</span></h2>
+  <p class="s-sub">Real brands. Real results. Real strategy behind every build.</p>
+  <div class="filter-row">
+    <button class="f-btn active" onclick="fp('all',this)">All</button>
+    <button class="f-btn" onclick="fp('brand',this)">Brand Systems</button>
+    <button class="f-btn" onclick="fp('content',this)">Content</button>
+    <button class="f-btn" onclick="fp('strategy',this)">Strategy</button>
+  </div>
+  <div class="proj-grid" id="pg">
+    <div class="proj-card fi" data-cat="strategy content brand">
+      <div class="proj-thumb">P</div>
+      <div class="proj-body">
+        <div class="proj-name">Prep IQ</div>
+        <div class="proj-desc">Authority-led content system for a D2C education brand in a Tier-3 market. Built on trust where national giants competed on scale. First launch generated revenue with zero ad spend.</div>
+        <div class="proj-tags"><span class="proj-tag">Content Strategy</span><span class="proj-tag">Education</span><span class="proj-tag">D2C</span></div>
+        <a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
+      </div>
+    </div>
+    <div class="proj-card fi d1" data-cat="brand content">
+      <div class="proj-thumb">C</div>
+      <div class="proj-body">
+        <div class="proj-name">Chaivours</div>
+        <div class="proj-desc">Brand and content direction for a youth chai brand in Tier-3. The challenge was cultural relevance, not visibility. Grew to 1,500 organic followers with real UGC and zero ad spend.</div>
+        <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">F&B</span><span class="proj-tag">Organic Growth</span></div>
+        <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-op4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
+      </div>
+    </div>
+    <div class="proj-card fi d2" data-cat="content strategy">
+      <div class="proj-thumb">E</div>
+      <div class="proj-body">
+        <div class="proj-name">The Edge</div>
+        <div class="proj-desc">Built a daily legal YouTube IP from scratch. Handled format design, scripting, on-camera anchoring, and team management. Grew to 37K subscribers through structure and consistency.</div>
+        <div class="proj-tags"><span class="proj-tag">YouTube IP</span><span class="proj-tag">Content System</span><span class="proj-tag">Production</span></div>
+        <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel →</a>
+      </div>
+    </div>
+    <div class="proj-card fi" data-cat="content">
+      <div class="proj-thumb">V</div>
+      <div class="proj-body">
+        <div class="proj-name">Explore Valley</div>
+        <div class="proj-desc">News content production and digital presence building. Covered the Assam Legislative Assembly Election 2021 on ground. Grew to 100K Facebook followers organically.</div>
+        <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Organic Growth</span><span class="proj-tag">Production</span></div>
+        <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page →</a>
+      </div>
+    </div>
+    <div class="proj-card fi d1" data-cat="strategy content">
+      <div class="proj-thumb">A</div>
+      <div class="proj-body">
+        <div class="proj-name">Atomik Growth</div>
+        <div class="proj-desc">Video production for VC and founder podcasts. Built visual identity from scratch and ran ICP research across LinkedIn, Reddit, and YouTube. Short-form treated as a distribution layer, not just edits.</div>
+        <div class="proj-tags"><span class="proj-tag">Podcast Strategy</span><span class="proj-tag">Video Production</span><span class="proj-tag">Lead Gen</span></div>
+        <a href="https://www.atomikgrowth.com/" target="_blank" class="proj-link">Visit Website →</a>
+      </div>
+    </div>
+    <div class="proj-card fi d2" data-cat="content">
+      <div class="proj-thumb">S</div>
+      <div class="proj-body">
+        <div class="proj-name">Short-form Content Work</div>
+        <div class="proj-desc">Execution-focused content built for attention and retention. Each piece designed with a clear funnel role. Platform-native formats across Instagram, YouTube Shorts, and LinkedIn.</div>
+        <div class="proj-tags"><span class="proj-tag">Short-form</span><span class="proj-tag">Distribution</span><span class="proj-tag">Reels</span></div>
+        <a href="https://drive.google.com/drive/folders/1plRr675jZ-equhiDyxypVg7-Lr8YB3Hz?usp=drive_link" target="_blank" class="proj-link">View Work →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hop">
+  <div class="s-label">Before the Brand Exists</div>
+  <div class="hop-wrap fi">
+    <div class="hop-inner">
+      <div>
+        <div class="hop-badge"><span class="hop-dot"></span> Self-Initiated Project</div>
+        <h2 class="hop-title">House of <span>Pause</span></h2>
+        <p class="hop-note">This is not a client project. This is a self-initiated brand system I built to demonstrate how I think and how I work. The research is real. The strategy is real. The execution is real.</p>
+        <p class="hop-desc">Built from the ground up as a complete brand system for a slow living interior brand. From positioning and audience research to content pillars, creative direction, and a 30-day content plan. This is exactly the process I bring to every brand I work with.</p>
+        <div class="hop-items">
+          <span class="hop-item">Brand Positioning</span><span class="hop-item">Content Direction</span>
+          <span class="hop-item">Visual Tone</span><span class="hop-item">Messaging System</span>
+          <span class="hop-item">30-Day Content Plan</span><span class="hop-item">4 Competitor Audits</span>
+          <span class="hop-item">Buyer Personas</span><span class="hop-item">Core Insight</span>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn btn-fill">View Full Brand System →</a>
+      </div>
+      <div>
+        <div class="hop-comps">
+          <div class="hop-comp"><span class="hop-num">01</span><span class="hop-lbl"><strong>Research Layer</strong> — 4 competitor audits</span></div>
+          <div class="hop-comp"><span class="hop-num">02</span><span class="hop-lbl"><strong>Target Audience</strong> — 4 segments defined</span></div>
+          <div class="hop-comp"><span class="hop-num">03</span><span class="hop-lbl"><strong>Buyer Persona</strong> — 2 primary personas</span></div>
+          <div class="hop-comp"><span class="hop-num">04</span><span class="hop-lbl"><strong>Core Insight</strong> — 10 variations tested</span></div>
+          <div class="hop-comp"><span class="hop-num">05</span><span class="hop-lbl"><strong>Funnel Thinking</strong> — TOF, MOF, BOF</span></div>
+          <div class="hop-comp"><span class="hop-num">06</span><span class="hop-lbl"><strong>Content System</strong> — 4 pillars with jobs</span></div>
+          <div class="hop-comp"><span class="hop-num">07</span><span class="hop-lbl"><strong>Creative Execution</strong> — 7 pieces with rationale</span></div>
+          <div class="hop-comp"><span class="hop-num">08</span><span class="hop-lbl"><strong>Copy Bank</strong> — 20 hooks and 20 CTAs</span></div>
+          <div class="hop-comp"><span class="hop-num">09</span><span class="hop-lbl"><strong>30-Day Calendar</strong> — Full content arc</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="s-label">Get in Touch</div>
+  <h2 class="s-h2">Let's build something <span>together.</span></h2>
+  <div class="contact-grid">
+    <div class="fi">
+      <div class="form-row">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="Rahul Sharma" id="cn"></div>
+        <div class="form-group"><label>Your Email</label><input type="email" placeholder="rahul@company.com" id="ce"></div>
+      </div>
+      <div class="form-group">
+        <label>What are you looking for?</label>
+        <select id="cs">
+          <option value="" disabled selected>Select one</option>
+          <option>Full-time Brand Strategist role</option>
+          <option>Creative Strategist role</option>
+          <option>Content Strategy Lead role</option>
+          <option>Freelance brand strategy project</option>
+          <option>Just want to connect</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Your Message</label><textarea placeholder="Tell me about your brand, project, or opportunity..." id="cm"></textarea></div>
+      <button class="btn btn-fill" onclick="send()" id="sb">Send Message →</button>
+    </div>
+    <div class="ci-info fi d1">
+      <h3>Have a project in mind or just want to connect?</h3>
+      <p>Feel free to reach out. I am open to discussing ideas, collaborations, and brand building opportunities.</p>
+      <div class="ci-links">
+        <a href="mailto:anupamnath222@gmail.com" class="ci-link">
+          <div class="ci-icon">✉</div>
+          <div><span class="ci-lbl">Email</span><span class="ci-val">anupamnath222@gmail.com</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank" class="ci-link">
+          <div class="ci-icon">in</div>
+          <div><span class="ci-lbl">LinkedIn</span><span class="ci-val">Anupam Nath</span></div>
+        </a>
+        <div class="ci-link" style="cursor:default;">
+          <div class="ci-icon">📍</div>
+          <div><span class="ci-lbl">Location</span><span class="ci-val">New Delhi, India</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-name">Anupam <span>Nath</span></div>
+  <div class="f-copy">© 2026 · All rights reserved</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(e => {
+  e.forEach(x => { if(x.isIntersecting) x.target.classList.add('vis'); });
+}, {threshold:0.1});
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+function fp(cat, btn) {
+  document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.proj-card').forEach(c => {
+    c.style.display = (cat==='all' || c.dataset.cat.includes(cat)) ? 'flex' : 'none';
+  });
+}
+
+function send() {
+  const n = document.getElementById('cn').value;
+  const e = document.getElementById('ce').value;
+  const s = document.getElementById('cs').value;
+  const m = document.getElementById('cm').value;
+  const btn = document.getElementById('sb');
+  if(!n || !e){ btn.textContent='Please fill in name and email';setTimeout(()=>{btn.textContent='Send Message →';},2000);return;}
+  const sub = encodeURIComponent('Portfolio Enquiry — '+(s||'General')+' — '+n);
+  const bod = encodeURIComponent('Hi Anupam,\n\nName: '+n+'\nEmail: '+e+'\n\n'+m);
+  window.location.href='mailto:anupamnath222@gmail.com?subject='+sub+'&body='+bod;
+}
+
+window.addEventListener('scroll', () => {
+  let cur='';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if(window.scrollY >= s.offsetTop-120) cur=s.id;
+  });
+  document.querySelectorAll('.nav-links a:not(.nav-resume)').forEach(a => {
+    a.style.color = a.getAttribute('href')==='#'+cur ? '#fff' : '';
+  });
+});
+</script>
+</body>
+</html>
