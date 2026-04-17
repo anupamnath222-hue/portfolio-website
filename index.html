@@ -169,10 +169,36 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 .f-name span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .f-copy{font-size:12px;color:var(--dgrey);}
 
-/* FADE IN */
-.fi{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}
-.fi.vis{opacity:1;transform:translateY(0);}
-.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}
+/* ANIMATIONS & TRANSITIONS */
+@keyframes pageLoad{0%{width:0;}100%{width:100%;}}
+#pageLoader{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));animation:pageLoad 2s ease-out forwards;z-index:999;box-shadow:0 0 12px var(--blue);}
+#loaderText{position:fixed;top:12px;left:64px;font-size:11px;letter-spacing:0.1em;color:var(--blue2);z-index:999;opacity:0;animation:fadeOutLoader 0.5s ease 2s forwards;font-weight:700;}
+@keyframes fadeOutLoader{0%{opacity:1;}100%{opacity:0;}}
+
+/* CUSTOM CURSOR */
+#cursorDot{position:fixed;width:8px;height:8px;background:radial-gradient(circle,var(--blue),var(--cyan));border-radius:50%;pointer-events:none;z-index:9999;box-shadow:0 0 8px var(--blue);mix-blend-mode:screen;}
+#cursorRing{position:fixed;width:30px;height:30px;border:1.5px solid rgba(108,138,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.15s,height 0.15s,border-color 0.15s;}
+.cursor-hover #cursorRing{width:50px;height:50px;border-color:rgba(108,138,255,0.7);}
+
+/* INTERACTIVE CARD POP EFFECT */
+.proj-card,.skill-card,.stat-card,.ci-link{transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.3s ease,border-color 0.3s ease;}
+.proj-card:active,.skill-card:active,.stat-card:active,.ci-link:active{transform:scale(0.98);}
+.proj-card:hover,.skill-card:hover,.stat-card:hover{transform:translateY(-6px) scale(1.02);}
+
+/* COUNTING ANIMATION */
+@keyframes countUp{from{counter-reset:num var(--num);}to{counter-reset:num var(--num);}}
+.stat-num.counting{font-variant-numeric:tabular-nums;animation:countUp 1.2s ease-out;}
+
+/* DOTS CANVAS BACKGROUND */
+#dotsCanvas{position:absolute;top:0;left:0;z-index:0;opacity:0.3;}
+
+/* PREMIUM SMOOTH TRANSITIONS */
+a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
+.btn-fill:active{transform:translateY(-1px);}
+
+/* SCROLL REVEAL ENHANCEMENT */
+.fi{will-change:opacity,transform;}
+
 
 @media(max-width:900px){
   nav{padding:0 20px;}.nav-links{display:none;}
@@ -285,9 +311,9 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
     <div class="skill-card fi d2">
       <div class="skill-cat">Platforms & Tools</div>
       <div class="skill-tags">
-        <span class="skill-tag">Google Workspace</span><span class="skill-tag">Figma</span>
-        <span class="skill-tag">Analytics & Tracking</span><span class="skill-tag">SEO & SEM</span>
-        <span class="skill-tag">Email Marketing</span><span class="skill-tag">CRM Systems</span>
+        <span class="skill-tag">Google Workspace</span><span class="skill-tag">MS Office</span>
+        <span class="skill-tag">Notion</span><span class="skill-tag">Claude</span>
+        <span class="skill-tag">Analytics & Tracking</span><span class="skill-tag">CRM Systems</span>
       </div>
     </div>
   </div>
@@ -329,13 +355,13 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
         </div>
         <div class="proj-desc">Youth chai brand in new market. Built community-first positioning and UGC system.</div>
         <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">Community</span><span class="proj-tag">Growth</span></div>
-        <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-op4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
+        <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-q4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
       </div>
     </div>
     <div class="proj-card fi d2" data-cat="content strategy">
       <div class="proj-thumb the-edge"><img src="assets/logos/THE EDGE ORIGINALS.png" alt="The Edge"></div>
       <div class="proj-body">
-        <div class="proj-name">The Edge</div>
+        <div class="proj-name">The Edge Originals</div>
         <div class="proj-metrics">
           <span class="metric"><strong>37K+</strong> Subscribers</span>
           <span class="metric"><strong>Daily</strong> Publishing</span>
@@ -384,7 +410,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
           <span class="metric"><strong>Performance</strong> Metrics</span>
         </div>
         <div class="proj-desc">Platforms demand short-form. Built framework including strategic editing for Instagram, YouTube Shorts, LinkedIn with performance optimization.</div>
-        <div class="proj-tags"><span class="proj-tag">Content Strategy</span><span class="proj-tag">Distribution</span><span class="proj-tag">Growth</span></div>
+        <div class="proj-tags"><span class="proj-tag">Content Strategy</span><span class="proj-tag">Adobe Creative Suite</span><span class="proj-tag">Distribution</span></div>
         <a href="https://drive.google.com/drive/folders/1plRr675jZ-equhiDyxypVg7-Lr8YB3Hz?usp=drive_link" target="_blank" class="proj-link">View Work →</a>
       </div>
     </div>
