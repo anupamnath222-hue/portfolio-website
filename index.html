@@ -172,12 +172,12 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 /* ANIMATIONS & TRANSITIONS */
 @keyframes pageLoad{0%{width:0;}100%{width:100%;}}
 #pageLoader{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));animation:pageLoad 2s ease-out forwards;z-index:999;box-shadow:0 0 12px var(--blue);}
-#loaderText{position:fixed;top:12px;left:64px;font-size:11px;letter-spacing:0.1em;color:var(--blue2);z-index:999;opacity:0;animation:fadeOutLoader 0.5s ease 2s forwards;font-weight:700;}
+#loaderText{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:999;opacity:1;animation:fadeOutLoader 0.5s ease 2s forwards;font-weight:700;}
 @keyframes fadeOutLoader{0%{opacity:1;}100%{opacity:0;}}
 
-/* CUSTOM CURSOR */
-#cursorDot{position:fixed;width:8px;height:8px;background:radial-gradient(circle,var(--blue),var(--cyan));border-radius:50%;pointer-events:none;z-index:9999;box-shadow:0 0 8px var(--blue);mix-blend-mode:screen;}
-#cursorRing{position:fixed;width:30px;height:30px;border:1.5px solid rgba(108,138,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.15s,height 0.15s,border-color 0.15s;}
+/* CUSTOM CURSOR - HIDDEN */
+#cursorDot{position:fixed;width:8px;height:8px;background:radial-gradient(circle,var(--blue),var(--cyan));border-radius:50%;pointer-events:none;z-index:9999;box-shadow:0 0 8px var(--blue);mix-blend-mode:screen;display:none;}
+#cursorRing{position:fixed;width:30px;height:30px;border:1.5px solid rgba(108,138,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.15s,height 0.15s,border-color 0.15s;display:none;}
 .cursor-hover #cursorRing{width:50px;height:50px;border-color:rgba(108,138,255,0.7);}
 
 /* INTERACTIVE CARD POP EFFECT */
@@ -214,7 +214,10 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 
 <!-- Page Loader -->
 <div id="pageLoader"></div>
-<div id="loaderText">Anupam Nath</div>
+<div id="loaderText">
+  <div style="font-weight:800;font-size:18px;margin-bottom:12px;">Anupam Nath</div>
+  <div style="font-size:13px;color:var(--grey);line-height:1.7;">Positioning strategies. Content systems. Brand growth.</div>
+</div>
 
 <!-- Custom Cursor -->
 <div id="cursorDot"></div>
@@ -351,7 +354,10 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
         </div>
         <div class="proj-desc">D2C education in Tier-3 market. Built authority positioning and decision-stage content system.</div>
         <div class="proj-tags"><span class="proj-tag">Brand Positioning</span><span class="proj-tag">Content</span><span class="proj-tag">Growth</span></div>
-        <a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
+        <div style="display:flex;gap:8px;margin-top:12px;">
+          <a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
+          <a href="https://www.facebook.com/PrepIQ" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a>
+        </div>
       </div>
     </div>
     <div class="proj-card fi d1" data-cat="brand content">
@@ -365,7 +371,10 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
         </div>
         <div class="proj-desc">Youth chai brand in new market. Built community-first positioning and UGC system.</div>
         <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">Community</span><span class="proj-tag">Growth</span></div>
-        <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-q4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
+        <div style="display:flex;gap:8px;margin-top:12px;">
+          <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-q4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
+          <a href="https://www.instagram.com/chaivours/" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Instagram">📷</a>
+        </div>
       </div>
     </div>
     <div class="proj-card fi d2" data-cat="content strategy">
@@ -379,7 +388,10 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
         </div>
         <div class="proj-desc">YouTube IP from zero. Built format, production system, and daily publishing cadence.</div>
         <div class="proj-tags"><span class="proj-tag">YouTube IP</span><span class="proj-tag">Content</span><span class="proj-tag">Production</span></div>
-        <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel →</a>
+        <div style="display:flex;gap:8px;margin-top:12px;">
+          <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel →</a>
+          <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="YouTube">▶</a>
+        </div>
       </div>
     </div>
     <div class="proj-card fi" data-cat="content">
@@ -391,9 +403,12 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
           <span class="metric"><strong>Govt Election</strong> Campaign Coverage</span>
           <span class="metric"><strong>Assam</strong> Legislative Authority</span>
         </div>
-        <div class="proj-desc">Regional news brand with govt projects. Helped build from 10K to 100K+ followers. Multi-platform system covering major election campaigns and legislative coverage.</div>
+        <div class="proj-desc">Regional news brand with govt projects. FB Page covering major election campaigns and legislative coverage. Helped grow from 10K to 100K+ followers organically.</div>
         <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Growth</span><span class="proj-tag">Strategy</span></div>
-        <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page →</a>
+        <div style="display:flex;gap:8px;margin-top:12px;">
+          <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page →</a>
+          <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a>
+        </div>
       </div>
     </div>
     <div class="proj-card fi d1" data-cat="strategy content">
@@ -598,21 +613,28 @@ function type() {
 
 type();
 
-// PAGE LOADER
+// PAGE LOADER WITH PROGRESS
+let loadProgress=0;
+const loadInterval=setInterval(()=>{
+  loadProgress+=Math.random()*30;
+  if(loadProgress>90)loadProgress=90;
+  document.getElementById('pageLoader').style.width=loadProgress+'%';
+},200);
 window.addEventListener('load',()=>{
-  const loader=document.getElementById('pageLoader');
+  clearInterval(loadInterval);
+  loadProgress=100;
+  document.getElementById('pageLoader').style.width='100%';
   const loaderText=document.getElementById('loaderText');
-  setTimeout(()=>{loader.style.opacity='0';loaderText.style.opacity='0';},2200);
+  setTimeout(()=>{
+    loaderText.style.transition='opacity 0.5s ease';
+    loaderText.style.opacity='0';
+    document.getElementById('pageLoader').style.transition='opacity 0.5s ease';
+    document.getElementById('pageLoader').style.opacity='0';
+  },2200);
 });
 
-// CUSTOM CURSOR
-const cursorDot=document.getElementById('cursorDot');
-const cursorRing=document.getElementById('cursorRing');
-let mouseX=0,mouseY=0;
-document.addEventListener('mousemove',(e)=>{mouseX=e.clientX;mouseY=e.clientY;cursorDot.style.left=mouseX-4+'px';cursorDot.style.top=mouseY-4+'px';setTimeout(()=>{cursorRing.style.left=mouseX-15+'px';cursorRing.style.top=mouseY-15+'px';},100);});
-document.querySelectorAll('a,.btn,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+// HOVER GLOW EFFECT (No visible cursor)
 
-// INTERACTIVE DOT GRID
 const canvas=document.getElementById('dotsCanvas');
 if(canvas){
   const ctx=canvas.getContext('2d');
