@@ -37,6 +37,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 .hero-h1{font-size:clamp(42px,6.5vw,76px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;color:var(--white);margin-bottom:14px;}
 .grad{background:linear-gradient(130deg,var(--blue) 0%,var(--cyan) 60%,var(--blue2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:g 5s ease infinite;}
 @keyframes g{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+#typer{color:var(--blue2);min-height:1.2em;display:inline-block;}
+.cursor{color:var(--blue2);animation:blink-cursor 0.7s infinite;}
+@keyframes blink-cursor{0%,50%{opacity:1;}51%,100%{opacity:0;}}
 .hero-sub{font-size:clamp(17px,2.2vw,22px);color:var(--grey);font-weight:500;margin-bottom:26px;letter-spacing:-0.01em;}
 .hero-desc{font-size:16px;color:var(--grey);max-width:520px;line-height:1.85;margin:0 auto 44px;font-weight:400;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;}
@@ -88,18 +91,21 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .f-btn.active{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 18px var(--glow);}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:visible;display:flex;flex-direction:row;align-items:flex-start;transition:border-color 0.2s,transform 0.2s,box-shadow 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);gap:0;padding-top:0;}
-.proj-card:hover{border-color:var(--blue2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(108,138,255,0.2);}
-.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:white;border-right:none;display:flex;align-items:center;justify-content:center;padding:8px;position:relative;overflow:visible;flex-shrink:0;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,0.15);margin:12px;margin-right:18px;}
+.proj-card:hover{border-color:var(--blue2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(108,138,255,0.2);glow:rgba(108,138,255,0.15);}
+.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:transparent;border-right:none;display:flex;align-items:center;justify-content:center;padding:8px;position:relative;overflow:visible;flex-shrink:0;border-radius:0;box-shadow:0 8px 24px rgba(0,0,0,0.25);margin:12px;margin-right:18px;}
 .proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;filter:none;width:90%;height:90%;}
-.proj-thumb.prep-iq{background:white;}
-.proj-thumb.chaivours{background:white;}
-.proj-thumb.the-edge{background:white;}
-.proj-thumb.explore-valley{background:white;}
-.proj-thumb.atomik{background:white;}
-.proj-thumb.shortform{background:white;}
+.proj-thumb.prep-iq{background:transparent;}
+.proj-thumb.chaivours{background:transparent;}
+.proj-thumb.the-edge{background:transparent;}
+.proj-thumb.explore-valley{background:transparent;}
+.proj-thumb.atomik{background:transparent;}
+.proj-thumb.shortform{background:transparent;}
 .proj-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
 .proj-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-0.015em;}
 .proj-desc{font-size:13px;color:var(--grey);line-height:1.7;flex:1;margin-bottom:14px;}
+.proj-metrics{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;padding:12px;background:rgba(108,138,255,0.08);border-radius:8px;border:1px solid rgba(108,138,255,0.15);}
+.metric{font-size:12px;color:var(--blue2);font-weight:600;line-height:1.6;}
+.metric strong{color:var(--white);font-weight:700;}
 .proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
 .proj-tag{font-size:11px;padding:3px 9px;border-radius:5px;background:rgba(108,138,255,0.1);color:var(--blue2);border:1px solid rgba(108,138,255,0.2);font-weight:500;}
 .proj-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--blue2);text-decoration:none;font-weight:500;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);transition:all 0.2s;width:fit-content;}
@@ -108,25 +114,34 @@ section{padding:96px 64px;position:relative;z-index:1;}
 
 /* BEFORE THE BRAND EXISTS */
 #hop{background:var(--bg);}
-.hop-wrap{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:52px 48px;position:relative;overflow:hidden;}
-.hop-wrap::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(ellipse,rgba(108,138,255,0.07) 0%,transparent 65%);pointer-events:none;}
+.hop-wrap{background:linear-gradient(135deg,rgba(108,138,255,0.08) 0%,rgba(103,232,249,0.04) 100%);border:1.5px solid rgba(108,138,255,0.35);border-radius:24px;padding:64px 56px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(108,138,255,0.15);}
+.hop-wrap::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(108,138,255,0.12) 0%,transparent 65%);pointer-events:none;}
 .hop-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:56px;align-items:start;}
-.hop-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue2);background:rgba(108,138,255,0.1);border:1px solid rgba(108,138,255,0.25);padding:4px 13px;border-radius:20px;margin-bottom:16px;font-weight:700;}
-.hop-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;}
+.hop-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue2);background:rgba(108,138,255,0.15);border:1.5px solid rgba(108,138,255,0.35);padding:6px 16px;border-radius:20px;margin-bottom:20px;font-weight:700;box-shadow:0 4px 16px rgba(108,138,255,0.1);}
+.hop-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;box-shadow:0 0 12px var(--blue);}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-.hop-title{font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--white);letter-spacing:-0.03em;margin-bottom:14px;line-height:1.1;}
+.hop-title{font-size:clamp(32px,4.2vw,48px);font-weight:800;color:var(--white);letter-spacing:-0.03em;margin-bottom:18px;line-height:1.1;}
 .hop-title span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hop-subtitle{font-size:17px;font-weight:700;color:var(--white);letter-spacing:-0.01em;margin-bottom:16px;margin-top:28px;}
+.hop-subtitle:first-of-type{margin-top:0;}
+.hop-section{margin-bottom:32px;}
+.hop-why{background:rgba(108,138,255,0.15);border:1.5px solid rgba(108,138,255,0.4);border-radius:18px;padding:32px;margin-bottom:36px;position:relative;overflow:hidden;backdrop-filter:blur(12px);box-shadow:0 12px 40px rgba(108,138,255,0.12);}
+.hop-why::before{content:'';position:absolute;top:-50%;right:-50%;width:450px;height:450px;background:radial-gradient(ellipse,rgba(108,138,255,0.18) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.hop-why-content{position:relative;z-index:1;}
+.hop-why h3{font-size:18px;font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-0.01em;}
+.hop-why p{font-size:15px;color:var(--off);line-height:1.85;margin-bottom:12px;font-weight:500;}
+.hop-why p:last-child{margin-bottom:0;}
+.hop-desc{font-size:15px;color:var(--grey);line-height:1.85;margin-bottom:20px;}
 .hop-note{font-size:12px;color:var(--dgrey);background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-style:italic;line-height:1.6;}
-.hop-desc{font-size:15px;color:var(--grey);line-height:1.85;margin-bottom:28px;}
-.hop-items{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
-.hop-item{font-size:12px;padding:5px 12px;border-radius:6px;border:1px solid var(--border2);color:var(--grey);display:flex;align-items:center;gap:6px;}
-.hop-item::before{content:'✓';color:var(--blue2);font-weight:700;font-size:11px;}
+.hop-items{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;flex-direction:column;}
+.hop-item span{color:var(--white);font-weight:700;}
+.hop-item{font-size:14px;padding:8px 0;color:var(--grey);display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
 .hop-comps{display:flex;flex-direction:column;gap:10px;}
-.hop-comp{background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:13px 18px;display:flex;align-items:center;gap:14px;transition:border-color 0.2s;}
-.hop-comp:hover{border-color:var(--border);}
-.hop-num{font-size:11px;color:var(--blue);font-weight:700;min-width:26px;letter-spacing:0.02em;}
-.hop-lbl{font-size:13px;color:var(--grey);}
-.hop-lbl strong{color:var(--off);font-weight:600;}
+.hop-comp{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:15px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.2s,box-shadow 0.2s;}
+.hop-comp:hover{border-color:var(--border);box-shadow:0 4px 16px rgba(108,138,255,0.1);}
+.hop-num{font-size:12px;color:var(--blue);font-weight:800;min-width:26px;letter-spacing:0.02em;}
+.hop-lbl{font-size:14px;color:var(--grey);line-height:1.6;}
+.hop-lbl strong{color:var(--off);font-weight:700;}
 
 /* CONTACT */
 #contact{background:var(--bg2);}
@@ -182,10 +197,10 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 </nav>
 
 <section id="hero">
-  <p class="hero-welcome">BRAND & CREATIVE STRATEGIST</p>
+  <p class="hero-welcome">WELCOME TO MY PORTFOLIO</p>
   <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam Nath</span></h1>
-  <p class="hero-sub">Strategy partner for brands and founders building something real.</p>
-  <p class="hero-desc">Over 5 years building brand positioning, content systems, and growth strategies that actually work. From zero to proven traction across education, F&B, media, and venture-backed startups. I help brands figure out their truth, then build systems that make it matter.</p>
+  <p class="hero-sub"><span id="typer"></span><span class="cursor">|</span></p>
+  <p class="hero-desc">I craft complete brand systems that drive growth. Strategy, content architecture, and execution built to deliver results.</p>
   <div class="hero-btns">
     <a href="#projects" class="btn btn-fill">View My Work</a>
     <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -202,11 +217,10 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
   <div class="about-grid">
     <div class="fi">
       <div class="s-label">About Me</div>
-      <h2 class="s-h2">Brand strategist. Content<br>systems builder. Growth<br><span>operator.</span></h2>
+      <h2 class="s-h2">I build brand<br>systems that <span>create real value.</span></h2>
       <div class="about-text">
-        <p>I work at the intersection of strategy and execution. Over five years, I've built brand positioning systems for companies across education technology, food and beverage, media, and venture-backed startups. Each engagement started the same way: brands had audiences, content, and ambition. What they were missing was strategy that actually connected those dots.</p>
-        <p>Most teams treat brand strategy and content as separate challenges. I've learned they're inseparable. Real positioning creates a system for content. Real content proves your positioning. When those two align, growth follows naturally. That's where my work lives.</p>
-        <p>Whether you're building a brand from zero, scaling what's working, or redesigning what isn't, I help teams find the genuine insight that changes how their audience sees them. Then we build the content and systems to make that shift real.</p>
+        <p>I work with brands to bridge the gap between strategy and execution. The best brands aren't built through scattered tactics they're built through clear positioning, consistent content architecture, and disciplined execution.</p>
+        <p>My approach is straightforward: understand your competitive edge, build systems that reinforce it constantly, and measure what actually drives growth. Positioning clarity. Content infrastructure. Performance metrics. These are the fundamentals that move brands forward.</p>
       </div>
       <div class="about-loc">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -251,6 +265,14 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
         <span class="skill-tag">YouTube IP</span><span class="skill-tag">Organic Growth</span>
       </div>
     </div>
+    <div class="skill-card fi">
+      <div class="skill-cat">Design & Production</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Premiere Pro</span><span class="skill-tag">After Effects</span>
+        <span class="skill-tag">Adobe Creative Suite</span><span class="skill-tag">Video Editing</span>
+        <span class="skill-tag">Motion Graphics</span><span class="skill-tag">Visual Design</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -269,8 +291,13 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb prep-iq"><img src="assets/logos/PREP IQ.png" alt="Prep IQ"></div>
       <div class="proj-body">
         <div class="proj-name">Prep IQ</div>
-        <div class="proj-desc"><strong>Context:</strong> A D2C education brand competing in a Tier-3 market dominated by national scale players. They had qualified audience interest but faced a trust barrier. The core problem wasn't visibility—it was positioning. Students needed to believe this was a credible alternative to established institutions. This required reframing the entire value proposition from price-based to authority-based.<br><br><strong>Worked on:</strong> Brand positioning architecture anchored on expertise • Content strategy for funnel stages from awareness to decision • Long-form content that demonstrated deep market knowledge • Email nurture systems for decision-stage prospects</div>
-        <div class="proj-tags"><span class="proj-tag">Content Strategy</span><span class="proj-tag">Education</span><span class="proj-tag">D2C</span></div>
+        <div class="proj-metrics">
+          <span class="metric"><strong>5</strong> Students Cracked Govt Jobs</span>
+          <span class="metric"><strong>₹30-40K</strong> First Launch</span>
+          <span class="metric"><strong>₹0</strong> CAC</span>
+        </div>
+        <div class="proj-desc">D2C education in Tier-3 market. Built authority positioning and decision-stage content system.</div>
+        <div class="proj-tags"><span class="proj-tag">Brand Positioning</span><span class="proj-tag">Content</span><span class="proj-tag">Growth</span></div>
         <a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
       </div>
     </div>
@@ -278,8 +305,13 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb chaivours"><img src="assets/logos/chaivours.png" alt="Chaivours"></div>
       <div class="proj-body">
         <div class="proj-name">Chaivours</div>
-        <div class="proj-desc"><strong>Context:</strong> A youth-focused chai brand entering a Tier-3 market where category category players competed on commodity differentiation. The challenge wasn't building awareness—it was establishing cultural relevance and emotional connection with the target demographic. The market demanded a brand that felt local, authentic, and worth talking about, not just another beverage option.<br><br><strong>Worked on:</strong> Brand identity and positioning strategy rooted in local culture • Community engagement and UGC frameworks • Social content that encouraged user participation and organic sharing</div>
-        <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">F&B</span><span class="proj-tag">Organic Growth</span></div>
+        <div class="proj-metrics">
+          <span class="metric"><strong>1.5K+</strong> Engaged Followers</span>
+          <span class="metric"><strong>Organic</strong> Growth Only</span>
+          <span class="metric"><strong>Real</strong> Customer Sales</span>
+        </div>
+        <div class="proj-desc">Youth chai brand in new market. Built community-first positioning and UGC system.</div>
+        <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">Community</span><span class="proj-tag">Growth</span></div>
         <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-op4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
       </div>
     </div>
@@ -287,8 +319,13 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb the-edge"><img src="assets/logos/THE EDGE ORIGINALS.png" alt="The Edge"></div>
       <div class="proj-body">
         <div class="proj-name">The Edge</div>
-        <div class="proj-desc"><strong>Context:</strong> Building a YouTube IP from zero to establish credibility in legal education. The opportunity was clear: legal information was available everywhere, but it was rarely presented in a way regular people could understand. This required creating a format that made complex information accessible without losing depth or credibility, while building a system that could sustain daily publication and audience growth.<br><br><strong>Worked on:</strong> Format design and production architecture for educational content • Scripting methodology for complex topics • On-camera talent development and consistency systems • Publishing cadence and audience building strategy</div>
-        <div class="proj-tags"><span class="proj-tag">YouTube IP</span><span class="proj-tag">Content System</span><span class="proj-tag">Production</span></div>
+        <div class="proj-metrics">
+          <span class="metric"><strong>37K+</strong> Subscribers</span>
+          <span class="metric"><strong>Daily</strong> Publishing</span>
+          <span class="metric"><strong>Credible</strong> Source</span>
+        </div>
+        <div class="proj-desc">YouTube IP from zero. Built format, production system, and daily publishing cadence.</div>
+        <div class="proj-tags"><span class="proj-tag">YouTube IP</span><span class="proj-tag">Content</span><span class="proj-tag">Production</span></div>
         <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel →</a>
       </div>
     </div>
@@ -296,8 +333,13 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb explore-valley"><img src="assets/logos/explore valley.png" alt="Explore Valley"></div>
       <div class="proj-body">
         <div class="proj-name">Explore Valley</div>
-        <div class="proj-desc"><strong>Context:</strong> A regional news media brand building digital presence from ground-level journalism. The challenge extended beyond distribution—it was about establishing authority in a specific geography while competing for attention in an increasingly crowded news landscape. Success required systems that could amplify quality reporting across multiple platforms while maintaining editorial integrity.<br><br><strong>Worked on:</strong> Digital strategy and multi-platform distribution systems • Content architecture that prioritized long-form reporting • Community building through transparent, on-ground journalism • Growth systems for organic audience expansion</div>
-        <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Organic Growth</span><span class="proj-tag">Production</span></div>
+        <div class="proj-metrics">
+          <span class="metric"><strong>10K→100K+</strong> Growth Built</span>
+          <span class="metric"><strong>Govt Election</strong> Campaign Coverage</span>
+          <span class="metric"><strong>Assam</strong> Legislative Authority</span>
+        </div>
+        <div class="proj-desc">Regional news brand with govt projects. Helped build from 10K to 100K+ followers. Multi-platform system covering major election campaigns and legislative coverage.</div>
+        <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Growth</span><span class="proj-tag">Strategy</span></div>
         <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page →</a>
       </div>
     </div>
@@ -305,17 +347,27 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb atomik"><img src="assets/logos/ATOMIK GROWTH.png" alt="Atomik Growth"></div>
       <div class="proj-body">
         <div class="proj-name">Atomik Growth</div>
-        <div class="proj-desc"><strong>Context:</strong> An existing podcast for VCs and founders had strong content but lacked visual presence and distribution strategy. Audio-only content was underutilized—the audience existed on visual platforms where short-form content performed better. The opportunity was to create a system that amplified podcast value across multiple formats while generating leads without diluting the core content quality or message.<br><br><strong>Worked on:</strong> Visual identity system and brand guidelines for consistent presentation • Audience research and platform strategy (LinkedIn, Reddit, YouTube, Twitter) • Short-form content production and distribution • Lead generation optimization through strategic platform placement</div>
-        <div class="proj-tags"><span class="proj-tag">Podcast Strategy</span><span class="proj-tag">Video Production</span><span class="proj-tag">Lead Gen</span></div>
+        <div class="proj-metrics">
+          <span class="metric"><strong>Hook</strong> Driven CTR</span>
+          <span class="metric"><strong>Lead Gen</strong> Optimized</span>
+          <span class="metric"><strong>Visual</strong> Identity System</span>
+        </div>
+        <div class="proj-desc">VC/founder podcast. Built visual identity system focused on hooks, CTR optimization, and lead generation for target customer acquisition.</div>
+        <div class="proj-tags"><span class="proj-tag">Podcast</span><span class="proj-tag">Visual Identity</span><span class="proj-tag">Growth</span></div>
         <a href="https://www.atomikgrowth.com/" target="_blank" class="proj-link">Visit Website →</a>
       </div>
     </div>
     <div class="proj-card fi d2" data-cat="content">
       <div class="proj-thumb shortform"><img src="assets/logos/SHORT FORM.png" alt="Short-form Content"></div>
       <div class="proj-body">
-        <div class="proj-name">Short-form Content Systems</div>
-        <div class="proj-desc"><strong>Context:</strong> Short-form content dominates attention across platforms, but most brands approach it tactically rather than strategically. The opportunity lies in treating short-form as a system with specific jobs for each stage of the funnel—awareness, engagement, decision. This requires understanding platform algorithms, audience behavior, and creative mechanics while maintaining brand consistency across channels.<br><br><strong>Worked on:</strong> Content strategy framework for short-form across Instagram Reels, YouTube Shorts, LinkedIn • Hook and opening architecture for attention capture • Platform-native formatting and publishing systems • Performance tracking and optimization frameworks</div>
-        <div class="proj-tags"><span class="proj-tag">Short-form</span><span class="proj-tag">Distribution</span><span class="proj-tag">Reels</span></div>
+        <div class="proj-name">Short-form System</div>
+        <div class="proj-metrics">
+          <span class="metric"><strong>Strategic</strong> Framework</span>
+          <span class="metric"><strong>Editing</strong> Optimized</span>
+          <span class="metric"><strong>Performance</strong> Metrics</span>
+        </div>
+        <div class="proj-desc">Platforms demand short-form. Built framework including strategic editing for Instagram, YouTube Shorts, LinkedIn with performance optimization.</div>
+        <div class="proj-tags"><span class="proj-tag">Content Strategy</span><span class="proj-tag">Distribution</span><span class="proj-tag">Growth</span></div>
         <a href="https://drive.google.com/drive/folders/1plRr675jZ-equhiDyxypVg7-Lr8YB3Hz?usp=drive_link" target="_blank" class="proj-link">View Work →</a>
       </div>
     </div>
@@ -328,15 +380,25 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
     <div class="hop-inner">
       <div>
         <div class="hop-badge"><span class="hop-dot"></span> House of Pause</div>
-        <h2 class="hop-title">A Complete Brand<br>Strategy <span>System</span></h2>
-        <p class="hop-note">The interior design and home category operates on long decision cycles and significant investment. Buyers evaluate extensively, seeking confidence and vision before committing. Most brands in this space fail because they underestimate the psychology of the purchase journey. They show products without building trust or helping buyers visualize their decision.</p>
-        <p class="hop-desc"><strong>What I built:</strong> A complete strategic framework from research through 30-day content execution. This includes competitive analysis, buyer persona development, core positioning insight, content architecture, and detailed execution guidelines. This isn't a template or a shortened version. This is the full methodology I use when working with brands—research-driven, insight-focused, and built for measurable results.</p>
-        <div class="hop-items">
-          <span class="hop-item">Brand Positioning</span><span class="hop-item">Buyer Journey Mapping</span>
-          <span class="hop-item">Content Architecture</span><span class="hop-item">Messaging Strategy</span>
-          <span class="hop-item">Creative Guidelines</span><span class="hop-item">Performance Metrics</span>
-          <span class="hop-item">30-Day Execution Plan</span><span class="hop-item">Case Study Examples</span>
+        <h2 class="hop-title">Complete Brand<br>Strategy <span>System</span></h2>
+        
+        <div class="hop-why">
+          <div class="hop-why-content">
+            <h3>Why I Built This</h3>
+            <p>High-ticket decisions in interior design demand confidence and vision. Buyers need clarity on positioning, strategic content architecture, and consistent execution.</p>
+          </div>
         </div>
+
+        <div class="hop-section">
+          <h3 class="hop-subtitle">What I Built</h3>
+          <p class="hop-desc">A complete framework covering market research, audience segmentation, positioning clarity, funnel architecture, content pillars, creative direction, execution planning, performance metrics, and a full 30-day calendar. Every component works together to move buyers through the decision journey.</p>
+          <div class="hop-items">
+            <span class="hop-item"><strong>Positioning</strong> Clear competitive edge and value proposition in the market</span>
+            <span class="hop-item"><strong>Content System</strong> Strategic architecture for awareness, consideration, and decision stages</span>
+            <span class="hop-item"><strong>Execution Plan</strong> 30-day calendar with templates, metrics, and optimization guidelines</span>
+          </div>
+        </div>
+
         <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn btn-fill">View Complete System →</a>
       </div>
       <div>
@@ -358,7 +420,8 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 
 <section id="contact">
   <div class="s-label">Get in Touch</div>
-  <h2 class="s-h2\">What are you <span>looking for?</span></h2>\n  <div class="contact-grid">
+  <h2 class="s-h2">What are you <span>looking for?</span></h2>
+  <div class="contact-grid">
     <div class="fi">
       <div class="form-row">
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Your name" id="cn"></div>
@@ -443,6 +506,43 @@ window.addEventListener('scroll', () => {
     a.style.color = a.getAttribute('href')==='#'+cur ? '#fff' : '';
   });
 });
+
+// Typing Animation
+const typerEl = document.getElementById('typer');
+const phrases = [
+  'Brand & Creative Strategist',
+  'Brand Thinker',
+  'Content Systems Builder',
+  'Performance-Focused Creative'
+];
+let currentPhrase = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+  const phrase = phrases[currentPhrase];
+  
+  if (isDeleting) {
+    charIndex--;
+  } else {
+    charIndex++;
+  }
+  
+  typerEl.textContent = phrase.substring(0, charIndex);
+  
+  if (!isDeleting && charIndex === phrase.length) {
+    isDeleting = true;
+    setTimeout(type, 4000);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    currentPhrase = (currentPhrase + 1) % phrases.length;
+    setTimeout(type, 300);
+  } else {
+    setTimeout(type, isDeleting ? 30 : 45);
+  }
+}
+
+type();
 </script>
 </body>
 </html>
