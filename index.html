@@ -70,7 +70,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .about-stats{display:flex;flex-direction:column;gap:14px;}
 .stat-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:30px 22px;text-align:center;transition:border-color 0.2s,box-shadow 0.2s;}
 .stat-card:hover{border-color:rgba(108,138,255,0.3);box-shadow:0 0 28px var(--glow2);}
-.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:7px;letter-spacing:-0.03em;}
+.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:7px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
 .stat-lbl{font-size:13px;color:var(--grey);}
 
 /* SKILLS */
@@ -126,11 +126,11 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-subtitle{font-size:17px;font-weight:700;color:var(--white);letter-spacing:-0.01em;margin-bottom:16px;margin-top:28px;}
 .hop-subtitle:first-of-type{margin-top:0;}
 .hop-section{margin-bottom:32px;}
-.hop-why{background:rgba(108,138,255,0.15);border:1.5px solid rgba(108,138,255,0.4);border-radius:18px;padding:32px;margin-bottom:36px;position:relative;overflow:hidden;backdrop-filter:blur(12px);box-shadow:0 12px 40px rgba(108,138,255,0.12);}
-.hop-why::before{content:'';position:absolute;top:-50%;right:-50%;width:450px;height:450px;background:radial-gradient(ellipse,rgba(108,138,255,0.18) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.hop-why{background:rgba(108,138,255,0.1);border:1px solid rgba(108,138,255,0.25);border-radius:14px;padding:20px;margin-bottom:28px;position:relative;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(108,138,255,0.08);}
+.hop-why::before{content:'';position:absolute;top:-50%;right:-50%;width:350px;height:350px;background:radial-gradient(ellipse,rgba(108,138,255,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
 .hop-why-content{position:relative;z-index:1;}
-.hop-why h3{font-size:18px;font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-0.01em;}
-.hop-why p{font-size:15px;color:var(--off);line-height:1.85;margin-bottom:12px;font-weight:500;}
+.hop-why h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:12px;letter-spacing:-0.01em;}
+.hop-why p{font-size:13px;color:var(--off);line-height:1.7;margin-bottom:8px;font-weight:400;}
 .hop-why p:last-child{margin-bottom:0;}
 .hop-desc{font-size:15px;color:var(--grey);line-height:1.85;margin-bottom:20px;}
 .hop-note{font-size:12px;color:var(--dgrey);background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-style:italic;line-height:1.6;}
@@ -212,6 +212,14 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 </head>
 <body>
 
+<!-- Page Loader -->
+<div id="pageLoader"></div>
+<div id="loaderText">Anupam Nath</div>
+
+<!-- Custom Cursor -->
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+
 <nav>
   <a href="#" class="nav-logo">Anupam <span>Nath</span></a>
   <ul class="nav-links">
@@ -224,6 +232,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 </nav>
 
 <section id="hero">
+  <canvas id="dotsCanvas"></canvas>
   <p class="hero-welcome">WELCOME TO MY PORTFOLIO</p>
   <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam Nath</span></h1>
   <p class="hero-sub"><span id="typer"></span><span class="cursor">|</span></p>
@@ -313,6 +322,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
       <div class="skill-tags">
         <span class="skill-tag">Google Workspace</span><span class="skill-tag">MS Office</span>
         <span class="skill-tag">Notion</span><span class="skill-tag">Claude</span>
+        <span class="skill-tag">ChatGPT</span><span class="skill-tag">Gemini</span>
         <span class="skill-tag">Analytics & Tracking</span><span class="skill-tag">CRM Systems</span>
       </div>
     </div>
@@ -418,19 +428,18 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 </section>
 
 <section id="hop">
-  <div class="s-label">Case Study</div>
+  <div class="s-label">Strategic Methodology</div>
   <div class="hop-wrap fi">
     <div class="hop-inner">
       <div>
-        <div class="hop-badge"><span class="hop-dot"></span> Case Study</div>
-        <h2 class="hop-title"><span>House of Pause</span><br>Built from Scratch</h2>
-        <p class="hop-subtitle-small">Complete Brand Strategy System</p>
+        <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
+        <h2 class="hop-title"><span>House of Pause</span></h2>
+        <p class="hop-subtitle-small">A Framework Approach</p>
         
         <div class="hop-why">
           <div class="hop-why-content">
             <h3>Why I Built This</h3>
-            <p><strong>High-ticket positioning</strong> is where real value emerges. Interior design operates on long decision cycles and premium pricing. Most brands fail because they don't build trust through strategic positioning.</p>
-            <p>I chose this category specifically to showcase how positioning clarity, content architecture, and execution systems work together to justify premium pricing and move high-value buyers.</p>
+            <p><strong>High-ticket positioning</strong> requires strategic clarity. I built this framework to demonstrate how positioning, content architecture, and execution systems work together to justify premium pricing and move high-value buyers.</p>
           </div>
         </div>
 
@@ -588,6 +597,65 @@ function type() {
 }
 
 type();
+
+// PAGE LOADER
+window.addEventListener('load',()=>{
+  const loader=document.getElementById('pageLoader');
+  const loaderText=document.getElementById('loaderText');
+  setTimeout(()=>{loader.style.opacity='0';loaderText.style.opacity='0';},2200);
+});
+
+// CUSTOM CURSOR
+const cursorDot=document.getElementById('cursorDot');
+const cursorRing=document.getElementById('cursorRing');
+let mouseX=0,mouseY=0;
+document.addEventListener('mousemove',(e)=>{mouseX=e.clientX;mouseY=e.clientY;cursorDot.style.left=mouseX-4+'px';cursorDot.style.top=mouseY-4+'px';setTimeout(()=>{cursorRing.style.left=mouseX-15+'px';cursorRing.style.top=mouseY-15+'px';},100);});
+document.querySelectorAll('a,.btn,button').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+
+// INTERACTIVE DOT GRID
+const canvas=document.getElementById('dotsCanvas');
+if(canvas){
+  const ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight*0.5;
+  const dotSize=2;const spacing=40;let dots=[];
+  for(let x=0;x<canvas.width;x+=spacing)for(let y=0;y<canvas.height;y+=spacing)dots.push({x,y,baseSize:dotSize,size:dotSize,glow:0});
+  let mouseX=0,mouseY=0;
+  document.addEventListener('mousemove',(e)=>{const rect=canvas.getBoundingClientRect();mouseX=e.clientX-rect.left;mouseY=e.clientY-rect.top;});
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='rgba(108,138,255,0.5)';
+    dots.forEach(dot=>{
+      const dist=Math.hypot(dot.x-mouseX,dot.y-mouseY);
+      dot.glow=Math.max(0,1-dist/100);
+      dot.size=dot.baseSize+dot.glow*4;
+      ctx.beginPath();ctx.arc(dot.x,dot.y,dot.size,0,Math.PI*2);
+      ctx.fillStyle=`rgba(108,138,255,${0.3+dot.glow*0.4})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+  window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight*0.5;});
+}
+
+// COUNTING NUMBERS
+const statCards=document.querySelectorAll('.stat-num');
+const countObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting&&!entry.target.dataset.counted){
+      entry.target.dataset.counted='true';
+      const text=entry.target.textContent;const num=parseInt(text);const unit=text.replace(/\d+/g,'');
+      const increment=Math.ceil(num/40);let current=0;
+      const counter=setInterval(()=>{
+        current+=increment;
+        if(current>=num){current=num;clearInterval(counter);}
+        entry.target.textContent=current+unit;
+      },30);
+    }
+  });
+},{threshold:0.3});
+statCards.forEach(card=>countObserver.observe(card));
 </script>
 </body>
 </html>
