@@ -171,8 +171,13 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 
 /* ANIMATIONS & TRANSITIONS */
 @keyframes pageLoad{0%{width:0;}100%{width:100%;}}
-#pageLoader{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));animation:pageLoad 2s ease-out forwards;z-index:999;box-shadow:0 0 12px var(--blue);}
-#loaderText{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:999;opacity:1;animation:fadeOutLoader 0.5s ease 2s forwards;font-weight:700;}
+@keyframes rocketMove{0%{transform:translateX(-100px);opacity:0;}50%{opacity:1;}100%{transform:translateX(0);opacity:0;}}
+#pageLoader{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--cyan));animation:pageLoad 3s ease-out forwards;z-index:999;box-shadow:0 0 16px var(--blue);width:0;}
+#loaderContainer{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:999;opacity:1;animation:fadeOutLoader 0.6s ease 3.2s forwards;}
+#loaderRocket{font-size:48px;margin-bottom:20px;animation:rocketMove 2.5s ease-out;display:inline-block;}
+#loaderProgress{font-size:14px;color:var(--blue2);font-weight:700;letter-spacing:0.1em;margin-bottom:16px;min-width:60px;}
+#loaderName{font-weight:800;font-size:22px;margin-bottom:8px;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+#loaderBio{font-size:13px;color:var(--grey);line-height:1.6;}
 @keyframes fadeOutLoader{0%{opacity:1;}100%{opacity:0;}}
 
 /* CUSTOM CURSOR - HIDDEN */
@@ -214,9 +219,11 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 
 <!-- Page Loader -->
 <div id="pageLoader"></div>
-<div id="loaderText">
-  <div style="font-weight:800;font-size:18px;margin-bottom:12px;">Anupam Nath</div>
-  <div style="font-size:13px;color:var(--grey);line-height:1.7;">Positioning strategies. Content systems. Brand growth.</div>
+<div id="loaderContainer">
+  <div id="loaderRocket">🚀</div>
+  <div id="loaderName">Anupam Nath</div>
+  <div id="loaderBio">Positioning strategies. Content systems. Brand growth.</div>
+  <div id="loaderProgress">0%</div>
 </div>
 
 <!-- Custom Cursor -->
@@ -373,7 +380,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
         <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">Community</span><span class="proj-tag">Growth</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;">
           <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-q4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
-          <a href="https://www.instagram.com/chaivours/" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Instagram">📷</a>
+          <a href="https://www.instagram.com/chaivours/" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Instagram">@</a>
         </div>
       </div>
     </div>
@@ -390,7 +397,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
         <div class="proj-tags"><span class="proj-tag">YouTube IP</span><span class="proj-tag">Content</span><span class="proj-tag">Production</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;">
           <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel →</a>
-          <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="YouTube">▶</a>
+          <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="YouTube">▶▶</a>
         </div>
       </div>
     </div>
@@ -613,24 +620,27 @@ function type() {
 
 type();
 
-// PAGE LOADER WITH PROGRESS
+// PAGE LOADER WITH PROGRESS COUNTER
 let loadProgress=0;
+const progressText=document.getElementById('loaderProgress');
 const loadInterval=setInterval(()=>{
-  loadProgress+=Math.random()*30;
+  loadProgress+=Math.random()*35;
   if(loadProgress>90)loadProgress=90;
   document.getElementById('pageLoader').style.width=loadProgress+'%';
-},200);
+  progressText.textContent=Math.floor(loadProgress)+'%';
+},150);
 window.addEventListener('load',()=>{
   clearInterval(loadInterval);
   loadProgress=100;
   document.getElementById('pageLoader').style.width='100%';
-  const loaderText=document.getElementById('loaderText');
+  progressText.textContent='100%';
+  const loaderContainer=document.getElementById('loaderContainer');
   setTimeout(()=>{
-    loaderText.style.transition='opacity 0.5s ease';
-    loaderText.style.opacity='0';
-    document.getElementById('pageLoader').style.transition='opacity 0.5s ease';
+    loaderContainer.style.transition='opacity 0.6s ease';
+    loaderContainer.style.opacity='0';
+    document.getElementById('pageLoader').style.transition='opacity 0.6s ease';
     document.getElementById('pageLoader').style.opacity='0';
-  },2200);
+  },2500);
 });
 
 // HOVER GLOW EFFECT (No visible cursor)
