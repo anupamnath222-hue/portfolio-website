@@ -87,16 +87,16 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .f-btn{padding:9px 22px;border:none;background:transparent;color:var(--grey);font-family:var(--f);font-size:13px;font-weight:500;cursor:pointer;border-radius:7px;transition:all 0.2s;}
 .f-btn.active{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 18px var(--glow);}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:hidden;display:flex;flex-direction:row;align-items:stretch;transition:border-color 0.2s,transform 0.2s,box-shadow 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);gap:0;}
+.proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:visible;display:flex;flex-direction:row;align-items:flex-start;transition:border-color 0.2s,transform 0.2s,box-shadow 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);gap:0;padding-top:0;}
 .proj-card:hover{border-color:var(--blue2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(108,138,255,0.2);}
-.proj-thumb{min-width:110px;width:110px;height:auto;aspect-ratio:1;background:rgba(255,255,255,0.04);border-right:1px solid var(--border2);display:flex;align-items:center;justify-content:center;padding:14px;position:relative;overflow:hidden;flex-shrink:0;}
-.proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;filter:brightness(1.1);}
-.proj-thumb.prep-iq{background:rgba(168,36,58,0.08);}
-.proj-thumb.chaivours{background:rgba(216,154,42,0.08);}
-.proj-thumb.the-edge{background:rgba(139,26,26,0.08);}
-.proj-thumb.explore-valley{background:rgba(232,183,31,0.08);}
-.proj-thumb.atomik{background:rgba(50,50,50,0.08);}
-.proj-thumb.shortform{background:rgba(102,126,234,0.08);}
+.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:white;border-right:none;display:flex;align-items:center;justify-content:center;padding:8px;position:relative;overflow:visible;flex-shrink:0;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,0.15);margin:12px;margin-right:18px;}
+.proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;filter:none;width:90%;height:90%;}
+.proj-thumb.prep-iq{background:white;}
+.proj-thumb.chaivours{background:white;}
+.proj-thumb.the-edge{background:white;}
+.proj-thumb.explore-valley{background:white;}
+.proj-thumb.atomik{background:white;}
+.proj-thumb.shortform{background:white;}
 .proj-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
 .proj-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-0.015em;}
 .proj-desc{font-size:13px;color:var(--grey);line-height:1.7;flex:1;margin-bottom:14px;}
@@ -182,10 +182,10 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 </nav>
 
 <section id="hero">
-  <p class="hero-welcome">BRAND STRATEGIST</p>
+  <p class="hero-welcome">BRAND & CREATIVE STRATEGIST</p>
   <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam Nath</span></h1>
-  <p class="hero-sub">I help brands figure out what they actually stand for.</p>
-  <p class="hero-desc">5+ years across education, F&B, media, and startups. Built positioning that works, content systems that convert, teams that ship. I don't do generic. Real strategy, real execution.</p>
+  <p class="hero-sub">Strategy partner for brands and founders building something real.</p>
+  <p class="hero-desc">Over 5 years building brand positioning, content systems, and growth strategies that actually work. From zero to proven traction across education, F&B, media, and venture-backed startups. I help brands figure out their truth, then build systems that make it matter.</p>
   <div class="hero-btns">
     <a href="#projects" class="btn btn-fill">View My Work</a>
     <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -202,11 +202,11 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
   <div class="about-grid">
     <div class="fi">
       <div class="s-label">About Me</div>
-      <h2 class="s-h2">Started as a writer.<br>Became a <span>strategist.</span></h2>
+      <h2 class="s-h2">Brand strategist. Content<br>systems builder. Growth<br><span>operator.</span></h2>
       <div class="about-text">
-        <p>Spent 5+ years figuring out why some brands work and others don't. Across journalism, YouTube, education, F&B, podcasts, and startups.</p>
-        <p>Realized most brands are missing one thing: actual thinking. They create content. They post. Nothing moves. So I help them figure out what they stand for first. Build strategy. Then structure the execution around it.</p>
-        <p><strong>Result:</strong> Brands that make sense. Content that converts. Teams that actually know what they're doing.</p>
+        <p>I work at the intersection of strategy and execution. Over five years, I've built brand positioning systems for companies across education technology, food and beverage, media, and venture-backed startups. Each engagement started the same way: brands had audiences, content, and ambition. What they were missing was strategy that actually connected those dots.</p>
+        <p>Most teams treat brand strategy and content as separate challenges. I've learned they're inseparable. Real positioning creates a system for content. Real content proves your positioning. When those two align, growth follows naturally. That's where my work lives.</p>
+        <p>Whether you're building a brand from zero, scaling what's working, or redesigning what isn't, I help teams find the genuine insight that changes how their audience sees them. Then we build the content and systems to make that shift real.</p>
       </div>
       <div class="about-loc">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -269,7 +269,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb prep-iq"><img src="assets/logos/PREP IQ.png" alt="Prep IQ"></div>
       <div class="proj-body">
         <div class="proj-name">Prep IQ</div>
-        <div class="proj-desc"><strong>Context:</strong> D2C education brand in Tier-3 market competing against national scale-players. Problem: trust, not visibility.<br><br><strong>Worked on:</strong> Authority-led positioning • Organic funnel strategy • Decision-stage clarity content<br><br><strong>Outcome:</strong> ₹30–40K revenue first launch • 25 students enrolled • ₹0 CACenue first launch • 25 students enrolled • ₹0 CAC</div>
+        <div class="proj-desc"><strong>Context:</strong> A D2C education brand competing in a Tier-3 market dominated by national scale players. They had qualified audience interest but faced a trust barrier. The core problem wasn't visibility—it was positioning. Students needed to believe this was a credible alternative to established institutions. This required reframing the entire value proposition from price-based to authority-based.<br><br><strong>Worked on:</strong> Brand positioning architecture anchored on expertise • Content strategy for funnel stages from awareness to decision • Long-form content that demonstrated deep market knowledge • Email nurture systems for decision-stage prospects</div>
         <div class="proj-tags"><span class="proj-tag">Content Strategy</span><span class="proj-tag">Education</span><span class="proj-tag">D2C</span></div>
         <a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
       </div>
@@ -278,7 +278,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb chaivours"><img src="assets/logos/chaivours.png" alt="Chaivours"></div>
       <div class="proj-body">
         <div class="proj-name">Chaivours</div>
-        <div class="proj-desc"><strong>Context:</strong> Youth chai brand in Tier-3 market. Challenge: cultural relevance, not reach.<br><br><strong>Worked on:</strong> Brand positioning and local relevance • Community-driven content • Organic UGC strategy<br><br><strong>Outcome:</strong> 1,500 organic followers • Real customer engagement • Consistent sales via organic500 organic followers • Real customer engagement • Consistent sales via organic</div>
+        <div class="proj-desc"><strong>Context:</strong> A youth-focused chai brand entering a Tier-3 market where category category players competed on commodity differentiation. The challenge wasn't building awareness—it was establishing cultural relevance and emotional connection with the target demographic. The market demanded a brand that felt local, authentic, and worth talking about, not just another beverage option.<br><br><strong>Worked on:</strong> Brand identity and positioning strategy rooted in local culture • Community engagement and UGC frameworks • Social content that encouraged user participation and organic sharing</div>
         <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">F&B</span><span class="proj-tag">Organic Growth</span></div>
         <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-op4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
       </div>
@@ -287,7 +287,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb the-edge"><img src="assets/logos/THE EDGE ORIGINALS.png" alt="The Edge"></div>
       <div class="proj-body">
         <div class="proj-name">The Edge</div>
-        <div class="proj-desc"><strong>Context:</strong> YouTube IP from scratch. Goal: make legal content actually understandable and valuable.<br><br><strong>Worked on:</strong> Format design and scripting • On-camera anchoring • Team management and consistency<br><br><strong>Outcome:</strong> 37,000 subscribers • Daily publishing system • Established as credible source</div>
+        <div class="proj-desc"><strong>Context:</strong> Building a YouTube IP from zero to establish credibility in legal education. The opportunity was clear: legal information was available everywhere, but it was rarely presented in a way regular people could understand. This required creating a format that made complex information accessible without losing depth or credibility, while building a system that could sustain daily publication and audience growth.<br><br><strong>Worked on:</strong> Format design and production architecture for educational content • Scripting methodology for complex topics • On-camera talent development and consistency systems • Publishing cadence and audience building strategy</div>
         <div class="proj-tags"><span class="proj-tag">YouTube IP</span><span class="proj-tag">Content System</span><span class="proj-tag">Production</span></div>
         <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel →</a>
       </div>
@@ -296,7 +296,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb explore-valley"><img src="assets/logos/explore valley.png" alt="Explore Valley"></div>
       <div class="proj-body">
         <div class="proj-name">Explore Valley</div>
-        <div class="proj-desc"><strong>Context:</strong> Regional news brand building digital presence from ground reporting.<br><br><strong>Worked on:</strong> On-ground journalism and reporting • Digital system architecture • Multi-platform strategy<br><br><strong>Outcome:</strong> 100,000 followers built organically • Real reporting credibility • Consistent reach</div>
+        <div class="proj-desc"><strong>Context:</strong> A regional news media brand building digital presence from ground-level journalism. The challenge extended beyond distribution—it was about establishing authority in a specific geography while competing for attention in an increasingly crowded news landscape. Success required systems that could amplify quality reporting across multiple platforms while maintaining editorial integrity.<br><br><strong>Worked on:</strong> Digital strategy and multi-platform distribution systems • Content architecture that prioritized long-form reporting • Community building through transparent, on-ground journalism • Growth systems for organic audience expansion</div>
         <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Organic Growth</span><span class="proj-tag">Production</span></div>
         <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page →</a>
       </div>
@@ -305,7 +305,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
       <div class="proj-thumb atomik"><img src="assets/logos/ATOMIK GROWTH.png" alt="Atomik Growth"></div>
       <div class="proj-body">
         <div class="proj-name">Atomik Growth</div>
-        <div class="proj-desc"><strong>Context:</strong> VC/founder podcast. Existing audio content. Needed visual identity and distribution.<br><br><strong>Worked on:</strong> Visual identity system • Audience research (LinkedIn, Reddit, YouTube) • Short-form as lead generation<br><br><strong>Outcome:</strong> Consistent viewership • Lead quality improved • Built distribution moat</div>
+        <div class="proj-desc"><strong>Context:</strong> An existing podcast for VCs and founders had strong content but lacked visual presence and distribution strategy. Audio-only content was underutilized—the audience existed on visual platforms where short-form content performed better. The opportunity was to create a system that amplified podcast value across multiple formats while generating leads without diluting the core content quality or message.<br><br><strong>Worked on:</strong> Visual identity system and brand guidelines for consistent presentation • Audience research and platform strategy (LinkedIn, Reddit, YouTube, Twitter) • Short-form content production and distribution • Lead generation optimization through strategic platform placement</div>
         <div class="proj-tags"><span class="proj-tag">Podcast Strategy</span><span class="proj-tag">Video Production</span><span class="proj-tag">Lead Gen</span></div>
         <a href="https://www.atomikgrowth.com/" target="_blank" class="proj-link">Visit Website →</a>
       </div>
@@ -313,8 +313,8 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
     <div class="proj-card fi d2" data-cat="content">
       <div class="proj-thumb shortform"><img src="assets/logos/SHORT FORM.png" alt="Short-form Content"></div>
       <div class="proj-body">
-        <div class="proj-name">Short-form Content Work</div>
-        <div class=\"proj-desc\"><strong>Type:</strong> Execution work across Instagram, YouTube Shorts, LinkedIn.<br><br><strong>Approach:</strong> Each piece has a clear job (awareness, engagement, conversion) \u2022 Platform-native formats \u2022 Hook-driven structure<br><br><strong>Result:</strong> Consistent engagement \u2022 Clear performance patterns \u2022 Scalable systems</div>
+        <div class="proj-name">Short-form Content Systems</div>
+        <div class="proj-desc"><strong>Context:</strong> Short-form content dominates attention across platforms, but most brands approach it tactically rather than strategically. The opportunity lies in treating short-form as a system with specific jobs for each stage of the funnel—awareness, engagement, decision. This requires understanding platform algorithms, audience behavior, and creative mechanics while maintaining brand consistency across channels.<br><br><strong>Worked on:</strong> Content strategy framework for short-form across Instagram Reels, YouTube Shorts, LinkedIn • Hook and opening architecture for attention capture • Platform-native formatting and publishing systems • Performance tracking and optimization frameworks</div>
         <div class="proj-tags"><span class="proj-tag">Short-form</span><span class="proj-tag">Distribution</span><span class="proj-tag">Reels</span></div>
         <a href="https://drive.google.com/drive/folders/1plRr675jZ-equhiDyxypVg7-Lr8YB3Hz?usp=drive_link" target="_blank" class="proj-link">View Work →</a>
       </div>
@@ -323,31 +323,32 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 </section>
 
 <section id="hop">
-  <div class=\"s-label\">My Playbook</div>\n  <div class="hop-wrap fi">
+  <div class="s-label">Strategic Framework</div>
+  <div class="hop-wrap fi">
     <div class="hop-inner">
       <div>
-        <div class=\"hop-badge\"><span class=\"hop-dot\"></span> Strategic Framework</div>
-        <h2 class="hop-title">House of <span>Pause</span></h2>
-        <p class=\"hop-note\"><strong>Why I built it:</strong> Interior design space. High-ticket category. Long buyer journey. Most brands miss the psychology of decision-making.<br><strong>What I built:</strong> Complete system: research → positioning → content architecture → 30-day execution.</p>
-        <p class=\"hop-desc\"><strong>What it shows:</strong> This is my actual playbook. Not a template. Research comes first. Then positioning. Then content that matches buyer psychology. This level of depth applies to every engagement.</p>
+        <div class="hop-badge"><span class="hop-dot"></span> House of Pause</div>
+        <h2 class="hop-title">A Complete Brand<br>Strategy <span>System</span></h2>
+        <p class="hop-note">The interior design and home category operates on long decision cycles and significant investment. Buyers evaluate extensively, seeking confidence and vision before committing. Most brands in this space fail because they underestimate the psychology of the purchase journey. They show products without building trust or helping buyers visualize their decision.</p>
+        <p class="hop-desc"><strong>What I built:</strong> A complete strategic framework from research through 30-day content execution. This includes competitive analysis, buyer persona development, core positioning insight, content architecture, and detailed execution guidelines. This isn't a template or a shortened version. This is the full methodology I use when working with brands—research-driven, insight-focused, and built for measurable results.</p>
         <div class="hop-items">
-          <span class="hop-item">Brand Positioning</span><span class="hop-item">Content Direction</span>
-          <span class="hop-item">Visual Tone</span><span class="hop-item">Messaging System</span>
-          <span class="hop-item">30-Day Content Plan</span><span class="hop-item">4 Competitor Audits</span>
-          <span class="hop-item">Buyer Personas</span><span class="hop-item">Core Insight</span>
+          <span class="hop-item">Brand Positioning</span><span class="hop-item">Buyer Journey Mapping</span>
+          <span class="hop-item">Content Architecture</span><span class="hop-item">Messaging Strategy</span>
+          <span class="hop-item">Creative Guidelines</span><span class="hop-item">Performance Metrics</span>
+          <span class="hop-item">30-Day Execution Plan</span><span class="hop-item">Case Study Examples</span>
         </div>
-        <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn btn-fill">View Full Brand System →</a>
+        <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn btn-fill">View Complete System →</a>
       </div>
       <div>
         <div class="hop-comps">
-          <div class="hop-comp"><span class="hop-num">01</span><span class="hop-lbl"><strong>Research Layer</strong> — 4 competitor audits</span></div>
-          <div class="hop-comp"><span class="hop-num">02</span><span class="hop-lbl"><strong>Target Audience</strong> — 4 segments defined</span></div>
-          <div class="hop-comp"><span class="hop-num">03</span><span class="hop-lbl"><strong>Buyer Persona</strong> — 2 primary personas</span></div>
-          <div class="hop-comp"><span class="hop-num">04</span><span class="hop-lbl"><strong>Core Insight</strong> — 10 variations tested</span></div>
-          <div class="hop-comp"><span class="hop-num">05</span><span class="hop-lbl"><strong>Funnel Thinking</strong> — TOF, MOF, BOF</span></div>
-          <div class="hop-comp"><span class="hop-num">06</span><span class="hop-lbl"><strong>Content System</strong> — 4 pillars with jobs</span></div>
-          <div class="hop-comp"><span class="hop-num">07</span><span class="hop-lbl"><strong>Creative Execution</strong> — 7 pieces with rationale</span></div>
-          <div class="hop-comp"><span class="hop-num">08</span><span class="hop-lbl"><strong>Copy Bank</strong> — 20 hooks and 20 CTAs</span></div>
+          <div class="hop-comp"><span class="hop-num">01</span><span class="hop-lbl"><strong>Market Research</strong> Competitive landscape and audience insights</span></div>
+          <div class="hop-comp"><span class="hop-num">02</span><span class="hop-lbl"><strong>Audience Segmentation</strong> Buyer archetypes and decision drivers</span></div>
+          <div class="hop-comp"><span class="hop-num">03</span><span class="hop-lbl"><strong>Positioning Strategy</strong> Core brand promise and differentiation</span></div>
+          <div class="hop-comp"><span class="hop-num">04</span><span class="hop-lbl"><strong>Funnel Architecture</strong> Awareness through decision stage</span></div>
+          <div class="hop-comp"><span class="hop-num">05</span><span class="hop-lbl"><strong>Content Pillars</strong> Strategic themes with specific roles</span></div>
+          <div class="hop-comp"><span class="hop-num">06</span><span class="hop-lbl"><strong>Creative Direction</strong> Visual and messaging guidelines</span></div>
+          <div class="hop-comp"><span class="hop-num">07</span><span class="hop-lbl"><strong>Execution Framework</strong> 30-day content calendar and templates</span></div>
+          <div class="hop-comp"><span class="hop-num">08</span><span class="hop-lbl"><strong>Performance Tracking</strong> Metrics and optimization guidelines</span></div>
           <div class="hop-comp"><span class="hop-num">09</span><span class="hop-lbl"><strong>30-Day Calendar</strong> — Full content arc</span></div>
         </div>
       </div>
