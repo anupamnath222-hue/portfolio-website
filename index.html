@@ -23,6 +23,7 @@ body::before{content:'';position:fixed;top:-20%;left:50%;transform:translateX(-5
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border2);}
+.nav-ham{display:none;}  /* hidden on desktop */
 .nav-logo{font-size:17px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.015em;}
 .nav-logo span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -341,34 +342,113 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   #cursorDot{display:none!important;}
 }
 
+/* ============================================================
+   MOBILE — full responsive overhaul
+   ============================================================ */
 @media(max-width:900px){
-  nav{padding:0 20px;}.nav-links{display:none;}
-  section{padding:68px 20px;}
-  #hero{padding:80px 20px 40px;grid-template-columns:1fr;}
+
+  /* NAV */
+  nav{padding:0 20px;height:58px;}
+  .nav-links{display:none;}
+
+  /* Hamburger toggle */
+  .nav-ham{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:6px;z-index:200;}
+  .nav-ham span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
+  .nav-open .nav-ham span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-open .nav-ham span:nth-child(2){opacity:0;}
+  .nav-open .nav-ham span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nav-mobile-menu{display:none;position:fixed;inset:0;top:58px;background:rgba(255,255,255,0.98);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:40px 20px;}
+  .nav-open .nav-mobile-menu{display:flex;}
+  .nav-mobile-menu a{font-size:22px;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em;transition:color 0.2s;}
+  .nav-mobile-menu a:hover{color:var(--blue2);}
+  .nav-mobile-menu .nav-resume-m{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white!important;padding:14px 36px;border-radius:10px;font-size:16px!important;box-shadow:0 0 28px var(--glow);}
+
+  /* SECTIONS */
+  section{padding:64px 20px;}
+
+  /* HERO */
+  #hero{padding:80px 20px 48px;grid-template-columns:1fr;gap:0;min-height:auto;}
   .hero-left{align-items:center;text-align:center;}
-  .hero-btns{justify-content:center;}
+  .hero-h1{font-size:clamp(32px,9vw,52px);}
+  .hero-sub{font-size:16px;}
+  .hero-desc{font-size:14px;max-width:100%;}
+  .hero-btns{justify-content:center;gap:10px;}
+  .hero-btns .btn{padding:12px 24px;font-size:13px;}
   .hero-social{justify-content:center;}
-  .hero-right{display:flex;justify-content:center;padding:20px 0 40px;}
-  .hero-photo-wrap{width:220px;}
-  .hero-photo-wrap::before{inset:-12px;border-radius:32px;}
+
+  /* Hero photo + badges — give them more room */
+  .hero-right{display:flex;justify-content:center;padding:48px 0 20px;}
+  .hero-photo-wrap{width:200px;}
+  .hero-photo-wrap::before{inset:-10px;border-radius:30px;}
   .hero-photo-card{border-radius:20px;}
-  .hb-years{top:16px;left:-64px;}
-  .hb-projects{bottom:40px;left:-60px;}
-  .hb-role{top:36px;right:-76px;padding:8px 10px;gap:7px;}
-  .hb-role-icon{width:28px;height:28px;font-size:12px;}
-  .hb-role .hb-text{font-size:11px;}
-  .hb-role .hb-sub{font-size:10px;}
-  .hb-location{bottom:60px;right:-74px;padding:8px 12px;}
-  .hb-num{font-size:17px;}
+
+  /* Reposition badges so they don't bleed off screen */
+  .hb-years{top:10px;left:-58px;}
+  .hb-projects{bottom:32px;left:-54px;}
+  .hb-role{top:32px;right:-68px;padding:7px 10px;gap:6px;}
+  .hb-role-icon{width:26px;height:26px;font-size:11px;}
+  .hb-role .hb-text{font-size:10px;}
+  .hb-role .hb-sub{font-size:9px;}
+  .hb-location{bottom:56px;right:-68px;padding:7px 11px;gap:7px;}
+  .hb-num{font-size:16px;}
   .hb-lbl{font-size:10px;}
-  .about-grid{grid-template-columns:1fr!important;gap:28px!important;}
+  .hb-dot-live{width:7px;height:7px;}
+
+  /* ABOUT */
+  .about-grid{grid-template-columns:1fr!important;gap:24px!important;}
   .about-photo-col{display:none;}
   .about-badge{display:none;}
   .about-line-accent{display:none;}
-  .hop-inner,.contact-grid{grid-template-columns:1fr;gap:40px;}
-  .skills-grid,.proj-grid{grid-template-columns:1fr;}
+  .about-stats{flex-direction:row;flex-wrap:wrap;gap:12px;}
+  .stat-card{flex:1;min-width:140px;padding:22px 16px;}
+  .stat-num{font-size:34px;}
+  .stat-title{font-size:20px;}
+
+  /* SKILLS */
+  .skills-grid{grid-template-columns:1fr;}
+  .skill-card{padding:22px 18px;}
+
+  /* PROJECTS */
+  .filter-row{flex-wrap:wrap;width:100%;}
+  .f-btn{flex:1;min-width:80px;text-align:center;font-size:12px;padding:8px 12px;}
+  .proj-grid{grid-template-columns:1fr;}
+  .proj-card{flex-direction:row;}
+  .proj-thumb{min-width:88px;width:88px;height:88px;margin:12px;margin-right:14px;}
+  .proj-body{padding:14px 14px 14px 0;}
+  .proj-name{font-size:14px;}
+  .proj-desc{font-size:12px;}
+  .proj-metrics{padding:10px;}
+  .metric{font-size:11px;}
+
+  /* METHODOLOGY */
+  .hop-wrap{padding:36px 22px;}
+  .hop-inner{grid-template-columns:1fr;gap:32px;}
+  .hop-title{font-size:clamp(26px,7vw,38px);}
+  .hop-logo-wrap{justify-content:flex-start!important;}
+  .hop-comp{padding:13px 16px;}
+
+  /* CONTACT */
+  .contact-grid{grid-template-columns:1fr;gap:36px;}
   .form-row{grid-template-columns:1fr;}
-  footer{flex-direction:column;gap:8px;text-align:center;}
+  .ci-links{gap:10px;}
+  .ci-link{padding:12px 14px;}
+
+  /* FOOTER */
+  footer{flex-direction:column;gap:6px;text-align:center;padding:18px 20px;}
+}
+
+/* Extra small phones */
+@media(max-width:420px){
+  .hero-photo-wrap{width:170px;}
+  .hb-years{left:-50px;}
+  .hb-projects{left:-46px;}
+  .hb-role{right:-58px;}
+  .hb-location{right:-58px;}
+  .hb-num{font-size:14px;}
+  .hero-h1{font-size:clamp(28px,10vw,40px);}
+  .hop-wrap{padding:28px 16px;}
+  section{padding:52px 16px;}
+  nav{padding:0 16px;}
 }
 </style>
 </head>
@@ -378,7 +458,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 <div id="cursorDot"></div>
 <div id="cursorRing"></div>
 
-<nav>
+<nav id="mainNav">
   <a href="#" class="nav-logo">Anupam <span>Nath</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -387,6 +467,16 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
     <li><a href="#contact">Contact</a></li>
     <li><a class="nav-resume" href="https://drive.google.com/file/d/1-mEIzePDUyYxil3vTSVufQITtH-dBOUo/view?usp=sharing" target="_blank">&#x21D3; Resume</a></li>
   </ul>
+  <div class="nav-ham" id="navHam" aria-label="Menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#skills" class="mob-link">Skills</a>
+    <a href="#projects" class="mob-link">Projects</a>
+    <a href="#contact" class="mob-link">Contact</a>
+    <a href="https://drive.google.com/file/d/1-mEIzePDUyYxil3vTSVufQITtH-dBOUo/view?usp=sharing" target="_blank" class="nav-resume-m">&#x21D3; Resume</a>
+  </nav>
 </nav>
 
 <section id="hero">
@@ -644,7 +734,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 
 <section id="contact">
   <div class="s-label">Get in Touch</div>
-  <h2 class="s-h2">What are you <span>looking for?</span></h2>
+  <h2 class="s-h2">Let's talk if it <span>makes sense.</span></h2>
   <div class="contact-grid">
     <div class="fi">
       <div class="form-row">
@@ -871,6 +961,29 @@ document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el
 })();
 
 // Scroll progress bar + nav scrolled state + back-to-top
+// Hamburger mobile menu
+(function(){
+  const ham = document.getElementById('navHam');
+  const nav = document.getElementById('mainNav');
+  const menu = document.getElementById('mobileMenu');
+  if(!ham) return;
+  function toggle(){
+    const open = nav.classList.toggle('nav-open');
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  ham.addEventListener('click', toggle);
+  ham.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') toggle(); });
+  // Close on link click
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('nav-open');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
 (function(){
   const prog = document.getElementById('scroll-progress');
   const navEl = document.querySelector('nav');
