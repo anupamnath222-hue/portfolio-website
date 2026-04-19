@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House of Pause — Brand System · Anupam Nath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#080810;--bg2:#0c0c16;--bg3:#10101c;
+  --card:#12121e;--card2:#16162a;
+  --blue:#6366f1;--blue2:#818cf8;--blue3:#a5b4fc;
+  --border:rgba(99,102,241,0.12);--border2:rgba(255,255,255,0.07);
+  --white:#ffffff;--cream:#e2e8f0;--muted:#94a3b8;--dim:#475569;--dimmer:#334155;
+  --sans:'Inter',sans-serif;--mono:'DM Mono',monospace
+}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--blue)}
+
+/* LOADER */
+#loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .7s,visibility .7s}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.ld-name{font-size:15px;font-weight:700;color:var(--white);letter-spacing:-.01em}
+.ld-name span{color:var(--blue2)}
+.ld-bar-wrap{width:160px;height:2px;background:rgba(99,102,241,.15);border-radius:2px;overflow:hidden}
+.ld-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue3));border-radius:2px;transition:width .05s linear}
+.ld-pct{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.1em}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:64px;background:rgba(8,8,16,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .3s}
+nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
+.nav-logo{font-size:15px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.02em}
+.nav-logo span{color:var(--blue2)}
+.nav-back{font-family:var(--mono);font-size:11px;color:var(--dim);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--blue2)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-label{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.06em;text-transform:uppercase}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 56px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+#hero-canvas{position:absolute;inset:0;z-index:0;opacity:.4}
+.blob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
+.b1{width:700px;height:700px;background:rgba(99,102,241,.09);top:-200px;right:-150px;animation:bm 14s ease-in-out infinite}
+.b2{width:500px;height:500px;background:rgba(129,140,248,.06);bottom:-100px;left:-100px;animation:bm 18s ease-in-out infinite reverse}
+@keyframes bm{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.06)}66%{transform:translate(-20px,20px) scale(.95)}}
+.hero-inner{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.08);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:24px;opacity:0;animation:fadeUp .7s ease .2s forwards}
+.badge-dot{width:6px;height:6px;background:var(--blue3);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px;opacity:0;animation:fadeUp .6s ease .35s forwards}
+.hero-title{font-size:clamp(48px,7.5vw,96px);font-weight:900;line-height:1.0;letter-spacing:-.04em;color:var(--white);margin-bottom:14px;opacity:0;animation:fadeUp .8s ease .45s forwards}
+.hero-title .grad{background:linear-gradient(135deg,#6366f1 0%,#a5b4fc 50%,#818cf8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-subtitle{font-size:clamp(14px,1.6vw,18px);color:var(--dim);font-weight:400;margin-bottom:28px;opacity:0;animation:fadeUp .6s ease .55s forwards}
+.hero-insight{padding:20px 28px;border-left:2px solid var(--blue);background:rgba(99,102,241,.07);border-radius:0 8px 8px 0;max-width:640px;margin-bottom:40px;opacity:0;animation:fadeUp .7s ease .65s forwards}
+.hi-label{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.hi-text{font-size:16px;font-style:italic;color:var(--cream);line-height:1.6;font-weight:400}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;opacity:0;animation:fadeUp .7s ease .75s forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:13px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 0 28px rgba(99,102,241,.35);transition:all .25s;position:relative;overflow:hidden;border:none;cursor:pointer;font-family:var(--sans)}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);transform:translateX(-100%);transition:transform .4s}
+.btn-primary:hover::after{transform:translateX(100%)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(99,102,241,.5)}
+.btn-secondary{border:1px solid var(--border2);color:var(--cream);padding:13px 28px;border-radius:8px;font-size:14px;font-weight:400;text-decoration:none;transition:all .25s}
+.btn-secondary:hover{border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:0;border:1px solid var(--border);border-radius:12px;background:rgba(99,102,241,.04);overflow:hidden;max-width:680px;opacity:0;animation:fadeUp .7s ease .9s forwards}
+.hs-item{flex:1;padding:18px 20px;text-align:center;border-right:1px solid var(--border);transition:background .2s}
+.hs-item:last-child{border-right:none}
+.hs-item:hover{background:rgba(99,102,241,.06)}
+.hs-n{font-size:22px;font-weight:800;color:var(--white);display:block;line-height:1;margin-bottom:4px}
+.hs-l{font-family:var(--mono);font-size:9px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.1em}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 2s forwards}
+.sh-txt{font-family:var(--mono);font-size:10px;color:var(--dimmer);letter-spacing:.12em;text-transform:uppercase}
+.sh-arrow{width:22px;height:36px;border:1px solid var(--border);border-radius:11px;display:flex;align-items:flex-start;justify-content:center;padding-top:5px}
+.sh-dot{width:3px;height:3px;background:var(--blue2);border-radius:50%;animation:sd 1.8s ease-in-out infinite}
+@keyframes sd{0%,49%{transform:translateY(0);opacity:1}50%,100%{transform:translateY(14px);opacity:0}}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(99,102,241,.02)}
+.marquee-track{display:flex;width:max-content;animation:mq 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.m-item{display:flex;align-items:center;gap:12px;padding:0 28px;white-space:nowrap;font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase}
+.m-dot{width:4px;height:4px;background:var(--blue);border-radius:50%;flex-shrink:0}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV TABS */
+.tab-nav{position:sticky;top:56px;z-index:90;background:rgba(8,8,16,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 56px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:16px 20px;border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;font-size:11px}
+.tab-btn:hover{color:var(--muted)}
+.tab-btn.active{color:var(--blue2);border-bottom-color:var(--blue2)}
+
+/* SECTION */
+.ps{padding:80px 56px;border-bottom:1px solid var(--border);position:relative}
+.ps:nth-child(even){background:var(--bg2)}
+.sec-tag{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec-tag::before{content:'';width:20px;height:1px;background:var(--blue2)}
+.sec-title{font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--white);margin-bottom:12px}
+.sec-title span{color:var(--blue2);font-weight:400;font-style:italic}
+.sec-sub{font-size:15px;color:var(--dim);max-width:520px;margin-bottom:48px;line-height:1.75}
+
+/* COMPONENT GRID */
+.comp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:48px}
+.comp-card{background:var(--card);padding:24px 20px;transition:background .2s;position:relative;overflow:hidden}
+.comp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.comp-card:hover{background:var(--card2)}
+.comp-card:hover::before{transform:scaleX(1)}
+.cc-num{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.1em;margin-bottom:10px;display:block;opacity:.7}
+.cc-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:6px}
+.cc-desc{font-size:12px;color:var(--dim);line-height:1.6}
+
+/* RESEARCH TABLE */
+.research-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden}
+.rt-head{background:var(--card2)}
+.rt-head th{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;padding:14px 18px;text-align:left;border-bottom:1px solid var(--border);font-weight:500}
+.rt-row{border-bottom:1px solid var(--border);transition:background .2s}
+.rt-row:last-child{border-bottom:none}
+.rt-row:hover{background:var(--card)}
+.rt-row td{padding:18px 18px;font-size:13px;color:var(--muted);vertical-align:top;line-height:1.65}
+.rt-row td:first-child{color:var(--white);font-weight:600;white-space:nowrap}
+.gap-tag{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:3px;letter-spacing:.06em;display:inline-block;margin-top:4px}
+.gap-missing{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.gap-full{background:rgba(249,115,22,.1);color:#fb923c;border:1px solid rgba(249,115,22,.2)}
+.gap-bof{background:rgba(234,179,8,.1);color:#facc15;border:1px solid rgba(234,179,8,.2)}
+.gap-tof{background:rgba(99,102,241,.15);color:var(--blue3);border:1px solid var(--border)}
+.gap-opp{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+
+/* AUDIENCE CARDS */
+.aud-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
+.aud-card{background:var(--card);padding:32px 28px;transition:background .2s;position:relative;overflow:hidden}
+.aud-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.aud-card:hover{background:var(--card2)}
+.aud-card:hover::before{transform:scaleX(1)}
+.ac-type{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:3px;display:inline-block;margin-bottom:14px}
+.ac-revenue{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+.ac-content{background:rgba(99,102,241,.15);color:var(--blue3);border:1px solid var(--border)}
+.ac-secondary{background:rgba(249,115,22,.1);color:#fb923c;border:1px solid rgba(249,115,22,.2)}
+.ac-conversion{background:rgba(234,179,8,.1);color:#facc15;border:1px solid rgba(234,179,8,.2)}
+.ac-name{font-size:18px;font-weight:800;color:var(--white);margin-bottom:6px}
+.ac-profile{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.06em;margin-bottom:16px}
+.ac-rows{display:flex;flex-direction:column;gap:12px}
+.ac-row-label{font-family:var(--mono);font-size:9px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
+.ac-row-val{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* PERSONA */
+.persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
+.persona-card{background:var(--card);padding:32px 28px;transition:background .2s}
+.persona-card:hover{background:var(--card2)}
+.pc-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;gap:16px;flex-wrap:wrap}
+.pc-name{font-size:22px;font-weight:800;color:var(--white)}
+.pc-detail{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.06em;margin-top:3px}
+.pc-badge{font-family:var(--mono);font-size:10px;color:var(--blue2);background:rgba(99,102,241,.12);padding:4px 10px;border-radius:3px;border:1px solid var(--border);white-space:nowrap}
+.pc-rows{display:flex;flex-direction:column;gap:14px}
+.pc-row-label{font-family:var(--mono);font-size:9px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:4px}
+.pc-row-val{font-size:13px;color:var(--muted);line-height:1.7}
+.pc-row-val em{color:var(--cream);font-style:italic}
+.pc-row-val strong{color:var(--cream);font-weight:600}
+
+/* INSIGHT */
+.insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:32px}
+.insight-card{background:var(--card);padding:22px 22px;display:grid;grid-template-columns:36px 1fr;gap:16px;align-items:start;transition:background .2s;border-bottom:1px solid var(--border)}
+.insight-card:hover{background:var(--card2)}
+.insight-num{font-family:var(--mono);font-size:11px;color:var(--blue2);opacity:.6}
+.insight-text{font-size:13px;color:var(--muted);line-height:1.65}
+.insight-result{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin-top:6px;display:inline-block;padding:2px 7px;border-radius:2px}
+.res-finalist{background:rgba(99,102,241,.15);color:var(--blue3);border:1px solid var(--border)}
+.res-passes{background:rgba(34,197,94,.08);color:#4ade80;border:1px solid rgba(34,197,94,.15)}
+.final-insight{padding:32px 36px;border-left:2px solid var(--blue);background:rgba(99,102,241,.06);border-radius:0 10px 10px 0;margin-bottom:32px}
+.fi-label{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.fi-text{font-size:24px;font-weight:700;color:var(--white);line-height:1.35;margin-bottom:14px;letter-spacing:-.02em}
+.fi-proof{font-size:14px;color:var(--muted);line-height:1.75}
+.fi-proof strong{color:var(--cream);font-weight:600}
+
+/* FUNNEL */
+.funnel-list{display:flex;flex-direction:column;gap:2px}
+.funnel-card{background:var(--card);display:grid;grid-template-columns:80px 1fr;gap:0;border-bottom:1px solid var(--border);transition:background .2s;position:relative;overflow:hidden}
+.funnel-card:first-child{border-radius:10px 10px 0 0}
+.funnel-card:last-child{border-radius:0 0 10px 10px;border-bottom:none}
+.funnel-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(99,102,241,.1),transparent);transition:width .4s}
+.funnel-card:hover{background:var(--card2)}
+.funnel-card:hover::before{width:100%}
+.fc-stage{padding:22px 16px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--border);position:relative;z-index:1}
+.fc-stage-tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;border-radius:4px;font-weight:600;text-align:center}
+.stage-tof{background:rgba(99,102,241,.15);color:var(--blue3);border:1px solid var(--border)}
+.stage-mof{background:rgba(249,115,22,.1);color:#fb923c;border:1px solid rgba(249,115,22,.2)}
+.stage-bof{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+.fc-body{padding:20px 24px;position:relative;z-index:1}
+.fc-emotion{font-family:var(--mono);font-size:10px;color:var(--dimmer);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.fc-thought{font-size:13px;font-style:italic;color:var(--muted);margin-bottom:10px;line-height:1.65}
+.fc-goal{font-size:13px;color:var(--dim);margin-bottom:8px}
+.fc-example{font-size:12px;color:var(--dimmer);font-style:italic;padding:8px 12px;background:rgba(99,102,241,.06);border-radius:4px;border-left:2px solid var(--blue)}
+
+/* CONTENT SYSTEM */
+.pillar-tabs{display:flex;gap:4px;margin-bottom:32px;background:var(--bg3);padding:4px;border-radius:8px;width:fit-content;flex-wrap:wrap}
+.pillar-btn{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border:none;background:transparent;color:var(--dim);cursor:pointer;border-radius:6px;transition:all .2s}
+.pillar-btn.active{background:var(--card2);color:var(--cream);box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.pillar-content{display:none}
+.pillar-content.active{display:flex;flex-direction:column;gap:2px}
+.pillar-item{background:var(--card);padding:18px 22px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 120px 80px;gap:20px;align-items:start;transition:background .2s}
+.pillar-item:first-child{border-radius:10px 10px 0 0}
+.pillar-item:last-child{border-radius:0 0 10px 10px;border-bottom:none}
+.pillar-item:hover{background:var(--card2)}
+.pi-role{font-size:13px;color:var(--muted);line-height:1.65}
+.pi-role strong{color:var(--cream);font-weight:600}
+.pi-idea{font-size:12px;color:var(--dim);font-style:italic;line-height:1.6}
+.pi-stage{font-family:var(--mono);font-size:10px;text-align:center}
+.pi-keep{font-family:var(--mono);font-size:10px;color:#4ade80;text-align:center}
+
+/* CALENDAR */
+.cal-week-label{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;margin-top:28px;display:flex;align-items:center;gap:10px}
+.cal-week-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:4px}
+.cal-card{background:var(--card);padding:14px 12px;min-height:100px;transition:all .2s;cursor:default;position:relative;overflow:hidden}
+.cal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.cal-card.tof-card::before{background:#818cf8}
+.cal-card.mof-card::before{background:#fb923c}
+.cal-card.bof-card::before{background:#4ade80}
+.cal-card.brand-card::before{background:var(--dimmer)}
+.cal-card:hover::before{transform:scaleX(1)}
+.cal-card:hover{background:var(--card2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1}
+.cal-day{font-family:var(--mono);font-size:10px;color:var(--dimmer);margin-bottom:8px;letter-spacing:.06em}
+.cal-type-badge{font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:2px;display:inline-block;margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
+.ct-post{background:rgba(99,102,241,.15);color:var(--blue3)}
+.ct-reel{background:rgba(234,179,8,.1);color:#facc15}
+.ct-story{background:rgba(148,163,184,.1);color:var(--muted)}
+.ct-carousel{background:rgba(249,115,22,.1);color:#fb923c}
+.cal-title{font-size:11px;color:var(--cream);line-height:1.4;font-weight:600;margin-bottom:4px}
+.cal-pillar{font-family:var(--mono);font-size:9px;color:var(--dimmer)}
+
+/* COPY BANK */
+.copy-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.copy-section-title{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.copy-section-title::after{content:'';flex:1;height:1px;background:var(--border);opacity:.5}
+.hook-list{display:flex;flex-direction:column;gap:2px}
+.hook-item{background:var(--card);padding:14px 18px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:28px 1fr 80px;gap:12px;align-items:start;transition:background .2s}
+.hook-item:first-child{border-radius:8px 8px 0 0}
+.hook-item:last-child{border-radius:0 0 8px 8px;border-bottom:none}
+.hook-item:hover{background:var(--card2)}
+.hook-num{font-family:var(--mono);font-size:11px;color:var(--dimmer)}
+.hook-text{font-size:13px;color:var(--muted);line-height:1.6}
+.hook-selected{font-family:var(--mono);font-size:9px;color:#4ade80;text-align:center;padding-top:2px}
+.hook-tone{font-family:var(--mono);font-size:9px;color:var(--dimmer);text-align:right;line-height:1.4}
+
+/* AI USAGE */
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
+.ai-card{background:var(--card);padding:28px 24px;transition:background .2s}
+.ai-card:hover{background:var(--card2)}
+.ai-task{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.ai-row{margin-bottom:12px}
+.ai-row-label{font-family:var(--mono);font-size:9px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:3px}
+.ai-row-val{font-size:12px;color:var(--muted);line-height:1.65}
+.ai-row-val strong{color:var(--cream);font-weight:600}
+.human-note{padding:10px 14px;background:rgba(99,102,241,.08);border-left:2px solid var(--blue);border-radius:0 4px 4px 0;font-size:12px;font-style:italic;color:var(--blue3);margin-top:10px;line-height:1.6}
+
+/* SHEET CTA */
+.sheet-cta-block{padding:40px;background:rgba(99,102,241,.06);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:48px;flex-wrap:wrap}
+.scb-left .scb-label{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.scb-left .scb-title{font-size:20px;font-weight:700;color:var(--white);margin-bottom:6px}
+.scb-left .scb-sub{font-size:14px;color:var(--dim)}
+
+/* CLOSING */
+#closing{padding:88px 56px;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border)}
+.closing-inner{max-width:700px;margin:0 auto}
+.closing-quote{font-size:clamp(18px,2.2vw,26px);font-weight:700;line-height:1.45;color:var(--white);margin-bottom:20px;letter-spacing:-.02em}
+.closing-quote span{color:var(--blue2);font-weight:400;font-style:italic}
+.closing-byline{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase;margin-bottom:40px}
+.closing-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.foot-l{font-family:var(--mono);font-size:11px;color:var(--dimmer)}
+.foot-r{font-family:var(--mono);font-size:11px;color:var(--dimmer);text-decoration:none;transition:color .2s}
+.foot-r:hover{color:var(--blue2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 20px}.tab-nav{padding:0 20px}
+  .ps,#hero,#closing,footer{padding-left:20px;padding-right:20px}
+  #hero{padding-top:100px;padding-bottom:60px}
+  .comp-grid{grid-template-columns:repeat(2,1fr)}
+  .aud-grid,.persona-grid,.insight-grid,.copy-cols,.ai-grid{grid-template-columns:1fr}
+  .cal-grid{grid-template-columns:repeat(4,1fr)}
+  footer{flex-direction:column;gap:8px;text-align:center}
+  .sheet-cta-block{flex-direction:column}
+  .pillar-item{grid-template-columns:1fr}
+  .funnel-card{grid-template-columns:1fr}
+  .fc-stage{border-right:none;border-bottom:1px solid var(--border);justify-content:flex-start;padding:14px 20px}
+}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="ld-name">House of <span>Pause</span></div>
+  <div class="ld-bar-wrap"><div class="ld-bar" id="lbar"></div></div>
+  <div class="ld-pct" id="lpct">0%</div>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-back">← Portfolio</a>
+  <div class="nav-right">
+    <span class="nav-label">Brand System · Case Study</span>
+    <a href="index.html" class="nav-logo">Anupam <span>Nath</span></a>
+  </div>
+</nav>
+
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="badge-dot"></span>Self-Initiated Brand System · 2024</div>
+    <div class="hero-label">10-Component Brand Build</div>
+    <h1 class="hero-title">House of<br><span class="grad">Pause</span></h1>
+    <div class="hero-subtitle">Interior Design · Indian Market · High-Consideration Category</div>
+    <div class="hero-insight">
+      <div class="hi-label">Core Insight — Final Selected</div>
+      <div class="hi-text">"Interior design taught us to want things. It never taught us to feel at home."</div>
+    </div>
+    <div class="hero-btns">
+      <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn-primary">View Full Google Sheet ↗</a>
+      <a href="#components" class="btn-secondary">Explore System ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs-item"><span class="hs-n">10</span><span class="hs-l">Components</span></div>
+      <div class="hs-item"><span class="hs-n">4</span><span class="hs-l">Competitor Audits</span></div>
+      <div class="hs-item"><span class="hs-n">4</span><span class="hs-l">Audience Segments</span></div>
+      <div class="hs-item"><span class="hs-n">30</span><span class="hs-l">Day Calendar</span></div>
+      <div class="hs-item"><span class="hs-n">20+</span><span class="hs-l">Hooks Written</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-arrow"><div class="sh-dot"></div></div></div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="m-item"><span class="m-dot"></span>Research Layer</div><div class="m-item"><span class="m-dot"></span>Target Audience</div><div class="m-item"><span class="m-dot"></span>Buyer Persona</div><div class="m-item"><span class="m-dot"></span>Core Insight</div><div class="m-item"><span class="m-dot"></span>Funnel Thinking</div><div class="m-item"><span class="m-dot"></span>Content System</div><div class="m-item"><span class="m-dot"></span>Creative Execution</div><div class="m-item"><span class="m-dot"></span>Copy Bank</div><div class="m-item"><span class="m-dot"></span>30-Day Calendar</div><div class="m-item"><span class="m-dot"></span>AI Usage Layer</div>
+    <div class="m-item"><span class="m-dot"></span>Research Layer</div><div class="m-item"><span class="m-dot"></span>Target Audience</div><div class="m-item"><span class="m-dot"></span>Buyer Persona</div><div class="m-item"><span class="m-dot"></span>Core Insight</div><div class="m-item"><span class="m-dot"></span>Funnel Thinking</div><div class="m-item"><span class="m-dot"></span>Content System</div><div class="m-item"><span class="m-dot"></span>Creative Execution</div><div class="m-item"><span class="m-dot"></span>Copy Bank</div><div class="m-item"><span class="m-dot"></span>30-Day Calendar</div><div class="m-item"><span class="m-dot"></span>AI Usage Layer</div>
+  </div>
+</div>
+
+<!-- STICKY TAB NAV -->
+<div class="tab-nav" id="tab-nav">
+  <button class="tab-btn active" onclick="scrollToSection('components')">Overview</button>
+  <button class="tab-btn" onclick="scrollToSection('research')">01 Research</button>
+  <button class="tab-btn" onclick="scrollToSection('audience')">02 Audience</button>
+  <button class="tab-btn" onclick="scrollToSection('persona')">03 Persona</button>
+  <button class="tab-btn" onclick="scrollToSection('insight')">04 Insight</button>
+  <button class="tab-btn" onclick="scrollToSection('funnel')">05 Funnel</button>
+  <button class="tab-btn" onclick="scrollToSection('content-system')">06 Content</button>
+  <button class="tab-btn" onclick="scrollToSection('calendar')">09 Calendar</button>
+  <button class="tab-btn" onclick="scrollToSection('copy-bank')">08 Copy Bank</button>
+  <button class="tab-btn" onclick="scrollToSection('ai-usage')">10 AI Usage</button>
+</div>
+
+<!-- OVERVIEW -->
+<div class="ps" id="components">
+  <div class="sec-tag">Overview</div>
+  <h2 class="sec-title">10 components. <span>One connected system.</span></h2>
+  <p class="sec-sub">Every component builds on the one before it. The research explains the insight. The insight explains the positioning. The positioning explains every piece of content in the 30-day calendar.</p>
+  <div class="comp-grid reveal">
+    <div class="comp-card"><span class="cc-num">01</span><div class="cc-title">Research Layer</div><div class="cc-desc">4 competitor audits. Market patterns. Audience signals. The gap nobody is standing in.</div></div>
+    <div class="comp-card"><span class="cc-num">02</span><div class="cc-title">Target Audience</div><div class="cc-desc">4 segments defined by life stage, intent, and emotional state — not demographics.</div></div>
+    <div class="comp-card"><span class="cc-num">03</span><div class="cc-title">Buyer Persona</div><div class="cc-desc">2 primary personas with inner voice, JTBD, decision triggers, and buying mindset.</div></div>
+    <div class="comp-card"><span class="cc-num">04</span><div class="cc-title">Core Insight</div><div class="cc-desc">10 variations tested. One final insight selected. Proven by all 4 competitor audits.</div></div>
+    <div class="comp-card"><span class="cc-num">05</span><div class="cc-title">Funnel Thinking</div><div class="cc-desc">TOF to BOF. Emotional arc, buyer thoughts, content goals at every stage.</div></div>
+    <div class="comp-card"><span class="cc-num">06</span><div class="cc-title">Content System</div><div class="cc-desc">4 pillars. Each pillar has a job — not just a theme. Every piece mapped to the funnel.</div></div>
+    <div class="comp-card"><span class="cc-num">07</span><div class="cc-title">Creative Execution</div><div class="cc-desc">7 complete pieces. Hook, body copy, visual direction, and rationale for each.</div></div>
+    <div class="comp-card"><span class="cc-num">08</span><div class="cc-title">Copy Bank</div><div class="cc-desc">20 hooks, 20 CTAs. Tone variations. Final selections marked.</div></div>
+    <div class="comp-card"><span class="cc-num">09</span><div class="cc-title">30-Day Calendar</div><div class="cc-desc">TOF heavy week 1. MOF builds weeks 2–3. BOF only after trust is built. Full arc.</div></div>
+    <div class="comp-card"><span class="cc-num">10</span><div class="cc-title">AI Usage Layer</div><div class="cc-desc">Documents exactly what AI did and what required human judgment. The line is explicit.</div></div>
+  </div>
+  <div class="sheet-cta-block reveal">
+    <div class="scb-left">
+      <div class="scb-label">Full Brand System</div>
+      <div class="scb-title">View all 10 sheets on Google Sheets</div>
+      <div class="scb-sub">Every component, every decision, every framework — open and readable.</div>
+    </div>
+    <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn-primary">Open Google Sheet ↗</a>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<div class="ps" id="research">
+  <div class="sec-tag">01 · Research Layer</div>
+  <h2 class="sec-title">The category has solved <span>visibility.</span></h2>
+  <p class="sec-sub">The next advantage is decision clarity. What the research showed — four audits, one conclusion.</p>
+  <div class="reveal" style="overflow-x:auto">
+  <table class="research-table">
+    <thead class="rt-head">
+      <tr>
+        <th>Brand</th>
+        <th>What They Do Well</th>
+        <th>Audience Behaviour</th>
+        <th>The Gap</th>
+        <th>Opportunity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="rt-row">
+        <td>D'LIFE<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">162K · Kerala</span></td>
+        <td>Emotional storytelling through testimonials. Ask couples which space they love most — genuine feeling.</td>
+        <td>Comments show high purchase intent. People ask 'how to contact' directly.</td>
+        <td><span class="gap-tag gap-missing">TOF + MOF Missing</span></td>
+        <td>Enter at the pre-decision moment — before they've spent anything.</td>
+      </tr>
+      <tr class="rt-row">
+        <td>Livspace<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">683K · Pan India</span></td>
+        <td>Aesthetic credibility at scale. Cultural hooks land well. When they tap real emotion — engagement jumps 5–8x.</td>
+        <td>Audience stops for 'this is me' content. Ignores product features entirely.</td>
+        <td><span class="gap-tag gap-full">MOF Entirely Missing</span></td>
+        <td>Own the decision layer. Be the brand that helps someone move from 'I want this' to 'I trust them.'</td>
+      </tr>
+      <tr class="rt-row">
+        <td>The Karighars<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">657K · Bangalore</span></td>
+        <td>Brand mythology is strong — Rs.4,500 to Rs.100Cr story. Founder face builds enormous trust.</td>
+        <td>People beg to contact in comments. 'Kaise contact karu?' — high intent, no path.</td>
+        <td><span class="gap-tag gap-bof">BOF Conversion Missing</span></td>
+        <td>Build a conversion architecture that captures intent already created.</td>
+      </tr>
+      <tr class="rt-row">
+        <td>Essentia<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">131K · Gurugram</span></td>
+        <td>Architectural authority and visual prestige. 26 years of expertise. Magazine-grade visual identity.</td>
+        <td>Audience admires, not buys. Comments are emoji reactions. Designers more active than clients.</td>
+        <td><span class="gap-tag gap-tof">Full Funnel Missing</span></td>
+        <td>The brand that makes the audience smarter about their home wins the ready buyer.</td>
+      </tr>
+      <tr class="rt-row">
+        <td>Slow Living<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">Unclaimed India</span></td>
+        <td>Global references exist — Muji, Kinfolk. Post-COVID desire for intentional spaces is growing.</td>
+        <td>This audience actively unfollows aspirational accounts. They feel worse after scrolling.</td>
+        <td><span class="gap-tag gap-opp">Entire Category Unclaimed</span></td>
+        <td>Build the first Indian slow living home brand. Minimal aspiration, maximum belonging.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="final-insight reveal" style="margin-top:32px">
+    <div class="fi-label">Strategic Conclusion</div>
+    <div class="fi-text" style="font-size:18px">The category has already solved visibility. The next advantage is decision clarity. House of Pause owns the entry point nobody else is standing at.</div>
+  </div>
+</div>
+
+<!-- AUDIENCE -->
+<div class="ps" id="audience">
+  <div class="sec-tag">02 · Target Audience</div>
+  <h2 class="sec-title">Segments defined by <span>emotional state,</span> not demographics.</h2>
+  <p class="sec-sub">Revenue audience vs content audience — the distinction matters for what you build first.</p>
+  <div class="aud-grid reveal">
+    <div class="aud-card">
+      <span class="ac-type ac-revenue">Revenue Audience · Primary</span>
+      <div class="ac-name">The Disconnected Decorator</div>
+      <div class="ac-profile">28–35 · Urban professional · Owns home · Spent Rs.5–15L</div>
+      <div class="ac-rows">
+        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Done interiors 6–18 months ago. Home looks right. Feels wrong. Can't name why.</div></div>
+        <div><span class="ac-row-label">Inner Voice</span><div class="ac-row-val">"It looks exactly like what I wanted — so why doesn't it feel like me? Maybe I'm just ungrateful."</div></div>
+        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">Content that names the exact feeling she can't articulate. 'Your home looks right but doesn't feel yours — here's why.'</div></div>
+      </div>
+    </div>
+    <div class="aud-card">
+      <span class="ac-type ac-content">Content + Revenue · Primary</span>
+      <div class="ac-name">The Renter With Taste</div>
+      <div class="ac-profile">26–34 · Metro professional · Rented 1BHK · Rs.20–50K available</div>
+      <div class="ac-rows">
+        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Strong aesthetic sensibility. Nowhere sensible to spend it. Structural constraints.</div></div>
+        <div><span class="ac-row-label">Inner Voice</span><div class="ac-row-val">"Every interior account assumes I own my home. Nobody talks to me. I have money to spend but everything feels pointless if I'm moving again in a year."</div></div>
+        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">Direct address. 'This one is for the rented flat.' Low-budget transformations with zero structural changes.</div></div>
+      </div>
+    </div>
+    <div class="aud-card">
+      <span class="ac-type ac-secondary">Content → Revenue · Secondary</span>
+      <div class="ac-name">The Slow Living Seeker</div>
+      <div class="ac-profile">29–38 · Tried maximalism · Now wants less</div>
+      <div class="ac-rows">
+        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Drawn to minimalism and intentional spaces. Fighting cultural expectation of a 'fully furnished' home.</div></div>
+        <div><span class="ac-row-label">Emotional State</span><div class="ac-row-val">Quiet relief when seeing calm spaces. Growing confidence in own taste diverging from norms.</div></div>
+        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">"Calm isn't a style. It's a decision about what to remove." Permission-giving content. Indian cultural context.</div></div>
+      </div>
+    </div>
+    <div class="aud-card">
+      <span class="ac-type ac-conversion">High-Value Conversion</span>
+      <div class="ac-name">The First-Time Homeowner</div>
+      <div class="ac-profile">30–40 · New possession · Rs.15L budget · Design paralysis</div>
+      <div class="ac-rows">
+        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">3–6 month move-in window. Has budget. Has fear. Has Pinterest boards. Considering Livspace but uneasy about template feel.</div></div>
+        <div><span class="ac-row-label">Emotional State</span><div class="ac-row-val">Anxious excitement. Vulnerable to influence. Will spend money — the question is who they trust.</div></div>
+        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">'The 3 questions to ask before you design anything.' Content that makes them feel equipped, not sold to.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSONA -->
+<div class="ps" id="persona">
+  <div class="sec-tag">03 · Buyer Persona</div>
+  <h2 class="sec-title">Two people. <span>Real inner voices.</span></h2>
+  <p class="sec-sub">Not demographic profiles. Specific people with specific thoughts at specific moments.</p>
+  <div class="persona-grid reveal">
+    <div class="persona-card">
+      <div class="pc-header">
+        <div><div class="pc-name">Priya</div><div class="pc-detail">31 · Senior Marketing Exec · Koramangala, Bengaluru · Owns flat</div></div>
+        <span class="pc-badge">The Disconnected Decorator</span>
+      </div>
+      <div class="pc-rows">
+        <div><span class="pc-row-label">Daily Life</span><div class="pc-row-val">Leaves 8:30 AM, back 8 PM. Sits in the Rs.6L living room and scrolls her phone. <em>The room is beautiful. She doesn't look at it.</em></div></div>
+        <div><span class="pc-row-label">Inner Voice</span><div class="pc-row-val"><em>"Something is off but I can't name it. It looks exactly like what I wanted — so why doesn't it feel like me? Maybe I'm just ungrateful."</em></div></div>
+        <div><span class="pc-row-label">What She Wants But Can't Explain</span><div class="pc-row-val">To walk in and exhale. To feel like the space recognises her. She has no vocabulary for this — she's been thinking in aesthetics, not feeling.</div></div>
+        <div><span class="pc-row-label">What She's Tried</span><div class="pc-row-val">New cushion covers. Plants. Changed lighting. Watched 4 interior YouTube channels. <strong>Each purchase felt good for 3 days then faded.</strong></div></div>
+        <div><span class="pc-row-label">Decision Trigger</span><div class="pc-row-val">Content that names the exact feeling she has but can't articulate. That recognition moment is her entry point.</div></div>
+        <div><span class="pc-row-label">JTBD</span><div class="pc-row-val">Not hiring for a redesign. Hiring House of Pause to understand why her space doesn't feel like hers — and get a framework for fixing the feeling, not just the aesthetic.</div></div>
+      </div>
+    </div>
+    <div class="persona-card">
+      <div class="pc-header">
+        <div><div class="pc-name">Rohan</div><div class="pc-detail">28 · Product Manager · Andheri, Mumbai · Rented 1BHK · 11-month lease</div></div>
+        <span class="pc-badge">The Renter With Taste</span>
+      </div>
+      <div class="pc-rows">
+        <div><span class="pc-row-label">Daily Life</span><div class="pc-row-val">Moves every 11–14 months. Spends evenings in a flat that feels temporary. <em>Has good taste but nowhere to apply it.</em></div></div>
+        <div><span class="pc-row-label">Inner Voice</span><div class="pc-row-val"><em>"Every interior account assumes I own my home. I'm just renting. Nobody talks to me. I have money to spend but everything feels pointless if I'm moving again in a year."</em></div></div>
+        <div><span class="pc-row-label">What He Wants But Can't Explain</span><div class="pc-row-val">A space that feels intentional even on a budget. Small changes that add up to something real. To not feel excluded from the home category.</div></div>
+        <div><span class="pc-row-label">What He's Tried</span><div class="pc-row-val">Bought a rug that doesn't fit the next flat. Added fairy lights. Bought a plant. <strong>Nothing adds up to a feeling.</strong></div></div>
+        <div><span class="pc-row-label">Decision Trigger</span><div class="pc-row-val">A post that says: this is for you specifically. Not 'renovate your home' — 'make your rented space feel like yours.' Direct address creates instant trust.</div></div>
+        <div><span class="pc-row-label">JTBD</span><div class="pc-row-val">Not hiring for a renovation. Hiring House of Pause to teach him how to make any space feel intentional — without structural changes or large spend.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INSIGHT -->
+<div class="ps" id="insight">
+  <div class="sec-tag">04 · Core Insight</div>
+  <h2 class="sec-title">10 variations tested. <span>One selected.</span></h2>
+  <p class="sec-sub">The standard: does this apply to 5 other brands? If yes, reject. If no, keep. Only one passed.</p>
+  <div class="insight-grid reveal">
+    <div class="insight-card"><div class="insight-num">01</div><div><div class="insight-text">People don't design bad homes. They design homes for the wrong question — 'how will it look?' instead of 'how will it feel?'</div><span class="insight-result res-passes">Passes</span></div></div>
+    <div class="insight-card"><div class="insight-num">02</div><div><div class="insight-text">The Indian interior industry has built a Rs.50,000 crore business solving the wrong problem — aesthetics, not belonging.</div><span class="insight-result res-passes">Passes</span></div></div>
+    <div class="insight-card"><div class="insight-num">03</div><div><div class="insight-text">Your home can look exactly like your Pinterest board and still not feel like yours. That gap is what nobody talks about.</div><span class="insight-result res-passes">Passes</span></div></div>
+    <div class="insight-card"><div class="insight-num">04</div><div><div class="insight-text">We're the first generation trained to design homes for Instagram, not for living.</div><span class="insight-result res-passes">Passes</span></div></div>
+    <div class="insight-card"><div class="insight-num">05</div><div><div class="insight-text">The home industry sells beautiful rooms. It has never sold the feeling of being at home.</div><span class="insight-result res-finalist">Finalist</span></div></div>
+    <div class="insight-card"><div class="insight-num">06</div><div><div class="insight-text">Interior design solves for the eye. Nobody has solved for the person behind the eye.</div><span class="insight-result res-finalist">Finalist</span></div></div>
+    <div class="insight-card"><div class="insight-num">08</div><div><div class="insight-text">A beautiful home that doesn't feel like yours is just an expensive hotel room.</div><span class="insight-result res-passes">Passes</span></div></div>
+    <div class="insight-card"><div class="insight-num">09</div><div><div class="insight-text">The problem was never the furniture. It was that nobody asked you how you wanted to feel.</div><span class="insight-result res-passes">Passes</span></div></div>
+    <div class="insight-card"><div class="insight-num">10</div><div><div class="insight-text">Interior design taught us to want things. It never taught us to feel at home.</div><span class="insight-result res-finalist">&#10003; SELECTED</span></div></div>
+    <div class="insight-card" style="background:rgba(99,102,241,.06)"><div class="insight-num" style="color:var(--blue3)">Why</div><div><div class="insight-text" style="color:var(--cream)">The distinction between <strong>wanting</strong> and <strong>belonging</strong> is powerful. 'Feel at home' is the unfulfilled promise of the entire category. Proven by all 4 competitor audits.</div></div></div>
+  </div>
+  <div class="final-insight reveal">
+    <div class="fi-label">Final Insight — Selected</div>
+    <div class="fi-text">"Interior design taught us to want things. It never taught us to feel at home."</div>
+    <div class="fi-proof">Root cause: the industry optimises for visual output. The buyer experiences a home through feeling, not photography. <strong>No brand in India has made the shift from "how it looks" to "how it lives."</strong> That is the gap House of Pause occupies. Proven by D'LIFE, Livspace, The Karighars, and Essentia — all four competitors have funnel gaps that this insight fills.</div>
+  </div>
+</div>
+
+<!-- FUNNEL -->
+<div class="ps" id="funnel">
+  <div class="sec-tag">05 · Funnel Thinking</div>
+  <h2 class="sec-title">Awareness to conversion. <span>Every stage mapped.</span></h2>
+  <p class="sec-sub">What the buyer is feeling, thinking, and what content needs to do at each moment.</p>
+  <div class="funnel-list reveal">
+    <div class="funnel-card">
+      <div class="fc-stage"><span class="fc-stage-tag stage-tof">TOF</span></div>
+      <div class="fc-body">
+        <div class="fc-emotion">Quietly unsettled · Can't name what's wrong</div>
+        <div class="fc-thought">"Why does everyone else's home look so put-together and mine still doesn't feel right? Maybe I just have bad taste."</div>
+        <div class="fc-goal">Make them feel seen. Name the feeling before they've named it themselves. Create the 'that's exactly me' moment.</div>
+        <div class="fc-example">"You didn't make bad design choices. You made choices for the wrong question." — no solution, just recognition.</div>
+      </div>
+    </div>
+    <div class="funnel-card">
+      <div class="fc-stage"><span class="fc-stage-tag stage-tof">TOF</span></div>
+      <div class="fc-body">
+        <div class="fc-emotion">Aspiration fatigue · Starting to unfollow</div>
+        <div class="fc-thought">"I've bought so many things. Nothing adds up to the feeling I want. I don't know what I'm missing."</div>
+        <div class="fc-goal">Validate the fatigue. Position against aspiration content. Introduce: the problem is the question, not the budget.</div>
+        <div class="fc-example">"5 signs you've been designing your home for Instagram, not for yourself" — each slide is a behaviour they recognise.</div>
+      </div>
+    </div>
+    <div class="funnel-card">
+      <div class="fc-stage"><span class="fc-stage-tag stage-tof">TOF</span></div>
+      <div class="fc-body">
+        <div class="fc-emotion">Renter frustration · Feels excluded</div>
+        <div class="fc-thought">"Every interior account assumes I own my home. I'm in a rented flat. Nobody is talking to me."</div>
+        <div class="fc-goal">Explicit inclusion. Direct address. Be the first voice that says: this is specifically for you.</div>
+        <div class="fc-example">"This one is for the rented flat in Koramangala. The 1BHK in Powai. The place that's not permanent but still has to feel like yours."</div>
+      </div>
+    </div>
+    <div class="funnel-card">
+      <div class="fc-stage"><span class="fc-stage-tag stage-mof">MOF</span></div>
+      <div class="fc-body">
+        <div class="fc-emotion">Evaluating · Can this brand actually help me?</div>
+        <div class="fc-thought">"I like what they say. But can they actually help me do something? What's the process?"</div>
+        <div class="fc-goal">Show the thinking. Educate without selling. Build credibility through process transparency.</div>
+        <div class="fc-example">"The 3 questions to ask before you buy anything for your home" — practical, immediately usable, no product pitch.</div>
+      </div>
+    </div>
+    <div class="funnel-card">
+      <div class="fc-stage"><span class="fc-stage-tag stage-mof">MOF</span></div>
+      <div class="fc-body">
+        <div class="fc-emotion">Decision confidence · Comparing options</div>
+        <div class="fc-thought">"What am I actually getting here? What does the process look like? How do I know this will work for my situation?"</div>
+        <div class="fc-goal">Articulate the category difference. Not better interiors — a different starting question. Address the comparison stage directly.</div>
+        <div class="fc-example">"We don't start with your moodboard. We start with: how do you want to feel when you walk in the door." — contrast vs Livspace/HomeLane.</div>
+      </div>
+    </div>
+    <div class="funnel-card">
+      <div class="fc-stage"><span class="fc-stage-tag stage-bof">BOF</span></div>
+      <div class="fc-body">
+        <div class="fc-emotion">Ready but hesitant · Last friction moment</div>
+        <div class="fc-thought">"I'm convinced this is different. But what exactly do I get? Is it worth it? Will it change anything?"</div>
+        <div class="fc-goal">Remove final friction. Make the first step feel small, low-risk, and immediately valuable. Show what happens after the DM.</div>
+        <div class="fc-example">"Tell me one thing about your home that's been bothering you. Just one. Let's start there." — micro-commitment, low barrier.</div>
+      </div>
+    </div>
+    <div class="funnel-card">
+      <div class="fc-stage"><span class="fc-stage-tag stage-bof">BOF</span></div>
+      <div class="fc-body">
+        <div class="fc-emotion">High intent · Social proof moment</div>
+        <div class="fc-thought">"If it worked for someone in a rented flat with my budget and constraints — it can work for me."</div>
+        <div class="fc-goal">Social proof that matches the persona exactly. Not aspirational transformations — honest, relatable before/afters.</div>
+        <div class="fc-example">Before/after of a rented flat: Rs.9,000. Zero structural changes. Person in frame — not just the room.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT SYSTEM -->
+<div class="ps" id="content-system">
+  <div class="sec-tag">06 · Content System</div>
+  <h2 class="sec-title">4 pillars. <span>Each has a job.</span></h2>
+  <p class="sec-sub">Not themes — jobs. Each pillar does specific psychological work at a specific funnel stage.</p>
+  <div class="pillar-tabs">
+    <button class="pillar-btn active" onclick="switchPillar('feeling-first', this)">Feeling First</button>
+    <button class="pillar-btn" onclick="switchPillar('mistakes', this)">Mistakes & Truth</button>
+    <button class="pillar-btn" onclick="switchPillar('living-proof', this)">Living Proof</button>
+    <button class="pillar-btn" onclick="switchPillar('clarity', this)">Clarity & Process</button>
+  </div>
+  <div id="feeling-first" class="pillar-content active reveal">
+    <div class="pillar-item"><div class="pi-role"><strong>Opens the emotional conversation.</strong> Makes the audience feel seen before they know the brand exists. No selling, just recognition.</div><div class="pi-idea">Post: 'Your home can look exactly right and still feel wrong. That's not a style problem.'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Names the specific emotional states</strong> people feel about their homes but never say out loud.</div><div class="pi-idea">Reel: 'Be honest. Do you actually enjoy being in your living room? Or do you just... use it?'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Addresses the renter directly.</strong> No assumption of ownership. First voice that says: this is for you.</div><div class="pi-idea">Post: 'This one is for the 1BHK in a city that isn't really yours yet. You still deserve to feel at home.'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Diagnoses the aspiration fatigue</strong> without naming it. The audience recognises the behaviour.</div><div class="pi-idea">Carousel: '5 signs you've been designing your home for Instagram, not for yourself'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
+  </div>
+  <div id="mistakes" class="pillar-content reveal">
+    <div class="pillar-item"><div class="pi-role"><strong>Builds trust through honesty.</strong> Shows the wrong purchases, bad decisions. No brand does this — it becomes the differentiator.</div><div class="pi-idea">Reel: 'I bought this Rs.12,000 rug. Hated it in a week. Here's exactly what I ignored when I chose it.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Process transparency</strong> — what goes into a space decision, and what most people skip.</div><div class="pi-idea">Carousel: 'The 3 questions you should answer before buying anything for your home'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Honest critique of industry norms</strong> — the modular kitchen that feels generic, the accent wall that doesn't help.</div><div class="pi-idea">Post: 'The accent wall is not the problem. The problem is you chose it before you knew what feeling you were designing for.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Reframes 'wrong choice'</strong> as 'answered the wrong question' — shifts blame from taste to process.</div><div class="pi-idea">Video: 'You didn't make bad design choices. You made design choices before you knew what you actually needed.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+  </div>
+  <div id="living-proof" class="pillar-content reveal">
+    <div class="pillar-item"><div class="pi-role"><strong>Transformations grounded in feeling, not aesthetics.</strong> Before/after with the emotional story, not just the visual change.</div><div class="pi-idea">Reel: 'Before this room felt like a showroom. After: I actually sit here now. Budget: Rs.9,000.'</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Real homes that match the audience's actual situation</strong> — rented, small budget, structural constraints.</div><div class="pi-idea">Post: 'Rented flat. Rs.15,000. No structural changes. Here's what changed: everything about how it felt.'</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Client stories told with the emotional journey,</strong> not just the outcome. Person in frame, not just the room.</div><div class="pi-idea">Carousel: "Priya's living room cost Rs.6L and felt like a hotel. Here's what changed. It cost Rs.3,200."</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
+  </div>
+  <div id="clarity" class="pillar-content reveal">
+    <div class="pillar-item"><div class="pi-role"><strong>Teaches the audience a new framework</strong> for thinking about their space. Educational but not generic.</div><div class="pi-idea">Carousel: 'The 4 feelings a home can give you. Which one is yours missing?'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Demystifies the design process</strong> — specific decisions, specific reasons, transparent rationale.</div><div class="pi-idea">Video: 'Why I always pick furniture before paint. And why most people do it backwards.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Introduces the brand's core framework:</strong> start with feeling, then work backwards to objects.</div><div class="pi-idea">Post: 'Most people start with Pinterest. We start with: how do you want to feel at 8pm on a Tuesday?'</div><span class="pi-stage" style="color:var(--blue3)">TOF/MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Practical, immediately usable advice</strong> that makes the audience feel more capable, not more overwhelmed.</div><div class="pi-idea">Carousel: 'How to audit your own home in 20 minutes — and find exactly what's making it feel off'</div><span class="pi-stage" style="color:#fb923c">MOF/BOF</span><span class="pi-keep">KEEP</span></div>
+  </div>
+</div>
+
+<!-- CALENDAR -->
+<div class="ps" id="calendar">
+  <div class="sec-tag">09 · 30-Day Content Calendar</div>
+  <h2 class="sec-title">TOF heavy week 1. <span>BOF only after trust is built.</span></h2>
+  <p class="sec-sub">A content arc — not just a schedule. Every piece has a specific job in the journey.</p>
+
+  <div class="cal-week-label reveal">Week 1 — Foundation · Days 1–7</div>
+  <div class="cal-grid reveal">
+    <div class="cal-card tof-card"><div class="cal-day">Day 1</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">This one is for the rented flat.</div><div class="cal-pillar">Feeling First · TOF</div></div>
+    <div class="cal-card tof-card"><div class="cal-day">Day 2</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">You didn't make bad design choices.</div><div class="cal-pillar">Feeling First · TOF</div></div>
+    <div class="cal-card brand-card"><div class="cal-day">Day 3</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">Poll: Does your home feel like you?</div><div class="cal-pillar">Brand · Engagement</div></div>
+    <div class="cal-card tof-card"><div class="cal-day">Day 4</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">5 signs your home looks right but doesn't feel like you.</div><div class="cal-pillar">Feeling First · TOF</div></div>
+    <div class="cal-card tof-card"><div class="cal-day">Day 5</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">The aspiration problem.</div><div class="cal-pillar">Feeling First · TOF</div></div>
+    <div class="cal-card tof-card"><div class="cal-day">Day 6</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">I bought a Rs.12,000 rug. Hated it in 3 days.</div><div class="cal-pillar">Mistakes & Truth · TOF</div></div>
+    <div class="cal-card brand-card"><div class="cal-day">Day 7</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">Behind the thinking.</div><div class="cal-pillar">Brand · Personality</div></div>
+  </div>
+
+  <div class="cal-week-label reveal">Week 2 — Education · Days 8–14</div>
+  <div class="cal-grid reveal">
+    <div class="cal-card mof-card"><div class="cal-day">Day 8</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">The 3 questions before you buy anything.</div><div class="cal-pillar">Clarity & Process · MOF</div></div>
+    <div class="cal-card tof-card"><div class="cal-day">Day 9</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">What your home feels like at 9pm.</div><div class="cal-pillar">Feeling First · TOF</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 10</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">Most people start with Pinterest. We start with a question.</div><div class="cal-pillar">Clarity & Process · MOF</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 11</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">The accent wall is not the problem.</div><div class="cal-pillar">Mistakes & Truth · MOF</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 12</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">Calm is a decision.</div><div class="cal-pillar">Clarity & Process · MOF</div></div>
+    <div class="cal-card brand-card"><div class="cal-day">Day 13</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">What's the one thing you've been meaning to change?</div><div class="cal-pillar">Engagement · Community</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 14</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">Why I always pick furniture before paint.</div><div class="cal-pillar">Clarity & Process · MOF</div></div>
+  </div>
+
+  <div class="cal-week-label reveal">Week 3 — Trust · Days 15–21</div>
+  <div class="cal-grid reveal">
+    <div class="cal-card tof-card"><div class="cal-day">Day 15</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">We were trained to design for Instagram, not for living.</div><div class="cal-pillar">Feeling First · TOF</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 16</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">The modular kitchen problem.</div><div class="cal-pillar">Mistakes & Truth · MOF</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 17</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">What 'feeling at home' actually means.</div><div class="cal-pillar">Feeling First · MOF</div></div>
+    <div class="cal-card brand-card"><div class="cal-day">Day 18</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">Sharing a DM — someone tried the 3 questions.</div><div class="cal-pillar">Social Proof · MOF</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 19</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">How to audit your own home in 20 minutes.</div><div class="cal-pillar">Clarity & Process · MOF</div></div>
+    <div class="cal-card bof-card"><div class="cal-day">Day 20</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">Before I asked the feeling question. After.</div><div class="cal-pillar">Living Proof · BOF</div></div>
+    <div class="cal-card bof-card"><div class="cal-day">Day 21</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">Rs.9,000. Rented flat. Zero structural changes.</div><div class="cal-pillar">Living Proof · BOF</div></div>
+  </div>
+
+  <div class="cal-week-label reveal">Week 4 — Convert · Days 22–30</div>
+  <div class="cal-grid reveal">
+    <div class="cal-card bof-card"><div class="cal-day">Day 22</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">Free audit announcement — first 5 DMs.</div><div class="cal-pillar">Offer · BOF</div></div>
+    <div class="cal-card bof-card"><div class="cal-day">Day 23</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">Priya's living room — the honest story.</div><div class="cal-pillar">Living Proof · BOF</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 24</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">The cushion cover loop.</div><div class="cal-pillar">Mistakes & Truth · MOF</div></div>
+    <div class="cal-card tof-card"><div class="cal-day">Day 25</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">The home that feels like relief.</div><div class="cal-pillar">Feeling First · TOF</div></div>
+    <div class="cal-card brand-card"><div class="cal-day">Day 26</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">Poll: What feeling is your home missing?</div><div class="cal-pillar">Community · Insight</div></div>
+    <div class="cal-card mof-card"><div class="cal-day">Day 27</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">The 4 feelings a home can give you.</div><div class="cal-pillar">Clarity & Process · MOF</div></div>
+    <div class="cal-card bof-card"><div class="cal-day">Day 28</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">What happens after you DM us.</div><div class="cal-pillar">Decision Confidence · BOF</div></div>
+  </div>
+</div>
+
+<!-- COPY BANK -->
+<div class="ps" id="copy-bank">
+  <div class="sec-tag">08 · Copy Bank</div>
+  <h2 class="sec-title">20 hooks. 20 CTAs. <span>Finals selected.</span></h2>
+  <p class="sec-sub">Every hook tested against one standard — would a real person say this in conversation? If not, rejected.</p>
+  <div class="copy-cols reveal">
+    <div>
+      <div class="copy-section-title">Hook Variations</div>
+      <div class="hook-list">
+        <div class="hook-item"><div class="hook-num">01</div><div class="hook-text">You didn't make bad design choices. You made them before you knew what you needed.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">02</div><div class="hook-text">Your home looks exactly like your Pinterest board. Why doesn't it feel like yours?</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">03</div><div class="hook-text">This one is for the rented flat that isn't permanent but still has to feel like home.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">04</div><div class="hook-text">5 signs your home looks right but doesn't feel like you.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">05</div><div class="hook-text">The interior industry spent 50 years teaching us to want things. Nobody taught us to feel at home.</div><div class="hook-tone">Category Critique</div></div>
+        <div class="hook-item"><div class="hook-num">07</div><div class="hook-text">I bought a Rs.12,000 rug. Hated it in 3 days. Here's why.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">08</div><div class="hook-text">Most people start with Pinterest. We start with: how do you want to feel at 8pm on a Tuesday?</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">09</div><div class="hook-text">The 3 questions to ask before you buy anything for your home.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">13</div><div class="hook-text">Rs.9,000. Rented flat. Zero structural changes. Everything changed.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">20</div><div class="hook-text">What if your home felt like relief the moment you walked in?</div><div class="hook-selected">✓</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="copy-section-title">CTA Variations</div>
+      <div class="hook-list">
+        <div class="hook-item"><div class="hook-num">01</div><div class="hook-text">Tell me one thing about your home that's bothering you. Just one. DM me.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">02</div><div class="hook-text">Save this. Use it the next time you're about to buy something for your home.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">03</div><div class="hook-text">Link in bio: start with the feeling audit.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">04</div><div class="hook-text">Share this with someone whose home doesn't feel like theirs yet.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">05</div><div class="hook-text">Does this sound like you? Tell me in the comments.</div><div class="hook-selected">✓</div></div>
+        <div class="hook-item"><div class="hook-num">06</div><div class="hook-text">First 5 DMs get a free 15-minute home audit. No sales pitch at the end.</div><div class="hook-tone">Scarce / Trust</div></div>
+        <div class="hook-item"><div class="hook-num">09</div><div class="hook-text">What feeling are you missing in your home right now? Drop it below.</div><div class="hook-tone">Community</div></div>
+        <div class="hook-item"><div class="hook-num">11</div><div class="hook-text">Read this before you buy your next piece of furniture.</div><div class="hook-tone">Practical / Timely</div></div>
+        <div class="hook-item"><div class="hook-num">17</div><div class="hook-text">DM me the word AUDIT and I'll send you the home feeling checklist.</div><div class="hook-tone">Lead Gen / Useful</div></div>
+        <div class="hook-item"><div class="hook-num">20</div><div class="hook-text">Start here: what feeling is your home missing right now? One word. Comments below.</div><div class="hook-selected">✓</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AI USAGE -->
+<div class="ps" id="ai-usage">
+  <div class="sec-tag">10 · AI Usage Layer</div>
+  <h2 class="sec-title">AI executes. <span>The strategist decides.</span></h2>
+  <p class="sec-sub">Every task documents what AI did and what required human judgment. The line is explicit — because that line is the skill.</p>
+  <div class="ai-grid reveal">
+    <div class="ai-card">
+      <div class="ai-task">Persona Generation</div>
+      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 5–10 persona variations. Produce dialogue — 'what would this person say when they walk into their home on a bad day?'</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Speed. Generates 10 drafts in minutes. Forces the strategist to react and select rather than generate from a blank page.</div></div>
+      <div class="human-note">AI cannot feel whether a persona is real. It cannot sense the specific texture of a Delhi renter's frustration vs a Bengaluru homeowner's. That judgment is human.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-task">Content Angle Generation</div>
+      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Given the core insight, generate 20 content angles across each funnel stage.</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Breaks the blank-page problem. Creates a wide net of options fast. Forces the strategist into curation mode.</div></div>
+      <div class="human-note">AI cannot distinguish between angles that feel true and angles that sound smart. It cannot feel the difference between 'this will resonate' and 'this will be scrolled past.' That is the skill.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-task">Hook Writing</div>
+      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 20 hook variations for each core post or reel. Vary the tone: calm, confronting, diagnostic, question-based.</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Volume. A human can write 5 hooks before running dry. AI generates 20 in 2 minutes. The strategist selects, combines, and sharpens.</div></div>
+      <div class="human-note">AI cannot tell which hook will stop a scroll. It cannot feel the difference between a hook that's technically correct and one that lands emotionally. Hook selection is human judgment.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-task">Research Synthesis</div>
+      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Feed platform observations (Reddit threads, YouTube comments, Instagram comment patterns) into AI for pattern analysis.</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Pattern recognition at scale. AI can read 200 comments and identify clusters in minutes.</div></div>
+      <div class="human-note">AI cannot tell you whether a comment is ironic, sarcastic, or genuinely expressing pain. It cannot read emotional nuance. All final insight remains the strategist's judgment.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-task">30-Day Calendar Population</div>
+      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">After the content system and pillars are defined by the strategist, use AI to populate the calendar structure with matching ideas.</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Speed and volume. Once the system is defined, the execution is largely structural. AI can fill the grid.</div></div>
+      <div class="human-note">AI cannot plan a content arc. It cannot decide that Day 22 should be the first conversion offer because enough trust has been built by Day 21. That is strategy.</div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-task">Visual Direction Briefs</div>
+      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 5 visual direction options for each content piece: colour palettes, shot types, typography style, prop direction.</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Saves briefing time. Gives multiple directions to react to instead of writing from scratch.</div></div>
+      <div class="human-note">AI defaults toward aspirational, polished visuals — exactly what House of Pause is positioned against. The strategist must actively hold the brand's anti-aspiration-porn visual line.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div id="closing">
+  <div class="closing-inner reveal">
+    <div class="closing-quote">"This is not practice work. The brand is self-initiated. The thinking is <span>exactly how I work on real briefs.</span> Research first. Insight before execution. Content that has a job to do — not just a publishing date."</div>
+    <div class="closing-byline">Anupam Nath · Brand Strategist · New Delhi, India</div>
+    <div class="closing-btns">
+      <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn-primary">Open Full Google Sheet ↗</a>
+      <a href="index.html" class="btn-secondary">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="foot-l">© 2026 Anupam Nath · Brand Strategist · New Delhi</span>
+  <a href="mailto:anupamnath222@gmail.com" class="foot-r">anupamnath222@gmail.com ↗</a>
+</footer>
+
+<script>
+// LOADER
+const lbar=document.getElementById('lbar'),lpct=document.getElementById('lpct'),loader=document.getElementById('loader');
+let prog=0;
+const li=setInterval(()=>{prog+=Math.random()*16;if(prog>=100){prog=100;clearInterval(li);setTimeout(()=>loader.classList.add('done'),350);}lbar.style.width=prog+'%';lpct.textContent=Math.floor(prog)+'%';},80);
+
+// DOT CANVAS
+const canvas=document.getElementById('hero-canvas'),ctx=canvas.getContext('2d');
+let dots=[],mouse={x:-999,y:-999};
+function resize(){canvas.width=window.innerWidth;canvas.height=document.getElementById('hero').offsetHeight;dots=[];for(let r=0;r<=Math.ceil(canvas.height/34);r++)for(let c=0;c<=Math.ceil(canvas.width/34);c++)dots.push({x:c*34,y:r*34});}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(const d of dots){const dx=d.x-mouse.x,dy=d.y-mouse.y,dist=Math.sqrt(dx*dx+dy*dy),p=Math.max(0,1-dist/130);if(p>0){ctx.beginPath();ctx.arc(d.x,d.y,1.3+p*2.2,0,Math.PI*2);ctx.fillStyle=`rgba(99,102,241,${.1+p*.55})`;ctx.fill();}else{ctx.beginPath();ctx.arc(d.x,d.y,1.3,0,Math.PI*2);ctx.fillStyle='rgba(99,102,241,0.1)';ctx.fill();}}requestAnimationFrame(draw);}
+document.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+window.addEventListener('resize',resize);resize();draw();
+
+// NAV
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+  const sections=['components','research','audience','persona','insight','funnel','content-system','calendar','copy-bank','ai-usage'];
+  const tabBtns=document.querySelectorAll('.tab-btn');
+  let cur=0;
+  sections.forEach((id,i)=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-120)cur=i;});
+  tabBtns.forEach((b,i)=>b.classList.toggle('active',i===cur));
+});
+
+// SCROLL TO
+function scrollToSection(id){const el=document.getElementById(id);if(el){const offset=el.offsetTop-120;window.scrollTo({top:offset,behavior:'smooth'});}}
+
+// REVEAL
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// PILLAR SWITCH
+function switchPillar(id,btn){
+  document.querySelectorAll('.pillar-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.pillar-btn').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el){el.classList.add('active');el.style.animation='none';el.offsetHeight;el.style.animation='';}
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
