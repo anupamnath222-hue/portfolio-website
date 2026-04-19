@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VSL Creative Strategy — Anupam Nath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+--bg:#080810;--bg2:#0c0c16;--bg3:#10101c;--card:#12121e;--card2:#16162a;
+--blue:#6366f1;--blue2:#818cf8;--blue3:#a5b4fc;
+--glow:rgba(99,102,241,0.15);--border:rgba(99,102,241,0.12);--border2:rgba(255,255,255,0.07);
+--white:#ffffff;--cream:#e2e8f0;--muted:#94a3b8;--dim:#475569;--dimmer:#334155;
+--sans:'Inter',sans-serif;--mono:'DM Mono',monospace}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden;cursor:none}
+#cur{position:fixed;width:10px;height:10px;background:var(--blue2);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:screen}
+#cur-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(99,102,241,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--blue)}
+#loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .6s,visibility .6s}
+#loader.done{opacity:0;visibility:hidden}
+.ld-name{font-size:15px;font-weight:700;color:var(--white);letter-spacing:-.01em}
+.ld-name span{color:var(--blue2)}
+.ld-bar-wrap{width:160px;height:2px;background:rgba(99,102,241,.15);border-radius:2px;overflow:hidden}
+.ld-bar{height:100%;width:0;background:var(--blue2);border-radius:2px}
+.ld-pct{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.1em}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:64px;background:rgba(8,8,16,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:height .3s}
+nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
+.nav-logo{font-size:15px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.02em}
+.nav-logo span{color:var(--blue2)}
+.nav-back{font-family:var(--mono);font-size:11px;color:var(--dim);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--blue2)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-label{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.06em;text-transform:uppercase}
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:110px 56px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+#hero-canvas{position:absolute;inset:0;z-index:0;opacity:.35}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+.b1{width:600px;height:600px;background:rgba(99,102,241,.1);top:-150px;left:-100px;animation:bm 12s ease-in-out infinite}
+.b2{width:400px;height:400px;background:rgba(129,140,248,.07);bottom:-80px;right:-80px;animation:bm 16s ease-in-out infinite reverse}
+@keyframes bm{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.06)}66%{transform:translate(-20px,20px) scale(.95)}}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.08);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:24px;opacity:0;animation:fadeUp .7s ease .2s forwards}
+.ew-dot{width:6px;height:6px;background:var(--blue3);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-case-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px;opacity:0;animation:fadeUp .6s ease .35s forwards}
+.hero-title{font-size:clamp(44px,7vw,88px);font-weight:900;line-height:1.02;letter-spacing:-.04em;color:var(--white);margin-bottom:16px;opacity:0;animation:fadeUp .8s ease .45s forwards}
+.hero-title .grad{background:linear-gradient(135deg,#6366f1 0%,#a5b4fc 45%,#818cf8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dimmer);margin-bottom:28px;opacity:0;animation:fadeUp .6s ease .55s forwards}
+.hero-desc{font-size:16px;color:var(--dim);line-height:1.8;max-width:580px;margin-bottom:44px;opacity:0;animation:fadeUp .7s ease .65s forwards}
+.hero-desc strong{color:var(--muted);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;opacity:0;animation:fadeUp .7s ease .75s forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:13px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 0 28px rgba(99,102,241,.35);transition:all .25s;position:relative;overflow:hidden}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);transform:translateX(-100%);transition:transform .4s}
+.btn-primary:hover::after{transform:translateX(100%)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(99,102,241,.5)}
+.play-icon{width:20px;height:20px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px}
+.btn-secondary{border:1px solid var(--border2);color:var(--cream);padding:13px 28px;border-radius:8px;font-size:14px;font-weight:400;text-decoration:none;transition:all .25s}
+.btn-secondary:hover{border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06);transform:translateY(-2px)}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--border);border-radius:12px;background:rgba(99,102,241,.04);backdrop-filter:blur(12px);overflow:hidden;max-width:700px;opacity:0;animation:fadeUp .7s ease .9s forwards}
+.hm-item{flex:1;min-width:100px;padding:16px 20px;text-align:center;border-right:1px solid var(--border);transition:background .2s}
+.hm-item:last-child{border-right:none}
+.hm-item:hover{background:rgba(99,102,241,.06)}
+.hm-n{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--white);display:block;line-height:1;margin-bottom:4px}
+.hm-l{font-family:var(--mono);font-size:9px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.1em}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 2s forwards}
+.sh-txt{font-family:var(--mono);font-size:10px;color:var(--dimmer);letter-spacing:.12em;text-transform:uppercase}
+.sh-arrow{width:22px;height:36px;border:1px solid var(--border);border-radius:11px;display:flex;align-items:flex-start;justify-content:center;padding-top:5px}
+.sh-dot{width:3px;height:3px;background:var(--blue2);border-radius:50%;animation:sb 1.8s ease-in-out infinite}
+@keyframes sb{0%,100%{transform:translateY(0);opacity:1}100%{transform:translateY(14px);opacity:0}}
+.marquee-section{overflow:hidden;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(99,102,241,.02)}
+.marquee-track{display:flex;width:max-content;animation:marquee 26s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.m-item{display:flex;align-items:center;gap:12px;padding:0 28px;white-space:nowrap;font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase}
+.m-dot{width:4px;height:4px;background:var(--blue);border-radius:50%;flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ps{padding:88px 56px;position:relative;z-index:1;border-bottom:1px solid var(--border)}
+.ps:nth-child(even){background:var(--bg2)}
+.sec-tag{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec-tag::before{content:'';width:20px;height:1px;background:var(--blue2)}
+.sec-title{font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--white);margin-bottom:12px}
+.sec-title span{color:var(--blue2);font-weight:400;font-style:italic}
+.sec-sub{font-size:15px;color:var(--dim);max-width:520px;margin-bottom:52px;line-height:1.75}
+.video-block{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:52px}
+.video-block-header{padding:14px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.vb-live{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.vb-live-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+.vb-link{font-family:var(--mono);font-size:11px;color:var(--blue2);text-decoration:none;letter-spacing:.08em;display:flex;align-items:center;gap:5px;transition:gap .2s}
+.vb-link:hover{gap:9px}
+.video-mockup{aspect-ratio:16/9;background:linear-gradient(135deg,var(--bg3) 0%,var(--bg) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;cursor:pointer;text-decoration:none;position:relative;overflow:hidden}
+.video-mockup::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 36px,rgba(99,102,241,.03) 36px,rgba(99,102,241,.03) 37px)}
+.vm-play{width:72px;height:72px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;position:relative;z-index:1;box-shadow:0 0 40px rgba(99,102,241,.4);transition:all .3s}
+.video-mockup:hover .vm-play{transform:scale(1.12);box-shadow:0 0 60px rgba(99,102,241,.6)}
+.vm-label{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;position:relative;z-index:1}
+.vm-stats{display:flex;gap:32px;position:relative;z-index:1}
+.vms-n{font-size:20px;font-weight:800;color:var(--blue2);display:block;line-height:1}
+.vms-l{font-family:var(--mono);font-size:9px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.1em;margin-top:3px;display:block;text-align:center}
+.belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
+.belief-card{background:var(--card);padding:32px 28px;transition:background .25s;position:relative;overflow:hidden}
+.belief-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.belief-card:hover{background:var(--card2)}
+.belief-card:hover::before{transform:scaleX(1)}
+.bc-num{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.1em;margin-bottom:16px;display:block;opacity:.7}
+.bc-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.3}
+.bc-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.bc-desc strong{color:var(--cream);font-weight:600}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
+.aud-card{background:var(--card);padding:28px 26px;transition:background .25s}
+.aud-card:hover{background:var(--card2)}
+.aud-icon{font-size:22px;margin-bottom:14px;display:block}
+.aud-title{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.aud-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.aud-desc strong{color:var(--cream);font-weight:600}
+.principle-block{padding:28px 36px;border-left:2px solid var(--blue);background:rgba(99,102,241,.06);border-radius:0 8px 8px 0;margin-bottom:32px}
+.pb-label{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.pb-text{font-size:20px;font-weight:700;color:var(--white);line-height:1.4}
+.tl-list{display:flex;flex-direction:column;gap:2px}
+.tl-card{background:var(--card);display:grid;grid-template-columns:130px 1fr;gap:24px;padding:24px 28px;border-bottom:1px solid var(--border);transition:background .25s;position:relative;overflow:hidden}
+.tl-card:first-child{border-radius:10px 10px 0 0}
+.tl-card:last-child{border-radius:0 0 10px 10px;border-bottom:none}
+.tl-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(99,102,241,.12),transparent);transition:width .4s}
+.tl-card:hover{background:var(--card2)}
+.tl-card:hover::before{width:100%}
+.tl-left{position:relative;z-index:1}
+.tl-time{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--blue2);display:block;margin-bottom:4px}
+.tl-beat{font-family:var(--mono);font-size:9px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.1em}
+.tl-right{position:relative;z-index:1}
+.tl-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px}
+.tl-job{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;opacity:.8}
+.tl-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.tl-desc strong{color:var(--cream);font-weight:600}
+.tl-quote{margin-top:12px;padding:12px 16px;background:rgba(99,102,241,.08);border-left:2px solid var(--blue);border-radius:0 4px 4px 0;font-size:13px;font-style:italic;color:var(--cream);line-height:1.65}
+.vi-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:28px}
+.vi-card{background:var(--card);padding:28px 24px;transition:background .25s}
+.vi-card:hover{background:var(--card2)}
+.vi-icon{font-size:22px;margin-bottom:14px;display:block}
+.vi-title{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.vi-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.vi-desc strong{color:var(--cream);font-weight:600}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
+.metric-card{background:var(--card);padding:28px 20px;text-align:center;transition:background .25s}
+.metric-card:hover{background:var(--card2)}
+.metric-n{font-size:32px;font-weight:800;color:var(--white);display:block;line-height:1;margin-bottom:4px;font-variant-numeric:tabular-nums}
+.metric-l{font-family:var(--mono);font-size:9px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.1em}
+#closing{padding:88px 56px;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border)}
+.closing-inner{max-width:700px;margin:0 auto}
+.closing-quote{font-size:clamp(20px,2.5vw,30px);font-weight:700;line-height:1.4;color:var(--white);margin-bottom:20px;letter-spacing:-.02em}
+.closing-quote span{color:var(--blue2);font-weight:400;font-style:italic}
+.closing-byline{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase;margin-bottom:40px}
+.closing-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+.foot-l{font-family:var(--mono);font-size:11px;color:var(--dimmer)}
+.foot-r{font-family:var(--mono);font-size:11px;color:var(--dimmer);text-decoration:none;transition:color .2s}
+.foot-r:hover{color:var(--blue2)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .ps,#hero,#closing,footer{padding-left:20px;padding-right:20px}
+  #hero{padding-top:100px;padding-bottom:60px}
+  .belief-grid,.aud-grid,.vi-grid{grid-template-columns:1fr}
+  .metrics-row{grid-template-columns:1fr 1fr}
+  .tl-card{grid-template-columns:1fr;gap:8px}
+  footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<div id="loader">
+  <div class="ld-name">Anupam <span>Nath</span></div>
+  <div class="ld-bar-wrap"><div class="ld-bar" id="lbar"></div></div>
+  <div class="ld-pct" id="lpct">0%</div>
+</div>
+<nav id="nav">
+  <a href="index.html" class="nav-back">← Portfolio</a>
+  <div class="nav-right">
+    <span class="nav-label">VSL Strategy · Case Study</span>
+    <a href="index.html" class="nav-logo">Anupam <span>Nath</span></a>
+  </div>
+</nav>
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="ew-dot"></span>Case Study · Creative Strategy</div>
+    <div class="hero-case-label">VSL Strategy Breakdown</div>
+    <h1 class="hero-title">Trading Coaching<br><span class="grad">VSL — Creative</span><br>Strategy</h1>
+    <div class="hero-sub">Mehboob Alam · TagMango · Rs.499 · Instagram Cold Traffic · 4:59</div>
+    <p class="hero-desc">Built the complete creative strategy for a trading education VSL — <strong>audience mapping, script architecture, visual identity, hook design, and CTA.</strong> Every decision made before production began, not after.</p>
+    <div class="hero-btns">
+      <a href="https://tagmango.com/web/checkout/64feb226f4b8b0c92dc6106f?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" class="btn-primary"><span class="play-icon">&#9654;</span>Watch the Video</a>
+      <a href="#s1" class="btn-secondary">Read the Strategy &#8595;</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hm-item"><span class="hm-n">Creative</span><span class="hm-l">Role</span></div>
+      <div class="hm-item"><span class="hm-n">Rs.499</span><span class="hm-l">Price Point</span></div>
+      <div class="hm-item"><span class="hm-n">4:59</span><span class="hm-l">Duration</span></div>
+      <div class="hm-item"><span class="hm-n">Instagram</span><span class="hm-l">Traffic Source</span></div>
+      <div class="hm-item"><span class="hm-n">2-3%</span><span class="hm-l">Target CVR</span></div>
+      <div class="hm-item"><span class="hm-n">Cold</span><span class="hm-l">Audience Type</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-arrow"><div class="sh-dot"></div></div></div>
+</section>
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="m-item"><span class="m-dot"></span>Script Architecture</div><div class="m-item"><span class="m-dot"></span>Audience Mapping</div><div class="m-item"><span class="m-dot"></span>Hook Design</div><div class="m-item"><span class="m-dot"></span>Visual Identity</div><div class="m-item"><span class="m-dot"></span>Conversion Thinking</div><div class="m-item"><span class="m-dot"></span>Offer Framing</div><div class="m-item"><span class="m-dot"></span>CTA Architecture</div><div class="m-item"><span class="m-dot"></span>Emotional Arc</div><div class="m-item"><span class="m-dot"></span>Buyer Psychology</div><div class="m-item"><span class="m-dot"></span>Editing Direction</div>
+    <div class="m-item"><span class="m-dot"></span>Script Architecture</div><div class="m-item"><span class="m-dot"></span>Audience Mapping</div><div class="m-item"><span class="m-dot"></span>Hook Design</div><div class="m-item"><span class="m-dot"></span>Visual Identity</div><div class="m-item"><span class="m-dot"></span>Conversion Thinking</div><div class="m-item"><span class="m-dot"></span>Offer Framing</div><div class="m-item"><span class="m-dot"></span>CTA Architecture</div><div class="m-item"><span class="m-dot"></span>Emotional Arc</div><div class="m-item"><span class="m-dot"></span>Buyer Psychology</div><div class="m-item"><span class="m-dot"></span>Editing Direction</div>
+  </div>
+</div>
+<div class="ps" id="s1">
+  <div class="sec-tag">00 The Video</div>
+  <h2 class="sec-title">Watch the <span>actual VSL</span></h2>
+  <p class="sec-sub">The video this strategy was built for. Watch it — then read how every decision was made.</p>
+  <div class="video-block reveal">
+    <div class="video-block-header">
+      <span class="vb-live"><span class="vb-live-dot"></span>Live on TagMango via Instagram</span>
+      <a href="https://tagmango.com/web/checkout/64feb226f4b8b0c92dc6106f?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" class="vb-link">Open Page</a>
+    </div>
+    <a href="https://tagmango.com/web/checkout/64feb226f4b8b0c92dc6106f?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" class="video-mockup">
+      <div class="vm-play">&#9654;</div>
+      <div class="vm-label">Click to watch on TagMango</div>
+      <div class="vm-stats">
+        <div><span class="vms-n">4:59</span><span class="vms-l">Duration</span></div>
+        <div><span class="vms-n">Rs.499</span><span class="vms-l">Price Point</span></div>
+        <div><span class="vms-n">Instagram</span><span class="vms-l">Traffic</span></div>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="ps reveal">
+  <div class="sec-tag">01 Foundation</div>
+  <h2 class="sec-title">Before a single frame — <span>three questions.</span></h2>
+  <p class="sec-sub">Before I thought about the edit, I answered the three questions every VSL must answer before production begins.</p>
+  <div class="belief-grid">
+    <div class="belief-card d1"><span class="bc-num">Q.01</span><div class="bc-title">What is this video actually selling?</div><p class="bc-desc">Not a course. Not features. It is selling <strong>belief</strong> — the belief that a repeatable trading system exists, that this creator has it, and that Rs.499 is obvious compared to staying stuck. The real sale is trust.</p></div>
+    <div class="belief-card d2"><span class="bc-num">Q.02</span><div class="bc-title">Who is watching and what state are they in?</div><p class="bc-desc">Someone who clicked a trading post on Instagram. Interested, not committed. <strong>30 seconds of patience</strong> before scrolling away. Has watched videos like this and left without buying. Burned by at least one Telegram tips group.</p></div>
+    <div class="belief-card d3"><span class="bc-num">Q.03</span><div class="bc-title">What does this viewer need to believe before acting?</div><p class="bc-desc">Three beliefs in exact order: <strong>Someone like me figured this out.</strong> What they found is real and repeatable. Rs.499 is nothing compared to another year of staying stuck. Every section installs these three beliefs in sequence.</p></div>
+  </div>
+</div>
+<div class="ps">
+  <div class="sec-tag">02 Audience Profile</div>
+  <h2 class="sec-title">Who this video <span>is actually for.</span></h2>
+  <p class="sec-sub">Not a demographic. A specific person in a specific emotional state at a specific moment.</p>
+  <div class="aud-grid reveal">
+    <div class="aud-card"><span class="aud-icon">&#128100;</span><div class="aud-title">The Profile</div><p class="aud-desc">Indian retail investors and aspiring traders, aged 20-35. Salaried or early-career. Has a Zerodha or Groww account. Has tried trading before and either lost money or broke even.</p></div>
+    <div class="aud-card"><span class="aud-icon">&#127919;</span><div class="aud-title">Core Unmet Desire</div><p class="aud-desc">A <strong>repeatable system</strong> — not tips, not signals, but a method they understand and control. They do not want to be told what to buy. They want to understand why.</p></div>
+    <div class="aud-card"><span class="aud-icon">&#128560;</span><div class="aud-title">Biggest Fear</div><p class="aud-desc">Losing money, being scammed, or wasting time on another course that does not work. They have been here before. <strong>Their scepticism is earned, not irrational.</strong></p></div>
+    <div class="aud-card"><span class="aud-icon">&#128683;</span><div class="aud-title">Core Buying Objection</div><p class="aud-desc"><strong>"Is this actually different from everything else I have tried?"</strong> The video must answer that question in a way the viewer feels in their gut before they think it with their head.</p></div>
+  </div>
+</div>
+<div class="ps">
+  <div class="sec-tag">03 Visual Identity</div>
+  <h2 class="sec-title">Before the script — <span>how this video should look.</span></h2>
+  <p class="sec-sub">Visuals are not decoration. What the viewer sees shapes what they believe.</p>
+  <div class="principle-block reveal"><div class="pb-label">The Core Visual Principle</div><div class="pb-text">Maximum creator face. Minimum B-roll.</div></div>
+  <div class="vi-grid reveal">
+    <div class="vi-card"><span class="vi-icon">&#127909;</span><div class="vi-title">Creator Framing</div><p class="vi-desc">Close to camera. Not a wide shot. Not a studio setup. <strong>Direct eye contact.</strong> This is a conversation, not a presentation. Trading audiences are sceptical of production — glossy footage reads as a sales pitch.</p></div>
+    <div class="vi-card"><span class="vi-icon">&#128241;</span><div class="vi-title">B-Roll Rule</div><p class="vi-desc">When B-roll appears it must be the creator's own screen — <strong>actual Zerodha account, actual trade setup, actual indicators.</strong> Not stock footage. Not news headlines. The viewer needs real proof.</p></div>
+    <div class="vi-card"><span class="vi-icon">&#10024;</span><div class="vi-title">Title Card and Motion</div><p class="vi-desc">The neon-glow title card was a strong choice. Bold typography and animated energy creates a scroll-stopping moment. <strong>The Jordan Belfort quote</strong> on the wall is identity alignment with the audience before a word is spoken.</p></div>
+    <div class="vi-card"><span class="vi-icon">&#128200;</span><div class="vi-title">Energy Arc</div><p class="vi-desc">Calm and personal at the start (origin story) — builds through the middle (proof and methodology) — lands with <strong>quiet confidence at the close.</strong> Subtitles built for sound-off viewing.</p></div>
+  </div>
+</div>
+<div class="ps">
+  <div class="sec-tag">04 Script Architecture</div>
+  <h2 class="sec-title">The emotional journey <span>I designed.</span></h2>
+  <p class="sec-sub">A VSL is a sales conversation in one sitting, without a salesperson in the room. Every section has a specific emotional job.</p>
+  <div class="tl-list reveal">
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">0:00 - 0:10</span><span class="tl-beat">Hook</span></div><div class="tl-right"><div class="tl-title">Pattern-Interrupt Hook</div><div class="tl-job">Answer "is this worth watching?" immediately with yes.</div><p class="tl-desc">The original hook — "HOW TO MAKE TRADING MONEY" — was a category, not a hook. It told the viewer what the video is about but gave no reason to keep watching. The hook I designed names the viewer's exact pain — the specific lived experience of doing everything right and still failing.</p><div class="tl-quote">"Most traders lose money. Not because they are bad at math. Because they are following the wrong system."</div></div></div>
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">0:10 - 0:50</span><span class="tl-beat">Origin Story</span></div><div class="tl-right"><div class="tl-title">The Failure-to-System Arc</div><div class="tl-job">Build trust faster than any credential ever could.</div><p class="tl-desc">Creator shares a specific personal trading failure — exact amount lost, exact mistake made, exact moment of realisation. The viewer's internal response: <strong>"He was exactly where I am. He found a way out. Maybe I can too."</strong> That one story does more conversion work than four minutes of methodology explanation.</p></div></div>
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">0:50 - 1:30</span><span class="tl-beat">Audience Mirror</span></div><div class="tl-right"><div class="tl-title">Name Their Exact Situation</div><div class="tl-job">Make the viewer feel seen before you offer anything.</div><p class="tl-desc">Name the Telegram group burnout. Name the random tips. Name the emotional trading. <strong>This is the moment the viewer stops thinking "this is a sales video" and starts thinking "he gets it."</strong> That shift is everything.</p><div class="tl-quote">"If you have been trading for 6 months and you are still not consistently profitable, I know what is missing. It is not effort. It is not intelligence. It is a repeatable framework."</div></div></div>
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">1:30 - 2:30</span><span class="tl-beat">The System</span></div><div class="tl-right"><div class="tl-title">Show, Don't Just Tell</div><div class="tl-job">Install a new belief — don't pitch the course yet.</div><p class="tl-desc">Explain the methodology in 3 points but show each on screen. Use the creator's own Zerodha charts. Show a real trade from entry to exit. <strong>One real example outperforms five minutes of explanation.</strong> Generic stock footage does not do this work — only the creator's real screen does.</p></div></div>
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">2:30 - 3:30</span><span class="tl-beat">Social Proof</span></div><div class="tl-right"><div class="tl-title">Student Results</div><div class="tl-job">Collapse scepticism with proof that mirrors the viewer's reality.</div><p class="tl-desc">Not a highlight reel. Proof placed to answer the exact objection: <strong>"This works for him, but would it work for someone like me?"</strong> Specific names, numbers, timeframes. Real specificity collapses scepticism in a way generic chart footage cannot.</p></div></div>
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">3:30 - 4:00</span><span class="tl-beat">Offer Stack</span></div><div class="tl-right"><div class="tl-title">Make the Value Undeniable</div><div class="tl-job">Reframe Rs.499 from cost to insurance.</div><p class="tl-desc">State the full value clearly on screen. Then reveal the Rs.499 price as the punchline. <strong>"Everything above. For less than a single bad trade."</strong> At Rs.499 nobody is hesitating because of money. They are hesitating because of doubt. The offer stack removes the doubt.</p></div></div>
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">4:00 - 4:30</span><span class="tl-beat">The Close</span></div><div class="tl-right"><div class="tl-title">Decision Made Easy</div><div class="tl-job">Not a pitch — a filter.</div><p class="tl-desc">A close that self-selects speaks directly to the buyer and lets the non-buyer feel they are not the target. That clarity converts. <strong>If the rest of the VSL did its job, the viewer already made the mental decision. The close just tells them where to go.</strong></p><div class="tl-quote">"This is not for everyone. If you want tips, go find a Telegram group. If you want a system — a method you understand, control, and can repeat — click the button below."</div></div></div>
+    <div class="tl-card"><div class="tl-left"><span class="tl-time">4:30 - 4:59</span><span class="tl-beat">CTA</span></div><div class="tl-right"><div class="tl-title">Spoken On Screen — Creator on Camera</div><div class="tl-job">Remove the last friction. Make the action unavoidable.</div><p class="tl-desc">The CTA was not spoken inside the original video. The viewer had to scroll below to find the buy button. For Instagram traffic — where viewers are trained to react to in-video CTAs — not having a spoken on-screen CTA is a significant conversion loss. <strong>Viewers who are 80% convinced close the tab and forget. That is not a scepticism problem. It is a friction problem.</strong></p><div class="tl-quote">"Scroll down. Hit the button. Rs.499. I will see you inside."</div></div></div>
+  </div>
+</div>
+<div class="ps">
+  <div class="sec-tag">05 Editing Direction</div>
+  <h2 class="sec-title">How production <span>serves the strategy.</span></h2>
+  <p class="sec-sub">Editing on a VSL is not a creative decision — it is a strategic one. Every cut either keeps the viewer inside the arc or breaks it.</p>
+  <div class="principle-block reveal"><div class="pb-label">The Editing Principle</div><div class="pb-text">Never cut away from the creator at a high-emotion moment.</div></div>
+  <div class="vi-grid reveal">
+    <div class="vi-card"><span class="vi-icon">&#9888;&#65039;</span><div class="vi-title">The B-Roll Problem</div><p class="vi-desc">The original video cut to generic news footage — American Airlines loss, US interest rate headlines — immediately after the hook. <strong>40 seconds of momentum loss</strong> right after the most promising moment. Platform data: 70% of exits happen in the first 30 seconds. That B-roll accelerated the drop.</p></div>
+    <div class="vi-card"><span class="vi-icon">&#127909;</span><div class="vi-title">Pacing and Rhythm</div><p class="vi-desc"><strong>Early sections:</strong> slower cuts, longer takes — let the creator build connection. <strong>Middle sections:</strong> tighter cuts — the viewer is leaning in. <strong>Close and CTA:</strong> slow back down. Creator carries the weight to the final frame.</p></div>
+  </div>
+</div>
+<div class="ps">
+  <div class="sec-tag">06 Success Metrics</div>
+  <h2 class="sec-title">How I would have <span>measured this.</span></h2>
+  <p class="sec-sub">Not vanity metrics. Conversion signals that tell you whether the strategy worked.</p>
+  <div class="metrics-row reveal">
+    <div class="metric-card"><span class="metric-n" data-target="2" data-suffix="-3%">0</span><span class="metric-l">Target Conversion Rate</span></div>
+    <div class="metric-card"><span class="metric-n" data-target="60" data-suffix="%+">0</span><span class="metric-l">Viewer Retention to 3-Min</span></div>
+    <div class="metric-card"><span class="metric-n">Rs.499</span><span class="metric-l">Price Point</span></div>
+    <div class="metric-card"><span class="metric-n">4:59</span><span class="metric-l">Video Duration</span></div>
+  </div>
+</div>
+<div id="closing">
+  <div class="closing-inner reveal">
+    <div class="closing-quote">"The edit is the last step. The strategy is the first. A creative strategist does not just make things look right — they make sure the <span>right things get made,</span> in the right sequence, for the right audience, with the right emotional logic."</div>
+    <div class="closing-byline">Anupam Nath · Creative Strategist · New Delhi, India</div>
+    <div class="closing-btns">
+      <a href="https://tagmango.com/web/checkout/64feb226f4b8b0c92dc6106f?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" class="btn-primary"><span class="play-icon">&#9654;</span>Watch the Video</a>
+      <a href="index.html" class="btn-secondary">Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <span class="foot-l">2026 Anupam Nath Creative Strategist New Delhi</span>
+  <a href="mailto:anupamnath222@gmail.com" class="foot-r">anupamnath222@gmail.com</a>
+</footer>
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function a(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cur.style.left=mx+'px';cur.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.transform='translate(-50%,-50%) scale(1.4)';});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.transform='translate(-50%,-50%) scale(1)';});});
+const lbar=document.getElementById('lbar'),lpct=document.getElementById('lpct'),loader=document.getElementById('loader');
+let prog=0;
+const li=setInterval(()=>{prog+=Math.random()*18;if(prog>=100){prog=100;clearInterval(li);setTimeout(()=>loader.classList.add('done'),300);}lbar.style.width=prog+'%';lpct.textContent=Math.floor(prog)+'%';},80);
+const canvas=document.getElementById('hero-canvas'),ctx=canvas.getContext('2d');
+let dots=[],mouse={x:-999,y:-999};
+function resize(){canvas.width=window.innerWidth;canvas.height=document.getElementById('hero').offsetHeight;dots=[];for(let r=0;r<=Math.ceil(canvas.height/34);r++)for(let c=0;c<=Math.ceil(canvas.width/34);c++)dots.push({x:c*34,y:r*34});}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(const d of dots){const dx=d.x-mouse.x,dy=d.y-mouse.y,dist=Math.sqrt(dx*dx+dy*dy),p=Math.max(0,1-dist/130);ctx.beginPath();ctx.arc(d.x,d.y,1.3+p*2.2,0,Math.PI*2);ctx.fillStyle=`rgba(99,102,241,${.1+p*.55})`;ctx.fill();}requestAnimationFrame(draw);}
+document.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+window.addEventListener('resize',resize);resize();draw();
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);});
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+function runCounter(el){const t=parseInt(el.dataset.target),s=el.dataset.suffix||'';if(!t)return;const step=t/(1800/16);let c=0;const iv=setInterval(()=>{c+=step;if(c>=t){c=t;clearInterval(iv);}el.textContent=Math.floor(c)+s;},16);}
+const mr=document.querySelector('.metrics-row');
+if(mr)new IntersectionObserver(entries=>{if(entries[0].isIntersecting)document.querySelectorAll('.metric-n[data-target]').forEach(runCounter);},{threshold:.5}).observe(mr);
+</script>
+</body>
+</html>
