@@ -32,23 +32,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 .nav-resume:hover{box-shadow:0 0 36px rgba(5,150,105,0.45)!important;}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 60px 80px;position:relative;z-index:1;flex-direction:column;}
-.hero-welcome{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue2);margin-bottom:28px;font-weight:600;}
-.hero-h1{font-size:clamp(42px,6.5vw,76px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;color:var(--white);margin-bottom:14px;}
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 80px 60px;position:relative;z-index:1;gap:40px;overflow:hidden;}
+.hero-left{display:flex;flex-direction:column;align-items:flex-start;text-align:left;}
+.hero-right{display:flex;align-items:flex-end;justify-content:center;position:relative;}
+.hero-photo-wrap{position:relative;width:100%;max-width:480px;}
+.hero-photo-wrap::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:75%;height:75%;background:radial-gradient(ellipse,rgba(5,150,105,0.18) 0%,transparent 70%);border-radius:50%;z-index:0;animation:liquidFloat 6s ease-in-out infinite;}
+.hero-photo{width:100%;max-height:80vh;object-fit:contain;object-position:bottom;position:relative;z-index:1;filter:drop-shadow(0 20px 40px rgba(5,150,105,0.15));}
+.hero-welcome{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px;font-weight:600;}
+.hero-h1{font-size:clamp(36px,5.5vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;color:var(--white);margin-bottom:12px;}
 .grad{background:linear-gradient(130deg,var(--blue) 0%,var(--cyan) 60%,var(--blue2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:g 5s ease infinite;}
 @keyframes g{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
 #typer{color:var(--blue2);min-height:1.2em;display:inline-block;}
 .cursor{color:var(--blue2);animation:blink-cursor 0.7s infinite;}
 @keyframes blink-cursor{0%,50%{opacity:1;}51%,100%{opacity:0;}}
-.hero-sub{font-size:clamp(17px,2.2vw,22px);color:var(--grey);font-weight:500;margin-bottom:26px;letter-spacing:-0.01em;}
-.hero-desc{font-size:16px;color:var(--grey);max-width:520px;line-height:1.85;margin:0 auto 44px;font-weight:400;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--grey);font-weight:500;margin-bottom:20px;letter-spacing:-0.01em;}
+.hero-desc{font-size:15px;color:var(--grey);max-width:480px;line-height:1.85;margin-bottom:36px;font-weight:400;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start;margin-bottom:36px;}
 .btn{padding:13px 30px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:var(--f);cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;letter-spacing:-0.01em;}
 .btn-fill{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 26px var(--glow);}
 .btn-fill:hover{box-shadow:0 0 44px rgba(5,150,105,0.5);transform:translateY(-2px);}
 .btn-ghost{background:transparent;color:var(--off);border:1px solid var(--border);}
 .btn-ghost:hover{border-color:var(--blue2);color:var(--white);background:var(--glow2);}
-.hero-social{display:flex;gap:24px;justify-content:center;}
+.hero-social{display:flex;gap:24px;justify-content:flex-start;}
 .hero-social a{color:var(--dgrey);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;display:flex;align-items:center;gap:7px;}
 .hero-social a:hover{color:var(--blue2);}
 .hero-social svg{width:16px;height:16px;fill:currentColor;}
@@ -62,7 +67,10 @@ section{padding:96px 64px;position:relative;z-index:1;}
 
 /* ABOUT */
 #about{background:var(--bg2);}
-.about-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:80px;align-items:start;}
+.about-grid{display:grid;grid-template-columns:0.38fr 1fr 0.62fr;gap:52px;align-items:start;}
+.about-photo-col{display:flex;align-items:flex-start;justify-content:center;}
+.about-photo-frame{width:100%;max-width:220px;border-radius:20px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.2);box-shadow:0 12px 48px rgba(5,150,105,0.14),0 2px 8px rgba(0,0,0,0.07);position:relative;}
+.about-photo-frame img{width:100%;height:auto;display:block;object-fit:cover;}
 .about-text p{font-size:15px;color:var(--grey);line-height:1.9;margin-bottom:18px;}
 .about-text strong{color:var(--off);font-weight:600;}
 .about-loc{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--dgrey);margin-top:22px;font-weight:500;}
@@ -234,7 +242,7 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 .stat-num.counting{font-variant-numeric:tabular-nums;animation:countUp 1.2s ease-out;}
 
 /* DOTS CANVAS BACKGROUND */
-#dotsCanvas{position:absolute;top:0;left:0;z-index:0;opacity:0.3;}
+#dotsCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;opacity:0.3;pointer-events:none;}
 
 /* PREMIUM SMOOTH TRANSITIONS */
 a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
@@ -246,8 +254,15 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 
 @media(max-width:900px){
   nav{padding:0 20px;}.nav-links{display:none;}
-  section{padding:68px 20px;}#hero{padding:100px 20px 60px;}
-  .about-grid,.hop-inner,.contact-grid{grid-template-columns:1fr;gap:40px;}
+  section{padding:68px 20px;}
+  #hero{padding:80px 20px 40px;grid-template-columns:1fr;}
+  .hero-left{align-items:center;text-align:center;}
+  .hero-btns{justify-content:center;}
+  .hero-social{justify-content:center;}
+  .hero-right{display:none;}
+  .about-grid{grid-template-columns:1fr!important;gap:28px!important;}
+  .about-photo-col{display:none;}
+  .hop-inner,.contact-grid{grid-template-columns:1fr;gap:40px;}
   .skills-grid,.proj-grid{grid-template-columns:1fr;}
   .form-row{grid-template-columns:1fr;}
   footer{flex-direction:column;gap:8px;text-align:center;}
@@ -274,24 +289,36 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 
 <section id="hero">
   <canvas id="dotsCanvas"></canvas>
-  <p class="hero-welcome">WELCOME TO MY PORTFOLIO</p>
-  <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam</span></h1>
-  <div class="hero-sub"><span id="typer"></span><span class="cursor">|</span></div>
-  <div class="hero-desc" style="max-width:860px;">I've worked across media, education, D2C and coaching, not in theory but in execution<br>Content doesn't fail because of execution, it fails because of thinking, that's where I work</div>
-  <div class="hero-btns">
-    <a href="#projects" class="btn btn-fill">View My Work</a>
-    <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+  <div class="hero-left">
+    <p class="hero-welcome">WELCOME TO MY PORTFOLIO</p>
+    <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam</span></h1>
+    <div class="hero-sub"><span id="typer"></span><span class="cursor">|</span></div>
+    <div class="hero-desc">I've worked across media, education, D2C and coaching, not in theory but in execution. Content doesn't fail because of execution, it fails because of thinking — that's where I work.</div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-fill">View My Work</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-social">
+      <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
   </div>
-  <div class="hero-social">
-    <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank">
-      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      LinkedIn
-    </a>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img src="assets/logos/Anupam 1st image.png" alt="Anupam Nath" class="hero-photo">
+    </div>
   </div>
 </section>
 
 <section id="about">
   <div class="about-grid">
+    <div class="about-photo-col fi">
+      <div class="about-photo-frame">
+        <img src="assets/logos/Anupam 2nd image.png" alt="Anupam Nath">
+      </div>
+    </div>
     <div class="fi">
       <div class="s-label">About Me</div>
       <h2 class="s-h2">I don't start with content. I start with what needs to change in the buyer's mind.</h2>
@@ -724,7 +751,7 @@ const canvas=document.getElementById('dotsCanvas');
 if(canvas){
   const ctx=canvas.getContext('2d');
   canvas.width=window.innerWidth;
-  canvas.height=window.innerHeight*0.5;
+  canvas.height=window.innerHeight;
   const dotSize=2;const spacing=40;let dots=[];
   for(let x=0;x<canvas.width;x+=spacing)for(let y=0;y<canvas.height;y+=spacing)dots.push({x,y,baseSize:dotSize,size:dotSize,glow:0});
   let mouseX=0,mouseY=0;
@@ -743,7 +770,7 @@ if(canvas){
     requestAnimationFrame(animate);
   }
   animate();
-  window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight*0.5;});
+  window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 }
 
 // COUNTING NUMBERS
