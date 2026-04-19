@@ -93,7 +93,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .f-btn.active{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 18px var(--glow);}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:visible;display:flex;flex-direction:row;align-items:flex-start;transition:border-color 0.2s,transform 0.2s,box-shadow 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);gap:0;padding-top:0;}
-.proj-card:hover{border-color:var(--blue2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(108,138,255,0.2);glow:rgba(108,138,255,0.15);}
+.proj-card:hover{border-color:var(--blue2);box-shadow:0 14px 44px rgba(108,138,255,0.28);}
 .proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:transparent;border-right:none;display:flex;align-items:center;justify-content:center;padding:8px;position:relative;overflow:visible;flex-shrink:0;border-radius:0;box-shadow:0 8px 24px rgba(0,0,0,0.25);margin:12px;margin-right:18px;}
 .proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;filter:none;width:90%;height:90%;}
 .proj-thumb.prep-iq{background:transparent;}
@@ -198,8 +198,14 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 
 /* INTERACTIVE CARD POP EFFECT */
 .proj-card,.skill-card,.stat-card,.ci-link{transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.3s ease,border-color 0.3s ease;}
+.proj-card{transition:opacity 0.5s ease-out,transform 0.5s ease-out,box-shadow 0.25s ease,border-color 0.25s ease;}
 .proj-card:active,.skill-card:active,.stat-card:active,.ci-link:active{transform:scale(0.98);}
-.proj-card:hover,.skill-card:hover,.stat-card:hover{transform:translateY(-6px) scale(1.02);}
+.skill-card:hover,.stat-card:hover{transform:translateY(-6px) scale(1.02);}
+/* STAGGER ANIMATION FOR PROJECT CARDS */
+.proj-card.proj-anim{opacity:0;transform:translateY(30px);}
+.proj-card.in{opacity:1;transform:translateY(0);}
+.proj-card:hover{transform:translateY(-6px);transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease;}
+.proj-card:hover .metric strong{color:var(--cyan);}
 
 /* COUNTING ANIMATION */
 @keyframes countUp{from{counter-reset:num var(--num);}to{counter-reset:num var(--num);}}
@@ -362,7 +368,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
           <span class="metric"><strong>₹30-40K</strong> First Launch</span>
           <span class="metric"><strong>₹0</strong> CAC</span>
         </div>
-        <div class="proj-desc">Low-trust market. Tier-3 India. Buyers who had been burned before and needed authority not aspiration to make a decision. Built the full positioning and content system as the sole strategist. No team. No brief. No playbook. First launch generated ₹30-40K with zero paid ads.</div>
+        <div class="proj-desc">Tier-3 India buyers do not respond to aspiration they respond to authority. I built the positioning and content system around that one insight as the sole strategist with no team no brief and no existing playbook and the first launch generated ₹30-40K with zero paid ads.</div>
         <div class="proj-tags"><span class="proj-tag">Brand Positioning</span><span class="proj-tag">Content</span><span class="proj-tag">Growth</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;">
           <a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
@@ -379,7 +385,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
           <span class="metric"><strong>Organic</strong> Growth Only</span>
           <span class="metric"><strong>Real</strong> Customer Sales</span>
         </div>
-        <div class="proj-desc">New brand. Crowded market. Zero paid budget. The move was to not compete on product but on community. Built the brand voice, UGC system, and content architecture that turned attention into actual paying customers. Organic growth only. Real sales.</div>
+        <div class="proj-desc">Most F&B brands fight on product. I positioned this one on community and built the brand voice UGC system and content architecture that turned early followers into real paying customers without spending a single rupee on ads.</div>
         <div class="proj-tags"><span class="proj-tag">Brand Strategy</span><span class="proj-tag">Community</span><span class="proj-tag">Growth</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;">
           <a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-q4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study →</a>
@@ -396,7 +402,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
           <span class="metric"><strong>Daily</strong> Publishing</span>
           <span class="metric"><strong>Credible</strong> Source</span>
         </div>
-        <div class="proj-desc">Built this YouTube IP from zero entirely end to end. Concept, scripting, production, publishing. Daily. Without missing a day. The challenge was not quality. It was consistency at quality every single day. Built the system that made that possible.</div>
+        <div class="proj-desc">I built this YouTube IP entirely from scratch and ran it daily without missing a day. Concept scripting production publishing all of it. The real challenge was never quality. It was building a system that made consistency at quality possible every single day.</div>
         <div class="proj-tags"><span class="proj-tag">YouTube IP</span><span class="proj-tag">Content</span><span class="proj-tag">Production</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;">
           <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel →</a>
@@ -413,7 +419,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
           <span class="metric"><strong>2 Years</strong> Early Stage</span>
           <span class="metric"><strong>10K</strong> Followers Built</span>
         </div>
-        <div class="proj-desc">Initial team member. Two years in the early stage when nothing existed yet. Built the content foundation from the ground up. Covered election campaigns and legislative events across Assam. Was there from 10K followers in the years that actually mattered.</div>
+        <div class="proj-desc">I was there from the beginning when nothing existed yet. Two years as an initial team member building the content foundation from the ground up covering election campaigns and legislative events across Assam. The brand grew because the foundation was built right.</div>
         <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Growth</span><span class="proj-tag">Strategy</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;">
           <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page →</a>
@@ -430,7 +436,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
           <span class="metric"><strong>Lead Gen</strong> Optimized</span>
           <span class="metric"><strong>Visual</strong> Identity System</span>
         </div>
-        <div class="proj-desc">A VC and founder-focused podcast that needed to cut through noise. Built the visual identity and hook-first content strategy. In this space the first line and the thumbnail determine everything. That is where the work started. Built for lead generation not just reach.</div>
+        <div class="proj-desc">In the podcast space the hook and the thumbnail decide everything before the listener even presses play. I built the visual identity and hook-first content strategy for this VC and founder-focused podcast with one goal lead generation not just reach.</div>
         <div class="proj-tags"><span class="proj-tag">Podcast</span><span class="proj-tag">Visual Identity</span><span class="proj-tag">Growth</span></div>
         <a href="https://www.atomikgrowth.com/" target="_blank" class="proj-link">Visit Website →</a>
       </div>
@@ -444,7 +450,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
           <span class="metric"><strong>Editing</strong> Optimized</span>
           <span class="metric"><strong>Performance</strong> Metrics</span>
         </div>
-        <div class="proj-desc">Built a short-form content framework designed for performance not just posting frequency. Every format decision tied to a specific platform behaviour and retention goal across Instagram, YouTube Shorts, and LinkedIn. Each platform different. Each decision intentional.</div>
+        <div class="proj-desc">Short-form done right is not about posting more. It is about understanding exactly how each platform behaves and building your format decisions around that. I built this framework to make every piece of content work harder not just exist.</div>
         <div class="proj-tags"><span class="proj-tag">Content Strategy</span><span class="proj-tag">Adobe Creative Suite</span><span class="proj-tag">Distribution</span></div>
         <a href="https://drive.google.com/drive/folders/1plRr675jZ-equhiDyxypVg7-Lr8YB3Hz?usp=drive_link" target="_blank" class="proj-link">View Work →</a>
       </div>
@@ -715,6 +721,58 @@ const hopRevealObserver=new IntersectionObserver((entries)=>{
   });
 },{threshold:0.15});
 document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el));
+
+// PROJECT CARD STAGGER ANIMATION
+(function(){
+  const cards=document.querySelectorAll('.proj-card');
+  cards.forEach(c=>c.classList.add('proj-anim'));
+  const pg=document.getElementById('pg');if(!pg)return;
+  let done=false;
+  const obs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&!done){
+      done=true;
+      const delay=window.innerWidth<=900?80:120;
+      const all=Array.from(cards);
+      all.filter(c=>c.style.display==='none').forEach(c=>c.classList.add('in'));
+      all.filter(c=>c.style.display!=='none').forEach((c,i)=>setTimeout(()=>c.classList.add('in'),i*delay));
+      obs.disconnect();
+    }
+  },{threshold:0.1});
+  obs.observe(pg);
+})();
+
+// PROJECT METRIC COUNT-UP
+(function(){
+  const pg=document.getElementById('pg');if(!pg)return;
+  let counted=false;
+  function parseNum(s){
+    s=s.trim();if(s.includes('-'))return null;
+    const km=s.match(/^[₹]?(\d+\.?\d*)K(\+?)$/);
+    if(km){const kn=parseFloat(km[1]),sx=km[2],px=s.startsWith('₹')?'₹':'';
+      return{end:kn*1000,fmt:v=>{const k=v/1000;return px+(kn%1?k.toFixed(1):Math.floor(k))+'K'+sx;}};}
+    const nm=s.match(/^[₹]?(\d+)(\+?)$/);
+    if(nm){const px=s.startsWith('₹')?'₹':'';return{end:parseInt(nm[1]),fmt:v=>px+Math.floor(v)+nm[2]};}
+    return null;
+  }
+  function animCount(el){
+    const orig=el.textContent,p=parseNum(orig);if(!p||p.end===0)return;
+    let t0=null;
+    requestAnimationFrame(function step(now){
+      if(t0===null)t0=now;
+      const t=Math.min((now-t0)/1000,1),e=1-Math.pow(1-t,3);
+      el.textContent=p.fmt(e*p.end);
+      if(t<1)requestAnimationFrame(step);else el.textContent=orig;
+    });
+  }
+  const mobs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&!counted){
+      counted=true;
+      pg.querySelectorAll('.metric strong').forEach(animCount);
+      mobs.disconnect();
+    }
+  },{threshold:0.2});
+  mobs.observe(pg);
+})();
 </script>
 </body>
 </html>
