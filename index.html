@@ -70,8 +70,10 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .about-stats{display:flex;flex-direction:column;gap:14px;}
 .stat-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:30px 22px;text-align:center;transition:border-color 0.2s,box-shadow 0.2s;}
 .stat-card:hover{border-color:rgba(108,138,255,0.3);box-shadow:0 0 28px var(--glow2);}
-.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:7px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
-.stat-lbl{font-size:13px;color:var(--grey);}
+.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:4px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.stat-mid{font-size:15px;font-weight:700;color:var(--off);display:block;margin-bottom:8px;letter-spacing:-0.01em;}
+.stat-title{font-size:24px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;display:block;margin-bottom:10px;letter-spacing:-0.03em;}
+.stat-lbl{font-size:12px;color:var(--grey);line-height:1.5;}
 
 /* SKILLS */
 #skills{background:var(--bg);}
@@ -258,9 +260,9 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
       </div>
     </div>
     <div class="about-stats fi d1">
-      <div class="stat-card"><span class="stat-num">5+</span><span class="stat-lbl">Years Experience</span></div>
-      <div class="stat-card"><span class="stat-num">₹40K+</span><span class="stat-lbl">First Launch Revenue</span></div>
-      <div class="stat-card"><span class="stat-num">37K+</span><span class="stat-lbl">Subscribers Built</span></div>
+      <div class="stat-card"><span class="stat-num">5+</span><span class="stat-mid">Years</span><span class="stat-lbl">Real work, real execution</span></div>
+      <div class="stat-card"><span class="stat-title">Full Funnel<br>Thinking</span><span class="stat-lbl">Research to distribution</span></div>
+      <div class="stat-card"><span class="stat-num">50+</span><span class="stat-mid">Projects</span><span class="stat-lbl">Built and executed</span></div>
     </div>
   </div>
 </section>
@@ -671,7 +673,7 @@ const countObserver=new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting&&!entry.target.dataset.counted){
       entry.target.dataset.counted='true';
-      const text=entry.target.textContent;const num=parseInt(text);const unit=text.replace(/\d+/g,'');
+      const text=entry.target.textContent;const num=parseInt(text);if(isNaN(num))return;const unit=text.replace(/\d+/g,'');
       const increment=Math.ceil(num/40);let current=0;
       const counter=setInterval(()=>{
         current+=increment;
