@@ -23,7 +23,8 @@ body::before{content:'';position:fixed;top:-20%;left:50%;transform:translateX(-5
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border2);}
-.nav-ham{display:none;}  /* hidden on desktop */
+.nav-ham{display:none;} /* removed */
+.nav-resume-mob{display:none;} /* shown only on mobile via media query */
 .nav-logo{font-size:17px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.015em;}
 .nav-logo span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
@@ -364,18 +365,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   /* NAV */
   nav{padding:0 20px;height:58px;}
   .nav-links{display:none;}
-
-  /* Hamburger toggle */
-  .nav-ham{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:6px;z-index:200;}
-  .nav-ham span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
-  .nav-open .nav-ham span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .nav-open .nav-ham span:nth-child(2){opacity:0;}
-  .nav-open .nav-ham span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .nav-mobile-menu{display:none;position:fixed;inset:0;top:58px;background:rgba(255,255,255,0.98);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:40px 20px;}
-  .nav-open .nav-mobile-menu{display:flex;}
-  .nav-mobile-menu a{font-size:22px;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em;transition:color 0.2s;}
-  .nav-mobile-menu a:hover{color:var(--blue2);}
-  .nav-mobile-menu .nav-resume-m{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white!important;padding:14px 36px;border-radius:10px;font-size:16px!important;box-shadow:0 0 28px var(--glow);}
+  .nav-resume-mob{display:inline-flex!important;font-size:12px!important;padding:8px 16px!important;}
 
   /* SECTIONS */
   section{padding:64px 20px;}
@@ -481,16 +471,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
     <li><a href="#contact">Contact</a></li>
     <li><a class="nav-resume" href="https://drive.google.com/file/d/1-mEIzePDUyYxil3vTSVufQITtH-dBOUo/view?usp=sharing" target="_blank">&#x21D3; Resume</a></li>
   </ul>
-  <div class="nav-ham" id="navHam" aria-label="Menu" role="button" tabindex="0">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#about" class="mob-link">About</a>
-    <a href="#skills" class="mob-link">Skills</a>
-    <a href="#projects" class="mob-link">Projects</a>
-    <a href="#contact" class="mob-link">Contact</a>
-    <a href="https://drive.google.com/file/d/1-mEIzePDUyYxil3vTSVufQITtH-dBOUo/view?usp=sharing" target="_blank" class="nav-resume-m">&#x21D3; Resume</a>
-  </nav>
+  <a class="nav-resume nav-resume-mob" href="https://drive.google.com/file/d/1-mEIzePDUyYxil3vTSVufQITtH-dBOUo/view?usp=sharing" target="_blank">&#x21D3; Resume</a>
 </nav>
 
 <section id="hero">
@@ -995,29 +976,6 @@ document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el
 })();
 
 // Scroll progress bar + nav scrolled state + back-to-top
-// Hamburger mobile menu
-(function(){
-  const ham = document.getElementById('navHam');
-  const nav = document.getElementById('mainNav');
-  const menu = document.getElementById('mobileMenu');
-  if(!ham) return;
-  function toggle(){
-    const open = nav.classList.toggle('nav-open');
-    menu.setAttribute('aria-hidden', !open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-  ham.addEventListener('click', toggle);
-  ham.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') toggle(); });
-  // Close on link click
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      nav.classList.remove('nav-open');
-      menu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    });
-  });
-})();
-
 (function(){
   const prog = document.getElementById('scroll-progress');
   const navEl = document.querySelector('nav');
@@ -1033,17 +991,38 @@ document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el
   onScroll();
 })();
 
-// Word-by-word h2 reveal
+// Word-by-word h2 reveal — text-node based (safe with inner spans)
 (function(){
-  document.querySelectorAll('.s-h2').forEach(function(h){
-    h.innerHTML = h.innerHTML.replace(/(<span[^>]*>.*?<\/span>|[^<\s][^<]*[^>\s]|\S)/g, function(word){
-      if(word.startsWith('<')) return word;
-      return word.split(' ').map(function(w){ return w ? '<span class="wr">'+w+'</span>' : ''; }).join(' ');
+  function wrapTextNodes(h){
+    var nodes = Array.from(h.childNodes);
+    nodes.forEach(function(node){
+      if(node.nodeType === 3){ // text node
+        var words = node.textContent.split(/( +)/);
+        var frag = document.createDocumentFragment();
+        words.forEach(function(part){
+          if(/^ +$/.test(part)){
+            frag.appendChild(document.createTextNode(part));
+          } else if(part){
+            var s = document.createElement('span');
+            s.className = 'wr';
+            s.textContent = part;
+            frag.appendChild(s);
+          }
+        });
+        h.replaceChild(frag, node);
+      }
+      // span/strong/em children — recurse into them to wrap their text nodes too
+      else if(node.nodeType === 1 && node.tagName !== 'SPAN' || (node.nodeType === 1 && node.className === '')){
+        // leave styled spans (gradient) as-is; only recurse into plain elements
+      }
     });
-    const obs = new IntersectionObserver(function(entries){
+  }
+  document.querySelectorAll('.s-h2').forEach(function(h){
+    wrapTextNodes(h);
+    var obs = new IntersectionObserver(function(entries){
       if(entries[0].isIntersecting){
         h.classList.add('wv');
-        h.querySelectorAll('.wr').forEach(function(w,i){ w.style.transitionDelay = (i*0.06)+'s'; });
+        h.querySelectorAll('.wr').forEach(function(w,i){ w.style.transitionDelay=(i*0.06)+'s'; });
         obs.disconnect();
       }
     },{threshold:0.5});
