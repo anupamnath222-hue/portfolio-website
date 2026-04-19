@@ -116,49 +116,59 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
   align-items: center;
   justify-content: center;
   position: relative;
-  min-width: 500px;
+  min-width: 520px;
   z-index: 1;
   overflow: visible;
+  padding: 60px 40px;
+}
+/* The white floating card BEHIND the photo */
+.hero-photo-wrap {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 36px;
+  box-shadow: 0 8px 48px rgba(5,150,105,0.18), 0 2px 12px rgba(5,150,105,0.08);
+  overflow: hidden;
+  animation: floatRect 6s ease-in-out infinite;
+  z-index: 2;
+}
+/* Green glow at bottom of card */
+.hero-photo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(5,150,105,0.22) 0%, transparent 100%);
+  z-index: 0;
+  border-radius: 0 0 36px 36px;
+  pointer-events: none;
+}
+@keyframes floatRect {
+  0%,100% { transform: translateY(0px); box-shadow: 0 8px 48px rgba(5,150,105,0.18); }
+  50% { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(5,150,105,0.25); }
 }
 .hero-photo-box {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 420px;
-  height: 460px;
-  animation: fadeInRight 1.2s cubic-bezier(.23,1.01,.32,1) 0.2s both;
-}
-/* Floating rounded rectangle behind hero photo */
-.hero-photo-box::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 380px;
-  background: rgba(5,150,105,0.07);
-  border: 1.5px solid rgba(5,150,105,0.18);
-  border-radius: 32px;
-  z-index: 0;
-  animation: floatRect 6s ease-in-out infinite;
-}
-@keyframes floatRect {
-  0%,100% { transform: translate(-50%,-50%) scale(1) rotate(-1deg); }
-  50% { transform: translate(-50%,-53%) scale(1.03) rotate(1.5deg); }
+  z-index: 2;
 }
 .hero-photo-img {
-  width: 290px;
-  height: 340px;
+  width: 300px;
+  height: 400px;
   object-fit: cover;
   object-position: top center;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(5,150,105,0.10);
-  background: #f8fafc;
+  border-radius: 0;
   display: block;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 .hero-info-card {
   position: absolute;
@@ -180,12 +190,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
   transform: translateY(24px) scale(0.98);
   animation: fadeInCard 1.1s cubic-bezier(.23,1.01,.32,1) both;
 }
-.hero-info-card span { color: #64748b; font-size: 0.9rem; font-weight: 500; display:block; }
-.hero-info-card.card1 { top: 30px; left: -10px; animation-delay: 0.3s; z-index:3; }
-.hero-info-card.card2 { top: 30px; right: -10px; animation-delay: 0.5s; z-index:3; flex-direction:row; align-items:center; gap:10px; }
-.hero-info-card.card3 { bottom: 60px; left: -10px; animation-delay: 0.7s; z-index:3; }
-.hero-info-card.card4 { bottom: 60px; right: -10px; animation-delay: 0.9s; z-index:3; flex-direction:row; align-items:center; gap:8px; }
-.hero-info-card .card-icon { width:32px; height:32px; background:linear-gradient(130deg,var(--blue),var(--cyan)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+.hero-info-card span { color: #64748b; font-size: 0.85rem; font-weight: 500; display:block; margin-top:2px; }
+/* Cards relative to .hero-image-col */
+.hero-info-card { z-index: 10; }
+.hero-info-card.card1 { top: 38px; left: 0px; animation-delay: 0.3s; }
+.hero-info-card.card2 { top: 50px; right: -5px; animation-delay: 0.5s; flex-direction:row; align-items:center; gap:10px; }
+.hero-info-card.card3 { bottom: 50px; left: 0px; animation-delay: 0.7s; }
+.hero-info-card.card4 { bottom: 65px; right: -5px; animation-delay: 0.9s; flex-direction:row; align-items:center; gap:8px; }
+.hero-info-card .card-icon { width:34px; height:34px; background:linear-gradient(130deg,var(--blue),var(--cyan)); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:16px; color:#fff; flex-shrink:0; font-weight:700; }
 @keyframes fadeInLeft { 0% { opacity: 0; transform: translateX(-32px) scale(0.97); } 100% { opacity: 1; transform: translateX(0) scale(1); } }
 @keyframes fadeInRight { 0% { opacity: 0; transform: translateX(32px) scale(0.97); } 100% { opacity: 1; transform: translateX(0) scale(1); } }
 @keyframes fadeInCard { 0% { opacity: 0; transform: translateY(32px) scale(0.97); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
@@ -448,12 +460,14 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
       </div>
     </div>
     <div class="hero-image-col">
-      <div class="hero-photo-box">
-        <img src="assets/logos/Anupam 1st image.png" alt="Anupam Nath" class="hero-photo-img">
-        <div class="hero-info-card card1">5+<span>Years Experience</span></div>
-        <div class="hero-info-card card2"><div class="card-icon">+</div><div><div style="font-weight:700;color:#059669">Brand Strategist</div><span>Content &amp; Growth</span></div></div>
-        <div class="hero-info-card card3">50+<span>Projects Built</span></div>
-        <div class="hero-info-card card4"><span style="display:inline-block;width:10px;height:10px;background:#10b981;border-radius:50%;flex-shrink:0;"></span><span style="color:#059669;font-weight:600;">New Delhi, India</span></div>
+      <div class="hero-info-card card1">5+<span>Years Experience</span></div>
+      <div class="hero-info-card card2"><div class="card-icon">+</div><div><div style="font-weight:700;color:#059669;font-size:1rem;">Brand Strategist</div><span>Content &amp; Growth</span></div></div>
+      <div class="hero-info-card card3">50+<span>Projects Built</span></div>
+      <div class="hero-info-card card4"><span style="display:inline-block;width:10px;height:10px;background:#10b981;border-radius:50%;flex-shrink:0;"></span><span style="color:#059669;font-weight:600;font-size:0.95rem;">New Delhi, India</span></div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-box">
+          <img src="assets/logos/Anupam 1st image.png" alt="Anupam Nath" class="hero-photo-img">
+        </div>
       </div>
     </div>
   </div>
