@@ -43,7 +43,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 @keyframes spinRing{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 /* Glow blob behind card */
 .hero-photo-wrap::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:340px;height:340px;background:radial-gradient(ellipse,rgba(5,150,105,0.13) 0%,transparent 65%);border-radius:50%;z-index:0;pointer-events:none;animation:liquidFloat 7s ease-in-out infinite;}
-.hero-photo-card{width:100%;aspect-ratio:3/4;border-radius:26px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.32);box-shadow:0 28px 72px rgba(5,150,105,0.16),0 4px 18px rgba(0,0,0,0.07);position:relative;z-index:1;}
+.hero-photo-card{width:100%;aspect-ratio:3/4;border-radius:26px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.35);box-shadow:0 28px 72px rgba(5,150,105,0.16),0 4px 18px rgba(0,0,0,0.07);position:relative;z-index:1;background:rgba(255,255,255,0.6);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
+/* Liquid glass shimmer overlay on hero photo */
+.hero-photo-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.18) 0%,rgba(255,255,255,0) 40%,rgba(5,150,105,0.07) 70%,rgba(255,255,255,0.12) 100%);z-index:2;pointer-events:none;border-radius:26px;}
+.hero-photo-card::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(to right,transparent,rgba(255,255,255,0.22),transparent);z-index:3;pointer-events:none;animation:glassShimmer 4s ease-in-out infinite;}
+@keyframes glassShimmer{0%{left:-60%;}60%,100%{left:130%;}}
 .hero-photo{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;filter:contrast(1.03) brightness(1.01);}
 
 /* Floating glass badges */
@@ -91,10 +95,28 @@ section{padding:96px 64px;position:relative;z-index:1;}
 
 /* ABOUT */
 #about{background:var(--bg2);}
-.about-grid{display:grid;grid-template-columns:0.38fr 1fr 0.62fr;gap:52px;align-items:start;}
-.about-photo-col{display:flex;align-items:flex-start;justify-content:center;}
-.about-photo-frame{width:100%;max-width:220px;border-radius:20px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.2);box-shadow:0 12px 48px rgba(5,150,105,0.14),0 2px 8px rgba(0,0,0,0.07);position:relative;}
-.about-photo-frame img{width:100%;height:auto;display:block;object-fit:cover;}
+.about-grid{display:grid;grid-template-columns:0.42fr 1fr 0.58fr;gap:52px;align-items:start;}
+.about-photo-col{display:flex;align-items:flex-start;justify-content:center;padding-top:16px;}
+/* About photo wrap with decorative elements */
+.about-photo-wrap{position:relative;width:100%;max-width:230px;}
+/* Orbiting corner accent squares */
+.about-photo-wrap::before{content:'';position:absolute;top:-10px;right:-10px;width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--blue),var(--cyan));z-index:4;animation:floatBadge 3.5s ease-in-out infinite;box-shadow:0 4px 14px rgba(5,150,105,0.35);}
+.about-photo-wrap::after{content:'';position:absolute;bottom:-10px;left:-10px;width:14px;height:14px;border-radius:50%;background:var(--cyan);z-index:4;animation:floatBadge 4.5s ease-in-out infinite;animation-delay:-2s;box-shadow:0 0 12px rgba(52,211,153,0.6);}
+/* Liquid glass photo card */
+.about-photo-frame{width:100%;border-radius:22px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.28);box-shadow:0 16px 56px rgba(5,150,105,0.14),0 2px 8px rgba(0,0,0,0.06);position:relative;background:rgba(255,255,255,0.6);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
+.about-photo-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 45%,rgba(5,150,105,0.06) 75%,rgba(255,255,255,0.1) 100%);z-index:2;pointer-events:none;border-radius:22px;}
+.about-photo-frame::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(to right,transparent,rgba(255,255,255,0.2),transparent);z-index:3;pointer-events:none;animation:glassShimmer 5s ease-in-out infinite;animation-delay:-2s;}
+.about-photo-frame img{width:100%;height:auto;display:block;object-fit:cover;position:relative;z-index:1;}
+/* About floating pill badges — different from hero */
+.about-badge{position:absolute;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:40px;padding:8px 14px;box-shadow:0 8px 24px rgba(5,150,105,0.12),0 2px 6px rgba(0,0,0,0.05);z-index:10;white-space:nowrap;display:flex;align-items:center;gap:8px;}
+.ab-thinking{top:-22px;left:10px;background:rgba(255,255,255,0.95);border:1px solid rgba(5,150,105,0.2);animation:floatBadge 4s ease-in-out infinite;}
+.ab-thinking .ab-icon{font-size:14px;}
+.ab-thinking .ab-text{font-size:11px;font-weight:700;color:var(--off);letter-spacing:-0.01em;}
+.ab-open{bottom:-20px;right:4px;background:linear-gradient(130deg,var(--blue),var(--cyan));border:none;animation:floatBadge 5s ease-in-out infinite;animation-delay:-1.8s;}
+.ab-open .ab-text{font-size:11px;font-weight:700;color:#fff;letter-spacing:-0.01em;}
+.ab-open .ab-dot{width:7px;height:7px;border-radius:50%;background:#fff;opacity:0.85;animation:pulse 2s infinite;}
+/* Dashed vertical line accent beside photo */
+.about-line-accent{position:absolute;top:30px;right:-18px;width:1px;height:60%;background:repeating-linear-gradient(to bottom,rgba(5,150,105,0.3) 0px,rgba(5,150,105,0.3) 5px,transparent 5px,transparent 11px);z-index:0;}
 .about-text p{font-size:15px;color:var(--grey);line-height:1.9;margin-bottom:18px;}
 .about-text strong{color:var(--off);font-weight:600;}
 .about-loc{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--dgrey);margin-top:22px;font-weight:500;}
@@ -299,6 +321,8 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
   .hb-lbl{font-size:10px;}
   .about-grid{grid-template-columns:1fr!important;gap:28px!important;}
   .about-photo-col{display:none;}
+  .about-badge{display:none;}
+  .about-line-accent{display:none;}
   .hop-inner,.contact-grid{grid-template-columns:1fr;gap:40px;}
   .skills-grid,.proj-grid{grid-template-columns:1fr;}
   .form-row{grid-template-columns:1fr;}
@@ -374,8 +398,21 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 <section id="about">
   <div class="about-grid">
     <div class="about-photo-col fi">
-      <div class="about-photo-frame">
-        <img src="assets/logos/Anupam 2nd image.png" alt="Anupam Nath">
+      <div class="about-photo-wrap">
+        <div class="about-photo-frame">
+          <img src="assets/logos/Anupam 2nd image.png" alt="Anupam Nath">
+        </div>
+        <!-- Floating pill badges -->
+        <div class="about-badge ab-thinking">
+          <span class="ab-icon">💡</span>
+          <span class="ab-text">Thinks before he creates</span>
+        </div>
+        <div class="about-badge ab-open">
+          <span class="ab-dot"></span>
+          <span class="ab-text">Open to opportunities</span>
+        </div>
+        <!-- Dashed line accent -->
+        <div class="about-line-accent"></div>
       </div>
     </div>
     <div class="fi">
