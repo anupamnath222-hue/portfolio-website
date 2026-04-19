@@ -142,6 +142,14 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .skill-tag{font-size:12px;padding:5px 12px;border-radius:7px;border:1px solid var(--border2);color:var(--grey);background:var(--bg2);transition:all 0.2s;}
 .skill-tag:hover{border-color:var(--border);color:var(--blue2);}
 
+/* TIER 3 BANNER */
+.tier3-banner{display:flex;align-items:center;gap:18px;background:linear-gradient(120deg,rgba(5,150,105,0.07) 0%,rgba(52,211,153,0.04) 100%);border:1px solid rgba(5,150,105,0.28);border-left:3px solid var(--blue2);border-radius:12px;padding:16px 22px;margin-bottom:28px;flex-wrap:wrap;}
+.t3-badge{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;color:white;background:linear-gradient(130deg,var(--blue),var(--cyan));padding:5px 13px;border-radius:20px;white-space:nowrap;box-shadow:0 0 16px var(--glow);}
+.t3-copy{font-size:13px;color:var(--off);line-height:1.6;margin:0;flex:1;min-width:200px;}
+.t3-copy strong{color:var(--blue2);}
+.skill-tag--t3{background:rgba(5,150,105,0.1)!important;border-color:rgba(5,150,105,0.35)!important;color:var(--blue)!important;font-weight:600!important;}
+.t3-highlight{color:var(--blue2);font-style:normal;}
+
 /* PROJECTS */
 #projects{background:var(--bg2);}
 .filter-row{display:flex;gap:4px;margin-bottom:44px;background:var(--card);padding:4px;border-radius:10px;width:fit-content;border:1px solid var(--border2);}
@@ -562,12 +570,16 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   <div class="s-label">Capabilities</div>
   <h2 class="s-h2">What I actually bring.</h2>
   <p class="s-sub">Not tools. Thinking, systems, and execution behind real brand work.</p>
+  <div class="tier3-banner fi">
+    <div class="t3-badge">Tier 3 Execution</div>
+    <p class="t3-copy">I've built and executed brand strategy in Tier 3 India — markets most strategists have never touched. Real audiences, real constraints, real results. <strong>Explore Valley</strong> in Assam is proof of that.</p>
+  </div>
   <div class="skills-grid">
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Brand Research &amp; Positioning</div><div class="skill-tags"><span class="skill-tag">Audience Research</span><span class="skill-tag">Competitive Analysis</span><span class="skill-tag">Core Insight</span><span class="skill-tag">Funnel Architecture</span><span class="skill-tag">Messaging Strategy</span></div></div></div>
+    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Brand Research &amp; Positioning</div><div class="skill-tags"><span class="skill-tag">Audience Research</span><span class="skill-tag">Competitive Analysis</span><span class="skill-tag">Core Insight</span><span class="skill-tag">Funnel Architecture</span><span class="skill-tag">Messaging Strategy</span><span class="skill-tag skill-tag--t3">&#x1F4CD; Tier 3 India</span></div></div></div>
     <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Content &amp; Messaging Systems</div><div class="skill-tags"><span class="skill-tag">Content Systems</span><span class="skill-tag">Copywriting</span><span class="skill-tag">Hook Strategy</span><span class="skill-tag">Distribution</span><span class="skill-tag">Short-form</span></div></div></div>
     <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Growth &amp; Performance</div><div class="skill-tags"><span class="skill-tag">Growth Systems</span><span class="skill-tag">Performance Thinking</span><span class="skill-tag">Content-led Revenue</span><span class="skill-tag">Organic Growth</span><span class="skill-tag">YouTube IP</span></div></div></div>
     <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Visual &amp; Content Production</div><div class="skill-tags"><span class="skill-tag">Video Editing</span><span class="skill-tag">Motion Graphics</span><span class="skill-tag">Visual Design</span><span class="skill-tag">Creative Execution</span></div></div></div>
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Strategic Thinking</div><div class="skill-tags"><span class="skill-tag">Market Analysis</span><span class="skill-tag">High-Ticket Positioning</span><span class="skill-tag">Buyer Psychology</span><span class="skill-tag">Category Strategy</span><span class="skill-tag">Value Proposition</span></div></div></div>
+    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Strategic Thinking</div><div class="skill-tags"><span class="skill-tag">Market Analysis</span><span class="skill-tag">High-Ticket Positioning</span><span class="skill-tag">Buyer Psychology</span><span class="skill-tag">Category Strategy</span><span class="skill-tag">Value Proposition</span><span class="skill-tag skill-tag--t3">&#x1F4CD; Tier 3 Execution</span></div></div></div>
     <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Platforms &amp; Tools</div><div class="skill-tags"><span class="skill-tag">Workspace Tools</span><span class="skill-tag">CRM Systems</span><span class="skill-tag">Design &amp; Editing Suite</span><span class="skill-tag">AI Tools</span></div></div></div>
   </div>
 </section>
@@ -618,7 +630,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
       <div class="proj-body">
         <div class="proj-name">Explore Valley</div>
         <div class="proj-metrics"><span class="metric"><strong>Initial</strong> Team Member</span><span class="metric"><strong>2 Years</strong> Early Stage</span><span class="metric"><strong>10K</strong> Followers Built</span></div>
-        <div class="proj-desc">I was there from the beginning when nothing existed yet. Two years as an initial team member building the content foundation from the ground up covering election campaigns and legislative events across Assam. The brand grew because the foundation was built right.</div>
+        <div class="proj-desc">I was there from day zero when nothing existed. Two years as an initial team member in a <strong class="t3-highlight">Tier 3 market — Assam</strong> — building the content foundation from the ground up. Covered election campaigns and legislative events across the state. Most strategists have never operated in a Tier 3 market. I built one from scratch. The brand grew because the foundation was built right.</div>
         <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Growth</span><span class="proj-tag">Strategy</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page &#x2192;</a><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a></div>
       </div>
