@@ -199,7 +199,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-comp:hover{border-color:rgba(5,150,105,0.42);box-shadow:0 8px 28px rgba(5,150,105,0.15),inset 0 1px 0 rgba(255,255,255,0.95);transform:translateX(4px);}
 .hop-comp:hover::before,.hop-comp.vis::before{transform:scaleY(1);}
 .hop-lbl{font-size:14px;color:var(--grey);line-height:1.6;}
-.hop-lbl strong{color:var(--off);font-weight:700;display:block;margin-bottom:2px;}
+.hop-lbl strong{color:var(--off);font-weight:700;}
 .hop-why-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:16px;display:block;}
 .hop-constraints{display:flex;flex-direction:column;gap:1px;margin-bottom:10px;}
 .hop-constraints span{font-size:18px;font-weight:700;color:var(--off);letter-spacing:-0.025em;line-height:1.55;}
@@ -215,8 +215,22 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-diff-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:10px;display:block;}
 .hop-differentiator p{font-size:13px;color:var(--grey);line-height:1.75;margin-bottom:8px;}
 .hop-differentiator p:last-child{margin-bottom:0;}
-.hop-reveal{opacity:0;transform:translateY(16px);transition:opacity 0.45s ease,transform 0.45s ease;}
-.hop-reveal.vis{opacity:1;transform:translateY(0);}
+/* hop-comp entrance — slide from left with spring */
+.hop-reveal{opacity:0;transform:translateX(-22px);transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1);}
+.hop-reveal.vis{opacity:1;transform:translateX(0);}
+
+/* shimmer sweep fires once on entry */
+@keyframes hopShimmer{0%{left:-80%;}100%{left:130%;}}
+.hop-comp.vis::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent);animation:hopShimmer 0.7s cubic-bezier(0.4,0,0.2,1) 0.35s forwards;pointer-events:none;z-index:2;}
+
+/* title clip reveal */
+.hop-lbl-wrap{overflow:hidden;}
+.hop-lbl strong{display:block;margin-bottom:2px;transform:translateY(110%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);transition-delay:0.18s;}
+.hop-comp.vis .hop-lbl strong{transform:translateY(0);}
+
+/* subtitle fade in after title */
+.hop-lbl-sub{opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;transition-delay:0.3s;display:block;}
+.hop-comp.vis .hop-lbl-sub{opacity:1;transform:translateY(0);}
 
 /* CONTACT */
 #contact{background:var(--bg2);}
@@ -682,13 +696,13 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
           <img src="assets/logos/House of Pause.png" alt="House of Pause" style="max-width:180px;max-height:100px;object-fit:contain;opacity:0.92;filter:drop-shadow(0 0 18px rgba(5,150,105,0.3));">
         </div>
         <div class="hop-comps">
-          <div class="hop-comp hop-reveal"><span class="hop-num">01</span><span class="hop-lbl"><strong>Market</strong>What the category gets wrong</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">02</span><span class="hop-lbl"><strong>Audience</strong>Defined by situation, not demographics</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">03</span><span class="hop-lbl"><strong>Positioning</strong>Owning a space no one is speaking from</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">04</span><span class="hop-lbl"><strong>Funnel</strong>How attention becomes intent</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">05</span><span class="hop-lbl"><strong>Content System</strong>Each piece has a job</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">06</span><span class="hop-lbl"><strong>Creative Direction</strong>Why it looks and feels this way</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">07</span><span class="hop-lbl"><strong>Execution</strong>Built as a system, not random content</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="01">01</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Market</strong></span><span class="hop-lbl-sub">What the category gets wrong</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="02">02</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Audience</strong></span><span class="hop-lbl-sub">Defined by situation, not demographics</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="03">03</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Positioning</strong></span><span class="hop-lbl-sub">Owning a space no one is speaking from</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="04">04</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Funnel</strong></span><span class="hop-lbl-sub">How attention becomes intent</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="05">05</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Content System</strong></span><span class="hop-lbl-sub">Each piece has a job</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="06">06</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Creative Direction</strong></span><span class="hop-lbl-sub">Why it looks and feels this way</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="07">07</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Execution</strong></span><span class="hop-lbl-sub">Built as a system, not random content</span></span></div>
         </div>
       </div>
     </div>
@@ -720,12 +734,12 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
       </div>
       <div>
         <div class="hop-comps">
-          <div class="hop-comp hop-reveal"><span class="hop-num">01</span><span class="hop-lbl"><strong>Audience Insight</strong>Who the buyer is, what they fear, what they need to believe</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">02</span><span class="hop-lbl"><strong>Narrative Architecture</strong>Every section mapped to a specific conversion job</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">03</span><span class="hop-lbl"><strong>Conversion Breakdown</strong>Where the video lost the viewer and exactly why</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">04</span><span class="hop-lbl"><strong>Highest Impact Fixes</strong>The three changes that would have moved the needle most</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">05</span><span class="hop-lbl"><strong>Rebuilt Creative Brief</strong>The strategy document that should have existed first</span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num">06</span><span class="hop-lbl"><strong>Rebuilt Script Structure</strong>Full arc from pattern interrupt to spoken CTA</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="01">01</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Audience Insight</strong></span><span class="hop-lbl-sub">Who the buyer is, what they fear, what they need to believe</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="02">02</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Narrative Architecture</strong></span><span class="hop-lbl-sub">Every section mapped to a specific conversion job</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="03">03</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Conversion Breakdown</strong></span><span class="hop-lbl-sub">Where the video lost the viewer and exactly why</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="04">04</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Highest Impact Fixes</strong></span><span class="hop-lbl-sub">The three changes that would have moved the needle most</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="05">05</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Rebuilt Creative Brief</strong></span><span class="hop-lbl-sub">The strategy document that should have existed first</span></span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="06">06</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Rebuilt Script Structure</strong></span><span class="hop-lbl-sub">Full arc from pattern interrupt to spoken CTA</span></span></div>
         </div>
       </div>
     </div>
@@ -901,11 +915,31 @@ statCards.forEach(card=>countObserver.observe(card));
   });
 })();
 
-// Methodology reveal
+// Methodology reveal — stagger cards + roll-up numbers + inner text delays
 const hopRevealObserver=new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
-      entry.target.querySelectorAll('.hop-reveal').forEach((card,i)=>setTimeout(()=>card.classList.add('vis'),i*90));
+      entry.target.querySelectorAll('.hop-reveal').forEach((card,i)=>{
+        setTimeout(()=>{
+          card.classList.add('vis');
+          // stagger inner elements based on card index
+          const strong = card.querySelector('.hop-lbl-wrap strong');
+          const sub = card.querySelector('.hop-lbl-sub');
+          if(strong){ strong.style.transitionDelay = (0.18 + i*0.04)+'s'; }
+          if(sub){ sub.style.transitionDelay = (0.30 + i*0.04)+'s'; }
+          // number roll-up: count from 0 to target
+          const numEl = card.querySelector('.hop-num[data-num]');
+          if(numEl){
+            const target = parseInt(numEl.dataset.num);
+            let cur = 0;
+            const iv = setInterval(()=>{
+              cur++;
+              numEl.textContent = String(cur).padStart(2,'0');
+              if(cur >= target) clearInterval(iv);
+            }, 60);
+          }
+        }, i*90);
+      });
       hopRevealObserver.unobserve(entry.target);
     }
   });
