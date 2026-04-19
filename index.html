@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anupam Nath — Brand &amp; Content Strategist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -115,11 +115,9 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .about-loc svg{width:14px;height:14px;fill:var(--blue2);}
 .about-stats{display:flex;flex-direction:column;gap:14px;}
 .stat-card{background:linear-gradient(135deg,rgba(5,150,105,0.08) 0%,rgba(52,211,153,0.04) 100%);border:1px solid rgba(5,150,105,0.2);border-radius:14px;padding:30px 22px;text-align:center;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(5,150,105,0.07),inset 0 1px 0 rgba(5,150,105,0.12);}
-.stat-card::before{content:'';position:absolute;width:200px;height:200px;background:radial-gradient(ellipse,rgba(5,150,105,0.16) 0%,transparent 65%);border-radius:50%;pointer-events:none;z-index:0;top:-60px;right:-60px;animation:liquidFloat 9s ease-in-out infinite;}
-.stat-card:nth-child(2)::before{animation-delay:-3s;top:auto;bottom:-60px;right:auto;left:-60px;background:radial-gradient(ellipse,rgba(52,211,153,0.12) 0%,transparent 65%);}
-.stat-card:nth-child(3)::before{animation-delay:-6s;top:-60px;right:auto;left:-60px;}
-.stat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,transparent 38%,rgba(5,150,105,0.1) 50%,transparent 62%);transform:translateX(-100%);transition:transform 0.55s ease;pointer-events:none;z-index:0;border-radius:14px;}
-.stat-card:hover::after{transform:translateX(110%);}
+.stat-card::before{content:'';position:absolute;width:200px;height:200px;background:radial-gradient(ellipse,rgba(5,150,105,0.13) 0%,transparent 65%);border-radius:50%;pointer-events:none;z-index:0;top:-60px;right:-60px;}
+.stat-card:nth-child(2)::before{top:auto;bottom:-60px;right:auto;left:-60px;background:radial-gradient(ellipse,rgba(52,211,153,0.1) 0%,transparent 65%);}
+.stat-card:nth-child(3)::before{top:-60px;right:auto;left:-60px;}
 .stat-card > *{position:relative;z-index:1;}
 .stat-card:hover{border-color:rgba(5,150,105,0.45);box-shadow:0 8px 36px rgba(5,150,105,0.2);}
 .stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:4px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
@@ -131,12 +129,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 #skills{background:var(--bg);}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .skill-card{background:linear-gradient(135deg,rgba(5,150,105,0.09) 0%,rgba(52,211,153,0.04) 100%);border:1px solid rgba(5,150,105,0.22);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(5,150,105,0.08),inset 0 1px 0 rgba(5,150,105,0.12);transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
-.skill-card::before{content:'';position:absolute;width:220px;height:220px;background:radial-gradient(ellipse,rgba(5,150,105,0.18) 0%,transparent 65%);pointer-events:none;animation:liquidFloat 8s ease-in-out infinite;top:-40%;right:-10%;}
-.skill-card:nth-child(2)::before{animation-delay:-2.5s;top:auto;bottom:-40%;right:-10%;}
-.skill-card:nth-child(3)::before{animation-delay:-4s;top:-40%;right:auto;left:-10%;}
-.skill-card:nth-child(4)::before{animation-delay:-1.5s;top:auto;bottom:-40%;left:-10%;}
-.skill-card:nth-child(5)::before{animation-delay:-3s;top:-40%;right:-10%;}
-.skill-card:nth-child(6)::before{animation-delay:-5.5s;top:auto;bottom:-40%;right:-10%;}
+.skill-card::before{content:'';position:absolute;width:220px;height:220px;background:radial-gradient(ellipse,rgba(5,150,105,0.12) 0%,transparent 65%);pointer-events:none;top:-40%;right:-10%;}
 .skill-card:hover{border-color:rgba(5,150,105,0.5);transform:translateY(-3px);box-shadow:0 10px 40px rgba(5,150,105,0.2);}
 .sk-body{position:relative;z-index:1;}
 .skill-cat{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px;font-weight:700;display:flex;align-items:center;gap:8px;}
@@ -166,15 +159,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .proj-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--blue2);text-decoration:none;font-weight:500;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);transition:all 0.2s;width:fit-content;}
 .proj-link:hover{border-color:var(--blue);background:var(--glow2);color:var(--white);}
 .proj-desc strong{color:var(--white);font-weight:600;background:rgba(5,150,105,0.15);padding:2px 6px;border-radius:4px;}
-.proj-card::before{content:'';position:absolute;width:260px;height:260px;background:radial-gradient(ellipse,rgba(5,150,105,0.11) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:0;top:-80px;right:-80px;animation:projGlow 11s ease-in-out infinite;}
-.proj-card:nth-child(2)::before{animation-delay:-3.5s;top:auto;bottom:-80px;}
-.proj-card:nth-child(3)::before{animation-delay:-6s;right:auto;left:-80px;}
-.proj-card:nth-child(4)::before{animation-delay:-2s;top:auto;bottom:-80px;right:auto;left:-80px;}
-.proj-card:nth-child(5)::before{animation-delay:-8s;}
-.proj-card:nth-child(6)::before{animation-delay:-4.5s;top:auto;bottom:-80px;right:auto;left:-80px;}
-@keyframes projGlow{0%,100%{transform:translate(0,0) scale(1);opacity:0.7;}40%{transform:translate(-25px,18px) scale(1.15);opacity:1;}75%{transform:translate(12px,-12px) scale(0.9);opacity:0.5;}}
-.proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,transparent 38%,rgba(5,150,105,0.1) 50%,transparent 62%);transform:translateX(-100%);transition:transform 0.6s ease;pointer-events:none;z-index:2;border-radius:14px;}
-.proj-card:hover::after{transform:translateX(110%);}
+.proj-card::before{content:'';position:absolute;width:260px;height:260px;background:radial-gradient(ellipse,rgba(5,150,105,0.08) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:0;top:-80px;right:-80px;}
 
 /* METHODOLOGY */
 #hop{background:var(--bg);}
@@ -212,7 +197,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-constraints span{font-size:18px;font-weight:700;color:var(--off);letter-spacing:-0.025em;line-height:1.55;}
 .hop-just{font-size:14px;color:var(--grey);margin-bottom:28px;font-style:italic;letter-spacing:-0.005em;}
 .hop-liquid{background:linear-gradient(135deg,rgba(5,150,105,0.1) 0%,rgba(52,211,153,0.05) 100%);border:1px solid rgba(5,150,105,0.28);border-radius:16px;padding:26px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 0 48px rgba(5,150,105,0.1),inset 0 1px 0 rgba(5,150,105,0.12);}
-.hop-liquid::before{content:'';position:absolute;top:-40%;right:-20%;width:280px;height:280px;background:radial-gradient(ellipse,rgba(5,150,105,0.2) 0%,transparent 65%);pointer-events:none;animation:liquidFloat 7s ease-in-out infinite;}
+.hop-liquid::before{content:'';position:absolute;top:-40%;right:-20%;width:280px;height:280px;background:radial-gradient(ellipse,rgba(5,150,105,0.14) 0%,transparent 65%);pointer-events:none;}
 @keyframes liquidFloat{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-15px,10px) scale(1.12);}}
 .hop-liquid-inner{position:relative;z-index:1;}
 .hop-liquid p{font-size:13px;color:var(--off);line-height:1.85;margin-bottom:14px;letter-spacing:-0.005em;}
@@ -275,8 +260,45 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 .btn-fill:active{transform:translateY(-1px);}
 
-/* SCROLL REVEAL */
-.fi{will-change:opacity,transform;}
+/* SCROLL REVEAL — fixed: was will-change only, no animation */
+.fi:not(.proj-card){opacity:0;transform:translateY(26px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1);will-change:opacity,transform;}
+.fi:not(.proj-card).vis{opacity:1;transform:translateY(0);}
+.fi.d1:not(.proj-card){transition-delay:0.13s;}
+.fi.d2:not(.proj-card){transition-delay:0.26s;}
+
+/* SKILL CARD ENTRANCE — fixed: sk-in class added by JS but no CSS existed */
+.skill-card{opacity:0;transform:translateY(18px);transition:opacity 0.55s cubic-bezier(0.16,1,0.3,1),transform 0.55s cubic-bezier(0.16,1,0.3,1),border-color 0.2s,box-shadow 0.2s;}
+.skill-card.sk-in{opacity:1;transform:translateY(0);}
+
+/* SCROLL PROGRESS BAR */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:99999;pointer-events:none;border-radius:0 2px 2px 0;transition:width 0.08s linear;}
+
+/* NAV SCROLLED STATE */
+nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
+
+/* NAV LINK HOVER UNDERLINE */
+.nav-links a:not(.nav-resume){position:relative;}
+.nav-links a:not(.nav-resume)::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px;transition:width 0.25s cubic-bezier(0.4,0,0.2,1);}
+.nav-links a:not(.nav-resume):hover::after{width:100%;}
+
+/* HERO ENTRANCE — gentle single fade */
+@keyframes heroFade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.hero-left{animation:heroFade 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s both;}
+.hero-right{animation:heroFade 0.7s cubic-bezier(0.16,1,0.3,1) 0.22s both;}
+
+/* BACK TO TOP */
+#back-top{position:fixed;bottom:28px;right:28px;width:40px;height:40px;background:linear-gradient(130deg,var(--blue),var(--cyan));border:none;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:500;box-shadow:0 4px 18px rgba(5,150,105,0.3);opacity:0;transform:translateY(10px) scale(0.9);transition:opacity 0.3s,transform 0.3s;pointer-events:none;color:white;font-size:18px;font-weight:700;line-height:1;font-family:var(--f);}
+#back-top.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+#back-top:hover{box-shadow:0 6px 28px rgba(5,150,105,0.5);transform:translateY(-3px) scale(1)!important;}
+
+/* CUSTOM CURSOR — dot only, ring removed */
+#cursorDot{display:block!important;}
+#cursorRing{display:none!important;}
+
+@media(max-width:900px){
+  #back-top{bottom:18px;right:18px;width:36px;height:36px;font-size:15px;}
+  #cursorDot{display:none!important;}
+}
 
 @media(max-width:900px){
   nav{padding:0 20px;}.nav-links{display:none;}
@@ -311,6 +333,7 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
 </head>
 <body>
 
+<div id="scroll-progress"></div>
 <div id="cursorDot"></div>
 <div id="cursorRing"></div>
 
@@ -545,33 +568,33 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
         <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
         <h2 class="hop-title"><span>VSL Creative Strategy</span></h2>
         <p class="hop-subtitle-small">Conversion Architecture for a Trading Education Creator</p>
+        <div class="hop-constraints"><span>One video</span><span>Cold traffic</span><span>No paid ads</span></div>
+        <p class="hop-just">The brief should have existed before the camera turned on</p>
         <div class="hop-liquid">
           <div class="hop-liquid-inner">
             <span class="hop-why-label">Why I Built This</span>
-            <p>A trading education creator needed one video to convert cold Instagram traffic into course purchases. I built the complete creative strategy behind it — narrative structure, emotional arc, hook logic, proof sequence, and close. Every decision came from one question. What does the viewer need to feel at this exact moment to take the next step.</p>
+            <p>A trading creator needed one video<br>To convert cold Instagram traffic into course purchases</p>
             <p class="hop-liquid-gap">There is a difference between making content and making content that converts.</p>
-            <p>After delivering the work I watched it back as a strategist and saw clearly what the execution could not fix. Not the cuts. Not the subtitles. The structure. The thinking that should have happened before the camera turned on. I rebuilt the entire creative brief from scratch. This document is proof that I understand that difference.</p>
+            <p>I delivered the work<br>Then I watched it back as a strategist</p>
+            <p>Not the cuts. Not the subtitles. The structure.<br>I rebuilt the entire brief from scratch</p>
           </div>
         </div>
-        <div class="hop-section">
-          <h3 class="hop-subtitle">What I Built</h3>
-          <p class="hop-desc">A full creative strategy and post-delivery audit covering audience insight, narrative architecture, conversion breakdown by timestamp, the three highest-impact fixes, a rebuilt creative brief, and a rebuilt script structure from pattern interrupt to spoken CTA.</p>
-          <div class="hop-items">
-            <span class="hop-item"><strong>Narrative Architecture</strong> — Every section of the video mapped to a specific conversion job not just a content beat</span>
-            <span class="hop-item"><strong>Conversion Audit</strong> — Timestamp by timestamp breakdown of where the video lost the viewer and exactly why</span>
-            <span class="hop-item"><strong>Rebuilt Brief</strong> — The complete creative strategy document that should have existed before production started</span>
-          </div>
+        <div class="hop-differentiator">
+          <span class="hop-diff-label">What I Built</span>
+          <p><strong>Narrative Architecture</strong><br>Every section mapped to a conversion job not just a content beat</p>
+          <p><strong>Conversion Audit</strong><br>Timestamp breakdown of where the viewer dropped and why</p>
+          <p><strong>Rebuilt Brief</strong><br>The strategy that should have existed before production started</p>
         </div>
         <a href="vsl-creative-strategy.html" class="btn btn-fill">View Creative Strategy &#x2192;</a>
       </div>
       <div>
         <div class="hop-comps">
-          <div class="hop-comp"><span class="hop-num">01</span><span class="hop-lbl"><strong>Audience Insight</strong> — Who the buyer is, what they fear, what they need to believe</span></div>
-          <div class="hop-comp"><span class="hop-num">02</span><span class="hop-lbl"><strong>Narrative Architecture</strong> — Every section mapped to a specific conversion job</span></div>
-          <div class="hop-comp"><span class="hop-num">03</span><span class="hop-lbl"><strong>Conversion Breakdown</strong> — Where the video lost the viewer and exactly why</span></div>
-          <div class="hop-comp"><span class="hop-num">04</span><span class="hop-lbl"><strong>Highest Impact Fixes</strong> — The three changes that would have moved the needle most</span></div>
-          <div class="hop-comp"><span class="hop-num">05</span><span class="hop-lbl"><strong>Rebuilt Creative Brief</strong> — The strategy document that should have existed first</span></div>
-          <div class="hop-comp"><span class="hop-num">06</span><span class="hop-lbl"><strong>Rebuilt Script Structure</strong> — Full arc from pattern interrupt to spoken CTA</span></div>
+          <div class="hop-comp"><span class="hop-num">01</span><span class="hop-lbl"><strong>Audience Insight</strong>Who the buyer is, what they fear, what they need to believe</span></div>
+          <div class="hop-comp"><span class="hop-num">02</span><span class="hop-lbl"><strong>Narrative Architecture</strong>Every section mapped to a specific conversion job</span></div>
+          <div class="hop-comp"><span class="hop-num">03</span><span class="hop-lbl"><strong>Conversion Breakdown</strong>Where the video lost the viewer and exactly why</span></div>
+          <div class="hop-comp"><span class="hop-num">04</span><span class="hop-lbl"><strong>Highest Impact Fixes</strong>The three changes that would have moved the needle most</span></div>
+          <div class="hop-comp"><span class="hop-num">05</span><span class="hop-lbl"><strong>Rebuilt Creative Brief</strong>The strategy document that should have existed first</span></div>
+          <div class="hop-comp"><span class="hop-num">06</span><span class="hop-lbl"><strong>Rebuilt Script Structure</strong>Full arc from pattern interrupt to spoken CTA</span></div>
         </div>
       </div>
     </div>
@@ -619,6 +642,8 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
   <div class="f-name">Anupam <span>Nath</span></div>
   <div class="f-copy">&copy; 2026 &middot; All rights reserved</div>
 </footer>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#x2191;</button>
 
 <script>
 const io = new IntersectionObserver(e => {
@@ -802,6 +827,45 @@ document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el
     if(entries[0].isIntersecting&&!counted){ counted=true; pg.querySelectorAll('.metric strong').forEach(animCount); mobs.disconnect(); }
   },{threshold:0.2});
   mobs.observe(pg);
+})();
+
+// Scroll progress bar + nav scrolled state + back-to-top
+(function(){
+  const prog = document.getElementById('scroll-progress');
+  const navEl = document.querySelector('nav');
+  const bt = document.getElementById('back-top');
+  function onScroll(){
+    const s = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    if(prog) prog.style.width = Math.min(100, h > 0 ? s / h * 100 : 0) + '%';
+    if(navEl){ s > 20 ? navEl.classList.add('nav-scrolled') : navEl.classList.remove('nav-scrolled'); }
+    if(bt){ s > 400 ? bt.classList.add('show') : bt.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+// Custom cursor tracking — was in HTML but display:none with no JS
+(function(){
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  if(!dot || !ring || window.innerWidth <= 900) return;
+  let rx = -200, ry = -200, mx = -200, my = -200;
+  document.addEventListener('mousemove', function(e){ mx = e.clientX; my = e.clientY; });
+  function loopCursor(){
+    rx += (mx - rx) * 0.13;
+    ry += (my - ry) * 0.13;
+    dot.style.left = (mx - 4) + 'px';
+    dot.style.top = (my - 4) + 'px';
+    ring.style.left = (rx - 15) + 'px';
+    ring.style.top = (ry - 15) + 'px';
+    requestAnimationFrame(loopCursor);
+  }
+  loopCursor();
+  document.querySelectorAll('a,button,.btn,.proj-card,.skill-card,.stat-card,.hop-comp,.ci-link,.f-btn').forEach(function(el){
+    el.addEventListener('mouseenter', function(){ document.body.classList.add('cursor-hover'); });
+    el.addEventListener('mouseleave', function(){ document.body.classList.remove('cursor-hover'); });
+  });
 })();
 </script>
 </body>
