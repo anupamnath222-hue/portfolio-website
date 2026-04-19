@@ -283,8 +283,20 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
   .hero-left{align-items:center;text-align:center;}
   .hero-btns{justify-content:center;}
   .hero-social{justify-content:center;}
-  .hero-right{display:none;}
-  .hero-badge{display:none;}
+  .hero-right{display:flex;justify-content:center;padding:20px 0 40px;}
+  .hero-photo-wrap{width:220px;}
+  .hero-photo-wrap::before{inset:-12px;border-radius:32px;}
+  .hero-photo-card{border-radius:20px;}
+  /* Keep badges but reposition them for small screen */
+  .hb-years{top:16px;left:-64px;}
+  .hb-projects{bottom:40px;left:-60px;}
+  .hb-role{top:36px;right:-76px;padding:8px 10px;gap:7px;}
+  .hb-role-icon{width:28px;height:28px;font-size:12px;}
+  .hb-role .hb-text{font-size:11px;}
+  .hb-role .hb-sub{font-size:10px;}
+  .hb-location{bottom:60px;right:-74px;padding:8px 12px;}
+  .hb-num{font-size:17px;}
+  .hb-lbl{font-size:10px;}
   .about-grid{grid-template-columns:1fr!important;gap:28px!important;}
   .about-photo-col{display:none;}
   .hop-inner,.contact-grid{grid-template-columns:1fr;gap:40px;}
