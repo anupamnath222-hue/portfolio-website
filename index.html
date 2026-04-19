@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 .hero-right{display:flex;align-items:center;justify-content:center;position:relative;z-index:2;padding:70px 50px;}
 
 /* Photo card + badges */
-.hero-photo-wrap{position:relative;width:270px;flex-shrink:0;}
+.hero-photo-wrap{position:relative;width:270px;flex-shrink:0;transition:transform 0.5s cubic-bezier(0.23,1,0.32,1);}
 .hero-photo-wrap::before{content:'';position:absolute;inset:-20px;border-radius:44px;border:1.5px dashed rgba(5,150,105,0.22);z-index:0;animation:spinRing 30s linear infinite;}
 @keyframes spinRing{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 .hero-photo-wrap::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:340px;height:340px;background:radial-gradient(ellipse,rgba(5,150,105,0.13) 0%,transparent 65%);border-radius:50%;z-index:0;pointer-events:none;animation:liquidFloat 7s ease-in-out infinite;}
@@ -78,14 +78,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 .btn-fill:hover{box-shadow:0 0 44px rgba(5,150,105,0.5);transform:translateY(-2px);}
 .btn-ghost{background:transparent;color:var(--off);border:1px solid var(--border);}
 .btn-ghost:hover{border-color:var(--blue2);color:var(--white);background:var(--glow2);}
-.hero-social{display:flex;gap:24px;justify-content:flex-start;}
-.hero-social a{color:var(--dgrey);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;display:flex;align-items:center;gap:7px;}
+.hero-social{display:flex;gap:24px;justify-content:flex-start;align-items:center;margin-top:4px;}
+.hero-social a{color:var(--dgrey);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;display:inline-flex;align-items:center;gap:7px;}
 .hero-social a:hover{color:var(--blue2);}
-.hero-social svg{width:16px;height:16px;fill:currentColor;}
+.hero-social svg{width:16px;height:16px;fill:currentColor;flex-shrink:0;}
 
 /* SECTIONS */
 section{padding:96px 64px;position:relative;z-index:1;}
-.s-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;font-weight:600;}
+.s-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;font-weight:600;position:relative;display:inline-block;}
+.s-label::after{content:'';position:absolute;bottom:-3px;left:0;height:1.5px;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px;transition:width 0.55s cubic-bezier(0.4,0,0.2,1);}
+.s-label.sl-in::after{width:100%;}
 .s-h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.025em;color:var(--white);margin-bottom:14px;line-height:1.1;}
 .s-h2 span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .s-sub{font-size:15px;color:var(--grey);max-width:480px;margin-bottom:56px;font-weight:400;line-height:1.7;}
@@ -255,6 +257,36 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 
 /* DOTS CANVAS */
 #dotsCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3;}
+
+/* PREMIUM MICRO-ANIMATIONS */
+
+/* 1. Word-by-word text reveal for h2 headings */
+.s-h2 .wr{display:inline-block;opacity:0;transform:translateY(12px);transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1);}
+.s-h2.wv .wr{opacity:1;transform:translateY(0);}
+
+/* 2. Stat card number glow on count */
+.stat-num{transition:text-shadow 0.3s;}
+.stat-num.counting{text-shadow:0 0 28px rgba(5,150,105,0.35);}
+
+/* 3. Skill tag hover pop */
+.skill-tag{transition:all 0.18s cubic-bezier(0.34,1.56,0.64,1);}
+.skill-tag:hover{transform:scale(1.08) translateY(-1px);border-color:rgba(5,150,105,0.4);color:var(--blue2);background:rgba(5,150,105,0.08);}
+
+/* 4. Project card left border trace on hover */
+.proj-card{border-left:2px solid transparent;transition:border-color 0.3s,box-shadow 0.25s,transform 0.25s;}
+.proj-card:hover{border-left-color:var(--blue2);}
+
+/* 5. hop-comp number highlight on hover */
+.hop-comp:hover .hop-num{color:var(--cyan);transform:scale(1.15);display:inline-block;transition:color 0.2s,transform 0.2s;}
+.hop-num{transition:color 0.2s,transform 0.2s;display:inline-block;}
+
+/* 6. Contact links icon pop */
+.ci-link:hover .ci-icon{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;border-color:transparent;transition:all 0.22s cubic-bezier(0.34,1.56,0.64,1);transform:scale(1.12);}
+.ci-icon{transition:all 0.22s cubic-bezier(0.34,1.56,0.64,1);}
+
+/* 7. Footer fade up */
+footer{opacity:0;transform:translateY(16px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1);}
+footer.fv{opacity:1;transform:translateY(0);}
 
 /* SMOOTH TRANSITIONS */
 a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
@@ -573,10 +605,10 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
         <div class="hop-liquid">
           <div class="hop-liquid-inner">
             <span class="hop-why-label">Why I Built This</span>
-            <p>A trading creator needed one video<br>To convert cold Instagram traffic into course purchases</p>
-            <p class="hop-liquid-gap">There is a difference between making content and making content that converts.</p>
-            <p>I delivered the work<br>Then I watched it back as a strategist</p>
-            <p>Not the cuts. Not the subtitles. The structure.<br>I rebuilt the entire brief from scratch</p>
+            <p>One video. Cold traffic. Course purchase.</p>
+            <p class="hop-liquid-gap">Making content is not the same as making content that converts.</p>
+            <p>I delivered the work<br>Then watched it back as a strategist</p>
+            <p>Not the editing. The structure.<br>I rebuilt the brief from scratch.</p>
           </div>
         </div>
         <div class="hop-differentiator">
@@ -626,7 +658,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
     </div>
     <div class="ci-info fi d1">
       <h3>Let's talk about what's not working.</h3>
-      <p>I am looking for a full-time role at a company where brand and content strategy sits at the centre of the business. Whether you are hiring, want to understand how I work, or just want a real conversation about what is not clicking in your content — I am happy to talk.</p>
+      <p>I am looking for a full-time role at a company where brand and creative strategy sits at the centre of the business. Whether you are hiring, want to understand how I work, or just want a real conversation about what is not clicking in your content, I am happy to talk.</p>
       <div class="ci-links">
         <a href="mailto:anupamnath222@gmail.com" class="ci-link"><div class="ci-icon">&#x2709;</div><div><span class="ci-lbl">Email</span><span class="ci-val">anupamnath222@gmail.com</span></div></a>
         <a href="tel:+918473932498" class="ci-link"><div class="ci-icon">&#x1F4DE;</div><div><span class="ci-lbl">Phone</span><span class="ci-val">+91 84739 32498</span></div></a>
@@ -843,6 +875,56 @@ document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+})();
+
+// Word-by-word h2 reveal
+(function(){
+  document.querySelectorAll('.s-h2').forEach(function(h){
+    h.innerHTML = h.innerHTML.replace(/(<span[^>]*>.*?<\/span>|[^<\s][^<]*[^>\s]|\S)/g, function(word){
+      if(word.startsWith('<')) return word;
+      return word.split(' ').map(function(w){ return w ? '<span class="wr">'+w+'</span>' : ''; }).join(' ');
+    });
+    const obs = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){
+        h.classList.add('wv');
+        h.querySelectorAll('.wr').forEach(function(w,i){ w.style.transitionDelay = (i*0.06)+'s'; });
+        obs.disconnect();
+      }
+    },{threshold:0.5});
+    obs.observe(h);
+  });
+})();
+
+// Footer reveal
+(function(){
+  const ft = document.querySelector('footer');
+  if(!ft) return;
+  const obs = new IntersectionObserver(function(e){ if(e[0].isIntersecting){ ft.classList.add('fv'); obs.disconnect(); } },{threshold:0.3});
+  obs.observe(ft);
+})();
+
+// Hero photo 3D magnetic tilt
+(function(){
+  const wrap = document.querySelector('.hero-photo-wrap');
+  if(!wrap || window.innerWidth <= 900) return;
+  wrap.addEventListener('mousemove', function(e){
+    const r = wrap.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width - 0.5) * 2;
+    const y = ((e.clientY - r.top) / r.height - 0.5) * 2;
+    wrap.style.transform = 'perspective(900px) rotateY('+( x*7)+'deg) rotateX('+(-y*7)+'deg) scale3d(1.03,1.03,1.03)';
+  });
+  wrap.addEventListener('mouseleave', function(){
+    wrap.style.transform = '';
+  });
+})();
+
+// Section label underline draw on scroll
+(function(){
+  const labels = document.querySelectorAll('.s-label');
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('sl-in'); obs.unobserve(e.target); } });
+  },{threshold:0.8});
+  labels.forEach(function(l){ obs.observe(l); });
 })();
 
 // Custom cursor tracking — was in HTML but display:none with no JS
