@@ -99,9 +99,9 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .f-btn{padding:9px 22px;border:none;background:transparent;color:var(--grey);font-family:var(--f);font-size:13px;font-weight:500;cursor:pointer;border-radius:7px;transition:all 0.2s;}
 .f-btn.active{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 18px var(--glow);}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:visible;display:flex;flex-direction:row;align-items:flex-start;transition:border-color 0.2s,transform 0.2s,box-shadow 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);gap:0;padding-top:0;}
+.proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:hidden;position:relative;display:flex;flex-direction:row;align-items:flex-start;transition:border-color 0.2s,transform 0.2s,box-shadow 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);gap:0;padding-top:0;}
 .proj-card:hover{border-color:var(--blue2);box-shadow:0 14px 44px rgba(108,138,255,0.28);}
-.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:transparent;border-right:none;display:flex;align-items:center;justify-content:center;padding:8px;position:relative;overflow:visible;flex-shrink:0;border-radius:0;box-shadow:0 8px 24px rgba(0,0,0,0.25);margin:12px;margin-right:18px;}
+.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:transparent;border-right:none;display:flex;align-items:center;justify-content:center;padding:8px;position:relative;z-index:1;overflow:visible;flex-shrink:0;border-radius:0;box-shadow:0 8px 24px rgba(0,0,0,0.25);margin:12px;margin-right:18px;}
 .proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;filter:none;width:90%;height:90%;}
 .proj-thumb.prep-iq{background:transparent;}
 .proj-thumb.chaivours{background:transparent;}
@@ -109,7 +109,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .proj-thumb.explore-valley{background:transparent;}
 .proj-thumb.atomik{background:transparent;}
 .proj-thumb.shortform{background:transparent;}
-.proj-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.proj-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
 .proj-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-0.015em;}
 .proj-desc{font-size:13px;color:var(--grey);line-height:1.7;flex:1;margin-bottom:14px;}
 .proj-metrics{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;padding:12px;background:rgba(108,138,255,0.08);border-radius:8px;border:1px solid rgba(108,138,255,0.15);}
@@ -120,6 +120,15 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .proj-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--blue2);text-decoration:none;font-weight:500;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);transition:all 0.2s;width:fit-content;}
 .proj-link:hover{border-color:var(--blue);background:var(--glow2);color:var(--white);}
 .proj-desc strong{color:var(--white);font-weight:600;background:rgba(108,138,255,0.15);padding:2px 6px;border-radius:4px;}
+.proj-card::before{content:'';position:absolute;width:260px;height:260px;background:radial-gradient(ellipse,rgba(108,138,255,0.11) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:0;top:-80px;right:-80px;animation:projGlow 11s ease-in-out infinite;}
+.proj-card:nth-child(2)::before{animation-delay:-3.5s;top:auto;bottom:-80px;}
+.proj-card:nth-child(3)::before{animation-delay:-6s;right:auto;left:-80px;}
+.proj-card:nth-child(4)::before{animation-delay:-2s;top:auto;bottom:-80px;right:auto;left:-80px;}
+.proj-card:nth-child(5)::before{animation-delay:-8s;}
+.proj-card:nth-child(6)::before{animation-delay:-4.5s;top:auto;bottom:-80px;right:auto;left:-80px;}
+@keyframes projGlow{0%,100%{transform:translate(0,0) scale(1);opacity:0.7;}40%{transform:translate(-25px,18px) scale(1.15);opacity:1;}75%{transform:translate(12px,-12px) scale(0.9);opacity:0.5;}}
+.proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,transparent 38%,rgba(255,255,255,0.055) 50%,transparent 62%);transform:translateX(-100%);transition:transform 0.6s ease;pointer-events:none;z-index:2;border-radius:14px;}
+.proj-card:hover::after{transform:translateX(110%);}
 
 /* BEFORE THE BRAND EXISTS */
 #hop{background:var(--bg);}
