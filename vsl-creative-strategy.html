@@ -15,9 +15,7 @@ html{scroll-behavior:smooth}
 --glow:rgba(99,102,241,0.15);--border:rgba(99,102,241,0.12);--border2:rgba(255,255,255,0.07);
 --white:#ffffff;--cream:#e2e8f0;--muted:#94a3b8;--dim:#475569;--dimmer:#334155;
 --sans:'Inter',sans-serif;--mono:'DM Mono',monospace}
-body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden;cursor:none}
-#cur{position:fixed;width:10px;height:10px;background:var(--blue2);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:screen}
-#cur-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(99,102,241,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--blue)}
 #loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .6s,visibility .6s}
 #loader.done{opacity:0;visibility:hidden}
@@ -170,8 +168,6 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
 </style>
 </head>
 <body>
-<div id="cur"></div>
-<div id="cur-ring"></div>
 <div id="loader">
   <div class="ld-name">Anupam <span>Nath</span></div>
   <div class="ld-bar-wrap"><div class="ld-bar" id="lbar"></div></div>
@@ -319,11 +315,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   <a href="mailto:anupamnath222@gmail.com" class="foot-r">anupamnath222@gmail.com</a>
 </footer>
 <script>
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-(function a(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cur.style.left=mx+'px';cur.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
-document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.transform='translate(-50%,-50%) scale(1.4)';});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.transform='translate(-50%,-50%) scale(1)';});});
+
 const lbar=document.getElementById('lbar'),lpct=document.getElementById('lpct'),loader=document.getElementById('loader');
 let prog=0;
 const li=setInterval(()=>{prog+=Math.random()*18;if(prog>=100){prog=100;clearInterval(li);setTimeout(()=>loader.classList.add('done'),300);}lbar.style.width=prog+'%';lpct.textContent=Math.floor(prog)+'%';},80);
