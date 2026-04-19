@@ -140,18 +140,28 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-item span{color:var(--white);font-weight:700;}
 .hop-item{font-size:14px;padding:8px 0;color:var(--grey);display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
 .hop-comps{display:flex;flex-direction:column;gap:10px;}
-.hop-comp{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:15px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.2s,box-shadow 0.2s;}
-.hop-comp:hover{border-color:var(--border);box-shadow:0 4px 16px rgba(108,138,255,0.1);}
+.hop-comp{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:15px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;}
+.hop-comp:hover{border-color:rgba(108,138,255,0.45);box-shadow:0 8px 28px rgba(108,138,255,0.18);transform:translateY(-3px);}
 .hop-num{font-size:12px;color:var(--blue);font-weight:800;min-width:26px;letter-spacing:0.02em;}
 .hop-lbl{font-size:14px;color:var(--grey);line-height:1.6;}
 .hop-lbl strong{color:var(--off);font-weight:700;display:block;margin-bottom:2px;}
-.hop-intro{font-size:14px;color:var(--grey);line-height:1.75;margin-bottom:32px;letter-spacing:-0.005em;}
-.hop-intro span{color:var(--blue2);font-weight:600;}
-.hop-no-brief{font-size:15px;color:var(--off);font-weight:500;margin-bottom:36px;line-height:1.8;letter-spacing:-0.01em;}
-.hop-why-sharp{margin-bottom:40px;}
-.hop-why-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:18px;display:block;}
-.hop-why-sharp p{font-size:14px;color:var(--grey);line-height:1.85;margin-bottom:16px;letter-spacing:-0.005em;}
-.hop-gap-line{color:var(--off)!important;font-weight:600!important;font-size:15px!important;}
+.hop-why-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:16px;display:block;}
+.hop-constraints{display:flex;flex-direction:column;gap:1px;margin-bottom:10px;}
+.hop-constraints span{font-size:18px;font-weight:700;color:var(--off);letter-spacing:-0.025em;line-height:1.55;}
+.hop-just{font-size:14px;color:var(--grey);margin-bottom:28px;font-style:italic;letter-spacing:-0.005em;}
+.hop-liquid{background:linear-gradient(135deg,rgba(108,138,255,0.1) 0%,rgba(103,232,249,0.05) 100%);border:1px solid rgba(108,138,255,0.28);border-radius:16px;padding:26px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 0 48px rgba(108,138,255,0.1),inset 0 1px 0 rgba(255,255,255,0.04);}
+.hop-liquid::before{content:'';position:absolute;top:-40%;right:-20%;width:280px;height:280px;background:radial-gradient(ellipse,rgba(108,138,255,0.2) 0%,transparent 65%);pointer-events:none;animation:liquidFloat 7s ease-in-out infinite;}
+@keyframes liquidFloat{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-15px,10px) scale(1.12);}}
+.hop-liquid-inner{position:relative;z-index:1;}
+.hop-liquid p{font-size:13px;color:var(--off);line-height:1.85;margin-bottom:14px;letter-spacing:-0.005em;}
+.hop-liquid p:last-child{margin-bottom:0;}
+.hop-liquid-gap{color:var(--blue2)!important;font-weight:600!important;font-size:14px!important;}
+.hop-differentiator{border-left:2px solid rgba(108,138,255,0.3);padding-left:18px;margin-bottom:36px;}
+.hop-diff-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:10px;display:block;}
+.hop-differentiator p{font-size:13px;color:var(--grey);line-height:1.75;margin-bottom:8px;}
+.hop-differentiator p:last-child{margin-bottom:0;}
+.hop-reveal{opacity:0;transform:translateY(16px);transition:opacity 0.45s ease,transform 0.45s ease;}
+.hop-reveal.vis{opacity:1;transform:translateY(0);}
 
 /* CONTACT */
 #contact{background:var(--bg2);}
@@ -447,29 +457,40 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
   <div class="hop-wrap fi">
     <div class="hop-inner">
       <div>
-        <p class="hop-intro">This section shows how I think before anything gets made<br><span>Strategy first. Execution follows.</span></p>
         <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
         <h2 class="hop-title"><span>House of Pause</span></h2>
-        <p class="hop-subtitle-small">Built as a complete brand system from scratch</p>
-        <p class="hop-no-brief">No client. No brief. No constraints<br>Just the problem and how I chose to solve it</p>
-        <div class="hop-why-sharp">
-          <span class="hop-why-label">Why this exists</span>
-          <p>The interior design category focuses on aesthetics<br>Not how a space actually feels to live in</p>
-          <p class="hop-gap-line">That gap became the starting point</p>
-          <p>This project is not about visuals<br>It is about building a brand from insight to execution</p>
-          <p>Every part is connected<br>Nothing exists without a reason</p>
+        <p class="hop-subtitle-small">A complete brand system built from scratch</p>
+        <div class="hop-constraints">
+          <span>No client</span>
+          <span>No brief</span>
+          <span>No constraints</span>
+        </div>
+        <p class="hop-just">Just the problem and how I chose to solve it</p>
+        <div class="hop-liquid">
+          <div class="hop-liquid-inner">
+            <span class="hop-why-label">Why I built this</span>
+            <p>Interior design brands focus on aesthetics<br>Not how a space actually feels to live in</p>
+            <p class="hop-liquid-gap">That gap became the starting point</p>
+            <p>This is not just visuals<br>This is building a brand from insight to execution</p>
+            <p>Every part connects<br>Nothing exists without a reason</p>
+          </div>
+        </div>
+        <div class="hop-differentiator">
+          <span class="hop-diff-label">Why interior design</span>
+          <p>High-intent, high-ticket category<br>But most brands still communicate like catalogs</p>
+          <p>This project explores how to change that</p>
         </div>
         <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn btn-fill">View Complete System →</a>
       </div>
       <div>
         <div class="hop-comps">
-          <div class="hop-comp"><span class="hop-num">01</span><span class="hop-lbl"><strong>Market Research</strong>What the category gets wrong</span></div>
-          <div class="hop-comp"><span class="hop-num">02</span><span class="hop-lbl"><strong>Audience</strong>Defined by situation, not demographics</span></div>
-          <div class="hop-comp"><span class="hop-num">03</span><span class="hop-lbl"><strong>Positioning</strong>Finding the space no one owns</span></div>
-          <div class="hop-comp"><span class="hop-num">04</span><span class="hop-lbl"><strong>Funnel</strong>How attention becomes intent</span></div>
-          <div class="hop-comp"><span class="hop-num">05</span><span class="hop-lbl"><strong>Content System</strong>Each piece has a job</span></div>
-          <div class="hop-comp"><span class="hop-num">06</span><span class="hop-lbl"><strong>Creative Direction</strong>Why it looks and feels this way</span></div>
-          <div class="hop-comp"><span class="hop-num">07</span><span class="hop-lbl"><strong>Execution</strong>Built as a system, not random content</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">01</span><span class="hop-lbl"><strong>Market</strong>What the category gets wrong</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">02</span><span class="hop-lbl"><strong>Audience</strong>Defined by situation, not demographics</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">03</span><span class="hop-lbl"><strong>Positioning</strong>Owning a space no one is speaking from</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">04</span><span class="hop-lbl"><strong>Funnel</strong>How attention becomes intent</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">05</span><span class="hop-lbl"><strong>Content System</strong>Each piece has a job</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">06</span><span class="hop-lbl"><strong>Creative Direction</strong>Why it looks and feels this way</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">07</span><span class="hop-lbl"><strong>Execution</strong>Built as a system, not random content</span></div>
         </div>
       </div>
     </div>
@@ -682,6 +703,18 @@ const countObserver=new IntersectionObserver((entries)=>{
   });
 },{threshold:0.3});
 statCards.forEach(card=>countObserver.observe(card));
+
+// STAGGERED METHODOLOGY CARD REVEAL
+const hopRevealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const cards=entry.target.querySelectorAll('.hop-reveal');
+      cards.forEach((card,i)=>setTimeout(()=>card.classList.add('vis'),i*90));
+      hopRevealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.15});
+document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el));
 </script>
 </body>
 </html>
