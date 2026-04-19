@@ -68,8 +68,14 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .about-loc{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--dgrey);margin-top:22px;font-weight:500;}
 .about-loc svg{width:14px;height:14px;fill:var(--blue2);}
 .about-stats{display:flex;flex-direction:column;gap:14px;}
-.stat-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:30px 22px;text-align:center;transition:border-color 0.2s,box-shadow 0.2s;}
-.stat-card:hover{border-color:rgba(108,138,255,0.3);box-shadow:0 0 28px var(--glow2);}
+.stat-card{background:linear-gradient(135deg,rgba(108,138,255,0.08) 0%,rgba(103,232,249,0.04) 100%);border:1px solid rgba(108,138,255,0.2);border-radius:14px;padding:30px 22px;text-align:center;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(108,138,255,0.07),inset 0 1px 0 rgba(255,255,255,0.04);}
+.stat-card::before{content:'';position:absolute;width:200px;height:200px;background:radial-gradient(ellipse,rgba(108,138,255,0.16) 0%,transparent 65%);border-radius:50%;pointer-events:none;z-index:0;top:-60px;right:-60px;animation:liquidFloat 9s ease-in-out infinite;}
+.stat-card:nth-child(2)::before{animation-delay:-3s;top:auto;bottom:-60px;right:auto;left:-60px;background:radial-gradient(ellipse,rgba(103,232,249,0.12) 0%,transparent 65%);}
+.stat-card:nth-child(3)::before{animation-delay:-6s;top:-60px;right:auto;left:-60px;}
+.stat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,transparent 38%,rgba(255,255,255,0.05) 50%,transparent 62%);transform:translateX(-100%);transition:transform 0.55s ease;pointer-events:none;z-index:0;border-radius:14px;}
+.stat-card:hover::after{transform:translateX(110%);}
+.stat-card > *{position:relative;z-index:1;}
+.stat-card:hover{border-color:rgba(108,138,255,0.45);box-shadow:0 8px 36px rgba(108,138,255,0.2);}
 .stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:4px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
 .stat-mid{font-size:15px;font-weight:700;color:var(--off);display:block;margin-bottom:8px;letter-spacing:-0.01em;}
 .stat-title{font-size:24px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;display:block;margin-bottom:10px;letter-spacing:-0.03em;}
