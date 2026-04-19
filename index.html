@@ -146,14 +146,16 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .f-btn{padding:9px 22px;border:none;background:transparent;color:var(--grey);font-family:var(--f);font-size:13px;font-weight:500;cursor:pointer;border-radius:7px;transition:all 0.2s;}
 .f-btn.active{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 18px var(--glow);}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.proj-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:hidden;position:relative;display:flex;flex-direction:row;align-items:flex-start;transition:border-color 0.2s,transform 0.2s,box-shadow 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.2);gap:0;padding-top:0;}
-.proj-card:hover{border-color:var(--blue2);box-shadow:0 14px 44px rgba(5,150,105,0.28);}
-.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:transparent;border-right:none;display:flex;align-items:center;justify-content:center;padding:8px;position:relative;z-index:1;overflow:visible;flex-shrink:0;border-radius:0;box-shadow:0 8px 24px rgba(0,0,0,0.25);margin:12px;margin-right:18px;}
-.proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;filter:none;width:90%;height:90%;}
+.proj-card{background:linear-gradient(135deg,rgba(5,150,105,0.07) 0%,rgba(240,253,244,0.9) 40%,rgba(236,253,245,0.85) 100%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(5,150,105,0.22);border-radius:16px;overflow:hidden;position:relative;display:flex;flex-direction:row;align-items:flex-start;transition:border-color 0.3s,transform 0.22s,box-shadow 0.3s;box-shadow:0 4px 22px rgba(5,150,105,0.1),inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -1px 0 rgba(5,150,105,0.06);gap:0;padding-top:0;}
+.proj-card:hover{border-color:rgba(5,150,105,0.5);box-shadow:0 16px 48px rgba(5,150,105,0.2),inset 0 1px 0 rgba(255,255,255,0.95),inset 0 -1px 0 rgba(5,150,105,0.08);transform:translateY(-3px);}
+.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:rgba(255,255,255,0.8);border:1px solid rgba(5,150,105,0.18);display:flex;align-items:center;justify-content:center;padding:10px;position:relative;z-index:1;overflow:hidden;flex-shrink:0;border-radius:12px;box-shadow:0 4px 16px rgba(5,150,105,0.12),inset 0 1px 0 rgba(255,255,255,0.9);margin:14px;margin-right:18px;transition:box-shadow 0.3s,transform 0.3s;}
+.proj-card:hover .proj-thumb{box-shadow:0 8px 28px rgba(5,150,105,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:scale(1.06) rotate(-1deg);}
+.proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;width:88%;height:88%;transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);}
+.proj-card:hover .proj-thumb img{transform:scale(1.1);}
 .proj-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
 .proj-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-0.015em;}
 .proj-desc{font-size:13px;color:var(--grey);line-height:1.7;flex:1;margin-bottom:14px;}
-.proj-metrics{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;padding:12px;background:rgba(5,150,105,0.08);border-radius:8px;border:1px solid rgba(5,150,105,0.15);}
+.proj-metrics{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;padding:12px;background:rgba(255,255,255,0.65);backdrop-filter:blur(8px);border-radius:8px;border:1px solid rgba(5,150,105,0.18);box-shadow:inset 0 1px 0 rgba(255,255,255,0.8);}
 .metric{font-size:12px;color:var(--blue2);font-weight:600;line-height:1.6;}
 .metric strong{color:var(--white);font-weight:700;}
 .proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
@@ -161,7 +163,9 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .proj-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--blue2);text-decoration:none;font-weight:500;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);transition:all 0.2s;width:fit-content;}
 .proj-link:hover{border-color:var(--blue);background:var(--glow2);color:var(--white);}
 .proj-desc strong{color:var(--white);font-weight:600;background:rgba(5,150,105,0.15);padding:2px 6px;border-radius:4px;}
-.proj-card::before{content:'';position:absolute;width:260px;height:260px;background:radial-gradient(ellipse,rgba(5,150,105,0.08) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:0;top:-80px;right:-80px;}
+.proj-card::before{content:'';position:absolute;width:280px;height:280px;background:radial-gradient(ellipse,rgba(5,150,105,0.12) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:0;top:-80px;right:-60px;transition:opacity 0.3s;}
+.proj-card:hover::before{opacity:1.4;}
+.proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.55) 0%,transparent 50%);pointer-events:none;z-index:0;border-radius:16px;}
 
 /* METHODOLOGY */
 #hop{background:var(--bg);}
@@ -189,9 +193,10 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-item span{color:var(--white);font-weight:700;}
 .hop-item{font-size:14px;padding:8px 0;color:var(--grey);display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
 .hop-comps{display:flex;flex-direction:column;gap:10px;}
-.hop-comp{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:15px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;}
-.hop-comp:hover{border-color:rgba(5,150,105,0.45);box-shadow:0 8px 28px rgba(5,150,105,0.18);transform:translateY(-3px);}
-.hop-num{font-size:12px;color:var(--blue);font-weight:800;min-width:26px;letter-spacing:0.02em;}
+.hop-comp{background:linear-gradient(135deg,rgba(255,255,255,0.85) 0%,rgba(240,253,244,0.9) 100%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(5,150,105,0.18);border-radius:12px;padding:15px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(5,150,105,0.07),inset 0 1px 0 rgba(255,255,255,0.9);}
+.hop-comp::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--blue),var(--cyan));border-radius:3px 0 0 3px;transform:scaleY(0);transform-origin:bottom;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);}
+.hop-comp:hover{border-color:rgba(5,150,105,0.42);box-shadow:0 8px 28px rgba(5,150,105,0.15),inset 0 1px 0 rgba(255,255,255,0.95);transform:translateX(4px);}
+.hop-comp:hover::before,.hop-comp.vis::before{transform:scaleY(1);}
 .hop-lbl{font-size:14px;color:var(--grey);line-height:1.6;}
 .hop-lbl strong{color:var(--off);font-weight:700;display:block;margin-bottom:2px;}
 .hop-why-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:16px;display:block;}
@@ -277,8 +282,12 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 .proj-card:hover{border-left-color:var(--blue2);}
 
 /* 5. hop-comp number highlight on hover */
-.hop-comp:hover .hop-num{color:var(--cyan);transform:scale(1.15);display:inline-block;transition:color 0.2s,transform 0.2s;}
-.hop-num{transition:color 0.2s,transform 0.2s;display:inline-block;}
+.hop-comp:hover .hop-num{color:var(--blue);transform:scale(1.15);display:inline-block;transition:color 0.2s,transform 0.2s;}
+.hop-num{transition:color 0.2s,transform 0.2s;display:inline-block;font-size:12px;color:var(--blue);font-weight:800;min-width:26px;letter-spacing:0.02em;}
+
+/* Hop-comp: HoP logo glow pulse on section enter */
+.hop-logo-wrap{transition:transform 0.3s,filter 0.3s;}
+.hop-logo-wrap:hover{transform:scale(1.04);filter:drop-shadow(0 0 24px rgba(5,150,105,0.45)) drop-shadow(0 0 8px rgba(52,211,153,0.3));}
 
 /* 6. Contact links icon pop */
 .ci-link:hover .ci-icon{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;border-color:transparent;transition:all 0.22s cubic-bezier(0.34,1.56,0.64,1);transform:scale(1.12);}
@@ -579,7 +588,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
         <a href="house-of-pause.html" class="btn btn-fill">View Complete System &#x2192;</a>
       </div>
       <div>
-        <div style="margin-bottom:28px;display:flex;align-items:center;justify-content:center;">
+        <div class="hop-logo-wrap" style="margin-bottom:28px;display:flex;align-items:center;justify-content:center;cursor:default;">
           <img src="assets/logos/House of Pause.png" alt="House of Pause" style="max-width:180px;max-height:100px;object-fit:contain;opacity:0.92;filter:drop-shadow(0 0 18px rgba(5,150,105,0.3));">
         </div>
         <div class="hop-comps">
@@ -621,12 +630,12 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
       </div>
       <div>
         <div class="hop-comps">
-          <div class="hop-comp"><span class="hop-num">01</span><span class="hop-lbl"><strong>Audience Insight</strong>Who the buyer is, what they fear, what they need to believe</span></div>
-          <div class="hop-comp"><span class="hop-num">02</span><span class="hop-lbl"><strong>Narrative Architecture</strong>Every section mapped to a specific conversion job</span></div>
-          <div class="hop-comp"><span class="hop-num">03</span><span class="hop-lbl"><strong>Conversion Breakdown</strong>Where the video lost the viewer and exactly why</span></div>
-          <div class="hop-comp"><span class="hop-num">04</span><span class="hop-lbl"><strong>Highest Impact Fixes</strong>The three changes that would have moved the needle most</span></div>
-          <div class="hop-comp"><span class="hop-num">05</span><span class="hop-lbl"><strong>Rebuilt Creative Brief</strong>The strategy document that should have existed first</span></div>
-          <div class="hop-comp"><span class="hop-num">06</span><span class="hop-lbl"><strong>Rebuilt Script Structure</strong>Full arc from pattern interrupt to spoken CTA</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">01</span><span class="hop-lbl"><strong>Audience Insight</strong>Who the buyer is, what they fear, what they need to believe</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">02</span><span class="hop-lbl"><strong>Narrative Architecture</strong>Every section mapped to a specific conversion job</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">03</span><span class="hop-lbl"><strong>Conversion Breakdown</strong>Where the video lost the viewer and exactly why</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">04</span><span class="hop-lbl"><strong>Highest Impact Fixes</strong>The three changes that would have moved the needle most</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">05</span><span class="hop-lbl"><strong>Rebuilt Creative Brief</strong>The strategy document that should have existed first</span></div>
+          <div class="hop-comp hop-reveal"><span class="hop-num">06</span><span class="hop-lbl"><strong>Rebuilt Script Structure</strong>Full arc from pattern interrupt to spoken CTA</span></div>
         </div>
       </div>
     </div>
