@@ -43,7 +43,9 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .b1{width:700px;height:700px;background:rgba(99,102,241,.09);top:-200px;right:-150px;animation:bm 14s ease-in-out infinite}
 .b2{width:500px;height:500px;background:rgba(129,140,248,.06);bottom:-100px;left:-100px;animation:bm 18s ease-in-out infinite reverse}
 @keyframes bm{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.06)}66%{transform:translate(-20px,20px) scale(.95)}}
-.hero-inner{position:relative;z-index:2;max-width:800px}
+.hero-inner{position:relative;z-index:2;width:100%;display:flex;align-items:flex-end;gap:56px}
+.hero-content{flex:1;max-width:720px}
+.hero-logo-col{flex-shrink:0;display:flex;align-items:center;justify-content:center;padding-bottom:20px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.08);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:24px;opacity:0;animation:fadeUp .7s ease .2s forwards}
 .badge-dot{width:6px;height:6px;background:var(--blue3);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
@@ -264,6 +266,8 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   nav{padding:0 20px}.tab-nav{padding:0 20px}
   .ps,#hero,#closing,footer{padding-left:20px;padding-right:20px}
   #hero{padding-top:100px;padding-bottom:60px}
+  .hero-inner{flex-direction:column;align-items:flex-start;gap:32px}
+  .hero-logo-col{display:none}
   .comp-grid{grid-template-columns:repeat(2,1fr)}
   .aud-grid,.persona-grid,.insight-grid,.copy-cols,.ai-grid{grid-template-columns:1fr}
   .cal-grid{grid-template-columns:repeat(4,1fr)}
@@ -296,8 +300,9 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   <div class="blob b1"></div>
   <div class="blob b2"></div>
   <div class="hero-inner">
-    <div class="hero-badge"><span class="badge-dot"></span>Self-Initiated Brand System · 2024</div>
-    <div class="hero-label">10-Component Brand Build</div>
+    <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>Self-Initiated Brand System · 2026</div>
+    <div class="hero-label">9-Component Brand Build</div>
     <h1 class="hero-title">House of<br><span class="grad">Pause</span></h1>
     <div class="hero-subtitle">Interior Design · Indian Market · High-Consideration Category</div>
     <div class="hero-insight">
@@ -315,14 +320,18 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="hs-item"><span class="hs-n">30</span><span class="hs-l">Day Calendar</span></div>
       <div class="hs-item"><span class="hs-n">20+</span><span class="hs-l">Hooks Written</span></div>
     </div>
+    </div>
+    <div class="hero-logo-col">
+      <img src="assets/logos/House of Pause.png" alt="House of Pause" style="max-width:260px;width:100%;object-fit:contain;opacity:0.88;filter:drop-shadow(0 0 32px rgba(99,102,241,0.35));animation:fadeUp 1s ease 0.8s both;">
+    </div>
   </div>
   <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-arrow"><div class="sh-dot"></div></div></div>
 </section>
 
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <div class="m-item"><span class="m-dot"></span>Research Layer</div><div class="m-item"><span class="m-dot"></span>Target Audience</div><div class="m-item"><span class="m-dot"></span>Buyer Persona</div><div class="m-item"><span class="m-dot"></span>Core Insight</div><div class="m-item"><span class="m-dot"></span>Funnel Thinking</div><div class="m-item"><span class="m-dot"></span>Content System</div><div class="m-item"><span class="m-dot"></span>Creative Execution</div><div class="m-item"><span class="m-dot"></span>Copy Bank</div><div class="m-item"><span class="m-dot"></span>30-Day Calendar</div><div class="m-item"><span class="m-dot"></span>AI Usage Layer</div>
-    <div class="m-item"><span class="m-dot"></span>Research Layer</div><div class="m-item"><span class="m-dot"></span>Target Audience</div><div class="m-item"><span class="m-dot"></span>Buyer Persona</div><div class="m-item"><span class="m-dot"></span>Core Insight</div><div class="m-item"><span class="m-dot"></span>Funnel Thinking</div><div class="m-item"><span class="m-dot"></span>Content System</div><div class="m-item"><span class="m-dot"></span>Creative Execution</div><div class="m-item"><span class="m-dot"></span>Copy Bank</div><div class="m-item"><span class="m-dot"></span>30-Day Calendar</div><div class="m-item"><span class="m-dot"></span>AI Usage Layer</div>
+    <div class="m-item"><span class="m-dot"></span>Research Layer</div><div class="m-item"><span class="m-dot"></span>Target Audience</div><div class="m-item"><span class="m-dot"></span>Buyer Persona</div><div class="m-item"><span class="m-dot"></span>Core Insight</div><div class="m-item"><span class="m-dot"></span>Funnel Thinking</div><div class="m-item"><span class="m-dot"></span>Content System</div><div class="m-item"><span class="m-dot"></span>Creative Execution</div><div class="m-item"><span class="m-dot"></span>Copy Bank</div><div class="m-item"><span class="m-dot"></span>30-Day Calendar</div>
+    <div class="m-item"><span class="m-dot"></span>Research Layer</div><div class="m-item"><span class="m-dot"></span>Target Audience</div><div class="m-item"><span class="m-dot"></span>Buyer Persona</div><div class="m-item"><span class="m-dot"></span>Core Insight</div><div class="m-item"><span class="m-dot"></span>Funnel Thinking</div><div class="m-item"><span class="m-dot"></span>Content System</div><div class="m-item"><span class="m-dot"></span>Creative Execution</div><div class="m-item"><span class="m-dot"></span>Copy Bank</div><div class="m-item"><span class="m-dot"></span>30-Day Calendar</div>
   </div>
 </div>
 
@@ -336,12 +345,12 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   <button class="tab-btn" onclick="scrollToSection('content-system')">06 Content</button>
   <button class="tab-btn" onclick="scrollToSection('calendar')">09 Calendar</button>
   <button class="tab-btn" onclick="scrollToSection('copy-bank')">08 Copy Bank</button>
-  <button class="tab-btn" onclick="scrollToSection('ai-usage')">10 AI Usage</button>
+
 </div>
 
 <div class="ps" id="components">
   <div class="sec-tag">Overview</div>
-  <h2 class="sec-title">10 components. <span>One connected system.</span></h2>
+  <h2 class="sec-title">9 components. <span>One connected system.</span></h2>
   <p class="sec-sub">Every component builds on the one before it. The research explains the insight. The insight explains the positioning. The positioning explains every piece of content in the 30-day calendar.</p>
   <div class="comp-grid reveal">
     <div class="comp-card"><span class="cc-num">01</span><div class="cc-title">Research Layer</div><div class="cc-desc">4 competitor audits. Market patterns. Audience signals. The gap nobody is standing in.</div></div>
@@ -353,12 +362,12 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
     <div class="comp-card"><span class="cc-num">07</span><div class="cc-title">Creative Execution</div><div class="cc-desc">7 complete pieces. Hook, body copy, visual direction, and rationale for each.</div></div>
     <div class="comp-card"><span class="cc-num">08</span><div class="cc-title">Copy Bank</div><div class="cc-desc">20 hooks, 20 CTAs. Tone variations. Final selections marked.</div></div>
     <div class="comp-card"><span class="cc-num">09</span><div class="cc-title">30-Day Calendar</div><div class="cc-desc">TOF heavy week 1. MOF builds weeks 2–3. BOF only after trust is built. Full arc.</div></div>
-    <div class="comp-card"><span class="cc-num">10</span><div class="cc-title">AI Usage Layer</div><div class="cc-desc">Documents exactly what AI did and what required human judgment. The line is explicit.</div></div>
+
   </div>
   <div class="sheet-cta-block reveal">
     <div class="scb-left">
       <div class="scb-label">Full Brand System</div>
-      <div class="scb-title">View all 10 sheets on Google Sheets</div>
+      <div class="scb-title">View all 9 sheets on Google Sheets</div>
       <div class="scb-sub">Every component, every decision, every framework — open and readable.</div>
     </div>
     <a href="https://docs.google.com/spreadsheets/d/1soSbzdanNXRzPMmZQ9DIskxE1n-4GRIoY0XLT2S6Xtw/edit?gid=1257217164#gid=1257217164" target="_blank" class="btn-primary">Open Google Sheet ↗</a>
@@ -722,50 +731,6 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
         <div class="hook-item"><div class="hook-num">17</div><div class="hook-text">DM me the word AUDIT and I'll send you the home feeling checklist.</div><div class="hook-tone">Lead Gen / Useful</div></div>
         <div class="hook-item"><div class="hook-num">20</div><div class="hook-text">Start here: what feeling is your home missing right now? One word. Comments below.</div><div class="hook-selected">✓</div></div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="ps" id="ai-usage">
-  <div class="sec-tag">10 · AI Usage Layer</div>
-  <h2 class="sec-title">AI executes. <span>The strategist decides.</span></h2>
-  <p class="sec-sub">Every task documents what AI did and what required human judgment. The line is explicit — because that line is the skill.</p>
-  <div class="ai-grid reveal">
-    <div class="ai-card">
-      <div class="ai-task">Persona Generation</div>
-      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 5–10 persona variations. Produce dialogue — 'what would this person say when they walk into their home on a bad day?'</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Speed. Generates 10 drafts in minutes. Forces the strategist to react and select rather than generate from a blank page.</div></div>
-      <div class="human-note">AI cannot feel whether a persona is real. It cannot sense the specific texture of frustration one person carries versus another. That judgment is human.</div>
-    </div>
-    <div class="ai-card">
-      <div class="ai-task">Content Angle Generation</div>
-      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Given the core insight, generate 20 content angles across each funnel stage.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Breaks the blank-page problem. Creates a wide net of options fast. Forces the strategist into curation mode which is sharper than pure generation.</div></div>
-      <div class="human-note">AI cannot distinguish between angles that feel true and angles that sound smart. It cannot feel the difference between 'this will resonate' and 'this will be scrolled past.' That is the skill.</div>
-    </div>
-    <div class="ai-card">
-      <div class="ai-task">Hook Writing</div>
-      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 20 hook variations for each core post or reel. Vary the tone: calm, confronting, diagnostic, question-based.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Volume. A human runs dry after 5 hooks. AI generates 20 in 2 minutes. The strategist selects, combines, and sharpens.</div></div>
-      <div class="human-note">AI cannot tell which hook will stop a scroll. It cannot feel the difference between a hook that is technically correct and one that lands emotionally. Hook selection is human judgment.</div>
-    </div>
-    <div class="ai-card">
-      <div class="ai-task">Research Synthesis</div>
-      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Feed platform observations — Reddit threads, YouTube comments, Instagram comment patterns — into AI for pattern analysis.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Pattern recognition at scale. AI can read 200 comments and identify clusters in minutes. That process would take hours manually.</div></div>
-      <div class="human-note">AI cannot tell you whether a comment is ironic, sarcastic, or genuinely expressing pain. It cannot read emotional nuance. All final insight remains the strategist's judgment.</div>
-    </div>
-    <div class="ai-card">
-      <div class="ai-task">30-Day Calendar Population</div>
-      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">After the content system and pillars are defined by the strategist, use AI to populate the calendar structure with matching ideas.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Speed and volume. Once the system is defined, the execution is largely structural. AI fills the grid faster than any other method.</div></div>
-      <div class="human-note">AI cannot plan a content arc. It cannot decide that Day 22 should be the first conversion offer because enough trust has been built by Day 21. That is strategy — and it stays human.</div>
-    </div>
-    <div class="ai-card">
-      <div class="ai-task">Visual Direction Briefs</div>
-      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 5 visual direction options for each content piece: colour palettes, shot types, typography style, prop direction.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Saves briefing time. Gives multiple directions to react to rather than writing from scratch on every piece.</div></div>
-      <div class="human-note">AI defaults toward aspirational and polished visuals — exactly what this brand is positioned against. The strategist must actively hold the anti-aspiration-porn visual line. That restraint is the brand decision.</div>
     </div>
   </div>
 </div>
