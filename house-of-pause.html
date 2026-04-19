@@ -20,7 +20,6 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--blue)}
 
-/* LOADER */
 #loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .7s,visibility .7s}
 #loader.done{opacity:0;visibility:hidden;pointer-events:none}
 .ld-name{font-size:15px;font-weight:700;color:var(--white);letter-spacing:-.01em}
@@ -29,7 +28,6 @@ body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight
 .ld-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue3));border-radius:2px;transition:width .05s linear}
 .ld-pct{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.1em}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:64px;background:rgba(8,8,16,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .3s}
 nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .nav-logo{font-size:15px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.02em}
@@ -39,7 +37,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-label{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.06em;text-transform:uppercase}
 
-/* HERO */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 56px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
 #hero-canvas{position:absolute;inset:0;z-index:0;opacity:.4}
 .blob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
@@ -76,7 +73,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .sh-dot{width:3px;height:3px;background:var(--blue2);border-radius:50%;animation:sd 1.8s ease-in-out infinite}
 @keyframes sd{0%,49%{transform:translateY(0);opacity:1}50%,100%{transform:translateY(14px);opacity:0}}
 
-/* MARQUEE */
 .marquee-wrap{overflow:hidden;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(99,102,241,.02)}
 .marquee-track{display:flex;width:max-content;animation:mq 30s linear infinite}
 .marquee-track:hover{animation-play-state:paused}
@@ -84,14 +80,12 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .m-dot{width:4px;height:4px;background:var(--blue);border-radius:50%;flex-shrink:0}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* NAV TABS */
 .tab-nav{position:sticky;top:56px;z-index:90;background:rgba(8,8,16,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 56px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
 .tab-nav::-webkit-scrollbar{display:none}
-.tab-btn{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:16px 20px;border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;font-size:11px}
+.tab-btn{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:16px 20px;border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}
 .tab-btn:hover{color:var(--muted)}
 .tab-btn.active{color:var(--blue2);border-bottom-color:var(--blue2)}
 
-/* SECTION */
 .ps{padding:80px 56px;border-bottom:1px solid var(--border);position:relative}
 .ps:nth-child(even){background:var(--bg2)}
 .sec-tag{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
@@ -100,7 +94,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .sec-title span{color:var(--blue2);font-weight:400;font-style:italic}
 .sec-sub{font-size:15px;color:var(--dim);max-width:520px;margin-bottom:48px;line-height:1.75}
 
-/* COMPONENT GRID */
 .comp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:48px}
 .comp-card{background:var(--card);padding:24px 20px;transition:background .2s;position:relative;overflow:hidden}
 .comp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .35s}
@@ -110,7 +103,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .cc-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:6px}
 .cc-desc{font-size:12px;color:var(--dim);line-height:1.6}
 
-/* RESEARCH TABLE */
 .research-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden}
 .rt-head{background:var(--card2)}
 .rt-head th{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;padding:14px 18px;text-align:left;border-bottom:1px solid var(--border);font-weight:500}
@@ -126,7 +118,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .gap-tof{background:rgba(99,102,241,.15);color:var(--blue3);border:1px solid var(--border)}
 .gap-opp{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
 
-/* AUDIENCE CARDS */
 .aud-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
 .aud-card{background:var(--card);padding:32px 28px;transition:background .2s;position:relative;overflow:hidden}
 .aud-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .35s}
@@ -143,7 +134,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .ac-row-label{font-family:var(--mono);font-size:9px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
 .ac-row-val{font-size:13px;color:var(--muted);line-height:1.65}
 
-/* PERSONA */
 .persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
 .persona-card{background:var(--card);padding:32px 28px;transition:background .2s}
 .persona-card:hover{background:var(--card2)}
@@ -157,7 +147,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .pc-row-val em{color:var(--cream);font-style:italic}
 .pc-row-val strong{color:var(--cream);font-weight:600}
 
-/* INSIGHT */
 .insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:32px}
 .insight-card{background:var(--card);padding:22px 22px;display:grid;grid-template-columns:36px 1fr;gap:16px;align-items:start;transition:background .2s;border-bottom:1px solid var(--border)}
 .insight-card:hover{background:var(--card2)}
@@ -172,7 +161,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .fi-proof{font-size:14px;color:var(--muted);line-height:1.75}
 .fi-proof strong{color:var(--cream);font-weight:600}
 
-/* FUNNEL */
 .funnel-list{display:flex;flex-direction:column;gap:2px}
 .funnel-card{background:var(--card);display:grid;grid-template-columns:80px 1fr;gap:0;border-bottom:1px solid var(--border);transition:background .2s;position:relative;overflow:hidden}
 .funnel-card:first-child{border-radius:10px 10px 0 0}
@@ -191,7 +179,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .fc-goal{font-size:13px;color:var(--dim);margin-bottom:8px}
 .fc-example{font-size:12px;color:var(--dimmer);font-style:italic;padding:8px 12px;background:rgba(99,102,241,.06);border-radius:4px;border-left:2px solid var(--blue)}
 
-/* CONTENT SYSTEM */
 .pillar-tabs{display:flex;gap:4px;margin-bottom:32px;background:var(--bg3);padding:4px;border-radius:8px;width:fit-content;flex-wrap:wrap}
 .pillar-btn{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border:none;background:transparent;color:var(--dim);cursor:pointer;border-radius:6px;transition:all .2s}
 .pillar-btn.active{background:var(--card2);color:var(--cream);box-shadow:0 2px 8px rgba(0,0,0,.3)}
@@ -207,7 +194,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .pi-stage{font-family:var(--mono);font-size:10px;text-align:center}
 .pi-keep{font-family:var(--mono);font-size:10px;color:#4ade80;text-align:center}
 
-/* CALENDAR */
 .cal-week-label{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;margin-top:28px;display:flex;align-items:center;gap:10px}
 .cal-week-label::after{content:'';flex:1;height:1px;background:var(--border)}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:4px}
@@ -228,7 +214,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .cal-title{font-size:11px;color:var(--cream);line-height:1.4;font-weight:600;margin-bottom:4px}
 .cal-pillar{font-family:var(--mono);font-size:9px;color:var(--dimmer)}
 
-/* COPY BANK */
 .copy-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .copy-section-title{font-family:var(--mono);font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .copy-section-title::after{content:'';flex:1;height:1px;background:var(--border);opacity:.5}
@@ -242,7 +227,6 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .hook-selected{font-family:var(--mono);font-size:9px;color:#4ade80;text-align:center;padding-top:2px}
 .hook-tone{font-family:var(--mono);font-size:9px;color:var(--dimmer);text-align:right;line-height:1.4}
 
-/* AI USAGE */
 .ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:10px;overflow:hidden}
 .ai-card{background:var(--card);padding:28px 24px;transition:background .2s}
 .ai-card:hover{background:var(--card2)}
@@ -253,13 +237,11 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .ai-row-val strong{color:var(--cream);font-weight:600}
 .human-note{padding:10px 14px;background:rgba(99,102,241,.08);border-left:2px solid var(--blue);border-radius:0 4px 4px 0;font-size:12px;font-style:italic;color:var(--blue3);margin-top:10px;line-height:1.6}
 
-/* SHEET CTA */
 .sheet-cta-block{padding:40px;background:rgba(99,102,241,.06);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:48px;flex-wrap:wrap}
 .scb-left .scb-label{font-family:var(--mono);font-size:10px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
 .scb-left .scb-title{font-size:20px;font-weight:700;color:var(--white);margin-bottom:6px}
 .scb-left .scb-sub{font-size:14px;color:var(--dim)}
 
-/* CLOSING */
 #closing{padding:88px 56px;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border)}
 .closing-inner{max-width:700px;margin:0 auto}
 .closing-quote{font-size:clamp(18px,2.2vw,26px);font-weight:700;line-height:1.45;color:var(--white);margin-bottom:20px;letter-spacing:-.02em}
@@ -267,20 +249,17 @@ nav.scrolled{height:56px;background:rgba(8,8,16,.97)}
 .closing-byline{font-family:var(--mono);font-size:11px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase;margin-bottom:40px}
 .closing-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-/* FOOTER */
 footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
 .foot-l{font-family:var(--mono);font-size:11px;color:var(--dimmer)}
 .foot-r{font-family:var(--mono);font-size:11px;color:var(--dimmer);text-decoration:none;transition:color .2s}
 .foot-r:hover{color:var(--blue2)}
 
-/* REVEAL */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-/* RESPONSIVE */
 @media(max-width:960px){
   nav{padding:0 20px}.tab-nav{padding:0 20px}
   .ps,#hero,#closing,footer{padding-left:20px;padding-right:20px}
@@ -347,7 +326,6 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </div>
 
-<!-- STICKY TAB NAV -->
 <div class="tab-nav" id="tab-nav">
   <button class="tab-btn active" onclick="scrollToSection('components')">Overview</button>
   <button class="tab-btn" onclick="scrollToSection('research')">01 Research</button>
@@ -361,7 +339,6 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   <button class="tab-btn" onclick="scrollToSection('ai-usage')">10 AI Usage</button>
 </div>
 
-<!-- OVERVIEW -->
 <div class="ps" id="components">
   <div class="sec-tag">Overview</div>
   <h2 class="sec-title">10 components. <span>One connected system.</span></h2>
@@ -388,16 +365,15 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </div>
 
-<!-- RESEARCH -->
 <div class="ps" id="research">
   <div class="sec-tag">01 · Research Layer</div>
   <h2 class="sec-title">The category has solved <span>visibility.</span></h2>
-  <p class="sec-sub">The next advantage is decision clarity. What the research showed — four audits, one conclusion.</p>
+  <p class="sec-sub">The next advantage is decision clarity. Four audits across the Indian interior space — one conclusion.</p>
   <div class="reveal" style="overflow-x:auto">
   <table class="research-table">
     <thead class="rt-head">
       <tr>
-        <th>Brand</th>
+        <th>Brand Type</th>
         <th>What They Do Well</th>
         <th>Audience Behaviour</th>
         <th>The Gap</th>
@@ -406,37 +382,37 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
     </thead>
     <tbody>
       <tr class="rt-row">
-        <td>D'LIFE<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">162K · Kerala</span></td>
-        <td>Emotional storytelling through testimonials. Ask couples which space they love most — genuine feeling.</td>
-        <td>Comments show high purchase intent. People ask 'how to contact' directly.</td>
+        <td>Regional Interior Brand<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">162K · South India</span></td>
+        <td>Emotional storytelling through testimonials. Asks couples which space they love most — creates genuine feeling at BOF.</td>
+        <td>Comments show high purchase intent. Audience asks how to contact directly in comments.</td>
         <td><span class="gap-tag gap-missing">TOF + MOF Missing</span></td>
-        <td>Enter at the pre-decision moment — before they've spent anything.</td>
+        <td>Enter at the pre-decision moment — before the buyer has committed or spent anything.</td>
       </tr>
       <tr class="rt-row">
-        <td>Livspace<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">683K · Pan India</span></td>
+        <td>Category Leader<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">683K · Pan India</span></td>
         <td>Aesthetic credibility at scale. Cultural hooks land well. When they tap real emotion — engagement jumps 5–8x.</td>
-        <td>Audience stops for 'this is me' content. Ignores product features entirely.</td>
+        <td>Audience stops for content that mirrors their own situation. Ignores product features entirely.</td>
         <td><span class="gap-tag gap-full">MOF Entirely Missing</span></td>
-        <td>Own the decision layer. Be the brand that helps someone move from 'I want this' to 'I trust them.'</td>
+        <td>Own the decision layer. Be the brand that helps someone move from wanting to trusting.</td>
       </tr>
       <tr class="rt-row">
-        <td>The Karighars<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">657K · Bangalore</span></td>
-        <td>Brand mythology is strong — Rs.4,500 to Rs.100Cr story. Founder face builds enormous trust.</td>
-        <td>People beg to contact in comments. 'Kaise contact karu?' — high intent, no path.</td>
+        <td>Founder-Led Premium Brand<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">657K · Bangalore</span></td>
+        <td>Brand mythology is strong. Founder origin story creates enormous trust. Celebrity association signals premium.</td>
+        <td>Audience begs to contact in comments. High intent visible — but no clear path to act on it.</td>
         <td><span class="gap-tag gap-bof">BOF Conversion Missing</span></td>
-        <td>Build a conversion architecture that captures intent already created.</td>
+        <td>Build a conversion architecture that captures intent already created by the content.</td>
       </tr>
       <tr class="rt-row">
-        <td>Essentia<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">131K · Gurugram</span></td>
-        <td>Architectural authority and visual prestige. 26 years of expertise. Magazine-grade visual identity.</td>
-        <td>Audience admires, not buys. Comments are emoji reactions. Designers more active than clients.</td>
+        <td>Legacy Architecture Brand<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">131K · Gurugram</span></td>
+        <td>Architectural authority and visual prestige are unmatched. Magazine-grade visual identity. 26 years of expertise.</td>
+        <td>Audience admires — does not buy. Comments are emoji reactions. Industry peers more active than end clients.</td>
         <td><span class="gap-tag gap-tof">Full Funnel Missing</span></td>
-        <td>The brand that makes the audience smarter about their home wins the ready buyer.</td>
+        <td>The brand that makes the audience smarter about their own home wins the buyer who is ready.</td>
       </tr>
       <tr class="rt-row">
-        <td>Slow Living<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">Unclaimed India</span></td>
-        <td>Global references exist — Muji, Kinfolk. Post-COVID desire for intentional spaces is growing.</td>
-        <td>This audience actively unfollows aspirational accounts. They feel worse after scrolling.</td>
+        <td>Slow Living Category<br><span style="font-family:var(--mono);font-size:10px;color:var(--dimmer);font-weight:400">Unclaimed · India</span></td>
+        <td>Global references exist. Post-COVID desire for intentional, calm spaces is growing among urban professionals.</td>
+        <td>This audience actively unfollows aspirational accounts. They feel worse after scrolling. Want honesty but cannot find it.</td>
         <td><span class="gap-tag gap-opp">Entire Category Unclaimed</span></td>
         <td>Build the first Indian slow living home brand. Minimal aspiration, maximum belonging.</td>
       </tr>
@@ -449,7 +425,6 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </div>
 
-<!-- AUDIENCE -->
 <div class="ps" id="audience">
   <div class="sec-tag">02 · Target Audience</div>
   <h2 class="sec-title">Segments defined by <span>emotional state,</span> not demographics.</h2>
@@ -460,9 +435,9 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="ac-name">The Disconnected Decorator</div>
       <div class="ac-profile">28–35 · Urban professional · Owns home · Spent Rs.5–15L</div>
       <div class="ac-rows">
-        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Done interiors 6–18 months ago. Home looks right. Feels wrong. Can't name why.</div></div>
+        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Done interiors 6–18 months ago. Home looks right. Feels wrong. Cannot name why.</div></div>
         <div><span class="ac-row-label">Inner Voice</span><div class="ac-row-val">"It looks exactly like what I wanted — so why doesn't it feel like me? Maybe I'm just ungrateful."</div></div>
-        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">Content that names the exact feeling she can't articulate. 'Your home looks right but doesn't feel yours — here's why.'</div></div>
+        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">Content that names the exact feeling she cannot articulate. 'Your home looks right but doesn't feel yours — here's why.'</div></div>
       </div>
     </div>
     <div class="aud-card">
@@ -470,7 +445,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="ac-name">The Renter With Taste</div>
       <div class="ac-profile">26–34 · Metro professional · Rented 1BHK · Rs.20–50K available</div>
       <div class="ac-rows">
-        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Strong aesthetic sensibility. Nowhere sensible to spend it. Structural constraints.</div></div>
+        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Strong aesthetic sensibility. Nowhere sensible to spend it. Structural constraints everywhere.</div></div>
         <div><span class="ac-row-label">Inner Voice</span><div class="ac-row-val">"Every interior account assumes I own my home. Nobody talks to me. I have money to spend but everything feels pointless if I'm moving again in a year."</div></div>
         <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">Direct address. 'This one is for the rented flat.' Low-budget transformations with zero structural changes.</div></div>
       </div>
@@ -481,8 +456,8 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="ac-profile">29–38 · Tried maximalism · Now wants less</div>
       <div class="ac-rows">
         <div><span class="ac-row-label">Situation</span><div class="ac-row-val">Drawn to minimalism and intentional spaces. Fighting cultural expectation of a 'fully furnished' home.</div></div>
-        <div><span class="ac-row-label">Emotional State</span><div class="ac-row-val">Quiet relief when seeing calm spaces. Growing confidence in own taste diverging from norms.</div></div>
-        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">"Calm isn't a style. It's a decision about what to remove." Permission-giving content. Indian cultural context.</div></div>
+        <div><span class="ac-row-label">Emotional State</span><div class="ac-row-val">Quiet relief when seeing calm spaces. Growing confidence in own taste diverging from what is expected.</div></div>
+        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">"Calm isn't a style. It's a decision about what to remove." Permission-giving content in an Indian cultural context.</div></div>
       </div>
     </div>
     <div class="aud-card">
@@ -490,19 +465,18 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="ac-name">The First-Time Homeowner</div>
       <div class="ac-profile">30–40 · New possession · Rs.15L budget · Design paralysis</div>
       <div class="ac-rows">
-        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">3–6 month move-in window. Has budget. Has fear. Has Pinterest boards. Considering Livspace but uneasy about template feel.</div></div>
-        <div><span class="ac-row-label">Emotional State</span><div class="ac-row-val">Anxious excitement. Vulnerable to influence. Will spend money — the question is who they trust.</div></div>
-        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">'The 3 questions to ask before you design anything.' Content that makes them feel equipped, not sold to.</div></div>
+        <div><span class="ac-row-label">Situation</span><div class="ac-row-val">3–6 month move-in window. Has budget. Has fear. Has Pinterest boards. Wants something personal but doesn't know how to get there.</div></div>
+        <div><span class="ac-row-label">Emotional State</span><div class="ac-row-val">Anxious excitement. Vulnerable to influence. Will spend money — the question is who they trust when the moment comes.</div></div>
+        <div><span class="ac-row-label">Content That Moves Them</span><div class="ac-row-val">'The 3 questions to ask before you design anything.' Content that makes them feel equipped and confident — not sold to.</div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PERSONA -->
 <div class="ps" id="persona">
   <div class="sec-tag">03 · Buyer Persona</div>
   <h2 class="sec-title">Two people. <span>Real inner voices.</span></h2>
-  <p class="sec-sub">Not demographic profiles. Specific people with specific thoughts at specific moments.</p>
+  <p class="sec-sub">Not demographic profiles. Specific people with specific thoughts at specific moments in their lives.</p>
   <div class="persona-grid reveal">
     <div class="persona-card">
       <div class="pc-header">
@@ -514,7 +488,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
         <div><span class="pc-row-label">Inner Voice</span><div class="pc-row-val"><em>"Something is off but I can't name it. It looks exactly like what I wanted — so why doesn't it feel like me? Maybe I'm just ungrateful."</em></div></div>
         <div><span class="pc-row-label">What She Wants But Can't Explain</span><div class="pc-row-val">To walk in and exhale. To feel like the space recognises her. She has no vocabulary for this — she's been thinking in aesthetics, not feeling.</div></div>
         <div><span class="pc-row-label">What She's Tried</span><div class="pc-row-val">New cushion covers. Plants. Changed lighting. Watched 4 interior YouTube channels. <strong>Each purchase felt good for 3 days then faded.</strong></div></div>
-        <div><span class="pc-row-label">Decision Trigger</span><div class="pc-row-val">Content that names the exact feeling she has but can't articulate. That recognition moment is her entry point.</div></div>
+        <div><span class="pc-row-label">Decision Trigger</span><div class="pc-row-val">Content that names the exact feeling she has but cannot articulate. That recognition moment is her entry point into the brand.</div></div>
         <div><span class="pc-row-label">JTBD</span><div class="pc-row-val">Not hiring for a redesign. Hiring House of Pause to understand why her space doesn't feel like hers — and get a framework for fixing the feeling, not just the aesthetic.</div></div>
       </div>
     </div>
@@ -526,20 +500,19 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="pc-rows">
         <div><span class="pc-row-label">Daily Life</span><div class="pc-row-val">Moves every 11–14 months. Spends evenings in a flat that feels temporary. <em>Has good taste but nowhere to apply it.</em></div></div>
         <div><span class="pc-row-label">Inner Voice</span><div class="pc-row-val"><em>"Every interior account assumes I own my home. I'm just renting. Nobody talks to me. I have money to spend but everything feels pointless if I'm moving again in a year."</em></div></div>
-        <div><span class="pc-row-label">What He Wants But Can't Explain</span><div class="pc-row-val">A space that feels intentional even on a budget. Small changes that add up to something real. To not feel excluded from the home category.</div></div>
+        <div><span class="pc-row-label">What He Wants But Can't Explain</span><div class="pc-row-val">A space that feels intentional even on a budget. Small changes that add up to something real. To not feel excluded from the entire home category.</div></div>
         <div><span class="pc-row-label">What He's Tried</span><div class="pc-row-val">Bought a rug that doesn't fit the next flat. Added fairy lights. Bought a plant. <strong>Nothing adds up to a feeling.</strong></div></div>
-        <div><span class="pc-row-label">Decision Trigger</span><div class="pc-row-val">A post that says: this is for you specifically. Not 'renovate your home' — 'make your rented space feel like yours.' Direct address creates instant trust.</div></div>
+        <div><span class="pc-row-label">Decision Trigger</span><div class="pc-row-val">A post that speaks to him directly. Not 'renovate your home' — 'make your rented space feel like yours.' Direct address creates instant trust with this audience.</div></div>
         <div><span class="pc-row-label">JTBD</span><div class="pc-row-val">Not hiring for a renovation. Hiring House of Pause to teach him how to make any space feel intentional — without structural changes or large spend.</div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- INSIGHT -->
 <div class="ps" id="insight">
   <div class="sec-tag">04 · Core Insight</div>
   <h2 class="sec-title">10 variations tested. <span>One selected.</span></h2>
-  <p class="sec-sub">The standard: does this apply to 5 other brands? If yes, reject. If no, keep. Only one passed.</p>
+  <p class="sec-sub">The test: does this apply to 5 other brands? If yes, reject. If no, keep. Only one passed every time.</p>
   <div class="insight-grid reveal">
     <div class="insight-card"><div class="insight-num">01</div><div><div class="insight-text">People don't design bad homes. They design homes for the wrong question — 'how will it look?' instead of 'how will it feel?'</div><span class="insight-result res-passes">Passes</span></div></div>
     <div class="insight-card"><div class="insight-num">02</div><div><div class="insight-text">The Indian interior industry has built a Rs.50,000 crore business solving the wrong problem — aesthetics, not belonging.</div><span class="insight-result res-passes">Passes</span></div></div>
@@ -550,20 +523,19 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
     <div class="insight-card"><div class="insight-num">08</div><div><div class="insight-text">A beautiful home that doesn't feel like yours is just an expensive hotel room.</div><span class="insight-result res-passes">Passes</span></div></div>
     <div class="insight-card"><div class="insight-num">09</div><div><div class="insight-text">The problem was never the furniture. It was that nobody asked you how you wanted to feel.</div><span class="insight-result res-passes">Passes</span></div></div>
     <div class="insight-card"><div class="insight-num">10</div><div><div class="insight-text">Interior design taught us to want things. It never taught us to feel at home.</div><span class="insight-result res-finalist">&#10003; SELECTED</span></div></div>
-    <div class="insight-card" style="background:rgba(99,102,241,.06)"><div class="insight-num" style="color:var(--blue3)">Why</div><div><div class="insight-text" style="color:var(--cream)">The distinction between <strong>wanting</strong> and <strong>belonging</strong> is powerful. 'Feel at home' is the unfulfilled promise of the entire category. Proven by all 4 competitor audits.</div></div></div>
+    <div class="insight-card" style="background:rgba(99,102,241,.06)"><div class="insight-num" style="color:var(--blue3)">Why</div><div><div class="insight-text" style="color:var(--cream)">The distinction between <strong>wanting</strong> and <strong>belonging</strong> is powerful. 'Feel at home' is the unfulfilled promise of the entire category. Proven across all four competitor audits — every brand has a funnel gap this insight fills.</div></div></div>
   </div>
   <div class="final-insight reveal">
     <div class="fi-label">Final Insight — Selected</div>
     <div class="fi-text">"Interior design taught us to want things. It never taught us to feel at home."</div>
-    <div class="fi-proof">Root cause: the industry optimises for visual output. The buyer experiences a home through feeling, not photography. <strong>No brand in India has made the shift from "how it looks" to "how it lives."</strong> That is the gap House of Pause occupies. Proven by D'LIFE, Livspace, The Karighars, and Essentia — all four competitors have funnel gaps that this insight fills.</div>
+    <div class="fi-proof">Root cause: the industry optimises for visual output. The buyer experiences a home through feeling, not photography. <strong>No brand in India has made the shift from "how it looks" to "how it lives."</strong> That is the gap House of Pause occupies. Validated across four competitor audits — every player in the category has a funnel gap that this insight directly addresses.</div>
   </div>
 </div>
 
-<!-- FUNNEL -->
 <div class="ps" id="funnel">
   <div class="sec-tag">05 · Funnel Thinking</div>
   <h2 class="sec-title">Awareness to conversion. <span>Every stage mapped.</span></h2>
-  <p class="sec-sub">What the buyer is feeling, thinking, and what content needs to do at each moment.</p>
+  <p class="sec-sub">What the buyer is feeling, thinking, and what content needs to do at each specific moment in the journey.</p>
   <div class="funnel-list reveal">
     <div class="funnel-card">
       <div class="fc-stage"><span class="fc-stage-tag stage-tof">TOF</span></div>
@@ -580,7 +552,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
         <div class="fc-emotion">Aspiration fatigue · Starting to unfollow</div>
         <div class="fc-thought">"I've bought so many things. Nothing adds up to the feeling I want. I don't know what I'm missing."</div>
         <div class="fc-goal">Validate the fatigue. Position against aspiration content. Introduce: the problem is the question, not the budget.</div>
-        <div class="fc-example">"5 signs you've been designing your home for Instagram, not for yourself" — each slide is a behaviour they recognise.</div>
+        <div class="fc-example">"5 signs you've been designing your home for Instagram, not for yourself" — each slide is a behaviour they recognise in themselves.</div>
       </div>
     </div>
     <div class="funnel-card">
@@ -588,7 +560,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="fc-body">
         <div class="fc-emotion">Renter frustration · Feels excluded</div>
         <div class="fc-thought">"Every interior account assumes I own my home. I'm in a rented flat. Nobody is talking to me."</div>
-        <div class="fc-goal">Explicit inclusion. Direct address. Be the first voice that says: this is specifically for you.</div>
+        <div class="fc-goal">Explicit inclusion. Direct address. Be the first voice that says: this content is specifically for you.</div>
         <div class="fc-example">"This one is for the rented flat in Koramangala. The 1BHK in Powai. The place that's not permanent but still has to feel like yours."</div>
       </div>
     </div>
@@ -597,8 +569,8 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="fc-body">
         <div class="fc-emotion">Evaluating · Can this brand actually help me?</div>
         <div class="fc-thought">"I like what they say. But can they actually help me do something? What's the process?"</div>
-        <div class="fc-goal">Show the thinking. Educate without selling. Build credibility through process transparency.</div>
-        <div class="fc-example">"The 3 questions to ask before you buy anything for your home" — practical, immediately usable, no product pitch.</div>
+        <div class="fc-goal">Show the thinking. Educate without selling. Build credibility through process transparency and honesty.</div>
+        <div class="fc-example">"The 3 questions to ask before you buy anything for your home" — practical, immediately usable, no product pitch at the end.</div>
       </div>
     </div>
     <div class="funnel-card">
@@ -606,15 +578,15 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="fc-body">
         <div class="fc-emotion">Decision confidence · Comparing options</div>
         <div class="fc-thought">"What am I actually getting here? What does the process look like? How do I know this will work for my situation?"</div>
-        <div class="fc-goal">Articulate the category difference. Not better interiors — a different starting question. Address the comparison stage directly.</div>
-        <div class="fc-example">"We don't start with your moodboard. We start with: how do you want to feel when you walk in the door." — contrast vs Livspace/HomeLane.</div>
+        <div class="fc-goal">Articulate the category difference. Not better interiors — a different starting question. Address the comparison stage head on.</div>
+        <div class="fc-example">"We don't start with your moodboard. We start with: how do you want to feel when you walk in the door." — contrast vs category default approach.</div>
       </div>
     </div>
     <div class="funnel-card">
       <div class="fc-stage"><span class="fc-stage-tag stage-bof">BOF</span></div>
       <div class="fc-body">
         <div class="fc-emotion">Ready but hesitant · Last friction moment</div>
-        <div class="fc-thought">"I'm convinced this is different. But what exactly do I get? Is it worth it? Will it change anything?"</div>
+        <div class="fc-thought">"I'm convinced this is different. But what exactly do I get? Is it worth it? Will it change anything for me specifically?"</div>
         <div class="fc-goal">Remove final friction. Make the first step feel small, low-risk, and immediately valuable. Show what happens after the DM.</div>
         <div class="fc-example">"Tell me one thing about your home that's been bothering you. Just one. Let's start there." — micro-commitment, low barrier.</div>
       </div>
@@ -624,14 +596,13 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="fc-body">
         <div class="fc-emotion">High intent · Social proof moment</div>
         <div class="fc-thought">"If it worked for someone in a rented flat with my budget and constraints — it can work for me."</div>
-        <div class="fc-goal">Social proof that matches the persona exactly. Not aspirational transformations — honest, relatable before/afters.</div>
+        <div class="fc-goal">Social proof that matches the persona exactly. Not aspirational transformations — honest, relatable, specific before/afters.</div>
         <div class="fc-example">Before/after of a rented flat: Rs.9,000. Zero structural changes. Person in frame — not just the room.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CONTENT SYSTEM -->
 <div class="ps" id="content-system">
   <div class="sec-tag">06 · Content System</div>
   <h2 class="sec-title">4 pillars. <span>Each has a job.</span></h2>
@@ -646,32 +617,31 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
     <div class="pillar-item"><div class="pi-role"><strong>Opens the emotional conversation.</strong> Makes the audience feel seen before they know the brand exists. No selling, just recognition.</div><div class="pi-idea">Post: 'Your home can look exactly right and still feel wrong. That's not a style problem.'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
     <div class="pillar-item"><div class="pi-role"><strong>Names the specific emotional states</strong> people feel about their homes but never say out loud.</div><div class="pi-idea">Reel: 'Be honest. Do you actually enjoy being in your living room? Or do you just... use it?'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
     <div class="pillar-item"><div class="pi-role"><strong>Addresses the renter directly.</strong> No assumption of ownership. First voice that says: this is for you.</div><div class="pi-idea">Post: 'This one is for the 1BHK in a city that isn't really yours yet. You still deserve to feel at home.'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Diagnoses the aspiration fatigue</strong> without naming it. The audience recognises the behaviour.</div><div class="pi-idea">Carousel: '5 signs you've been designing your home for Instagram, not for yourself'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Diagnoses the aspiration fatigue</strong> without naming it. The audience recognises the behaviour immediately.</div><div class="pi-idea">Carousel: '5 signs you've been designing your home for Instagram, not for yourself'</div><span class="pi-stage" style="color:var(--blue3)">TOF</span><span class="pi-keep">KEEP</span></div>
   </div>
   <div id="mistakes" class="pillar-content reveal">
-    <div class="pillar-item"><div class="pi-role"><strong>Builds trust through honesty.</strong> Shows the wrong purchases, bad decisions. No brand does this — it becomes the differentiator.</div><div class="pi-idea">Reel: 'I bought this Rs.12,000 rug. Hated it in a week. Here's exactly what I ignored when I chose it.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Process transparency</strong> — what goes into a space decision, and what most people skip.</div><div class="pi-idea">Carousel: 'The 3 questions you should answer before buying anything for your home'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Honest critique of industry norms</strong> — the modular kitchen that feels generic, the accent wall that doesn't help.</div><div class="pi-idea">Post: 'The accent wall is not the problem. The problem is you chose it before you knew what feeling you were designing for.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Builds trust through honesty.</strong> Shows the wrong purchases, bad decisions. No brand in this category does this — it becomes the differentiator.</div><div class="pi-idea">Reel: 'I bought this Rs.12,000 rug. Hated it in a week. Here's exactly what I ignored when I chose it.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Process transparency</strong> — what goes into a space decision, and what most people skip before spending.</div><div class="pi-idea">Carousel: 'The 3 questions you should answer before buying anything for your home'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Honest critique of category norms</strong> — the modular kitchen that feels generic, the accent wall that doesn't actually help.</div><div class="pi-idea">Post: 'The accent wall is not the problem. The problem is you chose it before you knew what feeling you were designing for.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
     <div class="pillar-item"><div class="pi-role"><strong>Reframes 'wrong choice'</strong> as 'answered the wrong question' — shifts blame from taste to process.</div><div class="pi-idea">Video: 'You didn't make bad design choices. You made design choices before you knew what you actually needed.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
   </div>
   <div id="living-proof" class="pillar-content reveal">
-    <div class="pillar-item"><div class="pi-role"><strong>Transformations grounded in feeling, not aesthetics.</strong> Before/after with the emotional story, not just the visual change.</div><div class="pi-idea">Reel: 'Before this room felt like a showroom. After: I actually sit here now. Budget: Rs.9,000.'</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Real homes that match the audience's actual situation</strong> — rented, small budget, structural constraints.</div><div class="pi-idea">Post: 'Rented flat. Rs.15,000. No structural changes. Here's what changed: everything about how it felt.'</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Client stories told with the emotional journey,</strong> not just the outcome. Person in frame, not just the room.</div><div class="pi-idea">Carousel: "Priya's living room cost Rs.6L and felt like a hotel. Here's what changed. It cost Rs.3,200."</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Transformations grounded in feeling, not aesthetics.</strong> Before/after with the emotional story — not just the visual change.</div><div class="pi-idea">Reel: 'Before this room felt like a showroom. After: I actually sit here now. Budget: Rs.9,000.'</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Real homes that match the audience's actual situation</strong> — rented, small budget, structural constraints included.</div><div class="pi-idea">Post: 'Rented flat. Rs.15,000. No structural changes. Here's what changed: everything about how it felt.'</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Client stories told with the emotional journey,</strong> not just the outcome. Person in frame — not just the room.</div><div class="pi-idea">Carousel: "A living room that cost Rs.6L and felt like a hotel. Here's what changed. It cost Rs.3,200."</div><span class="pi-stage" style="color:#4ade80">BOF</span><span class="pi-keep">KEEP</span></div>
   </div>
   <div id="clarity" class="pillar-content reveal">
     <div class="pillar-item"><div class="pi-role"><strong>Teaches the audience a new framework</strong> for thinking about their space. Educational but not generic.</div><div class="pi-idea">Carousel: 'The 4 feelings a home can give you. Which one is yours missing?'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Demystifies the design process</strong> — specific decisions, specific reasons, transparent rationale.</div><div class="pi-idea">Video: 'Why I always pick furniture before paint. And why most people do it backwards.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Introduces the brand's core framework:</strong> start with feeling, then work backwards to objects.</div><div class="pi-idea">Post: 'Most people start with Pinterest. We start with: how do you want to feel at 8pm on a Tuesday?'</div><span class="pi-stage" style="color:var(--blue3)">TOF/MOF</span><span class="pi-keep">KEEP</span></div>
-    <div class="pillar-item"><div class="pi-role"><strong>Practical, immediately usable advice</strong> that makes the audience feel more capable, not more overwhelmed.</div><div class="pi-idea">Carousel: 'How to audit your own home in 20 minutes — and find exactly what's making it feel off'</div><span class="pi-stage" style="color:#fb923c">MOF/BOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Demystifies the design process</strong> — specific decisions, specific reasons, transparent rationale that builds authority.</div><div class="pi-idea">Video: 'Why I always pick furniture before paint. And why most people do it backwards.'</div><span class="pi-stage" style="color:#fb923c">MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Introduces the brand's core framework:</strong> start with feeling, then work backwards to objects and decisions.</div><div class="pi-idea">Post: 'Most people start with Pinterest. We start with: how do you want to feel at 8pm on a Tuesday?'</div><span class="pi-stage" style="color:var(--blue3)">TOF/MOF</span><span class="pi-keep">KEEP</span></div>
+    <div class="pillar-item"><div class="pi-role"><strong>Practical, immediately usable advice</strong> that makes the audience feel more capable — not more overwhelmed.</div><div class="pi-idea">Carousel: 'How to audit your own home in 20 minutes — and find exactly what's making it feel off'</div><span class="pi-stage" style="color:#fb923c">MOF/BOF</span><span class="pi-keep">KEEP</span></div>
   </div>
 </div>
 
-<!-- CALENDAR -->
 <div class="ps" id="calendar">
   <div class="sec-tag">09 · 30-Day Content Calendar</div>
   <h2 class="sec-title">TOF heavy week 1. <span>BOF only after trust is built.</span></h2>
-  <p class="sec-sub">A content arc — not just a schedule. Every piece has a specific job in the journey.</p>
+  <p class="sec-sub">A content arc — not just a schedule. Every piece has a specific job in the buyer journey.</p>
 
   <div class="cal-week-label reveal">Week 1 — Foundation · Days 1–7</div>
   <div class="cal-grid reveal">
@@ -709,7 +679,7 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   <div class="cal-week-label reveal">Week 4 — Convert · Days 22–30</div>
   <div class="cal-grid reveal">
     <div class="cal-card bof-card"><div class="cal-day">Day 22</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">Free audit announcement — first 5 DMs.</div><div class="cal-pillar">Offer · BOF</div></div>
-    <div class="cal-card bof-card"><div class="cal-day">Day 23</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">Priya's living room — the honest story.</div><div class="cal-pillar">Living Proof · BOF</div></div>
+    <div class="cal-card bof-card"><div class="cal-day">Day 23</div><span class="cal-type-badge ct-carousel">Carousel</span><div class="cal-title">A living room — the honest story.</div><div class="cal-pillar">Living Proof · BOF</div></div>
     <div class="cal-card mof-card"><div class="cal-day">Day 24</div><span class="cal-type-badge ct-post">Post</span><div class="cal-title">The cushion cover loop.</div><div class="cal-pillar">Mistakes & Truth · MOF</div></div>
     <div class="cal-card tof-card"><div class="cal-day">Day 25</div><span class="cal-type-badge ct-reel">Reel</span><div class="cal-title">The home that feels like relief.</div><div class="cal-pillar">Feeling First · TOF</div></div>
     <div class="cal-card brand-card"><div class="cal-day">Day 26</div><span class="cal-type-badge ct-story">Story</span><div class="cal-title">Poll: What feeling is your home missing?</div><div class="cal-pillar">Community · Insight</div></div>
@@ -718,11 +688,10 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </div>
 
-<!-- COPY BANK -->
 <div class="ps" id="copy-bank">
   <div class="sec-tag">08 · Copy Bank</div>
   <h2 class="sec-title">20 hooks. 20 CTAs. <span>Finals selected.</span></h2>
-  <p class="sec-sub">Every hook tested against one standard — would a real person say this in conversation? If not, rejected.</p>
+  <p class="sec-sub">Every hook tested against one standard — would a real person say this in a real conversation? If not, rejected.</p>
   <div class="copy-cols reveal">
     <div>
       <div class="copy-section-title">Hook Variations</div>
@@ -757,7 +726,6 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </div>
 
-<!-- AI USAGE -->
 <div class="ps" id="ai-usage">
   <div class="sec-tag">10 · AI Usage Layer</div>
   <h2 class="sec-title">AI executes. <span>The strategist decides.</span></h2>
@@ -767,42 +735,41 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
       <div class="ai-task">Persona Generation</div>
       <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 5–10 persona variations. Produce dialogue — 'what would this person say when they walk into their home on a bad day?'</div></div>
       <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Speed. Generates 10 drafts in minutes. Forces the strategist to react and select rather than generate from a blank page.</div></div>
-      <div class="human-note">AI cannot feel whether a persona is real. It cannot sense the specific texture of a Delhi renter's frustration vs a Bengaluru homeowner's. That judgment is human.</div>
+      <div class="human-note">AI cannot feel whether a persona is real. It cannot sense the specific texture of frustration one person carries versus another. That judgment is human.</div>
     </div>
     <div class="ai-card">
       <div class="ai-task">Content Angle Generation</div>
       <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Given the core insight, generate 20 content angles across each funnel stage.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Breaks the blank-page problem. Creates a wide net of options fast. Forces the strategist into curation mode.</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Breaks the blank-page problem. Creates a wide net of options fast. Forces the strategist into curation mode which is sharper than pure generation.</div></div>
       <div class="human-note">AI cannot distinguish between angles that feel true and angles that sound smart. It cannot feel the difference between 'this will resonate' and 'this will be scrolled past.' That is the skill.</div>
     </div>
     <div class="ai-card">
       <div class="ai-task">Hook Writing</div>
       <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 20 hook variations for each core post or reel. Vary the tone: calm, confronting, diagnostic, question-based.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Volume. A human can write 5 hooks before running dry. AI generates 20 in 2 minutes. The strategist selects, combines, and sharpens.</div></div>
-      <div class="human-note">AI cannot tell which hook will stop a scroll. It cannot feel the difference between a hook that's technically correct and one that lands emotionally. Hook selection is human judgment.</div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Volume. A human runs dry after 5 hooks. AI generates 20 in 2 minutes. The strategist selects, combines, and sharpens.</div></div>
+      <div class="human-note">AI cannot tell which hook will stop a scroll. It cannot feel the difference between a hook that is technically correct and one that lands emotionally. Hook selection is human judgment.</div>
     </div>
     <div class="ai-card">
       <div class="ai-task">Research Synthesis</div>
-      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Feed platform observations (Reddit threads, YouTube comments, Instagram comment patterns) into AI for pattern analysis.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Pattern recognition at scale. AI can read 200 comments and identify clusters in minutes.</div></div>
+      <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Feed platform observations — Reddit threads, YouTube comments, Instagram comment patterns — into AI for pattern analysis.</div></div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Pattern recognition at scale. AI can read 200 comments and identify clusters in minutes. That process would take hours manually.</div></div>
       <div class="human-note">AI cannot tell you whether a comment is ironic, sarcastic, or genuinely expressing pain. It cannot read emotional nuance. All final insight remains the strategist's judgment.</div>
     </div>
     <div class="ai-card">
       <div class="ai-task">30-Day Calendar Population</div>
       <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">After the content system and pillars are defined by the strategist, use AI to populate the calendar structure with matching ideas.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Speed and volume. Once the system is defined, the execution is largely structural. AI can fill the grid.</div></div>
-      <div class="human-note">AI cannot plan a content arc. It cannot decide that Day 22 should be the first conversion offer because enough trust has been built by Day 21. That is strategy.</div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Speed and volume. Once the system is defined, the execution is largely structural. AI fills the grid faster than any other method.</div></div>
+      <div class="human-note">AI cannot plan a content arc. It cannot decide that Day 22 should be the first conversion offer because enough trust has been built by Day 21. That is strategy — and it stays human.</div>
     </div>
     <div class="ai-card">
       <div class="ai-task">Visual Direction Briefs</div>
       <div class="ai-row"><span class="ai-row-label">How AI is Used</span><div class="ai-row-val">Generate 5 visual direction options for each content piece: colour palettes, shot types, typography style, prop direction.</div></div>
-      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Saves briefing time. Gives multiple directions to react to instead of writing from scratch.</div></div>
-      <div class="human-note">AI defaults toward aspirational, polished visuals — exactly what House of Pause is positioned against. The strategist must actively hold the brand's anti-aspiration-porn visual line.</div>
+      <div class="ai-row"><span class="ai-row-label">Why It Helps</span><div class="ai-row-val">Saves briefing time. Gives multiple directions to react to rather than writing from scratch on every piece.</div></div>
+      <div class="human-note">AI defaults toward aspirational and polished visuals — exactly what this brand is positioned against. The strategist must actively hold the anti-aspiration-porn visual line. That restraint is the brand decision.</div>
     </div>
   </div>
 </div>
 
-<!-- CLOSING -->
 <div id="closing">
   <div class="closing-inner reveal">
     <div class="closing-quote">"This is not practice work. The brand is self-initiated. The thinking is <span>exactly how I work on real briefs.</span> Research first. Insight before execution. Content that has a job to do — not just a publishing date."</div>
@@ -820,12 +787,10 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
 </footer>
 
 <script>
-// LOADER
 const lbar=document.getElementById('lbar'),lpct=document.getElementById('lpct'),loader=document.getElementById('loader');
 let prog=0;
 const li=setInterval(()=>{prog+=Math.random()*16;if(prog>=100){prog=100;clearInterval(li);setTimeout(()=>loader.classList.add('done'),350);}lbar.style.width=prog+'%';lpct.textContent=Math.floor(prog)+'%';},80);
 
-// DOT CANVAS
 const canvas=document.getElementById('hero-canvas'),ctx=canvas.getContext('2d');
 let dots=[],mouse={x:-999,y:-999};
 function resize(){canvas.width=window.innerWidth;canvas.height=document.getElementById('hero').offsetHeight;dots=[];for(let r=0;r<=Math.ceil(canvas.height/34);r++)for(let c=0;c<=Math.ceil(canvas.width/34);c++)dots.push({x:c*34,y:r*34});}
@@ -833,7 +798,6 @@ function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(const d of dot
 document.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
 window.addEventListener('resize',resize);resize();draw();
 
-// NAV
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
   const sections=['components','research','audience','persona','insight','funnel','content-system','calendar','copy-bank','ai-usage'];
@@ -843,14 +807,11 @@ window.addEventListener('scroll',()=>{
   tabBtns.forEach((b,i)=>b.classList.toggle('active',i===cur));
 });
 
-// SCROLL TO
 function scrollToSection(id){const el=document.getElementById(id);if(el){const offset=el.offsetTop-120;window.scrollTo({top:offset,behavior:'smooth'});}}
 
-// REVEAL
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
-// PILLAR SWITCH
 function switchPillar(id,btn){
   document.querySelectorAll('.pillar-content').forEach(c=>c.classList.remove('active'));
   document.querySelectorAll('.pillar-btn').forEach(b=>b.classList.remove('active'));
