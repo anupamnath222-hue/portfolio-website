@@ -8,23 +8,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#ffffff;--bg2:#f0fdf4;--card:#f8fafc;--card2:#ecfdf5;
-  --border:rgba(5,150,105,0.15);--border2:rgba(0,0,0,0.08);
-  --blue:#059669;--blue2:#10b981;--cyan:#34d399;
-  --glow:rgba(5,150,105,0.22);--glow2:rgba(5,150,105,0.08);
-  --white:#0f172a;--off:#1e293b;--grey:#475569;--dgrey:#64748b;
-  --f:'Plus Jakarta Sans',system-ui,sans-serif;
+:root {
+  --bg: #080810;
+  --bg2: #0c0c16;
+  --card: #12121e;
+  --card2: #16162a;
+  --border: rgba(99,102,241,0.12);
+  --border2: rgba(255,255,255,0.07);
+  --blue: #6366f1;
+  --blue2: #818cf8;
+  --blue3: #a5b4fc;
+  --glow: rgba(99,102,241,0.15);
+  --white: #fff;
+  --cream: #e2e8f0;
+  --muted: #94a3b8;
+  --dim: #475569;
+  --dimmer: #334155;
+  --f: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
 }
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--off);font-family:var(--f);font-weight:400;line-height:1.7;overflow-x:hidden;font-size:15px;}
-::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px;}
-body::before{content:'';position:fixed;top:-20%;left:50%;transform:translateX(-50%);width:1000px;height:700px;background:radial-gradient(ellipse,rgba(5,150,105,0.06) 0%,transparent 65%);pointer-events:none;z-index:0;}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--f);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 700px;
+  background: radial-gradient(ellipse,rgba(99,102,241,0.06) 0%,transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border2);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,16,0.84);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
 .nav-logo{font-size:17px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.015em;}
-.nav-logo span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-logo span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
 .nav-links a{color:var(--grey);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;letter-spacing:-0.01em;}
 .nav-links a:hover{color:var(--white);}
@@ -52,7 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 
 /* Floating glass badges */
 .hero-badge{position:absolute;background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(5,150,105,0.18);border-radius:14px;padding:11px 16px;box-shadow:0 8px 28px rgba(5,150,105,0.1),0 2px 8px rgba(0,0,0,0.05);z-index:10;white-space:nowrap;}
-.hb-num{font-size:21px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;}
+.hb-num{font-size:21px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;}
 .hb-lbl{font-size:11px;color:var(--grey);font-weight:500;margin-top:3px;display:block;letter-spacing:-0.01em;}
 .hb-years{top:24px;left:-82px;animation:floatBadge 4s ease-in-out infinite;}
 .hb-projects{bottom:64px;left:-76px;animation:floatBadge 4.5s ease-in-out infinite;animation-delay:-2.2s;}
@@ -68,7 +99,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 @keyframes floatBadge{0%,100%{transform:translateY(0px);}50%{transform:translateY(-9px);}}
 .hero-welcome{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px;font-weight:600;}
 .hero-h1{font-size:clamp(36px,5.5vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;color:var(--white);margin-bottom:12px;}
-.grad{background:linear-gradient(130deg,var(--blue) 0%,var(--cyan) 60%,var(--blue2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:g 5s ease infinite;}
+.grad{background:linear-gradient(130deg,var(--blue) 0%,var(--cyan) 60%,var(--blue2) 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200%;animation:g 5s ease infinite;}
 @keyframes g{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
 #typer{color:var(--blue2);min-height:1.2em;display:inline-block;}
 .cursor{color:var(--blue2);animation:blink-cursor 0.7s infinite;}
@@ -90,7 +121,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 section{padding:96px 64px;position:relative;z-index:1;}
 .s-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;font-weight:600;}
 .s-h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.025em;color:var(--white);margin-bottom:14px;line-height:1.1;}
-.s-h2 span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.s-h2 span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .s-sub{font-size:15px;color:var(--grey);max-width:480px;margin-bottom:56px;font-weight:400;line-height:1.7;}
 
 /* ABOUT */
@@ -130,9 +161,9 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .stat-card:hover::after{transform:translateX(110%);}
 .stat-card > *{position:relative;z-index:1;}
 .stat-card:hover{border-color:rgba(5,150,105,0.45);box-shadow:0 8px 36px rgba(5,150,105,0.2);}
-.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:4px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:4px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
 .stat-mid{font-size:15px;font-weight:700;color:var(--off);display:block;margin-bottom:8px;letter-spacing:-0.01em;}
-.stat-title{font-size:24px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;display:block;margin-bottom:10px;letter-spacing:-0.03em;}
+.stat-title{font-size:24px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;display:block;margin-bottom:10px;letter-spacing:-0.03em;}
 .stat-lbl{font-size:12px;color:var(--grey);line-height:1.5;}
 
 /* SKILLS */
@@ -199,7 +230,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;box-shadow:0 0 12px var(--blue);}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
 .hop-title{font-size:clamp(32px,4.2vw,48px);font-weight:800;color:var(--white);letter-spacing:-0.03em;margin-bottom:18px;line-height:1.1;}
-.hop-title span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hop-title span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .hop-subtitle-small{font-size:14px;color:var(--grey);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:28px;font-weight:600;}
 .hop-subtitle{font-size:17px;font-weight:700;color:var(--white);letter-spacing:-0.01em;margin-bottom:16px;margin-top:28px;}
 .hop-subtitle:first-of-type{margin-top:0;}
@@ -245,7 +276,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 .form-group{margin-bottom:16px;}
 .form-group label{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);margin-bottom:7px;font-weight:600;}
-.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--card);border:1px solid var(--border2);border-radius:10px;padding:12px 16px;color:var(--off);font-family:var(--f);font-size:14px;transition:border-color 0.2s,box-shadow 0.2s;outline:none;-webkit-appearance:none;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--card);border:1px solid var(--border2);border-radius:10px;padding:12px 16px;color:var(--off);font-family:var(--f);font-size:14px;transition:border-color 0.2s,box-shadow 0.2s;outline:none;-webkit-appearance:none;appearance:none;}
 .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(5,150,105,0.1);}
 .form-group textarea{height:108px;resize:none;}
 .form-group select option{background:var(--card);color:var(--off);}
@@ -262,7 +293,7 @@ section{padding:96px 64px;position:relative;z-index:1;}
 /* FOOTER */
 footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;}
 .f-name{font-size:16px;font-weight:800;color:var(--white);letter-spacing:-0.015em;}
-.f-name span{background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.f-name span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .f-copy{font-size:12px;color:var(--dgrey);}
 
 /* ANIMATIONS & TRANSITIONS */
@@ -683,23 +714,26 @@ a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
       <div>
         <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
         <h2 class="hop-title"><span>VSL Creative Strategy</span></h2>
-        <p class="hop-subtitle-small">Conversion Architecture for a Trading Education Creator</p>
+        <p class="hop-subtitle-small">One video. Cold traffic. Course purchase.</p>
+        <div class="hop-constraints">
+          <span>One video</span>
+          <span>Cold traffic</span>
+          <span>No script</span>
+        </div>
+        <p class="hop-just">The brief existed. The thinking didn't.</p>
         <div class="hop-liquid">
           <div class="hop-liquid-inner">
-            <span class="hop-why-label">Why I Built This</span>
-            <p>A trading education creator needed one video to convert cold Instagram traffic into course purchases. I built the complete creative strategy behind it — narrative structure, emotional arc, hook logic, proof sequence, and close. Every decision came from one question. What does the viewer need to feel at this exact moment to take the next step.</p>
-            <p class="hop-liquid-gap">There is a difference between making content and making content that converts.</p>
-            <p>After delivering the work I watched it back as a strategist and saw clearly what the execution could not fix. Not the cuts. Not the subtitles. The structure. The thinking that should have happened before the camera turned on. I rebuilt the entire creative brief from scratch. This document is proof that I understand that difference.</p>
+            <span class="hop-why-label">Why I built this</span>
+            <p>A trading creator needed one video<br>to turn cold Instagram followers into buyers</p>
+            <p class="hop-liquid-gap">I delivered the work. Then I watched it back.</p>
+            <p>The cuts were fine<br>The subtitles were fine<br>The structure was broken</p>
+            <p>So I rebuilt the entire thing from scratch<br>The brief that should have existed before day one</p>
           </div>
         </div>
-        <div class="hop-section">
-          <h3 class="hop-subtitle">What I Built</h3>
-          <p class="hop-desc">A full creative strategy and post-delivery audit covering audience insight, narrative architecture, conversion breakdown by timestamp, the three highest-impact fixes, a rebuilt creative brief, and a rebuilt script structure from pattern interrupt to spoken CTA.</p>
-          <div class="hop-items">
-            <span class="hop-item"><strong>Narrative Architecture</strong> — Every section of the video mapped to a specific conversion job not just a content beat</span>
-            <span class="hop-item"><strong>Conversion Audit</strong> — Timestamp by timestamp breakdown of where the video lost the viewer and exactly why</span>
-            <span class="hop-item"><strong>Rebuilt Brief</strong> — The complete creative strategy document that should have existed before production started</span>
-          </div>
+        <div class="hop-differentiator">
+          <span class="hop-diff-label">The real problem</span>
+          <p>Most video content fails before the camera turns on<br>Bad structure. Wrong emotional arc. No conversion logic.</p>
+          <p>This project is proof I know the difference</p>
         </div>
         <a href="vsl-creative-strategy.html" class="btn btn-fill">View Creative Strategy →</a>
       </div>
