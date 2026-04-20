@@ -246,6 +246,31 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .hop-lbl-sub{opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;transition-delay:0.3s;display:block;}
 .hop-comp.vis .hop-lbl-sub{opacity:1;transform:translateY(0);}
 
+/* HOP ALIVE — floating orbs, mouse spotlight, liquid shift, shimmer */
+@keyframes hopOrb1{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(60px,40px) scale(1.18);}66%{transform:translate(-20px,70px) scale(0.88);}}
+@keyframes hopOrb2{0%,100%{transform:translate(0,0) scale(1);}40%{transform:translate(-60px,-40px) scale(1.2);}75%{transform:translate(30px,-70px) scale(0.85);}}
+.hop-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(48px);}
+.hop-orb-1{width:360px;height:360px;background:radial-gradient(circle,rgba(5,150,105,0.2) 0%,transparent 70%);top:-80px;left:-80px;animation:hopOrb1 14s ease-in-out infinite;}
+.hop-orb-2{width:280px;height:280px;background:radial-gradient(circle,rgba(52,211,153,0.15) 0%,transparent 70%);bottom:-60px;right:-60px;animation:hopOrb2 18s ease-in-out infinite;}
+.hop-spotlight{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(5,150,105,0.1) 0%,transparent 60%);pointer-events:none;transform:translate(-50%,-50%);z-index:0;transition:opacity 0.5s ease;opacity:0;}
+.hop-wrap:hover .hop-spotlight{opacity:1;}
+.hop-inner{position:relative;z-index:1;}
+@keyframes hopBorderPulse{0%,100%{box-shadow:0 20px 60px rgba(5,150,105,0.15),0 0 0 1.5px rgba(5,150,105,0.35);}50%{box-shadow:0 28px 80px rgba(5,150,105,0.3),0 0 0 1.5px rgba(52,211,153,0.55);}}
+.hop-wrap{animation:hopBorderPulse 5s ease-in-out infinite;}
+@keyframes hopLiquidBg{0%,100%{background:linear-gradient(135deg,rgba(5,150,105,0.12) 0%,rgba(52,211,153,0.06) 100%);}50%{background:linear-gradient(225deg,rgba(52,211,153,0.17) 0%,rgba(5,150,105,0.05) 100%);}}
+.hop-liquid{animation:hopLiquidBg 6s ease-in-out infinite;}
+.hop-liquid::after{content:'';position:absolute;bottom:-30%;left:5%;width:220px;height:220px;background:radial-gradient(circle,rgba(52,211,153,0.15) 0%,transparent 70%);border-radius:50%;filter:blur(24px);animation:hopLiquidOrb2 9s ease-in-out infinite;pointer-events:none;}
+@keyframes hopLiquidOrb2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(70px,-50px) scale(1.32);}}
+@keyframes hopTitleShimmer{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
+.hop-title span{background:linear-gradient(130deg,var(--blue),var(--cyan),#a7f3d0,var(--blue));background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:hopTitleShimmer 4s linear infinite;}
+.hop-constraints span{opacity:0;transform:translateX(-18px);transition:opacity 0.5s ease,transform 0.5s cubic-bezier(0.16,1,0.3,1);}
+.hop-constraints.vis span:nth-child(1){opacity:1;transform:none;transition-delay:0.05s;}
+.hop-constraints.vis span:nth-child(2){opacity:1;transform:none;transition-delay:0.2s;}
+.hop-constraints.vis span:nth-child(3){opacity:1;transform:none;transition-delay:0.35s;}
+.hop-num{font-size:20px;background:linear-gradient(130deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;min-width:34px;display:inline-block;transition:transform 0.2s;}
+.hop-comp:hover .hop-num{transform:scale(1.14);}
+.hop-comp:hover{border-color:rgba(5,150,105,0.55);box-shadow:0 10px 36px rgba(5,150,105,0.2),0 0 0 1px rgba(52,211,153,0.22),inset 0 1px 0 rgba(255,255,255,0.95);transform:translateX(6px);}
+
 /* CONTACT */
 #contact{background:var(--bg2);}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
@@ -663,6 +688,9 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 <section id="hop">
   <div class="s-label">Methodology</div>
   <div class="hop-wrap fi">
+    <div class="hop-orb hop-orb-1"></div>
+    <div class="hop-orb hop-orb-2"></div>
+    <div class="hop-spotlight"></div>
     <div class="hop-inner">
       <div>
         <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
@@ -703,6 +731,9 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
     </div>
   </div>
   <div class="hop-wrap fi" style="margin-top:48px;">
+    <div class="hop-orb hop-orb-1"></div>
+    <div class="hop-orb hop-orb-2"></div>
+    <div class="hop-spotlight"></div>
     <div class="hop-inner">
       <div>
         <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
@@ -971,6 +1002,25 @@ const hopRevealObserver=new IntersectionObserver((entries)=>{
   });
 },{threshold:0.15});
 document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el));
+
+// Methodology — mouse spotlight tracking
+document.querySelectorAll('.hop-wrap').forEach(wrap=>{
+  const spot=wrap.querySelector('.hop-spotlight');
+  if(!spot)return;
+  wrap.addEventListener('mousemove',e=>{
+    const r=wrap.getBoundingClientRect();
+    spot.style.left=(e.clientX-r.left)+'px';
+    spot.style.top=(e.clientY-r.top)+'px';
+  });
+});
+
+// Methodology — constraints stagger reveal on scroll
+(function(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+  },{threshold:0.5});
+  document.querySelectorAll('.hop-constraints').forEach(el=>obs.observe(el));
+})();
 
 // Project card stagger
 (function(){
