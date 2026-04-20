@@ -99,8 +99,8 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .about-grid{display:grid;grid-template-columns:0.42fr 1fr 0.58fr;gap:52px;align-items:start;}
 .about-photo-col{display:flex;align-items:flex-start;justify-content:center;padding-top:16px;}
 .about-photo-wrap{position:relative;width:100%;max-width:230px;transition:transform 0.5s cubic-bezier(0.23,1,0.32,1);}
-.about-photo-wrap::before{content:'';position:absolute;inset:-16px;border-radius:36px;border:1.5px dashed rgba(5,150,105,0.22);z-index:0;animation:spinRing 24s linear infinite reverse;}
-.about-photo-wrap::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:280px;height:280px;background:radial-gradient(ellipse,rgba(5,150,105,0.11) 0%,transparent 65%);border-radius:50%;z-index:0;pointer-events:none;animation:liquidFloat 8s ease-in-out infinite;animation-delay:-3s;}
+.about-photo-wrap::before{content:none;}
+.about-photo-wrap::after{content:none;}
 .about-photo-frame{width:100%;border-radius:22px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.35);box-shadow:0 24px 64px rgba(5,150,105,0.18),0 4px 16px rgba(0,0,0,0.07);position:relative;z-index:1;background:rgba(255,255,255,0.6);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
 .about-photo-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 45%,rgba(5,150,105,0.06) 75%,rgba(255,255,255,0.1) 100%);z-index:2;pointer-events:none;border-radius:22px;}
 .about-photo-frame::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(to right,transparent,rgba(255,255,255,0.2),transparent);z-index:3;pointer-events:none;animation:glassShimmer 5s ease-in-out infinite;animation-delay:-2s;}
@@ -411,8 +411,6 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   .about-grid{grid-template-columns:1fr!important;gap:24px!important;}
   .about-photo-col{display:flex;justify-content:center;padding-top:0;margin-bottom:8px;}
   .about-photo-wrap{max-width:160px;}
-  .about-photo-wrap::before{inset:-10px;border-radius:26px;}
-  .about-photo-wrap::after{width:200px;height:200px;}
   .about-badge{display:none;}
   .about-line-accent{display:none;}
   .about-stats{flex-direction:row;flex-wrap:wrap;gap:12px;}
