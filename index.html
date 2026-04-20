@@ -142,6 +142,10 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .skill-card:nth-child(5) .sk-icon{animation-delay:-3.1s;}
 .skill-card:nth-child(6) .sk-icon{animation-delay:-1.8s;}
 .skill-card:hover .sk-icon{animation-play-state:paused;transform:perspective(400px) rotateY(-18deg) rotateX(8deg) scale(1.18);filter:drop-shadow(0 8px 20px rgba(5,150,105,0.28));transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),filter 0.3s;}
+.sk-icon.sk-tap{animation:skIconTap 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards!important;}
+@keyframes skIconTap{0%{transform:perspective(400px) rotateY(0) rotateX(0) scale(1);}20%{transform:perspective(400px) rotateY(-25deg) rotateX(15deg) scale(0.7) translateY(4px);}55%{transform:perspective(400px) rotateY(20deg) rotateX(-12deg) scale(1.45) translateY(-14px);}80%{transform:perspective(400px) rotateY(-8deg) rotateX(5deg) scale(1.2) translateY(-6px);}100%{transform:perspective(400px) rotateY(0) rotateX(0) scale(1);}}
+.sk-particle{position:absolute;pointer-events:none;border-radius:50%;z-index:10;animation:skParticle 0.7s ease-out forwards;}
+@keyframes skParticle{0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--px),var(--py)) scale(0);}}
 @keyframes skIconFloat{0%,100%{transform:perspective(400px) rotateY(0deg) rotateX(0deg) translateY(0);}25%{transform:perspective(400px) rotateY(10deg) rotateX(-5deg) translateY(-4px);}50%{transform:perspective(400px) rotateY(-6deg) rotateX(6deg) translateY(-7px);}75%{transform:perspective(400px) rotateY(8deg) rotateX(-3deg) translateY(-3px);}}
 .sk-body{position:relative;z-index:1;}
 .skill-cat{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px;font-weight:700;display:flex;align-items:center;gap:8px;}
@@ -628,7 +632,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
       <div class="proj-body">
         <div class="proj-name">Explore Valley</div>
         <div class="proj-metrics"><span class="metric"><strong>Initial</strong> Team Member</span><span class="metric"><strong>2 Years</strong> Early Stage</span><span class="metric"><strong>10K</strong> Followers Built</span></div>
-        <div class="proj-desc">I was there from day zero when nothing existed. Two years as an initial team member in a <strong class="t3-highlight">Tier 3 market — Assam</strong> — building the content foundation from the ground up. Covered election campaigns and legislative events across the state. Most strategists have never operated in a Tier 3 market. I built one from scratch. The brand grew because the foundation was built right.</div>
+        <div class="proj-desc">I was there from day zero when nothing existed. Two years as an initial team member building the content foundation from the ground up — covering election campaigns and major legislative events across Assam. News media moves fast and forgives nothing. The brand grew because the foundation was built right.</div>
         <div class="proj-tags"><span class="proj-tag">News Media</span><span class="proj-tag">Growth</span><span class="proj-tag">Strategy</span></div>
         <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page &#x2192;</a><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a></div>
       </div>
@@ -903,6 +907,37 @@ statCards.forEach(card=>countObserver.observe(card));
       const r=card.getBoundingClientRect();
       cursor.style.left=(e.clientX-r.left)+'px'; cursor.style.top=(e.clientY-r.top)+'px';
     });
+    // Tap / click burst on the icon
+    function triggerBurst(e){
+      const icon=card.querySelector('.sk-icon'); if(!icon)return;
+      // launch animation
+      icon.classList.remove('sk-tap');
+      void icon.offsetWidth; // reflow
+      icon.classList.add('sk-tap');
+      icon.addEventListener('animationend',()=>icon.classList.remove('sk-tap'),{once:true});
+      // particle burst
+      const colors=['#059669','#10b981','#34d399','#6ee7b7','#ffffff'];
+      const rect=card.getBoundingClientRect();
+      const cx=(icon.getBoundingClientRect().left+icon.getBoundingClientRect().right)/2-rect.left;
+      const cy=(icon.getBoundingClientRect().top+icon.getBoundingClientRect().bottom)/2-rect.top;
+      for(let i=0;i<12;i++){
+        const p=document.createElement('span');
+        p.className='sk-particle';
+        const angle=(i/12)*Math.PI*2;
+        const dist=40+Math.random()*35;
+        p.style.setProperty('--px',Math.cos(angle)*dist+'px');
+        p.style.setProperty('--py',Math.sin(angle)*dist+'px');
+        p.style.width=(5+Math.random()*5)+'px';
+        p.style.height=p.style.width;
+        p.style.background=colors[i%colors.length];
+        p.style.left=cx+'px'; p.style.top=cy+'px';
+        p.style.animationDelay=(Math.random()*0.08)+'s';
+        card.appendChild(p);
+        p.addEventListener('animationend',()=>p.remove());
+      }
+    }
+    card.addEventListener('click',triggerBurst);
+    card.addEventListener('touchstart',triggerBurst,{passive:true});
   });
 })();
 
