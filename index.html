@@ -135,20 +135,20 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .skill-card{background:linear-gradient(135deg,rgba(5,150,105,0.09) 0%,rgba(52,211,153,0.04) 100%);border:1px solid rgba(5,150,105,0.22);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(5,150,105,0.08),inset 0 1px 0 rgba(5,150,105,0.12);transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
 .skill-card::before{content:'';position:absolute;width:220px;height:220px;background:radial-gradient(ellipse,rgba(5,150,105,0.12) 0%,transparent 65%);pointer-events:none;top:-40%;right:-10%;}
 .skill-card:hover{border-color:rgba(5,150,105,0.5);transform:translateY(-3px);box-shadow:0 10px 40px rgba(5,150,105,0.2);}
+.sk-icon{position:absolute;top:16px;right:18px;font-size:42px;line-height:1;pointer-events:none;z-index:0;filter:drop-shadow(0 4px 12px rgba(5,150,105,0.18));animation:skIconFloat 5s ease-in-out infinite;transform-style:preserve-3d;}
+.skill-card:nth-child(2) .sk-icon{animation-delay:-1.2s;}
+.skill-card:nth-child(3) .sk-icon{animation-delay:-2.4s;}
+.skill-card:nth-child(4) .sk-icon{animation-delay:-0.8s;}
+.skill-card:nth-child(5) .sk-icon{animation-delay:-3.1s;}
+.skill-card:nth-child(6) .sk-icon{animation-delay:-1.8s;}
+.skill-card:hover .sk-icon{animation-play-state:paused;transform:perspective(400px) rotateY(-18deg) rotateX(8deg) scale(1.18);filter:drop-shadow(0 8px 20px rgba(5,150,105,0.28));transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),filter 0.3s;}
+@keyframes skIconFloat{0%,100%{transform:perspective(400px) rotateY(0deg) rotateX(0deg) translateY(0);}25%{transform:perspective(400px) rotateY(10deg) rotateX(-5deg) translateY(-4px);}50%{transform:perspective(400px) rotateY(-6deg) rotateX(6deg) translateY(-7px);}75%{transform:perspective(400px) rotateY(8deg) rotateX(-3deg) translateY(-3px);}}
 .sk-body{position:relative;z-index:1;}
 .skill-cat{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px;font-weight:700;display:flex;align-items:center;gap:8px;}
 .skill-cat::before{content:'';width:18px;height:1px;background:linear-gradient(to right,var(--blue),var(--cyan));}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .skill-tag{font-size:12px;padding:5px 12px;border-radius:7px;border:1px solid var(--border2);color:var(--grey);background:var(--bg2);transition:all 0.2s;}
 .skill-tag:hover{border-color:var(--border);color:var(--blue2);}
-
-/* TIER 3 BANNER */
-.tier3-banner{display:flex;align-items:center;gap:18px;background:linear-gradient(120deg,rgba(5,150,105,0.07) 0%,rgba(52,211,153,0.04) 100%);border:1px solid rgba(5,150,105,0.28);border-left:3px solid var(--blue2);border-radius:12px;padding:16px 22px;margin-bottom:28px;flex-wrap:wrap;}
-.t3-badge{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;color:white;background:linear-gradient(130deg,var(--blue),var(--cyan));padding:5px 13px;border-radius:20px;white-space:nowrap;box-shadow:0 0 16px var(--glow);}
-.t3-copy{font-size:13px;color:var(--off);line-height:1.6;margin:0;flex:1;min-width:200px;}
-.t3-copy strong{color:var(--blue2);}
-.skill-tag--t3{background:rgba(5,150,105,0.1)!important;border-color:rgba(5,150,105,0.35)!important;color:var(--blue)!important;font-weight:600!important;}
-.t3-highlight{color:var(--blue2);font-style:normal;}
 .proj-name-ref{color:var(--blue2);font-weight:600;font-style:normal;}
 
 /* PROJECTS */
@@ -571,20 +571,16 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 </section>
 
 <section id="skills">
-  <div class="s-label">Capabilities</div>
-  <h2 class="s-h2">What I actually bring.</h2>
-  <p class="s-sub">Not tools. Thinking, systems, and execution behind real brand work.</p>
-  <div class="tier3-banner fi">
-    <div class="t3-badge">Tier 3 Execution</div>
-    <p class="t3-copy">I've built and executed brand strategy in Tier 3 India — markets most strategists have never touched. Real audiences, real constraints, real results. <strong>Explore Valley</strong> in Assam is proof of that.</p>
-  </div>
+  <div class="s-label">The Arsenal</div>
+  <h2 class="s-h2">Six things I do at a level that compounds.</h2>
+  <p class="s-sub">Not a list of software. A set of capabilities that work together — every project I take runs through at least three of these in combination.</p>
   <div class="skills-grid">
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Brand Research &amp; Positioning</div><div class="skill-tags"><span class="skill-tag">Audience Research</span><span class="skill-tag">Competitive Analysis</span><span class="skill-tag">Core Insight</span><span class="skill-tag">Funnel Architecture</span><span class="skill-tag">Messaging Strategy</span><span class="skill-tag skill-tag--t3">&#x1F4CD; Tier 3 India</span></div></div></div>
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Content &amp; Messaging Systems</div><div class="skill-tags"><span class="skill-tag">Content Systems</span><span class="skill-tag">Copywriting</span><span class="skill-tag">Hook Strategy</span><span class="skill-tag">Distribution</span><span class="skill-tag">Short-form</span></div></div></div>
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Growth &amp; Performance</div><div class="skill-tags"><span class="skill-tag">Growth Systems</span><span class="skill-tag">Performance Thinking</span><span class="skill-tag">Content-led Revenue</span><span class="skill-tag">Organic Growth</span><span class="skill-tag">YouTube IP</span></div></div></div>
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Visual &amp; Content Production</div><div class="skill-tags"><span class="skill-tag">Video Editing</span><span class="skill-tag">Motion Graphics</span><span class="skill-tag">Visual Design</span><span class="skill-tag">Creative Execution</span></div></div></div>
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Strategic Thinking</div><div class="skill-tags"><span class="skill-tag">Market Analysis</span><span class="skill-tag">High-Ticket Positioning</span><span class="skill-tag">Buyer Psychology</span><span class="skill-tag">Category Strategy</span><span class="skill-tag">Value Proposition</span><span class="skill-tag skill-tag--t3">&#x1F4CD; Tier 3 Execution</span></div></div></div>
-    <div class="skill-card"><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Platforms &amp; Tools</div><div class="skill-tags"><span class="skill-tag">Workspace Tools</span><span class="skill-tag">CRM Systems</span><span class="skill-tag">Design &amp; Editing Suite</span><span class="skill-tag">AI Tools</span></div></div></div>
+    <div class="skill-card"><div class="sk-icon">🎯</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Brand Research &amp; Positioning</div><div class="skill-tags"><span class="skill-tag">Audience Research</span><span class="skill-tag">Competitive Analysis</span><span class="skill-tag">Core Insight</span><span class="skill-tag">Funnel Architecture</span><span class="skill-tag">Messaging Strategy</span></div></div></div>
+    <div class="skill-card"><div class="sk-icon">✍️</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Content &amp; Messaging Systems</div><div class="skill-tags"><span class="skill-tag">Content Systems</span><span class="skill-tag">Copywriting</span><span class="skill-tag">Hook Strategy</span><span class="skill-tag">Distribution</span><span class="skill-tag">Short-form</span></div></div></div>
+    <div class="skill-card"><div class="sk-icon">📈</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Growth &amp; Performance</div><div class="skill-tags"><span class="skill-tag">Growth Systems</span><span class="skill-tag">Performance Thinking</span><span class="skill-tag">Content-led Revenue</span><span class="skill-tag">Organic Growth</span><span class="skill-tag">YouTube IP</span></div></div></div>
+    <div class="skill-card"><div class="sk-icon">🎬</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Visual &amp; Content Production</div><div class="skill-tags"><span class="skill-tag">Video Editing</span><span class="skill-tag">Motion Graphics</span><span class="skill-tag">Visual Design</span><span class="skill-tag">Creative Execution</span></div></div></div>
+    <div class="skill-card"><div class="sk-icon">🧠</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Strategic Thinking</div><div class="skill-tags"><span class="skill-tag">Market Analysis</span><span class="skill-tag">High-Ticket Positioning</span><span class="skill-tag">Buyer Psychology</span><span class="skill-tag">Category Strategy</span><span class="skill-tag">Value Proposition</span></div></div></div>
+    <div class="skill-card"><div class="sk-icon">⚡</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Platforms &amp; Tools</div><div class="skill-tags"><span class="skill-tag">Workspace Tools</span><span class="skill-tag">CRM Systems</span><span class="skill-tag">Design &amp; Editing Suite</span><span class="skill-tag">AI Tools</span></div></div></div>
   </div>
 </section>
 
