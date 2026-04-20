@@ -316,8 +316,9 @@ footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2
 /* COUNTING ANIMATION */
 .stat-num.counting{font-variant-numeric:tabular-nums;}
 
-/* DOTS CANVAS */
-#dotsCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.3;}
+/* GLOBAL DOT GRID CANVAS */
+#globalCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:1;}
+#dotsCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;}
 
 /* PREMIUM MICRO-ANIMATIONS */
 
@@ -499,6 +500,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 </head>
 <body>
 
+<canvas id="globalCanvas"></canvas>
 <div id="scroll-progress"></div>
 <div id="cursorDot"></div>
 <div id="cursorRing"></div>
@@ -871,6 +873,72 @@ function type() {
 type();
 
 // Animated dots canvas
+// Global full-page dot grid + floating particles
+(function(){
+  const canvas = document.getElementById('globalCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, dots, particles;
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    buildDots();
+  }
+
+  function buildDots(){
+    dots = [];
+    const spacing = 44;
+    for(let x = spacing/2; x < W; x += spacing)
+      for(let y = spacing/2; y < H; y += spacing)
+        dots.push({x, y, phase: Math.random()*Math.PI*2});
+    particles = Array.from({length:28}, () => ({
+      x: Math.random()*W,
+      y: Math.random()*H,
+      r: 1 + Math.random()*1.4,
+      vx: (Math.random()-0.5)*0.22,
+      vy: (Math.random()-0.5)*0.22,
+      alpha: 0.06 + Math.random()*0.1,
+      phase: Math.random()*Math.PI*2
+    }));
+  }
+
+  let t = 0;
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+    t += 0.008;
+    // dot grid — gently pulse opacity
+    dots.forEach(d => {
+      const pulse = 0.045 + 0.028 * Math.sin(t + d.phase);
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, 1.1, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(5,150,105,${pulse})`;
+      ctx.fill();
+    });
+    // floating soft orb-particles
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < -10) p.x = W+10;
+      if(p.x > W+10) p.x = -10;
+      if(p.y < -10) p.y = H+10;
+      if(p.y > H+10) p.y = -10;
+      const a = p.alpha * (0.7 + 0.3*Math.sin(t*0.7 + p.phase));
+      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*18);
+      g.addColorStop(0, `rgba(52,211,153,${a})`);
+      g.addColorStop(1, 'rgba(52,211,153,0)');
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r*18, 0, Math.PI*2);
+      ctx.fillStyle = g;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+  window.addEventListener('resize', resize);
+})();
+
 const canvas = document.getElementById('dotsCanvas');
 if(canvas){
   const ctx = canvas.getContext('2d');
