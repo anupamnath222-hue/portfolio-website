@@ -141,10 +141,34 @@ footer{padding:22px 56px;border-top:1px solid var(--border2);display:flex;align-
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+/* Hero 2-col layout */
+.hero-cols{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;position:relative;z-index:2;width:100%;}
+/* Floating tool cards */
+.hero-right-col{display:flex;flex-direction:column;gap:18px;padding-top:20px;}
+.tool-float-card{background:rgba(255,255,255,0.97);border:1.5px solid rgba(5,150,105,0.22);border-radius:18px;padding:20px 22px;box-shadow:0 16px 48px rgba(5,150,105,0.12),0 4px 16px rgba(0,0,0,0.05);width:100%;}
+.tool-float-card.card-1{animation:floatA 4s ease-in-out infinite;}
+.tool-float-card.card-2{animation:floatB 5.2s ease-in-out infinite;margin-left:32px;}
+@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes floatB{0%,100%{transform:translateY(-6px)}50%{transform:translateY(6px)}}
+.tfc-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.tfc-icon{font-size:22px;width:40px;height:40px;background:rgba(5,150,105,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tfc-name{font-size:14px;font-weight:800;color:#0f172a;letter-spacing:-0.01em;}
+.tfc-tag{font-size:11px;color:#64748b;font-weight:500;margin-top:1px;}
+.tfc-live{margin-left:auto;display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:#059669;letter-spacing:0.08em;text-transform:uppercase;}
+.tfc-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;}
+.tfc-flow{display:flex;flex-direction:column;gap:6px;}
+.tfc-input{background:rgba(5,150,105,0.06);border:1px solid rgba(5,150,105,0.18);border-radius:8px;padding:9px 12px;font-size:12px;color:#475569;font-weight:500;}
+.tfc-arrow{font-size:12px;color:#10b981;font-weight:700;text-align:center;}
+.tfc-output{background:linear-gradient(135deg,rgba(5,150,105,0.12),rgba(52,211,153,0.08));border:1px solid rgba(5,150,105,0.25);border-radius:8px;padding:9px 12px;font-size:12px;color:#0f172a;font-weight:600;}
+.tfc-chat{display:flex;flex-direction:column;gap:8px;}
+.tfc-chat-q{background:#f1f5f9;border-radius:8px 8px 8px 2px;padding:9px 12px;font-size:12px;color:#475569;font-style:italic;}
+.tfc-chat-a{background:linear-gradient(135deg,rgba(5,150,105,0.12),rgba(52,211,153,0.08));border:1px solid rgba(5,150,105,0.2);border-radius:8px 8px 2px 8px;padding:9px 12px;font-size:12px;color:#0f172a;font-weight:600;}
 @media(max-width:960px){
   nav{padding:0 20px}
   .ps,#hero,#closing,footer{padding-left:20px;padding-right:20px}
   #hero{padding-top:100px;padding-bottom:60px}
+  .hero-cols{grid-template-columns:1fr;gap:36px;}
+  .tool-float-card.card-2{margin-left:0;}
   .hop-wrap{padding:36px 24px}
   .hop-inner{grid-template-columns:1fr;gap:32px}
   .hop-title{font-size:clamp(26px,7vw,38px)}
@@ -171,19 +195,46 @@ footer{padding:22px 56px;border-top:1px solid var(--border2);display:flex;align-
   <canvas id="hero-canvas"></canvas>
   <div class="blob b1"></div>
   <div class="blob b2"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow"><span class="ew-dot"></span>Problem to Product</div>
-    <div class="hero-case-label">Product Thinker</div>
-    <h1 class="hero-title">I don't just identify problems<br><span class="grad">I build something to test if I am right</span></h1>
-    <p class="hero-desc">Most people stop at the diagnosis. I take it one step further. I map the behavior, find the break point, and build the smallest working system to see if my thinking holds. <strong>Both tools came from personal frustration.</strong> Not from a brief or a client. Just a problem I kept running into and a decision to do something about it.</p>
-    <div class="hero-btns">
-      <a href="https://mind-digester-app.lovable.app" target="_blank" class="btn-primary">Try Zapo &rarr;</a>
-      <a href="https://station-savvy-track.lovable.app/" target="_blank" class="btn-secondary">Try Railway Tool &rarr;</a>
+  <div class="hero-cols">
+    <div class="hero-inner">
+      <div class="hero-eyebrow"><span class="ew-dot"></span>Problem to Product</div>
+      <div class="hero-case-label">Product Thinker</div>
+      <h1 class="hero-title">I don't just identify problems<br><span class="grad">I build the answer</span></h1>
+      <p class="hero-desc">Most people stop at the diagnosis. I map the behaviour, find the break point, and build something real. <strong>Both tools came from personal frustration.</strong> Not from a brief or a client. Just a problem I kept running into and a decision to do something about it.</p>
+      <div class="hero-btns">
+        <a href="https://mind-digester-app.lovable.app" target="_blank" class="btn-primary">Try Zapo &rarr;</a>
+        <a href="https://station-savvy-track.lovable.app/" target="_blank" class="btn-secondary">Try Railway Tool &rarr;</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hm-item"><span class="hm-n">2 Tools Built</span><span class="hm-l">Working Prototypes</span></div>
+        <div class="hm-item"><span class="hm-n">Zero Coding</span><span class="hm-l">Background</span></div>
+        <div class="hm-item"><span class="hm-n">AI Layer</span><span class="hm-l">Execution</span></div>
+      </div>
     </div>
-    <div class="hero-meta">
-      <div class="hm-item"><span class="hm-n">2 Tools Built</span><span class="hm-l">Working Prototypes</span></div>
-      <div class="hm-item"><span class="hm-n">Zero Coding</span><span class="hm-l">Background</span></div>
-      <div class="hm-item"><span class="hm-n">AI Layer</span><span class="hm-l">Execution</span></div>
+    <div class="hero-right-col">
+      <div class="tool-float-card card-1">
+        <div class="tfc-header">
+          <div class="tfc-icon">&#x26A1;</div>
+          <div><div class="tfc-name">Zapo</div><div class="tfc-tag">Content to Action</div></div>
+          <span class="tfc-live"><span class="tfc-dot"></span>Live</span>
+        </div>
+        <div class="tfc-flow">
+          <div class="tfc-input">Drop any content — reel, link, video</div>
+          <div class="tfc-arrow">&#x2193;</div>
+          <div class="tfc-output">One clear action to take right now</div>
+        </div>
+      </div>
+      <div class="tool-float-card card-2">
+        <div class="tfc-header">
+          <div class="tfc-icon">&#x1F686;</div>
+          <div><div class="tfc-name">Railway Tool</div><div class="tfc-tag">Ask in plain language</div></div>
+          <span class="tfc-live"><span class="tfc-dot"></span>Live</span>
+        </div>
+        <div class="tfc-chat">
+          <div class="tfc-chat-q">Which platform should I go to?</div>
+          <div class="tfc-chat-a">Platform 3. Leaves 14:32. Track B.</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-arrow"><div class="sh-dot"></div></div></div>
