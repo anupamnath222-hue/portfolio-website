@@ -398,6 +398,8 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 .nav-links a:not(.nav-resume){position:relative;}
 .nav-links a:not(.nav-resume)::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px;transition:width 0.25s cubic-bezier(0.4,0,0.2,1);}
 .nav-links a:not(.nav-resume):hover::after{width:100%;}
+.nav-links a.nav-active{color:var(--blue2)!important;text-shadow:0 0 18px rgba(52,211,153,0.5);}
+.nav-links a.nav-active::after{width:100%;}
 
 /* HERO ENTRANCE � gentle single fade */
 @keyframes heroFade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
@@ -865,7 +867,8 @@ window.addEventListener('scroll', () => {
     if(window.scrollY >= s.offsetTop-120) cur=s.id;
   });
   document.querySelectorAll('.nav-links a:not(.nav-resume)').forEach(a => {
-    a.style.color = a.getAttribute('href')==='#'+cur ? '#fff' : '';
+    a.style.color = '';
+    a.classList.toggle('nav-active', a.getAttribute('href')==='#'+cur);
   });
 });
 
