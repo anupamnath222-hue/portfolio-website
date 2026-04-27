@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps and Tools — Anupam Nath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px;}
+:root{
+--bg:#ffffff;--bg2:#f0fdf4;--bg3:#f8fafc;--card:#f8fafc;--card2:#ecfdf5;
+--blue:#059669;--blue2:#10b981;--blue3:#34d399;
+--glow:rgba(5,150,105,0.15);--border:rgba(5,150,105,0.15);--border2:rgba(0,0,0,0.08);
+--white:#0f172a;--cream:#1e293b;--muted:#475569;--dim:#475569;--dimmer:#64748b;
+--sans:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'Plus Jakarta Sans',system-ui,sans-serif}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
+#loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .6s,visibility .6s}
+#loader.done{opacity:0;visibility:hidden}
+.ld-name{font-size:15px;font-weight:700;color:var(--white);letter-spacing:-.01em}
+.ld-name span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ld-bar-wrap{width:160px;height:2px;background:rgba(5,150,105,.12);border-radius:2px;overflow:hidden}
+.ld-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue3));border-radius:2px}
+.ld-pct{font-size:10px;color:var(--dimmer);letter-spacing:.1em}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:64px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:height .3s}
+nav.scrolled{height:56px;background:rgba(255,255,255,0.98)}
+.nav-logo{font-size:15px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.02em}
+.nav-logo span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-back{font-size:13px;color:var(--dim);text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:8px;transition:color .2s;font-weight:500}
+.nav-back:hover{color:var(--blue2)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-label{font-size:12px;color:var(--dimmer);letter-spacing:.03em;font-weight:500}
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:110px 56px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border2)}
+#hero-canvas{position:absolute;inset:0;z-index:0;opacity:.25}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+.b1{width:600px;height:600px;background:rgba(5,150,105,.07);top:-150px;left:-100px;animation:bm 12s ease-in-out infinite}
+.b2{width:400px;height:400px;background:rgba(52,211,153,.05);bottom:-80px;right:-80px;animation:bm 16s ease-in-out infinite reverse}
+@keyframes bm{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.06)}66%{transform:translate(-20px,20px) scale(.95)}}
+.hero-inner{position:relative;z-index:2;max-width:820px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(5,150,105,.07);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:24px;opacity:0;animation:fadeUp .7s ease .2s forwards;font-weight:600}
+.ew-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-case-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px;opacity:0;animation:fadeUp .6s ease .35s forwards;font-weight:600}
+.hero-title{font-size:clamp(40px,6.4vw,80px);font-weight:900;line-height:1.04;letter-spacing:-.04em;color:var(--white);margin-bottom:18px;opacity:0;animation:fadeUp .8s ease .45s forwards}
+.hero-title .grad{background:linear-gradient(135deg,var(--blue) 0%,var(--blue3) 45%,var(--blue2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dimmer);margin-bottom:28px;opacity:0;animation:fadeUp .6s ease .55s forwards;font-weight:600}
+.hero-desc{font-size:16px;color:var(--dim);line-height:1.8;max-width:640px;margin-bottom:44px;opacity:0;animation:fadeUp .7s ease .65s forwards}
+.hero-desc strong{color:var(--cream);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;opacity:0;animation:fadeUp .7s ease .75s forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(130deg,var(--blue),var(--blue2));color:#fff;padding:13px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 0 28px rgba(5,150,105,.3);transition:all .25s;position:relative;overflow:hidden;font-family:var(--sans)}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);transform:translateX(-100%);transition:transform .4s}
+.btn-primary:hover::after{transform:translateX(100%)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(5,150,105,.45)}
+.btn-secondary{border:1px solid var(--border2);color:var(--cream);padding:13px 28px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;transition:all .25s;font-family:var(--sans);background:transparent;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{border-color:rgba(5,150,105,.35);background:rgba(5,150,105,.05);transform:translateY(-2px)}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--border);border-radius:12px;background:rgba(5,150,105,.04);backdrop-filter:blur(12px);overflow:hidden;max-width:760px;opacity:0;animation:fadeUp .7s ease .9s forwards}
+.hm-item{flex:1;min-width:140px;padding:16px 20px;text-align:center;border-right:1px solid var(--border);transition:background .2s}
+.hm-item:last-child{border-right:none}
+.hm-item:hover{background:rgba(5,150,105,.06)}
+.hm-n{font-size:13px;font-weight:700;color:var(--white);display:block;line-height:1.2;margin-bottom:4px}
+.hm-l{font-size:10px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 2s forwards}
+.sh-txt{font-size:10px;color:var(--dimmer);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.sh-arrow{width:22px;height:36px;border:1px solid var(--border);border-radius:11px;display:flex;align-items:flex-start;justify-content:center;padding-top:5px}
+.sh-dot{width:3px;height:3px;background:var(--blue2);border-radius:50%;animation:sb 1.8s ease-in-out infinite}
+@keyframes sb{0%,100%{transform:translateY(0);opacity:1}100%{transform:translateY(14px);opacity:0}}
+.marquee-section{overflow:hidden;padding:16px 0;border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);background:rgba(5,150,105,.02)}
+.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.m-item{display:flex;align-items:center;gap:12px;padding:0 28px;white-space:nowrap;font-size:11px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.m-dot{width:4px;height:4px;background:var(--blue);border-radius:50%;flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ps{padding:88px 56px;position:relative;z-index:1;border-bottom:1px solid var(--border2)}
+.ps:nth-child(even){background:var(--bg2)}
+.sec-tag{font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-weight:700}
+.sec-tag::before{content:'';width:20px;height:1px;background:linear-gradient(to right,var(--blue),var(--blue2))}
+.sec-title{font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--white);margin-bottom:12px}
+.sec-title span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;font-style:normal}
+.sec-sub{font-size:15px;color:var(--dim);max-width:620px;margin-bottom:52px;line-height:1.75}
+
+/* hop-wrap card structure */
+.hop-wrap{background:linear-gradient(135deg,rgba(5,150,105,0.06) 0%,rgba(52,211,153,0.03) 100%);border:1.5px solid rgba(5,150,105,0.25);border-radius:24px;padding:56px 48px;position:relative;overflow:hidden;box-shadow:0 16px 48px rgba(5,150,105,0.08);}
+.hop-wrap::before{content:'';position:absolute;top:-100px;right:-100px;width:520px;height:520px;background:radial-gradient(ellipse,rgba(5,150,105,0.08) 0%,transparent 65%);pointer-events:none;}
+.hop-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:start;position:relative;z-index:1;}
+.hop-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);background:rgba(5,150,105,0.1);border:1.5px solid rgba(5,150,105,0.25);padding:6px 16px;border-radius:20px;margin-bottom:20px;font-weight:700;}
+.hop-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:pulse 2s infinite;box-shadow:0 0 12px var(--blue);}
+.hop-title{font-size:clamp(28px,3.6vw,42px);font-weight:800;color:var(--white);letter-spacing:-.03em;margin-bottom:14px;line-height:1.1;}
+.hop-title span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hop-subtitle-small{font-size:13px;color:var(--dimmer);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;font-weight:600;}
+.hop-just{font-size:14px;color:var(--dim);margin-bottom:24px;font-style:italic;letter-spacing:-.005em;}
+.hop-constraints{display:flex;flex-direction:column;gap:1px;margin-bottom:14px;}
+.hop-constraints span{font-size:17px;font-weight:700;color:var(--cream);letter-spacing:-.025em;line-height:1.55;}
+.hop-liquid{background:linear-gradient(135deg,rgba(5,150,105,0.06) 0%,rgba(52,211,153,0.03) 100%);border:1px solid rgba(5,150,105,0.18);border-radius:14px;padding:22px;margin-bottom:22px;position:relative;overflow:hidden;}
+.hop-liquid-inner{position:relative;z-index:1;}
+.hop-why-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:14px;display:block;}
+.hop-liquid p{font-size:13px;color:var(--cream);line-height:1.85;margin-bottom:12px;letter-spacing:-.005em;}
+.hop-liquid p:last-child{margin-bottom:0;}
+.hop-liquid-gap{color:var(--blue2)!important;font-weight:600!important;}
+.hop-differentiator{border-left:2px solid rgba(5,150,105,0.3);padding-left:18px;margin-bottom:32px;}
+.hop-diff-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:10px;display:block;}
+.hop-differentiator p{font-size:13px;color:var(--dim);line-height:1.75;margin-bottom:6px;}
+.hop-differentiator p:last-child{margin-bottom:0;}
+.hop-comps{display:flex;flex-direction:column;gap:10px;}
+.hop-comp{background:linear-gradient(135deg,rgba(255,255,255,0.92) 0%,rgba(240,253,244,0.85) 100%);backdrop-filter:blur(8px);border:1px solid rgba(5,150,105,0.15);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:border-color .35s,box-shadow .35s,transform .35s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden;box-shadow:0 2px 10px rgba(5,150,105,0.06);}
+.hop-comp::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--blue),var(--blue3));border-radius:3px 0 0 3px;transform:scaleY(0);transform-origin:bottom;transition:transform .35s cubic-bezier(0.16,1,0.3,1);}
+.hop-comp:hover{border-color:rgba(5,150,105,0.45);box-shadow:0 12px 36px rgba(5,150,105,0.18);transform:translateX(6px);}
+.hop-comp:hover::before,.hop-comp.in::before{transform:scaleY(1);}
+.hop-num{font-size:18px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;min-width:32px;display:inline-block;}
+.hop-lbl{font-size:13px;color:var(--dim);line-height:1.55;}
+.hop-lbl strong{color:var(--cream);font-weight:700;display:block;margin-bottom:2px;font-size:14px;}
+.hop-lbl-sub{font-size:12px;color:var(--dimmer);}
+.hop-status{display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:100px;padding:8px 16px;margin-bottom:22px;font-size:12px;color:#16a34a;font-weight:600;letter-spacing:.02em}
+.hop-status.yellow{background:rgba(234,179,8,0.08);border-color:rgba(234,179,8,0.3);color:#ca8a04}
+.hop-status-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;box-shadow:0 0 10px rgba(34,197,94,0.5)}
+.hop-status.yellow .hop-status-dot{background:#eab308;box-shadow:0 0 10px rgba(234,179,8,0.5)}
+
+/* Built with section */
+.built-card{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:36px 40px;}
+.built-label{font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;font-weight:700;display:block}
+.built-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.built-tag{display:inline-flex;align-items:center;background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.2);color:var(--blue);padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.01em;transition:all .25s}
+.built-tag:hover{background:rgba(5,150,105,0.14);border-color:rgba(5,150,105,0.4);transform:translateY(-1px)}
+.built-note{font-size:14px;color:var(--dim);line-height:1.7;font-style:italic}
+.built-note strong{color:var(--cream);font-weight:600;font-style:normal}
+
+#closing{padding:88px 56px;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border2)}
+.closing-inner{max-width:760px;margin:0 auto}
+.closing-quote{font-size:clamp(22px,2.6vw,32px);font-weight:700;line-height:1.4;color:var(--white);margin-bottom:24px;letter-spacing:-.02em}
+.closing-quote span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-style:normal}
+.closing-byline{font-size:12px;color:var(--dimmer);letter-spacing:.08em;text-transform:uppercase;margin-bottom:40px;font-weight:500}
+.closing-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{padding:22px 56px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+.foot-l{font-size:12px;color:var(--dimmer);font-weight:500}
+.foot-r{font-size:12px;color:var(--dimmer);text-decoration:none;transition:color .2s;font-weight:500}
+.foot-r:hover{color:var(--blue2)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .ps,#hero,#closing,footer{padding-left:20px;padding-right:20px}
+  #hero{padding-top:100px;padding-bottom:60px}
+  .hop-wrap{padding:36px 24px}
+  .hop-inner{grid-template-columns:1fr;gap:32px}
+  .hop-title{font-size:clamp(26px,7vw,38px)}
+  .built-card{padding:28px 22px}
+  footer{flex-direction:column;gap:8px;text-align:center}
+  .nav-label{display:none}
+}
+</style>
+</head>
+<body>
+<div id="loader">
+  <div class="ld-name">Anupam <span>Nath</span></div>
+  <div class="ld-bar-wrap"><div class="ld-bar" id="lbar"></div></div>
+  <div class="ld-pct" id="lpct">0%</div>
+</div>
+<nav id="nav">
+  <a href="index.html" class="nav-back">&larr; Portfolio</a>
+  <div class="nav-right">
+    <span class="nav-label">Apps and Tools &middot; Product Thinker</span>
+    <a href="index.html" class="nav-logo">Anupam <span>Nath</span></a>
+  </div>
+</nav>
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="ew-dot"></span>Problem to Product</div>
+    <div class="hero-case-label">Product Thinker</div>
+    <h1 class="hero-title">I don't just identify problems<br><span class="grad">I build something to test if I am right</span></h1>
+    <p class="hero-desc">Most people stop at the diagnosis. I take it one step further. I map the behavior, find the break point, and build the smallest working system to see if my thinking holds. <strong>Both tools came from personal frustration.</strong> Not from a brief or a client. Just a problem I kept running into and a decision to do something about it.</p>
+    <div class="hero-btns">
+      <a href="https://mind-digester-app.lovable.app/" target="_blank" class="btn-primary">Try Zapo &rarr;</a>
+      <a href="https://station-savvy-track.lovable.app/" target="_blank" class="btn-secondary">Try Railway Tool &rarr;</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hm-item"><span class="hm-n">2 Tools Built</span><span class="hm-l">Working Prototypes</span></div>
+      <div class="hm-item"><span class="hm-n">Zero Coding</span><span class="hm-l">Background</span></div>
+      <div class="hm-item"><span class="hm-n">AI Layer</span><span class="hm-l">Execution</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-arrow"><div class="sh-dot"></div></div></div>
+</section>
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="m-item"><span class="m-dot"></span>Problem Identification</div><div class="m-item"><span class="m-dot"></span>Behavior Mapping</div><div class="m-item"><span class="m-dot"></span>Output Design</div><div class="m-item"><span class="m-dot"></span>Build and Test</div><div class="m-item"><span class="m-dot"></span>Lovable</div><div class="m-item"><span class="m-dot"></span>Replit</div><div class="m-item"><span class="m-dot"></span>Claude Code</div><div class="m-item"><span class="m-dot"></span>VS Code</div><div class="m-item"><span class="m-dot"></span>Working Prototype</div><div class="m-item"><span class="m-dot"></span>Product Thinking</div>
+    <div class="m-item"><span class="m-dot"></span>Problem Identification</div><div class="m-item"><span class="m-dot"></span>Behavior Mapping</div><div class="m-item"><span class="m-dot"></span>Output Design</div><div class="m-item"><span class="m-dot"></span>Build and Test</div><div class="m-item"><span class="m-dot"></span>Lovable</div><div class="m-item"><span class="m-dot"></span>Replit</div><div class="m-item"><span class="m-dot"></span>Claude Code</div><div class="m-item"><span class="m-dot"></span>VS Code</div><div class="m-item"><span class="m-dot"></span>Working Prototype</div><div class="m-item"><span class="m-dot"></span>Product Thinking</div>
+  </div>
+</div>
+
+<div class="ps" id="zapo">
+  <div class="sec-tag">01 Tool One</div>
+  <h2 class="sec-title">A bridge between <span>consuming and acting</span></h2>
+  <p class="sec-sub">The problem nobody is solving: the gap between finishing a piece of content and knowing what to do with it.</p>
+  <div class="hop-wrap reveal">
+    <div class="hop-inner">
+      <div>
+        <div class="hop-badge"><span class="hop-dot"></span> Content to Action</div>
+        <h2 class="hop-title"><span>Zapo</span></h2>
+        <p class="hop-subtitle-small">Product Thinker</p>
+        <p class="hop-just">The gap between consuming and acting</p>
+        <div class="hop-constraints"><span>Personal Problem</span><span>Content Gap</span><span>No-code Build</span></div>
+        <div class="hop-liquid">
+          <div class="hop-liquid-inner">
+            <span class="hop-why-label">Why I built this</span>
+            <p>I save a lot of content. Reels videos articles breakdowns. I save them because they feel important. I never go back to them.</p>
+            <p class="hop-liquid-gap">Not because the content was bad. But because there was no bridge between finishing something and knowing what to do with it.</p>
+            <p>That gap between consuming and acting. That is what Zapo is built to close.</p>
+          </div>
+        </div>
+        <div class="hop-differentiator">
+          <span class="hop-diff-label">What it does</span>
+          <p>You give it any piece of content. A reel a video a link anything.</p>
+          <p>It tells you what it actually is, what it is really about, and one thing you can do right now.</p>
+          <p>No saving no organizing no thinking. Just a clear next step immediately.</p>
+        </div>
+        <div class="hop-status"><span class="hop-status-dot"></span>Working Prototype &middot; Core loop functional &middot; Anyone can use it</div>
+        <br>
+        <a href="https://mind-digester-app.lovable.app/" target="_blank" class="btn-primary">Try Zapo &rarr;</a>
+      </div>
+      <div>
+        <div class="hop-comps">
+          <div class="hop-comp reveal d1"><span class="hop-num">01</span><span class="hop-lbl"><strong>Input</strong><span class="hop-lbl-sub">any piece of content</span></span></div>
+          <div class="hop-comp reveal d2"><span class="hop-num">02</span><span class="hop-lbl"><strong>Process</strong><span class="hop-lbl-sub">strip everything that is not the point</span></span></div>
+          <div class="hop-comp reveal d3"><span class="hop-num">03</span><span class="hop-lbl"><strong>Output</strong><span class="hop-lbl-sub">one clear action to take next</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ps" id="railway">
+  <div class="sec-tag">02 Tool Two</div>
+  <h2 class="sec-title">The question you have <span>when you are actually traveling</span></h2>
+  <p class="sec-sub">Every railway app shows you the data. None of them answer the question you actually have when you are on the platform.</p>
+  <div class="hop-wrap reveal">
+    <div class="hop-inner">
+      <div>
+        <div class="hop-badge"><span class="hop-dot"></span> Information to Clarity</div>
+        <h2 class="hop-title"><span>Railway Tool</span></h2>
+        <p class="hop-subtitle-small">Product Thinker</p>
+        <p class="hop-just">The question you have when you are actually traveling</p>
+        <div class="hop-constraints"><span>Travel Problem</span><span>Real-time Help</span><span>Chatbot Layer</span></div>
+        <div class="hop-liquid">
+          <div class="hop-liquid-inner">
+            <span class="hop-why-label">Why I built this</span>
+            <p>Every railway app shows you timetables and train status. That is not the problem.</p>
+            <p class="hop-liquid-gap">The problem is what happens when you are actually traveling. Especially if you are going somewhere new.</p>
+            <p>You have questions no app directly answers. You do not need more data. You need one clear answer right now.</p>
+          </div>
+        </div>
+        <div class="hop-differentiator">
+          <span class="hop-diff-label">What it does</span>
+          <p>A chatbot layer built into a travel companion.</p>
+          <p>You ask a real question in plain language. It gives you a direct answer not a list of links.</p>
+          <p>There is also an offline game built in for when there is no network and you are just waiting.</p>
+        </div>
+        <div class="hop-status yellow"><span class="hop-status-dot"></span>Prototype &middot; Exploration stage</div>
+        <br>
+        <a href="https://station-savvy-track.lovable.app/" target="_blank" class="btn-primary">Try Railway Tool &rarr;</a>
+      </div>
+      <div>
+        <div class="hop-comps">
+          <div class="hop-comp reveal d1"><span class="hop-num">01</span><span class="hop-lbl"><strong>Ask</strong><span class="hop-lbl-sub">real question in plain language</span></span></div>
+          <div class="hop-comp reveal d2"><span class="hop-num">02</span><span class="hop-lbl"><strong>Guide</strong><span class="hop-lbl-sub">direct answer not a list of options</span></span></div>
+          <div class="hop-comp reveal d3"><span class="hop-num">03</span><span class="hop-lbl"><strong>Move</strong><span class="hop-lbl-sub">clear next step for your journey</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">03 Built With</div>
+  <h2 class="sec-title">The stack is <span>the smallest part</span></h2>
+  <p class="sec-sub">Tools used to ship. The thinking is what made these worth building.</p>
+  <div class="built-card reveal">
+    <span class="built-label">Built with</span>
+    <div class="built-tags">
+      <span class="built-tag">Lovable</span>
+      <span class="built-tag">Replit</span>
+      <span class="built-tag">VS Code</span>
+      <span class="built-tag">Claude Code</span>
+    </div>
+    <p class="built-note"><strong>Zero coding background.</strong> The skill is problem identification and build instinct, not the code.</p>
+  </div>
+</div>
+
+<div id="closing">
+  <div class="closing-inner reveal">
+    <div class="closing-quote">"If an idea cannot be tested <span>it stays theory</span>"</div>
+    <div class="closing-byline">Anupam Nath &middot; Product Thinker &middot; New Delhi, India</div>
+    <div class="closing-btns">
+      <a href="https://mind-digester-app.lovable.app/" target="_blank" class="btn-primary">Try Zapo &rarr;</a>
+      <a href="index.html" class="btn-secondary">&larr; Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <span class="foot-l">2026 Anupam Nath Creative Strategist New Delhi</span>
+  <a href="mailto:anupamnath222@gmail.com" class="foot-r">anupamnath222@gmail.com</a>
+</footer>
+<script>
+const lbar=document.getElementById('lbar'),lpct=document.getElementById('lpct'),loader=document.getElementById('loader');
+let prog=0;
+const li=setInterval(()=>{prog+=Math.random()*18;if(prog>=100){prog=100;clearInterval(li);setTimeout(()=>loader.classList.add('done'),300);}lbar.style.width=prog+'%';lpct.textContent=Math.floor(prog)+'%';},80);
+const canvas=document.getElementById('hero-canvas'),ctx=canvas.getContext('2d');
+let dots=[],mouse={x:-999,y:-999};
+function resize(){canvas.width=window.innerWidth;canvas.height=document.getElementById('hero').offsetHeight;dots=[];for(let r=0;r<=Math.ceil(canvas.height/34);r++)for(let c=0;c<=Math.ceil(canvas.width/34);c++)dots.push({x:c*34,y:r*34});}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(const d of dots){const dx=d.x-mouse.x,dy=d.y-mouse.y,dist=Math.sqrt(dx*dx+dy*dy),p=Math.max(0,1-dist/130);ctx.beginPath();ctx.arc(d.x,d.y,1.3+p*2.2,0,Math.PI*2);ctx.fillStyle=`rgba(5,150,105,${.15+p*.5})`;ctx.fill();}requestAnimationFrame(draw);}
+document.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+window.addEventListener('resize',resize);resize();draw();
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);});
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
