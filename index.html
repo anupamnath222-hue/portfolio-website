@@ -515,7 +515,23 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   .hop-wrap{padding:28px 16px;}
   section{padding:52px 16px;}
   nav{padding:0 16px;}
+  .think-grid{grid-template-columns:1fr;}
+  .think-card{padding:24px 20px;}
 }
+/* How I Think and Build compact cards */
+.think-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;}
+.think-card{background:linear-gradient(135deg,rgba(5,150,105,0.07) 0%,rgba(52,211,153,0.03) 100%);border:1.5px solid rgba(5,150,105,0.25);border-radius:20px;padding:30px 26px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s cubic-bezier(0.34,1.56,0.64,1);}
+.think-card:hover{border-color:rgba(5,150,105,0.55);box-shadow:0 20px 56px rgba(5,150,105,0.18);transform:translateY(-5px);}
+.think-num{font-size:11px;color:var(--blue2);font-weight:700;letter-spacing:0.14em;}
+.think-tag{font-size:11px;color:var(--blue2);background:rgba(5,150,105,0.12);border:1px solid rgba(5,150,105,0.22);padding:4px 12px;border-radius:100px;width:fit-content;font-weight:600;letter-spacing:0.06em;}
+.think-title{font-size:21px;font-weight:800;color:var(--white);letter-spacing:-0.025em;margin-top:4px;line-height:1.15;}
+.think-desc{font-size:14px;color:var(--grey);line-height:1.75;flex:1;margin-top:4px;}
+.think-cta{font-size:13px;color:var(--blue2);font-weight:600;margin-top:12px;}
+.think-card:hover .think-cta{color:var(--cyan);}
+/* Projects folder tabs */
+.proj-folder-wrap{display:flex;flex-direction:column;}
+.proj-tab{align-self:flex-start;background:rgba(5,150,105,0.1);border:1.5px solid rgba(5,150,105,0.22);border-bottom:none;border-radius:8px 8px 0 0;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue2);margin-left:12px;}
+.proj-folder-wrap .proj-card{border-radius:0 14px 14px 14px;flex:1;}
 </style>
 </head>
 <body>
@@ -648,64 +664,82 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
     <button class="f-btn" onclick="fp('strategy',this)">Strategy</button>
   </div>
   <div class="proj-grid" id="pg">
-    <div class="proj-card fi" data-cat="strategy content brand">
-      <div class="proj-thumb prep-iq"><img src="assets/logos/PREP IQ.png" alt="Prep IQ"></div>
-      <div class="proj-body">
-        <div class="proj-name">Prep IQ</div>
-        <div class="proj-metrics"><span class="metric"><strong>EdTech</strong> Brand</span><span class="metric"><strong>Full Rebrand</strong> Learning Point ? Prep IQ</span><span class="metric"><strong>&#x20B9;30-40K</strong> First Launch</span></div>
-        <div class="proj-desc">The brand was called <span class="proj-name-ref">Learning Point</span> and it was not landing. I led the full rebrand to <span class="proj-name-ref">Prep IQ</span>, built education IPs that students actually connected with, and set up the entire positioning from zero. First launch hit <strong>&#x20B9;30-40K with no ads</strong>. Five students cracked government jobs off the back of it.</div>
-        <div class="proj-tags"><span class="proj-tag">Full Rebrand</span><span class="proj-tag">Brand IP Creation</span><span class="proj-tag">EdTech</span><span class="proj-tag">Zero-budget Launch</span></div>
-        <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study &#x2192;</a><a href="https://www.facebook.com/PrepIQ" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a></div>
+    <div class="proj-folder-wrap">
+      <div class="proj-tab">EdTech Brand</div>
+      <div class="proj-card fi" data-cat="strategy content brand">
+        <div class="proj-thumb prep-iq"><img src="assets/logos/PREP IQ.png" alt="Prep IQ"></div>
+        <div class="proj-body">
+          <div class="proj-name">Prep IQ</div>
+          <div class="proj-metrics"><span class="metric"><strong>EdTech</strong> Brand</span><span class="metric"><strong>Full Rebrand</strong> Learning Point &rarr; Prep IQ</span><span class="metric"><strong>&#x20B9;30-40K</strong> First Launch</span></div>
+          <div class="proj-desc">The brand was called <span class="proj-name-ref">Learning Point</span> and it was not landing. I led the full rebrand to <span class="proj-name-ref">Prep IQ</span>, built education IPs that students actually connected with, and set up the entire positioning from zero. First launch hit <strong>&#x20B9;30-40K with no ads</strong>. Five students cracked government jobs off the back of it.</div>
+          <div class="proj-tags"><span class="proj-tag">Full Rebrand</span><span class="proj-tag">Brand IP Creation</span><span class="proj-tag">EdTech</span><span class="proj-tag">Zero-budget Launch</span></div>
+          <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://drive.google.com/drive/folders/1ywHjYSGJn5nFkEGIl6w_39nBzUKlu5Df?usp=drive_link" target="_blank" class="proj-link">View Case Study &#x2192;</a><a href="https://www.facebook.com/PrepIQ" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a></div>
+        </div>
       </div>
     </div>
-    <div class="proj-card fi d1" data-cat="brand content">
-      <div class="proj-thumb chaivours"><img src="assets/logos/chaivours.png" alt="Chaivours"></div>
-      <div class="proj-body">
-        <div class="proj-name">Chaivours</div>
-        <div class="proj-metrics"><span class="metric"><strong>B2C</strong> F&B Brand</span><span class="metric"><strong>Full Brand</strong> Identity</span><span class="metric"><strong>Meme Marketing</strong> Strategy</span></div>
-        <div class="proj-desc">Worked directly with founder <span class="proj-name-ref">Subhodip</span> to build this from nothing. <strong>Launched in 30 days</strong> with full visual identity, brand voice, ad creatives, and a <strong>meme marketing system</strong> built to feel native to the feed. The brand found its people before it had a big budget because it gave them something real to connect with.</div>
-        <div class="proj-tags"><span class="proj-tag">Full Brand Build</span><span class="proj-tag">Meme Marketing</span><span class="proj-tag">Ad Creatives</span><span class="proj-tag">D2C</span></div>
-        <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-q4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study &#x2192;</a><a href="https://www.instagram.com/chaivours/" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Instagram">@</a></div>
+    <div class="proj-folder-wrap">
+      <div class="proj-tab">D2C Brand</div>
+      <div class="proj-card fi d1" data-cat="brand content">
+        <div class="proj-thumb chaivours"><img src="assets/logos/chaivours.png" alt="Chaivours"></div>
+        <div class="proj-body">
+          <div class="proj-name">Chaivours</div>
+          <div class="proj-metrics"><span class="metric"><strong>B2C</strong> F&amp;B Brand</span><span class="metric"><strong>Full Brand</strong> Identity</span><span class="metric"><strong>Meme Marketing</strong> Strategy</span></div>
+          <div class="proj-desc">Worked directly with founder <span class="proj-name-ref">Subhodip</span> to build this from nothing. <strong>Launched in 30 days</strong> with full visual identity, brand voice, ad creatives, and a <strong>meme marketing system</strong> built to feel native to the feed. The brand found its people before it had a big budget because it gave them something real to connect with.</div>
+          <div class="proj-tags"><span class="proj-tag">Full Brand Build</span><span class="proj-tag">Meme Marketing</span><span class="proj-tag">Ad Creatives</span><span class="proj-tag">D2C</span></div>
+          <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://drive.google.com/drive/folders/1r5lxPh_SVeFWak-q4V32stQYH_Z3QIDM?usp=drive_link" target="_blank" class="proj-link">View Case Study &#x2192;</a><a href="https://www.instagram.com/chaivours/" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Instagram">@</a></div>
+        </div>
       </div>
     </div>
-    <div class="proj-card fi d2" data-cat="content strategy">
-      <div class="proj-thumb the-edge"><img src="assets/logos/THE EDGE ORIGINALS.png" alt="The Edge"></div>
-      <div class="proj-body">
-        <div class="proj-name">The Edge Originals</div>
-        <div class="proj-metrics"><span class="metric"><strong>180+</strong> Episodes Produced</span><span class="metric"><strong>37K+</strong> Subscribers</span><span class="metric"><strong>Longest</strong> Running IP</span></div>
-        <div class="proj-desc">I created <span class="proj-name-ref">The Edge Legal</span>. Concept, format, script, shoot, edit, publish. Every day for <strong>8 months straight—180+ episodes</strong> without missing once. Still the <span class="proj-name-ref">longest running IP on the channel</span>. Quality and consistency at the same time is a system problem. I solved it.</div>
-        <div class="proj-tags"><span class="proj-tag">Show Creator</span><span class="proj-tag">Full Producer</span><span class="proj-tag">The Edge Legal</span><span class="proj-tag">Daily Publishing</span></div>
-        <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel &#x2192;</a><a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="YouTube">&#x25B6;&#x25B6;</a></div>
+    <div class="proj-folder-wrap">
+      <div class="proj-tab">Content System</div>
+      <div class="proj-card fi d2" data-cat="content strategy">
+        <div class="proj-thumb the-edge"><img src="assets/logos/THE EDGE ORIGINALS.png" alt="The Edge"></div>
+        <div class="proj-body">
+          <div class="proj-name">The Edge Originals</div>
+          <div class="proj-metrics"><span class="metric"><strong>180+</strong> Episodes Produced</span><span class="metric"><strong>37K+</strong> Subscribers</span><span class="metric"><strong>Longest</strong> Running IP</span></div>
+          <div class="proj-desc">I created <span class="proj-name-ref">The Edge Legal</span>. Concept, format, script, shoot, edit, publish. Every day for <strong>8 months straight — 180+ episodes</strong> without missing once. Still the <span class="proj-name-ref">longest running IP on the channel</span>. Quality and consistency at the same time is a system problem. I solved it.</div>
+          <div class="proj-tags"><span class="proj-tag">Show Creator</span><span class="proj-tag">Full Producer</span><span class="proj-tag">The Edge Legal</span><span class="proj-tag">Daily Publishing</span></div>
+          <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link">View Channel &#x2192;</a><a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="YouTube">&#x25B6;&#x25B6;</a></div>
+        </div>
       </div>
     </div>
-    <div class="proj-card fi" data-cat="content">
-      <div class="proj-thumb explore-valley"><img src="assets/logos/explore valley.png" alt="Explore Valley"></div>
-      <div class="proj-body">
-        <div class="proj-name">Explore Valley</div>
-        <div class="proj-metrics"><span class="metric"><strong>Assam Election</strong> 2021 Coverage</span><span class="metric"><strong>Multi-format</strong> Content + Video + Live</span><span class="metric"><strong>10K</strong> Followers Built</span></div>
-        <div class="proj-desc">Early team member at a media brand still figuring itself out. Content, graphic design, video production, and live coverage all at once. Covered the <span class="proj-name-ref">Assam State Election 2021</span> on the ground in <span class="proj-name-ref">Silchar</span>. The brand grew to <strong>120K followers on Facebook</strong>.</div>
-        <div class="proj-tags"><span class="proj-tag">Political Journalism</span><span class="proj-tag">Live Coverage</span><span class="proj-tag">Video + Graphic + Content</span><span class="proj-tag">IP Creation</span></div>
-        <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page &#x2192;</a><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a></div>
+    <div class="proj-folder-wrap">
+      <div class="proj-tab">Media</div>
+      <div class="proj-card fi" data-cat="content">
+        <div class="proj-thumb explore-valley"><img src="assets/logos/explore valley.png" alt="Explore Valley"></div>
+        <div class="proj-body">
+          <div class="proj-name">Explore Valley</div>
+          <div class="proj-metrics"><span class="metric"><strong>Assam Election</strong> 2021 Coverage</span><span class="metric"><strong>Multi-format</strong> Content + Video + Live</span><span class="metric"><strong>120K</strong> Facebook</span></div>
+          <div class="proj-desc">Early team member at a media brand still figuring itself out. Content, graphic design, video production, and live coverage all at once. Covered the <span class="proj-name-ref">Assam State Election 2021</span> on the ground in <span class="proj-name-ref">Silchar</span>. The brand grew to <strong>120K followers on Facebook</strong>.</div>
+          <div class="proj-tags"><span class="proj-tag">Political Journalism</span><span class="proj-tag">Live Coverage</span><span class="proj-tag">Video + Graphic + Content</span><span class="proj-tag">IP Creation</span></div>
+          <div style="display:flex;gap:8px;margin-top:12px;"><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link">View Page &#x2192;</a><a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a></div>
+        </div>
       </div>
     </div>
-    <div class="proj-card fi d1" data-cat="strategy content">
-      <div class="proj-thumb atomik"><img src="assets/logos/ATOMIK GROWTH.png" alt="Atomik Growth"></div>
-      <div class="proj-body">
-        <div class="proj-name">Atomik Growth</div>
-        <div class="proj-metrics"><span class="metric"><strong>#1</strong> Podcast Media Agency</span><span class="metric"><strong>Acquired — MFM</strong> Clients</span><span class="metric"><strong>$170k+</strong> MRR</span></div>
-        <div class="proj-desc">Worked directly with <span class="proj-name-ref">Subah Wadhwani</span>, co-founder and CEO of Atomik Growth, the <strong>#1 podcasting and tech media agency</strong>. Built content strategy and clipping systems. Generated 50+ million organic reach with the team. That is the standard I have operated at.</div>
-        <div class="proj-tags"><span class="proj-tag">World-class Team</span><span class="proj-tag">Podcast Strategy</span><span class="proj-tag">Visual Identity</span><span class="proj-tag">VC &amp; Founder Audience</span></div>
-        <a href="https://www.atomikgrowth.com/" target="_blank" class="proj-link">Visit Website &#x2192;</a>
+    <div class="proj-folder-wrap">
+      <div class="proj-tab">Podcast Strategy</div>
+      <div class="proj-card fi d1" data-cat="strategy content">
+        <div class="proj-thumb atomik"><img src="assets/logos/ATOMIK GROWTH.png" alt="Atomik Growth"></div>
+        <div class="proj-body">
+          <div class="proj-name">Atomik Growth</div>
+          <div class="proj-metrics"><span class="metric"><strong>#1</strong> Podcast Media Agency</span><span class="metric"><strong>MFM</strong> Clients</span><span class="metric"><strong>$170k+</strong> MRR</span></div>
+          <div class="proj-desc">Worked directly with <span class="proj-name-ref">Subah Wadhwani</span>, co-founder and CEO of Atomik Growth, the <strong>#1 podcasting and tech media agency</strong>. Built content strategy and clipping systems. Generated 50+ million organic reach with the team. That is the standard I have operated at.</div>
+          <div class="proj-tags"><span class="proj-tag">World-class Team</span><span class="proj-tag">Podcast Strategy</span><span class="proj-tag">Visual Identity</span><span class="proj-tag">VC &amp; Founder Audience</span></div>
+          <a href="https://www.atomikgrowth.com/" target="_blank" class="proj-link">Visit Website &#x2192;</a>
+        </div>
       </div>
     </div>
-    <div class="proj-card fi d2" data-cat="content">
-      <div class="proj-thumb shortform"><img src="assets/logos/SHORT FORM.png" alt="Short-form Content"></div>
-      <div class="proj-body">
-        <div class="proj-name">Short-form System</div>
-        <div class="proj-metrics"><span class="metric"><strong>Hook-first</strong> Architecture</span><span class="metric"><strong>Platform-native</strong> Editing</span><span class="metric"><strong>Structured</strong> CTAs</span></div>
-        <div class="proj-desc">Worked across <span style="color: #10b981;">Instagram Reels and YouTube Shorts</span> for multiple creators. Scaled <strong>1000+ videos</strong> using a hook-first system where the <strong>first 3 seconds</strong> determine everything. Platform-native editing, strategic CTAs, and architecture designed to stop the scroll.</div>
-        <div class="proj-tags"><span class="proj-tag">Hook Strategy</span><span class="proj-tag">Editing Systems</span><span class="proj-tag">CTA Design</span><span class="proj-tag">Reels — Shorts — Clips</span></div>
-        <a href="https://drive.google.com/drive/folders/1plRr675jZ-equhiDyxypVg7-Lr8YB3Hz?usp=drive_link" target="_blank" class="proj-link">View Work &#x2192;</a>
+    <div class="proj-folder-wrap">
+      <div class="proj-tab">Short-form</div>
+      <div class="proj-card fi d2" data-cat="content">
+        <div class="proj-thumb shortform"><img src="assets/logos/SHORT FORM.png" alt="Short-form Content"></div>
+        <div class="proj-body">
+          <div class="proj-name">Short-form System</div>
+          <div class="proj-metrics"><span class="metric"><strong>Hook-first</strong> Architecture</span><span class="metric"><strong>Platform-native</strong> Editing</span><span class="metric"><strong>Structured</strong> CTAs</span></div>
+          <div class="proj-desc">Worked across <span style="color:#10b981;">Instagram Reels and YouTube Shorts</span> for multiple creators. Scaled <strong>1000+ videos</strong> using a hook-first system where the <strong>first 3 seconds</strong> determine everything. Platform-native editing, strategic CTAs, and architecture designed to stop the scroll.</div>
+          <div class="proj-tags"><span class="proj-tag">Hook Strategy</span><span class="proj-tag">Editing Systems</span><span class="proj-tag">CTA Design</span><span class="proj-tag">Reels — Shorts — Clips</span></div>
+          <a href="https://drive.google.com/drive/folders/1plRr675jZ-equhiDyxypVg7-Lr8YB3Hz?usp=drive_link" target="_blank" class="proj-link">View Work &#x2192;</a>
+        </div>
       </div>
     </div>
   </div>
@@ -713,128 +747,30 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 
 <section id="hop">
   <div class="s-label">How I Think and Build</div>
-  <div class="hop-wrap fi">
-    <div class="hop-orb hop-orb-1"></div>
-    <div class="hop-orb hop-orb-2"></div>
-    <div class="hop-spotlight"></div>
-    <div class="hop-inner">
-      <div>
-        <div class="hop-badge"><span class="hop-dot"></span> Problem to Product</div>
-        <h2 class="hop-title"><span>Apps and Tools</span></h2>
-        <p class="hop-subtitle-small">Product Thinker</p>
-        <p class="hop-just">I don't just identify problems &middot; I build something to test if I am right</p>
-        <div class="hop-constraints"><span>No client</span><span>No agency</span><span>Zero coding background</span></div>
-        <div class="hop-liquid">
-          <div class="hop-liquid-inner">
-            <span class="hop-why-label">Why I built these</span>
-            <p>I kept noticing the same thing<br>People have a problem<br>They find information about it<br>And then nothing happens</p>
-            <p class="hop-liquid-gap">The gap is not information<br>The gap is what comes after</p>
-            <p>So instead of just diagnosing problems<br>I started building the smallest working system<br>to test whether my thinking was right</p>
-          </div>
-        </div>
-        <div class="hop-differentiator">
-          <span class="hop-diff-label">How I approach it</span>
-          <p>Find the moment where things break</p>
-          <p>Strip everything unnecessary</p>
-          <p>Build one clear output</p>
-          <p>Test it</p>
-          <p>Refine based on what actually works</p>
-        </div>
-        <a href="apps-tools.html" class="btn btn-fill">Explore the Build &#x2192;</a>
-      </div>
-      <div>
-        <div class="hop-comps">
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="01">01</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Problem Identification</strong></span><span class="hop-lbl-sub">where the real friction is</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="02">02</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Behavior Mapping</strong></span><span class="hop-lbl-sub">what people are actually doing</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="03">03</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Output Design</strong></span><span class="hop-lbl-sub">the simplest thing that fixes it</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="04">04</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Build and Test</strong></span><span class="hop-lbl-sub">AI as the execution layer</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="05">05</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Iterate</strong></span><span class="hop-lbl-sub">refine based on what actually works</span></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="hop-wrap fi" style="margin-top:48px;">
-    <div class="hop-orb hop-orb-1"></div>
-    <div class="hop-orb hop-orb-2"></div>
-    <div class="hop-spotlight"></div>
-    <div class="hop-inner">
-      <div>
-        <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
-        <h2 class="hop-title"><span>House of Pause</span></h2>
-        <p class="hop-subtitle-small">A complete brand system built from scratch</p>
-        <div class="hop-constraints"><span>No client</span><span>No brief</span><span>No constraints</span></div>
-        <p class="hop-just">Just the problem and how I chose to solve it</p>
-        <div class="hop-liquid">
-          <div class="hop-liquid-inner">
-            <span class="hop-why-label">Why I built this</span>
-            <p>Interior design brands focus on aesthetics<br>Not how a space actually feels to live in</p>
-            <p class="hop-liquid-gap">That gap became the starting point</p>
-            <p>This is not just visuals<br>This is building a brand from insight to execution</p>
-            <p>Every part connects<br>Nothing exists without a reason</p>
-          </div>
-        </div>
-        <div class="hop-differentiator">
-          <span class="hop-diff-label">Why interior design</span>
-          <p>High-intent, high-ticket category<br>But most brands still communicate like catalogs</p>
-          <p>This project explores how to change that</p>
-        </div>
-        <a href="house-of-pause.html" class="btn btn-fill">View Complete System &#x2192;</a>
-      </div>
-      <div>
-        <div class="hop-logo-wrap" style="margin-bottom:28px;display:flex;align-items:center;justify-content:center;cursor:default;">
-          <img src="assets/logos/House of Pause.png" alt="House of Pause" style="max-width:180px;max-height:100px;object-fit:contain;opacity:0.92;filter:drop-shadow(0 0 18px rgba(5,150,105,0.3));">
-        </div>
-        <div class="hop-comps">
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="01">01</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Market</strong></span><span class="hop-lbl-sub">What the category gets wrong</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="02">02</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Audience</strong></span><span class="hop-lbl-sub">Defined by situation, not demographics</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="03">03</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Positioning</strong></span><span class="hop-lbl-sub">Owning a space no one is speaking from</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="04">04</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Funnel</strong></span><span class="hop-lbl-sub">How attention becomes intent</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="05">05</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Content System</strong></span><span class="hop-lbl-sub">Each piece has a job</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="06">06</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Creative Direction</strong></span><span class="hop-lbl-sub">Why it looks and feels this way</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="07">07</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Execution</strong></span><span class="hop-lbl-sub">Built as a system, not random content</span></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="hop-wrap fi" style="margin-top:48px;">
-    <div class="hop-orb hop-orb-1"></div>
-    <div class="hop-orb hop-orb-2"></div>
-    <div class="hop-spotlight"></div>
-    <div class="hop-inner">
-      <div>
-        <div class="hop-badge"><span class="hop-dot"></span> Methodology</div>
-        <h2 class="hop-title"><span>VSL Creative Strategy</span></h2>
-        <p class="hop-subtitle-small">Conversion Architecture for a Trading Education Creator</p>
-        <div class="hop-constraints"><span>One video</span><span>Cold traffic</span><span>No paid ads</span></div>
-        <p class="hop-just">The brief should have existed before the camera turned on</p>
-        <div class="hop-liquid">
-          <div class="hop-liquid-inner">
-            <span class="hop-why-label">Why I Built This</span>
-            <p>One video. Cold traffic. Course purchase.</p>
-            <p class="hop-liquid-gap">Making content is not the same as making content that converts.</p>
-            <p>I delivered the work<br>Then watched it back as a strategist</p>
-            <p>Not the editing. The structure.<br>I rebuilt the brief from scratch.</p>
-          </div>
-        </div>
-        <div class="hop-differentiator">
-          <span class="hop-diff-label">What I Built</span>
-          <p><strong>Narrative Architecture</strong><br>Every section mapped to a conversion job not just a content beat</p>
-          <p><strong>Conversion Audit</strong><br>Timestamp breakdown of where the viewer dropped and why</p>
-          <p><strong>Rebuilt Brief</strong><br>The strategy that should have existed before production started</p>
-        </div>
-        <a href="vsl-creative-strategy.html" class="btn btn-fill">View Creative Strategy &#x2192;</a>
-      </div>
-      <div>
-        <div class="hop-comps">
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="01">01</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Audience Insight</strong></span><span class="hop-lbl-sub">Who the buyer is, what they fear, what they need to believe</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="02">02</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Narrative Architecture</strong></span><span class="hop-lbl-sub">Every section mapped to a specific conversion job</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="03">03</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Conversion Breakdown</strong></span><span class="hop-lbl-sub">Where the video lost the viewer and exactly why</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="04">04</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Highest Impact Fixes</strong></span><span class="hop-lbl-sub">The three changes that would have moved the needle most</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="05">05</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Rebuilt Creative Brief</strong></span><span class="hop-lbl-sub">The strategy document that should have existed first</span></span></div>
-          <div class="hop-comp hop-reveal"><span class="hop-num" data-num="06">06</span><span class="hop-lbl"><span class="hop-lbl-wrap"><strong>Rebuilt Script Structure</strong></span><span class="hop-lbl-sub">Full arc from pattern interrupt to spoken CTA</span></span></div>
-        </div>
-      </div>
-    </div>
+  <h2 class="s-h2">Three ways to see <span>how I work</span></h2>
+  <p class="s-sub">Each one is a different category. The thinking behind all three is the same.</p>
+  <div class="think-grid">
+    <a href="apps-tools.html" class="think-card fi">
+      <span class="think-num">01</span>
+      <span class="think-tag">Problem to Product</span>
+      <div class="think-title">Apps and Tools</div>
+      <p class="think-desc">I spotted behaviours nobody was building for. Zero coding background. AI as the execution layer. Two working prototypes that came from personal frustration, not a brief.</p>
+      <div class="think-cta">Explore the Build &#x2192;</div>
+    </a>
+    <a href="house-of-pause.html" class="think-card fi d1">
+      <span class="think-num">02</span>
+      <span class="think-tag">Brand System</span>
+      <div class="think-title">House of Pause</div>
+      <p class="think-desc">A complete brand built from a gap in interior design. No client, no brief, no constraints. Research first. Every part connects back to one insight.</p>
+      <div class="think-cta">See the Full System &#x2192;</div>
+    </a>
+    <a href="vsl-creative-strategy.html" class="think-card fi d2">
+      <span class="think-num">03</span>
+      <span class="think-tag">Conversion Strategy</span>
+      <div class="think-title">VSL Creative Strategy</div>
+      <p class="think-desc">One video. Cold traffic. I watched it back as a strategist, found where it lost the viewer, and rebuilt the brief from scratch.</p>
+      <div class="think-cta">See the Strategy &#x2192;</div>
+    </a>
   </div>
 </section>
 
@@ -906,7 +842,8 @@ function fp(cat, btn) {
   document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.proj-card').forEach(c => {
-    c.style.display = (cat==='all' || c.dataset.cat.includes(cat)) ? 'flex' : 'none';
+    const el = c.closest('.proj-folder-wrap') || c;
+    el.style.display = (cat==='all' || c.dataset.cat.includes(cat)) ? '' : 'none';
   });
 }
 
