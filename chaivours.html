@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaivours Brand Strategy — Anupam Nath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px;}
+:root{
+--bg:#ffffff;--bg2:#f0fdf4;--bg3:#f8fafc;--card:#f8fafc;--card2:#ecfdf5;
+--blue:#059669;--blue2:#10b981;--blue3:#34d399;
+--glow:rgba(5,150,105,0.15);--border:rgba(5,150,105,0.15);--border2:rgba(0,0,0,0.08);
+--white:#0f172a;--cream:#1e293b;--muted:#475569;--dim:#475569;--dimmer:#64748b;
+--sans:'Plus Jakarta Sans',system-ui,sans-serif}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
+#loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .6s,visibility .6s}
+#loader.done{opacity:0;visibility:hidden}
+.ld-name{font-size:15px;font-weight:700;color:var(--white);letter-spacing:-.01em}
+.ld-name span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ld-bar-wrap{width:160px;height:2px;background:rgba(5,150,105,.12);border-radius:2px;overflow:hidden}
+.ld-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue3));border-radius:2px}
+.ld-pct{font-size:10px;color:var(--dimmer);letter-spacing:.1em}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:64px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:height .3s}
+nav.scrolled{height:56px;background:rgba(255,255,255,0.98)}
+.nav-logo{font-size:15px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.02em}
+.nav-logo span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-back{font-size:13px;color:var(--dim);text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:8px;transition:color .2s;font-weight:500}
+.nav-back:hover{color:var(--blue2)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-label{font-size:12px;color:var(--dimmer);letter-spacing:.03em;font-weight:500}
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:110px 56px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--border2)}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+.b1{width:600px;height:600px;background:rgba(5,150,105,.07);top:-150px;left:-100px;animation:bm 12s ease-in-out infinite}
+.b2{width:400px;height:400px;background:rgba(52,211,153,.05);bottom:-80px;right:-80px;animation:bm 16s ease-in-out infinite reverse}
+@keyframes bm{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.06)}66%{transform:translate(-20px,20px) scale(.95)}}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(5,150,105,.07);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:24px;opacity:0;animation:fadeUp .7s ease .2s forwards;font-weight:600}
+.ew-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-case-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2);margin-bottom:16px;opacity:0;animation:fadeUp .6s ease .35s forwards;font-weight:600}
+.hero-title{font-size:clamp(44px,7vw,88px);font-weight:900;line-height:1.02;letter-spacing:-.04em;color:var(--white);margin-bottom:16px;opacity:0;animation:fadeUp .8s ease .45s forwards}
+.hero-title .grad{background:linear-gradient(135deg,var(--blue) 0%,var(--blue3) 45%,var(--blue2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dimmer);margin-bottom:28px;opacity:0;animation:fadeUp .6s ease .55s forwards;font-weight:600}
+.hero-desc{font-size:16px;color:var(--dim);line-height:1.8;max-width:580px;margin-bottom:44px;opacity:0;animation:fadeUp .7s ease .65s forwards}
+.hero-desc strong{color:var(--cream);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;opacity:0;animation:fadeUp .7s ease .75s forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(130deg,var(--blue),var(--blue2));color:#fff;padding:13px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 0 28px rgba(5,150,105,.3);transition:all .25s;font-family:var(--sans)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(5,150,105,.45)}
+.btn-secondary{border:1px solid var(--border2);color:var(--cream);padding:13px 28px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;transition:all .25s;font-family:var(--sans);background:transparent}
+.btn-secondary:hover{border-color:rgba(5,150,105,.35);background:rgba(5,150,105,.05);transform:translateY(-2px)}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--border);border-radius:12px;background:rgba(5,150,105,.04);backdrop-filter:blur(12px);overflow:hidden;max-width:700px;opacity:0;animation:fadeUp .7s ease .9s forwards}
+.hm-item{flex:1;min-width:100px;padding:16px 20px;text-align:center;border-right:1px solid var(--border);transition:background .2s}
+.hm-item:last-child{border-right:none}
+.hm-item:hover{background:rgba(5,150,105,.06)}
+.hm-n{font-size:12px;font-weight:700;color:var(--white);display:block;line-height:1;margin-bottom:4px}
+.hm-l{font-size:10px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 2s forwards}
+.sh-txt{font-size:10px;color:var(--dimmer);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.sh-arrow{width:22px;height:36px;border:1px solid var(--border);border-radius:11px;display:flex;align-items:flex-start;justify-content:center;padding-top:5px}
+.sh-dot{width:3px;height:3px;background:var(--blue2);border-radius:50%;animation:sb 1.8s ease-in-out infinite}
+@keyframes sb{0%,100%{transform:translateY(0);opacity:1}100%{transform:translateY(14px);opacity:0}}
+.marquee-section{overflow:hidden;padding:16px 0;border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);background:rgba(5,150,105,.02)}
+.marquee-track{display:flex;width:max-content;animation:marquee 26s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.m-item{display:flex;align-items:center;gap:12px;padding:0 28px;white-space:nowrap;font-size:11px;color:var(--dimmer);letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.m-dot{width:4px;height:4px;background:var(--blue);border-radius:50%;flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ps{padding:88px 56px;position:relative;z-index:1;border-bottom:1px solid var(--border2)}
+.ps:nth-child(even){background:var(--bg2)}
+.sec-tag{font-size:11px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-weight:700}
+.sec-tag::before{content:'';width:20px;height:1px;background:linear-gradient(to right,var(--blue),var(--blue2))}
+.sec-title{font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--white);margin-bottom:12px}
+.sec-title span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.sec-sub{font-size:15px;color:var(--dim);max-width:520px;margin-bottom:52px;line-height:1.75}
+.belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border2);border-radius:10px;overflow:hidden}
+.belief-card{background:var(--card);padding:32px 28px;transition:background .4s,transform .4s,box-shadow .4s;position:relative;overflow:hidden;perspective:1000px;}
+.belief-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue3));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(0.16,1,0.3,1)}
+.belief-card:hover{background:var(--card2);transform:perspective(1000px) rotateY(-8deg) rotateX(3deg) translateZ(20px);box-shadow:0 20px 60px rgba(5,150,105,0.25)}
+.belief-card:hover::before{transform:scaleX(1)}
+.bc-icon{font-size:26px;margin-bottom:14px;display:block}
+.bc-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.3}
+.bc-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.bc-desc strong{color:var(--cream);font-weight:600}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border2);border-radius:10px;overflow:hidden}
+.pillar-card{background:var(--card);padding:28px 24px;transition:background .4s,transform .4s,box-shadow .4s;perspective:1000px;}
+.pillar-card:hover{background:var(--card2);transform:perspective(1000px) rotateY(-6deg) rotateX(3deg) translateZ(16px);box-shadow:0 16px 48px rgba(5,150,105,0.2)}
+.pc-label{font-size:10px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.pc-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:8px}
+.pc-desc{font-size:13px;color:var(--muted);line-height:1.65}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border2);border-radius:10px;overflow:hidden}
+.aud-card{background:var(--card);padding:28px 26px;transition:background .4s,transform .4s,box-shadow .4s;perspective:1000px;}
+.aud-card:hover{background:var(--card2);transform:perspective(1000px) rotateX(-6deg) rotateZ(2deg) translateZ(15px);box-shadow:0 15px 45px rgba(5,150,105,0.2)}
+.aud-icon{font-size:22px;margin-bottom:14px;display:block}
+.aud-title{font-size:11px;color:var(--blue2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.aud-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.aud-desc strong{color:var(--cream);font-weight:600}
+.principle-block{padding:28px 36px;border-left:2px solid var(--blue);background:rgba(5,150,105,.06);border-radius:0 8px 8px 0;margin-bottom:32px}
+.pb-label{font-size:11px;color:var(--blue2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.pb-text{font-size:20px;font-weight:700;color:var(--white);line-height:1.4}
+.persona-table{width:100%;border-collapse:collapse;margin-bottom:40px;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.persona-table tr{border-bottom:1px solid var(--border)}
+.persona-table tr:last-child{border-bottom:none}
+.persona-table td{padding:14px 20px;font-size:13px;line-height:1.6}
+.persona-table td:first-child{font-size:11px;font-weight:700;color:var(--blue2);letter-spacing:.08em;text-transform:uppercase;width:180px;background:rgba(5,150,105,.04)}
+.persona-table td:last-child{color:var(--cream)}
+.funnel-list{display:flex;flex-direction:column;gap:3px}
+.funnel-card{background:var(--card);border:1px solid rgba(5,150,105,0.15);border-radius:10px;padding:28px 32px;transition:background .3s,box-shadow .3s;position:relative;overflow:hidden}
+.funnel-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.funnel-card.top::before{background:linear-gradient(180deg,var(--blue),var(--blue3))}
+.funnel-card.mid::before{background:linear-gradient(180deg,var(--blue2),var(--blue3))}
+.funnel-card.conv::before{background:linear-gradient(180deg,var(--blue3),var(--blue2))}
+.funnel-card.ret::before{background:linear-gradient(180deg,var(--blue2),var(--blue))}
+.funnel-card:hover{background:var(--card2);box-shadow:0 12px 40px rgba(5,150,105,0.15)}
+.fc-label{font-size:10px;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.fc-content{font-size:14px;color:var(--cream);font-weight:600;margin-bottom:6px;line-height:1.5}
+.fc-goal{font-size:12px;color:var(--muted);font-style:italic;line-height:1.5;margin-bottom:6px}
+.fc-logic{font-size:12px;color:var(--muted);line-height:1.6}
+.tl-list{display:flex;flex-direction:column;gap:3px}
+.tl-card{background:linear-gradient(135deg,rgba(255,255,255,0.9) 0%,rgba(240,253,244,0.85) 100%);backdrop-filter:blur(10px);border:1px solid rgba(5,150,105,0.15);display:grid;grid-template-columns:100px 1fr;gap:24px;padding:24px 28px;border-radius:10px;transition:border-color .4s,box-shadow .4s,transform .4s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden;box-shadow:0 2px 10px rgba(5,150,105,0.07),inset 0 1px 0 rgba(255,255,255,0.9);opacity:0;transform:translateX(-18px);}
+.tl-card.reveal.in{opacity:1;transform:translateX(0);}
+.tl-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--blue),var(--blue3));border-radius:3px 0 0 3px;transform:scaleY(0);transform-origin:bottom;transition:transform .35s cubic-bezier(0.16,1,0.3,1)}
+.tl-card:hover{background:rgba(236,253,245,0.95);border-color:rgba(5,150,105,0.35);box-shadow:0 16px 48px rgba(5,150,105,0.2);transform:translateX(6px);}
+.tl-card:hover::before,.tl-card.in::before{transform:scaleY(1)}
+.tl-left{position:relative;z-index:1}
+.tl-step{font-size:28px;font-weight:900;background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:1;margin-bottom:6px}
+.tl-beat{font-size:10px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+.tl-right{position:relative;z-index:1}
+.tl-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px}
+.tl-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.tl-desc strong{color:var(--cream);font-weight:600}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border2);border-radius:10px;overflow:hidden}
+.metric-card{background:var(--card);padding:28px 20px;text-align:center;transition:background .25s}
+.metric-card:hover{background:var(--card2)}
+.metric-n{font-size:32px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:1;margin-bottom:4px}
+.metric-l{font-size:10px;color:var(--dimmer);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.metric-sub{font-size:11px;color:var(--muted);margin-top:4px;display:block}
+.learning-list{display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+.learning-block{padding:22px 28px;border-left:2px solid var(--blue);background:rgba(5,150,105,.04);border-radius:0 8px 8px 0;transition:background .2s}
+.learning-block:hover{background:rgba(5,150,105,.08)}
+.lb-title{font-size:13px;font-weight:700;color:var(--blue2);margin-bottom:6px;letter-spacing:.02em}
+.lb-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.next-block{background:var(--white);border-radius:12px;padding:28px 32px}
+.next-label{font-size:11px;color:var(--blue3);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.next-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.next-list li{font-size:13px;color:rgba(255,255,255,0.82);line-height:1.65;display:flex;align-items:flex-start;gap:10px}
+.next-list li::before{content:'→';color:var(--blue3);font-weight:700;flex-shrink:0;margin-top:1px}
+#closing{padding:88px 56px;text-align:center;background:var(--bg2);border-bottom:1px solid var(--border2)}
+.closing-inner{max-width:700px;margin:0 auto}
+.closing-quote{font-size:clamp(20px,2.5vw,30px);font-weight:700;line-height:1.4;color:var(--white);margin-bottom:20px;letter-spacing:-.02em}
+.closing-quote span{background:linear-gradient(130deg,var(--blue),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.closing-byline{font-size:12px;color:var(--dimmer);letter-spacing:.08em;text-transform:uppercase;margin-bottom:40px;font-weight:500}
+.closing-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{padding:22px 56px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+.foot-l{font-size:12px;color:var(--dimmer);font-weight:500}
+.foot-r{font-size:12px;color:var(--dimmer);text-decoration:none;transition:color .2s;font-weight:500}
+.foot-r:hover{color:var(--blue2)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .ps,#hero,#closing,footer{padding-left:20px;padding-right:20px}
+  #hero{padding-top:100px;padding-bottom:60px}
+  .belief-grid,.pillar-grid{grid-template-columns:1fr}
+  .aud-grid{grid-template-columns:1fr}
+  .metrics-row{grid-template-columns:1fr 1fr}
+  .tl-card{grid-template-columns:1fr;gap:8px}
+  .hero-meta{flex-direction:column}
+  .hm-item{border-right:none;border-bottom:1px solid var(--border)}
+  .persona-table td:first-child{width:120px}
+  footer{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="loader">
+  <div class="ld-name">Anupam <span>Nath</span></div>
+  <div class="ld-bar-wrap"><div class="ld-bar" id="lbar"></div></div>
+  <div class="ld-pct" id="lpct">0%</div>
+</div>
+<nav id="nav">
+  <a href="index.html" class="nav-back">&#8592; Portfolio</a>
+  <div class="nav-right">
+    <span class="nav-label">Chaivours &middot; Brand Strategy Case Study</span>
+    <a href="index.html" class="nav-logo">Anupam <span>Nath</span></a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="ew-dot"></span>Case Study &middot; Brand Strategy</div>
+    <div class="hero-case-label">B2C &middot; F&amp;B &middot; Tier-3 &middot; Instagram &middot; Zero Ad Spend</div>
+    <h1 class="hero-title">Chaivours.<br><span class="grad">Unknown shop</span><br>to community.</h1>
+    <div class="hero-sub">Full brand strategy &middot; Positioning &middot; Content system &middot; UGC engine</div>
+    <p class="hero-desc">Built the entire brand from scratch for a Tier-3 chai shop — positioning, content pillars, Instagram growth, and a UGC system that made customers promote the brand themselves. <strong>1,500+ followers. 170+ posts. Rs.0 ad spend.</strong></p>
+    <div class="hero-btns">
+      <a href="#s1" class="btn-primary">Read the Strategy &#8595;</a>
+      <a href="https://www.instagram.com/chaivours/" target="_blank" class="btn-secondary">View Instagram &#8599;</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hm-item"><span class="hm-n">Full Build</span><span class="hm-l">Role</span></div>
+      <div class="hm-item"><span class="hm-n">1,500+</span><span class="hm-l">Followers</span></div>
+      <div class="hm-item"><span class="hm-n">170+</span><span class="hm-l">Posts</span></div>
+      <div class="hm-item"><span class="hm-n">UGC</span><span class="hm-l">Customers Tagged</span></div>
+      <div class="hm-item"><span class="hm-n">Rs.0</span><span class="hm-l">Ad Spend</span></div>
+      <div class="hm-item"><span class="hm-n">Tier-3</span><span class="hm-l">Market</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-arrow"><div class="sh-dot"></div></div></div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="m-item"><span class="m-dot"></span>Brand Positioning</div><div class="m-item"><span class="m-dot"></span>Community Building</div><div class="m-item"><span class="m-dot"></span>Content Pillars</div><div class="m-item"><span class="m-dot"></span>UGC Engine</div><div class="m-item"><span class="m-dot"></span>Instagram Growth</div><div class="m-item"><span class="m-dot"></span>Gen-Z Strategy</div><div class="m-item"><span class="m-dot"></span>Zero Ad Spend</div><div class="m-item"><span class="m-dot"></span>Cultural Relevance</div><div class="m-item"><span class="m-dot"></span>ICP Research</div><div class="m-item"><span class="m-dot"></span>Organic Footfall</div>
+    <div class="m-item"><span class="m-dot"></span>Brand Positioning</div><div class="m-item"><span class="m-dot"></span>Community Building</div><div class="m-item"><span class="m-dot"></span>Content Pillars</div><div class="m-item"><span class="m-dot"></span>UGC Engine</div><div class="m-item"><span class="m-dot"></span>Instagram Growth</div><div class="m-item"><span class="m-dot"></span>Gen-Z Strategy</div><div class="m-item"><span class="m-dot"></span>Zero Ad Spend</div><div class="m-item"><span class="m-dot"></span>Cultural Relevance</div><div class="m-item"><span class="m-dot"></span>ICP Research</div><div class="m-item"><span class="m-dot"></span>Organic Footfall</div>
+  </div>
+</div>
+
+<div class="ps" id="s1">
+  <div class="sec-tag">01 The Problem</div>
+  <h2 class="sec-title">Not a visibility problem. <span>A relevance problem.</span></h2>
+  <p class="sec-sub">The F&B market in Tier-3 Indian cities is simultaneously oversaturated and underleveraged. Chai shops exist on every corner — but almost none of them have a brand. The real problem ran deeper than being unknown.</p>
+  <div class="principle-block reveal">
+    <div class="pb-label">The Diagnostic Insight</div>
+    <div class="pb-text">"The problem was not that nobody knew about ChaiVours. The problem was that even if they did know, they had no reason to feel anything about it. Brand strategy had to solve for identity before it solved for awareness."</div>
+  </div>
+  <div class="belief-grid reveal">
+    <div class="belief-card">
+      <span class="bc-icon">&#x274C;</span>
+      <div class="bc-title">No Differentiation</div>
+      <p class="bc-desc">Every chai shop in a Tier-3 city claims to be good. Product quality alone gives no reason to choose one brand over another. ChaiVours needed a reason <strong>beyond the chai.</strong></p>
+    </div>
+    <div class="belief-card d1">
+      <span class="bc-icon">&#x274C;</span>
+      <div class="bc-title">No Cultural Fit</div>
+      <p class="bc-desc">Most F&B brands in smaller cities either look like corporate chains or feel completely generic. <strong>The Gen-Z and college audience had no brand in this category that spoke their language</strong> or reflected their identity.</p>
+    </div>
+    <div class="belief-card d2">
+      <span class="bc-icon">&#x274C;</span>
+      <div class="bc-title">No Community</div>
+      <p class="bc-desc">Without a loyal group of customers who feel ownership over the brand, a chai shop is just a transactional space. The goal had to be making ChaiVours feel like <strong>a place — an identity — not just a shop.</strong></p>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">02 Strategic Insight</div>
+  <h2 class="sec-title">Build the tribe first. <span>Sell second.</span></h2>
+  <p class="sec-sub">One insight shaped every decision that followed — and it came directly from the audience research.</p>
+  <div class="principle-block reveal">
+    <div class="pb-label">The Core Insight</div>
+    <div class="pb-text">The audience does not return to a chai shop because the chai is better. They return because the place feels like them. Brand loyalty in this category is driven by identity, not product.</div>
+  </div>
+  <div class="aud-grid reveal">
+    <div class="aud-card">
+      <span class="aud-icon">&#128161;</span>
+      <div class="aud-title">What this meant for content</div>
+      <p class="aud-desc">Do not lead with product. Lead with identity. Cultural content had to come first — building a brand personality the audience felt was theirs — before a single product post was published.</p>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">&#128241;</span>
+      <div class="aud-title">What this meant for the platform</div>
+      <p class="aud-desc"><strong>Instagram was the only platform that mattered.</strong> This is where the 17–25 audience discovers, expresses identity, and shares experiences. Every rupee of creative effort went here.</p>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">03 Target Audience</div>
+  <h2 class="sec-title">Who we were <span>really talking to.</span></h2>
+  <p class="sec-sub">Not a demographic. A specific person — Arjun or Priya — in a specific emotional state, making a specific decision about where to spend their afternoon.</p>
+  <table class="persona-table reveal">
+    <tr><td>Persona</td><td>Arjun / Priya — The Local Hangout Seeker</td></tr>
+    <tr><td>Age</td><td>17–25 years</td></tr>
+    <tr><td>Location</td><td>Tier-3 city — college-going or in first job</td></tr>
+    <tr><td>Spending</td><td>Rs.50 to Rs.200 per outing — price-conscious, every purchase is considered</td></tr>
+    <tr><td>Social Behaviour</td><td>Group-oriented. Hangs out in circles of 3–6 friends. Values shared experiences over solo ones.</td></tr>
+    <tr><td>Digital Behaviour</td><td>Instagram-first. Consumes Reels heavily. Shares content via WhatsApp.</td></tr>
+    <tr><td>Core Motivation</td><td>A hangout spot that feels like "us" — local identity, not corporate</td></tr>
+    <tr><td>Core Fear</td><td>Looking uncool in front of peers. Spending money on something not worth it.</td></tr>
+    <tr><td>Trust Mechanism</td><td>Friends tagging the place. Peer recommendations. Familiar local faces in content.</td></tr>
+    <tr><td>Purchase Trigger</td><td>A friend shows them a post or tags them in a Reel from the brand.</td></tr>
+  </table>
+  <div class="aud-grid reveal">
+    <div class="aud-card">
+      <span class="aud-icon">&#128247;</span>
+      <div class="aud-title">Instagram</div>
+      <p class="aud-desc">Primary platform. Reels, Stories, Explore page. This is where discovery and identity expression happen. The audience <strong>shares to Instagram to show who they are.</strong></p>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">&#128172;</span>
+      <div class="aud-title">WhatsApp</div>
+      <p class="aud-desc">Shares experiences immediately after a visit. Tags friends. Forwards content from brands they like. <strong>The invisible distribution layer.</strong></p>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">&#128249;</span>
+      <div class="aud-title">YouTube Shorts</div>
+      <p class="aud-desc">Passive consumption. Trend discovery. Where they find sounds and formats <strong>before they reach Instagram.</strong> A leading indicator of what will perform next.</p>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">&#128205;</span>
+      <div class="aud-title">In-Person UGC</div>
+      <p class="aud-desc">Tags location and brand organically after visiting. <strong>This is the highest trust signal in the category</strong> — real people showing real visits without being asked.</p>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">04 Brand Positioning</div>
+  <h2 class="sec-title">ChaiVours is not just <span>a chai shop.</span></h2>
+  <p class="sec-sub">It is the hangout brand for young people who want a space that feels like them — warm, local, and real. Every content decision was made through this lens.</p>
+  <div class="aud-grid reveal" style="margin-bottom:48px">
+    <div class="aud-card">
+      <div class="aud-title">Tone of Voice</div>
+      <p class="aud-desc">Gen-Z, regional humour, casual and warm. Every caption sounds like a friend texting — not a brand posting. Never corporate. Never generic.</p>
+    </div>
+    <div class="aud-card">
+      <div class="aud-title">Visual Identity</div>
+      <p class="aud-desc">Bold colours, food-first imagery, meme-friendly formats. Every post looks <strong>native to Instagram</strong> — designed to feel like content, not an ad.</p>
+    </div>
+    <div class="aud-card">
+      <div class="aud-title">Content Feel</div>
+      <p class="aud-desc">Like a friend's Instagram account, not a business running ads. Never salesy. Always relatable. The moment it feels like a brand pushing product, it loses.</p>
+    </div>
+    <div class="aud-card">
+      <div class="aud-title">Core Emotion</div>
+      <p class="aud-desc"><strong>Belonging.</strong> This place is yours. The content reinforces that identity at every touchpoint — so the audience feels ownership before they even visit.</p>
+    </div>
+  </div>
+  <div class="sec-tag" style="margin-top:0">Content Pillars</div>
+  <h3 style="font-size:22px;font-weight:800;color:var(--white);letter-spacing:-.02em;margin-bottom:10px">Six pillars. Every post had a job.</h3>
+  <p style="font-size:14px;color:var(--dim);max-width:480px;margin-bottom:36px;line-height:1.7">Every piece of content published for ChaiVours was mapped to one of six defined pillars. This ensured the brand never drifted into random posting.</p>
+  <div class="pillar-grid reveal">
+    <div class="pillar-card">
+      <div class="pc-label">Pillar 01</div>
+      <div class="pc-title">Culture &amp; Identity</div>
+      <p class="pc-desc">Gen-Z tone, regional humour, meme formats. Makes the audience feel the brand is one of them. The highest-reach pillar.</p>
+    </div>
+    <div class="pillar-card d1">
+      <div class="pc-label">Pillar 02</div>
+      <div class="pc-title">Product Spotlight</div>
+      <p class="pc-desc">Hero SKU content — Elaichi Chai, Zinger Burger, seasonal specials. Always shown in context of a hangout, never as a plain product shot.</p>
+    </div>
+    <div class="pillar-card d2">
+      <div class="pc-label">Pillar 03</div>
+      <div class="pc-title">Behind the Scenes</div>
+      <p class="pc-desc">The team, the kitchen, the prep. Makes the audience feel like insiders. Builds warmth and trust at the same time.</p>
+    </div>
+    <div class="pillar-card d3">
+      <div class="pc-label">Pillar 04</div>
+      <div class="pc-title">User Generated Content</div>
+      <p class="pc-desc">Reposting customer tags and visits. The most powerful trust signal. Shows real people choosing the brand without being asked.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pc-label">Pillar 05</div>
+      <div class="pc-title">Local &amp; Seasonal</div>
+      <p class="pc-desc">City-specific content, local events, festival tie-ins. Reinforces that this brand belongs to this specific community.</p>
+    </div>
+    <div class="pillar-card d1">
+      <div class="pc-label">Pillar 06</div>
+      <div class="pc-title">Engagement</div>
+      <p class="pc-desc">Questions, polls, this-or-that formats. Keeps the audience active and builds a sense of conversation with the brand.</p>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">05 Content Funnel</div>
+  <h2 class="sec-title">From stranger to <span>brand ambassador.</span></h2>
+  <p class="sec-sub">This was not random posting. Every content type served a specific stage designed to move the audience from first discovery all the way to becoming a loyal advocate who brings others in.</p>
+  <div class="funnel-list reveal">
+    <div class="funnel-card top">
+      <div class="fc-label">Top Funnel — Awareness</div>
+      <div class="fc-content">Trend-aligned Reels &middot; Meme formats &middot; Regional humour &middot; City-specific content &middot; Relatable Gen-Z situations</div>
+      <div class="fc-goal">Objective: Get discovered. Make the brand visible to people who have never heard of ChaiVours.</div>
+      <div class="fc-logic">Cultural content travels. Funny, relatable, or locally relevant content gets shared by people who have not visited yet. This is how strangers find the brand.</div>
+    </div>
+    <div class="funnel-card mid">
+      <div class="fc-label">Mid Funnel — Consideration</div>
+      <div class="fc-content">Product Spotlight posts &middot; Behind the Scenes content &middot; Staff and ambience videos &middot; Customer visit content</div>
+      <div class="fc-goal">Objective: Convert curious followers into people who actively want to visit.</div>
+      <div class="fc-logic">Once someone follows, they need reasons to want to come in. Showing the product, the people, and the vibe builds the desire to experience it in person.</div>
+    </div>
+    <div class="funnel-card conv">
+      <div class="fc-label">Conversion — Footfall</div>
+      <div class="fc-content">Location tags &middot; Limited-time menu items &middot; Special combos &middot; Event-based content (chai with friends, study sessions)</div>
+      <div class="fc-goal">Objective: Turn digital engagement into a physical visit to the store.</div>
+      <div class="fc-logic">Content that creates urgency or FOMO drives the final step from follower to customer. A new flavour or a limited item gives people a reason to come in now.</div>
+    </div>
+    <div class="funnel-card ret">
+      <div class="fc-label">Retention &amp; Advocacy — UGC Engine</div>
+      <div class="fc-content">Resharing UGC &middot; Celebrating regulars &middot; Making customers feel seen and special</div>
+      <div class="fc-goal">Objective: Turn customers into brand advocates who bring others in for free.</div>
+      <div class="fc-logic">When customers are reshared or celebrated, they feel ownership of the brand. They tag friends, bring groups, and become the brand's most powerful marketing channel — at zero cost.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">06 Execution</div>
+  <h2 class="sec-title">Built everything <span>from scratch.</span></h2>
+  <p class="sec-sub">Strategy without execution is just a document. Seven things were built, created, and published to bring the ChaiVours brand strategy to life — every element executed alone.</p>
+  <div class="tl-list">
+    <div class="tl-card reveal d1">
+      <div class="tl-left"><span class="tl-step">01</span><span class="tl-beat">Audit</span></div>
+      <div class="tl-right">
+        <div class="tl-title">Brand Audit &amp; Diagnosis</div>
+        <p class="tl-desc">Before creating anything, I audited what existed — the physical brand, visual style, existing customer base, and competitive landscape. I interviewed the client about who their regulars were, what SKUs sold best offline, and what they wanted the brand to feel like. This became the foundation for everything.</p>
+      </div>
+    </div>
+    <div class="tl-card reveal d2">
+      <div class="tl-left"><span class="tl-step">02</span><span class="tl-beat">Research</span></div>
+      <div class="tl-right">
+        <div class="tl-title">Audience Research</div>
+        <p class="tl-desc">Mapped the target audience across Instagram by studying competitor accounts in similar Tier-3 markets, analysing comment sections, and observing what content local youth engaged with. Built a detailed ICP covering <strong>demographics, psychographics, online behaviour, trust signals, and purchase triggers.</strong></p>
+      </div>
+    </div>
+    <div class="tl-card reveal d3">
+      <div class="tl-left"><span class="tl-step">03</span><span class="tl-beat">Positioning</span></div>
+      <div class="tl-right">
+        <div class="tl-title">Brand Positioning</div>
+        <p class="tl-desc">Defined the brand positioning — ChaiVours as a cultural hangout identity, not just a chai shop. Wrote the brand voice guidelines (Gen-Z tone, regional humour, warm and casual), defined the 6 content pillars, and created the content framework that all future posts would follow.</p>
+      </div>
+    </div>
+    <div class="tl-card reveal">
+      <div class="tl-left"><span class="tl-step">04</span><span class="tl-beat">Mapping</span></div>
+      <div class="tl-right">
+        <div class="tl-title">SKU Identification &amp; Content Mapping</div>
+        <p class="tl-desc">Analysed offline sales data with the client to identify the top-selling products. Mapped each hero SKU to a content format — product spotlight videos, before-and-after prep content, and aesthetic flat-lay posts. <strong>Critically, product content was held back until cultural positioning content had built enough brand equity first.</strong></p>
+      </div>
+    </div>
+    <div class="tl-card reveal">
+      <div class="tl-left"><span class="tl-step">05</span><span class="tl-beat">Publishing</span></div>
+      <div class="tl-right">
+        <div class="tl-title">Content Production &amp; Publishing</div>
+        <p class="tl-desc">Produced and published <strong>170+ posts</strong> across the ChaiVours Instagram account. This included trend-aligned Reels, product spotlight posts, behind-the-scenes content, seasonal content, and engagement formats. Each post was written in the defined brand voice and designed to serve a specific funnel stage.</p>
+      </div>
+    </div>
+    <div class="tl-card reveal">
+      <div class="tl-left"><span class="tl-step">06</span><span class="tl-beat">UGC</span></div>
+      <div class="tl-right">
+        <div class="tl-title">UGC Activation</div>
+        <p class="tl-desc">As the brand grew, customers began organically tagging ChaiVours in their posts. Created a system to identify, curate, and reshare the best UGC — making customers feel celebrated and seen. <strong>The more we reshared, the more others tagged, creating a self-sustaining content engine at zero cost.</strong></p>
+      </div>
+    </div>
+    <div class="tl-card reveal">
+      <div class="tl-left"><span class="tl-step">07</span><span class="tl-beat">Optimise</span></div>
+      <div class="tl-right">
+        <div class="tl-title">Performance Review &amp; Optimisation</div>
+        <p class="tl-desc">Reviewed content performance weekly — analysing which formats drove the most reach, saves, and profile visits. Underperforming content types were deprioritised and replaced with formats that resonated. This iterative approach ensured the content system <strong>improved over time rather than staying static.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">07 Results</div>
+  <h2 class="sec-title">Real work. <span>Real numbers.</span></h2>
+  <p class="sec-sub">One person. Zero budget. Under 12 months to go from unknown to recognisable.</p>
+  <div class="metrics-row reveal">
+    <div class="metric-card">
+      <span class="metric-n">1,500+</span>
+      <span class="metric-l">Instagram Followers</span>
+      <span class="metric-sub">100% organic</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-n">170+</span>
+      <span class="metric-l">Posts Published</span>
+      <span class="metric-sub">Consistent identity</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-n">UGC</span>
+      <span class="metric-l">Customers Tagged</span>
+      <span class="metric-sub">Unprompted proof</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-n">Rs.0</span>
+      <span class="metric-l">Total Ad Spend</span>
+      <span class="metric-sub">Zero budget</span>
+    </div>
+  </div>
+</div>
+
+<div class="ps">
+  <div class="sec-tag">08 Key Learnings</div>
+  <h2 class="sec-title">What this <span>actually taught me.</span></h2>
+  <p class="sec-sub">Four learnings from this project that apply to any brand in any category.</p>
+  <div class="learning-list reveal">
+    <div class="learning-block">
+      <div class="lb-title">Cultural positioning before product push</div>
+      <p class="lb-desc">The most important decision was to build brand identity before showing products. Brands that lead with product in crowded categories get ignored. Brands that lead with identity get followed.</p>
+    </div>
+    <div class="learning-block">
+      <div class="lb-title">UGC is the most powerful content type in F&B</div>
+      <p class="lb-desc">When real customers tag a brand, it communicates something no paid ad can — that real people genuinely chose this place. Building a system to activate and celebrate UGC was the highest-ROI action in the entire strategy.</p>
+    </div>
+    <div class="learning-block">
+      <div class="lb-title">Consistency compounds</div>
+      <p class="lb-desc">170+ posts published with a consistent voice and identity creates a cumulative brand impression that no single viral post can replicate. The audience began to recognise ChaiVours' tone before they even read the caption.</p>
+    </div>
+    <div class="learning-block">
+      <div class="lb-title">Audience research before content creation — always</div>
+      <p class="lb-desc">The entire strategy was built on the insight that the problem was cultural relevance, not visibility. Without the research, we would have defaulted to generic product posts and seen minimal results.</p>
+    </div>
+  </div>
+  <div class="next-block reveal">
+    <div class="next-label">What I Would Do Next</div>
+    <ul class="next-list">
+      <li>Introduce a WhatsApp community for regulars — highest retention channel at zero cost.</li>
+      <li>Run a referral content campaign: tag a friend who needs chai = one free cup. Activates word-of-mouth at scale.</li>
+      <li>Test YouTube Shorts with behind-the-scenes content — cross-platform reach with same production effort.</li>
+    </ul>
+  </div>
+</div>
+
+<div id="closing">
+  <div class="closing-inner reveal">
+    <div class="closing-quote">"We didn't push products — we built a brand people felt part of. <span>Once they owned the identity, they promoted it themselves.</span> Free UGC became the content engine."</div>
+    <div class="closing-byline">Anupam Nath &middot; Brand &amp; Creative Strategist &middot; New Delhi, India</div>
+    <div class="closing-btns">
+      <a href="https://www.instagram.com/chaivours/" target="_blank" class="btn-primary">View Chaivours &#8599;</a>
+      <a href="index.html" class="btn-secondary">Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="foot-l">2026 Anupam Nath &middot; Brand &amp; Creative Strategist &middot; New Delhi</span>
+  <a href="mailto:anupamnath222@gmail.com" class="foot-r">anupamnath222@gmail.com</a>
+</footer>
+
+<script>
+(function(){
+  const bar = document.getElementById('lbar');
+  const pct = document.getElementById('lpct');
+  const loader = document.getElementById('loader');
+  let p = 0;
+  const iv = setInterval(()=>{
+    p += Math.random() * 18 + 6;
+    if(p >= 100){ p = 100; clearInterval(iv); setTimeout(()=>loader.classList.add('done'), 300); }
+    bar.style.width = p + '%';
+    pct.textContent = Math.floor(p) + '%';
+  }, 80);
+})();
+
+window.addEventListener('scroll',()=>{
+  const nav = document.getElementById('nav');
+  if(window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+});
+
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.tl-card').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
