@@ -342,8 +342,9 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   <button class="tab-btn" onclick="scrollToSection('insight')">04 Insight</button>
   <button class="tab-btn" onclick="scrollToSection('funnel')">05 Funnel</button>
   <button class="tab-btn" onclick="scrollToSection('content-system')">06 Content</button>
-  <button class="tab-btn" onclick="scrollToSection('calendar')">09 Calendar</button>
+  <button class="tab-btn" onclick="scrollToSection('creative')">07 Creative</button>
   <button class="tab-btn" onclick="scrollToSection('copy-bank')">08 Copy Bank</button>
+  <button class="tab-btn" onclick="scrollToSection('calendar')">09 Calendar</button>
 
 </div>
 
@@ -646,6 +647,21 @@ footer{padding:22px 56px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </div>
 
+<div class="ps" id="creative">
+  <div class="sec-tag">07 · Creative Execution</div>
+  <h2 class="sec-title">7 complete pieces. <span>Hook to rationale.</span></h2>
+  <p class="sec-sub">Every piece has a hook, body copy, visual direction, and the strategic rationale behind each decision. Nothing created without a reason.</p>
+  <div class="comp-grid reveal" style="grid-template-columns:repeat(4,1fr);margin-bottom:0">
+    <div class="comp-card"><span class="cc-num">01</span><div class="cc-title">Feeling First Post</div><div class="cc-desc">TOF. Opens the emotional conversation. No selling — just recognition.</div></div>
+    <div class="comp-card"><span class="cc-num">02</span><div class="cc-title">Renter Reel</div><div class="cc-desc">TOF. First voice in the category to directly address the renter. Not aspirational — real.</div></div>
+    <div class="comp-card"><span class="cc-num">03</span><div class="cc-title">Mistake Reel</div><div class="cc-desc">MOF. Builds trust through honesty. No brand in this space does this — it becomes the differentiator.</div></div>
+    <div class="comp-card"><span class="cc-num">04</span><div class="cc-title">Process Carousel</div><div class="cc-desc">MOF. Demystifies the design decision. Authority built through transparency, not credentials.</div></div>
+    <div class="comp-card"><span class="cc-num">05</span><div class="cc-title">Living Proof Reel</div><div class="cc-desc">BOF. Transformation grounded in feeling, not aesthetics. Emotional story before the visual reveal.</div></div>
+    <div class="comp-card"><span class="cc-num">06</span><div class="cc-title">Framework Post</div><div class="cc-desc">MOF. Introduces the brand's core lens — start with feeling, work backwards to objects.</div></div>
+    <div class="comp-card"><span class="cc-num">07</span><div class="cc-title">Home Audit Carousel</div><div class="cc-desc">MOF/BOF. Immediately actionable. Makes the audience feel capable, not overwhelmed.</div></div>
+  </div>
+</div>
+
 <div class="ps" id="calendar">
   <div class="sec-tag">09 · 30-Day Content Calendar</div>
   <h2 class="sec-title">TOF heavy week 1. <span>BOF only after trust is built.</span></h2>
@@ -791,7 +807,7 @@ window.addEventListener('resize',resize);resize();draw();
 
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
-  const sections=['components','research','audience','persona','insight','funnel','content-system','calendar','copy-bank','ai-usage'];
+  const sections=['components','research','audience','persona','insight','funnel','content-system','creative','copy-bank','calendar','ai-usage'];
   const tabBtns=document.querySelectorAll('.tab-btn');
   let cur=0;
   sections.forEach((id,i)=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-120)cur=i;});
