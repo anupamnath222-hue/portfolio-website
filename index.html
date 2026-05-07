@@ -188,6 +188,9 @@ section{padding:96px 64px;position:relative;z-index:1;}
 .proj-card:hover .proj-thumb{box-shadow:0 8px 28px rgba(5,150,105,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:scale(1.06) rotate(-1deg);}
 .proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;width:88%;height:88%;transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);}
 .proj-card:hover .proj-thumb img{transform:scale(1.1);}
+.proj-thumb.dual-brand{width:130px;min-width:130px;height:auto;min-height:100px;flex-direction:column;gap:6px;padding:10px 8px;aspect-ratio:auto;}
+.proj-thumb.dual-brand img{width:100%;height:44px;object-fit:contain;}
+.dual-cta-label{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:6px;margin-top:14px;}
 .proj-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
 .proj-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-0.015em;}
 .proj-desc{font-size:13px;color:var(--grey);line-height:1.7;flex:1;margin-bottom:14px;}
@@ -687,28 +690,26 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   <p class="s-sub">Six industries. One method: read the funnel, find the break, build the fix.</p>
   <div class="proj-grid" id="pg">
     <div class="proj-folder-wrap">
-      <div class="proj-tab">EdTech Brand</div>
+      <div class="proj-tab">Full-Stack Brand Work · Sole Creative</div>
       <div class="proj-card fi" data-cat="strategy content brand">
-        <div class="proj-thumb prep-iq"><img src="assets/logos/PREP IQ.png" alt="Prep IQ"></div>
-        <div class="proj-body">
-          <div class="proj-name">Prep IQ</div>
-          <div class="proj-metrics"><span class="metric"><strong>EdTech</strong> Brand</span><span class="metric"><strong>Full Rebrand</strong> Learning Point &rarr; Prep IQ</span><span class="metric"><strong>&#x20B9;30-40K</strong> First Launch</span></div>
-          <div class="proj-desc">The brand was called <span class="proj-name-ref">Learning Point</span>. It was not landing and the name was not helping. I rebuilt the whole thing as <span class="proj-name-ref">Prep IQ</span>: new positioning, new identity, education IPs that students actually connected with. First launch hit <strong>&#x20B9;30-40K, no ads</strong>. Five students cracked government jobs. The name change was the smallest part of it.</div>
-          <div class="proj-tags"><span class="proj-tag">Full Rebrand</span><span class="proj-tag">Brand IP Creation</span><span class="proj-tag">EdTech</span><span class="proj-tag">Zero-budget Launch</span></div>
-          <div style="display:flex;gap:8px;margin-top:12px;"><a href="prepiq.html" class="proj-link">View Case Study &#x2192;</a><a href="https://www.facebook.com/PrepIQ" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Facebook">f</a></div>
+        <div class="proj-thumb dual-brand">
+          <img src="assets/logos/PREP IQ.png" alt="Prep IQ">
+          <img src="assets/logos/chaivours.png" alt="Chaivours">
         </div>
-      </div>
-    </div>
-    <div class="proj-folder-wrap">
-      <div class="proj-tab">F&amp;B Brand</div>
-      <div class="proj-card fi d1" data-cat="brand content">
-        <div class="proj-thumb chaivours"><img src="assets/logos/chaivours.png" alt="Chaivours"></div>
         <div class="proj-body">
-          <div class="proj-name">Chaivours</div>
-          <div class="proj-metrics"><span class="metric"><strong>B2C</strong> F&amp;B Brand</span><span class="metric"><strong>Full Brand</strong> Identity</span><span class="metric"><strong>Meme Marketing</strong> Strategy</span></div>
-          <div class="proj-desc">Founder came with a chai brand and a blank page. Thirty days later: full visual identity, brand voice, ad creatives, and a <strong>meme marketing system</strong> built to feel native to the feed. The brand found its people before it had a budget because it gave them something real to connect with instead of something polished to look at.</div>
-          <div class="proj-tags"><span class="proj-tag">Full Brand Build</span><span class="proj-tag">Meme Marketing</span><span class="proj-tag">Ad Creatives</span><span class="proj-tag">D2C</span></div>
-          <div style="display:flex;gap:8px;margin-top:12px;"><a href="chaivours.html" class="proj-link">View Case Study &#x2192;</a><a href="https://www.instagram.com/chaivours/" target="_blank" class="proj-link" style="flex:0;padding:9px 12px;" title="Instagram">@</a></div>
+          <div class="proj-name">Two Brands. One Creative Pipeline.</div>
+          <div class="proj-metrics">
+            <span class="metric"><strong>Sole Creative</strong> Brand Strategy to Visual Output</span>
+            <span class="metric"><strong>Covered:</strong> Identity · Graphic Design · Video · Ad Creative · Strategy</span>
+            <span class="metric"><strong>Results:</strong> &#x20B9;30-40K Launch (no ads) · Audience built before the budget existed</span>
+          </div>
+          <div class="proj-desc">Both built entirely by me. Brand thinking, visual identity, graphic design, video, ad creative, and strategy from blank page to live brand. <strong>Prep IQ:</strong> full EdTech rebrand. New name, new positioning, new identity. Cleared &#x20B9;30-40K first launch, no paid ads. Five students cracked government jobs off it. <strong>Chaivours:</strong> D2C chai brand in 30 days. Full brand, meme marketing system, ad creatives. Found its audience before it had a budget. Same method both times: read the market, find the gap, build every piece of it.</div>
+          <div class="proj-tags"><span class="proj-tag">Full Brand Build</span><span class="proj-tag">Visual Identity</span><span class="proj-tag">Graphic Design</span><span class="proj-tag">Video Direction</span><span class="proj-tag">Ad Creative</span><span class="proj-tag">Sole Creative</span></div>
+          <div class="dual-cta-label">Pick a case study</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a href="prepiq.html" class="proj-link">Prep IQ Case Study &#x2192;</a>
+            <a href="chaivours.html" class="proj-link">Chaivours Case Study &#x2192;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -776,22 +777,22 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
       <span class="think-num">01</span>
       <span class="think-tag">Strategy System · AI-assisted</span>
       <div class="think-title">Brand Gap Diagnosis Tool</div>
-      <p class="think-desc">A working creative strategy tool built from my brand audit framework. It diagnoses positioning, trust, content consistency, and conversion gaps, then turns the first read into content pillars, ad angles, video POV, and visual direction.</p>
-      <div style="font-size:11px;color:var(--blue2);font-weight:600;margin-top:4px;letter-spacing:0.03em;">Human-led thinking. AI-assisted execution. Built for trust and revenue.</div>
+      <p class="think-desc">Type in a brand. Get a real diagnosis: positioning gaps, trust gaps, content gaps, conversion gaps. Then get the fix: content pillars, ad angles, video POV, visual direction. Built from my own brand audit method. AI moves it. The framework is mine.</p>
+      <div style="font-size:11px;color:var(--blue2);font-weight:600;margin-top:4px;letter-spacing:0.03em;">Thinking is human. Execution is AI. Output is actually useful.</div>
       <div class="think-cta">View the Tool &#x2192;</div>
     </a>
     <a href="house-of-pause.html" class="think-card fi d1">
       <span class="think-num">02</span>
       <span class="think-tag">Human-led · AI-assisted</span>
       <div class="think-title">House of Pause</div>
-      <p class="think-desc">A brand concept where the insight was mine and AI helped build the world faster. Positioning, personality, tone, and creative direction. All directed by me, prototyped with AI.</p>
+      <p class="think-desc">A full brand system built from one observation: homes are designed to look beautiful, not to feel calm. Positioning, identity, visual direction, content system, hook formula. The thinking came first. AI helped build it faster without losing the taste or the point.</p>
       <div class="think-cta">See the Full System &#x2192;</div>
     </a>
     <a href="apps-tools.html" class="think-card fi d2">
       <span class="think-num">03</span>
       <span class="think-tag">Problem to Product</span>
       <div class="think-title">Apps and Tools</div>
-      <p class="think-desc">I spotted behaviours nobody was building for and turned them into working prototypes. AI acted as the execution layer. The thinking came from real usage friction, not a random prompt.</p>
+      <p class="think-desc">Two apps built because the problems were too specific to ignore and nobody had fixed them. Zapo saves content before the insight disappears into the scroll. Railway Tool tells you exactly which platform, which coach, in the time you actually have. Vibe coded. Shipped.</p>
       <div class="think-cta">Explore the Build &#x2192;</div>
     </a>
     <a href="vsl-creative-strategy.html" class="think-card fi d3">
@@ -806,7 +807,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 
 <section id="contact">
   <div class="s-label">Get in Touch</div>
-  <h2 class="s-h2">Let's talk if it <span>makes sense.</span></h2>
+  <h2 class="s-h2">Easy to talk to. <span>Easier to work with.</span></h2>
   <div class="contact-grid">
     <div class="fi">
       <div class="form-row">
