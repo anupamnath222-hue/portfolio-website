@@ -489,6 +489,9 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   .proj-metrics{padding:10px;}
   .metric{font-size:11px;}
 
+  /* PROJECTS AND THINKING */
+  .think-grid{grid-template-columns:repeat(2,1fr);}
+
   /* METHODOLOGY */
   .hop-wrap{padding:36px 22px;}
   .hop-inner{grid-template-columns:1fr;gap:32px;}
@@ -522,7 +525,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   .think-card{padding:24px 20px;}
 }
 /* How I Think and Build compact cards */
-.think-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;}
+.think-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px;}
 .think-card{background:linear-gradient(135deg,rgba(5,150,105,0.07) 0%,rgba(52,211,153,0.03) 100%);border:1.5px solid rgba(5,150,105,0.25);border-radius:20px;padding:30px 26px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s cubic-bezier(0.34,1.56,0.64,1);}
 .think-card:hover{border-color:rgba(5,150,105,0.55);box-shadow:0 20px 56px rgba(5,150,105,0.18);transform:translateY(-5px);}
 .think-num{font-size:11px;color:var(--blue2);font-weight:700;letter-spacing:0.14em;}
@@ -752,15 +755,16 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 
 <section id="hop">
   <div class="s-label">Projects and Thinking</div>
-  <h2 class="s-h2">Three ways to see <span>how I work</span></h2>
-  <p class="s-sub">Different categories. Same thinking behind all three.</p>
+  <h2 class="s-h2">Four ways to see <span>how I think and build</span></h2>
+  <p class="s-sub">Strategy systems, brand worlds, product experiments, and conversion thinking.</p>
   <div class="think-grid">
-    <a href="apps-tools.html" class="think-card fi">
+    <a href="https://brand-gap-diagnosis-tool.vercel.app/" target="_blank" class="think-card fi">
       <span class="think-num">01</span>
-      <span class="think-tag">Problem to Product</span>
-      <div class="think-title">Apps and Tools</div>
-      <p class="think-desc">I spotted behaviours nobody was building for. Zero coding background. AI as the execution layer. Two working prototypes that came from personal frustration, not a brief.</p>
-      <div class="think-cta">Explore the Build &#x2192;</div>
+      <span class="think-tag">Strategy System · AI-assisted</span>
+      <div class="think-title">Brand Gap Diagnosis Tool</div>
+      <p class="think-desc">A working creative strategy tool built from my brand audit framework. It diagnoses positioning, trust, content consistency, and conversion gaps, then turns the first read into content pillars, ad angles, video POV, and visual direction.</p>
+      <div style="font-size:11px;color:var(--blue2);font-weight:600;margin-top:4px;letter-spacing:0.03em;">Human-led thinking. AI-assisted execution. Built for trust and revenue.</div>
+      <div class="think-cta">View the Tool &#x2192;</div>
     </a>
     <a href="house-of-pause.html" class="think-card fi d1">
       <span class="think-num">02</span>
@@ -769,8 +773,15 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
       <p class="think-desc">A brand concept where the insight was mine and AI helped build the world faster. Positioning, personality, tone, and creative direction — all directed by me, prototyped with AI.</p>
       <div class="think-cta">See the Full System &#x2192;</div>
     </a>
-    <a href="vsl-creative-strategy.html" class="think-card fi d2">
+    <a href="apps-tools.html" class="think-card fi d2">
       <span class="think-num">03</span>
+      <span class="think-tag">Problem to Product</span>
+      <div class="think-title">Apps and Tools</div>
+      <p class="think-desc">I spotted behaviours nobody was building for and turned them into working prototypes. AI acted as the execution layer. The thinking came from real usage friction, not a random prompt.</p>
+      <div class="think-cta">Explore the Build &#x2192;</div>
+    </a>
+    <a href="vsl-creative-strategy.html" class="think-card fi d3">
+      <span class="think-num">04</span>
       <span class="think-tag">Conversion Strategy</span>
       <div class="think-title">VSL Creative Strategy</div>
       <p class="think-desc">One video. Cold traffic. I watched it back as a strategist, found where it lost the viewer, and rebuilt the brief from scratch.</p>
