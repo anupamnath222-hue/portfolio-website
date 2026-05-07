@@ -69,6 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;d
 .hb-location{bottom:88px;right:-96px;display:flex;align-items:center;gap:9px;}
 .hb-dot-live{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 0 rgba(5,150,105,0.55);flex-shrink:0;animation:pulse 2.5s infinite;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(5,150,105,0.55);}70%{box-shadow:0 0 0 7px rgba(5,150,105,0);}100%{box-shadow:0 0 0 0 rgba(5,150,105,0);}}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
 .hb-location .hb-text{font-size:12px;color:var(--off);font-weight:600;}
 @keyframes floatBadge{0%,100%{transform:translateY(0px);}50%{transform:translateY(-9px);}}
 .hb-years{animation:floatBadge 4s ease-in-out infinite;}
@@ -562,10 +563,10 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
 <section id="hero">
   <canvas id="dotsCanvas"></canvas>
   <div class="hero-left">
-    <p class="hero-welcome">WELCOME TO MY PORTFOLIO</p>
+    <p class="hero-welcome">OPEN TO FULL-TIME ROLES · BRAND AND CREATIVE STRATEGIST</p>
     <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam</span></h1>
     <div class="hero-sub"><span id="typer">Brand and Creative Strategist</span><span class="cursor">|</span></div>
-    <div class="hero-desc">I have worked across B2C, D2C, FMCG, edtech, media and agency as the person doing the actual work. I use AI not as a writing tool but as a build layer that moves thinking into output faster than a traditional team can. That is the difference.</div>
+    <div class="hero-desc">I have shipped work across six industries without a large team behind me. Strategy, positioning, creative direction, content systems, and AI-assisted execution — done by one person who does not stop at the brief. Most strategists hand over a deck. I stay until something works.</div>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-fill">View My Work</a>
       <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -604,6 +605,22 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
   </div>
 </section>
 
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 64px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
+  <span style="font-size:10px;font-weight:700;letter-spacing:0.16em;color:var(--blue2);text-transform:uppercase;white-space:nowrap;flex-shrink:0;">Live Work</span>
+  <a href="https://brand-gap-diagnosis-tool.vercel.app/" target="_blank" style="display:flex;align-items:center;gap:10px;text-decoration:none;padding:8px 16px;background:rgba(5,150,105,0.06);border:1px solid rgba(5,150,105,0.22);border-radius:8px;transition:border-color 0.2s,background 0.2s;">
+    <span style="width:7px;height:7px;background:var(--blue2);border-radius:50%;flex-shrink:0;animation:pulse-dot 2s infinite;"></span>
+    <span style="font-size:13px;font-weight:700;color:var(--white);">Brand Gap Diagnosis Tool</span>
+    <span style="font-size:12px;color:var(--grey);margin-left:2px;">Working AI strategy tool</span>
+    <span style="font-size:12px;color:var(--blue2);font-weight:600;margin-left:4px;">Try it &#x2192;</span>
+  </a>
+  <a href="https://www.instagram.com/houseof_pause/" target="_blank" style="display:flex;align-items:center;gap:10px;text-decoration:none;padding:8px 16px;border-radius:8px;transition:background 0.2s;">
+    <span style="width:7px;height:7px;background:#4ade80;border-radius:50%;flex-shrink:0;"></span>
+    <span style="font-size:13px;font-weight:600;color:var(--white);">@houseof_pause</span>
+    <span style="font-size:12px;color:var(--grey);margin-left:2px;">Brand strategy live on Instagram</span>
+    <span style="font-size:12px;color:var(--blue2);font-weight:600;margin-left:4px;">View &#x2192;</span>
+  </a>
+</div>
+
 <section id="about">
   <div class="about-grid">
     <div class="about-photo-col fi">
@@ -628,7 +645,7 @@ nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
       <div class="about-text">
         <p>Most brand and content problems are not execution problems. They are thinking problems. The brief was weak. The positioning was unclear. Nobody asked the hard question before the team started making things. <strong>That is the gap I sit in.</strong></p>
         <p>I have worked across B2C, FMCG, edtech, media and agency doing the actual work. Research, positioning, content systems, creative direction, campaign architecture. Not advising from the outside. Building from the inside.</p>
-        <p>The way I work has changed too. I use AI as a build layer. Not to write faster but to move from insight to working output faster than a traditional team can. <strong>That combination of sharp strategic thinking and AI powered execution is what I bring into any room I walk into.</strong></p>
+        <p>What separates my work is follow-through. I do not hand over a strategy and disappear. I stay until the positioning is clear, the content has a system, and the output looks like the brief said it would. <strong>The brief is not the product. What you can ship from it is.</strong></p>
         <p>The industry does not matter. The buyer psychology, the content gap, the brand narrative problem are universal. I have solved versions of them across categories. I can solve yours.</p>
       </div>
       <div class="about-pull">
@@ -888,7 +905,7 @@ window.addEventListener('scroll', () => {
 
 // Typing Animation
 const typerEl = document.getElementById('typer');
-const phrases = ['Brand and Creative Strategist','Brand Thinker','Performance Driven Marketer'];
+const phrases = ['Brand and Creative Strategist','AI Creative Strategist','The person who does the work.'];
 let currentPhrase = 0, charIndex = 0, isDeleting = false;
 function type() {
   const phrase = phrases[currentPhrase];
