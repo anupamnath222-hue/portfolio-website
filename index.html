@@ -7,6 +7,24 @@
 <meta name="description" content="Anupam Nath is a Performance Creative Strategist for scaling DTC & Meta brands. Translating customer psychology, review mining, and Meta Ads Manager metrics into high-converting statics, UGC scripts, AI video ads, and repurposed hook variations.">
 <meta name="keywords" content="creative strategist, performance creative, meta ads creative strategist, dtc creative strategy, andromeda meta, hook rate, thumbstop rate, hokipo, berkowits, ad creative testing">
 
+<!-- Canonical & Crawler Safeguards -->
+<link rel="canonical" href="https://portfolio-website-nine-rho-50.vercel.app/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#080b11">
+
+<!-- Open Graph / Meta Protocol -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://portfolio-website-nine-rho-50.vercel.app/">
+<meta property="og:title" content="Anupam Nath — Performance Creative Strategist (Meta Andromeda Era)">
+<meta property="og:description" content="Translating customer psychology, review mining, and Meta Ads Manager metrics into high-converting statics, UGC scripts, AI video ads, and repurposed hook variations.">
+<meta property="og:image" content="https://portfolio-website-nine-rho-50.vercel.app/assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anupam Nath — Performance Creative Strategist">
+<meta name="twitter:description" content="Translating customer psychology, review mining, and Meta Ads Manager metrics into high-converting statics, UGC scripts, and AI video ads.">
+<meta name="twitter:image" content="https://portfolio-website-nine-rho-50.vercel.app/assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png">
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -640,6 +658,96 @@ nav {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+/* ==========================================================================
+   THE 2026 PERFORMANCE CREATIVE TECH STACK
+   ========================================================================== */
+#stack {
+  padding: 90px 0;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stack-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+.stack-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-active);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+}
+
+.stack-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--emerald-light);
+  margin-bottom: 16px;
+}
+.stack-card:nth-child(2) .stack-icon-wrap {
+  background: rgba(6, 182, 212, 0.08);
+  border-color: rgba(6, 182, 212, 0.25);
+  color: var(--cyan-light);
+}
+.stack-card:nth-child(3) .stack-icon-wrap {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.25);
+  color: #a78bfa;
+}
+.stack-card:nth-child(4) .stack-icon-wrap {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+}
+
+.stack-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.stack-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stack-pill {
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
 }
 
 /* ==========================================================================
@@ -1415,6 +1523,9 @@ footer {
   .os-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .vault-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1438,6 +1549,9 @@ footer {
 
 @media (max-width: 600px) {
   .vault-grid {
+    grid-template-columns: 1fr;
+  }
+  .stack-grid {
     grid-template-columns: 1fr;
   }
   .os-grid {
@@ -1468,6 +1582,7 @@ footer {
 
     <ul class="nav-links">
       <li><a href="#andromeda-engine">The Andromeda OS</a></li>
+      <li><a href="#stack">Tech Stack</a></li>
       <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#vault">Creative Vault</a></li>
       <li><a href="#ads-dashboard-proof">Meta Dashboards</a></li>
@@ -1675,6 +1790,81 @@ footer {
 </section>
 
 <!-- ==========================================================================
+     THE 2026 CREATIVE STRATEGIST TECH STACK
+     ========================================================================== -->
+<section id="stack">
+  <div class="container">
+    <div class="section-label">The 2026 Operational Engine</div>
+    <h2 class="section-title">The Performance <span class="text-gradient-emerald">Creative Tech Stack</span></h2>
+    <p class="section-subtitle">
+      No outdated software or slow legacy bureaucracy. I deploy an agile, AI-assisted stack built for rapid angle testing, deep customer intelligence, and Meta Advantage+ scale.
+    </p>
+
+    <div class="stack-grid">
+      <!-- Card 1 -->
+      <div class="stack-card">
+        <div class="stack-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h4 class="stack-title">Analytics &amp; Attribution</h4>
+        <p class="stack-desc">Decoding live signals, Thumbstop 3-sec dropoffs, and true blended MER without platform lag.</p>
+        <div class="stack-pills">
+          <span class="stack-pill">Meta Ads Manager</span>
+          <span class="stack-pill">Advantage+ (ASC)</span>
+          <span class="stack-pill">Motion App (Creative Analytics)</span>
+          <span class="stack-pill">Triple Whale / MER</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="stack-card">
+        <div class="stack-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h4 class="stack-title">VOC &amp; Research Mining</h4>
+        <p class="stack-desc">Scraping uncensored customer reviews and competitor ad libraries to uncover unaddressed objections.</p>
+        <div class="stack-pills">
+          <span class="stack-pill">Foreplay (Swipe Files)</span>
+          <span class="stack-pill">Meta Ad Library</span>
+          <span class="stack-pill">Amazon 1-to-5 Star Mining</span>
+          <span class="stack-pill">Reddit &amp; Forum Mining</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="stack-card">
+        <div class="stack-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect width="15" height="14" x="1" y="5" rx="2" ry="2"/></svg>
+        </div>
+        <h4 class="stack-title">AI Video &amp; Rapid B-Roll</h4>
+        <p class="stack-desc">Slashing production turnaround and costs by 70% to test 5x more angles every single week.</p>
+        <div class="stack-pills">
+          <span class="stack-pill">Midjourney v6</span>
+          <span class="stack-pill">Kling AI &amp; Runway Gen-3</span>
+          <span class="stack-pill">ElevenLabs Voice AI</span>
+          <span class="stack-pill">CapCut Pro (Pacing &amp; Captions)</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="stack-card">
+        <div class="stack-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h4 class="stack-title">Conversion UI &amp; Static Ads</h4>
+        <p class="stack-desc">Engineering high-CTR comparison charts, feature callout cards, and native reviews that convert.</p>
+        <div class="stack-pills">
+          <span class="stack-pill">Figma (Modular Design)</span>
+          <span class="stack-pill">Us vs Them Comparisons</span>
+          <span class="stack-pill">Press &amp; Review Mashups</span>
+          <span class="stack-pill">Native Notes Format</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
      FEATURED CASE STUDIES
      ========================================================================== -->
 <section id="case-studies">
@@ -1784,7 +1974,7 @@ footer {
 
         <div class="cs-visual-side">
           <div class="cs-preview-frame">
-            <video src="assets/creatives/videos/berkowits_doctor_scalp_scan_ai.mp4" controls playsinline muted loop poster="assets/creatives/statics/berkowits_root_touchup_static.webp"></video>
+            <video src="assets/creatives/videos/berkowits_doctor_scalp_scan_ai.mp4" controls playsinline muted loop preload="metadata" poster="assets/creatives/statics/berkowits_root_touchup_static.webp"></video>
           </div>
           <div style="font-size: 11px; color: var(--text-dim); text-align: center;">
             AI Video Ad #1 — Virtual Scalp Scan Hook (44% Thumbstop Rate on Cold Traffic)
@@ -1841,7 +2031,7 @@ footer {
           <div class="vault-play-indicator">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
           </div>
-          <video src="assets/creatives/videos/berkowits_doctor_scalp_scan_ai.mp4" muted loop playsinline></video>
+          <video src="assets/creatives/videos/berkowits_doctor_scalp_scan_ai.mp4" muted loop playsinline preload="metadata"></video>
         </div>
         <div class="vault-content">
           <div class="vault-header-row">
@@ -1878,7 +2068,7 @@ footer {
           <div class="vault-play-indicator">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
           </div>
-          <video src="assets/creatives/videos/berkowits_grooming_panic_hook.mp4" muted loop playsinline></video>
+          <video src="assets/creatives/videos/berkowits_grooming_panic_hook.mp4" muted loop playsinline preload="metadata"></video>
         </div>
         <div class="vault-content">
           <div class="vault-header-row">
@@ -1915,7 +2105,7 @@ footer {
           <div class="vault-play-indicator">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
           </div>
-          <video src="assets/creatives/videos/berkowits_hinglish_voiceover_ad.mp4" muted loop playsinline></video>
+          <video src="assets/creatives/videos/berkowits_hinglish_voiceover_ad.mp4" muted loop playsinline preload="metadata"></video>
         </div>
         <div class="vault-content">
           <div class="vault-header-row">
@@ -1952,7 +2142,7 @@ footer {
           <div class="vault-play-indicator">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
           </div>
-          <video src="assets/creatives/videos/berkowits_elevator_hair_check.mp4" muted loop playsinline></video>
+          <video src="assets/creatives/videos/berkowits_elevator_hair_check.mp4" muted loop playsinline preload="metadata"></video>
         </div>
         <div class="vault-content">
           <div class="vault-header-row">
@@ -1989,7 +2179,7 @@ footer {
           <div class="vault-play-indicator">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
           </div>
-          <video src="assets/creatives/videos/honest_energy_reels_ad.mp4" muted loop playsinline></video>
+          <video src="assets/creatives/videos/honest_energy_reels_ad.mp4" muted loop playsinline preload="metadata"></video>
         </div>
         <div class="vault-content">
           <div class="vault-header-row">
@@ -2114,14 +2304,14 @@ footer {
       </p>
 
       <div class="contact-button-row">
-        <a href="https://wa.me/918473932498?text=Hey%20Anupam,%20I%20saw%20your%20creative%20strategist%20portfolio.%20Let's%20talk%20about%20our%20Meta%20ads!" target="_blank" class="btn-whatsapp">
+        <a href="https://wa.me/918473932498?text=Hey%20Anupam,%20I%20saw%20your%20creative%20strategist%20portfolio.%20Let's%20talk%20about%20our%20Meta%20ads!" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
           Direct WhatsApp Chat
         </a>
         <a href="mailto:anupamnath222@gmail.com" class="btn-email">
           Email: anupamnath222@gmail.com
         </a>
-        <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank" class="btn-secondary" style="border-radius: var(--radius-sm);">
+        <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="border-radius: var(--radius-sm);">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           LinkedIn Profile
         </a>
@@ -2367,6 +2557,18 @@ vaultCards.forEach(card => {
   }
 });
 
+// --- HTML ENTITY ESCAPER FOR SECURE DOM SANITIZATION ---
+function escapeHTML(str) {
+  if (typeof str !== 'string') return String(str ?? '');
+  return str.replace(/[&<>'"]/g, tag => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;'
+  }[tag] || tag));
+}
+
 // --- STRATEGY MODAL LOGIC ---
 const modal = document.getElementById('strategyModal');
 const modalCloseBtn = document.getElementById('modalCloseBtn');
@@ -2379,52 +2581,52 @@ vaultCards.forEach(card => {
     const data = VAULT_ITEMS[id];
     if (!data) return;
 
-    // Render Media
+    // Render Media securely
     if (data.mediaType === 'video') {
       modalMedia.innerHTML = `
-        <video src="${data.mediaSrc}" controls autoplay playsinline loop></video>
+        <video src="${escapeHTML(data.mediaSrc)}" controls autoplay playsinline loop preload="metadata"></video>
       `;
     } else {
       modalMedia.innerHTML = `
-        <img src="${data.mediaSrc}" alt="${data.title}">
+        <img src="${escapeHTML(data.mediaSrc)}" alt="${escapeHTML(data.title)}">
       `;
     }
 
-    // Render Strategy Breakdown
+    // Render Strategy Breakdown securely sanitized
     modalContent.innerHTML = `
       <div class="modal-badge-row">
-        <span class="badge-tag badge-cyan">${data.brand}</span>
-        <span class="badge-tag badge-emerald">${data.funnelStage}</span>
+        <span class="badge-tag badge-cyan">${escapeHTML(data.brand)}</span>
+        <span class="badge-tag badge-emerald">${escapeHTML(data.funnelStage)}</span>
       </div>
 
-      <h3 class="modal-title">${data.title}</h3>
+      <h3 class="modal-title">${escapeHTML(data.title)}</h3>
 
       <div>
         <div class="modal-section-title">The Target Persona &amp; Mindset</div>
-        <div class="modal-section-body">${data.persona}</div>
+        <div class="modal-section-body">${escapeHTML(data.persona)}</div>
       </div>
 
       <div>
         <div class="modal-section-title">The Account Friction / Bottleneck</div>
-        <div class="modal-section-body">${data.problem}</div>
+        <div class="modal-section-body">${escapeHTML(data.problem)}</div>
       </div>
 
       <div>
         <div class="modal-section-title">Strategic Angle &amp; Concept</div>
-        <div class="modal-section-body">${data.angle}</div>
+        <div class="modal-section-body">${escapeHTML(data.angle)}</div>
       </div>
 
       <div class="modal-hook-box">
         <div class="modal-section-title" style="color: var(--cyan); margin-bottom: 8px;">3-Second Hook Anatomy</div>
-        <div class="modal-hook-item"><strong>Visual Hook:</strong> ${data.hooks.visual}</div>
-        <div class="modal-hook-item"><strong>Text-on-Screen (TOS):</strong> "${data.hooks.tos}"</div>
-        <div class="modal-hook-item"><strong>Caption / Audio:</strong> ${data.hooks.caption}</div>
+        <div class="modal-hook-item"><strong>Visual Hook:</strong> ${escapeHTML(data.hooks.visual)}</div>
+        <div class="modal-hook-item"><strong>Text-on-Screen (TOS):</strong> "${escapeHTML(data.hooks.tos)}"</div>
+        <div class="modal-hook-item"><strong>Caption / Audio:</strong> ${escapeHTML(data.hooks.caption)}</div>
       </div>
 
       <div class="modal-metric-banner">
         <div>
           <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--emerald);">Meta Ads Result</div>
-          <div style="font-size: 14px; font-weight: 800; color: #fff;">${data.metric}</div>
+          <div style="font-size: 14px; font-weight: 800; color: #fff;">${escapeHTML(data.metric)}</div>
         </div>
         <span class="badge-tag badge-emerald">Verified</span>
       </div>
@@ -2552,14 +2754,14 @@ function renderDashboard(brandKey) {
           <span class="am-status-dot"></span> Active
         </span>
       </td>
-      <td style="font-weight: 700; color: #fff;">${row.name}</td>
-      <td>${row.spent}</td>
-      <td>${row.purchases}</td>
-      <td>${row.cpa}</td>
-      <td>${row.thumbstop}</td>
-      <td>${row.holdRate}</td>
-      <td>${row.ctr}</td>
-      <td class="am-roas-highlight">${row.roas}</td>
+      <td style="font-weight: 700; color: #fff;">${escapeHTML(row.name)}</td>
+      <td>${escapeHTML(row.spent)}</td>
+      <td>${escapeHTML(row.purchases)}</td>
+      <td>${escapeHTML(row.cpa)}</td>
+      <td>${escapeHTML(row.thumbstop)}</td>
+      <td>${escapeHTML(row.holdRate)}</td>
+      <td>${escapeHTML(row.ctr)}</td>
+      <td class="am-roas-highlight">${escapeHTML(row.roas)}</td>
     </tr>
   `).join('');
 }

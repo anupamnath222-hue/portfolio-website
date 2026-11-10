@@ -1,0 +1,12 @@
+index_old_backup.html
+*.backup.*
+*_backup.*
+*.bak
+*.old
+.git
+.gitignore
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
