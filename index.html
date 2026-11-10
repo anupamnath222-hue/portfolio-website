@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anupam Nath — Performance Creative Strategist | Scaling DTC &amp; Meta Brands</title>
-<meta name="description" content="Anupam Nath is a Senior Performance Creative Strategist at TPF (Per4mance Guru). Engineering high-velocity Meta ad creatives, consumer psychology angle matrices, and multi-format testing across D2C brands including Three Sixty, Hide & Leather, Hokipo, and Mattress Fitness.">
+<meta name="description" content="Anupam Nath is a Senior Performance Creative Strategist at TPF (Per4mance Guru). Engineering high-velocity Meta ad creatives, consumer psychology angle matrices, and Advantage+ ASC testing systems for 8-figure D2C brands including Three Sixty, Hide & Leather, and Hokipo.">
 <meta name="keywords" content="performance creative strategist, creative strategy, meta ads creative strategist, dtc creative scale, andromeda creative, advantage plus creative, hook rate optimization, thumbstop rate, threesixty, hokipo, hide and leather, per4mance guru">
 
 <!-- Canonical & Crawler Security -->
@@ -1635,6 +1635,186 @@ footer {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   LEGAL & COMPLIANCE FOOTER & MODAL STYLES
+   ========================================================================== */
+.footer-trademark-notice {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  max-width: 860px;
+  margin: 0 auto 20px auto;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.footer-trademark-notice strong {
+  color: var(--text-muted);
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.legal-pill-btn {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--gold-light);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legal-pill-btn:hover {
+  background: var(--gold);
+  color: #000;
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.lab-legal-notice {
+  margin-top: 24px;
+  padding: 12px 18px;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 11.5px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.legal-modal-dialog {
+  background: #0b0f19;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 840px;
+  max-height: 88vh;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 175, 55, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.legal-modal-header {
+  padding: 24px 28px 16px 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(15, 21, 35, 0.7);
+}
+
+.legal-modal-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.legal-tab-nav {
+  display: flex;
+  background: rgba(6, 8, 13, 0.6);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 24px;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.legal-tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 14px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.legal-tab-btn:hover {
+  color: #fff;
+}
+
+.legal-tab-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.legal-modal-body {
+  padding: 24px 28px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.legal-tab-pane {
+  display: none;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.legal-tab-pane.active {
+  display: block;
+}
+
+.legal-tab-pane h4 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin: 20px 0 8px 0;
+}
+
+.legal-tab-pane h4:first-child {
+  margin-top: 0;
+}
+
+.legal-tab-pane p {
+  margin-bottom: 14px;
+}
+
+.legal-tab-pane ul {
+  margin: 8px 0 16px 20px;
+  padding: 0;
+}
+
+.legal-tab-pane li {
+  margin-bottom: 8px;
+}
+
+.legal-tab-pane code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--gold-light);
+}
+
 </style>
 </head>
 <body>
@@ -1677,7 +1857,7 @@ footer {
         <div style="margin-bottom: 22px;">
           <span class="badge-tag badge-gold">
             <span class="badge-pulse"></span>
-            Performance Creative Strategist · Meta Andromeda Era
+            Performance Creative Strategist · Meta Advantage+ &amp; Andromeda Era · TPF
           </span>
         </div>
 
@@ -1687,7 +1867,7 @@ footer {
         </h1>
 
         <p class="hero-lead">
-          I bridge consumer psychology, review mining, and Meta Ads performance to engineer high-velocity creative testing systems. Translating raw customer objections into <strong>Statics, High-Converting UGC, and Repurposed Hook Variations</strong> that lower CAC and unlock profitable scale for leading D2C brands.
+          Let’s cut through the noise: Manual interest targeting is dead. Lookalikes are dead. In the Advantage+ era, <strong>your creative IS your targeting algorithm</strong>. I bridge consumer psychology, internet culture, and ruthless performance testing to build thumbstop interrupts, high-converting statics, and multi-angle ad systems that stop the doomscroll and actually scale.
         </p>
 
         <div class="hero-actions">
@@ -1752,7 +1932,7 @@ footer {
                 The Creative Strategist's Job
               </div>
               <p class="terminal-hl-text">
-                "We don't make ads for applause. We engineer ads that qualify the high-intent buyer in the first 3 seconds, beat ad fatigue, and force Meta's algorithm to deliver the lowest-CPA conversions."
+                "Stop making ads that look like ads. If your hook doesn't stop someone's thumb in the first 2 seconds, you're literally just donating cash to Mark Zuckerberg. We engineer psychological contrast, review-mined angles, and fatigue-proof iteration engines."
               </p>
             </div>
 
@@ -1856,7 +2036,7 @@ footer {
         <span class="os-step-num">STEP 01</span>
         <h4 class="os-card-title">VOC &amp; Review Mining</h4>
         <p class="os-card-desc">
-          I scrape competitor ad libraries, Amazon 1-to-5 star reviews, and Reddit threads to uncover raw buyer objections and emotional friction before scripting.
+          I don't brainstorm in a vacuum. I scrape competitor ad libraries, Amazon 1-star reviews, and Reddit threads to uncover the exact words customers use when they're frustrated with existing solutions. That's where winning hooks are born.
         </p>
       </div>
 
@@ -1864,7 +2044,7 @@ footer {
         <span class="os-step-num">STEP 02</span>
         <h4 class="os-card-title">The 4-Angle Matrix</h4>
         <p class="os-card-desc">
-          Rather than testing random ideas, I map 4 distinct psychological entry points: Us vs Them, Cost Arbitrage, Status &amp; Aesthetics, and Skeptic Proof.
+          Meta's Advantage+ algorithm uses OCR and audio transcription to find buyers. We script 12 distinct angles—Cost Arbitrage, Aesthetic Vanity, Skepticism Killer, Social Proof, and Problem Agitation—so Meta can target 4 different buyer personas from a single ad set.
         </p>
       </div>
 
@@ -1872,7 +2052,7 @@ footer {
         <span class="os-step-num">STEP 03</span>
         <h4 class="os-card-title">Multi-Format Production</h4>
         <p class="os-card-desc">
-          I engineer 4 distinct formats: High-converting Statics, Direct-Response Reels &amp; Memes, Bespoke Brand Video, and Objection-handling Carousels.
+          We don't bet the house on one hero ad. We pump out high-contrast statics, fast-cut UGC hooks, founder breakdowns, and AI-assisted variations using Midjourney v6, Kling AI, and ElevenLabs.
         </p>
       </div>
 
@@ -1880,7 +2060,7 @@ footer {
         <span class="os-step-num">STEP 04</span>
         <h4 class="os-card-title">Data Feedback &amp; Iteration</h4>
         <p class="os-card-desc">
-          I analyze Thumbstop Rate (&gt;35%), Hold Rate (&gt;18%), Outbound CTR, and CPA. When a creative wins, I spin off 5 hook variations to scale spend.
+          When a concept hits, we don't let it burn out. We iterate on the top 20%: swapping the first 3 seconds, testing new voiceovers, and turning winning video frames into high-CTR static carousels to keep CPA low.
         </p>
       </div>
     </div>
@@ -2448,11 +2628,11 @@ footer {
         <h2 class="section-title">Senior Creative Strategist at <span class="text-gold">TPF (Per4mance Guru)</span></h2>
 
         <p class="about-p">
-          I work as a <strong>Performance Creative Strategist</strong> scaling high-growth D2C brands, luxury interiors, and conversion funnels. At <strong>TPF (Per4mance Guru)</strong>, I lead creative strategy for brands like <strong>Three Sixty, Hide &amp; Leather, Hokipo, Mattress Fitness, Honest Energy, and Tresnova</strong>.
+          Hey, I'm Anupam. I'm a <strong>Senior Performance Creative Strategist</strong> at <strong>TPF (Per4mance Guru)</strong>. I spend my days deep in Meta Ad Library, Motion App creative analytics, and consumer psychology rabbit holes scaling brands like <strong>Three Sixty, Hide &amp; Leather, Hokipo, Mattress Fitness, Honest Energy, and Tresnova</strong>.
         </p>
 
         <p class="about-p">
-          In the Meta Andromeda and Advantage+ era, the old playbook of tweaking lookalike audiences and stacking interest groups is dead. Meta’s machine-learning algorithm broad-matches audiences automatically.
+          A lot of founders and agencies still think creative strategy is "making aesthetic graphics in Figma". It’s not. In the Advantage+ era, creative strategy is <strong>quantitative consumer psychology</strong>. It’s understanding cognitive biases, thumbstop velocity, hold rates, and how to structure a visual narrative that forces Meta's auction to favor your ads over competitors.
         </p>
 
         <div class="about-pullquote">
@@ -2460,7 +2640,7 @@ footer {
         </div>
 
         <p class="about-p">
-          My focus is ruthlessly commercial: <strong>Lower CAC, higher thumbstop rates, longer ad lifespans, and scalable blended ROAS</strong>.
+          My playbook is simple: Mine customer pain points, script 12 angles, test multi-format variants, kill losers ruthlessly, and iterate on winners before ad fatigue sets in.
         </p>
       </div>
     </div>
@@ -2474,16 +2654,16 @@ footer {
   <div class="container">
     <div class="audit-cta-box">
       <div class="badge-tag badge-gold" style="margin-bottom: 16px;">
-        <span class="badge-pulse"></span> Free 10-Minute Ad Account Audit
+        <span class="badge-pulse"></span> Free 7-Minute Creative Teardown Loom
       </div>
 
       <h2 class="audit-h2">
-        Let’s Drop Your CAC and<br>
-        <span class="text-gold">Scale Your Meta Ad Spend.</span>
+        Fatigued Ads? Rising CAC?<br>
+        <span class="text-gold">Let’s Audit Your Creative Account.</span>
       </h2>
 
       <p class="audit-desc">
-        Send me your store link or top 3 fatigued ads. I’ll send you a personalized Loom video breakdown with <strong>3 high-converting angle hypotheses + hook fixes</strong> you can deploy immediately.
+        Drop me your store URL or your top 3 fatigued ads. I’ll send you a personalized 7-minute Loom video breaking down <strong>3 high-converting angle hypotheses + hook fixes</strong> you can test this week. Zero pitch, 100% actionable.
       </p>
 
       <div class="contact-button-row">
@@ -2523,9 +2703,110 @@ footer {
 
 <footer>
   <div class="container">
-    © 2026 Anupam Nath · Senior Performance Creative Strategist · TPF (Per4mance Guru) · Built for Scalable Meta Growth
+    <div class="footer-trademark-notice">
+      <strong>Legal &amp; Trademark Attribution Notice:</strong> Meta, Instagram, Facebook, Meta Ads Manager, and Advantage+ are registered trademarks of Meta Platforms, Inc. Google and Google Ads are trademarks of Google LLC. This website is independently operated by Anupam Nath for professional creative strategy portfolio purposes. It is not affiliated with, endorsed by, sponsored by, or operated by Meta Platforms, Inc., Google LLC, or their affiliates. Client brand names, product trademarks, and publicly published ad creatives are displayed under nominative fair use for portfolio case study analysis and attribution. In strict compliance with non-disclosure agreements (NDAs), proprietary account numbers, client margins, and private customer information have been omitted or anonymized.
+    </div>
+
+    <div class="footer-legal-links">
+      <button type="button" class="legal-pill-btn" data-legal-tab="tab-trademarks">
+        ⚖️ Fair Use &amp; Trademarks
+      </button>
+      <button type="button" class="legal-pill-btn" data-legal-tab="tab-privacy">
+        🔒 Privacy Policy (DPDP &amp; GDPR)
+      </button>
+      <button type="button" class="legal-pill-btn" data-legal-tab="tab-terms">
+        📄 Terms of Service
+      </button>
+    </div>
+
+    <div class="footer-copyright">
+      © 2026 Anupam Nath · Senior Performance Creative Strategist at TPF (Per4mance Guru) · All Rights Reserved
+    </div>
   </div>
 </footer>
+
+<!-- ==========================================================================
+     LEGAL & COMPLIANCE MODAL
+     ========================================================================== -->
+<div class="modal-overlay" id="legalModal">
+  <div class="legal-modal-dialog">
+    <button class="modal-close-btn" id="legalModalCloseBtn">&times;</button>
+    
+    <div class="legal-modal-header">
+      <div class="badge-tag badge-gold">Compliance, Privacy &amp; Legal Hub</div>
+      <h3 class="legal-modal-title">Legal Terms, Policies &amp; Fair Use</h3>
+    </div>
+    
+    <div class="legal-tab-nav">
+      <button class="legal-tab-btn active" data-tab-target="tab-trademarks">⚖️ Fair Use &amp; Trademarks</button>
+      <button class="legal-tab-btn" data-tab-target="tab-privacy">🔒 Privacy Policy</button>
+      <button class="legal-tab-btn" data-tab-target="tab-terms">📄 Terms of Service</button>
+    </div>
+
+    <div class="legal-modal-body">
+      <!-- Tab 1: Fair Use & Trademarks -->
+      <div class="legal-tab-pane active" id="tab-trademarks">
+        <h4>1. Platform Trademark Attribution &amp; Non-Affiliation</h4>
+        <p>Meta, Meta Ads Manager, Advantage+, Instagram, and Facebook are registered trademarks of Meta Platforms, Inc. Google, Google Ads, and YouTube are trademarks of Google LLC. The mention of these platforms and technologies on this portfolio website is solely for technical descriptive and nominative purposes (identifying the advertising platforms where creative strategies and ad assets were engineered and deployed). This portfolio and its author, Anupam Nath, are independent and are neither affiliated with, authorized, maintained, sponsored, certified, nor endorsed by Meta Platforms, Inc., Google LLC, or any of their subsidiaries.</p>
+
+        <h4>2. Client Brand Assets &amp; Nominative Fair Use</h4>
+        <p>All brand names, logos, product names, registered trademarks, and commercial creative assets belonging to third-party brands (including Three Sixty, Hide and Leather, Hokipo, Mattress Fitness, Honest Energy, Tresnova, GD Goenka, Astro Chaitanya, Akshayvat Eldercare, and TPF / Per4mance Guru) are the sole property of their respective trademark and copyright holders. These assets are showcased on this personal website under nominative fair use doctrine (Section 52 of the Indian Copyright Act 1957, US Copyright Act 17 U.S.C. § 107, and international conventions) strictly for non-commercial portfolio presentation, historical attribution of professional creative strategy work performed, and educational analysis of advertising frameworks.</p>
+
+        <h4>3. Non-Disclosure Agreement (NDA) &amp; Confidentiality Compliance</h4>
+        <p>In accordance with binding Non-Disclosure Agreements and professional client confidentiality obligations:</p>
+        <ul>
+          <li>No proprietary backend margins, private revenue ledgers, or non-public financial statements are exposed.</li>
+          <li>Specific Meta Ad Account IDs, Pixel IDs, Business Manager identifiers, and private customer PII (Personally Identifiable Information) are completely omitted or redacted.</li>
+          <li>All creative assets displayed consist of publicly published advertising materials distributed across public media channels (such as the Meta Ad Library).</li>
+          <li>Performance metrics, hook rate lifts, and ROAS improvements are presented as indexed case-study testing outcomes, relative deltas, and anonymized testing benchmarks to demonstrate strategic methodology without compromising proprietary commercial data.</li>
+        </ul>
+
+        <h4>4. No Warranty on Third-Party Results (Advertising Standards Compliance)</h4>
+        <p>In adherence to ASCI (Advertising Standards Council of India) and FTC endorsement regulations, performance results, hook rate lifts, and metrics presented reflect historical testing outcomes under specific market, creative, and budget conditions. These are not a guarantee, projection, or promise of future commercial performance for other businesses or prospective clients.</p>
+      </div>
+
+      <!-- Tab 2: Privacy Policy -->
+      <div class="legal-tab-pane" id="tab-privacy">
+        <h4>1. Overview &amp; Compliance Framework</h4>
+        <p>This Privacy Policy outlines how Anupam Nath ("we", "us", or "the Strategist") collects, uses, and safeguards information when you visit this website (<code>portfolio-website-nine-rho-50.vercel.app</code>). We are committed to transparency and comply with the Indian Digital Personal Data Protection (DPDP) Act 2023, the European General Data Protection Regulation (GDPR), and applicable global privacy statutes.</p>
+
+        <h4>2. Zero Invasive Tracking &amp; Cookie Transparency</h4>
+        <p>This website is an informational portfolio built with zero third-party behavioral advertising cookies, zero invasive cross-site trackers, and zero fingerprinting scripts. We do not track you across the web, nor do we run retargeting pixels against visitors to this portfolio.</p>
+
+        <h4>3. Voluntary Information Collection (WhatsApp &amp; Email Contact)</h4>
+        <p>The only personal information collected is information you voluntarily choose to provide when contacting us directly:</p>
+        <ul>
+          <li><strong>WhatsApp Inquiries:</strong> Clicking the direct WhatsApp buttons initiates an encrypted conversation via WhatsApp (governed by WhatsApp's Privacy Policy). Your phone number and message contents are received solely to discuss your creative strategy inquiry.</li>
+          <li><strong>Email Inquiries:</strong> Sending an email to <code>anupamnath222@gmail.com</code> provides your name, email address, and inquiry details.</li>
+        </ul>
+
+        <h4>4. Zero Sale of Personal Data</h4>
+        <p>We do not sell, rent, monetize, or disclose your contact details or business information to any third parties, data brokers, or marketing lists under any circumstances.</p>
+
+        <h4>5. Your Data Rights &amp; Deletion</h4>
+        <p>You have the right to request deletion or modification of any past correspondence at any time by emailing <code>anupamnath222@gmail.com</code> with the subject line "Data Deletion Request". Requests are honored within 48 business hours.</p>
+      </div>
+
+      <!-- Tab 3: Terms of Service -->
+      <div class="legal-tab-pane" id="tab-terms">
+        <h4>1. Acceptance of Terms</h4>
+        <p>By accessing or browsing this portfolio website, you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service and all applicable laws and regulations.</p>
+
+        <h4>2. Intellectual Property of Strategy Frameworks</h4>
+        <p>All original written strategy frameworks, hook matrix taxonomies, testing schemas, website design elements, and analytical commentary authored by Anupam Nath are protected by applicable copyright and intellectual property laws. You may not scrape, clone, reproduce, or commercially distribute these proprietary frameworks without prior express written consent.</p>
+
+        <h4>3. Professional Consulting &amp; Engagements</h4>
+        <p>Viewing this portfolio, requesting a creative audit, or initiating a WhatsApp consultation does not constitute a formal agency contract or binding retainer. Official professional engagements are executed via formal statements of work (SOW) outlining defined scopes, deliverables, and commercial terms through TPF (Per4mance Guru) or agreed consulting contracts.</p>
+
+        <h4>4. Limitation of Liability</h4>
+        <p>In no event shall Anupam Nath or affiliated partners be liable for any direct, indirect, incidental, or consequential damages arising from the use of or inability to use the information, concepts, or case study commentary presented on this website.</p>
+
+        <h4>5. Contact &amp; Legal Notices</h4>
+        <p>For any legal inquiries, trademark concerns, or rights notices, please contact directly: <code>anupamnath222@gmail.com</code>.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ==========================================================================
      STRATEGY MODAL DRAWER
@@ -2848,6 +3129,74 @@ modal.addEventListener('click', (e) => {
     modalMedia.innerHTML = '';
   }
 });
+
+// --- LEGAL MODAL LOGIC ---
+const legalModal = document.getElementById('legalModal');
+const legalModalCloseBtn = document.getElementById('legalModalCloseBtn');
+const legalPillBtns = document.querySelectorAll('.legal-pill-btn');
+const legalTabBtns = document.querySelectorAll('.legal-tab-btn');
+const legalTabPanes = document.querySelectorAll('.legal-tab-pane');
+
+function switchLegalTab(targetId) {
+  legalTabBtns.forEach(btn => {
+    if (btn.getAttribute('data-tab-target') === targetId) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  legalTabPanes.forEach(pane => {
+    if (pane.id === targetId) {
+      pane.classList.add('active');
+    } else {
+      pane.classList.remove('active');
+    }
+  });
+}
+
+legalPillBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tabTarget = btn.getAttribute('data-legal-tab');
+    switchLegalTab(tabTarget);
+    legalModal.classList.add('open');
+  });
+});
+
+legalTabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tabTarget = btn.getAttribute('data-tab-target');
+    switchLegalTab(tabTarget);
+  });
+});
+
+if (legalModalCloseBtn) {
+  legalModalCloseBtn.addEventListener('click', () => {
+    legalModal.classList.remove('open');
+  });
+}
+
+if (legalModal) {
+  legalModal.addEventListener('click', (e) => {
+    if (e.target === legalModal) {
+      legalModal.classList.remove('open');
+    }
+  });
+}
+
+// Close modals on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (modal && modal.classList.contains('open')) {
+      modal.classList.remove('open');
+      modalMedia.innerHTML = '';
+    }
+    if (legalModal && legalModal.classList.contains('open')) {
+      legalModal.classList.remove('open');
+    }
+  }
+});
+
 </script>
 
 </body>
