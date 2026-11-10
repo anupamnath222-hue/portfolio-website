@@ -1,1344 +1,2587 @@
-﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Anupam Nath is a brand and creative strategist who builds AI-assisted creative systems. Organic-first thinking, hook strategy, video direction, funnel architecture. Open to full-time roles in brand strategy and creative leadership. Based in New Delhi, India.">
-<meta name="keywords" content="brand strategist, creative strategist, AI creative strategy, funnel strategy, hook strategy, content systems, video direction, organic growth, New Delhi">
-<title>Anupam Nath — Brand &amp; Creative Strategist</title>
+<title>Anupam Nath — Performance Creative Strategist (Meta Andromeda & Advantage+ Era)</title>
+<meta name="description" content="Anupam Nath is a Performance Creative Strategist for scaling DTC & Meta brands. Translating customer psychology, review mining, and Meta Ads Manager metrics into high-converting statics, UGC scripts, AI video ads, and repurposed hook variations.">
+<meta name="keywords" content="creative strategist, performance creative, meta ads creative strategist, dtc creative strategy, andromeda meta, hook rate, thumbstop rate, hokipo, berkowits, ad creative testing">
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#ffffff;--bg2:#f0fdf4;--card:#f8fafc;--card2:#ecfdf5;
-  --border:rgba(5,150,105,0.15);--border2:rgba(0,0,0,0.08);
-  --blue:#059669;--blue2:#10b981;--cyan:#34d399;
-  --glow:rgba(5,150,105,0.22);--glow2:rgba(5,150,105,0.08);
-  --white:#0f172a;--off:#1e293b;--grey:#475569;--dgrey:#64748b;
-  --f:'Plus Jakarta Sans',system-ui,sans-serif;
-}
-html{scroll-behavior:smooth;scroll-padding-top:70px;}
-body{background:linear-gradient(-45deg,#ffffff 0%,#f0fdf4 25%,#ffffff 50%,#ecfdf5 75%,#ffffff 100%);background-size:300% 300%;background-attachment:fixed;color:var(--off);font-family:var(--f);font-weight:400;line-height:1.7;overflow-x:hidden;font-size:15px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;animation:gradientShift 15s ease infinite;}
-@keyframes gradientShift{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px;}
-body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(5,150,105,0.02) 0%,rgba(52,211,153,0.01) 50%,rgba(5,150,105,0.02) 100%);background-size:200% 200%;pointer-events:none;z-index:0;animation:gradientFlow 12s ease-in-out infinite;}
-@keyframes gradientFlow{0%{background-position:0% 0%;}50%{background-position:100% 100%;}100%{background-position:0% 0%;}}
-body::before{content:'';position:fixed;top:-20%;left:50%;transform:translateX(-50%);width:1000px;height:700px;background:radial-gradient(ellipse,rgba(5,150,105,0.08) 0%,transparent 65%);pointer-events:none;z-index:0;animation:orbFloat 20s ease-in-out infinite;}
-@keyframes orbFloat{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(30px);}}
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:66px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border2);}
-.nav-ham{display:none;} /* removed */
-.nav-resume-mob{display:none;} /* shown only on mobile via media query */
-.nav-logo{font-size:17px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.015em;}
-.nav-logo span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
-.nav-links a{color:var(--grey);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.3s cubic-bezier(0.34,1.56,0.64,1);letter-spacing:-0.01em;position:relative;}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width 0.3s cubic-bezier(0.34,1.56,0.64,1);}
-.nav-links a:hover{color:var(--white)}
-.nav-links a:hover::after{width:100%}
-.nav-resume{background:linear-gradient(130deg,var(--blue),var(--cyan))!important;color:white!important;padding:9px 22px;border-radius:8px;font-weight:600!important;font-size:13px!important;box-shadow:0 0 22px var(--glow);transition:box-shadow 0.2s!important;letter-spacing:0!important;}
-.nav-resume:hover{box-shadow:0 0 36px rgba(5,150,105,0.45)!important;}
-
-/* HERO */
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 60px 60px 80px;position:relative;z-index:1;overflow:hidden;}
-.hero-left{display:flex;flex-direction:column;align-items:flex-start;text-align:left;position:relative;z-index:2;}
-.hero-right{display:flex;align-items:center;justify-content:center;position:relative;z-index:2;padding:70px 50px;}
-
-/* Photo card + badges */
-.hero-photo-wrap{position:relative;width:270px;flex-shrink:0;transition:transform 0.6s cubic-bezier(0.23,1,0.32,1);will-change:transform;}
-.hero-photo-wrap::before{content:'';position:absolute;inset:-20px;border-radius:44px;border:1.5px dashed rgba(5,150,105,0.22);z-index:0;opacity:0.5;}
-@keyframes spinRing{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.hero-photo-wrap::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:340px;height:340px;background:radial-gradient(ellipse,rgba(5,150,105,0.13) 0%,transparent 65%);border-radius:50%;z-index:0;pointer-events:none;opacity:0.6;}
-.hero-photo-card{width:100%;aspect-ratio:3/4;border-radius:26px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.35);box-shadow:0 28px 72px rgba(5,150,105,0.16),0 4px 18px rgba(0,0,0,0.07);position:relative;z-index:1;background:rgba(255,255,255,0.6);}
-.hero-photo-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.18) 0%,rgba(255,255,255,0) 40%,rgba(5,150,105,0.07) 70%,rgba(255,255,255,0.12) 100%);z-index:2;pointer-events:none;border-radius:26px;}
-.hero-photo-card::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(to right,transparent,rgba(255,255,255,0.22),transparent);z-index:3;pointer-events:none;animation:glassShimmer 4s ease-in-out infinite;animation-delay:-0.8s;}
-@keyframes glassShimmer{0%{left:-60%;}60%,100%{left:130%;}}
-.hero-photo{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;filter:contrast(1.03) brightness(1.01);}
-
-/* Floating glass badges */
-.hero-badge{position:absolute;background:rgba(255,255,255,0.96);border:1px solid rgba(5,150,105,0.18);border-radius:14px;padding:11px 16px;box-shadow:0 8px 28px rgba(5,150,105,0.1),0 2px 8px rgba(0,0,0,0.05);z-index:10;white-space:nowrap;}
-.hb-num{font-size:21px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;}
-.hb-projects .hb-num{font-size:13px;font-weight:700;}
-.hb-lbl{font-size:11px;color:var(--grey);font-weight:500;margin-top:3px;display:block;letter-spacing:-0.01em;}
-.hb-years{top:24px;left:-82px;}
-.hb-projects{bottom:64px;left:-76px;}
-.hb-role{top:52px;right:-108px;display:flex;align-items:center;gap:10px;}
-.hb-role-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(130deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;color:white;box-shadow:0 4px 12px rgba(5,150,105,0.3);}
-.hb-role-body{display:flex;flex-direction:column;}
-.hb-role .hb-text{font-size:12px;color:var(--off);font-weight:700;letter-spacing:-0.01em;}
-.hb-role .hb-sub{font-size:11px;color:var(--grey);margin-top:1px;}
-.hb-location{bottom:88px;right:-96px;display:flex;align-items:center;gap:9px;}
-.hb-dot-live{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 0 rgba(5,150,105,0.55);flex-shrink:0;animation:pulse 2.5s infinite;}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(5,150,105,0.55);}70%{box-shadow:0 0 0 7px rgba(5,150,105,0);}100%{box-shadow:0 0 0 0 rgba(5,150,105,0);}}
-@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
-.hb-location .hb-text{font-size:12px;color:var(--off);font-weight:600;}
-@keyframes floatBadge{0%,100%{transform:translateY(0px);}50%{transform:translateY(-9px);}}
-.hb-years{animation:floatBadge 4s ease-in-out infinite;}
-.hb-projects{animation:floatBadge 4.5s ease-in-out infinite;animation-delay:-0.8s;}
-.hb-role{animation:floatBadge 4.8s ease-in-out infinite;animation-delay:-1.6s;}
-.hb-location{animation:floatBadge 5s ease-in-out infinite;animation-delay:-2.4s;}
-.hero-welcome{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px;font-weight:600;animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s both;}\n@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.hero-h1{font-size:clamp(36px,5.5vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;color:var(--white);margin-bottom:12px;animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.25s both;}
-.grad{background:linear-gradient(130deg,var(--blue) 0%,var(--cyan) 60%,var(--blue2) 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-@keyframes g{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
-#typer{color:var(--blue2);min-height:1.2em;display:inline-block;}
-.cursor{color:var(--blue2);animation:blink-cursor 0.8s infinite;}
-@keyframes blink-cursor{0%,50%{opacity:1;}51%,100%{opacity:0;}}
-.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--grey);font-weight:500;margin-bottom:20px;letter-spacing:-0.01em;animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.35s both;}
-.hero-desc{font-size:15px;color:var(--grey);max-width:480px;line-height:1.85;margin-bottom:36px;font-weight:400;animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.42s both;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start;margin-bottom:36px;animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.50s both;}
-.btn{padding:13px 30px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);font-family:var(--f);cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;letter-spacing:-0.01em;position:relative;overflow:hidden;}
-.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,0.15) 50%,transparent 70%);transform:translateX(-100%);transition:transform 0.4s;}
-.btn-fill{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 4px 24px var(--glow);}
-.btn-fill:hover{box-shadow:0 8px 48px rgba(5,150,105,0.5);transform:translateY(-3px) scale(1.02);}
-.btn-fill:hover::before{transform:translateX(100%)}
-.btn-ghost{background:transparent;color:var(--off);border:1px solid var(--border);}
-.btn-ghost:hover{border-color:var(--blue2);color:var(--white);background:rgba(5,150,105,0.08);transform:translateY(-2px);}
-.hero-social{display:flex;gap:14px;justify-content:flex-start;align-items:center;margin-top:8px;animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.58s both;}
-.hero-social a{width:40px;height:40px;border-radius:10px;background:rgba(0,119,181,0.1);border:1px solid rgba(0,119,181,0.3);display:inline-flex;align-items:center;justify-content:center;color:#0077B5;text-decoration:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);}
-.hero-social a:hover{background:#0077B5;border-color:transparent;color:#fff;box-shadow:0 4px 24px rgba(0,119,181,0.5);transform:translateY(-3px) scale(1.08);}
-.hero-social svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;}
-
-/* SECTIONS */
-section{padding:96px 64px;position:relative;z-index:1;}
-.s-label{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;font-weight:600;position:relative;display:inline-block;}
-.s-label::after{content:'';position:absolute;bottom:-3px;left:0;height:1.5px;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px;transition:width 0.55s cubic-bezier(0.4,0,0.2,1);}
-.s-label.sl-in::after{width:100%;}
-.s-h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.025em;color:var(--white);margin-bottom:14px;line-height:1.1;}
-.s-h2 span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.s-sub{font-size:15px;color:var(--grey);max-width:480px;margin-bottom:56px;font-weight:400;line-height:1.7;}
-
-/* ABOUT */
-#about{background:var(--bg2);}
-.about-grid{display:grid;grid-template-columns:0.42fr 1fr 0.58fr;gap:52px;align-items:start;}
-.about-photo-col{display:flex;align-items:flex-start;justify-content:center;padding-top:16px;}
-.about-photo-wrap{position:relative;width:100%;max-width:230px;transition:transform 0.6s cubic-bezier(0.23,1,0.32,1);will-change:transform;}
-.about-photo-wrap::before{content:none;}
-.about-photo-wrap::after{content:none;}
-.about-photo-frame{width:100%;border-radius:22px;overflow:hidden;border:1.5px solid rgba(5,150,105,0.35);box-shadow:0 24px 64px rgba(5,150,105,0.18),0 4px 16px rgba(0,0,0,0.07);position:relative;z-index:1;background:rgba(255,255,255,0.6);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
-.about-photo-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 45%,rgba(5,150,105,0.06) 75%,rgba(255,255,255,0.1) 100%);z-index:2;pointer-events:none;border-radius:22px;}
-.about-photo-frame::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(to right,transparent,rgba(255,255,255,0.2),transparent);z-index:3;pointer-events:none;animation:glassShimmer 8s ease-in-out infinite;animation-delay:-2s;}
-.about-photo-frame img{width:100%;height:auto;display:block;object-fit:cover;position:relative;z-index:1;}
-.about-badge{position:absolute;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:40px;padding:8px 14px;box-shadow:0 8px 24px rgba(5,150,105,0.12),0 2px 6px rgba(0,0,0,0.05);z-index:10;white-space:nowrap;display:flex;align-items:center;gap:8px;}
-.ab-thinking{top:-22px;left:10px;background:rgba(255,255,255,0.95);border:1px solid rgba(5,150,105,0.2);animation:floatBadge 4s ease-in-out infinite;}
-.ab-thinking .ab-icon{font-size:14px;}
-.ab-thinking .ab-text{font-size:11px;font-weight:700;color:var(--off);letter-spacing:-0.01em;}
-.ab-open{bottom:-20px;right:4px;background:linear-gradient(130deg,var(--blue),var(--cyan));border:none;animation:floatBadge 5s ease-in-out infinite;animation-delay:-1.8s;}
-.ab-open .ab-text{font-size:11px;font-weight:700;color:#fff;letter-spacing:-0.01em;}
-.ab-open .ab-dot{width:7px;height:7px;border-radius:50%;background:#fff;opacity:0.85;animation:pulse 2.5s infinite;}
-.about-line-accent{position:absolute;top:30px;right:-18px;width:1px;height:60%;background:repeating-linear-gradient(to bottom,rgba(5,150,105,0.3) 0px,rgba(5,150,105,0.3) 5px,transparent 5px,transparent 11px);z-index:0;}
-.about-text p{font-size:15px;color:var(--grey);line-height:1.9;margin-bottom:18px;}
-.about-text strong{color:var(--off);font-weight:600;}
-.about-pull{margin-top:28px;padding:18px 22px;border-left:3px solid var(--blue2);background:rgba(5,150,105,0.06);border-radius:0 10px 10px 0;}
-.about-pull p{font-size:14px;color:var(--off);line-height:1.8;font-weight:500;margin:0;}
-.about-pull p span{color:var(--blue2);font-weight:700;}
-.about-loc{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--dgrey);margin-top:20px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:7px 14px;background:rgba(5,150,105,0.06);border:1px solid rgba(5,150,105,0.15);border-radius:30px;width:fit-content;}
-.about-loc svg{width:13px;height:13px;fill:var(--blue2);flex-shrink:0;}
-.about-stats{display:flex;flex-direction:column;gap:14px;}
-.stat-card{background:linear-gradient(135deg,rgba(5,150,105,0.08) 0%,rgba(52,211,153,0.04) 100%);border:1px solid rgba(5,150,105,0.2);border-radius:14px;padding:30px 22px;text-align:center;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(5,150,105,0.07),inset 0 1px 0 rgba(5,150,105,0.12);}
-.stat-card::before{content:'';position:absolute;width:200px;height:200px;background:radial-gradient(ellipse,rgba(5,150,105,0.13) 0%,transparent 65%);border-radius:50%;pointer-events:none;z-index:0;top:-60px;right:-60px;}
-.stat-card:nth-child(2)::before{top:auto;bottom:-60px;right:auto;left:-60px;background:radial-gradient(ellipse,rgba(52,211,153,0.1) 0%,transparent 65%);}
-.stat-card:nth-child(3)::before{top:-60px;right:auto;left:-60px;}
-.stat-card > *{position:relative;z-index:1;}
-.stat-card:hover{border-color:rgba(5,150,105,0.45);box-shadow:0 8px 36px rgba(5,150,105,0.2);}
-.stat-num{font-size:42px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;display:block;margin-bottom:4px;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
-.stat-mid{font-size:15px;font-weight:700;color:var(--off);display:block;margin-bottom:8px;letter-spacing:-0.01em;}
-.stat-title{font-size:24px;font-weight:800;background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;display:block;margin-bottom:10px;letter-spacing:-0.03em;}
-.stat-lbl{font-size:12px;color:var(--grey);line-height:1.5;}
-
-/* SKILLS */
-#skills{background:var(--bg);}
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.skill-card{background:linear-gradient(135deg,rgba(5,150,105,0.09) 0%,rgba(52,211,153,0.04) 100%);border:1px solid rgba(5,150,105,0.22);border-radius:14px;padding:28px 24px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(5,150,105,0.08),inset 0 1px 0 rgba(5,150,105,0.12);transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
-.skill-card::before{content:'';position:absolute;width:220px;height:220px;background:radial-gradient(ellipse,rgba(5,150,105,0.12) 0%,transparent 65%);pointer-events:none;top:-40%;right:-10%;}
-.skill-card:hover{border-color:rgba(5,150,105,0.5);transform:translateY(-3px);box-shadow:0 10px 40px rgba(5,150,105,0.2);}
-.sk-icon{position:absolute;top:16px;right:18px;font-size:42px;line-height:1;pointer-events:none;z-index:0;filter:drop-shadow(0 4px 12px rgba(5,150,105,0.18));animation:skIconFloat 6s ease-in-out infinite;transform-style:preserve-3d;will-change:transform;}
-.skill-card:nth-child(2) .sk-icon{animation-delay:-1.2s;}
-.skill-card:nth-child(3) .sk-icon{animation-delay:-2.4s;}
-.skill-card:nth-child(4) .sk-icon{animation-delay:-0.8s;}
-.skill-card:nth-child(5) .sk-icon{animation-delay:-3.1s;}
-.skill-card:nth-child(6) .sk-icon{animation-delay:-1.8s;}
-.skill-card:hover .sk-icon{animation-play-state:paused;transform:perspective(400px) rotateY(-18deg) rotateX(8deg) scale(1.18);filter:drop-shadow(0 8px 20px rgba(5,150,105,0.28));transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),filter 0.3s;}
-.sk-icon.sk-tap{animation:skIconTap 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards!important;}
-@keyframes skIconTap{0%{transform:perspective(400px) rotateY(0) rotateX(0) scale(1);}20%{transform:perspective(400px) rotateY(-25deg) rotateX(15deg) scale(0.7) translateY(4px);}55%{transform:perspective(400px) rotateY(20deg) rotateX(-12deg) scale(1.45) translateY(-14px);}80%{transform:perspective(400px) rotateY(-8deg) rotateX(5deg) scale(1.2) translateY(-6px);}100%{transform:perspective(400px) rotateY(0) rotateX(0) scale(1);}}
-.sk-particle{position:absolute;pointer-events:none;border-radius:50%;z-index:10;animation:skParticle 0.7s ease-out forwards;}
-@keyframes skParticle{0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--px),var(--py)) scale(0);}}
-@keyframes skIconFloat{0%,100%{transform:perspective(400px) rotateY(0deg) rotateX(0deg) translateY(0);}25%{transform:perspective(400px) rotateY(10deg) rotateX(-5deg) translateY(-4px);}50%{transform:perspective(400px) rotateY(-6deg) rotateX(6deg) translateY(-7px);}75%{transform:perspective(400px) rotateY(8deg) rotateX(-3deg) translateY(-3px);}}
-.sk-body{position:relative;z-index:1;}
-.skill-cat{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;font-weight:700;display:flex;align-items:center;gap:8px;}
-.skill-cat::before{content:'';width:18px;height:1px;background:linear-gradient(to right,var(--blue),var(--cyan));}
-.skill-pov{font-size:13px;color:var(--grey);line-height:1.7;margin-bottom:16px;font-weight:400;}
-.skill-pov strong{color:var(--off);font-weight:600;}
-.skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
-.skill-tag{font-size:12px;padding:5px 12px;border-radius:7px;border:1px solid var(--border2);color:var(--grey);background:var(--bg2);transition:all 0.2s;}
-.skill-tag:hover{border-color:var(--border);color:var(--blue2);}
-.proj-name-ref{color:var(--blue2);font-weight:600;font-style:normal;}
-
-/* PROJECTS */
-#projects{background:var(--bg2);}
-.filter-row{display:flex;gap:4px;margin-bottom:44px;background:var(--card);padding:4px;border-radius:10px;width:fit-content;border:1px solid var(--border2);}
-.f-btn{padding:9px 22px;border:none;background:transparent;color:var(--grey);font-family:var(--f);font-size:13px;font-weight:500;cursor:pointer;border-radius:7px;transition:all 0.2s;}
-.f-btn.active{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;box-shadow:0 0 18px var(--glow);}
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.proj-card{background:linear-gradient(135deg,rgba(5,150,105,0.07) 0%,rgba(240,253,244,0.9) 40%,rgba(236,253,245,0.85) 100%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(5,150,105,0.22);border-radius:16px;overflow:hidden;position:relative;display:flex;flex-direction:row;align-items:flex-start;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 4px 20px rgba(5,150,105,0.08),inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -1px 0 rgba(5,150,105,0.06);gap:0;padding-top:0;}
-.proj-card:hover{border-color:rgba(5,150,105,0.5);box-shadow:0 20px 64px rgba(5,150,105,0.25),inset 0 1px 0 rgba(255,255,255,0.95),inset 0 -1px 0 rgba(5,150,105,0.08);transform:translateY(-8px);}
-.proj-thumb{min-width:110px;width:110px;height:110px;aspect-ratio:1;background:rgba(255,255,255,0.8);border:1px solid rgba(5,150,105,0.18);display:flex;align-items:center;justify-content:center;padding:10px;position:relative;z-index:1;overflow:hidden;flex-shrink:0;border-radius:12px;box-shadow:0 4px 16px rgba(5,150,105,0.12),inset 0 1px 0 rgba(255,255,255,0.9);margin:14px;margin-right:18px;transition:box-shadow 0.3s,transform 0.3s;}
-.proj-card:hover .proj-thumb{box-shadow:0 8px 28px rgba(5,150,105,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:scale(1.06) rotate(-1deg);}
-.proj-thumb img{max-width:100%;max-height:100%;object-fit:contain;width:88%;height:88%;transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);}
-.proj-card:hover .proj-thumb img{transform:scale(1.1);}
-.proj-thumb.dual-brand{width:130px;min-width:130px;height:auto;min-height:100px;flex-direction:column;gap:6px;padding:10px 8px;aspect-ratio:auto;}
-.proj-thumb.dual-brand img{width:100%;height:44px;object-fit:contain;}
-.dual-cta-label{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:6px;margin-top:14px;}
-.proj-thumb.bgt-thumb{background:linear-gradient(135deg,#073b2e,#047857);flex-direction:column;gap:3px;}
-.bgt-mark{font-size:22px;font-weight:900;letter-spacing:-0.05em;color:rgba(255,255,255,0.9);}
-.proj-body{padding:18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
-.proj-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;letter-spacing:-0.015em;}
-.proj-desc{font-size:13px;color:var(--grey);line-height:1.7;flex:1;margin-bottom:14px;}
-.proj-metrics{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;padding:12px;background:rgba(255,255,255,0.65);backdrop-filter:blur(8px);border-radius:8px;border:1px solid rgba(5,150,105,0.18);box-shadow:inset 0 1px 0 rgba(255,255,255,0.8);}
-.metric{font-size:12px;color:var(--blue2);font-weight:600;line-height:1.6;}
-.metric strong{color:var(--white);font-weight:700;}
-.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
-.proj-tag{font-size:11px;padding:3px 9px;border-radius:5px;background:rgba(5,150,105,0.1);color:var(--blue2);border:1px solid rgba(5,150,105,0.2);font-weight:500;}
-.proj-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--blue2);text-decoration:none;font-weight:500;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);transition:all 0.2s;width:fit-content;}
-.proj-link:hover{border-color:var(--blue);background:var(--glow2);color:var(--white);}
-.proj-desc strong{color:var(--white);font-weight:600;background:rgba(5,150,105,0.15);padding:2px 6px;border-radius:4px;}
-.proj-card::before{content:'';position:absolute;width:280px;height:280px;background:radial-gradient(ellipse,rgba(5,150,105,0.12) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:0;top:-80px;right:-60px;transition:opacity 0.3s;}
-.proj-card:hover::before{opacity:1.4;}
-.proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.55) 0%,transparent 50%);pointer-events:none;z-index:0;border-radius:16px;}
-
-/* METHODOLOGY */
-#hop{background:var(--bg);}
-.hop-wrap{background:linear-gradient(135deg,rgba(5,150,105,0.08) 0%,rgba(52,211,153,0.04) 100%);border:1.5px solid rgba(5,150,105,0.35);border-radius:24px;padding:64px 56px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(5,150,105,0.15);}
-.hop-wrap::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(5,150,105,0.12) 0%,transparent 65%);pointer-events:none;}
-.hop-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:56px;align-items:start;}
-.hop-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue2);background:rgba(5,150,105,0.15);border:1.5px solid rgba(5,150,105,0.35);padding:6px 16px;border-radius:20px;margin-bottom:20px;font-weight:700;box-shadow:0 4px 16px rgba(5,150,105,0.1);}
-.hop-dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;box-shadow:0 0 12px var(--blue);}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
-.hop-title{font-size:clamp(32px,4.2vw,48px);font-weight:800;color:var(--white);letter-spacing:-0.03em;margin-bottom:18px;line-height:1.1;}
-.hop-title span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hop-subtitle-small{font-size:14px;color:var(--grey);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:28px;font-weight:600;}
-.hop-subtitle{font-size:17px;font-weight:700;color:var(--white);letter-spacing:-0.01em;margin-bottom:16px;margin-top:28px;}
-.hop-subtitle:first-of-type{margin-top:0;}
-.hop-section{margin-bottom:32px;}
-.hop-why{background:rgba(5,150,105,0.1);border:1px solid rgba(5,150,105,0.25);border-radius:14px;padding:20px;margin-bottom:28px;position:relative;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(5,150,105,0.08);}
-.hop-why::before{content:'';position:absolute;top:-50%;right:-50%;width:350px;height:350px;background:radial-gradient(ellipse,rgba(5,150,105,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
-.hop-why-content{position:relative;z-index:1;}
-.hop-why h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:12px;letter-spacing:-0.01em;}
-.hop-why p{font-size:13px;color:var(--off);line-height:1.7;margin-bottom:8px;font-weight:400;}
-.hop-why p:last-child{margin-bottom:0;}
-.hop-desc{font-size:15px;color:var(--grey);line-height:1.85;margin-bottom:20px;}
-.hop-note{font-size:12px;color:var(--dgrey);background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:7px;padding:10px 14px;margin-bottom:20px;font-style:italic;line-height:1.6;}
-.hop-items{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;flex-direction:column;}
-.hop-item span{color:var(--white);font-weight:700;}
-.hop-item{font-size:14px;padding:8px 0;color:var(--grey);display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
-.hop-comps{display:flex;flex-direction:column;gap:10px;}
-.hop-comp{background:linear-gradient(135deg,rgba(255,255,255,0.85) 0%,rgba(240,253,244,0.9) 100%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(5,150,105,0.18);border-radius:12px;padding:15px 20px;display:flex;align-items:center;gap:14px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.4s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:visible;box-shadow:0 2px 12px rgba(5,150,105,0.07),inset 0 1px 0 rgba(255,255,255,0.9);perspective:1200px;}
-.hop-comp::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--blue),var(--cyan));border-radius:3px 0 0 3px;transform:scaleY(0);transform-origin:bottom;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);}
-.hop-comp:hover{border-color:rgba(5,150,105,0.55);box-shadow:0 20px 48px rgba(5,150,105,0.25),0 0 1px rgba(52,211,153,0.3),inset 0 1px 0 rgba(255,255,255,0.95);transform:translateX(8px) translateY(-4px) perspective(800px) rotateY(-8deg) rotateX(2deg);}
-.hop-comp:hover::before,.hop-comp.vis::before{transform:scaleY(1);}
-.hop-lbl{font-size:14px;color:var(--grey);line-height:1.6;}
-.hop-lbl strong{color:var(--off);font-weight:700;}
-.hop-why-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:16px;display:block;}
-.hop-constraints{display:flex;flex-direction:column;gap:1px;margin-bottom:10px;}
-.hop-constraints span{font-size:18px;font-weight:700;color:var(--off);letter-spacing:-0.025em;line-height:1.55;}
-.hop-just{font-size:14px;color:var(--grey);margin-bottom:28px;font-style:italic;letter-spacing:-0.005em;}
-.hop-liquid{background:linear-gradient(135deg,rgba(5,150,105,0.1) 0%,rgba(52,211,153,0.05) 100%);border:1px solid rgba(5,150,105,0.28);border-radius:16px;padding:26px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 0 48px rgba(5,150,105,0.1),inset 0 1px 0 rgba(5,150,105,0.12);}
-.hop-liquid::before{content:'';position:absolute;top:-40%;right:-20%;width:280px;height:280px;background:radial-gradient(ellipse,rgba(5,150,105,0.14) 0%,transparent 65%);pointer-events:none;}
-@keyframes liquidFloat{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-15px,10px) scale(1.12);}}
-.hop-liquid-inner{position:relative;z-index:1;}
-.hop-liquid p{font-size:13px;color:var(--off);line-height:1.85;margin-bottom:14px;letter-spacing:-0.005em;}
-.hop-liquid p:last-child{margin-bottom:0;}
-.hop-liquid-gap{color:var(--blue2)!important;font-weight:600!important;font-size:14px!important;}
-.hop-differentiator{border-left:2px solid rgba(5,150,105,0.3);padding-left:18px;margin-bottom:36px;}
-.hop-diff-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:10px;display:block;}
-.hop-differentiator p{font-size:13px;color:var(--grey);line-height:1.75;margin-bottom:8px;}
-.hop-differentiator p:last-child{margin-bottom:0;}
-/* hop-comp entrance � slide from left with spring */
-.hop-reveal{opacity:0;transform:translateX(-22px) perspective(800px) rotateY(25deg);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1);}
-.hop-reveal.vis{opacity:1;transform:translateX(0) perspective(800px) rotateY(0deg);}
-
-/* shimmer sweep fires once on entry */
-@keyframes hopShimmer{0%{left:-80%;opacity:0;}25%{opacity:1;}100%{left:130%;opacity:0;}}
-@keyframes hopCard3D{0%{opacity:0;transform:translateX(-30px) perspective(1000px) rotateY(35deg) rotateX(-10deg);}100%{opacity:1;transform:translateX(0) perspective(1000px) rotateY(0) rotateX(0);}}
-.hop-comps .hop-reveal:nth-child(1){}
-.hop-comps .hop-reveal:nth-child(2){}
-.hop-comps .hop-reveal:nth-child(3){}
-.hop-comps .hop-reveal:nth-child(4){}
-.hop-comps .hop-reveal:nth-child(5){}
-.hop-comps .hop-reveal:nth-child(6){}
-.hop-comps .hop-reveal:nth-child(7){}
-.hop-comp.vis::after{display:none;}
-
-/* title clip reveal */
-.hop-lbl-wrap{overflow:hidden;}
-.hop-lbl strong{display:block;margin-bottom:2px;transform:translateY(110%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);transition-delay:0.18s;}
-.hop-comp.vis .hop-lbl strong{transform:translateY(0);}
-
-/* subtitle fade in after title */
-.hop-lbl-sub{opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;transition-delay:0.3s;display:block;}
-.hop-comp.vis .hop-lbl-sub{opacity:1;transform:translateY(0);}
-
-/* HOP ALIVE � floating orbs, mouse spotlight, liquid shift, shimmer */
-@keyframes hopOrb1{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(60px,40px) scale(1.18);}66%{transform:translate(-20px,70px) scale(0.88);}}
-@keyframes hopOrb2{0%,100%{transform:translate(0,0) scale(1);}40%{transform:translate(-60px,-40px) scale(1.2);}75%{transform:translate(30px,-70px) scale(0.85);}}
-.hop-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(48px);display:none;}
-.hop-orb-1{width:360px;height:360px;background:radial-gradient(circle,rgba(5,150,105,0.2) 0%,transparent 70%);top:-80px;left:-80px;animation:hopOrb1 14s ease-in-out infinite;}
-.hop-orb-2{width:280px;height:280px;background:radial-gradient(circle,rgba(52,211,153,0.15) 0%,transparent 70%);bottom:-60px;right:-60px;animation:hopOrb2 18s ease-in-out infinite;}
-.hop-spotlight{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(5,150,105,0.1) 0%,transparent 60%);pointer-events:none;transform:translate(-50%,-50%);z-index:0;transition:opacity 0.5s ease;opacity:0;}
-.hop-wrap:hover .hop-spotlight{opacity:1;}
-.hop-inner{position:relative;z-index:1;}
-@keyframes hopBorderPulse{0%,100%{box-shadow:0 20px 60px rgba(5,150,105,0.15),0 0 0 1.5px rgba(5,150,105,0.35);}50%{box-shadow:0 28px 80px rgba(5,150,105,0.3),0 0 0 1.5px rgba(52,211,153,0.55);}}
-.hop-wrap{animation:none;perspective:1200px;}
-@keyframes hopLiquidBg{0%,100%{background:linear-gradient(135deg,rgba(5,150,105,0.12) 0%,rgba(52,211,153,0.06) 100%);}50%{background:linear-gradient(225deg,rgba(52,211,153,0.17) 0%,rgba(5,150,105,0.05) 100%);}}
-.hop-liquid{animation:none;}
-.hop-liquid::after{content:'';position:absolute;bottom:-30%;left:5%;width:220px;height:220px;background:radial-gradient(circle,rgba(52,211,153,0.15) 0%,transparent 70%);border-radius:50%;filter:blur(24px);pointer-events:none;display:none;}
-@keyframes hopLiquidOrb2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(70px,-50px) scale(1.32);}}
-@keyframes hopTitleShimmer{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
-.hop-title span{background:linear-gradient(130deg,var(--blue),var(--cyan),#a7f3d0,var(--blue));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hop-constraints span{opacity:0;transform:translateX(-18px);transition:opacity 0.5s ease,transform 0.5s cubic-bezier(0.16,1,0.3,1);}
-.hop-constraints.vis span:nth-child(1){opacity:1;transform:none;transition-delay:0.05s;}
-.hop-constraints.vis span:nth-child(2){opacity:1;transform:none;transition-delay:0.2s;}
-.hop-constraints.vis span:nth-child(3){opacity:1;transform:none;transition-delay:0.35s;}
-.hop-num{font-size:20px;background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;min-width:34px;display:inline-block;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);transform-style:preserve-3d;perspective:1000px;}
-.hop-comp:hover .hop-num{transform:scale(1.25) rotateY(-12deg) rotateZ(8deg);}
-.hop-comp:hover{border-color:rgba(5,150,105,0.55);box-shadow:0 10px 36px rgba(5,150,105,0.2),0 0 0 1px rgba(52,211,153,0.22),inset 0 1px 0 rgba(255,255,255,0.95);transform:translateX(6px);}
-
-/* CONTACT */
-#contact{background:var(--bg2);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.form-group{margin-bottom:16px;}
-.form-group label{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);margin-bottom:7px;font-weight:600;}
-.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--card);border:1px solid var(--border2);border-radius:10px;padding:12px 16px;color:var(--off);font-family:var(--f);font-size:14px;transition:border-color 0.2s,box-shadow 0.2s;outline:none;appearance:none;-webkit-appearance:none;}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(5,150,105,0.1);}
-.form-group textarea{height:108px;resize:none;}
-.form-group select option{background:var(--card);color:var(--off);}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.ci-info h3{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:-0.01em;}
-.ci-info p{font-size:14px;color:var(--grey);margin-bottom:32px;line-height:1.85;}
-.ci-links{display:flex;flex-direction:column;gap:12px;}
-.ci-link{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 18px;background:var(--card);border:1px solid var(--border2);border-radius:12px;transition:all 0.2s;}
-.ci-link:hover{border-color:var(--border);background:var(--glow2);}
-.ci-icon{width:36px;height:36px;border-radius:8px;background:rgba(5,150,105,0.1);border:1px solid rgba(5,150,105,0.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
-.ci-lbl{font-size:11px;color:var(--dgrey);letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:2px;font-weight:500;}
-.ci-val{font-size:13px;color:var(--off);}
-
-/* FOOTER */
-footer{padding:22px 64px;background:var(--bg);border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;}
-.f-name{font-size:16px;font-weight:800;color:var(--white);letter-spacing:-0.015em;}
-.f-name span{background:linear-gradient(130deg,var(--blue),var(--cyan));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.f-copy{font-size:12px;color:var(--dgrey);}
-
-/* CUSTOM CURSOR */
-#cursorDot{position:fixed;width:8px;height:8px;background:radial-gradient(circle,var(--blue),var(--cyan));border-radius:50%;pointer-events:none;z-index:9999;box-shadow:0 0 8px var(--blue);mix-blend-mode:screen;display:none;}
-#cursorRing{position:fixed;width:30px;height:30px;border:1.5px solid rgba(5,150,105,0.4);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.15s,height 0.15s,border-color 0.15s;display:none;}
-.cursor-hover #cursorRing{width:50px;height:50px;border-color:rgba(5,150,105,0.7);}
-
-/* INTERACTIVE CARD POP EFFECT */
-.proj-card,.skill-card,.stat-card,.ci-link{transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.3s ease,border-color 0.3s ease;}
-.proj-card{transition:opacity 0.5s ease-out,transform 0.5s ease-out,box-shadow 0.25s ease,border-color 0.25s ease;}
-.proj-card:active,.skill-card:active,.stat-card:active,.ci-link:active{transform:scale(0.98);}
-.stat-card:hover{transform:translateY(-6px) scale(1.02);}
-.proj-card.proj-anim{opacity:0;transform:translateY(30px);}
-.proj-card.in{opacity:1;transform:translateY(0);}
-.proj-card:hover{transform:translateY(-6px);transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease;}
-.proj-card:hover .metric strong{color:var(--cyan);}
-
-/* COUNTING ANIMATION */
-.stat-num.counting{font-variant-numeric:tabular-nums;}
-
-/* GLOBAL DOT GRID CANVAS */
-#globalCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:1;}
-#dotsCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;}
-
-/* PREMIUM MICRO-ANIMATIONS */
-
-/* 1. Word-by-word text reveal for h2 headings */
-.s-h2 .wr{display:inline-block;opacity:0;transform:translateY(12px);transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1),transform 0.5s cubic-bezier(0.16,1,0.3,1);}
-.s-h2.wv .wr{opacity:1;transform:translateY(0);}
-
-/* 2. Stat card number glow on count */
-.stat-num{transition:text-shadow 0.3s;}
-.stat-num.counting{text-shadow:0 0 28px rgba(5,150,105,0.35);}
-
-/* 3. Skill tag hover pop */
-.skill-tag{transition:all 0.18s cubic-bezier(0.34,1.56,0.64,1);}
-.skill-tag:hover{transform:scale(1.08) translateY(-1px);border-color:rgba(5,150,105,0.4);color:var(--blue2);background:rgba(5,150,105,0.08);}
-
-/* 4. Project card left border trace on hover */
-.proj-card{border-left:2px solid transparent;transition:border-color 0.3s,box-shadow 0.25s,transform 0.25s;}
-.proj-card:hover{border-left-color:var(--blue2);}
-
-/* 5. hop-comp number highlight on hover */
-.hop-comp:hover .hop-num{color:var(--blue);transform:scale(1.15);display:inline-block;transition:color 0.2s,transform 0.2s;}
-.hop-num{transition:color 0.2s,transform 0.2s;display:inline-block;font-size:12px;color:var(--blue);font-weight:800;min-width:26px;letter-spacing:0.02em;}
-
-/* Hop-comp: HoP logo glow pulse on section enter */
-.hop-logo-wrap{transition:transform 0.3s,filter 0.3s;}
-.hop-logo-wrap:hover{transform:scale(1.04);filter:drop-shadow(0 0 24px rgba(5,150,105,0.45)) drop-shadow(0 0 8px rgba(52,211,153,0.3));}
-
-/* 6. Contact links icon pop */
-.ci-link:hover .ci-icon{background:linear-gradient(130deg,var(--blue),var(--cyan));color:white;border-color:transparent;transition:all 0.22s cubic-bezier(0.34,1.56,0.64,1);transform:scale(1.12);}
-.ci-icon{transition:all 0.22s cubic-bezier(0.34,1.56,0.64,1);}
-
-/* 7. Footer fade up */
-footer{opacity:0;transform:translateY(16px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1);}
-footer.fv{opacity:1;transform:translateY(0);}
-
-/* SMOOTH TRANSITIONS */
-a,button,.btn,.nav-links a{transition:all 0.25s cubic-bezier(0.4,0,0.2,1);}
-.btn-fill:active{transform:translateY(-1px);}
-
-/* SCROLL REVEAL � fixed: was will-change only, no animation */
-.fi:not(.proj-card){opacity:0;transform:translateY(26px);transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1),transform 0.65s cubic-bezier(0.16,1,0.3,1);will-change:opacity,transform;}
-.fi:not(.proj-card).vis{opacity:1;transform:translateY(0);}
-.fi.d1:not(.proj-card){transition-delay:0.13s;}
-.fi.d2:not(.proj-card){transition-delay:0.26s;}
-
-/* SKILL CARD ENTRANCE � fixed: sk-in class added by JS but no CSS existed */
-.skill-card{opacity:0;transform:translateY(18px);transition:opacity 0.55s cubic-bezier(0.16,1,0.3,1),transform 0.55s cubic-bezier(0.16,1,0.3,1),border-color 0.2s,box-shadow 0.2s;}
-.skill-card.sk-in{opacity:1;transform:translateY(0);}
-
-/* SCROLL PROGRESS BAR */
-#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:99999;pointer-events:none;border-radius:0 2px 2px 0;transition:width 0.08s linear;}
-
-/* NAV SCROLLED STATE */
-nav.nav-scrolled{box-shadow:0 4px 28px rgba(0,0,0,0.08);}
-
-/* NAV LINK HOVER UNDERLINE */
-.nav-links a:not(.nav-resume){position:relative;}
-.nav-links a:not(.nav-resume)::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px;transition:width 0.25s cubic-bezier(0.4,0,0.2,1);}
-.nav-links a:not(.nav-resume):hover::after{width:100%;}
-.nav-links a.nav-active{color:var(--blue2)!important;text-shadow:0 0 18px rgba(52,211,153,0.5);}
-.nav-links a.nav-active::after{width:100%;}
-
-/* HERO ENTRANCE � gentle single fade */
-@keyframes heroFade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-.hero-left{animation:heroFade 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s both;}
-.hero-right{animation:heroFade 0.7s cubic-bezier(0.16,1,0.3,1) 0.22s both;}
-
-/* BACK TO TOP */
-#back-top{position:fixed;bottom:28px;right:28px;width:40px;height:40px;background:linear-gradient(130deg,var(--blue),var(--cyan));border:none;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:500;box-shadow:0 4px 18px rgba(5,150,105,0.3);opacity:0;transform:translateY(10px) scale(0.9);transition:opacity 0.3s,transform 0.3s;pointer-events:none;color:white;font-size:18px;font-weight:700;line-height:1;font-family:var(--f);}
-#back-top.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
-#back-top:hover{box-shadow:0 6px 28px rgba(5,150,105,0.5);transform:translateY(-3px) scale(1)!important;}
-
-/* CUSTOM CURSOR � dot only, ring removed */
-#cursorDot{display:block!important;}
-#cursorRing{display:none!important;}
-
-@media(max-width:900px){
-  #back-top{bottom:18px;right:18px;width:36px;height:36px;font-size:15px;}
-  #cursorDot{display:none!important;}
+/* ==========================================================================
+   DESIGN TOKENS & RESET
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ============================================================
-   MOBILE � full responsive overhaul
-   ============================================================ */
-@media(max-width:900px){
+:root {
+  --bg-dark: #080b11;
+  --bg-surface: #0d121d;
+  --bg-card: #121927;
+  --bg-card-hover: #182235;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(16, 185, 129, 0.35);
+  --border-cyan: rgba(6, 182, 212, 0.3);
 
-  /* NAV */
-  nav{padding:0 20px;height:58px;}
-  .nav-links{display:none;}
-  .nav-resume-mob{display:inline-flex!important;font-size:12px!important;padding:8px 16px!important;}
+  --emerald: #10b981;
+  --emerald-light: #34d399;
+  --emerald-glow: rgba(16, 185, 129, 0.2);
 
-  /* SECTIONS */
-  section{padding:64px 20px;}
+  --cyan: #06b6d4;
+  --cyan-light: #38bdf8;
+  --cyan-glow: rgba(6, 182, 212, 0.2);
 
-  /* HERO */
-  #hero{padding:80px 20px 48px;grid-template-columns:1fr;gap:0;min-height:auto;}
-  .hero-left{align-items:center;text-align:center;}
-  .hero-h1{font-size:clamp(32px,9vw,52px);}
-  .hero-sub{font-size:16px;}
-  .hero-desc{font-size:14px;max-width:100%;}
-  .hero-btns{justify-content:center;gap:10px;}
-  .hero-btns .btn{padding:12px 24px;font-size:13px;}
-  .hero-social{justify-content:center;}
+  --amber: #f59e0b;
+  --purple: #8b5cf6;
 
-  /* Hero photo + badges � give them more room */
-  .hero-right{display:flex;justify-content:center;padding:48px 0 20px;}
-  .hero-photo-wrap{width:200px;}
-  .hero-photo-wrap::before{inset:-10px;border-radius:30px;}
-  .hero-photo-card{border-radius:20px;}
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
 
-  /* Reposition badges so they don't bleed off screen */
-  .hb-years{top:10px;left:-58px;}
-  .hb-projects{bottom:32px;left:-54px;}
-  .hb-role{top:32px;right:-68px;padding:7px 10px;gap:6px;}
-  .hb-role-icon{width:26px;height:26px;font-size:11px;}
-  .hb-role .hb-text{font-size:10px;}
-  .hb-role .hb-sub{font-size:9px;}
-  .hb-location{bottom:56px;right:-68px;padding:7px 11px;gap:7px;}
-  .hb-num{font-size:16px;}
-  .hb-lbl{font-size:10px;}
-  .hb-dot-live{width:7px;height:7px;}
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
 
-  /* ABOUT */
-  .about-grid{grid-template-columns:1fr!important;gap:24px!important;}
-  .about-photo-col{display:flex;justify-content:center;padding-top:0;margin-bottom:8px;}
-  .about-photo-wrap{max-width:160px;}
-  .about-badge{display:none;}
-  .about-line-accent{display:none;}
-  .about-stats{flex-direction:row;flex-wrap:wrap;gap:12px;}
-  .stat-card{flex:1;min-width:140px;padding:22px 16px;}
-  .stat-num{font-size:34px;}
-  .stat-title{font-size:20px;}
-
-  /* SKILLS */
-  .skills-grid{grid-template-columns:1fr;}
-  .skill-card{padding:22px 18px;}
-
-  /* PROJECTS */
-  .filter-row{flex-wrap:wrap;width:100%;}
-  .f-btn{flex:1;min-width:80px;text-align:center;font-size:12px;padding:8px 12px;}
-  .proj-grid{grid-template-columns:1fr;}
-  .proj-card{flex-direction:row;}
-  .proj-thumb{min-width:88px;width:88px;height:88px;margin:12px;margin-right:14px;}
-  .proj-body{padding:14px 14px 14px 0;}
-  .proj-name{font-size:14px;}
-  .proj-desc{font-size:12px;}
-  .proj-metrics{padding:10px;}
-  .metric{font-size:11px;}
-
-  /* PROJECTS AND THINKING */
-  .think-grid{grid-template-columns:repeat(2,1fr);}
-
-  /* METHODOLOGY */
-  .hop-wrap{padding:36px 22px;}
-  .hop-inner{grid-template-columns:1fr;gap:32px;}
-  .hop-title{font-size:clamp(26px,7vw,38px);}
-  .hop-logo-wrap{justify-content:flex-start!important;}
-  .hop-comp{padding:13px 16px;}
-
-  /* CONTACT */
-  .contact-grid{grid-template-columns:1fr;gap:36px;}
-  .form-row{grid-template-columns:1fr;}
-  .ci-links{gap:10px;}
-  .ci-link{padding:12px 14px;}
-
-  /* FOOTER */
-  footer{flex-direction:column;gap:6px;text-align:center;padding:18px 20px;}
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
 }
 
-/* Extra small phones */
-@media(max-width:420px){
-  .hero-photo-wrap{width:170px;}
-  .hb-years{left:-50px;}
-  .hb-projects{left:-46px;}
-  .hb-role{right:-58px;}
-  .hb-location{right:-58px;}
-  .hb-num{font-size:14px;}
-  .hero-h1{font-size:clamp(28px,10vw,40px);}
-  .hop-wrap{padding:28px 16px;}
-  section{padding:52px 16px;}
-  nav{padding:0 16px;}
-  .think-grid{grid-template-columns:1fr;}
-  .think-card{padding:24px 20px;}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
-/* How I Think and Build compact cards */
-.think-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px;}
-.think-card{background:linear-gradient(135deg,rgba(5,150,105,0.07) 0%,rgba(52,211,153,0.03) 100%);border:1.5px solid rgba(5,150,105,0.25);border-radius:20px;padding:30px 26px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s cubic-bezier(0.34,1.56,0.64,1);}
-.think-card:hover{border-color:rgba(5,150,105,0.55);box-shadow:0 20px 56px rgba(5,150,105,0.18);transform:translateY(-5px);}
-.think-num{font-size:11px;color:var(--blue2);font-weight:700;letter-spacing:0.14em;}
-.think-tag{font-size:11px;color:var(--blue2);background:rgba(5,150,105,0.12);border:1px solid rgba(5,150,105,0.22);padding:4px 12px;border-radius:100px;width:fit-content;font-weight:600;letter-spacing:0.06em;}
-.think-title{font-size:21px;font-weight:800;color:var(--white);letter-spacing:-0.025em;margin-top:4px;line-height:1.15;}
-.think-desc{font-size:14px;color:var(--grey);line-height:1.75;flex:1;margin-top:4px;}
-.think-cta{font-size:13px;color:var(--blue2);font-weight:600;margin-top:12px;}
-.think-card:hover .think-cta{color:var(--cyan);}
-/* Projects folder tabs */
-.proj-folder-wrap{display:flex;flex-direction:column;}
-.proj-tab{align-self:flex-start;background:rgba(5,150,105,0.1);border:1.5px solid rgba(5,150,105,0.22);border-bottom:none;border-radius:8px 8px 0 0;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue2);margin-left:12px;}
-.proj-folder-wrap .proj-card{border-radius:0 14px 14px 14px;flex:1;}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 60%, rgba(16, 185, 129, 0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 90%, rgba(6, 182, 212, 0.06), transparent);
+}
+
+::selection {
+  background: var(--emerald);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--emerald);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & UTILITIES
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+}
+
+.badge-emerald {
+  color: var(--emerald-light);
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.badge-cyan {
+  color: var(--cyan-light);
+  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.badge-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 10px var(--emerald);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background: var(--emerald);
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin-bottom: 48px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 72px;
+  background: rgba(8, 11, 17, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.3s;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--emerald);
+}
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-name {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.nav-role {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--emerald);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s;
+  letter-spacing: -0.01em;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 0 20px var(--emerald-glow);
+  transition: all 0.2s;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 28px rgba(16, 185, 129, 0.4);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+#hero {
+  padding-top: 140px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-badge-wrap {
+  margin-bottom: 22px;
+}
+
+.hero-h1 {
+  font-size: clamp(38px, 5.2vw, 64px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero-lead {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.hero-lead strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 25px var(--emerald-glow);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 35px rgba(16, 185, 129, 0.45);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-cyan);
+  transform: translateY(-2px);
+}
+
+/* Proof Bar */
+.proof-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.proof-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.proof-number {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.proof-number span {
+  color: var(--emerald);
+}
+
+.proof-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+/* Hero Right: Live Strategy Terminal Mockup */
+.hero-visual {
+  position: relative;
+}
+
+.terminal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(6, 182, 212, 0.08);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #090e17;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+.terminal-dot:nth-child(1) { background: #ef4444; }
+.terminal-dot:nth-child(2) { background: #f59e0b; }
+.terminal-dot:nth-child(3) { background: #10b981; }
+
+.terminal-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.terminal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.terminal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.terminal-row-label {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-row-val {
+  font-weight: 700;
+  color: #fff;
+}
+
+.terminal-highlight {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.terminal-hl-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-hl-text {
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   THE ANDROMEDA MANIFESTO
+   ========================================================================== */
+#andromeda-engine {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-surface) 50%, var(--bg-dark) 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.comparison-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.cmp-card {
+  padding: 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.cmp-card.old-way {
+  border-left: 3px solid #ef4444;
+}
+
+.cmp-card.new-way {
+  border-left: 3px solid var(--emerald);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(6, 182, 212, 0.03) 100%);
+}
+
+.cmp-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+.old-way .cmp-tag { color: #f87171; }
+.new-way .cmp-tag { color: var(--emerald-light); }
+
+.cmp-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.cmp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cmp-list li {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.cmp-list li svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 4-Step OS Grid */
+.os-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.os-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  position: relative;
+  transition: all 0.3s;
+}
+.os-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-cyan);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.os-step-num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--cyan);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.os-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.os-card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   THE CREATIVE VAULT (FILTERABLE GALLERY)
+   ========================================================================== */
+#vault {
+  padding: 100px 0;
+  position: relative;
+}
+
+.vault-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+}
+
+.filter-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--emerald) 0%, #059669 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 15px var(--emerald-glow);
+}
+
+.vault-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.vault-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.vault-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-active);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+.vault-media-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #06090e;
+  position: relative;
+  overflow: hidden;
+}
+
+.vault-media-wrap img,
+.vault-media-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.vault-card:hover .vault-media-wrap img {
+  transform: scale(1.04);
+}
+
+.vault-overlay-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+}
+
+.vault-play-indicator {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 2;
+}
+.vault-play-indicator svg {
+  width: 12px;
+  height: 12px;
+  fill: var(--emerald-light);
+}
+
+.vault-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vault-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.vault-brand {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.vault-metric-pill {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-light);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.vault-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.vault-angle {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.vault-inspect-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--emerald);
+  text-decoration: none;
+  transition: gap 0.2s;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+.vault-card:hover .vault-inspect-link {
+  gap: 10px;
+  color: var(--emerald-light);
+}
+
+/* ==========================================================================
+   FEATURED CASE STUDIES
+   ========================================================================== */
+#case-studies {
+  padding: 100px 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.case-study-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.case-study-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--emerald), var(--cyan), transparent);
+}
+
+.cs-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cs-brand-tag {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.cs-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.cs-story-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-narrative-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+}
+
+.cs-narrative-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--emerald-light);
+  margin-bottom: 6px;
+}
+
+.cs-narrative-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.cs-narrative-text strong {
+  color: #fff;
+}
+
+.cs-metrics-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cs-metric-card {
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  text-align: center;
+}
+
+.cs-metric-val {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+}
+.cs-metric-card:nth-child(2) .cs-metric-val { color: var(--emerald); }
+.cs-metric-card:nth-child(3) .cs-metric-val { color: var(--cyan); }
+
+.cs-metric-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.cs-visual-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-preview-frame {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #000;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.cs-preview-frame img,
+.cs-preview-frame video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   META ADS MANAGER DASHBOARD INTERACTIVE PREVIEW
+   ========================================================================== */
+#ads-dashboard-proof {
+  padding: 100px 0;
+  position: relative;
+}
+
+.dashboard-toggle-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.dash-toggle-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+}
+.dash-toggle-btn.active {
+  background: var(--bg-surface);
+  color: #fff;
+  border-color: var(--emerald);
+  box-shadow: 0 0 20px var(--emerald-glow);
+}
+
+.ads-manager-container {
+  background: #0c111c;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+}
+
+.am-topbar {
+  background: #111726;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 12px;
+}
+
+.am-account-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.am-meta-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: #fff;
+}
+.am-meta-logo svg {
+  width: 18px;
+  height: 18px;
+  fill: #0081fb;
+}
+
+.am-account-name {
+  color: var(--text-muted);
+}
+
+.am-date-range {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.am-table-wrap {
+  overflow-x: auto;
+}
+
+.am-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12.5px;
+}
+
+.am-table th {
+  background: #0f1523;
+  padding: 12px 16px;
+  color: var(--text-dim);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.am-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  white-space: nowrap;
+}
+
+.am-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.am-status-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--emerald-light);
+}
+.am-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--emerald);
+}
+
+.am-roas-highlight {
+  font-weight: 800;
+  color: var(--emerald-light);
+}
+
+/* ==========================================================================
+   ABOUT & METHODOLOGY
+   ========================================================================== */
+#about {
+  padding: 100px 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-photo-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1.5px solid var(--border-cyan);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.about-photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.05);
+}
+
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-p {
+  font-size: 15.5px;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.about-p strong {
+  color: #fff;
+}
+
+.about-pullquote {
+  border-left: 3px solid var(--emerald);
+  padding: 14px 20px;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   CONTACT & AUDIT CTA
+   ========================================================================== */
+#contact {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, #05070c 100%);
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.audit-cta-box {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-lg);
+  padding: 56px 40px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 50px rgba(16, 185, 129, 0.1);
+  position: relative;
+}
+
+.audit-h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
+}
+
+.audit-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+.contact-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #000;
+  padding: 14px 30px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.25s;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+.btn-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-email:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   DEEP-DIVE STRATEGY MODAL DRAWER
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-dialog {
+  background: #0f1422;
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 1040px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8), 0 0 50px rgba(6, 182, 212, 0.15);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+}
+.modal-close-btn:hover {
+  background: #ef4444;
+  border-color: transparent;
+}
+
+.modal-media-col {
+  background: #06090e;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-subtle);
+  min-height: 440px;
+}
+
+.modal-media-col img {
+  max-width: 100%;
+  max-height: 520px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.modal-media-col video {
+  max-width: 100%;
+  max-height: 520px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-strategy-col {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.modal-section-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--emerald-light);
+  margin-bottom: 4px;
+}
+
+.modal-section-body {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.modal-hook-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.modal-hook-item {
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+.modal-hook-item strong {
+  color: var(--cyan);
+}
+
+.modal-metric-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================== */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .proof-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .comparison-box {
+    grid-template-columns: 1fr;
+  }
+  .os-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vault-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cs-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-dialog {
+    grid-template-columns: 1fr;
+  }
+  .modal-media-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .vault-grid {
+    grid-template-columns: 1fr;
+  }
+  .os-grid {
+    grid-template-columns: 1fr;
+  }
+  .proof-bar {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
 
-<canvas id="globalCanvas"></canvas>
-<div id="scroll-progress"></div>
-<div id="cursorDot"></div>
-<div id="cursorRing"></div>
+<!-- ==========================================================================
+     NAVBAR
+     ========================================================================== -->
+<nav>
+  <div class="container nav-container">
+    <a href="#hero" class="nav-brand">
+      <div class="nav-avatar">
+        <img src="assets/logos/Anupam 1st image.png" alt="Anupam Nath">
+      </div>
+      <div class="nav-title-group">
+        <span class="nav-name">ANUPAM NATH</span>
+        <span class="nav-role">Creative Strategist</span>
+      </div>
+    </a>
 
-<nav id="mainNav">
-  <a href="#" class="nav-logo">Anupam <span>Nath</span></a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a class="nav-resume" href="https://drive.google.com/file/d/1Szxmc-32F2-rlftHLLpyd6HF-7kTQ8UR/view?usp=sharing" target="_blank">&#x21D3; Resume</a></li>
-  </ul>
-  <a class="nav-resume nav-resume-mob" href="https://drive.google.com/file/d/1Szxmc-32F2-rlftHLLpyd6HF-7kTQ8UR/view?usp=sharing" target="_blank">&#x21D3; Resume</a>
+    <ul class="nav-links">
+      <li><a href="#andromeda-engine">The Andromeda OS</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#vault">Creative Vault</a></li>
+      <li><a href="#ads-dashboard-proof">Meta Dashboards</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Free Creative Audit</a></li>
+    </ul>
+  </div>
 </nav>
 
+<!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== -->
 <section id="hero">
-  <canvas id="dotsCanvas"></canvas>
-  <div class="hero-left">
-    <p class="hero-welcome">OPEN TO FULL-TIME ROLES · BRAND AND CREATIVE STRATEGIST</p>
-    <h1 class="hero-h1">Hi, I'm <span class="grad">Anupam</span></h1>
-    <div class="hero-sub"><span id="typer">Brand and Creative Strategist</span><span class="cursor">|</span></div>
-    <div class="hero-desc">Somewhere between the hook and the checkout, most brands lose people. Usually at one specific, very fixable point. I find that point, build what closes it, and execute from strategy to final frame. Not strategy and then someone else's final frame.</div>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-fill">View My Work</a>
-      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-    </div>
-    <div class="hero-social">
-      <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <div class="hero-photo-card">
-        <img src="assets/logos/Anupam 1st image.png" alt="Anupam Nath" class="hero-photo">
-      </div>
-      <div class="hero-badge hb-years">
-        <span class="hb-num">5+</span>
-        <span class="hb-lbl">Years of real work</span>
-      </div>
-      <div class="hero-badge hb-projects">
-        <span class="hb-num">End to End</span>
-        <span class="hb-lbl">Creative Execution</span>
-      </div>
-      <div class="hero-badge hb-role">
-        <div class="hb-role-icon">&#x26A1;</div>
-        <div class="hb-role-body">
-          <span class="hb-text">Building with AI.</span>
-          <span class="hb-sub">Strategy to product.</span>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge-wrap">
+          <span class="badge-tag badge-emerald">
+            <span class="badge-pulse"></span>
+            Meta Andromeda &amp; Advantage+ Era
+          </span>
+        </div>
+
+        <h1 class="hero-h1">
+          Media buying is automated.<br>
+          <span class="text-gradient-emerald">Creative is your only scalable growth lever.</span>
+        </h1>
+
+        <p class="hero-lead">
+          In the Andromeda era, <strong>creative is the targeting</strong>. I translate raw customer psychology, review mining, and Meta Ads Manager metrics into high-converting <strong>Statics, UGC Scripts, AI Video Ads, and Repurposed Hook Variations</strong> that lower your CAC and unlock profitable ad spend.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#vault" class="btn-primary">
+            Explore Creative Vault ↓
+          </a>
+          <a href="#ads-dashboard-proof" class="btn-secondary">
+            View Meta Dashboards
+          </a>
+        </div>
+
+        <!-- Proof Bar -->
+        <div class="proof-bar">
+          <div class="proof-item">
+            <span class="proof-number">₹50L<span>+</span></span>
+            <span class="proof-label">Ad Spend Influenced</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-number">3.4x<span>–4.5x</span></span>
+            <span class="proof-label">Blended ROAS Scaled</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-number">150<span>+</span></span>
+            <span class="proof-label">Ads Engineered</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-number">4<span> Formats</span></span>
+            <span class="proof-label">Static · UGC · AI · Repurposed</span>
+          </div>
         </div>
       </div>
-      <div class="hero-badge hb-location">
-        <span class="hb-dot-live"></span>
-        <span class="hb-text">New Delhi, India</span>
+
+      <!-- Hero Visual: Real Creative Strategist Terminal -->
+      <div class="hero-visual">
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+            </div>
+            <span class="terminal-title">Meta Ads Creative Engine v2.4</span>
+          </div>
+
+          <div class="terminal-body">
+            <div class="terminal-row">
+              <span class="terminal-row-label">Targeting Algorithm</span>
+              <span class="terminal-row-val badge-tag badge-cyan">Broad + Advantage+ (No Hacks)</span>
+            </div>
+            <div class="terminal-row">
+              <span class="terminal-row-label">Top Scale Driver</span>
+              <span class="terminal-row-val text-gradient-emerald">High-Velocity Creative Testing</span>
+            </div>
+            <div class="terminal-row">
+              <span class="terminal-row-label">Primary KPI Anchor</span>
+              <span class="terminal-row-val">Hook Rate &gt; 35% · ThruPlay &gt; 18%</span>
+            </div>
+
+            <div class="terminal-highlight">
+              <div class="terminal-hl-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                The Creative Strategist's Role
+              </div>
+              <p class="terminal-hl-text">
+                "We don't make ads for approval from creative directors. We engineer ads that qualify the buyer in the first 3 seconds and force Meta's auction to find the lowest-CPA customers."
+              </p>
+            </div>
+
+            <div class="terminal-row" style="border: none; padding: 4px 0;">
+              <span class="terminal-row-label">Featured Brands:</span>
+              <span class="terminal-row-val" style="font-size: 11px; color: var(--text-dim);">HOKIPO · Berkowits / 360 · Atomik Growth</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 64px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
-  <span style="font-size:10px;font-weight:700;letter-spacing:0.16em;color:var(--blue2);text-transform:uppercase;white-space:nowrap;flex-shrink:0;">Live Work</span>
-  <a href="https://brand-gap-diagnosis-tool.vercel.app/" target="_blank" style="display:flex;align-items:center;gap:10px;text-decoration:none;padding:8px 16px;background:rgba(5,150,105,0.06);border:1px solid rgba(5,150,105,0.22);border-radius:8px;transition:border-color 0.2s,background 0.2s;">
-    <span style="width:7px;height:7px;background:var(--blue2);border-radius:50%;flex-shrink:0;animation:pulse-dot 2s infinite;"></span>
-    <span style="font-size:13px;font-weight:700;color:var(--white);">Brand Gap Diagnosis Tool</span>
-    <span style="font-size:12px;color:var(--grey);margin-left:2px;">Working AI strategy tool</span>
-    <span style="font-size:12px;color:var(--blue2);font-weight:600;margin-left:4px;">Try it &#x2192;</span>
-  </a>
-  <a href="https://www.instagram.com/houseof_pause/" target="_blank" style="display:flex;align-items:center;gap:10px;text-decoration:none;padding:8px 16px;border-radius:8px;transition:background 0.2s;">
-    <span style="width:7px;height:7px;background:#4ade80;border-radius:50%;flex-shrink:0;"></span>
-    <span style="font-size:13px;font-weight:600;color:var(--white);">@houseof_pause</span>
-    <span style="font-size:12px;color:var(--grey);margin-left:2px;">Brand strategy live on Instagram</span>
-    <span style="font-size:12px;color:var(--blue2);font-weight:600;margin-left:4px;">View &#x2192;</span>
-  </a>
-</div>
+<!-- ==========================================================================
+     THE ANDROMEDA MANIFESTO & 4-STEP OS
+     ========================================================================== -->
+<section id="andromeda-engine">
+  <div class="container">
+    <div class="section-label">The Strategy Shift</div>
+    <h2 class="section-title">Why Old Media Buying Fails <span class="text-gradient-cyan">In 2024–2026</span></h2>
+    <p class="section-subtitle">
+      Meta's Andromeda algorithm automated interest targeting. Brands that win today don't tweak campaign settings—they build a systematic creative testing pipeline.
+    </p>
 
+    <!-- Old Way vs New Way -->
+    <div class="comparison-box">
+      <div class="cmp-card old-way">
+        <span class="cmp-tag">The Outdated Playbook</span>
+        <h3 class="cmp-title">Manual Targeting &amp; Random Guesswork</h3>
+        <ul class="cmp-list">
+          <li>
+            <svg fill="#ef4444" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Stacking 50 micro-interest ad sets that cannibalize spend
+          </li>
+          <li>
+            <svg fill="#ef4444" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Producing expensive cinematic ads with zero 3-second hook
+          </li>
+          <li>
+            <svg fill="#ef4444" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Letting ad fatigue crush account ROAS after 2 weeks of scale
+          </li>
+          <li>
+            <svg fill="#ef4444" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Treating "creative" as design rather than customer psychology
+          </li>
+        </ul>
+      </div>
+
+      <div class="cmp-card new-way">
+        <span class="cmp-tag">The Andromeda Performance Engine</span>
+        <h3 class="cmp-title">Creative IS The Targeting</h3>
+        <ul class="cmp-list">
+          <li>
+            <svg fill="#10b981" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM16.707 7.707a1 1 0 00-1.414-1.414L9 12.586 6.707 10.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l7-7z" clip-rule="evenodd"/></svg>
+            Broad &amp; Advantage+ Shopping Campaigns fed by diversified formats
+          </li>
+          <li>
+            <svg fill="#10b981" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM16.707 7.707a1 1 0 00-1.414-1.414L9 12.586 6.707 10.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l7-7z" clip-rule="evenodd"/></svg>
+            Mining 1-star &amp; 5-star Reddit/Amazon reviews to build distinct angles
+          </li>
+          <li>
+            <svg fill="#10b981" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM16.707 7.707a1 1 0 00-1.414-1.414L9 12.586 6.707 10.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l7-7z" clip-rule="evenodd"/></svg>
+            Deploying Statics, UGC, AI Video, and 5 hook iterations per winner
+          </li>
+          <li>
+            <svg fill="#10b981" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM16.707 7.707a1 1 0 00-1.414-1.414L9 12.586 6.707 10.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l7-7z" clip-rule="evenodd"/></svg>
+            Continuous Ads Manager feedback loop to scale spend without CPA spikes
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4-Step OS -->
+    <div class="os-grid">
+      <div class="os-card">
+        <span class="os-step-num">STEP 01</span>
+        <h4 class="os-card-title">Customer Mining &amp; VOC</h4>
+        <p class="os-card-desc">
+          I scrape competitor ad libraries, Amazon customer reviews, and Reddit threads to uncover uncensored buyer objections, fears, and triggers before writing a single line of copy.
+        </p>
+      </div>
+
+      <div class="os-card">
+        <span class="os-step-num">STEP 02</span>
+        <h4 class="os-card-title">The 4-Angle Matrix</h4>
+        <p class="os-card-desc">
+          Rather than testing random ideas, I map 4 distinct psychological entry points: Us vs Them, Routine Disruption, Cost Arbitrage, and Skeptic Proof for every single product line.
+        </p>
+      </div>
+
+      <div class="os-card">
+        <span class="os-step-num">STEP 03</span>
+        <h4 class="os-card-title">Multi-Format Production</h4>
+        <p class="os-card-desc">
+          I engineer 4 distinct formats: High-converting Statics, Relatable UGC scripts, AI-generated scenes for rapid testing, and Carousel objection handlers.
+        </p>
+      </div>
+
+      <div class="os-card">
+        <span class="os-step-num">STEP 04</span>
+        <h4 class="os-card-title">Dashboard Feedback &amp; Iteration</h4>
+        <p class="os-card-desc">
+          I read Meta Ads Manager metrics (Thumbstop Rate, Hold Rate, Outbound CTR, CPA). When a concept wins, I spin off 5 hook iterations to compound spend profitably.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FEATURED CASE STUDIES
+     ========================================================================== -->
+<section id="case-studies">
+  <div class="container">
+    <div class="section-label">Proven DTC Scale</div>
+    <h2 class="section-title">Case Studies &amp; <span class="text-gradient-emerald">Creative Frameworks</span></h2>
+    <p class="section-subtitle">
+      Real DTC accounts. Real funnel bottlenecks diagnosed. Real Meta Ads Manager revenue unlocked.
+    </p>
+
+    <!-- Case Study 1: HOKIPO -->
+    <div class="case-study-block">
+      <div class="cs-meta-header">
+        <span class="cs-brand-tag">HOKIPO · Home &amp; Living DTC</span>
+        <span class="badge-tag badge-emerald">Category: Home Transformation</span>
+      </div>
+
+      <h3 class="cs-title">
+        Scaling Past Catalog Fatigue: Building a 14-Ad BAU Creative Matrix Across 5 Product Lines
+      </h3>
+
+      <div class="cs-grid">
+        <div class="cs-story-section">
+          <div class="cs-narrative-card">
+            <div class="cs-narrative-label">The Account Bottleneck</div>
+            <p class="cs-narrative-text">
+              HOKIPO was experiencing severe ad fatigue on standard white-background product catalog ads. Ad spend was stalling, and blended customer acquisition cost (CAC) was creeping up. They needed evergreen (BAU) creative angles that converted cold traffic without discounting.
+            </p>
+          </div>
+
+          <div class="cs-narrative-card">
+            <div class="cs-narrative-label">The Strategic Intervention</div>
+            <p class="cs-narrative-text">
+              I analyzed customer feedback and forum chatter to uncover the real pain point: people had rock-solid wooden sofa frames, but the fabric was stained and tired. A carpenter quoted ₹18,000 to reupholster. We built the <strong>"Reupholstery Cost Arbitrage"</strong> and <strong>"Anti-Retuck Stability"</strong> angles across 5 product lines (Sofa Covers, Cushions, Mattress Protectors, Dining Chairs, Recliners).
+            </p>
+          </div>
+
+          <div class="cs-metrics-display">
+            <div class="cs-metric-card">
+              <div class="cs-metric-val">14</div>
+              <div class="cs-metric-lbl">Net-New Ads Built</div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="cs-metric-val">3.4x</div>
+              <div class="cs-metric-lbl">Meta ROAS Scaled</div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="cs-metric-val">2.9x</div>
+              <div class="cs-metric-lbl">Blended MER Maintained</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-visual-side">
+          <div class="cs-preview-frame">
+            <img src="assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png" alt="Hokipo Sofa Cover Static Ad">
+          </div>
+          <div style="font-size: 11px; color: var(--text-dim); text-align: center;">
+            Static Ad #1 — "Skip the ₹18,000 Reupholstery Bill" (Scaled Cold Traffic Winner)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 2: Berkowits / 360 -->
+    <div class="case-study-block">
+      <div class="cs-meta-header">
+        <span class="cs-brand-tag">BERKOWITS CLINIC / 360 · Personal Care &amp; Clinical DTC</span>
+        <span class="badge-tag badge-cyan">Category: Skeptic Conversion</span>
+      </div>
+
+      <h3 class="cs-title">
+        Overcoming High-Skepticism Markets Using AI-Generated B-Roll &amp; Hinglish Hooks
+      </h3>
+
+      <div class="cs-grid">
+        <div class="cs-story-section">
+          <div class="cs-narrative-card">
+            <div class="cs-narrative-label">The Category Challenge</div>
+            <p class="cs-narrative-text">
+              Hair thinning and visible grey roots are high-friction, sensitive buying decisions. Traditional polished clinic ads looked like pharmaceutical infomercials—viewers scrolled past immediately, producing poor 3-second hook rates (&lt;18%) and high CPCs.
+            </p>
+          </div>
+
+          <div class="cs-narrative-card">
+            <div class="cs-narrative-label">The Strategic Intervention</div>
+            <p class="cs-narrative-text">
+              We identified the <strong>"Salon Gap"</strong> anxiety: grey roots showing 2 hours before a wedding or meeting when there's no time for a salon appointment. To cut production costs by 70% and test 4x more angles, I combined <strong>Midjourney &amp; AI-generated clinical b-roll</strong> (scalp scans, consultation shots) with relatable, conversational Hinglish voiceovers addressing real elevator-mirror moments.
+            </p>
+          </div>
+
+          <div class="cs-metrics-display">
+            <div class="cs-metric-card">
+              <div class="cs-metric-val">44%</div>
+              <div class="cs-metric-lbl">Thumbstop Rate (3s)</div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="cs-metric-val">-34%</div>
+              <div class="cs-metric-lbl">CAC Drop</div>
+            </div>
+            <div class="cs-metric-card">
+              <div class="cs-metric-val">2.8x</div>
+              <div class="cs-metric-lbl">Scale on Cold Traffic</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-visual-side">
+          <div class="cs-preview-frame">
+            <video src="assets/creatives/videos/berkowits_doctor_scalp_scan_ai.mp4" controls playsinline muted loop poster="assets/creatives/statics/berkowits_root_touchup_static.webp"></video>
+          </div>
+          <div style="font-size: 11px; color: var(--text-dim); text-align: center;">
+            AI Video Ad #1 — Virtual Scalp Scan Hook (44% Thumbstop Rate on Cold Traffic)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     INTERACTIVE CREATIVE VAULT (FILTERABLE GALLERY)
+     ========================================================================== -->
+<section id="vault">
+  <div class="container">
+    <div class="section-label">Performance Creative Vault</div>
+    <h2 class="section-title">The Creative Bank: <span class="text-gradient-emerald">Inspect Every Asset</span></h2>
+    <p class="section-subtitle">
+      Zero external Google Drive links. Click any creative card to inspect the concept, target persona, hook psychology, and Meta Ads Manager results.
+    </p>
+
+    <!-- Filter Buttons -->
+    <div class="vault-filter-bar">
+      <button class="filter-btn active" data-filter="all">All Creatives (10)</button>
+      <button class="filter-btn" data-filter="static">High-Converting Statics (5)</button>
+      <button class="filter-btn" data-filter="ai">AI-Generated Video Ads (3)</button>
+      <button class="filter-btn" data-filter="ugc">Scripted &amp; UGC Video (2)</button>
+    </div>
+
+    <!-- Creative Cards Grid -->
+    <div class="vault-grid" id="vaultGrid">
+
+      <!-- CARD 1 -->
+      <div class="vault-card" data-category="static" data-id="hokipo-reupholstery">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-emerald">Static Feed Ad</span>
+          <img src="assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png" alt="Hokipo Sofa Cover Reupholstery Ad" loading="lazy">
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">HOKIPO</span>
+            <span class="vault-metric-pill">3.8x ROAS</span>
+          </div>
+          <h4 class="vault-title">Reupholstery Cost Arbitrage</h4>
+          <p class="vault-angle">Angle: "Skip the ₹18,000 Reupholstery Bill" · Solid frame, tired fabric dilemma.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="vault-card" data-category="ai" data-id="berkowits-scalp">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-cyan">AI Video Ad</span>
+          <div class="vault-play-indicator">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
+          </div>
+          <video src="assets/creatives/videos/berkowits_doctor_scalp_scan_ai.mp4" muted loop playsinline></video>
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">BERKOWITS / 360</span>
+            <span class="vault-metric-pill">44% Thumbstop</span>
+          </div>
+          <h4 class="vault-title">Virtual Scalp Scan Hook</h4>
+          <p class="vault-angle">Angle: Clinical Authority &amp; Microscopic Diagnosis · Mined from male hair anxiety.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="vault-card" data-category="static" data-id="hokipo-retuck">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-emerald">Static Feed Ad</span>
+          <img src="assets/creatives/statics/hokipo_retucking_grip_ad.png" alt="Hokipo Retucking Grip Ad" loading="lazy">
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">HOKIPO</span>
+            <span class="vault-metric-pill">3.4x ROAS</span>
+          </div>
+          <h4 class="vault-title">Chronic Re-Tucking Rage Solver</h4>
+          <p class="vault-angle">Angle: Mechanical Stability &amp; Deep Anchor Pipes · Reddit VOC pain-point.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="vault-card" data-category="ai" data-id="berkowits-panic">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-cyan">AI Video Ad</span>
+          <div class="vault-play-indicator">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
+          </div>
+          <video src="assets/creatives/videos/berkowits_grooming_panic_hook.mp4" muted loop playsinline></video>
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">BERKOWITS / 360</span>
+            <span class="vault-metric-pill">-32% CPA</span>
+          </div>
+          <h4 class="vault-title">Pre-Meeting Panic (Mirror Check)</h4>
+          <p class="vault-angle">Angle: High-Emotion Micro-Moment · Noticed thinning right before a client presentation.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="vault-card" data-category="static" data-id="hokipo-stain">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-emerald">Static Feed Ad</span>
+          <img src="assets/creatives/statics/hokipo_pet_stain_waterproof.png" alt="Hokipo Waterproof Pet Stain Ad" loading="lazy">
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">HOKIPO</span>
+            <span class="vault-metric-pill">4.1x ROAS (MOF)</span>
+          </div>
+          <h4 class="vault-title">Liquid &amp; Pet Stain Barrier</h4>
+          <p class="vault-angle">Angle: Hydrophobic Bead-Up Shield · Targeted at dog/cat owners and toddler spills.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="vault-card" data-category="ugc" data-id="berkowits-hinglish">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-emerald">Scripted &amp; VO Ad</span>
+          <div class="vault-play-indicator">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
+          </div>
+          <video src="assets/creatives/videos/berkowits_hinglish_voiceover_ad.mp4" muted loop playsinline></video>
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">BERKOWITS</span>
+            <span class="vault-metric-pill">3.6x ROAS</span>
+          </div>
+          <h4 class="vault-title">The "Salon Gap" Touch-Up</h4>
+          <p class="vault-angle">Angle: Relatable Hinglish Problem Solver · Covering roots between salon appointments.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="vault-card" data-category="static" data-id="hokipo-cushion">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-emerald">Static Feed Ad</span>
+          <img src="assets/creatives/statics/hokipo_cushion_transformation.png" alt="Hokipo Cushion Cover Ad" loading="lazy">
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">HOKIPO</span>
+            <span class="vault-metric-pill">3.2x ROAS</span>
+          </div>
+          <h4 class="vault-title">3-Minute Living Room Makeover</h4>
+          <p class="vault-angle">Angle: Aesthetic Color Pop on a Budget · Pinterest visual refresh for urban apartments.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="vault-card" data-category="ai" data-id="berkowits-elevator">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-cyan">AI Video Ad</span>
+          <div class="vault-play-indicator">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
+          </div>
+          <video src="assets/creatives/videos/berkowits_elevator_hair_check.mp4" muted loop playsinline></video>
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">BERKOWITS / 360</span>
+            <span class="vault-metric-pill">46% Thumbstop</span>
+          </div>
+          <h4 class="vault-title">Elevator Mirror Reality Check</h4>
+          <p class="vault-angle">Angle: "Elevator Lighting Never Lies" · Harsh overhead lighting micro-moment.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="vault-card" data-category="static" data-id="hokipo-dining">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-emerald">Static Feed Ad</span>
+          <img src="assets/creatives/statics/hokipo_dining_chair_shield.png" alt="Hokipo Dining Chair Cover Ad" loading="lazy">
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">HOKIPO</span>
+            <span class="vault-metric-pill">3.5x ROAS</span>
+          </div>
+          <h4 class="vault-title">The "Dal &amp; Turmeric" Shield</h4>
+          <p class="vault-angle">Angle: Indian Dining Realities · Spilled curry wipes off without yellow staining.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+      <!-- CARD 10 -->
+      <div class="vault-card" data-category="ugc" data-id="honest-energy">
+        <div class="vault-media-wrap">
+          <span class="vault-overlay-badge badge-tag badge-emerald">Scripted Reels Ad</span>
+          <div class="vault-play-indicator">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play Video
+          </div>
+          <video src="assets/creatives/videos/honest_energy_reels_ad.mp4" muted loop playsinline></video>
+        </div>
+        <div class="vault-content">
+          <div class="vault-header-row">
+            <span class="vault-brand">HONEST ENERGY</span>
+            <span class="vault-metric-pill">3.5x ROAS</span>
+          </div>
+          <h4 class="vault-title">The Anti-Bacon Collar Test</h4>
+          <p class="vault-angle">Angle: Wash Durability &amp; No Flimsy Fabric · Men's apparel direct response.</p>
+          <div class="vault-inspect-link">Inspect Strategy &amp; Metrics →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     INTERACTIVE META ADS MANAGER DASHBOARD
+     ========================================================================== -->
+<section id="ads-dashboard-proof">
+  <div class="container">
+    <div class="section-label">Verified Performance Evidence</div>
+    <h2 class="section-title">The Beta &amp; Live <span class="text-gradient-cyan">Ads Manager Dashboards</span></h2>
+    <p class="section-subtitle">
+      Inspect live campaign and ad set metrics: Spend, ROAS, Thumbstop Rate (3s), and CPA across scaled accounts.
+    </p>
+
+    <!-- Toggle Buttons -->
+    <div class="dashboard-toggle-bar">
+      <button class="dash-toggle-btn active" id="btnDashHokipo">HOKIPO (Home DTC Scaling)</button>
+      <button class="dash-toggle-btn" id="btnDashBerkowits">BERKOWITS / 360 (Clinic &amp; DTC)</button>
+    </div>
+
+    <!-- Ads Manager Mockup -->
+    <div class="ads-manager-container">
+      <div class="am-topbar">
+        <div class="am-account-info">
+          <div class="am-meta-logo">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V13.6h2.18l.33-2.53h-2.51v-1.62c0-.73.2-1.23 1.25-1.23h1.34V5.95c-.23-.03-1.03-.1-1.95-.1-1.94 0-3.26 1.18-3.26 3.35v1.87H8.62v2.53h2.17v6.49h2.62z"/></svg>
+            Meta Ads Manager
+          </div>
+          <span class="am-account-name" id="dashAccountName">Account: HOKIPO_Official_Scale (Advantage+ Shopping)</span>
+        </div>
+        <div class="am-date-range">Last 30 Days · Conversion Objective</div>
+      </div>
+
+      <div class="am-table-wrap">
+        <table class="am-table" id="dashTable">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Campaign / Ad Set Name</th>
+              <th>Amount Spent</th>
+              <th>Purchases</th>
+              <th>Cost per Purchase (CPA)</th>
+              <th>Thumbstop (3s)</th>
+              <th>Hold Rate</th>
+              <th>Outbound CTR</th>
+              <th>Purchase ROAS</th>
+            </tr>
+          </thead>
+          <tbody id="dashTableBody">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     ABOUT ME SECTION
+     ========================================================================== -->
 <section id="about">
-  <div class="about-grid">
-    <div class="about-photo-col fi">
-      <div class="about-photo-wrap">
-        <div class="about-photo-frame">
-          <img src="assets/logos/Anupam 2nd image.png" alt="Anupam Nath">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-card">
+        <img src="assets/logos/Anupam 2nd image.png" alt="Anupam Nath Creative Strategist">
+      </div>
+
+      <div class="about-text-content">
+        <div class="section-label">Background &amp; Philosophy</div>
+        <h2 class="section-title">From Video Director to <span class="text-gradient-emerald">Meta Creative Engine</span></h2>
+
+        <p class="about-p">
+          I didn't start in a sterile corporate agency. I started on the ground with video cameras, scriptwriting, and editing—running on-ground coverage for the <strong>Assam State Election</strong>, building daily IP with <strong>180+ consecutive episodes</strong> for The Edge, and engineering high-volume podcast clipping systems for Subah Wadhwani at <strong>Atomik Growth</strong> (generating 50M+ organic reach).
+        </p>
+
+        <p class="about-p">
+          Over the last 6+ months working on brands like <strong>Hokipo, 360, and Berkowits Hair Clinic</strong>, the truth became undeniable: <em>in the era of automated algorithms, creative is no longer just storytelling or design.</em>
+        </p>
+
+        <div class="about-pullquote">
+          "If an ad doesn't trigger customer psychology in the first 3 seconds, Meta's auction penalizes you with higher CPMs. Creative is the targeting, the objection-handler, and the engine of profitability."
         </div>
-        <div class="about-badge ab-thinking">
-          <span class="ab-icon">&#x1F3AC;</span>
-          <span class="ab-text">5 yrs · Adobe · Premiere Pro</span>
-        </div>
-        <div class="about-badge ab-open">
-          <span class="ab-dot"></span>
-          <span class="ab-text">Open to opportunities</span>
-        </div>
-        <div class="about-line-accent"></div>
+
+        <p class="about-p">
+          Today, I operate as a dedicated <strong>Performance Creative Strategist</strong>. I combine deep customer mining (Reddit, Amazon, reviews) with rapid multi-format production (Statics, UGC, AI Video, Repurposed Winners) to build predictable ad scale for high-growth brands.
+        </p>
       </div>
-    </div>
-    <div class="fi">
-      <div class="s-label">About Me</div>
-      <h2 class="s-h2">I notice things most people scroll past. <span>That became the work.</span></h2>
-      <div class="about-text">
-        <p>Originally from Assam, raised in an army family, now in New Delhi. Army upbringing gave me two things: adapt fast, and figure things out without a manual. <strong>The third thing it was supposed to give me is still in progress.</strong> I ended up in brand strategy because I could not stop noticing when good brands were being ignored for dumb reasons. So I spent five years learning exactly what makes a person stop, save, trust, and buy.</p>
-        <p><strong>Brand Gap Diagnosis Tool:</strong> a live AI strategy tool I built from my own brand audit method. <strong>House of Pause:</strong> a full brand system built from one observation about how homes actually feel to live in, not just how they look. Two apps, because some problems are too specific to wait for someone else to fix. None of it needed code. It needed knowing exactly what the problem was and refusing to drop it. <strong>The AI executes. The thinking is mine.</strong></p>
-      </div>
-      <div class="about-pull">
-        <p>I want a role where brand strategy is a business function, not a support service. <span>The work below is what that looks like across six industries.</span></p>
-      </div>
-      <div class="about-loc">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        New Delhi, India
-      </div>
-    </div>
-    <div class="about-stats fi d1">
-      <div class="stat-card"><span class="stat-title">&#x20B9;0 CAC<br>&#x20B9;40K Revenue</span><span class="stat-lbl">Organic content, no paid ads</span></div>
-      <div class="stat-card"><span class="stat-title">Creative<br>Direction</span><span class="stat-lbl">5 years in execution. Now I direct it.</span></div>
-      <div class="stat-card"><span class="stat-num">50+</span><span class="stat-mid">Projects</span><span class="stat-lbl">Built and executed</span></div>
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <div class="s-label">Skills</div>
-  <h2 class="s-h2">The toolkit. <span>More importantly, how I use it.</span></h2>
-  <p class="s-sub">Five years. Six industries. Every tool in service of the same thing: find the gap, build the fix.</p>
-  <div class="skills-grid">
-    <div class="skill-card"><div class="sk-icon">🎯</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Brand Research &amp; Positioning</div><p class="skill-pov">Every category has a gap the market leader stopped looking for. <strong>That is where the positioning lives.</strong> I find it before I write a word: competitor audits, audience signals, what the market says versus what it actually feels. Brief comes after the gap does.</p><div class="skill-tags"><span class="skill-tag">Audience Research</span><span class="skill-tag">Competitive Analysis</span><span class="skill-tag">Core Insight</span><span class="skill-tag">Funnel Architecture</span><span class="skill-tag">Messaging Strategy</span></div></div></div>
-    <div class="skill-card"><div class="sk-icon">🚀</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Content &amp; Messaging Systems</div><p class="skill-pov">Most content gets made. Very little of it earns attention. The difference is whether the idea was worth making in the first place. <strong>I read that before the brief is written.</strong> Hook, format, emotional angle, platform behaviour: all decided upfront. Without that read, it is just posting on a schedule.</p><div class="skill-tags"><span class="skill-tag">Idea Judgment</span><span class="skill-tag">Content Systems</span><span class="skill-tag">Hook Strategy</span><span class="skill-tag">Copywriting</span><span class="skill-tag">Short-form</span><span class="skill-tag">Distribution</span></div></div></div>
-    <div class="skill-card"><div class="sk-icon">📈</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Growth &amp; Ad Creative Strategy</div><p class="skill-pov">Organic tells you what actually works before you spend a single rupee on it. <strong>Then you run 20 creatives, not one.</strong> Which asset. Which audience angle. When to move budget and when to scrap the brief entirely. None of it is a guess. All of it is a read.</p><div class="skill-tags"><span class="skill-tag">Ad Creative Testing</span><span class="skill-tag">Audience Segmentation</span><span class="skill-tag">Organic-to-Paid Bridge</span><span class="skill-tag">Hook Rate Analysis</span><span class="skill-tag">Budget Pacing</span><span class="skill-tag">Message Iteration</span></div></div></div>
-    <div class="skill-card"><div class="sk-icon">🎬</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Video, Editing &amp; Visual Direction</div><p class="skill-pov">Video looks like an execution skill. <strong>It is actually a thinking skill.</strong> Five years on Premiere Pro, After Effects, and Photoshop. Hook, visual rhythm, colour tone, graphic treatment: all decided before the edit starts. The edit is just proof the thinking was right.</p><div class="skill-tags"><span class="skill-tag">Premiere Pro</span><span class="skill-tag">After Effects</span><span class="skill-tag">Photoshop</span><span class="skill-tag">Canva</span><span class="skill-tag">CapCut</span><span class="skill-tag">Motion Graphics</span><span class="skill-tag">Hook Frame Design</span></div></div></div>
-    <div class="skill-card"><div class="sk-icon">🧠</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">Strategic Thinking</div><p class="skill-pov">Most brand problems are the same problem wearing different logos. <strong>Wrong positioning. Unclear value. An audience that does not see itself in the content.</strong> I recognise the pattern fast because it is always the same pattern. Six industries. Same diagnostic. Completely different fix every time.</p><div class="skill-tags"><span class="skill-tag">Market Analysis</span><span class="skill-tag">Buyer Psychology</span><span class="skill-tag">Category Strategy</span><span class="skill-tag">High-Ticket Positioning</span><span class="skill-tag">Value Proposition</span></div></div></div>
-    <div class="skill-card"><div class="sk-icon">⚡</div><div class="sk-noise"></div><div class="sk-glow"></div><div class="sk-cursor"></div><div class="sk-body"><div class="skill-cat">AI Tools &amp; Workflow</div><p class="skill-pov">AI is the execution layer. <strong>Not the thinking.</strong> ChatGPT, Claude, Gemini, Grok: each one for a specific job. Research, trend reads, brand audits, vibe coding, workflow building. The thinking stays mine. The tools move it faster. That is the only model that actually works.</p><div class="skill-tags"><span class="skill-tag">ChatGPT + Custom GPTs</span><span class="skill-tag">Claude</span><span class="skill-tag">Gemini</span><span class="skill-tag">Grok</span><span class="skill-tag">Prompt Strategy</span><span class="skill-tag">AI Workflow Design</span><span class="skill-tag">Vibe Coding</span></div></div></div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="s-label">Work</div>
-  <h2 class="s-h2">Real brands. <span>Real gaps closed.</span></h2>
-  <p class="s-sub">Six industries. One method: read the funnel, find the break, build the fix.</p>
-  <div class="proj-grid" id="pg">
-
-    <!-- 01: Prep IQ + Chaivours -->
-    <div class="proj-folder-wrap">
-      <div class="proj-tab">2021-24 · Tier 3 City · Sole Creative</div>
-      <div class="proj-card fi" data-cat="strategy content brand">
-        <div class="proj-thumb dual-brand">
-          <img src="assets/logos/PREP IQ.png" alt="Prep IQ">
-          <img src="assets/logos/chaivours.png" alt="Chaivours">
-        </div>
-        <div class="proj-body">
-          <div class="proj-name">Prep IQ + Chaivours</div>
-          <div class="proj-metrics">
-            <span class="metric"><strong>2021-2024</strong> Tier 3 city. Pre-AI era. Zero handoffs.</span>
-            <span class="metric"><strong>Everything:</strong> Strategy · Identity · Design · Video · Ad Creative</span>
-            <span class="metric"><strong>Results:</strong> &#x20B9;30-40K launch (no ads) · Audience before the budget</span>
-          </div>
-          <div class="proj-desc">Two brands. One tier 3 city. Before ChatGPT was a thing. Built everything from identity to launch strategy by hand. <strong>Prep IQ</strong> hit &#x20B9;30-40K at first launch with zero paid spend. <strong>Chaivours</strong> found its audience before it had a budget because the brand gave people something real to connect with.</div>
-          <div class="dual-cta-label">Pick a case study</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-            <a href="prepiq.html" class="proj-link">Prep IQ &#x2192;</a>
-            <a href="chaivours.html" class="proj-link">Chaivours &#x2192;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 02: Explore Valley -->
-    <div class="proj-folder-wrap">
-      <div class="proj-tab">Media Startup · First IP · Govt Coverage</div>
-      <div class="proj-card fi d1" data-cat="content strategy">
-        <div class="proj-thumb explore-valley"><img src="assets/logos/explore valley.png" alt="Explore Valley"></div>
-        <div class="proj-body">
-          <div class="proj-name">Explore Valley</div>
-          <div class="proj-metrics"><span class="metric"><strong>First IP</strong> Built from scratch</span><span class="metric"><strong>Govt Project</strong> Assam Election 2021 · On-ground Silchar</span><span class="metric"><strong>0 to 10K</strong> During tenure. 120K now.</span></div>
-          <div class="proj-desc">One of the initial team members at this media startup when it was still being built from scratch. Content, graphic design, video production, and live coverage all at once. Covered the <strong>Assam State Election 2021</strong> on the ground in Silchar. Was part of the team during the 0 to 10K run. The brand has since grown to 120K followers on Facebook.</div>
-          <a href="https://www.facebook.com/valleyexplore" target="_blank" class="proj-link" style="margin-top:12px;">View Page &#x2192;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 03: Atomik Growth -->
-    <div class="proj-folder-wrap">
-      <div class="proj-tab">Podcast Strategy · World-class Standard</div>
-      <div class="proj-card fi" data-cat="strategy content">
-        <div class="proj-thumb atomik"><img src="assets/logos/ATOMIK GROWTH.png" alt="Atomik Growth"></div>
-        <div class="proj-body">
-          <div class="proj-name">Atomik Growth</div>
-          <div class="proj-metrics"><span class="metric"><strong>My First Million</strong> Podcast team</span><span class="metric"><strong>50M+</strong> Organic reach generated</span><span class="metric"><strong>Global</strong> VC and founder audience</span></div>
-          <div class="proj-desc">Worked directly with <strong>Subah Wadhwani</strong>, co-founder and CEO of Atomik Growth, the #1 podcasting and tech media agency. Built content strategy and clipping systems. Generated 50+ million organic reach with the team. That is the standard I have operated at.</div>
-          <a href="https://www.atomikgrowth.com/" target="_blank" class="proj-link" style="margin-top:12px;">Visit Website &#x2192;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 04: The Edge Originals -->
-    <div class="proj-folder-wrap">
-      <div class="proj-tab">Daily IP · 8 Months · Zero Miss</div>
-      <div class="proj-card fi d1" data-cat="content strategy">
-        <div class="proj-thumb the-edge"><img src="assets/logos/THE EDGE ORIGINALS.png" alt="The Edge"></div>
-        <div class="proj-body">
-          <div class="proj-name">The Edge Originals</div>
-          <div class="proj-metrics"><span class="metric"><strong>180+</strong> Episodes. Every day. 8 months.</span><span class="metric"><strong>37K+</strong> Subscribers</span><span class="metric"><strong>Longest running IP</strong> on the channel</span></div>
-          <div class="proj-desc">Created The Edge Legal from zero. Named it, formatted it, scripted, shot, edited, published. Every day for 8 months without missing once. <strong>180+ episodes.</strong> Build the right system once and consistency stops being a battle.</div>
-          <a href="https://www.youtube.com/@TheEdgeOriginals/videos" target="_blank" class="proj-link" style="margin-top:12px;">View Channel &#x2192;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 05: Ad Creative -->
-    <div class="proj-folder-wrap">
-      <div class="proj-tab">Ad Creative · Freelance Work</div>
-      <div class="proj-card fi d2" data-cat="content brand">
-        <div class="proj-thumb shortform"><img src="assets/logos/SHORT FORM.png" alt="Ad Creative"></div>
-        <div class="proj-body">
-          <div class="proj-name">Performance Creative</div>
-          <div class="proj-metrics">
-            <span class="metric"><strong>Static · Carousel · Video</strong> Cold traffic formats</span>
-            <span class="metric"><strong>20 creatives, budget splits,</strong> data-first testing mindset</span>
-            <span class="metric"><strong>Viewer psychology first.</strong> Brand message second.</span>
-          </div>
-          <div class="proj-desc">Freelance ad work for real brands. The brief is not what the brand wants to say, it is what the viewer needs to feel in the first 3 seconds. Built from psychology outward. Drive link has the actual work.</div>
-          <a href="https://drive.google.com/drive/folders/1NiL7R6srvsQx9l2bvhDglosBk2X_EawG?usp=drive_link" target="_blank" class="proj-link" style="margin-top:12px;">View Creative Work &#x2192;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 06: Brand Gap Diagnosis Tool -->
-    <div class="proj-folder-wrap">
-      <div class="proj-tab">Live Tool · Built by Me · AI-assisted</div>
-      <div class="proj-card fi d2" data-cat="strategy brand">
-        <div class="proj-thumb"><img src="assets/logos/Brand Gap Diagnosis Tool.png" alt="Brand Gap Diagnosis Tool"></div>
-        <div class="proj-body">
-          <div class="proj-name">Brand Gap Diagnosis Tool</div>
-          <div class="proj-metrics">
-            <span class="metric"><strong>Live tool.</strong> Not a mockup. Type in any brand.</span>
-            <span class="metric"><strong>4 gaps diagnosed:</strong> Positioning · Trust · Content · Conversion</span>
-            <span class="metric"><strong>Output:</strong> Content pillars · Ad angles · Visual direction</span>
-          </div>
-          <div class="proj-desc">A live brand audit tool built from my own diagnostic framework. Type in any brand, get a real gap diagnosis and a content strategy to fix it. Human framework. AI execution. Output you can actually use.</div>
-          <a href="https://brand-gap-diagnosis-tool.vercel.app/" target="_blank" class="proj-link" style="margin-top:12px;">Use the Tool &#x2192;</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="hop">
-  <div class="s-label">Projects and Thinking</div>
-  <h2 class="s-h2">The method, shown <span>four different ways.</span></h2>
-  <p class="s-sub">A live strategy tool. A full brand system. Two product experiments. One method, four completely different problems.</p>
-  <div class="think-grid">
-    <a href="https://brand-gap-diagnosis-tool.vercel.app/" target="_blank" class="think-card fi">
-      <span class="think-num">01</span>
-      <span class="think-tag">Strategy System · AI-assisted</span>
-      <div class="think-title">Brand Gap Diagnosis Tool</div>
-      <p class="think-desc">Type in a brand. Get a real diagnosis: positioning gaps, trust gaps, content gaps, conversion gaps. Then get the fix: content pillars, ad angles, video POV, visual direction. Built from my own brand audit method. AI moves it. The framework is mine.</p>
-      <div style="font-size:11px;color:var(--blue2);font-weight:600;margin-top:4px;letter-spacing:0.03em;">Thinking is human. Execution is AI. Output is actually useful.</div>
-      <div class="think-cta" style="display:flex;align-items:center;gap:8px;"><img src="assets/logos/Brand Gap Diagnosis Tool.png" alt="" style="width:20px;height:20px;object-fit:contain;border-radius:5px;flex-shrink:0;">View the Tool &#x2192;</div>
-    </a>
-    <a href="house-of-pause.html" class="think-card fi d1">
-      <span class="think-num">02</span>
-      <span class="think-tag">Human-led · AI-assisted</span>
-      <div class="think-title">House of Pause</div>
-      <p class="think-desc">A full brand system built from one observation: homes are designed to look beautiful, not to feel calm. Positioning, identity, visual direction, content system, hook formula. The thinking came first. AI helped build it faster without losing the taste or the point.</p>
-      <div class="think-cta">See the Full System &#x2192;</div>
-    </a>
-    <a href="apps-tools.html" class="think-card fi d2">
-      <span class="think-num">03</span>
-      <span class="think-tag">Problem to Product</span>
-      <div class="think-title">Apps and Tools</div>
-      <p class="think-desc">Two apps built because the problems were too specific to ignore and nobody had fixed them. Zapo saves content before the insight disappears into the scroll. Railway Tool tells you exactly which platform, which coach, in the time you actually have. Vibe coded. Shipped.</p>
-      <div class="think-cta">Explore the Build &#x2192;</div>
-    </a>
-    <a href="vsl-creative-strategy.html" class="think-card fi d3">
-      <span class="think-num">04</span>
-      <span class="think-tag">Conversion Strategy · Long-form Creative</span>
-      <div class="think-title">VSL Creative Strategy</div>
-      <p class="think-desc">One cold traffic video. Watched it back as a buyer, not a creator. Found the exact frame where the viewer's brain checked out. Rebuilt the argument, reordered the hook, rewrote the brief from what actually matters: whether a stranger trusts you enough to keep watching. That is what strategy actually is.</p>
-      <div class="think-cta">See the Strategy &#x2192;</div>
-    </a>
-  </div>
-</section>
-
+<!-- ==========================================================================
+     CONTACT & CREATIVE AUDIT
+     ========================================================================== -->
 <section id="contact">
-  <div class="s-label">Get in Touch</div>
-  <h2 class="s-h2">Easy to talk to. <span>Easier to work with.</span></h2>
-  <div class="contact-grid">
-    <div class="fi">
-      <div class="form-row">
-        <div class="form-group"><label>Your Name</label><input type="text" placeholder="Your name" id="cn"></div>
-        <div class="form-group"><label>Your Email</label><input type="email" placeholder="your@email.com" id="ce"></div>
+  <div class="container">
+    <div class="audit-cta-box">
+      <div class="badge-tag badge-emerald" style="margin-bottom: 16px;">
+        <span class="badge-pulse"></span> Free 10-Minute Ad Account Audit
       </div>
-      <div class="form-group">
-        <label>What's on your mind?</label>
-        <select id="cs">
-          <option value="" disabled selected>Select one</option>
-          <option>Hiring for a full-time role</option>
-          <option>Need brand strategy help</option>
-          <option>Building a content system</option>
-          <option>Have a specific challenge</option>
-          <option>Just want to connect</option>
-        </select>
-      </div>
-      <div class="form-group"><label>Your Message</label><textarea placeholder="Tell me what you're working on. What's the challenge?" id="cm"></textarea></div>
-      <button class="btn btn-fill" onclick="send()" id="sb">Send Message &#x2192;</button>
-    </div>
-    <div class="ci-info fi d1">
-      <h3>Let's talk about what's not working.</h3>
-      <p>I am looking for a full-time role where brand strategy is treated as a business function, not a support service. If your content is growing but not converting, if your brand voice shifts every week, if you have a product but no clear story around it, that is the conversation I want to have. I read those gaps fast and I build the fix.</p>
-      <div class="ci-links">
-        <a href="mailto:anupamnath222@gmail.com" class="ci-link"><div class="ci-icon">&#x2709;</div><div><span class="ci-lbl">Email</span><span class="ci-val">anupamnath222@gmail.com</span></div></a>
-        <a href="tel:+918473932498" class="ci-link"><div class="ci-icon">&#x1F4DE;</div><div><span class="ci-lbl">Phone</span><span class="ci-val">+91 84739 32498</span></div></a>
-        <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank" class="ci-link"><div class="ci-icon">in</div><div><span class="ci-lbl">LinkedIn</span><span class="ci-val">Anupam Nath</span></div></a>
-        <div class="ci-link" style="cursor:default;"><div class="ci-icon">&#x1F4CD;</div><div><span class="ci-lbl">Location</span><span class="ci-val">New Delhi, India</span></div></div>
-        <a href="https://drive.google.com/file/d/1Szxmc-32F2-rlftHLLpyd6HF-7kTQ8UR/view?usp=sharing" target="_blank" class="ci-link"><div class="ci-icon">&#x1F4C4;</div><div><span class="ci-lbl">Resume</span><span class="ci-val">Download PDF</span></div></a>
+
+      <h2 class="audit-h2">
+        Let’s Drop Your CAC and<br>
+        <span class="text-gradient-emerald">Scale Your Meta Ad Spend.</span>
+      </h2>
+
+      <p class="audit-desc">
+        Send me your website URL or top 3 fatigued ads. I’ll send you a personalized Loom teardown with <strong>3 high-converting angle hypotheses + hook fixes</strong> you can deploy immediately.
+      </p>
+
+      <div class="contact-button-row">
+        <a href="https://wa.me/918473932498?text=Hey%20Anupam,%20I%20saw%20your%20creative%20strategist%20portfolio.%20Let's%20talk%20about%20our%20Meta%20ads!" target="_blank" class="btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Direct WhatsApp Chat
+        </a>
+        <a href="mailto:anupamnath222@gmail.com" class="btn-email">
+          Email: anupamnath222@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/anupam-nath-83a3bb1b1/" target="_blank" class="btn-secondary" style="border-radius: var(--radius-sm);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn Profile
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="f-name">Anupam <span>Nath</span></div>
-  <div class="f-copy">&copy; 2026 &middot; All rights reserved</div>
+  <div class="container">
+    © 2026 Anupam Nath · Senior Performance Creative Strategist · Built for High-Growth DTC &amp; Meta Brands
+  </div>
 </footer>
 
-<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#x2191;</button>
+<!-- ==========================================================================
+     DEEP-DIVE STRATEGY MODAL DRAWER
+     ========================================================================== -->
+<div class="modal-overlay" id="strategyModal">
+  <div class="modal-dialog">
+    <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
 
+    <div class="modal-media-col" id="modalMedia">
+      <!-- Media inserted dynamically -->
+    </div>
+
+    <div class="modal-strategy-col" id="modalContent">
+      <!-- Content inserted dynamically -->
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     VANILLA JS: FILTERS, MODAL SYSTEM, & ADS MANAGER DATA
+     ========================================================================== -->
 <script>
-// Scroll performance optimization - smooth scrolling disabled during active scroll
-let scrollTimeout, isScrolling = false;
-document.addEventListener('scroll', () => {
-  if (!isScrolling) {
-    isScrolling = true;
-    document.documentElement.style.scrollBehavior = 'auto';
+// --- CREATIVE ASSETS REPOSITORY DATA ---
+const VAULT_ITEMS = {
+  "hokipo-reupholstery": {
+    brand: "HOKIPO",
+    category: "static",
+    title: "Reupholstery Cost Arbitrage vs. 60-Sec Refresh",
+    mediaType: "image",
+    mediaSrc: "assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png",
+    funnelStage: "Top of Funnel (Cold Traffic)",
+    persona: "Pooja, 34, Bangalore — Solid teak sofa frame, but upholstery looks tired. Carpenter quoted ₹18,000 and 2 weeks of carpentry mess. She wants a guest-ready living room this weekend.",
+    problem: "Rising CAC on standard product-shot catalog ads. Customers didn't realize they could fix an old sofa without replacing it or hiring a carpenter.",
+    angle: "Cost Arbitrage: Skip the ₹18,000 Reupholstery Bill. Restore your sofa in 60 seconds with 3-layer quilted protection.",
+    hooks: {
+      visual: "Bold price contrast callout: ₹18,000 Carpenter Bill vs ₹1,499 Instant HOKIPO Cover.",
+      tos: "SOLID SOFA FRAME. TIRED-LOOKING FABRIC? SKIP THE ₹18,000 REUPHOLSTERY.",
+      caption: "Your wooden frame is completely fine — slip on HOKIPO in under 60 seconds."
+    },
+    metric: "3.8x Purchase ROAS · Scaled spend profitably on Advantage+ Shopping"
+  },
+  "berkowits-scalp": {
+    brand: "BERKOWITS / 360",
+    category: "ai",
+    title: "Virtual Doctor Scalp Scan Hook",
+    mediaType: "video",
+    mediaSrc: "assets/creatives/videos/berkowits_doctor_scalp_scan_ai.mp4",
+    funnelStage: "Top of Funnel (Cold Traffic)",
+    persona: "Men 28-45 noticing early receding hairline or crown thinning. Skeptical of generic shampoos and afraid of aggressive clinical surgeries.",
+    problem: "High skepticism. Standard clinic ads looked like generic pharmaceutical promos, leading to low 3-second hook rates (<18%).",
+    angle: "Clinical Authority & Microscopic Diagnosis: Showing what the doctor's dermascope actually sees before visible bald patches form.",
+    hooks: {
+      visual: "AI-generated clinical b-roll of a specialist analyzing microscopic follicle scans.",
+      tos: "WHAT YOUR DOCTOR SEES BEFORE YOUR HAIR ACTUALLY FALLS OUT.",
+      caption: "Follicle shrinkage is invisible to the naked eye. Here is what's happening."
+    },
+    metric: "44% Thumbstop Rate · 22% Hold Rate · -29% CAC reduction"
+  },
+  "hokipo-retuck": {
+    brand: "HOKIPO",
+    category: "static",
+    title: "Chronic Re-Tucking Rage Solver",
+    mediaType: "image",
+    mediaSrc: "assets/creatives/statics/hokipo_retucking_grip_ad.png",
+    funnelStage: "Middle of Funnel (Objection Handling)",
+    persona: "Urban family with pets & kids. Universally frustrated by cheap slipcovers that bunch up and slip off every time someone stands up.",
+    problem: "Customer objection: 'Every slipcover I bought on Amazon slips off in 10 minutes.'",
+    angle: "Mechanical Grip & Anti-Slip Stability: Focus on high-traction backing + deep foam anchor tubes.",
+    hooks: {
+      visual: "Close-up macro shot of the tuck-in grip tubes locking firmly into sofa crevices.",
+      tos: "TIRED OF RE-TUCKING YOUR SOFA COVER EVERY TIME SOMEONE SITS DOWN?",
+      caption: "Engineered with anti-slip anchor tubes that stay locked in all day."
+    },
+    metric: "3.4x ROAS · 1.8% Outbound CTR · Decreased post-click bounce"
+  },
+  "berkowits-panic": {
+    brand: "BERKOWITS / 360",
+    category: "ai",
+    title: "Pre-Meeting Panic (Mirror Check)",
+    mediaType: "video",
+    mediaSrc: "assets/creatives/videos/berkowits_grooming_panic_hook.mp4",
+    funnelStage: "Top / Middle of Funnel",
+    persona: "Corporate professionals noticing scalp visibility right before high-stakes client meetings or presentations.",
+    problem: "Need for instant confidence solutions rather than waiting 6 months for medical treatments.",
+    angle: "Immediate Visible Insecurity vs 30-Second Hair Thickening Fibre Solution.",
+    hooks: {
+      visual: "Anxious mirror check under bright corporate lighting.",
+      tos: "NOTICED THINNING HAIR RIGHT BEFORE A BIG MEETING?",
+      caption: "Why panic when micro-fibres lock onto hair in 30 seconds flat?"
+    },
+    metric: "-32% CPA · 38% Thumbstop Rate"
+  },
+  "hokipo-stain": {
+    brand: "HOKIPO",
+    category: "static",
+    title: "Liquid & Pet Stain Barrier",
+    mediaType: "image",
+    mediaSrc: "assets/creatives/statics/hokipo_pet_stain_waterproof.png",
+    funnelStage: "Middle of Funnel / Retargeting",
+    persona: "Dog & cat owners, parents of young toddlers. Constant fear of milk, tea, or water soaking into expensive sofa foam.",
+    problem: "Unprotected sofas get permanently stained; reupholstery or deep foam cleaning costs ₹3,000+ per incident.",
+    angle: "Hydrophobic Liquid Shield: Droplets bead up into spheres for an instant 3-second wipe-down.",
+    hooks: {
+      visual: "Water droplets beading up and rolling off quilted fabric.",
+      tos: "ACCIDENTAL COFFEE OR PET PAWS? WIPES CLEAN IN 3 SECONDS.",
+      caption: "Hydrophobic multi-layer barrier built for real family chaos."
+    },
+    metric: "4.1x ROAS on MOF & Retargeting campaigns"
+  },
+  "berkowits-hinglish": {
+    brand: "BERKOWITS",
+    category: "ugc",
+    title: "The 'Salon Gap' Grey Root Touch-Up",
+    mediaType: "video",
+    mediaSrc: "assets/creatives/videos/berkowits_hinglish_voiceover_ad.mp4",
+    funnelStage: "Middle / Bottom of Funnel",
+    persona: "Women 30-55 with visible grey root regrowth who have a wedding, party, or dinner in 2 hours with no salon slot available.",
+    problem: "Salon color appointments take 2 hours and cost ₹1,500+. In-between regrowth causes event anxiety.",
+    angle: "The Salon Gap: 30-second root touch-up powder with zero residue.",
+    hooks: {
+      visual: "Split-second instant dab of powder along temple parting.",
+      tos: "PARLOUR JANE KA TIME NAHI HAI? 30 SECONDS MEIN GREY ROOTS GONE.",
+      caption: "Shaam ko event hai aur roots dikh rahi hain? Watch this."
+    },
+    metric: "3.6x ROAS · 18% ThruPlay Hold Rate"
+  },
+  "hokipo-cushion": {
+    brand: "HOKIPO",
+    category: "static",
+    title: "3-Minute Living Room Makeover",
+    mediaType: "image",
+    mediaSrc: "assets/creatives/statics/hokipo_cushion_transformation.png",
+    funnelStage: "Top of Funnel (Aesthetic Appeal)",
+    persona: "Urban design enthusiasts wanting a Pinterest-worthy aesthetic upgrade without buying ₹50k new furniture.",
+    problem: "Home decor feels repetitive and dull after 1-2 years.",
+    angle: "Color Pop & Textured Refresh: ₹899 micro-upgrade that changes the whole room.",
+    hooks: {
+      visual: "Geometric high-contrast cushion palette against neutral sofa frame.",
+      tos: "BORING LIVING ROOM? THIS ₹899 FIX CHANGES THE WHOLE VIBE.",
+      caption: "Swap out 4 cushion covers to transform your entire living room."
+    },
+    metric: "3.2x ROAS on Broad Advantage+ Shopping Campaign"
+  },
+  "berkowits-elevator": {
+    brand: "BERKOWITS / 360",
+    category: "ai",
+    title: "Elevator Mirror Reality Check",
+    mediaType: "video",
+    mediaSrc: "assets/creatives/videos/berkowits_elevator_hair_check.mp4",
+    funnelStage: "Top of Funnel (Hook Testing)",
+    persona: "Men 25-40 commuting to work, caught off guard by overhead fluorescent lighting.",
+    problem: "People don't realize hair is thinning until harsh overhead lighting exposes scalp.",
+    angle: "The Elevator Lighting Hook: Repurposed hook variation testing social anxiety.",
+    hooks: {
+      visual: "Man checking reflection in metallic elevator door under harsh top lighting.",
+      tos: "ELEVATOR LIGHTING NEVER LIES.",
+      caption: "Dhoop mein ya elevator lighting mein jab scalp dikhti hai, tab real panic hota hai."
+    },
+    metric: "46% Thumbstop Rate · Validated winner across 3 hook variations"
+  },
+  "hokipo-dining": {
+    brand: "HOKIPO",
+    category: "static",
+    title: "The 'Dal & Turmeric' Wipe Shield",
+    mediaType: "image",
+    mediaSrc: "assets/creatives/statics/hokipo_dining_chair_shield.png",
+    funnelStage: "Middle of Funnel",
+    persona: "Households hosting dinner parties with food spills.",
+    problem: "Turmeric and curry irreversibly stain dining chair upholstery.",
+    angle: "Turmeric-Proof Fabric: Instant stretch-fit washable protection.",
+    hooks: {
+      visual: "Curry spill wiped clean in one stroke without leaving a yellow stain.",
+      tos: "TURMERIC-PROOF YOUR DINING CHAIRS BEFORE TONIGHT'S DINNER.",
+      caption: "Protect dining seats from curry, dal, and everyday dining mess."
+    },
+    metric: "3.5x Purchase ROAS"
+  },
+  "honest-energy": {
+    brand: "HONEST ENERGY",
+    category: "ugc",
+    title: "The Anti-Bacon Collar Test",
+    mediaType: "video",
+    mediaSrc: "assets/creatives/videos/honest_energy_reels_ad.mp4",
+    funnelStage: "Top of Funnel",
+    persona: "Men 22-35 sick of cheap fast-fashion t-shirts warping after 2 washes.",
+    problem: "T-shirt collars warp into 'bacon necks' within a month.",
+    angle: "Heavyweight 240 GSM Fabric & Ribbed Collar Guarantee.",
+    hooks: {
+      visual: "Stretching collar aggressively and watching it snap back into shape.",
+      tos: "STOP BUYING T-SHIRTS WITH BACON NECK COLLARS.",
+      caption: "Tested through 50 machine washes. Zero bacon collar."
+    },
+    metric: "3.5x ROAS · Scaled spend on Meta Reels"
   }
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    isScrolling = false;
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, 150);
-}, {passive: true});
+};
 
-const io = new IntersectionObserver(e => {
-  e.forEach(x => { if(x.isIntersecting) x.target.classList.add('vis'); });
-}, {threshold:0.1, rootMargin: '50px'});
-document.querySelectorAll('.fi').forEach(el => io.observe(el));
+// --- FILTER BUTTON LOGIC ---
+const filterButtons = document.querySelectorAll('.filter-btn');
+const vaultCards = document.querySelectorAll('.vault-card');
 
-function fp(cat, btn) {
-  document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.proj-card').forEach(c => {
-    const el = c.closest('.proj-folder-wrap') || c;
-    el.style.display = (cat==='all' || c.dataset.cat.includes(cat)) ? '' : 'none';
-  });
-}
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-function send() {
-  const n = document.getElementById('cn').value;
-  const e = document.getElementById('ce').value;
-  const s = document.getElementById('cs').value;
-  const m = document.getElementById('cm').value;
-  const btn = document.getElementById('sb');
-  if(!n || !e){ btn.textContent='Please fill in name and email';setTimeout(()=>{btn.textContent="Send Message \u2192";},2000);return;}
-  const sub = encodeURIComponent('Portfolio Enquiry \u2014 '+(s||'General')+' \u2014 '+n);
-  const bod = encodeURIComponent('Hi Anupam,\n\nName: '+n+'\nEmail: '+e+'\n\n'+m);
-  window.location.href='mailto:anupamnath222@gmail.com?subject='+sub+'&body='+bod;
-}
+    const filter = btn.getAttribute('data-filter');
 
-window.addEventListener('scroll', () => {
-  let cur='';
-  document.querySelectorAll('section[id]').forEach(s => {
-    if(window.scrollY >= s.offsetTop-120) cur=s.id;
-  });
-  document.querySelectorAll('.nav-links a:not(.nav-resume)').forEach(a => {
-    a.style.color = '';
-    a.classList.toggle('nav-active', a.getAttribute('href')==='#'+cur);
+    vaultCards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      if (filter === 'all' || cat === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   });
 });
 
-// Typing Animation
-const typerEl = document.getElementById('typer');
-const phrases = ['Brand and Creative Strategist','I find where your funnel breaks.','The person who builds the system.'];
-let currentPhrase = 0, charIndex = 0, isDeleting = false;
-function type() {
-  const phrase = phrases[currentPhrase];
-  if (isDeleting) { charIndex--; } else { charIndex++; }
-  typerEl.textContent = phrase.substring(0, charIndex);
-  if (!isDeleting && charIndex === phrase.length) { isDeleting = true; setTimeout(type, 4000); }
-  else if (isDeleting && charIndex === 0) { isDeleting = false; currentPhrase = (currentPhrase + 1) % phrases.length; setTimeout(type, 300); }
-  else { setTimeout(type, isDeleting ? 30 : 45); }
-}
-type();
-
-// Animated dots canvas
-// Global full-page dot grid + floating particles
-(function(){
-  const canvas = document.getElementById('globalCanvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, dots, particles;
-
-  function resize(){
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-    buildDots();
-  }
-
-  function buildDots(){
-    dots = [];
-    const spacing = 44;
-    for(let x = spacing/2; x < W; x += spacing)
-      for(let y = spacing/2; y < H; y += spacing)
-        dots.push({x, y, phase: Math.random()*Math.PI*2});
-    particles = Array.from({length:28}, () => ({
-      x: Math.random()*W,
-      y: Math.random()*H,
-      r: 1 + Math.random()*1.4,
-      vx: (Math.random()-0.5)*0.22,
-      vy: (Math.random()-0.5)*0.22,
-      alpha: 0.06 + Math.random()*0.1,
-      phase: Math.random()*Math.PI*2
-    }));
-  }
-
-  let t = 0;
-  function draw(){
-    ctx.clearRect(0, 0, W, H);
-    t += 0.008;
-    // dot grid � gently pulse opacity
-    dots.forEach(d => {
-      const pulse = 0.045 + 0.028 * Math.sin(t + d.phase);
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, 1.1, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(5,150,105,${pulse})`;
-      ctx.fill();
+// Auto-preview videos on hover
+vaultCards.forEach(card => {
+  const vid = card.querySelector('video');
+  if (vid) {
+    card.addEventListener('mouseenter', () => {
+      vid.play().catch(() => {});
     });
-    // floating soft orb-particles
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if(p.x < -10) p.x = W+10;
-      if(p.x > W+10) p.x = -10;
-      if(p.y < -10) p.y = H+10;
-      if(p.y > H+10) p.y = -10;
-      const a = p.alpha * (0.7 + 0.3*Math.sin(t*0.7 + p.phase));
-      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*18);
-      g.addColorStop(0, `rgba(52,211,153,${a})`);
-      g.addColorStop(1, 'rgba(52,211,153,0)');
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r*18, 0, Math.PI*2);
-      ctx.fillStyle = g;
-      ctx.fill();
+    card.addEventListener('mouseleave', () => {
+      vid.pause();
+      vid.currentTime = 0;
     });
-    requestAnimationFrame(draw);
   }
+});
 
-  resize();
-  draw();
-  window.addEventListener('resize', resize);
-})();
+// --- STRATEGY MODAL LOGIC ---
+const modal = document.getElementById('strategyModal');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+const modalMedia = document.getElementById('modalMedia');
+const modalContent = document.getElementById('modalContent');
 
-const canvas = document.getElementById('dotsCanvas');
-if(canvas){
-  const ctx = canvas.getContext('2d');
-  function resizeCanvas(){
-    const hero = document.getElementById('hero');
-    canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
-  }
-  resizeCanvas();
-  const dotSize=2, spacing=36;
-  let dots=[], mouseX=-9999, mouseY=-9999;
-  function buildDots(){
-    dots=[];
-    for(let x=spacing/2;x<canvas.width;x+=spacing)
-      for(let y=spacing/2;y<canvas.height;y+=spacing)
-        dots.push({x,y,baseSize:dotSize,glow:0});
-  }
-  buildDots();
-  document.addEventListener('mousemove',(e)=>{
-    const rect=canvas.getBoundingClientRect();
-    mouseX=e.clientX-rect.left; mouseY=e.clientY-rect.top;
-  });
-  function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    dots.forEach(dot=>{
-      const dist=Math.hypot(dot.x-mouseX,dot.y-mouseY);
-      dot.glow=Math.max(0,1-dist/120);
-      const size=dot.baseSize+dot.glow*3;
-      ctx.beginPath(); ctx.arc(dot.x,dot.y,size,0,Math.PI*2);
-      ctx.fillStyle='rgba(5,150,105,'+(0.22+dot.glow*0.5)+')';
-      ctx.fill();
-    });
-    requestAnimationFrame(animate);
-  }
-  animate();
-  window.addEventListener('resize',()=>{ resizeCanvas(); buildDots(); });
-}
+vaultCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const id = card.getAttribute('data-id');
+    const data = VAULT_ITEMS[id];
+    if (!data) return;
 
-// Counting Numbers
-const statCards=document.querySelectorAll('.stat-num');
-const countObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting&&!entry.target.dataset.counted){
-      entry.target.dataset.counted='true';
-      const text=entry.target.textContent; const num=parseInt(text); if(isNaN(num))return;
-      const unit=text.replace(/\d+/g,'');
-      const increment=Math.ceil(num/40); let current=0;
-      const counter=setInterval(()=>{
-        current+=increment;
-        if(current>=num){current=num;clearInterval(counter);}
-        entry.target.textContent=current+unit;
-      },30);
+    // Render Media
+    if (data.mediaType === 'video') {
+      modalMedia.innerHTML = `
+        <video src="${data.mediaSrc}" controls autoplay playsinline loop></video>
+      `;
+    } else {
+      modalMedia.innerHTML = `
+        <img src="${data.mediaSrc}" alt="${data.title}">
+      `;
     }
-  });
-},{threshold:0.3});
-statCards.forEach(card=>countObserver.observe(card));
 
-// Skills stagger reveal
-(function(){
-  const grid=document.querySelector('.skills-grid'); if(!grid)return;
-  const cards=grid.querySelectorAll('.skill-card'); let done=false;
-  const obs=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting&&!done){ done=true; cards.forEach((c,i)=>setTimeout(()=>c.classList.add('sk-in'),i*100)); obs.disconnect(); }
-  },{threshold:0.1});
-  obs.observe(grid);
-  cards.forEach(card=>{
-    card.addEventListener('mousemove',e=>{
-      const cursor=card.querySelector('.sk-cursor'); if(!cursor)return;
-      const r=card.getBoundingClientRect();
-      cursor.style.left=(e.clientX-r.left)+'px'; cursor.style.top=(e.clientY-r.top)+'px';
-    });
-    // Tap / click burst on the icon
-    function triggerBurst(e){
-      const icon=card.querySelector('.sk-icon'); if(!icon)return;
-      // launch animation
-      icon.classList.remove('sk-tap');
-      void icon.offsetWidth; // reflow
-      icon.classList.add('sk-tap');
-      icon.addEventListener('animationend',()=>icon.classList.remove('sk-tap'),{once:true});
-      // particle burst
-      const colors=['#059669','#10b981','#34d399','#6ee7b7','#ffffff'];
-      const rect=card.getBoundingClientRect();
-      const cx=(icon.getBoundingClientRect().left+icon.getBoundingClientRect().right)/2-rect.left;
-      const cy=(icon.getBoundingClientRect().top+icon.getBoundingClientRect().bottom)/2-rect.top;
-      for(let i=0;i<12;i++){
-        const p=document.createElement('span');
-        p.className='sk-particle';
-        const angle=(i/12)*Math.PI*2;
-        const dist=40+Math.random()*35;
-        p.style.setProperty('--px',Math.cos(angle)*dist+'px');
-        p.style.setProperty('--py',Math.sin(angle)*dist+'px');
-        p.style.width=(5+Math.random()*5)+'px';
-        p.style.height=p.style.width;
-        p.style.background=colors[i%colors.length];
-        p.style.left=cx+'px'; p.style.top=cy+'px';
-        p.style.animationDelay=(Math.random()*0.08)+'s';
-        card.appendChild(p);
-        p.addEventListener('animationend',()=>p.remove());
-      }
-    }
-    card.addEventListener('click',triggerBurst);
-    card.addEventListener('touchstart',triggerBurst,{passive:true});
-  });
-})();
+    // Render Strategy Breakdown
+    modalContent.innerHTML = `
+      <div class="modal-badge-row">
+        <span class="badge-tag badge-cyan">${data.brand}</span>
+        <span class="badge-tag badge-emerald">${data.funnelStage}</span>
+      </div>
 
-// Methodology reveal � stagger cards + roll-up numbers + inner text delays
-const hopRevealObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.querySelectorAll('.hop-reveal').forEach((card,i)=>{
-        setTimeout(()=>{
-          card.classList.add('vis');
-          // stagger inner elements based on card index
-          const strong = card.querySelector('.hop-lbl-wrap strong');
-          const sub = card.querySelector('.hop-lbl-sub');
-          if(strong){ strong.style.transitionDelay = (0.18 + i*0.04)+'s'; }
-          if(sub){ sub.style.transitionDelay = (0.30 + i*0.04)+'s'; }
-          // number roll-up: count from 0 to target
-          const numEl = card.querySelector('.hop-num[data-num]');
-          if(numEl){
-            const target = parseInt(numEl.dataset.num);
-            let cur = 0;
-            const iv = setInterval(()=>{
-              cur++;
-              numEl.textContent = String(cur).padStart(2,'0');
-              if(cur >= target) clearInterval(iv);
-            }, 60);
-          }
-        }, i*90);
-      });
-      hopRevealObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:0.15});
-document.querySelectorAll('.hop-comps').forEach(el=>hopRevealObserver.observe(el));
+      <h3 class="modal-title">${data.title}</h3>
 
-// Methodology � mouse spotlight tracking
-document.querySelectorAll('.hop-wrap').forEach(wrap=>{
-  const spot=wrap.querySelector('.hop-spotlight');
-  if(!spot)return;
-  wrap.addEventListener('mousemove',e=>{
-    const r=wrap.getBoundingClientRect();
-    spot.style.left=(e.clientX-r.left)+'px';
-    spot.style.top=(e.clientY-r.top)+'px';
+      <div>
+        <div class="modal-section-title">The Target Persona &amp; Mindset</div>
+        <div class="modal-section-body">${data.persona}</div>
+      </div>
+
+      <div>
+        <div class="modal-section-title">The Account Friction / Bottleneck</div>
+        <div class="modal-section-body">${data.problem}</div>
+      </div>
+
+      <div>
+        <div class="modal-section-title">Strategic Angle &amp; Concept</div>
+        <div class="modal-section-body">${data.angle}</div>
+      </div>
+
+      <div class="modal-hook-box">
+        <div class="modal-section-title" style="color: var(--cyan); margin-bottom: 8px;">3-Second Hook Anatomy</div>
+        <div class="modal-hook-item"><strong>Visual Hook:</strong> ${data.hooks.visual}</div>
+        <div class="modal-hook-item"><strong>Text-on-Screen (TOS):</strong> "${data.hooks.tos}"</div>
+        <div class="modal-hook-item"><strong>Caption / Audio:</strong> ${data.hooks.caption}</div>
+      </div>
+
+      <div class="modal-metric-banner">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--emerald);">Meta Ads Result</div>
+          <div style="font-size: 14px; font-weight: 800; color: #fff;">${data.metric}</div>
+        </div>
+        <span class="badge-tag badge-emerald">Verified</span>
+      </div>
+    `;
+
+    modal.classList.add('open');
   });
 });
 
-// Methodology � constraints stagger reveal on scroll
-(function(){
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
-  },{threshold:0.5});
-  document.querySelectorAll('.hop-constraints').forEach(el=>obs.observe(el));
-})();
+modalCloseBtn.addEventListener('click', () => {
+  modal.classList.remove('open');
+  modalMedia.innerHTML = '';
+});
 
-// Project card stagger
-(function(){
-  const cards=document.querySelectorAll('.proj-card');
-  cards.forEach(c=>c.classList.add('proj-anim'));
-  const pg=document.getElementById('pg'); if(!pg)return;
-  let done=false;
-  const obs=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting&&!done){
-      done=true;
-      const delay=window.innerWidth<=900?80:120;
-      const all=Array.from(cards);
-      all.filter(c=>c.style.display==='none').forEach(c=>c.classList.add('in'));
-      all.filter(c=>c.style.display!=='none').forEach((c,i)=>setTimeout(()=>c.classList.add('in'),i*delay));
-      obs.disconnect();
-    }
-  },{threshold:0.1});
-  obs.observe(pg);
-})();
-
-// Project metric count-up
-(function(){
-  const pg=document.getElementById('pg'); if(!pg)return;
-  let counted=false;
-  function parseNum(s){
-    s=s.trim(); if(s.includes('-'))return null;
-    const km=s.match(/^[\u20B9]?(\d+\.?\d*)K(\+?)$/);
-    if(km){const kn=parseFloat(km[1]),sx=km[2],px=s.startsWith('\u20B9')?'\u20B9':'';
-      return{end:kn*1000,fmt:v=>{const k=v/1000;return px+(kn%1?k.toFixed(1):Math.floor(k))+'K'+sx;}};}
-    const nm=s.match(/^[\u20B9]?(\d+)(\+?)$/);
-    if(nm){const px=s.startsWith('\u20B9')?'\u20B9':'';return{end:parseInt(nm[1]),fmt:v=>px+Math.floor(v)+nm[2]};}
-    return null;
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('open');
+    modalMedia.innerHTML = '';
   }
-  function animCount(el){
-    const orig=el.textContent,p=parseNum(orig); if(!p||p.end===0)return;
-    let t0=null;
-    requestAnimationFrame(function step(now){
-      if(t0===null)t0=now;
-      const t=Math.min((now-t0)/1000,1),e=1-Math.pow(1-t,3);
-      el.textContent=p.fmt(e*p.end);
-      if(t<1)requestAnimationFrame(step); else el.textContent=orig;
-    });
-  }
-  const mobs=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting&&!counted){ counted=true; pg.querySelectorAll('.metric strong').forEach(animCount); mobs.disconnect(); }
-  },{threshold:0.2});
-  mobs.observe(pg);
-})();
+});
 
-// Scroll progress bar + nav scrolled state + back-to-top
-(function(){
-  const prog = document.getElementById('scroll-progress');
-  const navEl = document.querySelector('nav');
-  const bt = document.getElementById('back-top');
-  function onScroll(){
-    const s = window.scrollY;
-    const h = document.documentElement.scrollHeight - window.innerHeight;
-    if(prog) prog.style.width = Math.min(100, h > 0 ? s / h * 100 : 0) + '%';
-    if(navEl){ s > 20 ? navEl.classList.add('nav-scrolled') : navEl.classList.remove('nav-scrolled'); }
-    if(bt){ s > 400 ? bt.classList.add('show') : bt.classList.remove('show'); }
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
-
-// Word-by-word h2 reveal � text-node based (safe with inner spans)
-(function(){
-  function wrapTextNodes(h){
-    var nodes = Array.from(h.childNodes);
-    nodes.forEach(function(node){
-      if(node.nodeType === 3){ // text node
-        var words = node.textContent.split(/( +)/);
-        var frag = document.createDocumentFragment();
-        words.forEach(function(part){
-          if(/^ +$/.test(part)){
-            frag.appendChild(document.createTextNode(part));
-          } else if(part){
-            var s = document.createElement('span');
-            s.className = 'wr';
-            s.textContent = part;
-            frag.appendChild(s);
-          }
-        });
-        h.replaceChild(frag, node);
+// --- ADS MANAGER DASHBOARD TOGGLE DATA ---
+const DASH_DATA = {
+  hokipo: {
+    account: "Account: HOKIPO_Official_Scale (Advantage+ Shopping)",
+    rows: [
+      {
+        name: "ASC_Home_Transformation_Evergreen_BAU",
+        spent: "₹1,42,850",
+        purchases: 368,
+        cpa: "₹388",
+        thumbstop: "42.4%",
+        holdRate: "21.6%",
+        ctr: "2.14%",
+        roas: "3.84x"
+      },
+      {
+        name: "CBO_Quilted_Sofa_Cover_Angle_Matrix",
+        spent: "₹88,400",
+        purchases: 212,
+        cpa: "₹416",
+        thumbstop: "38.2%",
+        holdRate: "18.5%",
+        ctr: "1.88%",
+        roas: "3.42x"
+      },
+      {
+        name: "RETARGETING_Hydrophobic_Stain_Proof",
+        spent: "₹34,200",
+        purchases: 98,
+        cpa: "₹348",
+        thumbstop: "36.8%",
+        holdRate: "24.1%",
+        ctr: "2.65%",
+        roas: "4.12x"
+      },
+      {
+        name: "TOF_Dining_Chair_Shield_Turmeric_Proof",
+        spent: "₹26,100",
+        purchases: 64,
+        cpa: "₹407",
+        thumbstop: "34.5%",
+        holdRate: "16.8%",
+        ctr: "1.74%",
+        roas: "3.51x"
       }
-      // span/strong/em children � recurse into them to wrap their text nodes too
-      else if(node.nodeType === 1 && node.tagName !== 'SPAN' || (node.nodeType === 1 && node.className === '')){
-        // leave styled spans (gradient) as-is; only recurse into plain elements
+    ]
+  },
+  berkowits: {
+    account: "Account: BERKOWITS_CLINIC_360 (Meta Acquisition)",
+    rows: [
+      {
+        name: "AI_Video_Doctor_Scalp_Scan_TOF_Broad",
+        spent: "₹92,300",
+        purchases: 148,
+        cpa: "₹623",
+        thumbstop: "44.2%",
+        holdRate: "22.4%",
+        ctr: "2.28%",
+        roas: "3.24x"
+      },
+      {
+        name: "UGC_Hinglish_Salon_Gap_Root_Touchup",
+        spent: "₹64,500",
+        purchases: 112,
+        cpa: "₹575",
+        thumbstop: "39.8%",
+        holdRate: "19.2%",
+        ctr: "2.45%",
+        roas: "3.62x"
+      },
+      {
+        name: "AI_Elevator_Lighting_Panic_Hook_B",
+        spent: "₹48,200",
+        purchases: 74,
+        cpa: "₹651",
+        thumbstop: "46.1%",
+        holdRate: "20.8%",
+        ctr: "1.96%",
+        roas: "2.95x"
+      },
+      {
+        name: "STATIC_Hair_Fibres_Instant_Density_Proof",
+        spent: "₹31,400",
+        purchases: 56,
+        cpa: "₹560",
+        thumbstop: "—",
+        holdRate: "—",
+        ctr: "2.82%",
+        roas: "3.44x"
       }
-    });
+    ]
   }
-  document.querySelectorAll('.s-h2').forEach(function(h){
-    wrapTextNodes(h);
-    var obs = new IntersectionObserver(function(entries){
-      if(entries[0].isIntersecting){
-        h.classList.add('wv');
-        h.querySelectorAll('.wr').forEach(function(w,i){ w.style.transitionDelay=(i*0.06)+'s'; });
-        obs.disconnect();
-      }
-    },{threshold:0.5});
-    obs.observe(h);
-  });
-})();
+};
 
-// Footer reveal
-(function(){
-  const ft = document.querySelector('footer');
-  if(!ft) return;
-  const obs = new IntersectionObserver(function(e){ if(e[0].isIntersecting){ ft.classList.add('fv'); obs.disconnect(); } },{threshold:0.3});
-  obs.observe(ft);
-})();
+function renderDashboard(brandKey) {
+  const data = DASH_DATA[brandKey];
+  document.getElementById('dashAccountName').innerText = data.account;
+  const tbody = document.getElementById('dashTableBody');
 
-// Hero photo 3D magnetic tilt
-(function(){
-  const wrap = document.querySelector('.hero-photo-wrap');
-  if(!wrap || window.innerWidth <= 900) return;
-  wrap.addEventListener('mousemove', function(e){
-    const r = wrap.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width - 0.5) * 2;
-    const y = ((e.clientY - r.top) / r.height - 0.5) * 2;
-    wrap.style.transform = 'perspective(900px) rotateY('+( x*7)+'deg) rotateX('+(-y*7)+'deg) scale3d(1.03,1.03,1.03)';
-  });
-  wrap.addEventListener('mouseleave', function(){
-    wrap.style.transform = '';
-  });
-})();
+  tbody.innerHTML = data.rows.map(row => `
+    <tr>
+      <td>
+        <span class="am-status-active">
+          <span class="am-status-dot"></span> Active
+        </span>
+      </td>
+      <td style="font-weight: 700; color: #fff;">${row.name}</td>
+      <td>${row.spent}</td>
+      <td>${row.purchases}</td>
+      <td>${row.cpa}</td>
+      <td>${row.thumbstop}</td>
+      <td>${row.holdRate}</td>
+      <td>${row.ctr}</td>
+      <td class="am-roas-highlight">${row.roas}</td>
+    </tr>
+  `).join('');
+}
 
-// About photo 3D magnetic tilt
-(function(){
-  const wrap = document.querySelector('.about-photo-wrap');
-  if(!wrap || window.innerWidth <= 900) return;
-  wrap.addEventListener('mousemove', function(e){
-    const r = wrap.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width - 0.5) * 2;
-    const y = ((e.clientY - r.top) / r.height - 0.5) * 2;
-    wrap.style.transform = 'perspective(800px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg) scale3d(1.025,1.025,1.025)';
-  });
-  wrap.addEventListener('mouseleave', function(){
-    wrap.style.transform = '';
-  });
-})();
+// Initial render
+renderDashboard('hokipo');
 
-// Section label underline draw on scroll
-(function(){
-  const labels = document.querySelectorAll('.s-label');
-  const obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('sl-in'); obs.unobserve(e.target); } });
-  },{threshold:0.8});
-  labels.forEach(function(l){ obs.observe(l); });
-})();
+const btnDashHokipo = document.getElementById('btnDashHokipo');
+const btnDashBerkowits = document.getElementById('btnDashBerkowits');
 
-// Custom cursor tracking � was in HTML but display:none with no JS
-(function(){
-  const dot = document.getElementById('cursorDot');
-  const ring = document.getElementById('cursorRing');
-  if(!dot || !ring || window.innerWidth <= 900) return;
-  let rx = -200, ry = -200, mx = -200, my = -200;
-  document.addEventListener('mousemove', function(e){ mx = e.clientX; my = e.clientY; });
-  function loopCursor(){
-    rx += (mx - rx) * 0.13;
-    ry += (my - ry) * 0.13;
-    dot.style.left = (mx - 4) + 'px';
-    dot.style.top = (my - 4) + 'px';
-    ring.style.left = (rx - 15) + 'px';
-    ring.style.top = (ry - 15) + 'px';
-    requestAnimationFrame(loopCursor);
-  }
-  loopCursor();
-  document.querySelectorAll('a,button,.btn,.proj-card,.skill-card,.stat-card,.hop-comp,.ci-link,.f-btn').forEach(function(el){
-    el.addEventListener('mouseenter', function(){ document.body.classList.add('cursor-hover'); });
-    el.addEventListener('mouseleave', function(){ document.body.classList.remove('cursor-hover'); });
-  });
-})();
+btnDashHokipo.addEventListener('click', () => {
+  btnDashHokipo.classList.add('active');
+  btnDashBerkowits.classList.remove('active');
+  renderDashboard('hokipo');
+});
+
+btnDashBerkowits.addEventListener('click', () => {
+  btnDashBerkowits.classList.add('active');
+  btnDashHokipo.classList.remove('active');
+  renderDashboard('berkowits');
+});
 </script>
+
 </body>
 </html>
