@@ -716,7 +716,59 @@
       border-color: #0F172A;
     }
 
+    
+    /* Vault Concept & Strategic Why Block */
+    .vault-concept-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .vault-concept-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #334155;
+    }
+
+    .concept-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .tag-concept {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    .tag-why {
+      background: #CCFF00;
+      color: #0F172A;
+      border: 1px solid #B8E600;
+    }
+
     .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .vault-grid-orig {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 24px;
@@ -1658,7 +1710,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">FRANKLY WEARING</span>
             <h4 class="vault-card-title">Subculture Streetwear: AI Motion Ads</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>3D AI living artwork pulsing to underground hip-hop beats, making static t-shirt graphics explode into motion.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Gen Z ignores catalog mockups. Turning creator apparel into rhythmic, flashy street culture stops scroll fatigue on Reels.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">44.6% Thumbstop · 3.8% CTR</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1678,7 +1740,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">KYARI · SHARK TANK S1</span>
             <h4 class="vault-card-title">10-Day Plant Autonomy Mechanism</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Anatomical cutaway diagram of the sub-irrigation reservoir and float indicator proving 10-day self-watering.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Urban buyers suffer from 'plant guilt' after killing past greenery. The technical mechanism proved plants can survive unattended.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">3.4x ROAS · +62% Bundle CVR</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1698,7 +1770,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">TATA PLAY FIBER</span>
             <h4 class="vault-card-title">Navi Mumbai Hyper-Local Geo-Framing</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Fast-paced video calling out specific Navi Mumbai residential societies and PIN codes within the first 2 seconds.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>National ISP ads feel distant. Localized society callouts established instant trust with WFH executives needing zero-buffer meetings.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">2.8% CTR · ₹380 CPL</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1718,7 +1800,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">HIDE &amp; LEATHER</span>
             <h4 class="vault-card-title">Handcrafted Festive Footwear BOGO</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Macro leather texture comparison paired with an aggressive festive offer: Buy 1 footwear pair, choose 2 artisan accessories free.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Festive ad auctions are brutal. Bundling high-perceived-value accessories with handcrafted leather allowed scaling at higher AOV.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">+84% Festive Order Volume</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1738,7 +1830,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">HIDE &amp; LEATHER</span>
             <h4 class="vault-card-title">Diwali B1G2 Viral Pattern Interrupt</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Cultural festive dilemma meme hook transitioning abruptly into high-craft cobbler hammering macro footage.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Diwali auction CPMs jump 60%+. A disruptive cultural meme hook cuts through auction noise at low cost, before converting with craft proof.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">3.8x Blended ROAS</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1758,7 +1860,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">THREE SIXTY</span>
             <h4 class="vault-card-title">Tactile ASMR Leather Bar Cabinet</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Ultra-macro audio-visual capture of heavy brass hardware unlatching and hand-stitched leather drawer glides.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Selling ₹1,20,000+ luxury furniture online requires replacing physical touch. ASMR sensory cues trigger tactile status desire.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">₹1,20,000+ AOV Scaling</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1778,7 +1890,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">HOKIPO</span>
             <h4 class="vault-card-title">₹18,000 Reupholstery vs. ₹1,499 Slipcover</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Split-screen comparison anchoring ₹18,000 carpenter reupholstery against a ₹1,499 water-repellent quilted cover.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Homeowners default to expensive reupholstery. Highlighting the 12x price gap and 5-minute install time made it an urgent no-brainer.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">4.1x Meta ROAS Scaler</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1798,7 +1920,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">HONEST ENERGY</span>
             <h4 class="vault-card-title">Sparkling Protein Water vs. Milky Shakes</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Visual side-by-side contrasting heavy, chalky milky protein shakes against light sparkling protein water poured over ice.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Attacked the unspoken post-workout sensory dread of milky whey bloat, opening up a blue ocean of active lifestyle consumers.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">+112% Subscription AOV</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1818,7 +1950,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">MATTRESS FITNESS</span>
             <h4 class="vault-card-title">Biomechanical Spinal Alignment Graphic</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Anatomical spine alignment illustration showing compressed vertebrae on standard foam vs. neutral alignment on orthopedic zones.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Back pain sufferers dismiss generic 'cloud-like softness' ads. Medical proof framing positions the mattress as an orthopedic medical solution.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">3.2x Advantage+ ROAS</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1838,7 +1980,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">TRESNOVA</span>
             <h4 class="vault-card-title">Chemical-Free Hypoallergenic Combed Cotton</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Micro-texture demonstration of GOTS-certified combed cotton with zero toxic AZO dyes and an elastic-free waistband.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>First-time mothers obsess over infant eczema and skin rashes. Proving dermatological fabric purity eliminates health safety friction.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">3.1x New-Mom ROAS</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -1858,7 +2010,17 @@
           <div class="vault-card-body">
             <span class="vault-brand-lbl">GD GOENKA GURUGRAM</span>
             <h4 class="vault-card-title">Cambridge K-12 Admissions Direct Response</h4>
-            <div class="vault-result-pill">
+                      <div class="vault-concept-box">
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-concept">Concept</span>
+              <span>Structured 3-pillar proof architecture detailing Cambridge global accreditations, campus robotics labs, and athletic infrastructure.</span>
+            </div>
+            <div class="vault-concept-row">
+              <span class="concept-tag tag-why">Why We Made It</span>
+              <span>Affluent parents don't convert on emotional school slogans; they require hard institutional proof of curriculum validity and facility superiority.</span>
+            </div>
+          </div>
+          <div class="vault-result-pill">
               <span class="vault-result-metric">₹520 Parent Tour CPL</span>
               <span class="vault-inspect-link">Breakdown →</span>
             </div>
@@ -2220,6 +2382,14 @@
         <div class="modal-result-card">
           <div class="modal-result-lbl">⚡ STRATEGIC PERFORMANCE OUTCOME</div>
           <div class="modal-result-val">${data.resultSummary}</div>
+        </div>
+
+        <div class="theatre-section" style="background: #F8FAFC; border-color: #CBD5E1;">
+          <div class="theatre-section-title" style="color: #0F172A;">💡 CREATIVE CONCEPT &amp; STRATEGIC RATIONALE</div>
+          <div class="theatre-section-body" style="display: flex; flex-direction: column; gap: 8px;">
+            <div><strong>The Concept:</strong> ${data.concept || "Direct-response creative framework."}</div>
+            <div><strong>Why We Made This:</strong> ${data.whyWeMadeIt || "Engineered to overcome specific consumer friction."}</div>
+          </div>
         </div>
 
         <div class="theatre-section" style="background: #FFFBEB; border-color: #FDE68A;">
