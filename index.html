@@ -1265,6 +1265,151 @@
       .nav-links { display: none; }
       .hero-metrics-bar { grid-template-columns: 1fr 1fr; }
     }
+  
+    /* Card Hover Play Affordance */
+    .card-play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .cs-media-col:hover .card-play-overlay,
+    .vault-card:hover .card-play-overlay {
+      opacity: 1;
+    }
+
+    .card-play-pill {
+      background: var(--accent-lime);
+      color: #0F172A;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      transform: translateY(6px);
+      transition: transform 0.25s ease;
+    }
+
+    .cs-media-col:hover .card-play-pill,
+    .vault-card:hover .card-play-pill {
+      transform: translateY(0);
+    }
+
+    /* Floating Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0F172A;
+      color: #CCFF00;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.25);
+      z-index: 900;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: #CCFF00;
+      color: #0F172A;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Sticky Bar */
+    .mobile-sticky-bar {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-sticky-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        bottom: 14px;
+        left: 14px;
+        right: 14px;
+        background: #0F172A;
+        color: #FFFFFF;
+        padding: 10px 16px;
+        border-radius: var(--radius-full);
+        box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.45);
+        z-index: 1200;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .mobile-sticky-status {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 9.5px;
+        color: var(--accent-lime);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+      }
+
+      .mobile-sticky-title {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+
+      .back-to-top {
+        bottom: 74px;
+        right: 16px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
+
+      /* Adjust modal on small devices */
+      .modal-container {
+        grid-template-columns: 1fr;
+        max-height: 92vh;
+        overflow-y: auto;
+      }
+      .modal-media-col {
+        height: 380px;
+        max-height: 48vh;
+      }
+      .modal-content-col {
+        max-height: none;
+        overflow-y: visible;
+        padding: 22px 18px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1320,7 +1465,7 @@
           </h1>
 
           <p class="hero-desc">
-            Senior Performance Creative Strategist specializing in thumbstop hook architecture, objection-mining angle matrices, and creative-led scaling on Meta Advantage+. Creative strategist for brands including <strong>Frankly Wearing</strong>, <strong>Tata Play Fiber</strong>, <strong>Kyari</strong> (Shark Tank India Season 1 pitch), <strong>Three Sixty</strong>, and <strong>HOKIPO</strong>.
+            Senior Performance Creative Strategist specializing in thumbstop hook architecture, objection-mining angle matrices, and creative-led scaling on Meta Advantage+. Directing UGC creators and modern AI tools to turn consumer psychology into scroll-stopping, high-ROAS video ads for brands including <strong>Frankly Wearing</strong>, <strong>Tata Play Fiber</strong>, <strong>Kyari</strong> (Shark Tank S1 pitch), <strong>Three Sixty</strong>, and <strong>HOKIPO</strong>.
           </p>
 
           <div class="hero-cta-group">
@@ -2004,7 +2149,7 @@
           <h3>I treat creative as the primary performance lever.</h3>
 
           <p>
-            Hi, I'm Anupam. I don't make "pretty ads" that look nice in brand guidelines but burn budget in Ads Manager. I specialize in <strong>performance-driven creative strategy</strong>: discovering the exact visual hooks, consumer objections, and narrative frameworks that stop the scroll and convert cold prospects.
+            Hi, I'm Anupam. I don't make generic "brand awareness" videos that look pretty in pitch decks but burn cash in Ads Manager. I engineer <strong>direct-response creative systems</strong>: discovering the unvoiced psychological friction, directing creators and modern AI workflows to produce surgical hooks, and scaling winning assets to evergreen BAU ad sets.
           </p>
 
           <p>
@@ -2014,10 +2159,11 @@
           <div class="about-toolbox">
             <div class="toolbox-title">Creative Strategist Stack &amp; Workflow</div>
             <div class="toolbox-pills">
-              <span class="tool-pill">Meta Ad Library</span>
-              <span class="tool-pill">Motion App Analytics</span>
-              <span class="tool-pill">Foreplay &amp; Swipe Files</span>
+              <span class="tool-pill">Meta Ad Library &amp; Foreplay</span>
+              <span class="tool-pill">Motion App Creative Analytics</span>
               <span class="tool-pill">Reddit / Amazon VOC Scrapers</span>
+              <span class="tool-pill">UGC Creator Briefing &amp; Direction</span>
+              <span class="tool-pill">AI Creative Prototyping</span>
               <span class="tool-pill">Figma Visual Storyboarding</span>
               <span class="tool-pill">CapCut / Premiere Pro</span>
             </div>
@@ -2357,6 +2503,19 @@
       if (e.target.id === 'legalModal') closeLegalModal();
     }
 
+    
+    // Back to top scroll listener
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTop');
+      if (btn) {
+        if (window.scrollY > 500) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      }
+    }, { passive: true });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeTheatre();
@@ -2364,5 +2523,22 @@
       }
     });
   </script>
+
+  <!-- Mobile Quick Action Sticky Bar -->
+  <aside class="mobile-sticky-bar" aria-label="Quick Action">
+    <div class="mobile-sticky-info">
+      <span class="mobile-sticky-status">● Active in Meta Library</span>
+      <span class="mobile-sticky-title">Book Creative Audit</span>
+    </div>
+    <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20reviewed%20your%20portfolio.%20Let%27s%20audit%20our%20Meta%20creatives." target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">
+      <span>WhatsApp →</span>
+    </a>
+  </aside>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+    ↑
+  </button>
+
 </body>
 </html>
