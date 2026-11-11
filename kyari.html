@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyari: Repurposing Stock Video Libraries into a 6-Angle High-ROAS System · Anupam Nath</title>
+<meta name="description" content="In-depth Performance Creative Strategy Case Study: How Kyari repurposed raw footage into an objection-destroying 6-angle creative matrix on Meta Ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0A0D14;
+  --bg-secondary: #0F1420;
+  --bg-card: #141B2D;
+  --bg-card-subtle: #192238;
+  --accent-green: #10B981;
+  --accent-emerald: #059669;
+  --accent-light: #34D399;
+  --accent-lime: #CCFF00;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-green: rgba(16, 185, 129, 0.25);
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+}
+
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient glow */
+.bg-glow-1 {
+  position: fixed;
+  top: -150px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-glow-2 {
+  position: fixed;
+  bottom: 10%;
+  left: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(10, 13, 20, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-badge-circle {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, #10B981, #047857);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.nav-brand-text {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-cta-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: var(--accent-green);
+  color: #0A0D14;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-cta-nav:hover {
+  background: #34D399;
+  transform: translateY(-1px);
+}
+
+/* Container */
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.case-hero {
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34D399;
+  border: 1px solid var(--border-green);
+}
+
+.badge-subtle {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.case-hero h1 {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.case-hero h1 span {
+  background: linear-gradient(135deg, #34D399, #10B981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.case-hero-desc {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 860px;
+  margin-bottom: 40px;
+}
+
+/* Strategic Metric Cards */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.metric-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px 22px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-green);
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.metric-sub {
+  font-size: 12px;
+  color: var(--accent-light);
+  margin-top: 4px;
+}
+
+/* Chapters Layout */
+.chapter-block {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.chapter-header {
+  margin-bottom: 36px;
+}
+
+.chapter-number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.chapter-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.chapter-sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Problem & Friction Box */
+.friction-box {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(15, 20, 32, 0.6));
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.friction-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #F87171;
+  font-family: var(--font-mono);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.friction-text {
+  font-size: 15px;
+  color: #CBD5E1;
+  line-height: 1.7;
+}
+
+/* Insight Box */
+.insight-box {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(15, 20, 32, 0.8));
+  border: 1px solid var(--border-green);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 32px;
+}
+
+.insight-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-light);
+  font-family: var(--font-mono);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insight-text {
+  font-size: 15px;
+  color: #E2E8F0;
+  line-height: 1.7;
+}
+
+/* Two-column Grid */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Video & Media Frame */
+.media-container {
+  background: #000000;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.media-container video {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  display: block;
+  object-fit: cover;
+  background: #000;
+}
+
+.media-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media-audio-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.audio-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.btn-audio-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-audio-toggle:hover {
+  background: var(--accent-green);
+  color: #0A0D14;
+}
+
+/* 6 Angle Cards Grid */
+.angle-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.angle-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.angle-card:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  transform: translateY(-2px);
+}
+
+.angle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.angle-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-light);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.angle-format {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.angle-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.angle-hook {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid var(--accent-green);
+  padding: 10px 14px;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.hook-lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.hook-quote {
+  font-size: 13px;
+  color: #F1F5F9;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.angle-script-summary {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.angle-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+/* Funnel Architecture Table */
+.funnel-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.funnel-table th, .funnel-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.funnel-table th {
+  background: var(--bg-card);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.funnel-table tr:last-child td {
+  border-bottom: none;
+}
+
+.funnel-stage-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.stage-tof { background: rgba(59, 130, 246, 0.15); color: #60A5FA; }
+.stage-mof { background: rgba(16, 185, 129, 0.15); color: #34D399; }
+.stage-bof { background: rgba(245, 158, 11, 0.15); color: #FBBF24; }
+
+/* Callout Quote */
+.quote-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(6, 78, 59, 0.15));
+  border: 1px solid var(--border-green);
+  border-radius: 16px;
+  padding: 44px 36px;
+  margin: 56px 0;
+  text-align: center;
+}
+
+.quote-banner blockquote {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.quote-author {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Footer Section */
+.case-footer {
+  padding: 72px 0 96px;
+  text-align: center;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.footer-sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-primary-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: var(--accent-green);
+  color: #0A0D14;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-lg:hover {
+  background: #34D399;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.btn-secondary-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-lg:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .case-hero h1 { font-size: 32px; }
+  .metrics-grid { grid-template-columns: 1fr 1fr; }
+  .two-col-grid { grid-template-columns: 1fr; }
+  .angle-cards-grid { grid-template-columns: 1fr; }
+  .top-nav { padding: 14px 20px; }
+  .quote-banner { padding: 32px 20px; }
+  .quote-banner blockquote { font-size: 19px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-glow-1"></div>
+<div class="bg-glow-2"></div>
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">
+    <div class="brand-badge-circle">AN</div>
+    <div class="nav-brand-text">Anupam Nath · Creative Strategy</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#case-studies" class="btn-back">
+      <span>←</span>
+      <span>Back to Portfolio</span>
+    </a>
+    <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20read%20your%20Kyari%20case%20study.%20Let%27s%20discuss%20our%20creative%20pipeline." target="_blank" class="btn-cta-nav">
+      <span>Book Strategy Audit</span>
+      <span>↗</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="hero-meta-strip">
+        <span class="badge-tag badge-green">Shark Tank S1 Brand</span>
+        <span class="badge-tag badge-subtle">Stock Footage Repurposing</span>
+        <span class="badge-tag badge-subtle">6-Angle Creative Matrix</span>
+        <span class="badge-tag badge-subtle">Meta Advantage+ Scaling</span>
+      </div>
+
+      <h1>
+        KYARI: Repurposing Stock Video Libraries into a <span>6-Angle High-ROAS Direct Response System</span>
+      </h1>
+
+      <p class="case-hero-desc">
+        How mining "Plant-Parent Anxiety" and converting raw existing video libraries into objection-destroying UGC scripts unlocked non-expert customer acquisition—without shooting a single expensive new commercial.
+      </p>
+
+      <!-- Key Performance Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Blended Meta CAC</div>
+          <div class="metric-value">-29.4%</div>
+          <div class="metric-sub">Sustained reduction in CPA</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Account ROAS</div>
+          <div class="metric-value">3.4x</div>
+          <div class="metric-sub">Scaled on Advantage+ Evergreen</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Repurposed Angles</div>
+          <div class="metric-value">6 Matrices</div>
+          <div class="metric-sub">Targeting distinct mindsets</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Customer Scale</div>
+          <div class="metric-value">10 Lakh+</div>
+          <div class="metric-sub">Households trusted Kyari</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 1: The Context & Challenge -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">01 / The Growth Dilemma</div>
+        <h2 class="chapter-title">The Shark Tank Halo vs. The Paid Acquisition Plateau</h2>
+        <p class="chapter-sub">
+          Kyari gained massive national credibility and brand recognition after their Shark Tank India Season 1 pitch. However, translating top-of-funnel television fame into profitable, high-volume performance marketing on Meta revealed a steep friction point.
+        </p>
+      </div>
+
+      <div class="friction-box">
+        <div class="friction-title">⚠️ The Account Friction: High Views, High Abandonment</div>
+        <div class="friction-text">
+          Kyari had already invested in raw footage, creator product deliveries, and unboxing clips. But existing ads ran mostly as <strong>generic aesthetic montages</strong> or straightforward product showcases. Cold prospects admired the aesthetic, visited the website, and abandoned their carts. Why? Because the ads celebrated how pretty the plants looked in studio lighting—without answering the unspoken fear stopping every buyer at checkout.
+        </div>
+      </div>
+
+      <div class="insight-box">
+        <div class="insight-title">💡 The Strategic Unlock: Repurposing Over Re-shooting</div>
+        <div class="insight-text">
+          Instead of commissioning expensive new production shoots, we realized Kyari's asset vault already contained the raw visual puzzle pieces. What was missing was <strong>psychological angle architecture</strong>. By re-cutting their existing stock footage against hyper-specific consumer anxieties (plant mortality, low apartment light, Amazon plastic plant alternatives), we unlocked an entire matrix of high-converting creative winners.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 2: Consumer Psychology -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">02 / Objection Mining</div>
+        <h2 class="chapter-title">Deconstructing "Plant-Parent Anxiety"</h2>
+        <p class="chapter-sub">
+          We analyzed Reddit communities (like <em>r/houseplants</em>), Amazon competitor reviews, and customer drop-offs. The barrier wasn't price—it was identity defeat.
+        </p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Barrier 01</span>
+            <span class="angle-format">Identity Defeat</span>
+          </div>
+          <div class="angle-title">"I kill every plant I buy"</div>
+          <p class="angle-script-summary">
+            Most urban professionals want greenery in their living rooms, but after losing 2 or 3 plants, they conclude: <em>"Maybe I'm just not a plant person."</em> They feel guilt and hesitation before purchasing another living plant.
+          </p>
+          <div class="angle-footer">
+            <span>Solution: Self-Watering Hidden Reservoir mechanism</span>
+          </div>
+        </div>
+
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Barrier 02</span>
+            <span class="angle-format">The Faux Decor Trap</span>
+          </div>
+          <div class="angle-title">"I'll just buy plastic plants on Amazon"</div>
+          <p class="angle-script-summary">
+            Defeated buyers migrate toward artificial fake plants on Amazon or local markets. They want the aesthetic of greenery but cannot bear the daily maintenance guesswork.
+          </p>
+          <div class="angle-footer">
+            <span>Solution: ZZ Green + Metal Pot as zero-effort living decor</span>
+          </div>
+        </div>
+
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Barrier 03</span>
+            <span class="angle-format">Lighting Confusion</span>
+          </div>
+          <div class="angle-title">"My room doesn't get enough sunlight"</div>
+          <p class="angle-script-summary">
+            Apartment dwellers assume their bedroom or office is too dark for plants. They hold back because they don't know which plant tolerates low indirect light.
+          </p>
+          <div class="angle-footer">
+            <span>Solution: 3-Way Light Matcher (Areca, Sansevieria, Peace Lily)</span>
+          </div>
+        </div>
+
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Barrier 04</span>
+            <span class="angle-format">Online Delivery Skepticism</span>
+          </div>
+          <div class="angle-title">"I don't want a tiny stick in a huge box"</div>
+          <p class="angle-script-summary">
+            Buying live plants online carries delivery skepticism: will it arrive broken, dehydrated, or look completely underwhelming compared to website photos?
+          </p>
+          <div class="angle-footer">
+            <span>Solution: Ready-to-place unboxing proof with pre-fitted metal pot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 3: The 6-Angle Creative Matrix -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">03 / The Creative Matrix</div>
+        <h2 class="chapter-title">6 Distinct Repurposed Creative Concepts & Scripts</h2>
+        <p class="chapter-sub">
+          We engineered 6 distinct scripts pairing Kyari's existing b-roll with surgical direct-response angles. Here is the exact architecture tested in Meta Ads Manager:
+        </p>
+      </div>
+
+      <div class="angle-cards-grid">
+        <!-- Angle 1 -->
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Angle 01</span>
+            <span class="angle-format">Testimonial · UGC</span>
+          </div>
+          <div class="angle-title">Plant-Parent Identity + Confidence</div>
+          <div class="angle-hook">
+            <div class="hook-lbl">The Emotional Hook</div>
+            <div class="hook-quote">"Let me tell you why this Areca Palm from Kyari honestly changed the way I look at keeping plants..."</div>
+          </div>
+          <p class="angle-script-summary">
+            <strong>Targeting:</strong> Recovering plant killers. Re-frames the failure: you didn't fail because you lack skill; you failed because your pot lacked a self-watering system. The hidden water reservoir does the watering for you, restoring your identity as a confident plant parent.
+          </p>
+          <div class="angle-footer">
+            <span>Product: Areca Palm in Self-Watering Planter</span>
+            <span class="badge-tag badge-green">3.8x ROAS</span>
+          </div>
+        </div>
+
+        <!-- Angle 2 -->
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Angle 02</span>
+            <span class="angle-format">Multi-Product Lifestyle UGC</span>
+          </div>
+          <div class="angle-title">Home Transformation + Plant Discovery (Light Matching)</div>
+          <div class="angle-hook">
+            <div class="hook-lbl">The Utility Hook</div>
+            <div class="hook-quote">"Here are three houseplants you can choose based on how much light you get."</div>
+          </div>
+          <p class="angle-script-summary">
+            <strong>Targeting:</strong> Hesitant room decorators. Guides the viewer: Plenty of bright indirect light? Areca Palm. Very little light? Sansevieria Golden. Soft indirect light? Peace Lily. Removes decision paralysis instantly.
+          </p>
+          <div class="angle-footer">
+            <span>Products: Areca Palm · Sansevieria · Peace Lily</span>
+            <span class="badge-tag badge-green">High CTR Winner</span>
+          </div>
+        </div>
+
+        <!-- Angle 3 -->
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Angle 03</span>
+            <span class="angle-format">Competitor Intercept UGC</span>
+          </div>
+          <div class="angle-title">Home Decor + Low-Effort Plant Ownership (Faux Alternative)</div>
+          <div class="angle-hook">
+            <div class="hook-lbl">The Relatable Confession Hook</div>
+            <div class="hook-quote">"I was this close to ordering a faux plant on Amazon, but then I found Kyari’s ZZ Green with Metal Self-Watering Pot."</div>
+          </div>
+          <p class="angle-script-summary">
+            <strong>Targeting:</strong> Amazon faux-plant shoppers. Captures people who want living warmth without the chores. Demonstrates how ZZ Green + metal pot provides zero-effort real greenery that outclasses tacky artificial plastic.
+          </p>
+          <div class="angle-footer">
+            <span>Product: ZZ Green in Metal Planter</span>
+            <span class="badge-tag badge-green">Low CPA Scaler</span>
+          </div>
+        </div>
+
+        <!-- Angle 4 -->
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Angle 04</span>
+            <span class="angle-format">Fast-Paced Lifestyle UGC</span>
+          </div>
+          <div class="angle-title">Home Decor + Easy Greenery (Multi-Product Showcase)</div>
+          <div class="angle-hook">
+            <div class="hook-lbl">The Room Makeover Hook</div>
+            <div class="hook-quote">"These are no ordinary plants. I never thought adding a few plants could completely change the way my home looked..."</div>
+          </div>
+          <p class="angle-script-summary">
+            <strong>Targeting:</strong> Design and interior aesthetics crowd. Fast cuts styling multiple corners, tabletops, and room settings with modern metal planters and elevated stands. Reinforces that maintenance is automated.
+          </p>
+          <div class="angle-footer">
+            <span>Products: Multi-Planter Aesthetic Collection</span>
+            <span class="badge-tag badge-green">Evergreen UGC</span>
+          </div>
+        </div>
+
+        <!-- Angle 5 -->
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Angle 05</span>
+            <span class="angle-format">UGC Unboxing</span>
+          </div>
+          <div class="angle-title">Comparison → Lead With Alternatives (Expectation vs. Reality)</div>
+          <div class="angle-hook">
+            <div class="hook-lbl">The Skeptic Unboxing Hook</div>
+            <div class="hook-quote">"I ordered these plants because of how it looked online. Now let’s see if the real one lives up to it... When I order online, I don't want a tiny surprise in a huge box."</div>
+          </div>
+          <p class="angle-script-summary">
+            <strong>Targeting:</strong> Delivery skeptics. Shows the plant arriving full, healthy, and pre-fitted in the XL metal planter ready to place immediately. Proves the online listing matches physical reality.
+          </p>
+          <div class="angle-footer">
+            <span>Products: Dracaena Dara Singh · China Palm with XL Pot</span>
+            <span class="badge-tag badge-green">Cart Saver</span>
+          </div>
+        </div>
+
+        <!-- Angle 6 -->
+        <div class="angle-card">
+          <div class="angle-header">
+            <span class="angle-num">Angle 06</span>
+            <span class="angle-format">Proof & Social Proof</span>
+          </div>
+          <div class="angle-title">Shark Tank Credibility & 6-Month Living Proof</div>
+          <div class="angle-hook">
+            <div class="hook-lbl">Dual Hook Matrix</div>
+            <div class="hook-quote">Hook 1: "I remember seeing Kyari on Shark Tank, so I finally decided to try one myself."<br>Hook 2: "Before you buy a plant online, see what mine looks like after 6 months."</div>
+          </div>
+          <p class="angle-script-summary">
+            <strong>Targeting:</strong> High-intent retargeting and cold proof. Shows a plant thriving after 6 months with lush new leaves. Cites 10 Lakh+ happy households to eliminate all residual buying friction.
+          </p>
+          <div class="angle-footer">
+            <span>Credibility: Shark Tank S1 + 10 Lakh+ Customer Validation</span>
+            <span class="badge-tag badge-green">High Conversion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 4: Creative Asset & Video Breakdown -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">04 / Creative Execution</div>
+        <h2 class="chapter-title">Live Repurposed Asset & Visual Anatomy</h2>
+        <p class="chapter-sub">
+          Below is one of the high-performing repurposed creative assets re-cut with the plant-parent confidence narrative, alongside the self-watering mechanism breakdown.
+        </p>
+      </div>
+
+      <div class="two-col-grid">
+        <!-- Video Player -->
+        <div>
+          <div class="media-container">
+            <video id="kyariVideo" src="assets/creatives/videos/kyari_repurposed_plant_parent.mp4" autoplay playsinline loop muted></video>
+            <div class="media-audio-bar">
+              <span class="audio-label">🔊 Kyari Repurposed UGC Reel</span>
+              <button class="btn-audio-toggle" id="audioToggleBtn" onclick="toggleKyariSound()">Unmute Audio</button>
+            </div>
+          </div>
+          <p style="font-size: 13px; color: var(--text-dim); margin-top: 10px; font-family: var(--font-mono);">
+            Asset: Stock repurposing with natural home lighting & direct-response voiceover pacing.
+          </p>
+        </div>
+
+        <!-- Static Mechanism Breakdown -->
+        <div>
+          <div class="media-container">
+            <img src="assets/creatives/statics/kyari_self_watering_mechanism.png" alt="Kyari Self-Watering Mechanism">
+          </div>
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px; margin-top: 16px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-light); margin-bottom: 6px; text-transform: uppercase;">
+              Mechanism Architecture
+            </div>
+            <div style="font-size: 14px; color: #E2E8F0; line-height: 1.6;">
+              The self-watering pot uses capillary sub-irrigation with a hidden water reservoir. Soil absorbs only as much moisture as roots require, preventing root rot from overwatering and dehydration during travel.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 5: Full Funnel Architecture -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">05 / Funnel Architecture</div>
+        <h2 class="chapter-title">Mapping Angles to the Meta Advantage+ Funnel</h2>
+        <p class="chapter-sub">
+          Instead of blasting every prospect with the same creative, each repurposed angle served a specific stage in the customer conversion journey:
+        </p>
+      </div>
+
+      <table class="funnel-table">
+        <thead>
+          <tr>
+            <th>Funnel Stage</th>
+            <th>Primary Angle & Hook</th>
+            <th>Mindset Addressed</th>
+            <th>Creative Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="funnel-stage-badge stage-tof">Top of Funnel</span></td>
+            <td><strong>Angle 02: Light Matching</strong><br><em>"3 Houseplants based on how much light you get"</em></td>
+            <td>Unaware / Problem Aware. Wants plants but thinks their house is too dark.</td>
+            <td>Broad thumbstop pattern interrupt; generates massive low-cost top-of-funnel engagement.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-tof">Top of Funnel</span></td>
+            <td><strong>Angle 03: Faux Competitor Intercept</strong><br><em>"I was this close to ordering a faux plant on Amazon..."</em></td>
+            <td>Comparison Shopper. About to settle for cheap plastic decor out of frustration.</td>
+            <td>Pivots intent away from artificial plants into zero-maintenance living greenery.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
+            <td><strong>Angle 01: Plant-Parent Identity</strong><br><em>"Changed the way I look at keeping plants..."</em></td>
+            <td>Evaluation. Loves plants but terrified of killing another one.</td>
+            <td>Builds emotional trust and introduces the self-watering reservoir mechanism.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
+            <td><strong>Angle 04: Room Styling Showcase</strong><br><em>"These are no ordinary plants..."</em></td>
+            <td>Aspiration. Wants to see how plants elevate modern living spaces.</td>
+            <td>Increases Average Order Value (AOV) by showcasing multi-planter setups and stands.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
+            <td><strong>Angle 05: Unboxing & Delivery Reality</strong><br><em>"When I order online, I don't want a tiny surprise..."</em></td>
+            <td>Hesitation / Skeptic. Add-to-cart but worried about delivery condition.</td>
+            <td>Destroys delivery anxiety with clear, ready-to-place unboxing proof.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
+            <td><strong>Angle 06: Shark Tank & 6-Month Proof</strong><br><em>"Before you buy, see what mine looks like after 6 months"</em></td>
+            <td>High-intent retargeting. Needs final social proof to click buy.</td>
+            <td>Offers 6-month thriving proof backed by 10 Lakh+ customer social proof.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Chapter 6: Strategic Takeaway Quote -->
+  <section class="container">
+    <div class="quote-banner">
+      <blockquote>
+        "The best performance creative is rarely a flashy TV commercial. It is the surgical re-framing of a brand's existing footage to kill the one silent objection keeping your customer from buying."
+      </blockquote>
+      <div class="quote-author">Anupam Nath · Creative Strategy Playbook</div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="case-footer">
+  <div class="container">
+    <h3 class="footer-heading">Have an Existing Video Vault That Isn't Converting?</h3>
+    <p class="footer-sub">
+      Let's audit your raw creative assets, mine your customer psychology, and engineer a high-ROAS direct-response angle matrix for your brand.
+    </p>
+    <div class="cta-group">
+      <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20read%20your%20Kyari%20case%20study.%20Let%27s%20audit%20our%20video%20assets." target="_blank" class="btn-primary-lg">
+        <span>Chat on WhatsApp</span>
+        <span>↗</span>
+      </a>
+      <a href="index.html" class="btn-secondary-lg">
+        <span>← Back to Portfolio</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleKyariSound() {
+  const vid = document.getElementById('kyariVideo');
+  const btn = document.getElementById('audioToggleBtn');
+  if (vid.muted) {
+    vid.muted = false;
+    btn.textContent = 'Mute Audio';
+    btn.style.background = '#10B981';
+    btn.style.color = '#0A0D14';
+  } else {
+    vid.muted = true;
+    btn.textContent = 'Unmute Audio';
+    btn.style.background = 'rgba(255,255,255,0.08)';
+    btn.style.color = '#FFFFFF';
+  }
+}
+</script>
+
+</body>
+</html>
