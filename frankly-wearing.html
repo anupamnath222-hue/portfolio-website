@@ -6,7 +6,7 @@
 <title>Frankly Wearing: Turning 20,000+ Creator Ideologies into High-ROAS Gen Z Video Engines · Anupam Nath</title>
 <meta name="description" content="In-depth Performance Creative Strategy Case Study: How Frankly Wearing scaled an on-demand merchandise platform powered by 20,000+ creators on Meta Ads.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg-primary: #FFFFFF;
@@ -16,6 +16,7 @@
   --accent-lime: #CCFF00;
   --accent-lime-dark: #8BB300;
   --accent-orange: #FF5E36;
+  --accent-blue: #2563EB;
   --text-main: #0F172A;
   --text-muted: #475569;
   --text-dim: #94A3B8;
@@ -27,6 +28,7 @@
   --font-display: 'Space Grotesk', sans-serif;
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.1);
 }
 
 *, *::before, *::after {
@@ -48,28 +50,7 @@ body {
   background: #FFFFFF;
 }
 
-.bg-glow-1 {
-  position: fixed;
-  top: -150px;
-  right: -100px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(204, 255, 0, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-.bg-glow-2 {
-  position: fixed;
-  bottom: 10%;
-  left: -200px;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(255, 94, 54, 0.03) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Top Navigation */
+/* Header & Nav */
 .top-nav {
   position: sticky;
   top: 0;
@@ -313,6 +294,14 @@ body {
   line-height: 1.6;
 }
 
+/* Two Column Layout */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
 /* Callout Boxes */
 .friction-box {
   background: #FEF2F2;
@@ -368,22 +357,14 @@ body {
   line-height: 1.7;
 }
 
-/* Two-column Grid */
-.two-col-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: start;
-}
-
-/* Media Frame */
+/* Video Containers */
 .media-container {
   background: #0F172A;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   position: relative;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-lg);
 }
 
 .media-container video {
@@ -473,6 +454,60 @@ body {
   font-size: 13.5px;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+/* Video Showcase Gallery */
+.video-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.video-showcase-item {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.video-showcase-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.video-showcase-item .media-container {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.video-item-info {
+  padding: 18px 20px;
+}
+
+.video-item-role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #4D7C0F;
+  margin-bottom: 4px;
+}
+
+.video-item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 6px;
+}
+
+.video-item-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* Funnel Table */
@@ -628,6 +663,7 @@ body {
   .metrics-grid { grid-template-columns: 1fr 1fr; }
   .two-col-grid { grid-template-columns: 1fr; }
   .tribes-grid { grid-template-columns: 1fr; }
+  .video-showcase-grid { grid-template-columns: 1fr; }
   .top-nav { padding: 14px 20px; }
   .quote-banner { padding: 32px 20px; }
   .quote-banner blockquote { font-size: 19px; }
@@ -635,9 +671,6 @@ body {
 </style>
 </head>
 <body>
-
-<div class="bg-glow-1"></div>
-<div class="bg-glow-2"></div>
 
 <!-- Top Navigation -->
 <nav class="top-nav">
@@ -673,15 +706,15 @@ body {
       </h1>
 
       <p class="case-hero-desc">
-        How escaping the generic ₹299 commodity tee trap and engineering persona-driven, funky subculture reels transformed an on-demand merchandise platform into an authentic identity movement.
+        How escaping the generic ₹299 commodity tee trap and engineering persona-driven, funky subculture video reels transformed an on-demand merchandise platform into an authentic identity movement.
       </p>
 
       <!-- Key Performance Metrics -->
       <div class="metrics-grid">
         <div class="metric-card">
           <div class="metric-label">Thumbstop Rate Lift</div>
-          <div class="metric-value">+148%</div>
-          <div class="metric-sub">From 16% to 41.8% on Meta</div>
+          <div class="metric-value">42.8%</div>
+          <div class="metric-sub">From 16% on static flatlays</div>
         </div>
         <div class="metric-card">
           <div class="metric-label">Account ROAS</div>
@@ -696,145 +729,187 @@ body {
         <div class="metric-card">
           <div class="metric-label">Design Catalog</div>
           <div class="metric-value">500,000+</div>
-          <div class="metric-sub">Subculture & opinion drops</div>
+          <div class="metric-sub">Subculture &amp; opinion drops</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Chapter 1: The Brand Reality -->
-  <section class="chapter-block">
+  <!-- Hero Video Spotlight -->
+  <section class="chapter-block" style="padding-top: 48px;">
     <div class="container">
-      <div class="chapter-header">
-        <div class="chapter-number">01 / The Brand Truth</div>
-        <h2 class="chapter-title">Not an Apparel Brand: An Ideology Monetization Platform</h2>
-        <p class="chapter-sub">
-          Before you write a single script, you must understand what business the brand is actually in. Frankly Wearing is not selling plain cotton blanks against fast-fashion giants.
-        </p>
-      </div>
-
       <div class="two-col-grid">
-        <div class="friction-box">
-          <div class="friction-title">⚠️ The Commodity Trap</div>
-          <div class="friction-text">
-            When Frankly treated their ad account like an ordinary clothing e-commerce store—running static flat-lays and carousel shots—cold Meta traffic compared them to mass-market marketplaces (Amazon, Bewakoof, Souled Store). Viewers saw a ₹699 t-shirt and assumed it was an overpriced ₹299 blank, causing cart abandonment and low thumbstops.
+        <div>
+          <div class="media-container">
+            <video id="heroVid" src="assets/creatives/videos/frankly_ai_living_artwork.mp4" autoplay playsinline loop muted></video>
+            <div class="media-audio-bar">
+              <span class="audio-label">🔊 Reel 01: AI Living Artwork Motion Engine</span>
+              <button class="btn-audio-toggle" onclick="toggleSound('heroVid', this)">Unmute Audio</button>
+            </div>
           </div>
+          <p style="font-size: 13px; color: var(--text-dim); margin-top: 10px; font-family: var(--font-mono);">
+            Featured Reel: Animated living subculture drops flexing artwork directly onto 3D streetwear apparel.
+          </p>
         </div>
 
-        <div class="insight-box">
-          <div class="insight-title">💡 The Platform Reality</div>
-          <div class="insight-text">
-            Frankly Wearing is the operational bridge for over <strong>20,000 indie creators, cartoonists, artists, and opinion leaders</strong>. These creators have a distinct worldview, biting humor, or niche artwork—but lack screen-printing machines, warehousing, and COD logistics. Frankly manufactures and ships, giving creators a revenue split. When someone buys a Frankly tee, they are buying an <strong>ideology</strong> and <strong>supporting an artist's dream</strong>.
+        <div>
+          <div class="chapter-number">01 / The Brand Reality</div>
+          <h2 class="chapter-title">Not an Apparel Brand: An Ideology Monetization Platform</h2>
+          <p class="chapter-sub" style="margin-bottom: 20px;">
+            Before you write a single script, you must understand what business the brand is actually in. Frankly Wearing is not selling plain cotton blanks against fast-fashion giants.
+          </p>
+
+          <div class="friction-box">
+            <div class="friction-title">⚠️ The ₹299 Commodity Trap</div>
+            <div class="friction-text">
+              When Frankly treated their ad account like an ordinary clothing e-commerce store—running static flat-lays and carousel shots—cold Meta traffic compared them to mass-market marketplaces (Amazon, Bewakoof, Souled Store). Viewers saw a ₹699 t-shirt and assumed it was an overpriced ₹299 blank, causing cart abandonment and low thumbstops.
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <div class="insight-title">💡 The Platform Reality</div>
+            <div class="insight-text">
+              Frankly Wearing is the operational bridge for over <strong>20,000 indie creators, cartoonists, artists, and opinion leaders</strong>. These creators have a distinct worldview, biting humor, or niche artwork—but lack screen-printing machines, warehousing, and COD logistics. Frankly manufactures and ships, giving creators a revenue split. When someone buys a Frankly tee, they are buying an <strong>ideology</strong> and <strong>supporting an artist's dream</strong>.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Chapter 2: Customer Psychology -->
+  <!-- Chapter 2: Audience Psychology & Gen Z Tribes with Embedded Meme Ad -->
   <section class="chapter-block">
     <div class="container">
       <div class="chapter-header">
         <div class="chapter-number">02 / Audience Psychology</div>
         <h2 class="chapter-title">Why Our Generation (Gen Z) Buys Opinion-Wear</h2>
         <p class="chapter-sub">
-          Gen Z and young millennials don't buy clothes for utility—they buy for <strong>vibe, tribal affiliation, and ideological self-expression</strong>.
-        </p>
-      </div>
-
-      <div class="tribes-grid">
-        <div class="tribe-card">
-          <div class="tribe-badge">Tribe 01</div>
-          <div class="tribe-title">The Indie Art Supporter</div>
-          <div class="tribe-desc">
-            Values authentic creator stories over mass corporate labels. Purchases because ₹599 directly funds an independent artist's rent and craft rather than a billionaire conglomerate.
-          </div>
-        </div>
-
-        <div class="tribe-card">
-          <div class="tribe-badge">Tribe 02</div>
-          <div class="tribe-title">The Pop Culture & Satire Obsessive</div>
-          <div class="tribe-desc">
-            Wants wearable inside jokes that signal high cultural literacy (*Make Orwell Fiction Again*, *Shinchan Nazuk Kali*, *Camp Half-Blood*). They wear it to get smiles and compliments from their tribe.
-          </div>
-        </div>
-
-        <div class="tribe-card">
-          <div class="tribe-badge">Tribe 03</div>
-          <div class="tribe-title">The Conscious Expressionist</div>
-          <div class="tribe-desc">
-            Wears their social and political opinions boldly. Merch functions as a silent, stylish megaphone for causes, self-worth, and anti-mainstream counter-culture.
-          </div>
-        </div>
-
-        <div class="tribe-card">
-          <div class="tribe-badge">Tribe 04</div>
-          <div class="tribe-title">The Hyper-Niche Gift Giver</div>
-          <div class="tribe-desc">
-            Urgent buyers searching for a gift that proves: <em>"I truly get who you are."</em> High AOV, zero price sensitivity when the design perfectly matches their friend's quirk.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Chapter 3: Creative Strategy & Video Reels -->
-  <section class="chapter-block">
-    <div class="container">
-      <div class="chapter-header">
-        <div class="chapter-number">03 / Creative Direction</div>
-        <h2 class="chapter-title">Funky, High-Energy Persona Video Engines</h2>
-        <p class="chapter-sub">
-          We abandoned sterile studio photography. We designed fast-paced, funky video reels in the visual language of Gen Z—bringing the artwork to life and matching the creator's raw mind with the wearer's identity.
+          Gen Z and young millennials don't buy clothes for fabric specs—they buy for <strong>vibe, tribal affiliation, and ideological self-expression</strong>.
         </p>
       </div>
 
       <div class="two-col-grid">
+        <div class="tribes-grid" style="margin-top: 0;">
+          <div class="tribe-card">
+            <div class="tribe-badge">Tribe 01</div>
+            <div class="tribe-title">The Indie Art Supporter</div>
+            <div class="tribe-desc">
+              Values authentic creator stories over mass corporate labels. Purchases because ₹599 directly funds an independent artist's rent and craft rather than a billionaire conglomerate.
+            </div>
+          </div>
+
+          <div class="tribe-card">
+            <div class="tribe-badge">Tribe 02</div>
+            <div class="tribe-title">The Pop Culture &amp; Satire Obsessive</div>
+            <div class="tribe-desc">
+              Wants wearable inside jokes that signal high cultural literacy (<em>Make Orwell Fiction Again</em>, <em>Shinchan Nazuk Kali</em>, <em>Camp Half-Blood</em>). They wear it to get smiles and compliments from their tribe.
+            </div>
+          </div>
+
+          <div class="tribe-card">
+            <div class="tribe-badge">Tribe 03</div>
+            <div class="tribe-title">The Conscious Expressionist</div>
+            <div class="tribe-desc">
+              Wears their social and political opinions boldly. Merch functions as a silent, stylish megaphone for causes, self-worth, and anti-mainstream counter-culture.
+            </div>
+          </div>
+
+          <div class="tribe-card">
+            <div class="tribe-badge">Tribe 04</div>
+            <div class="tribe-title">The Hyper-Niche Gift Giver</div>
+            <div class="tribe-desc">
+              Urgent buyers searching for a gift that proves: <em>"I truly get who you are."</em> High AOV, zero price sensitivity when the design perfectly matches their friend's quirk.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2: Meme / Satire Reel -->
         <div>
           <div class="media-container">
-            <video id="franklyVideo" src="assets/creatives/videos/frankly_ai_living_artwork.mp4" autoplay playsinline loop muted></video>
+            <video id="memeVid" src="assets/creatives/videos/frankly_meme_satire_ad.mp4" autoplay playsinline loop muted></video>
             <div class="media-audio-bar">
-              <span class="audio-label">🔊 Frankly Wearing AI Subculture Motion Reel</span>
-              <button class="btn-audio-toggle" id="audioToggleBtn" onclick="toggleFranklySound()">Unmute Audio</button>
+              <span class="audio-label">🔊 Reel 02: Gen Z Satire &amp; Inside-Joke Hook Ad</span>
+              <button class="btn-audio-toggle" onclick="toggleSound('memeVid', this)">Unmute Audio</button>
             </div>
           </div>
           <p style="font-size: 13px; color: var(--text-dim); margin-top: 10px; font-family: var(--font-mono);">
-            Creative: Dynamic living artwork transitions with high-energy beat sync and subculture typography.
+            Inside-Joke Ad Format: Fast-paced satirical creative that transforms a niche pop-culture observation into instant relatable desire.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div>
-          <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px;">
-            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-lime); text-transform: uppercase; margin-bottom: 8px;">
-              The "Wear Your Person" Creative Playbook
+  <!-- Chapter 3: Creative Video Gallery (Videos Here & There) -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">03 / Creative Direction Vault</div>
+        <h2 class="chapter-title">Funky, High-Energy Persona Video Engines in Action</h2>
+        <p class="chapter-sub">
+          We designed multiple video variants across the funnel—from rapid pattern-interrupt hooks to urban street apparel styling. Here is the live creative vault deployed on Meta Ads:
+        </p>
+      </div>
+
+      <div class="video-showcase-grid">
+        <!-- Video 3: Pattern Interrupt Reel -->
+        <div class="video-showcase-item">
+          <div class="media-container">
+            <video id="vidHook" src="assets/creatives/videos/frankly_pattern_interrupt_hook.mp4" autoplay playsinline loop muted></video>
+            <div class="media-audio-bar">
+              <span class="audio-label">🔊 Pattern Interrupt</span>
+              <button class="btn-audio-toggle" onclick="toggleSound('vidHook', this)">Unmute</button>
             </div>
-            <h3 style="font-size: 18px; color: #FFFFFF; font-weight: 700; margin-bottom: 12px;">
-              0.0s – 1.5s: The Subculture Pattern Interrupt
-            </h3>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              Instead of starting with a model walking or showing a folded shirt, the ad opens violently on the artwork itself morphing into real streetwear. A bold typographic question locks the viewer: <em>"If you think like this... why are you dressing like everyone else?"</em>
-            </p>
+          </div>
+          <div class="video-item-info">
+            <div class="video-item-role">Top-of-Funnel Hook</div>
+            <div class="video-item-title">The High-Energy Thumbstop Reel</div>
+            <div class="video-item-desc">
+              Rapid visual pattern interrupts in the first 1.5 seconds that prevent feed scrolling and establish Gen Z streetwear relevance.
+            </div>
+          </div>
+        </div>
 
-            <h3 style="font-size: 18px; color: #FFFFFF; font-weight: 700; margin-bottom: 12px;">
-              1.5s – 5.0s: The Creator Connection
-            </h3>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              Reveals the indie creator behind the drop. Proves this isn't corporate fast fashion, but a limited piece designed by an artist with an opinion.
-            </p>
+        <!-- Video 4: Creator Apparel Styling -->
+        <div class="video-showcase-item">
+          <div class="media-container">
+            <video id="vidStyling" src="assets/creatives/videos/frankly_creator_apparel_styling.mp4" autoplay playsinline loop muted></video>
+            <div class="media-audio-bar">
+              <span class="audio-label">🔊 Apparel Styling</span>
+              <button class="btn-audio-toggle" onclick="toggleSound('vidStyling', this)">Unmute</button>
+            </div>
+          </div>
+          <div class="video-item-info">
+            <div class="video-item-role">Middle-of-Funnel Proof</div>
+            <div class="video-item-title">Streetwear Lifestyle &amp; Fit Reel</div>
+            <div class="video-item-desc">
+              Real creators and youth flexing oversized drops in authentic urban spaces, validating silhouette and drip.
+            </div>
+          </div>
+        </div>
 
-            <h3 style="font-size: 18px; color: #FFFFFF; font-weight: 700; margin-bottom: 12px;">
-              5.0s – End: The Identity Affirmation Call-to-Action
-            </h3>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-              CTA: <em>"Wear what you believe. Support indie creators on Frankly."</em>
-            </p>
+        <!-- Video 5: Subculture Drop V2 -->
+        <div class="video-showcase-item">
+          <div class="media-container">
+            <video id="vidDrop" src="assets/creatives/videos/frankly_subculture_drop_v2.mp4" autoplay playsinline loop muted></video>
+            <div class="media-audio-bar">
+              <span class="audio-label">🔊 Subculture Motion</span>
+              <button class="btn-audio-toggle" onclick="toggleSound('vidDrop', this)">Unmute</button>
+            </div>
+          </div>
+          <div class="video-item-info">
+            <div class="video-item-role">Bottom-of-Funnel Drop</div>
+            <div class="video-item-title">Limited Edition Creator Release</div>
+            <div class="video-item-desc">
+              Urgency and community-driven limited drops ("Once it's gone, it's gone") driving immediate conversion.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Chapter 4: Funnel Architecture -->
+  <!-- Chapter 4: Funnel Architecture Table -->
   <section class="chapter-block">
     <div class="container">
       <div class="chapter-header">
@@ -849,7 +924,7 @@ body {
         <thead>
           <tr>
             <th>Funnel Stage</th>
-            <th>Creative Format & Angle</th>
+            <th>Creative Format &amp; Angle</th>
             <th>Psychological Trigger</th>
             <th>Performance Role</th>
           </tr>
@@ -859,17 +934,17 @@ body {
             <td><span class="funnel-stage-badge stage-tof">Top of Funnel</span></td>
             <td><strong>Subculture Pattern Interrupt</strong><br><em>"Why are you wearing clothes that say nothing?"</em></td>
             <td>Anti-conformity, Gen Z individuality.</td>
-            <td>Drives thumbstop rate from 16% to 41.8%; floods account with low CPM top-of-funnel traffic.</td>
+            <td>Drives thumbstop rate from 16% to 42.8%; floods account with low CPM top-of-funnel traffic.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
-            <td><strong>Creator Story & Sketch-to-Street</strong><br><em>"Split screen: creator sketching vs. fan wearing it"</em></td>
+            <td><strong>Creator Story &amp; Sketch-to-Street</strong><br><em>"Split screen: creator sketching vs. fan wearing it"</em></td>
             <td>Emotional reciprocity; valuing independent artistry.</td>
             <td>Justifies ₹599-₹899 price point and destroys comparison with mass-market ₹299 blanks.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
-            <td><strong>Limited Creator Drops & Gifting</strong><br><em>"48-hour print run. Once it's gone, it's gone."</em></td>
+            <td><strong>Limited Creator Drops &amp; Gifting</strong><br><em>"48-hour print run. Once it's gone, it's gone."</em></td>
             <td>FOMO, scarcity, and hyper-niche gifting urgency.</td>
             <td>Converts cart abandoners at high checkout rates; generates repeat buyer frequency.</td>
           </tr>
@@ -909,9 +984,9 @@ body {
 </footer>
 
 <script>
-function toggleFranklySound() {
-  const vid = document.getElementById('franklyVideo');
-  const btn = document.getElementById('audioToggleBtn');
+function toggleSound(vidId, btn) {
+  const vid = document.getElementById(vidId);
+  if (!vid) return;
   if (vid.muted) {
     vid.muted = false;
     btn.textContent = 'Mute Audio';
@@ -919,8 +994,8 @@ function toggleFranklySound() {
     btn.style.color = '#0A0D14';
   } else {
     vid.muted = true;
-    btn.textContent = 'Unmute Audio';
-    btn.style.background = 'rgba(255,255,255,0.08)';
+    btn.textContent = 'Unmute';
+    btn.style.background = 'rgba(255,255,255,0.12)';
     btn.style.color = '#FFFFFF';
   }
 }
