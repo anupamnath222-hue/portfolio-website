@@ -1040,6 +1040,135 @@
       text-decoration: underline;
     }
 
+    
+    /* Behance & Biddy Co Modal Styling */
+    .modal-container {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 1140px;
+      max-height: 92vh;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.45);
+      animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-media-col {
+      background: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid var(--border-subtle);
+    }
+
+    .modal-media-col video, .modal-media-col img {
+      width: 100%;
+      height: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    .modal-content-col {
+      padding: 36px 32px;
+      overflow-y: auto;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #FFFFFF;
+    }
+
+    .dossier-pill-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .dossier-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .dossier-tag-brand { background: #0F172A; color: #CCFF00; }
+    .dossier-tag-format { background: #E2E8F0; color: #334155; }
+    .dossier-tag-cat { background: #F1F5F9; color: #475569; }
+
+    .dossier-section {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      background: var(--bg-subtle);
+      transition: all 0.2s ease;
+    }
+
+    .dossier-section:hover {
+      border-color: #CBD5E1;
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .dossier-sec-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dossier-sec-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    .dossier-timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .dossier-timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #334155;
+      padding: 6px 10px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-sm);
+    }
+
+    .timeline-stamp {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #0F172A;
+      background: var(--accent-lime);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
     /* Interactive Modal Theatre */
     .modal-backdrop {
       position: fixed;
@@ -1691,8 +1820,8 @@
       <!-- Filter Controls -->
       <div class="vault-filter-bar">
         <button class="vault-filter-btn active" data-filter="all">All Archetypes (11)</button>
-        <button class="vault-filter-btn" data-filter="video">Video Reels &amp; UGC (4)</button>
-        <button class="vault-filter-btn" data-filter="static">Direct-Response Statics (5)</button>
+        <button class="vault-filter-btn" data-filter="video">Video Reels &amp; UGC (5)</button>
+        <button class="vault-filter-btn" data-filter="static">Direct-Response Statics (4)</button>
         <button class="vault-filter-btn" data-filter="special">Localized &amp; High-Ticket (2)</button>
       </div>
 
@@ -1908,13 +2037,13 @@
           </div>
         </div>
 
-        <!-- 8. Honest Energy: Protein Water -->
-        <div class="vault-item-card" data-category="static" data-id="honest-energy" onclick="openTheatre('honest-energy')">
+        <!-- 8. Honest Energy: Protein Water Video Reel -->
+        <div class="vault-item-card" data-category="video" data-id="honest-energy" onclick="openTheatre('honest-energy')">
           <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Category Disruption</span>
-            <img src="assets/creatives/statics/honest_energy_protein_water.png" alt="Honest Energy Protein Water">
+            <span class="tag-mono tag-lime vault-type-badge">Archetype: Category Disruption Reel</span>
+            <video src="assets/creatives/videos/honest_energy_reels_ad.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
             <div class="vault-card-overlay">
-              <span class="play-btn-circle">🔍</span>
+              <span class="play-btn-circle">▶</span>
               <span class="tag-mono tag-dark">Inspect Breakdown</span>
             </div>
           </div>
@@ -2234,128 +2363,228 @@
     const CREATIVES_DB = {
       "frankly-ai": {
         brand: "FRANKLY WEARING",
+        category: "Creator Streetwear Platform (20,000+ Creators)",
+        format: "Meta Advantage+ Reels · 9:16 AI Video",
         title: "20,000+ Gen Z Creators: Scaling Streetwear Drops with AI Video Motion",
-        concept: "AI video generation via Higgsfield, Seedance & Google Flow, transforming 20,000+ creator tees and hoodies into bouncy, hip-hop-synced streetwear motion.",
-        whyWeMadeIt: "Frankly Wearing powers 20k+ creators selling their ideology. AI video gave creator drops high-energy street credibility without expensive physical shoots.",
         mediaType: "video",
         mediaSrc: "assets/creatives/videos/frankly_ai_living_artwork.mp4",
         resultSummary: "3.8% Outbound CTR · 42.8% Thumbstop Rate · Scaled Creator Drops",
-        challenge: "Frankly Wearing is a creator platform where 20,000+ Gen Z creators and influencers upload designs on tees and hoodies to monetize their ideology. Static catalog photos on white backdrops made unique creator drops look like generic ₹299 Amazon tees, tanking thumbstop rates at 16%.",
-        friction: "Gen Z doesn't buy plain fabric—they buy personal identity and creator belonging. We needed high-velocity video assets that communicated underground street culture across thousands of designs.",
-        hookAnatomy: "0.0s-1.2s: Glitch transition into pulsating, animated 3D streetwear artwork synced to a bass-heavy hip-hop beat drop. Pattern interrupt breaking standard apparel catalog monotony on Reels.",
-        outcome: "Delivered a 3.8% outbound CTR and a 42.8% thumbstop rate on Meta Advantage+ Reels, becoming the primary acquisition engine for creator drops without expensive physical production crews."
+        clientContext: "Frankly Wearing is 'Patreon meets Streetwear'—an on-demand creator monetization platform where 20,000+ Gen Z artists, influencers, and subculture leaders monetize custom t-shirts and hoodies embodying their personal ideology and aesthetic. The brand manufactures, ships, and splits revenue with creators.",
+        coreFriction: "The ad account was bleeding budget on flat catalog mockups on sterile white backdrops. Cold Meta traffic mistook unique creator drops for generic ₹299 Amazon tees, tanking thumbstop rates at 16% and driving high customer acquisition costs.",
+        conceptAndAngle: "Gen Z doesn't buy plain fabric; they buy tribal identity and creator belonging. We built an AI video pipeline turning static t-shirt artwork into bouncy, flashy 3D AI living motion synced to underground hip-hop beats, making the drop feel like authentic street culture rather than a corporate promo.",
+        hookStoryboard: [
+          { stamp: "0.0s - 1.2s", text: "Glitch transition into pulsating, animated 3D t-shirt graphic pulsing to heavy bass beat drop. Immediate visual pattern interrupt breaking feed monotony." },
+          { stamp: "1.2s - 4.5s", text: "Dynamic camera orbit around Gen Z model rocking the oversized hoodie in neon street setting, establishing cultural street credibility." },
+          { stamp: "4.5s - 8.0s", text: "Fast macro zoom on fabric texture and exclusive limited-edition creator insignia with sound design." },
+          { stamp: "8.0s - end", text: "Scarcity drop framing: 'Limited creator drop — support the artist before it's gone' with direct shop CTA." }
+        ],
+        productionStack: "AI Video Generation via Higgsfield & Google Flow, prompt architecture tuned for streetwear textiles, beat-synced motion in CapCut.",
+        scaleImpact: "42.8% 3-second thumbstop rate, 3.8% outbound CTR, scaling creator drops profitably on Meta Advantage+ Reels without expensive physical photo shoots."
       },
-      "kyari-plants": {
-        brand: "KYARI · SHARK TANK S1",
-        title: "10-Day Plant Autonomy Mechanism Breakdown",
-        mediaType: "image",
-        mediaSrc: "assets/creatives/statics/kyari_self_watering_mechanism.png",
-        resultSummary: "+62% Bundle Conversion Lift · 3.4x Meta ROAS",
-        challenge: "Kyari pitched self-watering indoor planters on Shark Tank Season 1. Urban corporate professionals loved the aesthetic but hesitated to purchase due to past guilt over dead houseplants.",
-        friction: "Addressed 'plant death anxiety' through an anatomical technical cutaway revealing the sub-irrigation reservoir and float indicator. Framed plant care as automated autonomy (10 days without watering).",
-        hookAnatomy: "Split-view technical diagram isolating the 10-day water reservoir with clear callouts. Direct visual contrast against traditional pots that leak muddy water on office desks.",
-        outcome: "Multi-planter bundle conversion jumped by +62%. Scaled across broad Advantage+ audiences with zero creative fatigue holding a 3.4x blended ROAS."
-      },
+
       "tpf-navi-mumbai": {
         brand: "TATA PLAY FIBER",
-        title: "The Multi-City Hyper-Local Engine: Scaling Fiber Leads Across Noida, Pune, Mumbai & Jaipur",
-        concept: "A single modular direct-response framework deployed across 4 metro hubs (Noida, Pune, Mumbai, Jaipur), dynamically swapping local society names and geo-anchors.",
-        whyWeMadeIt: "National ISP ads feel generic and untrustworthy. Proved that one high-converting psychological hook (WFH call reliability) scales across multiple cities with local customization.",
+        category: "FTTH Broadband Infrastructure · Tier-1 Metros",
+        format: "Meta Advantage+ Reels · 9:16 Video",
+        title: "The Multi-City Hyper-Local Engine: Scaling Fiber Leads Across 4 Metros",
         mediaType: "video",
         mediaSrc: "assets/creatives/videos/tpf_hyperlocal_navi_mumbai.mp4",
-        resultSummary: "2.8% Outbound CTR · ₹380 Qualified Lead CPL · Scaled Across 4 Metros",
-        challenge: "National ISP advertising feels distant and generic. WFH corporate professionals in cities like Noida, Pune, Mumbai, and Jaipur don't care about theoretical gigabits—they care about not having their Wi-Fi drop during crucial executive Zoom presentations.",
-        friction: "Consumers distrust national broadband claims. By calling out specific residential societies (e.g. Seawoods in Mumbai, Hinjewadi in Pune, Sector 62 in Noida, Malviya Nagar in Jaipur) in the first 1.5 seconds, we established instant localized infrastructure trust.",
-        hookAnatomy: "0.0s-1.5s: Hyper-local geo pin drop and specific local society name callout: 'WFH professionals in [City/Society]: stop apologizing for Wi-Fi drops.'",
-        outcome: "Crushed cost-per-lead to ₹380 CPL with a 2.8% Outbound CTR, scaling high-ticket annual corporate fiber subscriptions across 4 major metro markets."
+        resultSummary: "2.8% Outbound CTR · ₹380 Qualified Lead CPL · 4-City Metro Scale",
+        clientContext: "Tata Play Fiber competes against national telecom giants for high-ticket annual home broadband contracts.",
+        coreFriction: "National broadband ads babble about theoretical 'gigabit speed' that consumers distrust. Remote corporate workers don't care about abstract megabits—they care about not looking foolish when their Wi-Fi freezes during a critical VP or client Zoom presentation.",
+        conceptAndAngle: "Hyper-Local Modular Framework. Rather than shooting 10 random disconnected ads, we engineered a single winning direct-response video concept and deployed it across 4 major hubs: Noida, Pune, Mumbai (Navi Mumbai), and Jaipur. We dynamically swapped city-specific names and local societies.",
+        hookStoryboard: [
+          { stamp: "0.0s - 1.5s", text: "Fast kinetic typography + local geo-anchor: 'Navi Mumbai WFH executives: stop apologizing for Wi-Fi drops on Zoom.'" },
+          { stamp: "1.5s - 4.5s", text: "Relatable corporate frustration: freezing screen during a high-stakes client presentation." },
+          { stamp: "4.5s - 9.0s", text: "Hard proof mechanism: 99.9% network uptime, dedicated building fiber optic lines, and zero packet loss." },
+          { stamp: "9.0s - end", text: "Low-friction CTA: Free installation + same-day fiber setup for local residential societies." }
+        ],
+        productionStack: "Modular kinetic typography system, localized footage swapping, dynamic geo-targeted ad sets in Meta Ads Manager.",
+        scaleImpact: "Slashed CPL to ₹380 with 2.8% Outbound CTR, generating hundreds of annual corporate home fiber contracts across all 4 target metros."
       },
+
+      "hnl-meme": {
+        brand: "HIDE & LEATHER",
+        category: "Artisan Handcrafted Footwear · D2C Luxury",
+        format: "Meta Advantage+ Reels · 9:16 Viral Video",
+        title: "Diwali B1G2 Viral Pattern Interrupt: Beating 60%+ Auction CPM Surges",
+        mediaType: "video",
+        mediaSrc: "assets/creatives/videos/hide_and_leather_b1g2_meme_ad.mp4",
+        resultSummary: "3.8x Blended ROAS · 39.4% Thumbstop Rate · Record Festive Scale",
+        clientContext: "Handcrafted pure leather footwear brand competing during the peak festive Diwali shopping window.",
+        coreFriction: "Diwali ad auction CPMs jump 60%+ as mega-retailers dominate feeds. Traditional polished luxury shoe ads get drowned out and priced out of profitability.",
+        conceptAndAngle: "The Culture-First Pattern Interrupt. We hijacked a relatable festive gifting meme hook in the first 1.5 seconds, then abruptly pivoted to macro slow-motion cobbler craftsmanship and an aggressive festive offer.",
+        hookStoryboard: [
+          { stamp: "0.0s - 1.5s", text: "Viral festive meme audio & unexpected visual hook breaking feed blindness." },
+          { stamp: "1.5s - 4.0s", text: "Sudden hard cut to artisan cobbler hammering full-grain leather sole with crisp sound effects." },
+          { stamp: "4.0s - 8.0s", text: "Value stack breakdown: Handcrafted leather shoes + 2 free luxury accessories (belt & cardholder)." },
+          { stamp: "8.0s - end", text: "Limited festive inventory countdown timer driving immediate checkout." }
+        ],
+        productionStack: "Native vertical iPhone meme capture combined with 120fps macro craft b-roll and directional kinetic offer overlays.",
+        scaleImpact: "39.4% thumbstop rate held steady despite auction inflation, delivering 3.8x ROAS and an all-time festive revenue record."
+      },
+
+      "threesixty-bar": {
+        brand: "THREE SIXTY",
+        category: "Ultra-Luxury Bespoke Leather Furniture (₹1,20,000+ AOV)",
+        format: "Meta Feed & Reels · 9:16 ASMR Video",
+        title: "Tactile ASMR Craftsmanship: Selling ₹1,20,000+ Bespoke Leather Bars",
+        mediaType: "video",
+        mediaSrc: "assets/creatives/videos/threesixty_luxury_bar_craft.mp4",
+        resultSummary: "High-Ticket Conversion on ₹1,20,000+ AOV · 3x Qualified Consultation Leads",
+        clientContext: "Ultra-luxury bespoke leather furniture and bar cabinets crafted for high-net-worth homeowners and luxury architects.",
+        coreFriction: "High-net-worth buyers purchase status and sensory tactile refinement. Selling a ₹1,20,000+ item digitally without physical touch feels almost impossible with standard 2D ads.",
+        conceptAndAngle: "High-Sensory Tactile ASMR. We removed voiceover entirely and let the tactile sounds of solid brass hardware clicks, hand-stitched leather seam friction, and velvet-lined drawers sell the sensory luxury.",
+        hookStoryboard: [
+          { stamp: "0.0s - 2.0s", text: "Ultra-macro audio-visual capture of a heavy brass lock smoothly clicking open on a leather-wrapped bar cabinet." },
+          { stamp: "2.0s - 6.0s", text: "Hand gliding over hand-buffed saddle leather with rich acoustic Foley sound." },
+          { stamp: "6.0s - 10.0s", text: "Smooth drawer slide revealing bespoke crystal glassware compartments and bottle storage." },
+          { stamp: "10.0s - end", text: "Subtle, prestigious CTA: 'Bespoke appointments available for discerning residences.'" }
+        ],
+        productionStack: "High-definition macro cinema lens with directional shotgun microphones for ultra-crisp tactile acoustic capture.",
+        scaleImpact: "Tripled qualified interior designer and high-net-worth buyer consultation submissions."
+      },
+
+      "honest-energy": {
+        brand: "HONEST ENERGY",
+        category: "Functional Clean Beverage · D2C Subscription",
+        format: "Meta Advantage+ Reels · 9:16 Video Reel",
+        mediaType: "video",
+        mediaSrc: "assets/creatives/videos/honest_energy_reels_ad.mp4",
+        title: "Category Disruption: Clean Sparkling Protein Water vs. Chalky Shakes",
+        resultSummary: "+112% Subscription AOV · 3.5x Meta ROAS · 3.6% Outbound CTR",
+        clientContext: "Honest Energy engineered a sparkling protein water with 15g whey isolate and 0g sugar.",
+        coreFriction: "Active consumers wanted post-workout protein but dreaded the sensory disgust of heavy, milky whey shakes that cause stomach bloating and foul shaker odors.",
+        conceptAndAngle: "The Sensory Contrast Teardown. Positioned sparkling protein water directly against the milky shaker clumping nightmare, framing Honest Energy as crisp, guilt-free refreshing hydration.",
+        hookStoryboard: [
+          { stamp: "0.0s - 1.5s", text: "Gross visual hook: violently shaking a milky shaker bottle with visible white powder clumps." },
+          { stamp: "1.5s - 4.5s", text: "Emotional agitation: 'Stop drinking heavy milky bloat after summer workouts.'" },
+          { stamp: "4.5s - 8.5s", text: "Sensory release: crisp can crack sound followed by effervescent sparkling protein water poured over clear ice and berries." },
+          { stamp: "8.5s - end", text: "15g Clear Protein / 0g Sugar callout with a 12-can trial pack CTA." }
+        ],
+        productionStack: "High-speed liquid macro photography, sound design emphasizing carbonation fizz and can-pop acoustics.",
+        scaleImpact: "+112% subscription uptake and a 3.5x blended ROAS, creating a major acquisition engine beyond traditional gym-goers."
+      },
+
+      "kyari-plants": {
+        brand: "KYARI · SHARK TANK S1",
+        category: "Urban D2C Plant Care & Self-Watering Planters",
+        format: "Direct-Response Feed · 1:1 Anatomical Static",
+        title: "The 10-Day Plant Autonomy Mechanism: Overcoming Plant Murder Guilt",
+        mediaType: "image",
+        mediaSrc: "assets/creatives/statics/kyari_self_watering_mechanism.png",
+        resultSummary: "+62% High-AOV Bundle Conversion · 3.4x Meta ROAS",
+        clientContext: "Kyari pitched on Shark Tank Season 1 with patented sub-irrigation indoor planters.",
+        coreFriction: "Urban professionals love office greenery but have severe 'plant murder guilt'—past dead houseplants make them fear wasting money on greenery they'll kill in a week.",
+        conceptAndAngle: "Technical Mechanism Demonstration. Cutaway graphic highlighting the sub-irrigation water reservoir and float gauge, proving plants survive unattended for 10 straight days.",
+        hookStoryboard: [
+          { stamp: "Visual Hook", text: "Cross-section technical blueprint isolating the sub-irrigation reservoir and roots sipping water naturally." },
+          { stamp: "Copy Angle", text: "'You literally cannot screw this up. Your plants sip water for 10 straight days on their own.'" },
+          { stamp: "Proof Badges", text: "Shark Tank Season 1 Pitch, 10-Day Autonomy Guarantee, Leak-Free Desk Protection." },
+          { stamp: "Offer Framing", text: "Multi-planter living room bundle with complimentary nutrient soil." }
+        ],
+        productionStack: "Precision anatomical CAD rendering, direct-response typographic layout with high-contrast callout pins.",
+        scaleImpact: "Lifted multi-planter bundle sales by +62% and maintained a 3.4x ROAS on broad Advantage+ targeting."
+      },
+
+      "hokipo-cover": {
+        brand: "HOKIPO",
+        category: "Home Furnishing & Utility D2C",
+        format: "Direct-Response Feed · 1:1 Arbitrage Static",
+        title: "The Reupholstery Price Arbitrage: ₹18,000 Fix vs. ₹1,499 Slipcover",
+        mediaType: "image",
+        mediaSrc: "assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png",
+        resultSummary: "4.1x Meta ROAS · Top Account Revenue Scaler for 6 Months",
+        clientContext: "HOKIPO manufactures water-repellent, stretchable quilted sofa protectors and slipcovers.",
+        coreFriction: "Homeowners with stained or pet-scratched sofas assumed their only fix was calling a local carpenter for ₹15,000-₹20,000 reupholstery.",
+        conceptAndAngle: "Economic Arbitrage (Us vs. Them). Anchoring the ₹18,000 carpenter hassle directly against the ₹1,499 cover made buying an instant financial no-brainer.",
+        hookStoryboard: [
+          { stamp: "Visual Split", text: "Left side: Torn sofa + carpenter invoice for ₹18,000 + 10 days delay. Right side: Pristine HOKIPO quilted cover + ₹1,499 + 5-minute DIY fit." },
+          { stamp: "Feature Proof", text: "Water-repellent splash demonstration, claw-scratch resistant quilted microfibers, machine washable." },
+          { stamp: "Urgency", text: "'Don't throw away your sofa. Save ₹16,500 today.'" }
+        ],
+        productionStack: "High-contrast side-by-side visual comparison, macro fabric water-beading swatch, price-anchor typography.",
+        scaleImpact: "Maintained a 4.1x blended ROAS for 6 straight months, becoming HOKIPO's evergreen #1 spend asset."
+      },
+
       "hnl-shoes": {
         brand: "HIDE & LEATHER",
-        title: "Handcrafted Leather Footwear: Festive BOGO Offer",
+        category: "Handcrafted Leather Footwear",
+        format: "Direct-Response Feed · 1:1 Offer Framing Static",
+        title: "Handcrafted Festive Footwear BOGO: Premium Leather Stance",
         mediaType: "image",
         mediaSrc: "assets/creatives/statics/hide_and_leather_festive_bogo_shoes.png",
         resultSummary: "+84% Festive Order Volume · 3.6x ROAS",
-        challenge: "In festive shopping windows, luxury footwear brands drown in generic price slashing. Hide & Leather needed to protect high brand equity while driving massive festive sales velocity.",
-        friction: "Constructed an irresistible value proposition: Buy 1 premium handcrafted pair, choose 2 artisan accessories complimentary. Paired macro craftsmanship closeups with urgent festive gifting angles.",
-        hookAnatomy: "Side-by-side artisan shoe comparison showing authentic full-grain texture against synthetic alternatives, flanked by high-contrast festive badges.",
-        outcome: "Order volume increased +84% week-over-week while average order value (AOV) expanded due to bundled luxury accessories."
+        clientContext: "D2C luxury footwear scaling during high-traffic festive holidays.",
+        coreFriction: "Festive consumers want premium genuine leather shoes, but fear buying online because cheap synthetic faux-leather brands flood feeds with misleading photos.",
+        conceptAndAngle: "Material Integrity + High-Perceived-Value Bundle. Showcased macro full-grain patina side-by-side with an artisan accessory bundle: Buy 1 Pair, Get 2 Accessories Free.",
+        hookStoryboard: [
+          { stamp: "Visual Hook", text: "Crisp studio top-down layout of full-grain leather dress shoes flanked by matching artisan belt and card case." },
+          { stamp: "Material Proof", text: "Pure full-grain leather badge, hand-stitched welt, cushioned orthopedic insole." },
+          { stamp: "Offer Framing", text: "Festive B1G2 Exclusive Gifting Bundle." }
+        ],
+        productionStack: "Studio commercial lighting highlighting leather grain sheen, clean high-contrast value proposition banner.",
+        scaleImpact: "Expanded festive order volume by +84% while boosting cart AOV with bundled luxury accessories."
       },
-      "hnl-meme": {
-        brand: "HIDE & LEATHER",
-        title: "Diwali B1G2 Viral Pattern Interrupt",
-        mediaType: "video",
-        mediaSrc: "assets/creatives/videos/hide_and_leather_b1g2_meme_ad.mp4",
-        resultSummary: "3.8x Blended ROAS · 48,000+ Festive Clicks",
-        challenge: "Meta auction CPMs skyrocket by 60%+ during Diwali week. Traditional studio polished ads burned budget without generating thumbstop.",
-        friction: "Employed cultural meme humor as an unpolished pattern interrupt in the first 1.5 seconds, then transitioned seamlessly into luxury macro footage of shoe stitching with the limited-time B1G2 offer.",
-        hookAnatomy: "0.0s-1.8s: Relatable festive gifting dilemma meme audio with sudden dynamic cut to artisan leather cobbler hammering sole.",
-        outcome: "39.4% thumbstop rate held steady despite auction inflation, delivering 3.8x ROAS across broad Advantage+ targeting."
-      },
-      "threesixty-bar": {
-        brand: "THREE SIXTY",
-        title: "Tactile ASMR Leather Bar Cabinet Craftsmanship",
-        mediaType: "video",
-        mediaSrc: "assets/creatives/videos/threesixty_luxury_bar_craft.mp4",
-        resultSummary: "High-Ticket Conversion on ₹1,20,000+ AOV",
-        challenge: "Three Sixty crafts ultra-luxury bespoke leather furniture. Selling ₹1,20,000+ items online requires conquering immense tactile skepticism without physical showroom touch.",
-        friction: "High-net-worth buyers purchase status and sensory refinement. We engineered a quiet, high-sensory ASMR video showcasing hand-stitched leather seams, solid brass hardware clicks, and velvet-lined compartments.",
-        hookAnatomy: "0.0s-2.0s: Ultra-macro audio-visual capture of heavy brass lock unlatching followed by smooth slide of leather-wrapped drawer.",
-        outcome: "Qualified lead submission rate tripled for bespoke interior consultations, scaling high-ticket purchases via digital acquisition."
-      },
-      "hokipo-cover": {
-        brand: "HOKIPO",
-        title: "The Reupholstery Price Arbitrage: ₹18,000 vs. ₹1,499",
-        mediaType: "image",
-        mediaSrc: "assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png",
-        resultSummary: "4.1x Meta ROAS · Evergreen Top Scaler",
-        challenge: "Homeowners with pet scratches or worn sofa fabric assumed their only option was paying ₹15,000-₹25,000 for local carpenter reupholstery.",
-        friction: "Anchored the expensive ₹18,000 reupholstery hassle directly against the ₹1,499 water-repellent quilted cover. Positioned product as a 5-minute instant makeover.",
-        hookAnatomy: "Direct split-screen economic comparison: 'Reupholster ₹18,000 + 10 Days Wait' vs. 'HOKIPO Slipcover ₹1,499 + 5 Min Fit'.",
-        outcome: "Became the #1 revenue-generating asset in HOKIPO's Meta account, maintaining a 4.1x ROAS over 6 months of continuous spend."
-      },
-      "honest-energy": {
-        brand: "HONEST ENERGY",
-        title: "Clean Sparkling Protein Water vs. Chalky Shakes",
-        mediaType: "image",
-        mediaSrc: "assets/creatives/statics/honest_energy_protein_water.png",
-        resultSummary: "+112% Subscription AOV · 3.5x ROAS",
-        challenge: "Honest Energy launched sparkling protein water (15g clear protein, 0g sugar), but fitness consumers instinctively associated protein with heavy milky whey powders that cause bloating.",
-        friction: "Attacked the sensory disgust of chalky milky shakes after summer workouts. Positioned Honest Energy as crisp, light, sparkling hydration with zero digestive bloat.",
-        hookAnatomy: "Visual side-by-side: Gross milky shaker bottle with clumps vs. refreshing sparkling can poured over crystal ice with fresh fruit.",
-        outcome: "Subscription uptake surged by +112%, unlocking an entirely new demographic of non-bodybuilder wellness consumers."
-      },
+
       "mattress-spine": {
         brand: "MATTRESS FITNESS",
-        title: "Biomechanical Spinal Alignment Graphic",
+        category: "Orthopedic Sleep Tech",
+        format: "Direct-Response Feed · 1:1 Medical Anatomy Static",
+        title: "Biomechanical Spinal Alignment Graphic: Medical Proof Framing",
         mediaType: "image",
         mediaSrc: "assets/creatives/statics/mattress_fitness_spine_health.png",
         resultSummary: "3.2x Advantage+ ROAS · 36% Lower CPA",
-        challenge: "Mattress shoppers are bombarded with generic 'cloud-like softness' claims. Sufferers of chronic morning lower back stiffness didn't believe softness equaled healing.",
-        friction: "Addressed orthopedic pain directly using an anatomical spine alignment diagram. Demonstrated how dual-layer zoned support keeps vertebrae neutral compared to sinking foam.",
-        hookAnatomy: "Medical illustration showing S-curve spine compression on standard mattress vs. neutral horizontal alignment on Mattress Fitness orthopedic core.",
-        outcome: "36% reduction in customer acquisition cost (CPA) on cold audience campaigns, attracting high-intent 35-55 age demographic."
+        clientContext: "Orthopedic dual-layer memory foam mattress targeting chronic back pain sufferers.",
+        coreFriction: "Back pain sufferers are skeptical of generic 'cloud softness' mattress ads, knowing softness often leads to painful morning spinal sagging.",
+        conceptAndAngle: "Medical Anatomy Proof. An anatomical S-curve spine alignment graphic contrasting standard foam collapse against neutral orthopedic support.",
+        hookStoryboard: [
+          { stamp: "Visual Hook", text: "Medical illustration of vertebrae alignment: Red cross on sagging spine vs. Green check on neutral horizontal alignment." },
+          { stamp: "Mechanism", text: "Dual-layer high-density transition foam preventing lumbar sinkage." },
+          { stamp: "Risk Reversal", text: "100-Night Risk-Free In-Home Trial + 10-Year Warranty." }
+        ],
+        productionStack: "Anatomical biomechanical rendering, clinical color palette (slate blue & medical green), trust badges.",
+        scaleImpact: "Reduced customer acquisition cost by 36% among high-intent 35-55 demographic."
       },
+
       "tresnova-kid": {
         brand: "TRESNOVA",
-        title: "Chemical-Free Hypoallergenic Combed Cotton",
+        category: "Premium Pediatric Kidswear",
+        format: "Direct-Response Feed · 1:1 Static",
+        title: "Chemical-Free Hypoallergenic Combed Cotton: Solving Toddler Eczema Anxiety",
         mediaType: "image",
         mediaSrc: "assets/creatives/statics/tresnova_kidswear_combed_cotton_ad.png",
-        resultSummary: "3.1x New-Mom ROAS · +44% Repeat Purchase",
-        challenge: "Parents are fiercely protective of newborn and toddler skin health. Fast-fashion kids clothes frequently cause eczema breakouts due to harsh chemical dyes and rough synthetic stitching.",
-        friction: "Tapped into maternal safety anxiety by proving GOTS-certified 100% combed cotton with zero toxic AZO dyes and an elastic-free comfort waistband.",
-        hookAnatomy: "Close-up macro texture showing hypoallergenic cotton breathability next to certified dermatological safety seals.",
-        outcome: "3.1x ROAS on new-mother prospecting campaigns with a 44% 60-day repeat reorder rate on multi-pack bundles."
+        resultSummary: "3.1x New-Mom ROAS · +44% 60-Day Repeat Purchase",
+        clientContext: "Premium D2C children's apparel brand focusing on infant skin safety.",
+        coreFriction: "Mothers worry constantly about toddler skin rashes and eczema flare-ups caused by harsh synthetic dyes and chemical finishes in fast-fashion apparel.",
+        conceptAndAngle: "Pediatric Purity Proof. Showcased GOTS-certified 100% combed cotton, zero toxic AZO dyes, and an elastic-free waistband.",
+        hookStoryboard: [
+          { stamp: "Visual Hook", text: "Macro organic cotton weave texture showing soft breathability next to pediatric dermatologist seal." },
+          { stamp: "Friction Elimination", text: "'Zero harsh chemical dyes. Zero synthetic irritation. Just 100% cloud-soft combed cotton.'" },
+          { stamp: "Offer", text: "3-Pack Everyday Playwear Bundle with free hypoallergenic wash bag." }
+        ],
+        productionStack: "High-key natural lighting, certified GOTS organic seals, reassuring maternal pastel color palette.",
+        scaleImpact: "Delivered 3.1x ROAS on new-mother prospecting campaigns with a 44% repeat order rate within 60 days."
       },
+
       "gd-goenka": {
         brand: "GD GOENKA GURUGRAM",
-        title: "Cambridge K-12 Admissions Direct Response",
+        category: "Elite K-12 Institutional Education",
+        format: "Direct-Response Feed · 1:1 Institutional Proof Static",
+        title: "Cambridge K-12 Admissions: 3-Pillar Proof Architecture",
         mediaType: "image",
         mediaSrc: "assets/creatives/statics/gd_goenka_admissions_overview.png",
-        resultSummary: "₹520 Parent Tour CPL · 22% Tour-to-Enrollment",
-        challenge: "Elite private schools typically run generic prestige brand campaigns that generate vague traffic but fail to drive booked campus admission tours.",
-        friction: "Parents evaluate schools based on 3 non-negotiables: Cambridge curriculum global validity, world-class athletic facilities, and holistic character building.",
-        hookAnatomy: "Structured 3-pillar proof architecture detailing university placements, Olympic-size sports infrastructure, and real classroom robotics labs.",
-        outcome: "Generated qualified parent campus tour bookings at ₹520 CPL, with a 22% conversion from campus visit to paid admission."
+        resultSummary: "₹520 Parent Tour CPL · 22% Tour-to-Enrollment Conversion",
+        clientContext: "Top-tier international day boarding school in Gurugram driving qualified parent campus tours.",
+        coreFriction: "Affluent parents distrust emotional school taglines; they evaluate schools based on verifiable global curriculum rigor, sports facilities, and holistic character development.",
+        conceptAndAngle: "Structured 3-Pillar Institutional Proof. Replaced vague slogans with verifiable facts: Cambridge International Accreditation, Olympic-grade sports academy, and AI robotics labs.",
+        hookStoryboard: [
+          { stamp: "Visual Hook", text: "Elegant architectural view of Gurugram campus framed by verified accreditation badges." },
+          { stamp: "3-Pillar Proof", text: "1. Cambridge & CBSE dual global path; 2. Olympic-sized swimming & sports complex; 3. Dedicated STEM robotics labs." },
+          { stamp: "Action", text: "'Admissions open for AY 2026-27. Book an exclusive campus walkthrough.'" }
+        ],
+        productionStack: "Authoritative institutional typography, official Cambridge accreditation badges, campus drone photography.",
+        scaleImpact: "Lowered parent tour CPL to ₹520 with an exceptional 22% conversion from campus visit to paid enrollment."
       }
     };
 
@@ -2370,7 +2599,7 @@
         mediaCol.innerHTML = `
           <video id="theatreVideo" src="${data.mediaSrc}" autoplay playsinline loop></video>
           <div class="modal-audio-bar">
-            <span>🔊 Video Audio</span>
+            <span>🔊 Case Study Audio</span>
             <button class="modal-sound-btn" id="theatreMuteBtn" onclick="toggleTheatreSound()">Unmute Audio</button>
           </div>
         `;
@@ -2380,50 +2609,75 @@
         mediaCol.innerHTML = `<img src="${data.mediaSrc}" alt="${data.title}">`;
       }
 
+      // Generate Hook Timeline HTML
+      let timelineHtml = '';
+      if (Array.isArray(data.hookStoryboard)) {
+        timelineHtml = data.hookStoryboard.map(item => `
+          <div class="dossier-timeline-item">
+            <span class="timeline-stamp">${item.stamp}</span>
+            <span>${item.text}</span>
+          </div>
+        `).join('');
+      }
+
       contentCol.innerHTML = `
         <div class="modal-close-strip">
-          <span class="tag-mono tag-lime">${data.brand}</span>
+          <div class="dossier-pill-row">
+            <span class="dossier-tag dossier-tag-brand">${data.brand}</span>
+            <span class="dossier-tag dossier-tag-format">${data.format}</span>
+            <span class="dossier-tag dossier-tag-cat">${data.category}</span>
+          </div>
           <button class="modal-close-btn" onclick="closeTheatre()">✕</button>
         </div>
 
-        <h3 style="font-size: 20px; font-weight: 800; color: #0F172A; line-height: 1.25;">${data.title}</h3>
+        <h3 style="font-size: 21px; font-weight: 800; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em;">${data.title}</h3>
 
-        <div class="modal-result-card">
-          <div class="modal-result-lbl">⚡ STRATEGIC PERFORMANCE OUTCOME</div>
+        <div class="modal-result-card" style="background: #0F172A; border-left: 3px solid #CCFF00;">
+          <div class="modal-result-lbl">⚡ MEASURED COMMERCIAL PERFORMANCE</div>
           <div class="modal-result-val">${data.resultSummary}</div>
         </div>
 
-        <div class="theatre-section" style="background: #F8FAFC; border-color: #CBD5E1;">
-          <div class="theatre-section-title" style="color: #0F172A;">💡 CREATIVE CONCEPT &amp; STRATEGIC RATIONALE</div>
-          <div class="theatre-section-body" style="display: flex; flex-direction: column; gap: 8px;">
-            <div><strong>The Concept:</strong> ${data.concept || "Direct-response creative framework."}</div>
-            <div><strong>Why We Made This:</strong> ${data.whyWeMadeIt || "Engineered to overcome specific consumer friction."}</div>
+        <!-- Phase 01: Client & Funnel Context -->
+        <div class="dossier-section" style="border-left: 3px solid #64748B;">
+          <div class="dossier-sec-title" style="color: #0F172A;">🏢 [01] CLIENT &amp; FUNNEL CONTEXT</div>
+          <div class="dossier-sec-body">${data.clientContext}</div>
+        </div>
+
+        <!-- Phase 02: Core Friction & The Unspoken Objection -->
+        <div class="dossier-section" style="border-left: 3px solid #F59E0B; background: #FFFBEB;">
+          <div class="dossier-sec-title" style="color: #B45309;">⚠️ [02] CORE FRICTION &amp; THE UNSPOKEN OBJECTION</div>
+          <div class="dossier-sec-body">${data.coreFriction}</div>
+        </div>
+
+        <!-- Phase 03: Creative Concept & Psychology Hypothesis -->
+        <div class="dossier-section" style="border-left: 3px solid #10B981; background: #F0FDF4;">
+          <div class="dossier-sec-title" style="color: #047857;">💡 [03] CREATIVE CONCEPT &amp; PSYCHOLOGY HYPOTHESIS</div>
+          <div class="dossier-sec-body">${data.conceptAndAngle}</div>
+        </div>
+
+        <!-- Phase 04: Frame-by-Frame Hook Anatomy -->
+        <div class="dossier-section" style="border-left: 3px solid #2563EB; background: #F8FAFC;">
+          <div class="dossier-sec-title" style="color: #1D4ED8;">👁️ [04] FRAME-BY-FRAME HOOK ANATOMY &amp; STORYBOARD</div>
+          <div class="dossier-timeline-list">
+            ${timelineHtml}
           </div>
         </div>
 
-        <div class="theatre-section" style="background: #FFFBEB; border-color: #FDE68A;">
-          <div class="theatre-section-title" style="color: #B45309;">⚡ [01] THE CHALLENGE &amp; ACCOUNT FRICTION</div>
-          <div class="theatre-section-body">${data.challenge}</div>
+        <!-- Phase 05: Production Execution & Tool Stack -->
+        <div class="dossier-section" style="border-left: 3px solid #8B5CF6; background: #F5F3FF;">
+          <div class="dossier-sec-title" style="color: #6D28D9;">⚙️ [05] PRODUCTION EXECUTION &amp; TOOL STACK</div>
+          <div class="dossier-sec-body">${data.productionStack}</div>
         </div>
 
-        <div class="theatre-section" style="background: #F0FDF4; border-color: #BBF7D0;">
-          <div class="theatre-section-title" style="color: #059669;">🎯 [02] CUSTOMER PSYCHOLOGY &amp; ANGLE HYPOTHESIS</div>
-          <div class="theatre-section-body">${data.friction}</div>
+        <!-- Phase 06: Performance Scaling -->
+        <div class="dossier-section" style="border-left: 3px solid #0F172A; background: #F8FAFC;">
+          <div class="dossier-sec-title" style="color: #0F172A;">📈 [06] AD ACCOUNT SCALE &amp; FATIGUE RESISTANCE</div>
+          <div class="dossier-sec-body">${data.scaleImpact}</div>
         </div>
 
-        <div class="theatre-section" style="background: #F8FAFC; border-color: #E2E8F0;">
-          <div class="theatre-section-title" style="color: #2563EB;">👁️ [03] 3-SECOND HOOK &amp; VISUAL STORYBOARD</div>
-          <div class="theatre-section-body">${data.hookAnatomy}</div>
-        </div>
-
-        <div class="theatre-section" style="background: #F8FAFC; border-color: #E2E8F0;">
-          <div class="theatre-section-title" style="color: #0F172A;">📈 [04] SUSTAINED PERFORMANCE SCALE</div>
-          <div class="theatre-section-body">${data.outcome}</div>
-        </div>
-
-        <div style="padding-top: 8px;">
-          <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20let%27s%20build%20a%20strategy%20similar%20to%20${encodeURIComponent(data.title)}" target="_blank" class="btn btn-primary" style="width: 100%;">
-            <span>Deploy Similar Strategy For Your Brand →</span>
+        <div style="padding-top: 10px;">
+          <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20let%27s%20discuss%20deploying%20a%20similar%20strategy%20to%20${encodeURIComponent(data.title)}" target="_blank" class="btn btn-primary" style="width: 100%; padding: 14px 20px;">
+            <span>Deploy Similar Direct-Response Strategy For Your Brand →</span>
           </a>
         </div>
       `;
