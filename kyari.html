@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kyari: Repurposing Stock Libraries & AI Motion into an Objection-Destroying D2C Engine · Anupam Nath</title>
-<meta name="description" content="In-depth Performance Creative Strategy Case Study: How Kyari (Shark Tank S1) scaled Meta Advantage+ by repurposing dormant video archives and September AI videos into an objection-destroying direct-response angle matrix.">
+<title>Kyari: Creative Strategy & Angle Architecture · Anupam Nath</title>
+<meta name="description" content="Creative Strategy Case Study: How Kyari (Shark Tank S1) unlocked Meta Advantage+ scale by transforming dormant stock video archives and September AI videos into an objection-destroying creative angle matrix.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 
-<!-- Prefetch main site and sister case study -->
+<!-- Prefetch main site and sister case study for zero-delay navigation -->
 <link rel="prefetch" href="index.html">
 <link rel="prefetch" href="frankly-wearing.html">
 
@@ -131,38 +131,17 @@ body {
   gap: 12px;
 }
 
-.btn-nav-pdf {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: #ECFDF5;
-  border: 1px solid rgba(5, 150, 105, 0.3);
-  color: var(--accent-light);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-}
-
-.btn-nav-pdf:hover {
-  background: #D1FAE5;
-  border-color: var(--accent-green);
-  transform: translateY(-1px);
-}
-
 .btn-back {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 8px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
+  color: var(--text-main);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 600;
   transition: all 0.2s ease;
 }
@@ -259,17 +238,21 @@ body {
   text-transform: uppercase;
 }
 
-.date-pill {
+.badge-role {
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-dim);
+  font-size: 12px;
+  color: #334155;
+  background: #E2E8F0;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 700;
 }
 
 .case-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 56px);
+  font-size: clamp(32px, 4.5vw, 54px);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.14;
   letter-spacing: -0.025em;
   color: #0F172A;
   margin-bottom: 20px;
@@ -282,36 +265,36 @@ body {
 .case-hero-subtitle {
   font-size: clamp(17px, 1.8vw, 21px);
   color: var(--text-muted);
-  line-height: 1.55;
-  max-width: 860px;
+  line-height: 1.6;
+  max-width: 900px;
   margin-bottom: 36px;
 }
 
-/* Metric Strip */
-.metrics-grid {
+/* Strategic Pillar Cards (Brief, Role, Objective, Thesis) */
+.strategic-pillars-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 36px;
+  margin-top: 32px;
 }
 
-.metric-card {
+.strategic-pillar-card {
   background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  padding: 24px;
+  padding: 22px;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.metric-card:hover {
+.strategic-pillar-card:hover {
   transform: translateY(-2px);
   border-color: var(--accent-green);
 }
 
-.metric-card::before {
+.strategic-pillar-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -321,28 +304,29 @@ body {
   background: var(--accent-green);
 }
 
-.metric-val {
-  font-family: var(--font-display);
-  font-size: 34px;
-  font-weight: 800;
-  color: #0F172A;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.metric-lbl {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-.metric-context {
-  margin-top: 6px;
+.pillar-label {
   font-family: var(--font-mono);
   font-size: 11px;
+  font-weight: 700;
   color: var(--accent-light);
-  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.pillar-heading {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.pillar-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* Hero Video Showcase */
@@ -482,12 +466,12 @@ body {
 .chapter-sub {
   font-size: 17px;
   color: var(--text-muted);
-  max-width: 820px;
+  max-width: 860px;
   line-height: 1.6;
   margin-bottom: 40px;
 }
 
-/* Behance Style Insight & Process Box (Slide 7 Style) */
+/* Strategy Formulation Pipeline Card */
 .process-flow-card {
   background: #FFFFFF;
   border: 1px solid var(--border-subtle);
@@ -559,7 +543,37 @@ body {
   font-size: 11px;
 }
 
-/* Competitor Matrix Table (Behance Slide 8 Style) */
+/* Two-Column Deep-Dive Grid (Tension vs Solution) */
+.deep-dive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.deep-dive-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.deep-dive-box h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 12px;
+}
+
+.deep-dive-box p {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Competitor Matrix Table */
 .competitor-matrix-wrap {
   overflow-x: auto;
   border-radius: 12px;
@@ -590,7 +604,7 @@ body {
   padding: 16px 20px;
   border-bottom: 1px solid var(--border-subtle);
   vertical-align: top;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text-muted);
 }
 
@@ -676,20 +690,9 @@ body {
   text-transform: uppercase;
 }
 
-.stage-tof-pill {
-  background: #FEF3C7;
-  color: #92400E;
-}
-
-.stage-mof-pill {
-  background: #E0E7FF;
-  color: #3730A3;
-}
-
-.stage-bof-pill {
-  background: #ECFDF5;
-  color: #065F46;
-}
+.stage-tof-pill { background: #FEF3C7; color: #92400E; }
+.stage-mof-pill { background: #E0E7FF; color: #3730A3; }
+.stage-bof-pill { background: #ECFDF5; color: #065F46; }
 
 .angle-card-title {
   font-family: var(--font-display);
@@ -795,7 +798,7 @@ body {
   color: #0F172A;
 }
 
-/* Funnel Table */
+/* Funnel Rollout Table */
 .funnel-table {
   width: 100%;
   border-collapse: collapse;
@@ -837,66 +840,6 @@ body {
 .stage-tof { background: #FEF3C7; color: #92400E; }
 .stage-mof { background: #E0E7FF; color: #3730A3; }
 .stage-bof { background: #ECFDF5; color: #065F46; }
-
-/* Behance PDF Download Showcase Banner */
-.pdf-download-card {
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-  border-radius: 16px;
-  padding: 40px;
-  color: #FFFFFF;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 32px;
-  align-items: center;
-  margin: 40px 0;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.pdf-info h3 {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 12px;
-  color: #FFFFFF;
-}
-
-.pdf-info p {
-  font-size: 15px;
-  color: #94A3B8;
-  line-height: 1.6;
-  max-width: 640px;
-  margin-bottom: 16px;
-}
-
-.pdf-specs-row {
-  display: flex;
-  gap: 16px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--accent-lime);
-}
-
-.btn-download-pdf {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--accent-lime);
-  color: #0F172A;
-  padding: 14px 26px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 800;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.btn-download-pdf:hover {
-  background: #B8E600;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(204, 255, 0, 0.3);
-}
 
 /* Strategic Quote */
 .quote-banner {
@@ -997,19 +940,14 @@ body {
 
 /* ==========================================================================
    MOBILE-FIRST OPTIMIZATION (< 768px)
-   Tailored flow for mobile screens with touch-friendly pills and stacked layouts
    ========================================================================== */
 @media (max-width: 768px) {
   body {
-    padding-bottom: 84px; /* Space for mobile nav bar */
+    padding-bottom: 84px;
   }
 
   .top-nav {
     padding: 14px 20px;
-  }
-
-  .btn-nav-pdf {
-    display: none; /* Accessible in mobile pill bar */
   }
 
   .mobile-nav-bar {
@@ -1024,17 +962,13 @@ body {
     padding: 40px 0 32px;
   }
 
-  .metrics-grid {
+  .strategic-pillars-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
-  .metric-card {
+  .strategic-pillar-card {
     padding: 16px;
-  }
-
-  .metric-val {
-    font-size: 26px;
   }
 
   .hero-video-box {
@@ -1054,6 +988,11 @@ body {
     gap: 8px;
   }
 
+  .deep-dive-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .angles-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1071,17 +1010,6 @@ body {
     padding: 20px;
   }
 
-  .pdf-download-card {
-    grid-template-columns: 1fr;
-    padding: 24px;
-    gap: 20px;
-  }
-
-  .btn-download-pdf {
-    width: 100%;
-    justify-content: center;
-  }
-
   .quote-banner {
     padding: 24px 20px;
   }
@@ -1097,13 +1025,9 @@ body {
 <nav class="top-nav">
   <a href="index.html" class="nav-brand">
     <div class="brand-badge-circle">AN</div>
-    <div class="nav-brand-text">Anupam Nath · Creative Strategy</div>
+    <div class="nav-brand-text">Anupam Nath · Creative Strategist</div>
   </a>
   <div class="nav-links">
-    <a href="assets/docs/Behance_Strategist_Portfolio.pdf" download="Behance_Strategist_Portfolio_Angelica.pdf" class="btn-nav-pdf" title="Download Reference Behance Portfolio (32 Slides)">
-      <span>📄 Download Behance PDF</span>
-      <span>↓</span>
-    </a>
     <a href="index.html" class="btn-back">
       <span>← Back to Portfolio</span>
     </a>
@@ -1117,7 +1041,6 @@ body {
   <a href="#angles" class="mobile-nav-pill">🎯 Angles</a>
   <a href="#ai-videos" class="mobile-nav-pill">🤖 AI Videos</a>
   <a href="#funnel" class="mobile-nav-pill">📊 Funnel</a>
-  <a href="#pdf-download" class="mobile-nav-pill">📄 PDF</a>
 </div>
 
 <!-- Main Content -->
@@ -1128,42 +1051,53 @@ body {
       <div class="hero-meta-row">
         <span class="brand-badge">Client: Kyari</span>
         <span class="badge-sharktank">🦈 As Seen on Shark Tank India S1</span>
-        <span class="date-pill">D2C Meta Advantage+ Scaling</span>
+        <span class="badge-role">Role: Creative Strategy &amp; Direction</span>
       </div>
 
       <h1 class="case-hero-title">
-        Turning Dormant Stock Footage &amp; AI Motion into an <span>Objection-Destroying Machine</span>
+        Repurposing Dormant Stock Video into a <span>Multi-Angle Creative Engine</span>
       </h1>
 
       <p class="case-hero-subtitle">
-        How Anupam Nath took raw brand video archives and September AI videos to engineer a 6-angle direct-response system that conquered the #1 obstacle in D2C houseplant sales: <strong>"Plant Murder Guilt."</strong>
+        How Anupam Nath directed the creative strategy for Kyari—formulating distinct consumer personas, objection-destroying messaging angles, and September AI video experiments to unlock cold Meta Advantage+ scale without costly studio productions.
       </p>
 
-      <!-- Key Result Metrics -->
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-val">4.1%</div>
-          <div class="metric-lbl">Outbound Click-Through Rate</div>
-          <div class="metric-context">vs. 1.2% Meta D2C Benchmark</div>
+      <!-- 4 Strategic Pillars (Modeled on Strategic Breakdown Decks) -->
+      <div class="strategic-pillars-grid">
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[01] CONTEXT &amp; BRIEF</div>
+          <div class="pillar-heading">Dormant Video Archive</div>
+          <div class="pillar-desc">
+            Kyari held high-quality unedited footage and product b-roll, but ad campaigns had plateaued on basic catalog product showcases.
+          </div>
         </div>
-        <div class="metric-card">
-          <div class="metric-val">38.6%</div>
-          <div class="metric-lbl">Hook Thumbstop Rate</div>
-          <div class="metric-context">3-second video view hold</div>
+
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[02] STRATEGIC ROLE</div>
+          <div class="pillar-heading">Creative Strategy</div>
+          <div class="pillar-desc">
+            Directed the complete messaging architecture: mapping consumer psychology, writing direct-response hook scripts, and engineering angle variations.
+          </div>
         </div>
-        <div class="metric-card">
-          <div class="metric-val">3.4x</div>
-          <div class="metric-lbl">Blended Creative ROAS</div>
-          <div class="metric-context">Advantage+ Shopping Campaigns</div>
+
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[03] ANDREW META 2.0 THESIS</div>
+          <div class="pillar-heading">Creative IS The Targeting</div>
+          <div class="pillar-desc">
+            No narrow audience interest stacks. Deployed distinct angles to let Meta's algorithm find different buyer personas in broad feeds.
+          </div>
         </div>
-        <div class="metric-card">
-          <div class="metric-val">10L+</div>
-          <div class="metric-lbl">Trusted Plant Parents</div>
-          <div class="metric-context">Scaled across Metro Hubs</div>
+
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[04] CORE BREAKTHROUGH</div>
+          <div class="pillar-heading">Killing "Plant Murder Guilt"</div>
+          <div class="pillar-desc">
+            Pivoted the brand from selling fragile plants to selling <strong>Plant-Parent Confidence</strong> powered by the 15-day self-watering reservoir.
+          </div>
         </div>
       </div>
 
-      <!-- Hero Video Player: Approved AI Concept -->
+      <!-- Hero Video Player: Approved Creative -->
       <div class="hero-video-box">
         <div class="hero-video-player-wrap">
           <video id="heroKyariVid" src="assets/creatives/videos/kyari_hero_approved_ai.mp4" autoplay playsinline loop muted preload="metadata"></video>
@@ -1172,24 +1106,24 @@ body {
           </button>
         </div>
         <div class="hero-video-info">
-          <span class="brand-badge" style="margin-bottom: 8px;">Approved Hero Asset</span>
-          <h3>Shark Tank Credibility &amp; AI Living Greenery Motion</h3>
+          <span class="brand-badge" style="margin-bottom: 8px;">Approved Creative Concept</span>
+          <h3>Shark Tank Authority &amp; The Self-Watering Transformation</h3>
           <p>
-            This approved creative unites Shark Tank brand trust with hyper-clear visual demonstration of Kyari's self-watering system. It immediately hooks urban apartment dwellers who want living plants but fear killing them through irregular watering.
+            This concept bridges Shark Tank national recognition with immediate consumer lifestyle aspiration. Instead of showing standard nursery pots, it opens with bold visual contrast and proves the zero-effort sub-irrigation reservoir mechanism.
           </p>
 
           <div class="storyboard-strip">
             <div class="storyboard-row">
               <span class="stamp">0.0s - 2.5s</span>
-              <span><strong>The Pattern Interrupt:</strong> Visual contrast of lush, breathing greenery against high-anxiety urban apartments. Shark Tank verification badge.</span>
+              <span><strong>The Pattern Interrupt:</strong> Visual contrast of lush, thriving greenery elevating high-anxiety urban apartments. Immediate Shark Tank validation.</span>
             </div>
             <div class="storyboard-row">
               <span class="stamp">2.5s - 8.0s</span>
-              <span><strong>Mechanism Unveil:</strong> Sub-irrigation reservoir demonstration showing how roots draw moisture automatically for up to 15 days.</span>
+              <span><strong>Mechanism Demonstration:</strong> Sub-irrigation reservoir demonstration showing how roots draw moisture automatically for up to 15 days.</span>
             </div>
             <div class="storyboard-row">
               <span class="stamp">8.0s - 20.0s</span>
-              <span><strong>Identity Transformation:</strong> "From plant killer to thriving plant parent." Direct CTA to claim Shark Tank festive bundles.</span>
+              <span><strong>Identity Transformation:</strong> "From plant killer to confident plant parent." Seamless call-to-action for bundled starter sets.</span>
             </div>
           </div>
         </div>
@@ -1197,40 +1131,40 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 1: The Human Insight & Tension (Behance Slide 7-8 Style) -->
+  <!-- Chapter 1: Strategic Friction & Thought Process -->
   <section class="chapter-block" id="psychology">
     <div class="container">
-      <div class="chapter-number">01 / Strategic Friction &amp; Human Insight</div>
-      <h2 class="chapter-title">The "Plant Murder Guilt": Unpacking Why Customers Hesitate</h2>
+      <div class="chapter-number">01 / Friction &amp; Consumer Psychology</div>
+      <h2 class="chapter-title">The "Plant Murder Guilt": Identifying Why Cold Traffic Drops Off</h2>
       <p class="chapter-sub">
-        Following the creative strategy framework modeled in leading Behance case studies, we started with qualitative consumer friction before touching a single video editor.
+        Before touching a single cut or script, we dissected the unspoken emotional friction preventing urban apartment dwellers from buying live houseplants online.
       </p>
 
-      <!-- Behance Process Flow (Slide 7 Style) -->
+      <!-- Thought Process Formulation Pipeline -->
       <div class="process-flow-card">
         <h4 style="font-family: var(--font-display); font-size: 18px; color: #0F172A; margin-bottom: 12px;">
-          The Strategic Formulation Pipeline (Behance Slide 7 Framework)
+          The Strategic Formulation Pipeline (Research to Execution)
         </h4>
         <div class="flow-steps-grid">
           <div class="flow-step-item">
             <div class="flow-step-num">[01] BRIEF KEYWORD</div>
-            <div class="flow-step-title">Repurpose &amp; Scale Existing Stock</div>
+            <div class="flow-step-title">Repurpose Stock Footage &amp; AI Video</div>
           </div>
           <div class="flow-step-item">
             <div class="flow-step-num">[02] CORE OBJECTIVE</div>
-            <div class="flow-step-title">Lower Blended CAC on Cold Meta Traffic</div>
+            <div class="flow-step-title">Unlock Advantage+ Cold Traffic Scale</div>
           </div>
           <div class="flow-step-item">
             <div class="flow-step-num">[03] HUMAN INSIGHT</div>
-            <div class="flow-step-title">"I Love Plants, but I Kill Every One I Buy"</div>
+            <div class="flow-step-title">"I Love Plants, But I Kill Every One I Buy"</div>
           </div>
           <div class="flow-step-item">
-            <div class="flow-step-num">[04] BRAND ASSET</div>
-            <div class="flow-step-title">Self-Watering Pot (15-Day Reservoir)</div>
+            <div class="flow-step-num">[04] BRAND TRUTH</div>
+            <div class="flow-step-title">Patented Sub-Irrigation (15-Day Reservoir)</div>
           </div>
           <div class="flow-step-item">
             <div class="flow-step-num">[05] BIG IDEA</div>
-            <div class="flow-step-title">Don't Sell Plants. Sell Plant Confidence.</div>
+            <div class="flow-step-title">Sell Plant-Parent Confidence, Not Plants</div>
           </div>
         </div>
 
@@ -1242,27 +1176,43 @@ body {
           <div>+</div>
           <div class="flow-formula-item">
             <span class="badge">INSIGHT</span>
-            <span>Sunlight Confusion in Flats</span>
+            <span>Dim Apartment Sunlight Guilt</span>
           </div>
           <div>+</div>
           <div class="flow-formula-item">
-            <span class="badge">PRODUCT PROOF</span>
+            <span class="badge">PRODUCT TRUTH</span>
             <span>Self-Watering Sub-Irrigation</span>
           </div>
           <div>=</div>
           <div class="flow-formula-item">
             <span class="badge" style="background: var(--accent-green);">PROPOSITION</span>
-            <span style="color: var(--accent-green);">Zero-Effort Green Home</span>
+            <span style="color: var(--accent-green);">Zero-Effort Green Living</span>
           </div>
         </div>
       </div>
 
-      <!-- Competitor Review Table (Behance Slide 8 Style) -->
+      <!-- Tension vs Solution Breakdown -->
+      <div class="deep-dive-grid">
+        <div class="deep-dive-box">
+          <h4>The Consumer Tension: "I'm Just Not a Plant Person"</h4>
+          <p>
+            Urban professionals in metro apartments love the warmth of indoor greenery, but past failures haunt them. Over-watering causes root rot; under-watering during work trips causes yellowing leaves. When a plant dies, the consumer doesn't blame the pot—they blame themselves. This silent guilt causes high drop-offs at checkout.
+          </p>
+        </div>
+        <div class="deep-dive-box">
+          <h4>The Strategic Solution: Re-Framing the Narrative</h4>
+          <p>
+            Our creative strategy made human error impossible. By leading with the visible sub-irrigation reservoir and light-matching advice, the creative reassures the buyer that they cannot overwater or underwater. We dismantled the "gardening expert" barrier and replaced it with turn-key decor confidence.
+          </p>
+        </div>
+      </div>
+
+      <!-- Competitor Positioning Benchmark -->
       <h3 style="font-family: var(--font-display); font-size: 22px; color: #0F172A; margin-bottom: 8px;">
-        Market Benchmark: Competitor Positioning vs. Kyari's Angle Matrix
+        Market Benchmark: Competitor Positioning vs. Kyari's Creative Matrix
       </h3>
       <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 20px;">
-        To make Kyari win in crowded Meta feeds, we audited how competitors address the houseplant buyer and carved out an uncontested position.
+        To make Kyari win on broad Meta Advantage+ feeds, we mapped competitors' points of failure and created direct counter-angles:
       </p>
 
       <div class="competitor-matrix-wrap">
@@ -1271,15 +1221,15 @@ body {
             <tr>
               <th>Alternative / Competitor</th>
               <th>Target Audience Mindset</th>
-              <th>Core Pain Point / Point of Failure</th>
-              <th>Ad Creative Narrative</th>
+              <th>Point of Failure / Unspoken Pain</th>
+              <th>Standard Ad Creative</th>
               <th>Kyari's Strategic Counter-Angle</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Local Roadside Nurseries</strong></td>
-              <td>Impulse buyers; looking for cheap greenery.</td>
+              <td>Impulse buyers; looking for low-cost greenery.</td>
               <td>Unlabeled plants, pest-infested soil, dies in 10 days; zero aftercare guidance.</td>
               <td>No ads; relies entirely on foot traffic and word of mouth.</td>
               <td><strong>Ready-to-place potted plants</strong> with premium rust-free planters &amp; guaranteed survival.</td>
@@ -1287,9 +1237,9 @@ body {
             <tr>
               <td><strong>Amazon / Faux Plastic Plants</strong></td>
               <td>Aesthetic lovers frustrated by dead real plants.</td>
-              <td>Collects dust, looks fake under daylight, zero living warmth or air purification.</td>
+              <td>Collects dust, looks artificial in natural daylight, zero air-purifying life.</td>
               <td>"Zero maintenance plastic decor" promoted via catalog ads.</td>
-              <td><strong>The "Faux Plant Intercept" Angle:</strong> Real living oxygen with the same zero-effort ease as plastic.</td>
+              <td><strong>The "Faux Plant Intercept" Angle:</strong> Real living oxygen with the exact same zero-effort ease as plastic.</td>
             </tr>
             <tr>
               <td><strong>Generic Online Plant Sellers</strong></td>
@@ -1301,12 +1251,12 @@ body {
             <tr class="highlight-row">
               <td>
                 <span class="badge-kyari-winner">OUR SYSTEM</span><br>
-                <strong>Kyari Performance Creative</strong>
+                <strong>Kyari Creative Strategy</strong>
               </td>
               <td>Busy working professionals &amp; aesthetic homeowners.</td>
               <td><strong>Eliminated:</strong> 15-day water reservoir + curated low/bright light species.</td>
               <td>Direct-response UGC hooks, real voiceovers, Shark Tank verification, and living time-lapse growth.</td>
-              <td><strong>3.4x ROAS:</strong> Converts plant skeptics into confident repeat buyers.</td>
+              <td><strong>Multi-Angle Resonance:</strong> Converts plant skeptics into confident repeat buyers.</td>
             </tr>
           </tbody>
         </table>
@@ -1314,13 +1264,13 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 2: The Repurposing Matrix (Videos with Audio & Voiceovers) -->
+  <!-- Chapter 2: The Multi-Angle Creative Matrix (Real Repurposed Videos with Audio) -->
   <section class="chapter-block" id="angles">
     <div class="container">
-      <div class="chapter-number">02 / Repurposing Architecture</div>
-      <h2 class="chapter-title">The 3 Winning Repurposed Angles &amp; Live Voiceovers</h2>
+      <div class="chapter-number">02 / Creative Strategy &amp; Angle Matrix</div>
+      <h2 class="chapter-title">The Multi-Angle Repurposing Architecture</h2>
       <p class="chapter-sub">
-        Instead of expensive studio shoots, Anupam mined Kyari's existing B-roll stock archive and recut it with high-retention direct-response scripts. Tap <strong>"Unmute Voiceover"</strong> on any video to hear the actual recorded pacing.
+        In modern Meta Andromeda / Advantage+ architecture, <strong>the creative is the targeting</strong>. Instead of blasting one generic ad to everyone, we carved Kyari's raw stock video archives into distinct psychological angles addressing different personas and purchase objections.
       </p>
 
       <div class="angles-grid">
@@ -1335,22 +1285,22 @@ body {
           <div class="angle-card-body">
             <div class="angle-tag-row">
               <span class="angle-stage-pill stage-tof-pill">Top of Funnel</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">Repurpose 02</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">Angle: Light Matchmaker</span>
             </div>
             <h3 class="angle-card-title">The 3-Light Matchmaker</h3>
             <div class="angle-hook-quote">
               "Here are three houseplants you can choose based on how much light you get."
             </div>
             <p class="angle-card-desc">
-              Kills the #1 reason people hesitate: <em>"My room is too dark for plants."</em> Gives instant utility and categorizes Areca Palm (bright), Sansevieria (low light), and Peace Lily (soft light).
+              <strong>Target Persona:</strong> The Apartment Dweller who fears their home is too dark. Gives instant utility by categorizing Areca Palm (bright), Sansevieria (low light), and Peace Lily (soft light).
             </p>
             <div class="script-drawer">
               <div class="script-drawer-header">
                 <span>Recorded Voiceover Script</span>
-                <span>⏱ 40.6s</span>
+                <span>⏱ 47.0s</span>
               </div>
               <p class="script-drawer-text">
-                "Bright indirect light? That's where Areca Palm works beautifully. Low light? Sansevieria Golden can tolerate it. Softer indirect? Peace Lily. With Kyari's self-watering system, just fill the reservoir and the plant draws water as needed."
+                "Bright indirect light? That's where Areca Palm works beautifully. Low light spot? The Sansevieria Golden can tolerate it. Softer indirect light? Peace Lily. With Kyari's self-watering system, just fill the reservoir and the plant draws water as it needs it."
               </p>
             </div>
           </div>
@@ -1367,14 +1317,46 @@ body {
           <div class="angle-card-body">
             <div class="angle-tag-row">
               <span class="angle-stage-pill stage-mof-pill">Middle of Funnel</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">Repurpose 03</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">Angle: Alternative Intercept</span>
             </div>
             <h3 class="angle-card-title">The Amazon Faux Intercept</h3>
             <div class="angle-hook-quote">
               "I was this close to ordering a faux plant on Amazon, but then I found Kyari..."
             </div>
             <p class="angle-card-desc">
-              Competitor redirect angle. Captures buyers actively browsing artificial plastic decor and convinces them that Kyari's ZZ Green with metal pot offers real nature with zero watering stress.
+              <strong>Target Persona:</strong> The Comparison Shopper about to buy plastic decor out of frustration. Intercepts their purchase intent and proves real greenery can be just as low-effort.
+            </p>
+            <div class="script-drawer">
+              <div class="script-drawer-header">
+                <span>Recorded Voiceover Script</span>
+                <span>⏱ 46.1s</span>
+              </div>
+              <p class="script-drawer-text">
+                "I was this close to ordering a faux plant on Amazon, but then I found Kyari's ZZ Green with metal self-watering pot. We wanted to add life to our living room, and it's a real plant, but the pot makes it so easy to maintain. 100% recommend."
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Angle Card 3: Plant-Parent Confidence -->
+        <article class="angle-card">
+          <div class="angle-card-player">
+            <video class="lazy-video" id="vidPlantConfidence" data-src="assets/creatives/videos/kyari_repurpose_plant_confidence.mp4" playsinline loop muted preload="none"></video>
+            <button class="audio-overlay-btn" onclick="toggleSound('vidPlantConfidence', this)">
+              <span>🔊 Unmute Voiceover</span>
+            </button>
+          </div>
+          <div class="angle-card-body">
+            <div class="angle-tag-row">
+              <span class="angle-stage-pill stage-mof-pill">Middle of Funnel</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">Angle: Identity Transformation</span>
+            </div>
+            <h3 class="angle-card-title">Plant-Parent Confidence</h3>
+            <div class="angle-hook-quote">
+              "Let me tell you why this Areca Palm honestly changed the way I look at keeping plants..."
+            </div>
+            <p class="angle-card-desc">
+              <strong>Target Persona:</strong> The Recovering "Plant Killer". Overcomes emotional insecurity by showing how the hidden water reservoir removes all daily watering guesswork.
             </p>
             <div class="script-drawer">
               <div class="script-drawer-header">
@@ -1382,39 +1364,7 @@ body {
                 <span>⏱ 47.0s</span>
               </div>
               <p class="script-drawer-text">
-                "We wanted to add some life to our living room space. It's a real plant, but the self-watering pot makes it so much easier to maintain. Plus, I love how the lush green foliage and metal pot look. 100% recommend."
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Angle Card 3: 6-Month Proof & Shark Tank -->
-        <article class="angle-card">
-          <div class="angle-card-player">
-            <video class="lazy-video" id="vidSixMonth" data-src="assets/creatives/videos/kyari_repurposed_plant_parent.mp4" playsinline loop muted preload="none"></video>
-            <button class="audio-overlay-btn" onclick="toggleSound('vidSixMonth', this)">
-              <span>🔊 Unmute Voiceover</span>
-            </button>
-          </div>
-          <div class="angle-card-body">
-            <div class="angle-tag-row">
-              <span class="angle-stage-pill stage-bof-pill">Bottom of Funnel</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);">Repurpose 05</span>
-            </div>
-            <h3 class="angle-card-title">Shark Tank &amp; 6-Month Proof</h3>
-            <div class="angle-hook-quote">
-              "Before you buy a plant online, see what mine looks like after 6 months."
-            </div>
-            <p class="angle-card-desc">
-              Destroys delivery &amp; longevity skepticism. Demonstrates real new leaf growth half a year later and leverages Shark Tank validation to convert cart abandoners into buyers.
-            </p>
-            <div class="script-drawer">
-              <div class="script-drawer-header">
-                <span>Recorded Voiceover Script</span>
-                <span>⏱ 38.0s</span>
-              </div>
-              <p class="script-drawer-text">
-                "I remember seeing Kyari on Shark Tank, so I finally decided to try one myself. This is what it looks like today—new leaves, looking healthier. Seeing a plant actually thrive months after you bought it is the best review."
+                "After losing a few plants before, I genuinely started thinking maybe I'm just not good with plants. It comes with Kyari's self-watering system and hidden reservoir. I simply fill the reservoir, place it, and let it do its thing. 10 out of 10."
               </p>
             </div>
           </div>
@@ -1423,13 +1373,13 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 3: September AI Video Innovation -->
+  <!-- Chapter 3: September AI Video Motion Innovation -->
   <section class="chapter-block" id="ai-videos">
     <div class="container">
-      <div class="chapter-number">03 / Tech Innovation</div>
-      <h2 class="chapter-title">September AI Motion: Visualizing the Invisible</h2>
+      <div class="chapter-number">03 / Creative Innovation</div>
+      <h2 class="chapter-title">September AI Motion: Visualizing the Invisible Science</h2>
       <p class="chapter-sub">
-        Standard video shoots cannot show what happens beneath the soil. In September, we engineered AI-generated motion to visualize water capillary absorption and rapid time-lapse foliage bloom.
+        Standard cameras cannot show what happens beneath the soil. In September, we engineered generative AI creative workflows to visualize capillary root absorption and living room transformations without 90-day time-lapse photography.
       </p>
 
       <div class="ai-showcase-box">
@@ -1440,31 +1390,31 @@ body {
           </button>
         </div>
         <div>
-          <span class="brand-badge" style="margin-bottom: 8px;">September AI Creative Drop</span>
+          <span class="brand-badge" style="margin-bottom: 8px;">September AI Motion Experiment</span>
           <h3 style="font-family: var(--font-display); font-size: 24px; color: #0F172A; margin-bottom: 12px;">
-            AI Living Plant Simulations &amp; Sub-Soil Capillary Action
+            AI Living Growth &amp; The "Basic Home vs. Beautiful Home" Angle
           </h3>
           <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6;">
-            By integrating generative AI tools into the creative pipeline, we simulated dynamic natural growth cycles without waiting 90 days for time-lapse photography:
+            By introducing generative AI tools into Kyari's creative strategy pipeline, we solved two critical production bottlenecks:
           </p>
 
           <div class="ai-bullets-list">
             <div class="ai-bullet-item">
               <div class="ai-bullet-icon">✓</div>
               <div class="ai-bullet-text">
-                <strong>Sub-Soil Capillary Action:</strong> 3D AI visualization showing the exact water draw from the reservoir into root nodules, proving root-rot prevention.
+                <strong>Sub-Soil Capillary Action in 3D:</strong> Visualized the invisible water absorption cycle from reservoir to roots, proving to skeptics how root rot is prevented.
               </div>
             </div>
             <div class="ai-bullet-item">
               <div class="ai-bullet-icon">✓</div>
               <div class="ai-bullet-text">
-                <strong>Dynamic Day-to-Night Light Cycles:</strong> Realistic illumination shifting from morning sun to cozy interior living room lamp lighting.
+                <strong>Instant Living Room Transitions:</strong> Split-screen comparisons showing the emotional upgrade from a barren room corner to a vibrant living botanical space.
               </div>
             </div>
             <div class="ai-bullet-item">
               <div class="ai-bullet-icon">✓</div>
               <div class="ai-bullet-text">
-                <strong>Rapid Asset Turnaround:</strong> Cut creative testing turnaround from 3 weeks (studio shoot + edit) to under 48 hours for rapid Meta Advantage+ budget scaling.
+                <strong>Rapid Iteration Velocity:</strong> Slashed creative turnaround from 3 weeks (studio shoot + edit) to under 48 hours for rapid Meta Advantage+ scaling tests.
               </div>
             </div>
           </div>
@@ -1473,13 +1423,13 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 4: Full Funnel Architecture (Behance Slide 10 Style) -->
+  <!-- Chapter 4: Full Funnel Architecture & Campaign Rollout -->
   <section class="chapter-block" id="funnel">
     <div class="container">
-      <div class="chapter-number">04 / Funnel Mapping</div>
-      <h2 class="chapter-title">Mapping Angles Across the Meta Advantage+ Funnel</h2>
+      <div class="chapter-number">04 / Funnel Architecture</div>
+      <h2 class="chapter-title">Mapping Creative Angles to the Meta Advantage+ Funnel</h2>
       <p class="chapter-sub">
-        Modeled on the 3-stage campaign framework (Teaser, Launch, Sustain), every creative asset was deployed with surgical intent based on the user's psychological readiness to buy:
+        Every creative angle served a deliberate role in moving cold prospects from problem awareness to checkout conversion:
       </p>
 
       <table class="funnel-table">
@@ -1487,44 +1437,44 @@ body {
           <tr>
             <th>Funnel Stage</th>
             <th>Primary Angle &amp; Hook</th>
-            <th>Target Mindset Addressed</th>
-            <th>Creative Role &amp; Strategic Metric</th>
+            <th>Target Persona &amp; Mindset</th>
+            <th>Strategic Role &amp; Value</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><span class="funnel-stage-badge stage-tof">Top of Funnel</span></td>
-            <td><strong>Angle 02: Light Matching Guide</strong><br><em>"3 Houseplants based on how much light you get"</em></td>
-            <td>Unaware / Problem Aware. Thinks their home lacks enough light for living greenery.</td>
-            <td>Broad thumbstop pattern interrupt; generates massive low CPM engagement and educates the prospect.</td>
+            <td><strong>Angle 01: The 3-Light Guide</strong><br><em>"3 Houseplants based on how much light you get"</em></td>
+            <td>Unaware / Problem Aware. Thinks their flat lacks sufficient sunlight.</td>
+            <td>Broad thumbstop pattern interrupt; generates massive low-cost top-of-funnel engagement and educates the prospect.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-tof">Top of Funnel</span></td>
-            <td><strong>Angle 03: Faux Plant Intercept</strong><br><em>"I was this close to ordering a faux plant on Amazon..."</em></td>
+            <td><strong>Angle 02: Faux Plant Intercept</strong><br><em>"I was this close to ordering a faux plant on Amazon..."</em></td>
             <td>Comparison Shopper. About to settle for cheap plastic decor due to plant maintenance fatigue.</td>
             <td>Intercepts search and lifestyle intent, steering users from artificial decor into living wellness.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
-            <td><strong>Angle 01: Plant-Parent Confidence</strong><br><em>"Changed the way I look at keeping plants..."</em></td>
+            <td><strong>Angle 03: Plant-Parent Confidence</strong><br><em>"Changed the way I look at keeping plants..."</em></td>
             <td>Evaluation. Loves plants but terrified of killing another expensive potted plant.</td>
             <td>Builds emotional trust and explains the sub-irrigation reservoir mechanism in plain human terms.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
-            <td><strong>September AI Innovation</strong><br><em>"Living growth simulations &amp; capillary flow"</em></td>
+            <td><strong>September AI Innovation</strong><br><em>"Basic Home vs. Beautiful One"</em></td>
             <td>Tech-forward urban decorator. Wants visual proof of self-watering science.</td>
             <td>Destroys skepticism about root rot and demonstrates 15-day water autonomy.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
-            <td><strong>Angle 05: Unboxing &amp; Delivery Reality</strong><br><em>"When I order online, I don't want a tiny surprise..."</em></td>
+            <td><strong>Unboxing &amp; Delivery Reality</strong><br><em>"When I order online, I don't want a tiny surprise..."</em></td>
             <td>Hesitation / Skeptic. Added to cart but worried about broken stems or dirty shipping boxes.</td>
             <td>Destroys delivery anxiety with intact unboxing proof and ready-to-place pots.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
-            <td><strong>Angle 06: Shark Tank &amp; 6-Month Proof</strong><br><em>"Before you buy, see what mine looks like after 6 months"</em></td>
+            <td><strong>Shark Tank S1 Authority</strong><br><em>"10 Lakh+ Plant Parents Scaled"</em></td>
             <td>High-intent retargeting. Needs final social proof to complete checkout.</td>
             <td>10 Lakh+ customer social proof + Shark Tank authority triggers final purchase conversion.</td>
           </tr>
@@ -1533,39 +1483,11 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 5: Behance Reference PDF Download -->
-  <section class="container" id="pdf-download">
-    <div class="pdf-download-card">
-      <div class="pdf-info">
-        <span class="brand-badge" style="background: rgba(204, 255, 0, 0.15); color: var(--accent-lime); border-color: rgba(204, 255, 0, 0.3); margin-bottom: 8px;">
-          Reference Documentation
-        </span>
-        <h3>Download Full Behance Strategist Portfolio (PDF)</h3>
-        <p>
-          As referenced during our creative strategy formulation, you can download the complete 32-slide presentation deck by Angelica Ratih Rahardjo, featuring full case study layouts, human insight diagrams, and campaign architectures.
-        </p>
-        <div class="pdf-specs-row">
-          <span>📄 32 High-Resolution Slides</span>
-          <span>•</span>
-          <span>📦 27.7 MB Vector &amp; Graphics PDF</span>
-          <span>•</span>
-          <span>🎨 Behance Gallery #203085335</span>
-        </div>
-      </div>
-      <div>
-        <a href="assets/docs/Behance_Strategist_Portfolio.pdf" download="Behance_Strategist_Portfolio_Angelica.pdf" class="btn-download-pdf">
-          <span>Download PDF (27.7 MB)</span>
-          <span>↓</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Strategic Quote -->
   <section class="container">
     <div class="quote-banner">
       <blockquote>
-        "The best performance creative is rarely an expensive studio commercial. It is the surgical re-framing of a brand's dormant footage to kill the one silent objection keeping your customer from buying."
+        "The best performance creative is never about expensive production crews. It is the surgical re-framing of a brand's dormant footage to kill the one silent objection keeping your customer from buying."
       </blockquote>
       <div class="quote-author">Anupam Nath · Creative Strategy Playbook</div>
     </div>
@@ -1580,7 +1502,7 @@ body {
       Let's audit your raw creative archives, mine your customer psychology, and engineer a high-ROAS direct-response angle matrix for your brand.
     </p>
     <div class="cta-group">
-      <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20read%20your%20Kyari%20case%20study.%20Let%27s%20discuss%20our%20creative%20pipeline." target="_blank" class="btn-primary-lg">
+      <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20read%20your%20Kyari%20creative%20strategy%20case%20study.%20Let%27s%20discuss%20our%20creative%20pipeline." target="_blank" class="btn-primary-lg">
         <span>Chat on WhatsApp</span>
         <span>↗</span>
       </a>
@@ -1591,7 +1513,7 @@ body {
   </div>
 </footer>
 
-<!-- Lazy Video Loading & Mobile Sound Control Engine -->
+<!-- High-Performance Lazy Video Loading & Mobile Sound Control Engine -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const lazyVideos = document.querySelectorAll("video.lazy-video");
@@ -1605,7 +1527,10 @@ document.addEventListener("DOMContentLoaded", function() {
             video.src = video.dataset.src;
             video.load();
           }
-          video.play().catch(() => {});
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
         } else {
           if (!video.paused) {
             video.pause();
@@ -1630,7 +1555,7 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(sec => {
-      const top = sec.offsetTop - 120;
+      const top = sec.offsetTop - 140;
       if (window.pageYOffset >= top) {
         current = sec.getAttribute('id');
       }
@@ -1648,7 +1573,6 @@ function toggleSound(vidId, btn) {
   const vid = document.getElementById(vidId);
   if (!vid) return;
 
-  // If video is not loaded yet, force load
   if (!vid.src && vid.dataset.src) {
     vid.src = vid.dataset.src;
     vid.load();
@@ -1656,7 +1580,10 @@ function toggleSound(vidId, btn) {
 
   if (vid.muted) {
     vid.muted = false;
-    vid.play().catch(() => {});
+    const playPromise = vid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
+    }
     btn.innerHTML = '<span>🔇 Mute Audio</span>';
     btn.style.background = '#059669';
     btn.style.color = '#FFFFFF';

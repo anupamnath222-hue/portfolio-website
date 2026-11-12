@@ -1086,8 +1086,14 @@ document.addEventListener("DOMContentLoaded", function() {
 function toggleSound(vidId, btn) {
   const vid = document.getElementById(vidId);
   if (!vid) return;
+  if (!vid.src && vid.dataset.src) {
+    vid.src = vid.dataset.src;
+    vid.load();
+  }
   if (vid.muted) {
     vid.muted = false;
+    const p = vid.play();
+    if (p !== undefined) p.catch(() => {});
     btn.textContent = 'Mute Audio';
     btn.style.background = '#CCFF00';
     btn.style.color = '#0A0D14';
