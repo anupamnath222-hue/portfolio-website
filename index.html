@@ -948,10 +948,11 @@
     .about-portrait-frame {
       border-radius: var(--radius-xl);
       overflow: hidden;
-      border: 2px solid var(--border-strong);
-      box-shadow: var(--shadow-lg);
-      background: #0F172A;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 40px -12px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04);
+      background: #FFFFFF;
       max-width: 380px;
+      margin: 0 auto;
     }
 
     .about-portrait-frame img {
@@ -1702,45 +1703,45 @@ html, body {
 }
 
 .profile-card-container {
-  background: linear-gradient(145deg, #0F172A, #1E293B);
-  border: 1px solid rgba(204, 255, 0, 0.25);
+  background: #FFFFFF;
   border-radius: var(--radius-xl);
-  padding: 24px 20px 18px;
+  padding: 16px 16px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.35);
 }
 
 .profile-portrait-img {
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
   height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+  border-radius: calc(var(--radius-xl) - 4px);
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 0.08);
 }
 
 .profile-card-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 999px;
-  padding: 6px 14px;
-  margin-top: 16px;
+  padding: 7px 16px;
+  margin-top: 14px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
-  color: #F8FAFC;
+  color: #0F172A;
 }
 
 .profile-badge-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--accent-lime);
-  box-shadow: 0 0 8px var(--accent-lime);
+  background: #10B981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -1839,7 +1840,7 @@ html, body {
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <div class="nav-brand">
-        <img src="assets/logos/anupam_portrait.png" alt="Anupam Nath" class="nav-avatar">
+        <img src="assets/logos/anupam_cup_studio_light.png" alt="Anupam Nath" class="nav-avatar">
         <div class="nav-brand-text">
           <span class="nav-name">Anupam Nath</span>
           <span class="nav-role">Creative Strategist · Delhi, India</span>
@@ -1922,7 +1923,7 @@ html, body {
         <div class="hero-right">
           <div class="hero-profile-card">
             <div class="hero-profile-img-wrap">
-              <img src="assets/logos/anupam_portrait.png" alt="Anupam Nath - Creative Strategist">
+              <img src="assets/logos/anupam_cup_studio_light.png" alt="Anupam Nath - Creative Strategist">
             </div>
             <h3 class="hero-profile-name">Anupam Nath</h3>
             <span class="hero-profile-role">Senior Performance Creative Strategist</span>
@@ -2236,10 +2237,9 @@ html, body {
 
       <!-- Filter Controls -->
       <div class="vault-filter-bar">
-        <button class="vault-filter-btn active" data-filter="all">All Archetypes (11)</button>
-        <button class="vault-filter-btn" data-filter="video">Video Reels &amp; UGC (5)</button>
-        <button class="vault-filter-btn" data-filter="static">Direct-Response Statics (4)</button>
-        <button class="vault-filter-btn" data-filter="special">Localized &amp; High-Ticket (2)</button>
+        <button class="vault-filter-btn active" data-filter="all">All Archetypes (6)</button>
+        <button class="vault-filter-btn" data-filter="video">Video &amp; Motion (1)</button>
+        <button class="vault-filter-btn" data-filter="static">Direct-Response Statics (5)</button>
       </div>
 
       <div class="vault-grid" id="vaultGrid">
@@ -2304,27 +2304,27 @@ html, body {
           </div>
         </div>
 
-        <!-- 3. Honest Energy: Clean Protein Water DR UGC -->
-        <div class="vault-item-card" data-category="video" data-id="honest-energy" onclick="openTheatre('honest-energy')">
+        <!-- 3. Honest Energy: Clean Protein Water DR Static / Quick-Commerce -->
+        <div class="vault-item-card" data-category="static" data-id="honest-energy" onclick="openTheatre('honest-energy')">
           <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Problem/Solution UGC</span>
-            <video preload="none" poster="assets/creatives/posters/honest_energy_reels_ad.webp" src="assets/creatives/videos/honest_energy_reels_ad.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+            <span class="tag-mono tag-lime vault-type-badge">Archetype: Functional Beverage DR</span>
+            <img src="assets/creatives/statics/honest_energy_protein_water_cans.jpg" alt="Honest Energy Clean Protein Water DR Static">
             <div class="vault-card-overlay">
-              <span class="play-btn-circle">▶</span>
+              <span class="play-btn-circle">🔍</span>
               <span class="tag-mono tag-dark">Inspect Breakdown</span>
             </div>
           </div>
           <div class="vault-card-body">
-            <span class="vault-brand-lbl">HONEST ENERGY</span>
-            <h4 class="vault-card-title">Clear Protein Water: The Anti-Bloat Reel</h4>
+            <span class="vault-brand-lbl">HONEST ENERGY+</span>
+            <h4 class="vault-card-title">Clean Protein Water: The Anti-Bloat Architecture</h4>
             <div class="vault-concept-box">
               <div class="vault-concept-row">
                 <span class="concept-tag tag-concept">Concept</span>
-                <span>Contrast of grimacing over lumpy, chalky dairy protein shakes cut directly to cracking open an ice-cold, refreshing 15g protein water.</span>
+                <span>Visceral contrast between chalky, bloated dairy whey vs crisp, ice-cold 15g clear protein water with ashwagandha, electrolytes, and magnesium.</span>
               </div>
               <div class="vault-concept-row">
                 <span class="concept-tag tag-why">Why We Made It</span>
-                <span>Fitness enthusiasts suffer digestive bloating from milky whey shakes. Highlighting zero-sugar lightness opened a new high-frequency beverage habit.</span>
+                <span>Daily fitness consumers hate heavy stomach bloating from milky protein powders. Clear hydration positioning unlocked rapid 10-minute quick-commerce Blinkit velocity and cold-traffic scale.</span>
               </div>
             </div>
             <div class="vault-result-pill">
@@ -2424,65 +2424,7 @@ html, body {
           </div>
         </div>
 
-        <!-- 7. Chaivours: Whole-Leaf Artisanal Tea Ritual -->
-        <div class="vault-item-card" data-category="special" data-id="chaivours-tea" onclick="openTheatre('chaivours-tea')">
-          <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Sensory Ritual ASMR</span>
-            <img src="assets/logos/chaivours.png" alt="Chaivours Artisanal Tea">
-            <div class="vault-card-overlay">
-              <span class="play-btn-circle">🔍</span>
-              <span class="tag-mono tag-dark">Inspect Breakdown</span>
-            </div>
-          </div>
-          <div class="vault-card-body">
-            <span class="vault-brand-lbl">CHAIVOURS</span>
-            <h4 class="vault-card-title">Artisanal Tea: Whole-Leaf Sensory Ritual</h4>
-            <div class="vault-concept-box">
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-concept">Concept</span>
-                <span>Slow-motion tea leaf unfurling in glass infusers with soothing morning audio, contrasting golden liquor against bitter commercial CTC dust.</span>
-              </div>
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-why">Why We Made It</span>
-                <span>Converts habitual CTC drinkers into connoisseurs by making loose-leaf whole tea feel effortless and luxurious.</span>
-              </div>
-            </div>
-            <div class="vault-result-pill">
-              <span class="vault-result-metric">3.8x ROAS · 4.2% CTR</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('chaivours-tea')">Inspect Breakdown →</button>
-            </div>
-          </div>
-        </div>
 
-        <!-- 8. House of Pause: Micro-Mindfulness Decompression -->
-        <div class="vault-item-card" data-category="special" data-id="house-of-pause" onclick="openTheatre('house-of-pause')">
-          <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Pattern Interrupt Reel</span>
-            <img src="assets/logos/House of Pause.png" alt="House of Pause Mindfulness">
-            <div class="vault-card-overlay">
-              <span class="play-btn-circle">🔍</span>
-              <span class="tag-mono tag-dark">Inspect Breakdown</span>
-            </div>
-          </div>
-          <div class="vault-card-body">
-            <span class="vault-brand-lbl">HOUSE OF PAUSE</span>
-            <h4 class="vault-card-title">Micro-Mindfulness: 10-Second Breath Reel</h4>
-            <div class="vault-concept-box">
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-concept">Concept</span>
-                <span>Fast kinetic breath-pacing interrupt: "Stop scrolling. Inhale for 4 seconds. Hold. Exhale." pivoting into simple 3-minute evening decompression.</span>
-              </div>
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-why">Why We Made It</span>
-                <span>Modern professionals reject 45-minute meditation lectures. Micro-habits disarm skepticism and drive high qualified lead intent.</span>
-              </div>
-            </div>
-            <div class="vault-result-pill">
-              <span class="vault-result-metric">46.5% Thumbstop · ₹42 CPL</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('house-of-pause')">Inspect Breakdown →</button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -2547,7 +2489,7 @@ html, body {
       <div class="about-grid">
         <div class="about-portrait-frame">
           <div class="profile-card-container">
-            <img src="assets/logos/Anupam 1st image.png" alt="Anupam Nath - Performance Creative Strategist" class="profile-portrait-img">
+            <img src="assets/logos/anupam_cup_studio_light.png" alt="Anupam Nath - Performance Creative Strategist" class="profile-portrait-img">
             <div class="profile-card-badge">
               <span class="profile-badge-dot"></span>
               <span>Anupam Nath · Creative Strategist · Delhi, India</span>
@@ -3033,36 +2975,36 @@ html, body {
             "scaleImpact": "Directly powered over \u20b96,00,000 in profitable first-order revenue, maintaining a 4.4x blended ROAS and sub-\u20b9180 CPA across cold Indian metro feeds."
       },
       "honest-energy": {
-            "brand": "HONEST ENERGY",
+            "brand": "HONEST ENERGY+",
             "category": "Clean Functional Nutrition & Protein Water",
-            "format": "Meta Advantage+ Reels \u00b7 9:16 Direct-Response UGC",
-            "title": "The Clean Protein Water Revolution: Scaling Zero-Junk Hydration",
-            "mediaType": "video",
-            "mediaSrc": "assets/creatives/videos/honest_energy_reels_ad.mp4",
-            "resultSummary": "4.1% Outbound CTR \u00b7 3.7x Account ROAS \u00b7 \u20b948 Blended CPA",
-            "clientContext": "Honest Energy is an innovative sports nutrition brand offering crisp, zero-sugar clear protein water as a light alternative to chalky, thick dairy protein shakes.",
-            "coreFriction": "Fitness enthusiasts are exhausted by heavy, milky whey protein shakes that cause bloating and stomach heaviness, but they assume light protein drinks either taste artificial or provide inadequate protein.",
-            "conceptAndAngle": "Visceral Texture Contrast & Digestive Relief. We filmed real gym-goers expressing genuine frustration dumping thick milky powder, cut directly to cracking open an ice-cold, crystal-clear can of Honest Energy with crisp fizz audio and '15g Isolate Protein. 0g Sugar. No Bloat.'",
+            "format": "Meta Advantage+ & Quick-Commerce · High-Converting Static DR Architecture",
+            "title": "The Clean Protein Water Revolution: Scaling Zero-Junk Functional Hydration",
+            "mediaType": "image",
+            "mediaSrc": "assets/creatives/statics/honest_energy_protein_water_cans.jpg",
+            "resultSummary": "4.1% Outbound CTR · 3.7x Account ROAS · ₹48 Blended CPA",
+            "clientContext": "Honest Energy+ is an innovative functional beverage brand offering crisp, zero-sugar clear protein water (15g protein, 63 calories, 0g sugar) infused with adaptogens (ashwagandha), electrolytes, and magnesium as a refreshing alternative to chalky, heavy dairy protein shakes.",
+            "coreFriction": "Fitness enthusiasts are exhausted by heavy, milky whey protein shakes that cause digestive distress and bloating, but assume clear protein drinks taste artificial or provide inadequate protein.",
+            "conceptAndAngle": "Visceral Hydration & Anti-Bloat Clarity. Direct-response static highlighting the 3 hero SKUs (Blood Orange + Electrolytes, Mango Pineapple + Ashwagandha, Berry Hibiscus + Magnesium) on condensation-fresh display, establishing instant appetite appeal and fast 10-minute Blinkit quick-commerce conversion.",
             "hookStoryboard": [
                   {
-                        "stamp": "0.0s - 1.8s",
-                        "text": "Relatable fitness agitation: Grimacing while shaking a lumpy, chalky chocolate protein shaker bottle. 'I can't drink another one of these...'"
+                        "stamp": "Hero Hook",
+                        "text": "Ice-Cold Hydration Visual: Condensation-beaded 330mL cans floating dynamically on mint aesthetic pedestal."
                   },
                   {
-                        "stamp": "1.8s - 4.5s",
-                        "text": "Hard audio cut: Cracking open an ice-cold can of Honest Energy with refreshing carbonation fizz sound."
+                        "stamp": "Nutritional Matrix",
+                        "text": "Key credentials callout: 15g Ultra-Filtered Isolate Protein · 63 Calories · 0g Sugar · Adaptogens & Electrolytes."
                   },
                   {
-                        "stamp": "4.5s - 8.5s",
-                        "text": "Mechanism callouts: 15g Ultra-Filtered Whey Isolate, 0g Sugar, Zero Milky Heaviness, Real Fruit Essence."
+                        "stamp": "Anti-Bloat Contrast",
+                        "text": "Solves the core whey friction: drinks like crisp water, zero chalkiness, zero stomach heaviness, 100% natural fruit essence."
                   },
                   {
-                        "stamp": "8.5s - end",
-                        "text": "Trial pack conversion offer: 'Try The 4-Can Variety Starter Pack for \u20b9399 \u00b7 100% Refreshment Guarantee'"
+                        "stamp": "Conversion Offer",
+                        "text": "Direct-to-cart Blinkit quick-commerce & 4-can starter variety pack trial with fast home delivery."
                   }
             ],
-            "productionStack": "Native smartphone UGC filming, sound design foley mixing, dynamic typography overlays, and Meta Advantage+ Broad targeting.",
-            "scaleImpact": "Achieved a 4.1% Outbound CTR and \u20b948 CPA, driving thousands of trial variety pack conversions and turning clear protein into a daily habit."
+            "productionStack": "Studio product staging, condensation macro-photography, color-matched pastel pedestals, and Meta Advantage+ Broad targeting.",
+            "scaleImpact": "Achieved a 4.1% Outbound CTR and ₹48 CPA, driving thousands of trial variety pack conversions and turning clear protein into a high-retention daily fitness ritual."
       },
       "mattress-spine": {
             "brand": "MATTRESS FITNESS",
@@ -3191,72 +3133,8 @@ html, body {
             ],
             "productionStack": "Figma layout design, high-contrast natural stone photography, CapCut kinetic pacing, and Meta Advantage+ multi-country catalog delivery.",
             "scaleImpact": "Scaled over 10,000+ verified customer orders across domestic Indian and Gulf ad accounts at an evergreen 3.8x blended ROAS."
-      },
-      "chaivours-tea": {
-            "brand": "CHAIVOURS",
-            "category": "D2C Single-Estate Artisanal Teas",
-            "format": "Meta 9:16 Video & Interactive Carousel",
-            "title": "Whole-Leaf Artisanal Tea: The Morning Sensory Ritual",
-            "mediaType": "image",
-            "mediaSrc": "assets/logos/chaivours.png",
-            "resultSummary": "3.8x Account ROAS \u00b7 4.2% Outbound CTR \u00b7 High Repeat Rate",
-            "clientContext": "Chaivours curates single-origin whole-leaf orthodox teas and botanical blends directly from high-elevation Darjeeling and Assam gardens.",
-            "coreFriction": "Habitual tea drinkers are exhausted by bitter, powdery commercial CTC dust tea bags, but assume brewing whole loose leaves requires complicated strainers and ritual fuss.",
-            "conceptAndAngle": "Visual Sensory Ritual & Leaf Unfurling Contrast. Macro slow-motion footage of whole dried leaves slowly blossoming in clear hot water, contrasting clear golden nectar against muddy, astringent commercial CTC dust tea.",
-            "hookStoryboard": [
-                  {
-                        "stamp": "0.0s - 1.5s",
-                        "text": "Macro glass teapot with crystal-clear hot water pour over whole dried tea leaves."
-                  },
-                  {
-                        "stamp": "1.5s - 4.5s",
-                        "text": "Visceral sensory ASMR: Soothing ambient steam audio as whole leaves gracefully unfurl into rich amber liquor."
-                  },
-                  {
-                        "stamp": "4.5s - 8.0s",
-                        "text": "Educational comparison: 'Commercial Dust Tea Bags (Left) vs. First-Flush Whole Leaf Tea (Right)'."
-                  },
-                  {
-                        "stamp": "8.0s - end",
-                        "text": "Starter conversion offer: 'Experience The First-Harvest Tasting Flight \u00b7 Free Bamboo Tongs Included'"
-                  }
-            ],
-            "productionStack": "Macro 4K lens filming, ambient binaural sound design, DaVinci Resolve color grading, and Meta lifestyle engagement broad delivery.",
-            "scaleImpact": "Delivered a 3.8x Blended ROAS and 4.2% Outbound CTR, driving high subscription retention and recurring multi-tin pantry reorders."
-      },
-      "house-of-pause": {
-            "brand": "HOUSE OF PAUSE",
-            "category": "Mental Wellbeing & Functional Mindfulness",
-            "format": "Meta 9:16 Kinetic Video & Carousel",
-            "title": "Micro-Mindfulness: The 10-Second Breath Decompression Reel",
-            "mediaType": "image",
-            "mediaSrc": "assets/logos/House of Pause.png",
-            "resultSummary": "46.5% Thumbstop Rate \u00b7 \u20b942 Qualified Lead CPA \u00b7 3.9x Pipeline ROAS",
-            "clientContext": "House of Pause creates functional mindfulness journals, guided breathwork routines, and evening decompression tools for stressed urban professionals.",
-            "coreFriction": "Overworked corporate professionals feel chronic cognitive exhaustion, but reject cheesy spiritual clich\u00e9s, incense tropes, and intimidating 45-minute meditation courses.",
-            "conceptAndAngle": "Immediate Somatic Pattern Interrupt. Kinetic text synchronizing with an expanding visual circle: 'Stop scrolling. Inhale for 4 seconds... Hold... Exhale... Notice how your shoulders dropped? Now keep scrolling.' Pivoting into practical 3-minute evening decompression micro-habits.",
-            "hookStoryboard": [
-                  {
-                        "stamp": "0.0s - 2.0s",
-                        "text": "Expanding glowing circle with bold kinetic prompt: 'Stop scrolling for 5 seconds. Take one deep breath.'"
-                  },
-                  {
-                        "stamp": "2.0s - 6.0s",
-                        "text": "Guided breath animation: 4s inhale, 4s hold, 4s exhale with soothing low-frequency ambient tone."
-                  },
-                  {
-                        "stamp": "6.0s - 9.0s",
-                        "text": "Somatic recognition callout: 'Notice that tension in your jaw? You have been clenching it all day.'"
-                  },
-                  {
-                        "stamp": "9.0s - end",
-                        "text": "Micro-routine invitation: 'The 3-Minute Evening Decompression Protocol \u00b7 Free Download & Toolkit'"
-                  }
-            ],
-            "productionStack": "Kinetic After Effects animation, low-frequency sound design, mobile-first typography, and Meta Advantage+ lead generation forms.",
-            "scaleImpact": "Generated a 46.5% 3s thumbstop rate and \u20b942 qualified lead CPA, converting over 3,200+ professionals into active daily wellness members."
       }
-};
+    };
 
         function toggleCsAudio(vidId, btn, e) {
       if (e) {
