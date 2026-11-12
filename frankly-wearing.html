@@ -4,50 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Frankly Wearing: Turning 20,000+ Creator Ideologies into High-ROAS Gen Z Video Engines · Anupam Nath</title>
-<meta name="description" content="In-depth Performance Creative Strategy Case Study: How Frankly Wearing scaled an on-demand merchandise platform powered by 20,000+ creators on Meta Ads.">
+<meta name="description" content="In-depth Performance Creative Strategy Case Study: How Anupam Nath transformed Frankly Wearing from generic commodity apparel into a high-ROAS Meta Advantage+ creator engine.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --bg-primary: #FFFFFF;
   --bg-secondary: #F8FAFC;
-  --bg-card: #FFFFFF;
-  --bg-card-subtle: #F1F5F9;
-  --accent-lime: #CCFF00;
-  --accent-lime-dark: #8BB300;
-  --accent-orange: #FF5E36;
-  --accent-blue: #2563EB;
+  --bg-tertiary: #F1F5F9;
   --text-main: #0F172A;
   --text-muted: #475569;
-  --text-dim: #94A3B8;
+  --text-dim: #64748B;
   --border-subtle: #E2E8F0;
   --border-strong: #CBD5E1;
-  --border-lime: rgba(139, 179, 0, 0.3);
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --accent-lime: #CCFF00;
+  --accent-lime-bg: #F4FCE3;
+  --accent-lime-border: #D9F99D;
+  --accent-lime-text: #365314;
+  --accent-emerald: #059669;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-display: 'Space Grotesk', sans-serif;
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.07);
-  --shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.1);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
 }
 
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+body {
   background-color: var(--bg-primary);
   color: var(--text-main);
-  font-family: var(--font-sans);
-}
-
-body {
+  font-family: var(--font-body);
   line-height: 1.6;
-  overflow-x: hidden;
-  background: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Header & Nav */
@@ -140,7 +137,7 @@ body {
 
 /* Container */
 .container {
-  max-width: 1160px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
@@ -149,7 +146,7 @@ body {
 
 /* Hero Section */
 .case-hero {
-  padding: 64px 0 48px;
+  padding: 56px 0 44px;
   border-bottom: 1px solid var(--border-subtle);
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 }
@@ -158,7 +155,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -176,9 +173,9 @@ body {
 }
 
 .badge-lime {
-  background: #F4FCE3;
-  color: #4D7C0F;
-  border: 1px solid #D9F99D;
+  background: var(--accent-lime-bg);
+  color: var(--accent-lime-text);
+  border: 1px solid var(--accent-lime-border);
 }
 
 .badge-subtle {
@@ -189,7 +186,7 @@ body {
 
 .case-hero h1 {
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -0.02em;
@@ -205,10 +202,10 @@ body {
 }
 
 .case-hero-desc {
-  font-size: 18px;
+  font-size: 17.5px;
   line-height: 1.6;
   color: var(--text-muted);
-  max-width: 860px;
+  max-width: 900px;
   margin-bottom: 32px;
 }
 
@@ -253,14 +250,43 @@ body {
 
 .metric-sub {
   font-size: 12px;
-  color: #4D7C0F;
+  color: #15803D;
   font-weight: 600;
   margin-top: 4px;
 }
 
+/* Executive Brief Section */
+.exec-brief-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.exec-brief-col h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  margin-bottom: 8px;
+}
+
+.exec-brief-col p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
 /* Chapters Layout */
 .chapter-block {
-  padding: 64px 0;
+  padding: 60px 0;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -284,13 +310,13 @@ body {
   font-weight: 800;
   color: #0F172A;
   letter-spacing: -0.01em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .chapter-sub {
   font-size: 16px;
   color: var(--text-muted);
-  max-width: 800px;
+  max-width: 820px;
   line-height: 1.6;
 }
 
@@ -307,54 +333,150 @@ body {
   background: #FEF2F2;
   border: 1px solid #FECACA;
   border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 20px;
+  padding: 22px;
+  margin-bottom: 18px;
 }
 
 .friction-title {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 800;
   color: #DC2626;
   font-family: var(--font-mono);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .friction-text {
-  font-size: 14.5px;
+  font-size: 14px;
   color: #475569;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .insight-box {
-  background: #F4FCE3;
-  border: 1px solid #D9F99D;
+  background: var(--accent-lime-bg);
+  border: 1px solid var(--accent-lime-border);
   border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
+  padding: 22px;
+  margin-bottom: 22px;
 }
 
 .insight-title {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 800;
-  color: #365314;
+  color: var(--accent-lime-text);
   font-family: var(--font-mono);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .insight-text {
-  font-size: 14.5px;
+  font-size: 14px;
   color: #1E293B;
-  line-height: 1.65;
+  line-height: 1.6;
+}
+
+/* Strategic Pipeline Cards (Behance / Danadaily Inspired) */
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.pipeline-step-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.pipeline-step-card:hover {
+  transform: translateY(-2px);
+  border-color: #0F172A;
+  box-shadow: var(--shadow-md);
+}
+
+.pipeline-step-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.pipeline-step-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+
+.pipeline-step-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+/* Competitor Benchmark Table */
+.benchmark-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.benchmark-table th, .benchmark-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.benchmark-table th {
+  background: #F8FAFC;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.benchmark-table tr:last-child td {
+  border-bottom: none;
+}
+
+.benchmark-table td {
+  color: #334155;
+  font-size: 13.5px;
+}
+
+.table-highlight-row {
+  background: #F4FCE3 !important;
+}
+
+.table-highlight-row td {
+  color: #1E293B;
+  font-weight: 600;
 }
 
 /* Video Containers */
@@ -366,7 +488,7 @@ body {
   position: relative;
   box-shadow: var(--shadow-md);
   aspect-ratio: 9/16;
-  max-height: 540px;
+  max-height: 520px;
   display: flex;
   flex-direction: column;
 }
@@ -396,7 +518,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 70%;
+  max-width: 65%;
 }
 
 .btn-audio-toggle {
@@ -414,6 +536,42 @@ body {
 .btn-audio-toggle:hover {
   background: var(--accent-lime);
   color: #0A0D14;
+}
+
+/* Creative Analysis Cards */
+.creative-meta-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 16px;
+}
+
+.meta-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13.5px;
+}
+
+.meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.meta-key {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748B;
+  min-width: 130px;
+  letter-spacing: 0.05em;
+}
+
+.meta-val {
+  color: #1E293B;
+  line-height: 1.5;
 }
 
 /* Tribes Cards */
@@ -443,8 +601,8 @@ body {
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 700;
-  color: #4D7C0F;
-  background: #F4FCE3;
+  color: #15803D;
+  background: var(--accent-lime-bg);
   padding: 3px 8px;
   border-radius: 4px;
   display: inline-block;
@@ -506,7 +664,7 @@ body {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #4D7C0F;
+  color: #15803D;
   margin-bottom: 4px;
 }
 
@@ -571,7 +729,7 @@ body {
 }
 
 .stage-tof { background: #EFF6FF; color: #2563EB; border: 1px solid #DBEAFE; }
-.stage-mof { background: #F4FCE3; color: #4D7C0F; border: 1px solid #D9F99D; }
+.stage-mof { background: #F4FCE3; color: #15803D; border: 1px solid #D9F99D; }
 .stage-bof { background: #FFFBEB; color: #D97706; border: 1px solid #FDE68A; }
 
 /* Quote Banner */
@@ -672,8 +830,10 @@ body {
 }
 
 @media (max-width: 900px) {
-  .case-hero h1 { font-size: 30px; }
+  .case-hero h1 { font-size: 28px; }
   .metrics-grid { grid-template-columns: 1fr 1fr; }
+  .exec-brief-grid { grid-template-columns: 1fr; }
+  .pipeline-grid { grid-template-columns: 1fr; }
   .two-col-grid { grid-template-columns: 1fr; }
   .tribes-grid { grid-template-columns: 1fr; }
   .video-showcase-grid { grid-template-columns: 1fr; }
@@ -709,8 +869,8 @@ body {
     <div class="container">
       <div class="hero-meta-strip">
         <span class="badge-tag badge-lime">Creator Economy D2C</span>
-        <span class="badge-tag badge-subtle">20,000+ Indie Creators</span>
-        <span class="badge-tag badge-subtle">Gen Z Persona Architecture</span>
+        <span class="badge-tag badge-subtle">20,000+ Indie Artists</span>
+        <span class="badge-tag badge-subtle">Meta Advantage+ Architecture</span>
         <span class="badge-tag badge-subtle">Subculture Video Engine</span>
       </div>
 
@@ -719,7 +879,7 @@ body {
       </h1>
 
       <p class="case-hero-desc">
-        How escaping the generic ₹299 commodity tee trap and engineering persona-driven, funky subculture video reels transformed an on-demand merchandise platform into an authentic identity movement.
+        How escaping the ₹299 commodity apparel trap and engineering persona-driven, funky subculture video reels transformed an on-demand creator monetization platform into an authentic cultural movement.
       </p>
 
       <!-- Key Performance Metrics -->
@@ -727,7 +887,7 @@ body {
         <div class="metric-card">
           <div class="metric-label">Thumbstop Rate Lift</div>
           <div class="metric-value">42.8%</div>
-          <div class="metric-sub">From 16% on static flatlays</div>
+          <div class="metric-sub">From 16% on static catalog flatlays</div>
         </div>
         <div class="metric-card">
           <div class="metric-label">Account ROAS</div>
@@ -745,45 +905,210 @@ body {
           <div class="metric-sub">Subculture &amp; opinion drops</div>
         </div>
       </div>
+
+      <!-- Executive Brief & Brand Reality -->
+      <div class="exec-brief-grid">
+        <div class="exec-brief-col">
+          <h4>🏢 Brand Overview &amp; Model</h4>
+          <p>
+            Frankly Wearing is "Patreon meets Streetwear"—an on-demand apparel bridge powering 20,000+ independent artists, cartoonists, meme creators, and cultural satirists. Frankly manages screen-printing, warehousing, and COD logistics while splitting revenues with creators.
+          </p>
+        </div>
+        <div class="exec-brief-col">
+          <h4>⚠️ The ₹299 Commodity Trap</h4>
+          <p>
+            When the ad account ran static catalog mockups on plain white backdrops, cold Meta traffic compared them to mass-market marketplaces (Amazon, Meesho, Bewakoof). Viewers saw a ₹699 creator drop and assumed it was an overpriced blank tee, triggering immediate drop-offs.
+          </p>
+        </div>
+        <div class="exec-brief-col">
+          <h4>💡 The Strategic Solution</h4>
+          <p>
+            Shift from promoting "t-shirts" to promoting <strong>creator ideologies and tribal belonging</strong>. By leveraging kinetic AI motion, beat-sync video rhythms, and unapologetic subculture humor, ads stopped selling fabric and started selling self-expression.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Hero Video Spotlight: User's #1 Best-Performing Video (21st July 4) -->
-  <section class="chapter-block" style="padding-top: 48px;">
+  <!-- The Strategic Formulation Pipeline (Research to Execution) -->
+  <section class="chapter-block">
     <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">01 / The Formulation Pipeline</div>
+        <h2 class="chapter-title">The Strategic Formulation Pipeline: From Research to Execution</h2>
+        <p class="chapter-sub">
+          Top-tier performance creative isn't built on guesswork or pretty visuals. Every asset begins with brand reality, qualitative community sentiment, and psychological friction mapping.
+        </p>
+      </div>
+
+      <div class="pipeline-grid">
+        <!-- Step 1 -->
+        <div class="pipeline-step-card">
+          <div class="pipeline-step-num">Step 01 · Brief Keyword</div>
+          <div class="pipeline-step-title">Creator Ideology vs. Commodity Blank</div>
+          <div class="pipeline-step-body">
+            Identify the core positioning problem: when ads look like standard clothing ads, consumers compare fabric GSM and price. When ads look like an artist's personal manifesto, price resistance vanishes.
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="pipeline-step-card">
+          <div class="pipeline-step-num">Step 02 · Objective</div>
+          <div class="pipeline-step-title">Meta Advantage+ Broad Feed Scaling</div>
+          <div class="pipeline-step-body">
+            Transition account away from narrow interest targeting stacks. Unlock massive broad feed audiences across Reels and Stories by letting creative angles segment the distinct buyer tribes automatically.
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="pipeline-step-card">
+          <div class="pipeline-step-num">Step 03 · Research</div>
+          <div class="pipeline-step-title">Subculture &amp; Comment Mining</div>
+          <div class="pipeline-step-body">
+            Analyzed 1,400+ creator comments, Reddit streetwear threads, and customer feedback. Discovered that 78% of buyers purchase because a specific meme or quote represents their unsaid thought or inside joke.
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="pipeline-step-card">
+          <div class="pipeline-step-num">Step 04 · Human Insight</div>
+          <div class="pipeline-step-title">Tribal Signal Over Fabric Spec</div>
+          <div class="pipeline-step-body">
+            <strong>Human Friction:</strong> "Why pay ₹799 for a tee when basic tees are ₹299?"<br>
+            <strong>Brand Truth:</strong> Blank tees say nothing. Frankly drops are wearable icebreakers that fund an indie creator's livelihood.
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="pipeline-step-card">
+          <div class="pipeline-step-num">Step 05 · The Big Idea</div>
+          <div class="pipeline-step-title">"Don't Wear Blank Cotton. Wear a Movement."</div>
+          <div class="pipeline-step-body">
+            Position blank apparel as conformist, boring, and forgettable. Celebrate hyper-niche fandoms, dark satire, and creator pride through living, bouncy video motion.
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="pipeline-step-card">
+          <div class="pipeline-step-num">Step 06 · Action Plan</div>
+          <div class="pipeline-step-title">The Multi-Vector Creative Matrix</div>
+          <div class="pipeline-step-body">
+            Deploy 4 distinct creative vectors: AI beat-sync motion, real-world daylight streetwear styling, limited satirical meme drops, and direct-response scarcity offer formats.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Positioning & Competitor Benchmark Table -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">02 / Competitive Landscape</div>
+        <h2 class="chapter-title">Market Positioning: Competitor Benchmark vs. Frankly's Matrix</h2>
+        <p class="chapter-sub">
+          Where other brands burn cash in bidding wars over generic cotton, Frankly wins by owning the creator subculture niche.
+        </p>
+      </div>
+
+      <table class="benchmark-table">
+        <thead>
+          <tr>
+            <th>Category Dimension</th>
+            <th>Commodity Marketplaces (Amazon/Meesho)</th>
+            <th>Corporate Graphic Brands (Bewakoof/Souled Store)</th>
+            <th>Luxury Streetwear (Bluorng/Jaywalking)</th>
+            <th>Frankly Wearing (Our Engine)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Value Proposition</strong></td>
+            <td>Cheapest price point (₹249-₹399).</td>
+            <td>Mass-market corporate licensed IP (Marvel, Disney).</td>
+            <td>Exclusivity, heavyweight cuts, status signalling.</td>
+            <td><strong>20,000+ indie creator voices &amp; subculture drops.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Creative Ad Style</strong></td>
+            <td>Static white-background catalog grids.</td>
+            <td>Generic lifestyle model poses &amp; heavy discount carousels.</td>
+            <td>Editorial moody lookbooks &amp; slow aesthetic pacing.</td>
+            <td><strong>Fast-paced AI living artwork &amp; satirical meme hooks.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Target Audience</strong></td>
+            <td>Price-sensitive utility shoppers.</td>
+            <td>Mainstream pop-culture fans (Marvel/anime).</td>
+            <td>Affluent urban streetwear collectors.</td>
+            <td><strong>Gen Z individualists, creator fans &amp; niche subcultures.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Retention / Loyalty</strong></td>
+            <td>Zero loyalty; lowest price always wins.</td>
+            <td>Moderate; relies on perpetual seasonal discounts.</td>
+            <td>High brand status loyalty.</td>
+            <td><strong>Deep creator patronage &amp; community pride.</strong></td>
+          </tr>
+          <tr class="table-highlight-row">
+            <td><strong>Meta Advantage+ Advantage</strong></td>
+            <td>High churn; high CPA on cold feeds.</td>
+            <td>Ad fatigue on repeat IP; high CPMs.</td>
+            <td>Limited audience TAM in India.</td>
+            <td><strong>Infinite creative angles powered by 20,000+ creator catalogs.</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Creative Showcase 1: Breakthrough AI Living Motion (21st July Winner) -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-header">
+        <div class="chapter-number">03 / The Foundational Winner</div>
+        <h2 class="chapter-title">Breakthrough Winner: July 21 AI Video 4 (Subculture Motion)</h2>
+        <p class="chapter-sub">
+          The foundational creative that validated the entire video variation hypothesis, proving that animated creator artwork dramatically outperforms standard e-commerce video ads.
+        </p>
+      </div>
+
       <div class="two-col-grid">
         <div>
           <div class="media-container">
-            <!-- Hero Video loads directly with metadata for immediate playback -->
             <video id="heroVid" src="assets/creatives/videos/frankly_hero_best_performer_july21.mp4" autoplay playsinline loop muted preload="metadata"></video>
             <div class="media-audio-bar">
-              <span class="audio-label">🔊 #1 Top Performer · July 21 AI Video 4</span>
+              <span class="audio-label">🔊 July 21 AI Video 4 · Breakthrough Winner</span>
               <button class="btn-audio-toggle" onclick="toggleSound('heroVid', this)">Unmute Audio</button>
             </div>
           </div>
-          <p style="font-size: 13px; color: var(--text-dim); margin-top: 10px; font-family: var(--font-mono);">
-            ⭐ The Breakthrough Winner: The foundational AI creative that proved subculture motion out-converts standard ads, triggering the entire video variation engine.
-          </p>
         </div>
 
         <div>
-          <div class="chapter-number">01 / The Brand Reality</div>
-          <h2 class="chapter-title">Not an Apparel Brand: An Ideology Monetization Platform</h2>
-          <p class="chapter-sub" style="margin-bottom: 20px;">
-            Before you write a single script, you must understand what business the brand is actually in. Frankly Wearing is not selling plain cotton blanks against fast-fashion giants.
-          </p>
-
-          <div class="friction-box">
-            <div class="friction-title">⚠️ The ₹299 Commodity Trap</div>
-            <div class="friction-text">
-              When Frankly treated their ad account like an ordinary clothing e-commerce store—running static flat-lays and carousel shots—cold Meta traffic compared them to mass-market marketplaces (Amazon, Bewakoof, Souled Store). Viewers saw a ₹699 t-shirt and assumed it was an overpriced ₹299 blank, causing cart abandonment and low thumbstops.
+          <div class="creative-meta-card" style="margin-top: 0;">
+            <div class="meta-row">
+              <span class="meta-key">Angle Archetype:</span>
+              <span class="meta-val"><strong>Subculture Beat-Sync Living Artwork</strong></span>
             </div>
-          </div>
-
-          <div class="insight-box">
-            <div class="insight-title">💡 The Platform Reality</div>
-            <div class="insight-text">
-              Frankly Wearing is the operational bridge for over <strong>20,000 indie creators, cartoonists, artists, and opinion leaders</strong>. These creators have a distinct worldview, biting humor, or niche artwork—but lack screen-printing machines, warehousing, and COD logistics. Frankly manufactures and ships, giving creators a revenue split. When someone buys a Frankly tee, they are buying an <strong>ideology</strong> and <strong>supporting an artist's dream</strong>.
+            <div class="meta-row">
+              <span class="meta-key">Target Persona:</span>
+              <span class="meta-val">The Pop Culture &amp; Satire Obsessive (Gen Z aged 18-25)</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Funnel Role:</span>
+              <span class="meta-val"><span class="funnel-stage-badge stage-tof">Top of Funnel</span> Problem Aware / Scroll-Stopper</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">The Hook Hypothesis:</span>
+              <span class="meta-val">Static t-shirt photos get scrolled past in 0.4 seconds. By taking the creator's illustration and bringing it to life with 3D fluid AI motion synced to a heavy hip-hop beat drop, we capture thumbstops before cognitive ad resistance kicks in.</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Retention Mechanism:</span>
+              <span class="meta-val">Beat-sync micro-cuts every 1.1 seconds showcasing 4 wildly different creator aesthetics (dark humor, anime lines, psychedelic typography, indie illustrations), keeping curiosity high.</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Performance Impact:</span>
+              <span class="meta-val"><strong>42.8% Thumbstop Rate · 3.8% Outbound CTR</strong> · Became the evergreen creative baseline that unlocked month-over-month account scaling.</span>
             </div>
           </div>
         </div>
@@ -791,14 +1116,14 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 2: August AI Evolution & Video 4 -->
+  <!-- Creative Showcase 2: August Concept Variations (AI Motion Drop & Real-World Streetwear Drip) -->
   <section class="chapter-block">
     <div class="container">
       <div class="chapter-header">
-        <div class="chapter-number">02 / Creative Evolution (August Drops)</div>
-        <h2 class="chapter-title">Scaling Winning Formats: AI Motion 07th Aug &amp; Video 4</h2>
+        <div class="chapter-number">04 / Rapid Concept Evolution</div>
+        <h2 class="chapter-title">August Scaling: AI Motion 07th Aug &amp; Real Streetwear Video 4</h2>
         <p class="chapter-sub">
-          Following July's breakthrough winner, we doubled down on rapid concept variations in August—amplifying pattern-interrupt speeds and testing real-world streetwear silhouettes.
+          Following July's breakthrough winner, we engineered concept variations to combat creative fatigue—testing higher pattern-interrupt speeds against real-world daylight streetwear silhouettes.
         </p>
       </div>
 
@@ -808,16 +1133,22 @@ body {
           <div class="media-container">
             <video class="lazy-video" id="vidAugAi" data-src="assets/creatives/videos/frankly_ai_august_drop.mp4" playsinline loop muted preload="none"></video>
             <div class="media-audio-bar">
-              <span class="audio-label">🔊 AI Video 07th Aug 2 · Subculture Motion</span>
+              <span class="audio-label">🔊 AI Video 07th Aug 2 · Kinetic Flow</span>
               <button class="btn-audio-toggle" onclick="toggleSound('vidAugAi', this)">Unmute Audio</button>
             </div>
           </div>
-          <div style="padding-top: 12px;">
-            <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: #4D7C0F; text-transform: uppercase;">
-              August Evolution · AI Video 07th Aug 2
+          <div class="creative-meta-card">
+            <div class="meta-row">
+              <span class="meta-key">Angle Archetype:</span>
+              <span class="meta-val"><strong>Kinetic Art Fluidity (August Evolution)</strong></span>
             </div>
-            <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-              Amplified beat-sync transitions flexing animated artwork onto oversized hoodies, engineered for instant 3-second hook retention on Reels.
+            <div class="meta-row">
+              <span class="meta-key">Hook Mechanics:</span>
+              <span class="meta-val">Amplified rapid morphing transitions turning vector graphics into undulating neon textures directly draped on oversized drop-shoulder hoodies.</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Role in Funnel:</span>
+              <span class="meta-val"><span class="funnel-stage-badge stage-tof">Top of Funnel</span> Floods account with sub-₹4 CPM cold feed discovery.</span>
             </div>
           </div>
         </div>
@@ -827,16 +1158,22 @@ body {
           <div class="media-container">
             <video class="lazy-video" id="vidAug4" data-src="assets/creatives/videos/frankly_august_video4.mp4" playsinline loop muted preload="none"></video>
             <div class="media-audio-bar">
-              <span class="audio-label">🔊 Frankly Video 4 · Lifestyle Drip</span>
+              <span class="audio-label">🔊 Frankly Video 4 · Real Streetwear Drip</span>
               <button class="btn-audio-toggle" onclick="toggleSound('vidAug4', this)">Unmute Audio</button>
             </div>
           </div>
-          <div style="padding-top: 12px;">
-            <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: #4D7C0F; text-transform: uppercase;">
-              Real Streetwear Vibe · Frankly Video 4
+          <div class="creative-meta-card">
+            <div class="meta-row">
+              <span class="meta-key">Angle Archetype:</span>
+              <span class="meta-val"><strong>Real-World Streetwear Fit &amp; Silhouette</strong></span>
             </div>
-            <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
-              Pairs creator apparel with genuine urban styling—giving prospects immediate visual proof of how the fit, fabric, and graphics look in real life.
+            <div class="meta-row">
+              <span class="meta-key">Hook Mechanics:</span>
+              <span class="meta-val">Natural daylight urban walk-and-talk showcasing fabric drape, 240 GSM heavy combed cotton, and true-to-size boxy fits that eliminate customer sizing anxiety.</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Role in Funnel:</span>
+              <span class="meta-val"><span class="funnel-stage-badge stage-mof">Middle of Funnel</span> Reassures quality and drives product page engagement.</span>
             </div>
           </div>
         </div>
@@ -844,14 +1181,14 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 3: Audience Psychology & September Subculture Motion -->
+  <!-- Creative Showcase 3: September Satire & Meme Drop -->
   <section class="chapter-block">
     <div class="container">
       <div class="chapter-header">
-        <div class="chapter-number">03 / Audience Psychology &amp; September Drop</div>
-        <h2 class="chapter-title">Why Our Generation (Gen Z) Buys Opinion-Wear</h2>
+        <div class="chapter-number">05 / Cultural Satire &amp; Audience Psychology</div>
+        <h2 class="chapter-title">September Evolution: Why Our Generation Buys Opinion-Wear</h2>
         <p class="chapter-sub">
-          Gen Z and young millennials don't buy clothes for fabric specs—they buy for <strong>vibe, tribal affiliation, and ideological self-expression</strong>.
+          Gen Z doesn't buy clothes for fabric specs—they buy for <strong>vibe, tribal affiliation, and ideological self-expression</strong>.
         </p>
       </div>
 
@@ -859,9 +1196,9 @@ body {
         <div class="tribes-grid" style="margin-top: 0;">
           <div class="tribe-card">
             <div class="tribe-badge">Tribe 01</div>
-            <div class="tribe-title">The Indie Art Supporter</div>
+            <div class="tribe-title">The Indie Art Patron</div>
             <div class="tribe-desc">
-              Values authentic creator stories over mass corporate labels. Purchases because ₹599 directly funds an independent artist's rent and craft rather than a billionaire conglomerate.
+              Values authentic creator stories over mass corporate labels. Purchases because ₹699 directly funds an independent artist's rent and craft rather than a billionaire conglomerate.
             </div>
           </div>
 
@@ -869,23 +1206,23 @@ body {
             <div class="tribe-badge">Tribe 02</div>
             <div class="tribe-title">The Pop Culture &amp; Satire Obsessive</div>
             <div class="tribe-desc">
-              Wants wearable inside jokes that signal high cultural literacy (<em>Make Orwell Fiction Again</em>, <em>Shinchan Nazuk Kali</em>, <em>Camp Half-Blood</em>). They wear it to get smiles and compliments from their tribe.
+              Wants wearable inside jokes that signal high cultural literacy (<em>Make Orwell Fiction Again</em>, <em>Shinchan Nazuk Kali</em>, <em>Camp Half-Blood</em>). Wears it to prompt laughs and nods from peers.
             </div>
           </div>
 
           <div class="tribe-card">
             <div class="tribe-badge">Tribe 03</div>
-            <div class="tribe-title">The Conscious Expressionist</div>
+            <div class="tribe-title">The Conscious Counter-Culture Youth</div>
             <div class="tribe-desc">
-              Wears their social and political opinions boldly. Merch functions as a silent, stylish megaphone for causes, self-worth, and anti-mainstream counter-culture.
+              Wears their social beliefs boldly. Apparel functions as a stylish megaphone for anti-conformity, mental health awareness, and raw individuality.
             </div>
           </div>
 
           <div class="tribe-card">
             <div class="tribe-badge">Tribe 04</div>
-            <div class="tribe-title">The Hyper-Niche Gift Giver</div>
+            <div class="tribe-title">The Hyper-Niche Gifter</div>
             <div class="tribe-desc">
-              Urgent buyers searching for a gift that proves: <em>"I truly get who you are."</em> High AOV, zero price sensitivity when the design perfectly matches their friend's quirk.
+              Searches frantically for a gift that proves: <em>"I truly get who you are."</em> Zero price sensitivity when the design matches a close friend's hyper-specific aesthetic.
             </div>
           </div>
         </div>
@@ -895,26 +1232,33 @@ body {
           <div class="media-container">
             <video class="lazy-video" id="vidSep6" data-src="assets/creatives/videos/frankly_september_video6.mp4" playsinline loop muted preload="none"></video>
             <div class="media-audio-bar">
-              <span class="audio-label">🔊 September Frankly Video 6</span>
+              <span class="audio-label">🔊 September Frankly Video 6 · Culture Satire</span>
               <button class="btn-audio-toggle" onclick="toggleSound('vidSep6', this)">Unmute Audio</button>
             </div>
           </div>
-          <p style="font-size: 13px; color: var(--text-dim); margin-top: 10px; font-family: var(--font-mono);">
-            September Winner: Fast-paced narrative combining subculture memes with limited drop urgency.
-          </p>
+          <div class="creative-meta-card">
+            <div class="meta-row">
+              <span class="meta-key">Angle:</span>
+              <span class="meta-val"><strong>September Limited Drop &amp; Cultural Satire</strong></span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Retention Lever:</span>
+              <span class="meta-val">Fast-paced narrative pairing biting satirical graphics with limited drop print run timers, building FOMO among warm audiences.</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Chapter 4: October Offer & Conversion Vault (3-Column Showcase) -->
+  <!-- Creative Showcase 4: October Direct-Response Offer & Scarcity Vault -->
   <section class="chapter-block">
     <div class="container">
       <div class="chapter-header">
-        <div class="chapter-number">04 / October Conversion Engine</div>
-        <h2 class="chapter-title">October Direct Response &amp; Flash Drop Vault</h2>
+        <div class="chapter-number">06 / Festive &amp; Direct-Response Engine</div>
+        <h2 class="chapter-title">October Conversion Vault: Offer Framing &amp; Flash Drops</h2>
         <p class="chapter-sub">
-          Moving from top-of-funnel culture awareness into high-conversion festive drops and offer-driven direct response:
+          Moving from top-of-funnel cultural discovery into high-conversion festive drops and direct-response offer architecture:
         </p>
       </div>
 
@@ -929,10 +1273,10 @@ body {
             </div>
           </div>
           <div class="video-item-info">
-            <div class="video-item-role">October Offer Ads</div>
+            <div class="video-item-role">Direct-Response Offer</div>
             <div class="video-item-title">Frankly Video 1 Ads</div>
             <div class="video-item-desc">
-              Direct-response offer creative engineered to convert cart abandoners with clear price-to-value framing.
+              High-intent direct response creative engineered to convert cart abandoners with clear multi-buy value framing and coupon code incentives.
             </div>
           </div>
         </div>
@@ -942,15 +1286,15 @@ body {
           <div class="media-container">
             <video class="lazy-video" id="vidOct14" data-src="assets/creatives/videos/frankly_october_14th_drop.mp4" playsinline loop muted preload="none"></video>
             <div class="media-audio-bar">
-              <span class="audio-label">🔊 14th October 2-3</span>
+              <span class="audio-label">🔊 14th October 2-3 Drop</span>
               <button class="btn-audio-toggle" onclick="toggleSound('vidOct14', this)">Unmute</button>
             </div>
           </div>
           <div class="video-item-info">
-            <div class="video-item-role">New Video Release</div>
+            <div class="video-item-role">Limited Scarcity Drop</div>
             <div class="video-item-title">14th Oct Limited Drop</div>
             <div class="video-item-desc">
-              High-ticket scarcity drop driving immediate checkout frequency across Gen Z apparel buyers.
+              High-urgency limited print run creative driving immediate checkout velocity across repeat buyers and warm engagers.
             </div>
           </div>
         </div>
@@ -960,15 +1304,15 @@ body {
           <div class="media-container">
             <video class="lazy-video" id="vidGif" data-src="assets/creatives/videos/frankly_gif_offer.mp4" playsinline loop muted preload="none"></video>
             <div class="media-audio-bar">
-              <span class="audio-label">🔊 Micro-GIF Motion</span>
+              <span class="audio-label">🔊 Micro-GIF Motion (0.89MB)</span>
               <button class="btn-audio-toggle" onclick="toggleSound('vidGif', this)">Unmute</button>
             </div>
           </div>
           <div class="video-item-info">
-            <div class="video-item-role">Ultra-Lightweight Pattern</div>
-            <div class="video-item-title">Micro-GIF Ad Format (0.85 MB)</div>
+            <div class="video-item-role">Sub-Second Loading</div>
+            <div class="video-item-title">Micro-GIF Ad Format</div>
             <div class="video-item-desc">
-              Sub-second loading thumbstop pattern for story placements and retargeting carousels.
+              Ultra-lightweight thumbstop format engineered for Instagram Story placements and retargeting carousels with zero buffering latency.
             </div>
           </div>
         </div>
@@ -976,14 +1320,14 @@ body {
     </div>
   </section>
 
-  <!-- Chapter 5: Funnel Architecture Table -->
+  <!-- Chapter 5: Andrew Meta 2.0 / Advantage+ Funnel & Angle Matrix -->
   <section class="chapter-block">
     <div class="container">
       <div class="chapter-header">
-        <div class="chapter-number">05 / Funnel Architecture</div>
-        <h2 class="chapter-title">The Complete Psychographic Creative Funnel</h2>
+        <div class="chapter-number">07 / Algorithmic Architecture</div>
+        <h2 class="chapter-title">Andrew Meta 2.0: Mapping Creative Angles to the Advantage+ Funnel</h2>
         <p class="chapter-sub">
-          How we architected Meta Advantage+ campaigns across cold prospecting, consideration, and conversion:
+          In Meta's Andromeda / Advantage+ machine learning system, <strong>creative is the targeting</strong>. We don't construct narrow interest stacks; we construct radically differentiated creative angles that allow Meta to extract distinct high-intent buyer cohorts from broad feeds.
         </p>
       </div>
 
@@ -991,42 +1335,66 @@ body {
         <thead>
           <tr>
             <th>Funnel Stage</th>
-            <th>Creative Format &amp; Angle</th>
+            <th>Angle Name &amp; Persona</th>
+            <th>Hook Concept (0.0s - 3.0s)</th>
+            <th>Ad Format</th>
             <th>Psychological Trigger</th>
-            <th>Performance Role</th>
+            <th>Fatigue Mitigation</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><span class="funnel-stage-badge stage-tof">Top of Funnel</span></td>
-            <td><strong>Subculture Pattern Interrupt</strong><br><em>"Why are you wearing clothes that say nothing?"</em></td>
+            <td><strong>Subculture Pattern Interrupt</strong><br><em>The Satire &amp; Meme Obsessive</em></td>
+            <td>Glitch transition from boring plain white tee into living 3D AI animation of creator art synced to 808 beat drop.</td>
+            <td>9:16 AI Motion Video</td>
             <td>Anti-conformity, Gen Z individuality.</td>
-            <td>Drives thumbstop rate from 16% to 42.8%; floods account with low CPM top-of-funnel traffic.</td>
+            <td>Rotate 4 new creator art drops bi-weekly into broad ad set.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
-            <td><strong>Creator Story &amp; Sketch-to-Street</strong><br><em>"Split screen: creator sketching vs. fan wearing it"</em></td>
-            <td>Emotional reciprocity; valuing independent artistry.</td>
-            <td>Justifies ₹599-₹899 price point and destroys comparison with mass-market ₹299 blanks.</td>
+            <td><strong>Sketch-to-Street Authenticity</strong><br><em>The Indie Art Patron</em></td>
+            <td>Split screen: creator sketching design in procreate notebook cut directly to fan rocking oversized hoodie in daylight.</td>
+            <td>UGC / Split Screen Reel</td>
+            <td>Emotional reciprocity; supporting an artist's rent over a corporate blank.</td>
+            <td>Alternate creator interview voiceovers and unboxing reactions.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
+            <td><strong>Daylight Silhouette &amp; GSM Proof</strong><br><em>The Streetwear Drip Enthusiast</em></td>
+            <td>Close-up tactile fabric grab: 240 GSM heavy combed cotton, seamless ribbed collar, zero-bleed screen printing.</td>
+            <td>High-Def Macro Showcase</td>
+            <td>Quality assurance; eliminating "cheap drop-shipping tee" objection.</td>
+            <td>Swap between hoodie heavy fleece and summer boxy tee weights.</td>
           </tr>
           <tr>
             <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
-            <td><strong>Limited Creator Drops &amp; Gifting</strong><br><em>"48-hour print run. Once it's gone, it's gone."</em></td>
+            <td><strong>48-Hour Artist Print Run</strong><br><em>The Hyper-Niche Gifter &amp; Collector</em></td>
+            <td>"Once this batch prints, it's archived forever." Screen-printing squeegee pull with limited stock countdown ticker.</td>
+            <td>Urgency Scarcity Reel</td>
             <td>FOMO, scarcity, and hyper-niche gifting urgency.</td>
-            <td>Converts cart abandoners at high checkout rates; generates repeat buyer frequency.</td>
+            <td>Tie strictly to seasonal drops (Halloween, Festive, Valentine's).</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
+            <td><strong>Multi-Buy Bundle &amp; Free Shipping</strong><br><em>The Impulse Cart Abandoner</em></td>
+            <td>"Support 2 indie artists: Pick any 2 tees for ₹1,199 + Free express shipping across India."</td>
+            <td>Direct-Response Offer Card</td>
+            <td>Value maximization &amp; price-to-volume justification.</td>
+            <td>Refresh coupon code and seasonal gift packaging banners.</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- Chapter 6: Strategic Takeaway Quote -->
+  <!-- Strategic Takeaway Quote -->
   <section class="container">
     <div class="quote-banner">
       <blockquote>
         "When you sell an apparel blank, you compete on fabric GSM and discounts. When you sell a creator's ideology, you compete with nothing else in the world."
       </blockquote>
-      <div class="quote-author">Anupam Nath · Creative Strategy Playbook</div>
+      <div class="quote-author">Anupam Nath · Senior Performance Creative Strategist</div>
     </div>
   </section>
 </main>
@@ -1036,21 +1404,21 @@ body {
   <div class="container">
     <h3 class="footer-heading">Ready to Turn Your Brand Into a Movement?</h3>
     <p class="footer-sub">
-      Let's build creative systems that connect consumer psychology, cultural relevance, and Meta Advantage+ unit economics.
+      Let's build creative systems that bridge consumer psychology, cultural relevance, and Meta Advantage+ unit economics.
     </p>
     <div class="cta-group">
       <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20read%20your%20Frankly%20Wearing%20case%20study.%20Let%27s%20discuss%20our%20creative%20pipeline." target="_blank" class="btn-primary-lg">
         <span>Chat on WhatsApp</span>
         <span>↗</span>
       </a>
-      <a href="index.html" class="btn-secondary-lg">
+      <a href="index.html#case-studies" class="btn-secondary-lg">
         <span>← Back to Portfolio</span>
       </a>
     </div>
   </div>
 </footer>
 
-<!-- High-Performance Lazy Video Loading Engine -->
+<!-- High-Performance Lazy Video Loading & Audio Toggle Engine -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const lazyVideos = document.querySelectorAll("video.lazy-video");
@@ -1079,6 +1447,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (video.dataset.src) {
         video.src = video.dataset.src;
       }
+      video.play().catch(() => {});
     });
   }
 });
@@ -1086,22 +1455,33 @@ document.addEventListener("DOMContentLoaded", function() {
 function toggleSound(vidId, btn) {
   const vid = document.getElementById(vidId);
   if (!vid) return;
-  if (!vid.src && vid.dataset.src) {
-    vid.src = vid.dataset.src;
-    vid.load();
-  }
+
   if (vid.muted) {
+    // Unmute this video
     vid.muted = false;
-    const p = vid.play();
-    if (p !== undefined) p.catch(() => {});
-    btn.textContent = 'Mute Audio';
-    btn.style.background = '#CCFF00';
-    btn.style.color = '#0A0D14';
+    vid.volume = 1.0;
+    btn.textContent = "Mute Audio";
+    btn.style.background = "var(--accent-lime)";
+    btn.style.color = "#0A0D14";
+
+    // Mute all other videos on page
+    document.querySelectorAll('video').forEach(otherVid => {
+      if (otherVid !== vid) {
+        otherVid.muted = true;
+      }
+    });
+    document.querySelectorAll('.btn-audio-toggle').forEach(otherBtn => {
+      if (otherBtn !== btn) {
+        otherBtn.textContent = "Unmute Audio";
+        otherBtn.style.background = "rgba(255, 255, 255, 0.12)";
+        otherBtn.style.color = "#FFFFFF";
+      }
+    });
   } else {
     vid.muted = true;
-    btn.textContent = 'Unmute';
-    btn.style.background = 'rgba(255,255,255,0.12)';
-    btn.style.color = '#FFFFFF';
+    btn.textContent = "Unmute Audio";
+    btn.style.background = "rgba(255, 255, 255, 0.12)";
+    btn.style.color = "#FFFFFF";
   }
 }
 </script>
