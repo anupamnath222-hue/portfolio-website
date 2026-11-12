@@ -1655,6 +1655,108 @@
       transform: translateX(2px);
     }
 
+
+/* ==========================================================================
+   MOBILE & RESPONSIVE POLISH ENHANCEMENTS
+   ========================================================================== */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+.profile-card-container {
+  background: linear-gradient(145deg, #0F172A, #1E293B);
+  border: 1px solid rgba(204, 255, 0, 0.25);
+  border-radius: var(--radius-xl);
+  padding: 24px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.35);
+}
+
+.profile-portrait-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+}
+
+.profile-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.profile-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-lime);
+  box-shadow: 0 0 8px var(--accent-lime);
+}
+
+@media (max-width: 768px) {
+  .cs-top-strip {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 16px;
+  }
+  .cs-brand-badge {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .cs-result-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 14px 16px;
+  }
+  .cs-narrative {
+    padding: 20px 16px;
+  }
+  .cs-media-column {
+    padding: 16px;
+  }
+  .vault-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-metrics-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+  .hero-metric-item {
+    padding: 10px 8px;
+  }
+  .hero-metric-num {
+    font-size: 22px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1695,7 +1797,7 @@
   <header class="hero-section" id="hero">
     <div class="container">
       <div class="hero-eyebrow">
-        <span class="tag-mono tag-live">Active in Meta Ad Library</span>
+        <span class="tag-mono tag-live">Advantage+ Performance Architecture</span>
         <span class="tag-mono tag-lime">Delhi, India · 5+ Years DR Creative Strategy</span>
         <span class="tag-mono tag-dark">Consumer Psychology · AI Motion · Direct Response</span>
       </div>
@@ -1972,7 +2074,7 @@
           <div class="cs-brand-badge">
             <span class="cs-brand-name">HOKIPO</span>
             <span class="tag-mono tag-subtle">Brand Ambassador: Karisma Kapoor</span>
-            <span class="tag-mono tag-live">Active in Ad Library</span>
+            <span class="tag-mono tag-live">Celebrity Authority &amp; Arbitrage</span>
           </div>
           <span class="tag-mono tag-dark">Home Living &amp; Furniture Upgrade · Direct-Response Funnel</span>
         </div>
@@ -2010,14 +2112,14 @@
               </div>
             </div>
 
-            <div class="cs-open-deepdive-btn" onclick="openTheatre('hokipo-cover')">
+            <a href="hokipo.html" target="_blank" class="cs-open-deepdive-btn" style="text-decoration:none;">
               <span>Read Full Creative Strategy Breakdown</span>
               <span>→</span>
             </div>
           </div>
 
           <div class="cs-media-column">
-            <div class="cs-media-frame" onclick="openTheatre('hokipo-cover')">
+            <a href="hokipo.html" target="_blank" class="cs-media-frame" style="text-decoration:none; display:block;">
               <img src="assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png" alt="HOKIPO Sofa Reupholstery vs Slipcover" style="width: 100%; height: 100%; object-fit: cover;">
               <div class="cs-media-play-overlay">
                 <div class="play-btn-circle">🔍</div>
@@ -2058,157 +2160,7 @@
 
       <div class="vault-grid" id="vaultGrid">
 
-        <!-- 1. Frankly Wearing: AI Motion -->
-        <div class="vault-item-card" data-category="video" data-id="frankly-ai" onclick="openTheatre('frankly-ai')">
-          <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: AI Motion</span>
-            <video poster="assets/creatives/posters/frankly_hero_best_performer_july21.webp" src="assets/creatives/videos/frankly_hero_best_performer_july21.mp4" preload="metadata" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
-            <div class="vault-card-overlay">
-              <span class="play-btn-circle">▶</span>
-              <span class="tag-mono tag-dark">Inspect Breakdown</span>
-            </div>
-          </div>
-          <div class="vault-card-body">
-            <span class="vault-brand-lbl">FRANKLY WEARING</span>
-            <h4 class="vault-card-title">Subculture Streetwear: AI Motion Ads</h4>
-            <div class="vault-concept-box">
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-concept">Concept</span>
-                <span>AI video ads using Higgsfield &amp; Google Flow, animating 20,000+ creator tees &amp; hoodies with bouncy hip-hop rhythm.</span>
-              </div>
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-why">Why We Made It</span>
-                <span>Gen Z creators sell personal ideology, not just fabric. AI video motion gave creator drops authentic street culture vibe at high scale.</span>
-              </div>
-            </div>
-            <div class="vault-result-pill">
-              <span class="vault-result-metric">42.8% Thumbstop · 3.6x ROAS</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('frankly-ai')">Inspect Breakdown →</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Kyari: Educational Stock Repurpose -->
-        <div class="vault-item-card" data-category="video" data-id="kyari-plants" onclick="openTheatre('kyari-plants')">
-          <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Educational Repurpose</span>
-            <video poster="assets/creatives/posters/kyari_hero_approved_ai.webp" src="assets/creatives/videos/kyari_hero_approved_ai.mp4" preload="metadata" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
-            <div class="vault-card-overlay">
-              <span class="play-btn-circle">▶</span>
-              <span class="tag-mono tag-dark">Inspect Breakdown</span>
-            </div>
-          </div>
-          <div class="vault-card-body">
-            <span class="vault-brand-lbl">KYARI (SHARK TANK S1)</span>
-            <h4 class="vault-card-title">Self-Watering Planters: Plant Murder Guilt</h4>
-            <div class="vault-concept-box">
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-concept">Concept</span>
-                <span>Repurposed warehouse footage into a 3-light matchmaker guide &amp; AI capillary root visualization, killing fear of dead plants.</span>
-              </div>
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-why">Why We Made It</span>
-                <span>Shoppers abandoned checkout thinking: "I will kill this plant too." Reframing Kyari as a foolproof 10-day reservoir unlocked cold ROAS.</span>
-              </div>
-            </div>
-            <div class="vault-result-pill">
-              <span class="vault-result-metric">41.2% Thumbstop · ₹420 CPA</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('kyari-plants')">Inspect Breakdown →</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Tata Play Fiber: Multi-City Hyperlocal Video -->
-        <div class="vault-item-card" data-category="video" data-id="tpf-navi-mumbai" onclick="openTheatre('tpf-navi-mumbai')">
-          <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Geo-Targeted DR</span>
-            <video preload="none" poster="assets/creatives/posters/tpf_hyperlocal_navi_mumbai.webp" src="assets/creatives/videos/tpf_hyperlocal_navi_mumbai.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
-            <div class="vault-card-overlay">
-              <span class="play-btn-circle">▶</span>
-              <span class="tag-mono tag-dark">Inspect Breakdown</span>
-            </div>
-          </div>
-          <div class="vault-card-body">
-            <span class="vault-brand-lbl">TATA PLAY FIBER</span>
-            <h4 class="vault-card-title">Navi Mumbai Hyperlocal WFH Freeze</h4>
-            <div class="vault-concept-box">
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-concept">Concept</span>
-                <span>Modular video skeleton swapping local society anchors (Seawoods, Vashi) and agitating video-conference screen freeze during key meetings.</span>
-              </div>
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-why">Why We Made It</span>
-                <span>National broadband ads are ignored. Pin-code callouts in the first 1.5 seconds make cold scrollers feel the ad was built specifically for their society.</span>
-              </div>
-            </div>
-            <div class="vault-result-pill">
-              <span class="vault-result-metric">₹380.40 CPL · 46.2% Thumbstop</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('tpf-navi-mumbai')">Inspect Breakdown →</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Hide & Leather: India B1G1 Festive Statics -->
-        <div class="vault-item-card" data-category="static" data-id="hnl-shoes" onclick="openTheatre('hnl-shoes')">
-          <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Price-Math Transparency</span>
-            <img src="assets/creatives/statics/hide_and_leather_festive_bogo_shoes.png" alt="Hide and Leather Festive Shoes BOGO">
-            <div class="vault-card-overlay">
-              <span class="play-btn-circle">🔍</span>
-              <span class="tag-mono tag-dark">Inspect Breakdown</span>
-            </div>
-          </div>
-          <div class="vault-card-body">
-            <span class="vault-brand-lbl">HIDE &amp; LEATHER (HNL)</span>
-            <h4 class="vault-card-title">Handcrafted Leather: India B1G1 vs UAE 50%</h4>
-            <div class="vault-concept-box">
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-concept">Concept</span>
-                <span>Objection-destroying static proof showing genuine full-grain leather texture, authentic cost-per-wear math, and verified 4.9/5 customer reviews.</span>
-              </div>
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-why">Why We Made It</span>
-                <span>B1G1 on leather triggers fake MRP suspicion. Radical transparency on leather grade and amortized wear cost disarmed checkout skepticism.</span>
-              </div>
-            </div>
-            <div class="vault-result-pill">
-              <span class="vault-result-metric">3.8x ROAS · 10,000+ Orders</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('hnl-shoes')">Inspect Breakdown →</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Hide & Leather: Viral Meme Pattern Interrupt -->
-        <div class="vault-item-card" data-category="video" data-id="hnl-meme" onclick="openTheatre('hnl-meme')">
-          <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Viral Pattern Interrupt</span>
-            <video preload="none" poster="assets/creatives/posters/hide_and_leather_b1g2_meme_ad.webp" src="assets/creatives/videos/hide_and_leather_b1g2_meme_ad.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
-            <div class="vault-card-overlay">
-              <span class="play-btn-circle">▶</span>
-              <span class="tag-mono tag-dark">Inspect Breakdown</span>
-            </div>
-          </div>
-          <div class="vault-card-body">
-            <span class="vault-brand-lbl">HIDE &amp; LEATHER (HNL)</span>
-            <h4 class="vault-card-title">Viral Double-Take Meme: B1G2 Offer</h4>
-            <div class="vault-concept-box">
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-concept">Concept</span>
-                <span>Shocked pop-culture reaction meme hook pivoting abruptly to: Buy 1 Get 2 (Handcrafted Leather Shoes + Free Belt &amp; Cardholder).</span>
-              </div>
-              <div class="vault-concept-row">
-                <span class="concept-tag tag-why">Why We Made It</span>
-                <span>Cold scrollers swipe past moody, slow-motion commercial shoe clips. A 0.8s meme pattern interrupt arrests feed momentum instantly.</span>
-              </div>
-            </div>
-            <div class="vault-result-pill">
-              <span class="vault-result-metric">41.2% Thumbstop · 3.8x ROAS</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('hnl-meme')">Inspect Breakdown →</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. Three Sixty: High-Ticket Tactile ASMR -->
+        <!-- 1. Three Sixty: High-Ticket Tactile ASMR (FIRST) -->
         <div class="vault-item-card" data-category="video" data-id="threesixty-bar" onclick="openTheatre('threesixty-bar')">
           <div class="vault-card-thumb">
             <span class="tag-mono tag-lime vault-type-badge">Archetype: High-Ticket ASMR</span>
@@ -2238,37 +2190,37 @@
           </div>
         </div>
 
-        <!-- 7. HOKIPO: Economic Arbitrage (£6 Lakh+ Sales Milestone) -->
-        <div class="vault-item-card" data-category="static" data-id="hokipo-cover" onclick="openTheatre('hokipo-cover')">
+        <!-- 2. Hide & Leather: Consolidated Dual-Market Footwear -->
+        <div class="vault-item-card" data-category="static" data-id="hnl-footwear" onclick="openTheatre('hnl-footwear')">
           <div class="vault-card-thumb">
-            <span class="tag-mono tag-lime vault-type-badge">Archetype: Economic Arbitrage</span>
-            <img src="assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png" alt="Hokipo Sofa Reupholstery vs Slipcover">
+            <span class="tag-mono tag-lime vault-type-badge">Archetype: Cross-Border DR</span>
+            <img src="assets/creatives/statics/hide_and_leather_festive_bogo_shoes.png" alt="Hide and Leather Handcrafted Shoes">
             <div class="vault-card-overlay">
               <span class="play-btn-circle">🔍</span>
               <span class="tag-mono tag-dark">Inspect Breakdown</span>
             </div>
           </div>
           <div class="vault-card-body">
-            <span class="vault-brand-lbl">HOKIPO (₹6 LAKH+ SALES DELIVERED)</span>
-            <h4 class="vault-card-title">₹18,000 Reupholstery vs. ₹1,499 Slipcover</h4>
+            <span class="vault-brand-lbl">HIDE &amp; LEATHER (HNL)</span>
+            <h4 class="vault-card-title">Handcrafted Leather: India B1G1 vs. UAE 50%</h4>
             <div class="vault-concept-box">
               <div class="vault-concept-row">
                 <span class="concept-tag tag-concept">Concept</span>
-                <span>Ruthless economic comparison: "₹18,000 Reupholstery &amp; 3 Weeks of Living Room Dust" VS "₹1,499 HOKIPO Stretch Cover in 5 Minutes".</span>
+                <span>Dual-market direct response: transparent cost-per-wear math for India B1G1 paired with executive lifestyle split-screens for UAE Flat 50%.</span>
               </div>
               <div class="vault-concept-row">
                 <span class="concept-tag tag-why">Why We Made It</span>
-                <span>Homeowners hate their worn sofa but delay carpentry for months. Framing the cover as an instant ₹16,500 savings drove ₹6 Lakh+ in sales.</span>
+                <span>Kills the genuine leather trust barrier in India while capturing high-status executive demand across Dubai and Abu Dhabi.</span>
               </div>
             </div>
             <div class="vault-result-pill">
-              <span class="vault-result-metric">₹6 Lakh+ Sales · 4.4x ROAS</span>
-              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('hokipo-cover')">Inspect Breakdown →</button>
+              <span class="vault-result-metric">3.8x ROAS · 10,000+ Orders</span>
+              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('hnl-footwear')">Inspect Breakdown →</button>
             </div>
           </div>
         </div>
 
-        <!-- 8. Honest Energy: Clean Protein Water DR UGC -->
+        <!-- 3. Honest Energy: Clean Protein Water DR UGC -->
         <div class="vault-item-card" data-category="video" data-id="honest-energy" onclick="openTheatre('honest-energy')">
           <div class="vault-card-thumb">
             <span class="tag-mono tag-lime vault-type-badge">Archetype: Problem/Solution UGC</span>
@@ -2298,7 +2250,7 @@
           </div>
         </div>
 
-        <!-- 9. Mattress Fitness: Medical Anatomy -->
+        <!-- 4. Mattress Fitness: Medical Anatomy -->
         <div class="vault-item-card" data-category="static" data-id="mattress-spine" onclick="openTheatre('mattress-spine')">
           <div class="vault-card-thumb">
             <span class="tag-mono tag-lime vault-type-badge">Archetype: Medical Anatomy</span>
@@ -2328,7 +2280,7 @@
           </div>
         </div>
 
-        <!-- 10. Tresmode / Tresnova: Problem-Aware Fashion Drops -->
+        <!-- 5. Tresmode / Tresnova: Problem-Aware Fashion Drops -->
         <div class="vault-item-card" data-category="static" data-id="tresnova-kid" onclick="openTheatre('tresnova-kid')">
           <div class="vault-card-thumb">
             <span class="tag-mono tag-lime vault-type-badge">Archetype: Editorial Direct Response</span>
@@ -2358,7 +2310,7 @@
           </div>
         </div>
 
-        <!-- 11. GD Goenka: Institutional Proof Architecture -->
+        <!-- 6. GD Goenka: Institutional Proof Architecture -->
         <div class="vault-item-card" data-category="static" data-id="gd-goenka" onclick="openTheatre('gd-goenka')">
           <div class="vault-card-thumb">
             <span class="tag-mono tag-lime vault-type-badge">Archetype: Institutional Proof</span>
@@ -2387,6 +2339,66 @@
             </div>
           </div>
         </div>
+
+        <!-- 7. Chaivours: Whole-Leaf Artisanal Tea Ritual -->
+        <div class="vault-item-card" data-category="special" data-id="chaivours-tea" onclick="openTheatre('chaivours-tea')">
+          <div class="vault-card-thumb">
+            <span class="tag-mono tag-lime vault-type-badge">Archetype: Sensory Ritual ASMR</span>
+            <img src="assets/logos/chaivours.png" alt="Chaivours Artisanal Tea">
+            <div class="vault-card-overlay">
+              <span class="play-btn-circle">🔍</span>
+              <span class="tag-mono tag-dark">Inspect Breakdown</span>
+            </div>
+          </div>
+          <div class="vault-card-body">
+            <span class="vault-brand-lbl">CHAIVOURS</span>
+            <h4 class="vault-card-title">Artisanal Tea: Whole-Leaf Sensory Ritual</h4>
+            <div class="vault-concept-box">
+              <div class="vault-concept-row">
+                <span class="concept-tag tag-concept">Concept</span>
+                <span>Slow-motion tea leaf unfurling in glass infusers with soothing morning audio, contrasting golden liquor against bitter commercial CTC dust.</span>
+              </div>
+              <div class="vault-concept-row">
+                <span class="concept-tag tag-why">Why We Made It</span>
+                <span>Converts habitual CTC drinkers into connoisseurs by making loose-leaf whole tea feel effortless and luxurious.</span>
+              </div>
+            </div>
+            <div class="vault-result-pill">
+              <span class="vault-result-metric">3.8x ROAS · 4.2% CTR</span>
+              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('chaivours-tea')">Inspect Breakdown →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. House of Pause: Micro-Mindfulness Decompression -->
+        <div class="vault-item-card" data-category="special" data-id="house-of-pause" onclick="openTheatre('house-of-pause')">
+          <div class="vault-card-thumb">
+            <span class="tag-mono tag-lime vault-type-badge">Archetype: Pattern Interrupt Reel</span>
+            <img src="assets/logos/House of Pause.png" alt="House of Pause Mindfulness">
+            <div class="vault-card-overlay">
+              <span class="play-btn-circle">🔍</span>
+              <span class="tag-mono tag-dark">Inspect Breakdown</span>
+            </div>
+          </div>
+          <div class="vault-card-body">
+            <span class="vault-brand-lbl">HOUSE OF PAUSE</span>
+            <h4 class="vault-card-title">Micro-Mindfulness: 10-Second Breath Reel</h4>
+            <div class="vault-concept-box">
+              <div class="vault-concept-row">
+                <span class="concept-tag tag-concept">Concept</span>
+                <span>Fast kinetic breath-pacing interrupt: "Stop scrolling. Inhale for 4 seconds. Hold. Exhale." pivoting into simple 3-minute evening decompression.</span>
+              </div>
+              <div class="vault-concept-row">
+                <span class="concept-tag tag-why">Why We Made It</span>
+                <span>Modern professionals reject 45-minute meditation lectures. Micro-habits disarm skepticism and drive high qualified lead intent.</span>
+              </div>
+            </div>
+            <div class="vault-result-pill">
+              <span class="vault-result-metric">46.5% Thumbstop · ₹42 CPL</span>
+              <button type="button" class="vault-inspect-btn" onclick="event.stopPropagation(); openTheatre('house-of-pause')">Inspect Breakdown →</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2394,7 +2406,7 @@
   <!-- ==========================================================================
        THE 4-STEP STRATEGY ENGINE
        ========================================================================== -->
-  <section id="methodology">
+    <section id="methodology">
     <div class="container">
       <div class="section-header-block">
         <div class="section-eyebrow">
@@ -2403,40 +2415,40 @@
         </div>
         <h2 class="section-title">The 4-Step Creative Strategy Engine</h2>
         <p class="section-subtitle">
-          Most agencies "brainstorm" creative by sitting in a room and guessing what looks cool. We don't guess. We follow a 4-step engineering discipline that extracts unvoiced consumer friction and turns it into profitable ad scale.
+          Great direct-response performance isn't built on guesswork or subjective aesthetic debates. We deploy an engineering discipline grounded in consumer psychology, structured angle testing, and algorithmic distribution.
         </p>
       </div>
 
       <div class="method-grid">
         <div class="method-card">
           <span class="method-num">01</span>
-          <h4 class="method-title">Friction Mining (The Dirty Truth)</h4>
+          <h4 class="method-title">Unspoken Friction &amp; Sentiment Mining</h4>
           <p class="method-desc">
-            We don't read marketing pitch decks. We read angry Reddit threads, 1-star competitor reviews, and raw customer rants to discover what people actually hate about your product category.
+            We systematically mine category conversations, customer feedback, and post-purchase hesitation patterns to uncover the exact silent objections preventing cold prospects from checking out.
           </p>
         </div>
 
         <div class="method-card">
           <span class="method-num">02</span>
-          <h4 class="method-title">Psychological Angle Matrix</h4>
+          <h4 class="method-title">Cognitive Angle Matrix &amp; Persona Hypothesis</h4>
           <p class="method-desc">
-            We build 8+ distinct psychological angles per sprint. One for the anxious skeptic who thinks it won't work, one for the price-conscious buyer, and one for the impulse gift-giver.
+            We architect 6 to 8 non-overlapping psychological hooks per sprint: mapping skeptic objections, price-math justifications, and aspirational triggers to distinct buyer cohorts.
           </p>
         </div>
 
         <div class="method-card">
           <span class="method-num">03</span>
-          <h4 class="method-title">Scripting Without The Cringe</h4>
+          <h4 class="method-title">Direct-Response Scripting &amp; Creative Direction</h4>
           <p class="method-desc">
-            No fake corporate actors talking like infomercials. We script native UGC briefs, direct unhinged 3-second visual hooks, and build AI motion that looks and feels like real internet culture.
+            We deliver second-by-second production briefs with proven 0 to 3s thumbstop hooks, native mobile pacing, objection-demolishing B-roll, and frictionless value-stack offers.
           </p>
         </div>
 
         <div class="method-card">
           <span class="method-num">04</span>
-          <h4 class="method-title">Feed Advantage+ What It Wants</h4>
+          <h4 class="method-title">Andromeda Machine Learning Scale &amp; Variation</h4>
           <p class="method-desc">
-            Meta's algorithm doesn't need 50 micro-targeted ad sets; it needs creative that stops the scroll and filters buyers. Winning creatives get graduated to evergreen BAU ad sets.
+            We deploy diverse visual formats into broad Meta Advantage+ delivery, letting algorithmic proxy targeting find distinct high-intent buyer cohorts and graduating winners into evergreen BAU scaling.
           </p>
         </div>
       </div>
@@ -2446,43 +2458,45 @@
   <!-- ==========================================================================
        ABOUT ME SECTION
        ========================================================================== -->
-  <section class="about-section" id="about" style="background: #FAFCFF; border-top: 1px solid var(--border-subtle);">
+    <section class="about-section" id="about" style="background: #FAFCFF; border-top: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="about-grid">
         <div class="about-portrait-frame">
-          <img src="assets/logos/anupam_portrait.png" alt="Anupam Nath - Creative Strategist">
+          <div class="profile-card-container">
+            <img src="assets/logos/Anupam 1st image.png" alt="Anupam Nath - Performance Creative Strategist" class="profile-portrait-img">
+            <div class="profile-card-badge">
+              <span class="profile-badge-dot"></span>
+              <span>Anupam Nath · Creative Strategist · Delhi, India</span>
+            </div>
+          </div>
         </div>
 
         <div class="about-text">
           <div class="section-eyebrow">
             <span class="tag-mono tag-lime">About Anupam Nath</span>
-            <span class="tag-mono tag-dark">5+ Years Performance Creative Strategist</span>
+            <span class="tag-mono tag-dark">Direct-Response Creative Strategist</span>
           </div>
 
-          <h3>I don't make ads that look pretty in pitch decks and lose money in Ads Manager.</h3>
+          <h3>I build performance creative engines that solve business problems.</h3>
 
           <p>
-            Hi, I'm Anupam. Most traditional creative agencies will happily charge you ₹5 Lakhs, spend 4 weeks shooting a 60-second cinematic commercial with slow-motion lens flares, and pat themselves on the back while it burns your budget at a 0.8x ROAS within 48 hours.
+            Hi, I'm Anupam. Over the past 5+ years, I've bridged the gap between consumer psychology, creative storytelling, and hard paid media unit economics: directing <strong>450+ production-ready briefs</strong> across <strong>25+ high-growth brands</strong> including Frankly Wearing, Kyari, Tata Play Fiber, HOKIPO, and Three Sixty.
           </p>
 
           <p>
-            I do the exact opposite. For <strong>5+ years</strong>, I've lived in the trenches of Meta Ads Manager, dissecting what makes a bored 24-year-old stop mindlessly scrolling Reels and actually buy something at 1:30 AM. Having directed over <strong>450+ production-ready briefs</strong> across <strong>25+ high-growth brands</strong> like <strong>Frankly Wearing</strong>, <strong>Tata Play Fiber</strong>, <strong>Kyari</strong>, <strong>Three Sixty</strong>, and <strong>HOKIPO</strong>, I bridge the gap between creative storytelling and hard unit economics.
-          </p>
-
-          <p>
-            I don't care about "brand awareness" that can't be measured on a dashboard. I care about Thumbstop Rate, Outbound CTR, CAC, and whether your creative engine is printing profitable revenue.
+            I don't make ads that look pretty in pitch decks and lose money in Ads Manager. In modern Meta Advantage+ and Andromeda retrieval architecture, <strong>the creative is the targeting</strong>. My job is to diagnose why your cold prospects are abandoning, engineer distinct psychological angles that disarm their skepticism, and scale profitable ad spend without auction fatigue.
           </p>
 
           <div class="about-toolbox">
-            <div class="toolbox-title">Creative Strategist Stack &amp; Workflow</div>
+            <div class="toolbox-title">Creative Strategy Stack &amp; Workflow</div>
             <div class="toolbox-pills">
-              <span class="tool-pill">Meta Ad Library &amp; Foreplay</span>
-              <span class="tool-pill">Motion App Creative Analytics</span>
-              <span class="tool-pill">Reddit / Amazon VOC Objection Scrapers</span>
-              <span class="tool-pill">UGC Creator Briefing &amp; Direction</span>
-              <span class="tool-pill">AI Creative Prototyping</span>
+              <span class="tool-pill">Meta Ads Manager &amp; Andromeda Retargeting</span>
+              <span class="tool-pill">Motion App &amp; Creative Analytics</span>
+              <span class="tool-pill">Customer Psychology &amp; Sentiment Mining</span>
+              <span class="tool-pill">UGC Creator Briefing &amp; Scripting</span>
+              <span class="tool-pill">Generative AI Motion Prototyping</span>
               <span class="tool-pill">Figma Visual Storyboards</span>
-              <span class="tool-pill">CapCut / Premiere Pro</span>
+              <span class="tool-pill">Premiere Pro &amp; CapCut Direction</span>
             </div>
           </div>
         </div>
@@ -3061,6 +3075,102 @@
             ],
             "productionStack": "Institutional brand guidelines, high-contrast typography hierarchy, Photoshop architectural retouching, and Meta geo-targeted local lead forms.",
             "scaleImpact": "Lowered parent tour CPL to \u20b9520 with an exceptional 22% conversion from campus visit to paid enrollment."
+      },
+      "hnl-footwear": {
+            "brand": "HIDE & LEATHER (HNL)",
+            "category": "Handcrafted Luxury Leather Footwear",
+            "format": "Meta Advantage+ Static & Reels \u00b7 Cross-Border System",
+            "title": "Cross-Border Scale: India B1G1 vs. UAE Flat 50% Strategy",
+            "mediaType": "image",
+            "mediaSrc": "assets/creatives/statics/hide_and_leather_festive_bogo_shoes.png",
+            "resultSummary": "3.8x Blended ROAS \u00b7 41.2% Thumbstop Rate \u00b7 10,000+ Footwear Orders",
+            "clientContext": "Hide & Leather crafts genuine full-grain leather dress shoes and suede casuals, scaling simultaneously across India (hideandleather.in) and the UAE (hideandleather.com).",
+            "coreFriction": "In India, 'Buy 1 Get 1' triggers suspicion of inflated MRP or fake Rexine. In the UAE (Dubai/Abu Dhabi), high-income executives dismiss aggressive discount spam and seek understated boardroom stature.",
+            "conceptAndAngle": "Consolidated Dual-Market Strategy. For India: transparent cost-per-wear price math (under \u20b94 per wear across 3+ years) and verified 4.9/5 customer reviews disarming fake MRP fears. For the UAE: executive split-screen luxury statics (Obsidian for boardroom dominance, Verona for corporate-to-lounge transitions).",
+            "hookStoryboard": [
+                  {
+                        "stamp": "0.0s - 1.5s",
+                        "text": "Viral pop-culture shocked double-take reaction meme arresting feed momentum in 0.8s."
+                  },
+                  {
+                        "stamp": "1.5s - 4.5s",
+                        "text": "Macro craft b-roll: Artisan cobbler hand-hammering full-grain leather sole with crisp sound design."
+                  },
+                  {
+                        "stamp": "4.5s - 8.5s",
+                        "text": "Dual-market value stack: India B1G1 Genuine Leather transparency vs UAE Flat 50% executive luxury."
+                  },
+                  {
+                        "stamp": "8.5s - end",
+                        "text": "Limited batch callout: 'Handcrafted in Small Batches \u00b7 Free Exchange Guaranteed \u00b7 Click Shop Now'"
+                  }
+            ],
+            "productionStack": "Figma layout design, high-contrast natural stone photography, CapCut kinetic pacing, and Meta Advantage+ multi-country catalog delivery.",
+            "scaleImpact": "Scaled over 10,000+ verified customer orders across domestic Indian and Gulf ad accounts at an evergreen 3.8x blended ROAS."
+      },
+      "chaivours-tea": {
+            "brand": "CHAIVOURS",
+            "category": "D2C Single-Estate Artisanal Teas",
+            "format": "Meta 9:16 Video & Interactive Carousel",
+            "title": "Whole-Leaf Artisanal Tea: The Morning Sensory Ritual",
+            "mediaType": "image",
+            "mediaSrc": "assets/logos/chaivours.png",
+            "resultSummary": "3.8x Account ROAS \u00b7 4.2% Outbound CTR \u00b7 High Repeat Rate",
+            "clientContext": "Chaivours curates single-origin whole-leaf orthodox teas and botanical blends directly from high-elevation Darjeeling and Assam gardens.",
+            "coreFriction": "Habitual tea drinkers are exhausted by bitter, powdery commercial CTC dust tea bags, but assume brewing whole loose leaves requires complicated strainers and ritual fuss.",
+            "conceptAndAngle": "Visual Sensory Ritual & Leaf Unfurling Contrast. Macro slow-motion footage of whole dried leaves slowly blossoming in clear hot water, contrasting clear golden nectar against muddy, astringent commercial CTC dust tea.",
+            "hookStoryboard": [
+                  {
+                        "stamp": "0.0s - 1.5s",
+                        "text": "Macro glass teapot with crystal-clear hot water pour over whole dried tea leaves."
+                  },
+                  {
+                        "stamp": "1.5s - 4.5s",
+                        "text": "Visceral sensory ASMR: Soothing ambient steam audio as whole leaves gracefully unfurl into rich amber liquor."
+                  },
+                  {
+                        "stamp": "4.5s - 8.0s",
+                        "text": "Educational comparison: 'Commercial Dust Tea Bags (Left) vs. First-Flush Whole Leaf Tea (Right)'."
+                  },
+                  {
+                        "stamp": "8.0s - end",
+                        "text": "Starter conversion offer: 'Experience The First-Harvest Tasting Flight \u00b7 Free Bamboo Tongs Included'"
+                  }
+            ],
+            "productionStack": "Macro 4K lens filming, ambient binaural sound design, DaVinci Resolve color grading, and Meta lifestyle engagement broad delivery.",
+            "scaleImpact": "Delivered a 3.8x Blended ROAS and 4.2% Outbound CTR, driving high subscription retention and recurring multi-tin pantry reorders."
+      },
+      "house-of-pause": {
+            "brand": "HOUSE OF PAUSE",
+            "category": "Mental Wellbeing & Functional Mindfulness",
+            "format": "Meta 9:16 Kinetic Video & Carousel",
+            "title": "Micro-Mindfulness: The 10-Second Breath Decompression Reel",
+            "mediaType": "image",
+            "mediaSrc": "assets/logos/House of Pause.png",
+            "resultSummary": "46.5% Thumbstop Rate \u00b7 \u20b942 Qualified Lead CPA \u00b7 3.9x Pipeline ROAS",
+            "clientContext": "House of Pause creates functional mindfulness journals, guided breathwork routines, and evening decompression tools for stressed urban professionals.",
+            "coreFriction": "Overworked corporate professionals feel chronic cognitive exhaustion, but reject cheesy spiritual clich\u00e9s, incense tropes, and intimidating 45-minute meditation courses.",
+            "conceptAndAngle": "Immediate Somatic Pattern Interrupt. Kinetic text synchronizing with an expanding visual circle: 'Stop scrolling. Inhale for 4 seconds... Hold... Exhale... Notice how your shoulders dropped? Now keep scrolling.' Pivoting into practical 3-minute evening decompression micro-habits.",
+            "hookStoryboard": [
+                  {
+                        "stamp": "0.0s - 2.0s",
+                        "text": "Expanding glowing circle with bold kinetic prompt: 'Stop scrolling for 5 seconds. Take one deep breath.'"
+                  },
+                  {
+                        "stamp": "2.0s - 6.0s",
+                        "text": "Guided breath animation: 4s inhale, 4s hold, 4s exhale with soothing low-frequency ambient tone."
+                  },
+                  {
+                        "stamp": "6.0s - 9.0s",
+                        "text": "Somatic recognition callout: 'Notice that tension in your jaw? You have been clenching it all day.'"
+                  },
+                  {
+                        "stamp": "9.0s - end",
+                        "text": "Micro-routine invitation: 'The 3-Minute Evening Decompression Protocol \u00b7 Free Download & Toolkit'"
+                  }
+            ],
+            "productionStack": "Kinetic After Effects animation, low-frequency sound design, mobile-first typography, and Meta Advantage+ lead generation forms.",
+            "scaleImpact": "Generated a 46.5% 3s thumbstop rate and \u20b942 qualified lead CPA, converting over 3,200+ professionals into active daily wellness members."
       }
 };
 
