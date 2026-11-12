@@ -266,14 +266,28 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 24px;
       list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-link {
       font-size: 14px;
       font-weight: 600;
       color: var(--text-muted);
+      white-space: nowrap;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-actions .btn {
+      white-space: nowrap;
     }
 
     .nav-link:hover { color: var(--text-main); }
@@ -1632,6 +1646,29 @@
     }
 
   
+        .btn-audio-toggle {
+      background: #0F172A;
+      border: 1px solid #334155;
+      color: #FFFFFF;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .btn-audio-toggle:hover {
+      background: var(--accent-lime);
+      color: #0F172A;
+      border-color: var(--accent-lime);
+    }
+
     .vault-inspect-btn {
       display: inline-flex;
       align-items: center;
@@ -1707,6 +1744,34 @@ html, body {
 }
 
 @media (max-width: 768px) {
+  /* Prevent horizontal scroll blowout from inline navbar */
+  .nav-links {
+    display: none !important;
+  }
+  .nav-actions {
+    display: none !important;
+  }
+  .nav-container {
+    height: 60px;
+    justify-content: center;
+  }
+  .nav-brand {
+    justify-content: center;
+  }
+
+  /* Hero adjustments */
+  .hero-section {
+    padding: 48px 0 60px;
+  }
+  .hero-eyebrow {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .hero-eyebrow .tag-mono {
+    font-size: 10.5px;
+    padding: 4px 10px;
+  }
+
   .cs-top-strip {
     flex-wrap: wrap;
     gap: 8px;
@@ -1750,10 +1815,17 @@ html, body {
     padding: 10px 8px;
   }
   .hero-metric-num {
-    font-size: 22px;
+    font-size: 20px;
   }
   .services-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  /* Prevent bottom sticky bar from occluding footer CTA buttons */
+  .contact-section,
+  #contact,
+  footer {
+    padding-bottom: 100px !important;
   }
 }
 
@@ -1829,20 +1901,20 @@ html, body {
 
           <div class="hero-metrics-bar">
             <div class="hero-metric-item">
-              <span class="hero-metric-num">5+</span>
-              <span class="hero-metric-label">Years Experience</span>
-            </div>
-            <div class="hero-metric-item">
-              <span class="hero-metric-num">450+</span>
-              <span class="hero-metric-label">Briefs Directed</span>
+              <span class="hero-metric-num">₹2.5Cr+</span>
+              <span class="hero-metric-label">Ad Spend Scaled</span>
             </div>
             <div class="hero-metric-item">
               <span class="hero-metric-num">25+</span>
-              <span class="hero-metric-label">Brands Partnered</span>
+              <span class="hero-metric-label">Brands Scaled</span>
             </div>
             <div class="hero-metric-item">
-              <span class="hero-metric-num">44.6%</span>
-              <span class="hero-metric-label">Peak Thumbstop</span>
+              <span class="hero-metric-num">450+</span>
+              <span class="hero-metric-label">Production Briefs</span>
+            </div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-num">3.8x</span>
+              <span class="hero-metric-label">Avg Blended ROAS</span>
             </div>
           </div>
         </div>
@@ -1931,13 +2003,16 @@ html, body {
 
           <div class="cs-media-column">
             <a href="frankly-wearing.html" target="_blank" class="cs-media-frame" style="text-decoration: none; display: block;">
-              <video poster="assets/creatives/posters/frankly_hero_best_performer_july21.webp" src="assets/creatives/videos/frankly_hero_best_performer_july21.mp4" preload="metadata" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <video id="csVideoFrankly" poster="assets/creatives/posters/frankly_hero_best_performer_july21.webp" src="assets/creatives/videos/frankly_hero_best_performer_july21.mp4" preload="metadata" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
               <div class="cs-media-play-overlay">
                 <div class="play-btn-circle">▶</div>
                 <span class="play-overlay-caption">Click to Open Full Strategy Page</span>
               </div>
             </a>
-            <p class="cs-media-caption">Frankly Wearing · The "Living Merch" AI Motion Pattern Interrupt</p>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; flex-wrap: wrap; gap: 6px;">
+              <p class="cs-media-caption" style="margin: 0;">Frankly Wearing · AI Motion Pattern Interrupt</p>
+              <button class="btn-audio-toggle" onclick="toggleCsAudio('csVideoFrankly', this, event)">🔊 Unmute Audio</button>
+            </div>
           </div>
         </div>
       </article>
@@ -1994,13 +2069,16 @@ html, body {
 
           <div class="cs-media-column">
             <a href="kyari.html" target="_blank" class="cs-media-frame" style="text-decoration: none; display: block;">
-              <video poster="assets/creatives/posters/kyari_hero_approved_ai.webp" src="assets/creatives/videos/kyari_hero_approved_ai.mp4" preload="metadata" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <video id="csVideoKyari" poster="assets/creatives/posters/kyari_hero_approved_ai.webp" src="assets/creatives/videos/kyari_hero_approved_ai.mp4" preload="metadata" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
               <div class="cs-media-play-overlay">
                 <div class="play-btn-circle">▶</div>
                 <span class="play-overlay-caption">Click to Open Full Strategy Page</span>
               </div>
             </a>
-            <p class="cs-media-caption">Kyari · Approved Creative Concept (AI Living Motion &amp; Sub-Irrigation Mechanism)</p>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; flex-wrap: wrap; gap: 6px;">
+              <p class="cs-media-caption" style="margin: 0;">Kyari · AI Living Motion &amp; Self-Watering Mechanism</p>
+              <button class="btn-audio-toggle" onclick="toggleCsAudio('csVideoKyari', this, event)">🔊 Unmute Audio</button>
+            </div>
           </div>
         </div>
       </article>
@@ -2057,13 +2135,16 @@ html, body {
 
           <div class="cs-media-column">
             <a href="tata-play-fiber.html" class="cs-media-frame" style="text-decoration: none; display: block;">
-              <video preload="none" poster="assets/creatives/posters/tpf_hyperlocal_navi_mumbai.webp" src="assets/creatives/videos/tpf_hyperlocal_navi_mumbai.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <video id="csVideoTpf" preload="none" poster="assets/creatives/posters/tpf_hyperlocal_navi_mumbai.webp" src="assets/creatives/videos/tpf_hyperlocal_navi_mumbai.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
               <div class="cs-media-play-overlay">
                 <div class="play-btn-circle">▶</div>
                 <span class="play-overlay-caption">Click to View Hyperlocal Breakdown</span>
               </div>
             </a>
-            <p class="cs-media-caption">Tata Play Fiber · Multi-City Hyper-Local Video</p>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; flex-wrap: wrap; gap: 6px;">
+              <p class="cs-media-caption" style="margin: 0;">Tata Play Fiber · Multi-City Hyper-Local Video</p>
+              <button class="btn-audio-toggle" onclick="toggleCsAudio('csVideoTpf', this, event)">🔊 Unmute Audio</button>
+            </div>
           </div>
         </div>
       </article>
@@ -2115,18 +2196,21 @@ html, body {
             <a href="hokipo.html" target="_blank" class="cs-open-deepdive-btn" style="text-decoration:none;">
               <span>Read Full Creative Strategy Breakdown</span>
               <span>→</span>
-            </div>
+            </a>
           </div>
 
           <div class="cs-media-column">
             <a href="hokipo.html" target="_blank" class="cs-media-frame" style="text-decoration:none; display:block;">
-              <img src="assets/creatives/statics/hokipo_sofa_reupholstery_vs_cover.png" alt="HOKIPO Sofa Reupholstery vs Slipcover" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/creatives/statics/hokipo_meme_brand_hero.png" alt="HOKIPO Karisma Kapoor Brand Ambassador Campaign" style="width: 100%; height: 100%; object-fit: cover;">
               <div class="cs-media-play-overlay">
                 <div class="play-btn-circle">🔍</div>
-                <span class="play-overlay-caption">Click to Inspect Strategy Dossier</span>
+                <span class="play-overlay-caption">Click to Inspect Full Strategy Dossier</span>
               </div>
+            </a>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; flex-wrap: wrap; gap: 6px;">
+              <p class="cs-media-caption" style="margin: 0;">HOKIPO · Karisma Kapoor Campaign &amp; Direct-Response Arbitrage</p>
+              <span class="tag-mono tag-lime" style="font-size: 10px; padding: 2px 8px; font-weight: 700;">₹6L+ Scaled</span>
             </div>
-            <p class="cs-media-caption">HOKIPO · Karisma Kapoor Campaign &amp; Direct-Response Economic Arbitrage</p>
           </div>
         </div>
       </article>
@@ -3174,6 +3258,28 @@ html, body {
       }
 };
 
+        function toggleCsAudio(vidId, btn, e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const vid = document.getElementById(vidId);
+      if (!vid) return;
+
+      if (vid.muted) {
+        vid.muted = false;
+        vid.play().catch(() => {});
+        btn.innerHTML = '🔇 Mute Audio';
+        btn.style.background = 'var(--accent-lime)';
+        btn.style.color = '#0F172A';
+      } else {
+        vid.muted = true;
+        btn.innerHTML = '🔊 Unmute Audio';
+        btn.style.background = '#0F172A';
+        btn.style.color = '#FFFFFF';
+      }
+    }
+
     function openTheatre(id) {
       const data = CREATIVES_DB[id];
       if (!data) {
@@ -3312,6 +3418,33 @@ html, body {
     }
 
     // Close modal on Escape key
+    
+    // Scroll handling: Back to Top button + Mobile sticky bar ducking
+    window.addEventListener('scroll', () => {
+      const backToTop = document.getElementById('backToTop');
+      if (backToTop) {
+        if (window.pageYOffset > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }
+
+      const stickyBar = document.querySelector('.mobile-sticky-bar');
+      if (stickyBar) {
+        const scrollBottom = document.documentElement.scrollHeight - window.innerHeight - window.pageYOffset;
+        if (scrollBottom < 260) {
+          stickyBar.style.opacity = '0';
+          stickyBar.style.pointerEvents = 'none';
+          stickyBar.style.transform = 'translateY(16px)';
+        } else {
+          stickyBar.style.opacity = '1';
+          stickyBar.style.pointerEvents = 'auto';
+          stickyBar.style.transform = 'translateY(0)';
+        }
+      }
+    });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeTheatre();
