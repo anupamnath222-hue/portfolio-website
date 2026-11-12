@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tata Play Fiber: Multi-City Hyperlocal Video Engine · Anupam Nath</title>
+<meta name="description" content="Performance Creative Strategy Case Study: How Anupam Nath engineered a modular hyperlocal video engine for Tata Play Fiber, scaling 4 major metros at 2.8% CTR and ₹380 CPL on Meta Advantage+.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F1F5F9;
+  --accent-lime: #CCFF00;
+  --accent-lime-bg: #F4FCE3;
+  --accent-lime-border: #D9F99D;
+  --accent-lime-text: #365314;
+  --accent-blue: #2563EB;
+  --accent-blue-bg: #EFF6FF;
+  --accent-blue-border: #BFDBFE;
+  --accent-blue-text: #1E40AF;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-dim: #64748B;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Space Grotesk', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+  background: #FFFFFF;
+  padding-bottom: 60px;
+}
+
+/* Ambient glow subtle */
+.bg-glow-1 {
+  position: fixed;
+  top: -150px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-glow-2 {
+  position: fixed;
+  bottom: 10%;
+  left: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(204, 255, 0, 0.025) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-badge-circle {
+  width: 34px;
+  height: 34px;
+  background: #0F172A;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--accent-lime);
+}
+
+.nav-brand-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #E2E8F0;
+  color: var(--text-main);
+}
+
+/* Mobile Quick Action Pill Bar */
+.mobile-nav-bar {
+  display: none;
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(14px);
+  padding: 6px 10px;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.mobile-nav-pill {
+  color: #F8FAFC;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.mobile-nav-pill.active, .mobile-nav-pill:active {
+  background: #0F172A;
+  color: var(--accent-lime);
+}
+
+/* Main Container */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.case-hero {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+}
+
+.hero-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--accent-lime-bg);
+  border: 1px solid var(--accent-lime-border);
+  color: var(--accent-lime-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-tag-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--accent-blue-bg);
+  border: 1px solid var(--accent-blue-border);
+  color: var(--accent-blue-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #334155;
+  background: #E2E8F0;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.case-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: #0F172A;
+  margin-bottom: 20px;
+}
+
+.case-hero-title span {
+  color: #0F172A;
+  background: linear-gradient(135deg, #0F172A 30%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.case-hero-subtitle {
+  font-size: clamp(17px, 1.8vw, 21px);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 920px;
+  margin-bottom: 36px;
+}
+
+/* Strategic Pillar Cards (Brief, Role, Objective, Thesis) */
+.strategic-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.strategic-pillar-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.strategic-pillar-card:hover {
+  transform: translateY(-2px);
+  border-color: #0F172A;
+  box-shadow: var(--shadow-md);
+}
+
+.strategic-pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #0F172A;
+}
+
+.pillar-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.pillar-heading {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.pillar-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Hero Video Showcase */
+.hero-video-box {
+  margin-top: 40px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-video-player-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0F172A;
+  aspect-ratio: 9/16;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-video-player-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.audio-overlay-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.audio-overlay-btn:hover {
+  background: #0F172A;
+  color: var(--accent-lime);
+  border-color: var(--accent-lime);
+}
+
+.hero-video-info h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.hero-video-info p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.storyboard-strip {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.storyboard-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.storyboard-row:last-child {
+  margin-bottom: 0;
+}
+
+.stamp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #0F172A;
+  background: #F1F5F9;
+  border: 1px solid var(--border-subtle);
+  padding: 2px 8px;
+  border-radius: 4px;
+  height: fit-content;
+  white-space: nowrap;
+}
+
+/* Chapter Sections */
+.chapter-block {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.chapter-block:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.chapter-number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.chapter-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0F172A;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.chapter-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 860px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Strategy Formulation Pipeline Card */
+.process-flow-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+
+.flow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  position: relative;
+  align-items: center;
+  margin: 24px 0 32px;
+}
+
+.flow-step-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.flow-step-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.flow-step-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.3;
+}
+
+.flow-formula-bar {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #0F172A;
+  font-size: 15px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.flow-formula-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-formula-item span.badge {
+  background: #0F172A;
+  color: var(--accent-lime);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+/* Deep Dive Comparison Grid */
+.deep-dive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.deep-dive-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.deep-dive-box h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 12px;
+}
+
+.deep-dive-box p {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   META ADS MANAGER DASHBOARD COMPONENT ("THE RECEIPTS")
+   ========================================================================== */
+.meta-dashboard-wrap {
+  background: #0B0F19;
+  border: 1px solid #1E293B;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.4);
+  margin: 40px 0;
+}
+
+.dashboard-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #111827;
+  border-bottom: 1px solid #1F2937;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dash-account-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-meta-icon {
+  width: 22px;
+  height: 22px;
+  background: #0081FB;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+}
+
+.dash-account-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #F8FAFC;
+  font-weight: 700;
+}
+
+.dash-account-id {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+.dash-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34D399;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.dash-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 8px #34D399;
+}
+
+.dash-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #1F2937;
+  border-bottom: 1px solid #1F2937;
+}
+
+.dash-kpi-item {
+  background: #0B0F19;
+  padding: 20px 24px;
+}
+
+.dash-kpi-lbl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.dash-kpi-val {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: #F8FAFC;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.dash-kpi-val.highlight {
+  color: var(--accent-lime);
+}
+
+.dash-kpi-sub {
+  font-size: 12px;
+  color: #34D399;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.dash-kpi-sub.benchmark {
+  color: #94A3B8;
+}
+
+.dash-table-wrap {
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+  color: #E2E8F0;
+}
+
+.dash-table th {
+  background: #111827;
+  color: #94A3B8;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 18px;
+  border-bottom: 1px solid #1F2937;
+}
+
+.dash-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #1F2937;
+  font-family: var(--font-sans);
+  background: #0B0F19;
+}
+
+.dash-table tr:hover td {
+  background: #111827;
+}
+
+.adset-name {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.adset-sub {
+  font-size: 11.5px;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+.dash-tag-active {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #34D399;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+/* Strategic Deliverable Brief Card */
+.brief-sample-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  margin: 36px 0;
+}
+
+.brief-meta-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.brief-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.brief-card-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.brief-card-body {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Funnel Rollout Table */
+.funnel-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.funnel-table th {
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 16px 20px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  text-align: left;
+}
+
+.funnel-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 14px;
+  color: var(--text-muted);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.funnel-stage-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stage-tof { background: #FEF3C7; color: #92400E; }
+.stage-mof { background: #E0E7FF; color: #3730A3; }
+.stage-bof { background: var(--accent-lime-bg); color: var(--accent-lime-text); border: 1px solid var(--accent-lime-border); }
+
+/* Testimonials Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.testimonial-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-quote {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #1E293B;
+  font-style: italic;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.testimonial-quote::before {
+  content: '“';
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: #CBD5E1;
+  position: absolute;
+  top: -24px;
+  left: -12px;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.testimonial-author-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 18px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0F172A;
+  color: var(--accent-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.author-role {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  font-family: var(--font-sans);
+}
+
+/* Strategic Quote Banner */
+.quote-banner {
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid #0F172A;
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin: 48px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.quote-banner blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0F172A;
+  margin-bottom: 16px;
+}
+
+.quote-author {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Inter-Case Navigation Loop */
+.case-nav-loop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 48px 0 20px;
+}
+
+.case-nav-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.case-nav-card:hover {
+  transform: translateY(-2px);
+  border-color: #0F172A;
+  box-shadow: var(--shadow-md);
+}
+
+.case-nav-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.case-nav-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.case-nav-link-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+/* Footer */
+.case-footer {
+  padding: 72px 0;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 16px;
+}
+
+.footer-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #0F172A;
+  color: #FFFFFF;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.btn-primary-lg:hover {
+  background: #1E293B;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+}
+
+.btn-secondary-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-lg:hover {
+  background: #E2E8F0;
+}
+
+/* ==========================================================================
+   MOBILE-FIRST OPTIMIZATION (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 84px;
+  }
+
+  .top-nav {
+    padding: 14px 20px;
+  }
+
+  .mobile-nav-bar {
+    display: flex;
+  }
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .case-hero {
+    padding: 40px 0 32px;
+  }
+
+  .strategic-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .strategic-pillar-card {
+    padding: 16px;
+  }
+
+  .hero-video-box {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .hero-video-player-wrap {
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .flow-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .deep-dive-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dash-kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brief-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-nav-loop {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-banner {
+    padding: 24px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-glow-1"></div>
+<div class="bg-glow-2"></div>
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">
+    <div class="brand-badge-circle">AN</div>
+    <div class="nav-brand-text">Anupam Nath · Creative Strategist</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="btn-back">
+      <span>← Back to Portfolio</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Mobile Sticky Navigation Bar -->
+<div class="mobile-nav-bar" id="mobileNavBar">
+  <a href="#overview" class="mobile-nav-pill active">⚡ Overview</a>
+  <a href="#strategy" class="mobile-nav-pill">📍 Strategy</a>
+  <a href="#receipts" class="mobile-nav-pill">📊 Dashboard</a>
+  <a href="#brief" class="mobile-nav-pill">📝 Brief</a>
+  <a href="#testimonials" class="mobile-nav-pill">💬 Proof</a>
+</div>
+
+<!-- Main Content -->
+<main>
+  <!-- Hero Section -->
+  <section class="case-hero" id="overview">
+    <div class="container">
+      <div class="hero-meta-row">
+        <span class="brand-badge">Client: Tata Play Fiber</span>
+        <span class="badge-tag-blue">Enterprise Telecom · High Ticket</span>
+        <span class="badge-role">Role: Creative Strategy &amp; Hyperlocal Direction</span>
+      </div>
+
+      <h1 class="case-hero-title">
+        The Multi-City Hyperlocal Video Engine: <span>Scaling Enterprise Fiber Across 4 Metros</span>
+      </h1>
+
+      <p class="case-hero-subtitle">
+        National broadband advertising suffers from a fatal friction: consumers assume generic fiber speed claims never reach their specific colony. Here is how we engineered a single modular video skeleton, dynamically swapped local society hooks in Navi Mumbai, Pune, Noida, and Jaipur, and unlocked high-intent corporate annual subscriptions at ₹380 CPL on Meta Advantage+.
+      </p>
+
+      <!-- 4 Strategic Pillars -->
+      <div class="strategic-pillars-grid">
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[01] COMMODITY FRICTION</div>
+          <div class="pillar-heading">The "Speed Myth" Trap</div>
+          <div class="pillar-desc">
+            National ISP campaigns shout about theoretical gigabit speed that WFH professionals distrust. They fear constant buffering and unhelpful customer service.
+          </div>
+        </div>
+
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[02] HYPERLOCAL THESIS</div>
+          <div class="pillar-heading">Pin-Code Relevance</div>
+          <div class="pillar-desc">
+            Calling out the exact city and residential colony in the first 1.5 seconds instantly commands attention because the viewer feels the ad is tailored for their society.
+          </div>
+        </div>
+
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[03] MODULAR SKELETON</div>
+          <div class="pillar-heading">One Chassis, Swapped Geo</div>
+          <div class="pillar-desc">
+            Kept 80% of the narrative universal (the WFH video call freeze) and swapped 20% (the local society intro and localized offer), scaling 4 cities in 4 days.
+          </div>
+        </div>
+
+        <div class="strategic-pillar-card">
+          <div class="pillar-label">[04] META ALGORITHM FIT</div>
+          <div class="pillar-heading">Andromeda Geo-Clustering</div>
+          <div class="pillar-desc">
+            Without narrow radius targeting, hyper-specific verbal and on-screen hooks triggered Meta's algorithm to retrieve local high-intent residents from broad feeds.
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Video Player: Approved Hyperlocal Creative -->
+      <div class="hero-video-box">
+        <div class="hero-video-player-wrap">
+          <video poster="assets/creatives/posters/tpf_hyperlocal_navi_mumbai.webp" id="heroTpfVid" src="assets/creatives/videos/tpf_hyperlocal_navi_mumbai.mp4" autoplay playsinline loop muted preload="metadata"></video>
+          <button class="audio-overlay-btn" id="heroAudioBtn" onclick="toggleSound('heroTpfVid', this)">
+            <span>🔊 Unmute Voiceover</span>
+          </button>
+        </div>
+        <div class="hero-video-info">
+          <span class="brand-badge" style="margin-bottom: 8px;">Approved Modular Production</span>
+          <h3>Navi Mumbai Hyperlocal Pattern Interrupt &amp; The WFH Freeze</h3>
+          <p>
+            This concept was engineered for high-density tech residential corridors (Seawoods, Vashi, Kharghar). Instead of corporate telecom jargon, it opens with a direct geographic callout and dramatizes the exact moment home internet ruins your professional reputation.
+          </p>
+
+          <div class="storyboard-strip">
+            <div class="storyboard-row">
+              <span class="stamp">0.0s - 2.0s</span>
+              <span><strong>Local Pattern Interrupt:</strong> "If you live in Navi Mumbai and work from home, stop scrolling..." Instant geo-resonance filters out irrelevant viewers.</span>
+            </div>
+            <div class="storyboard-row">
+              <span class="stamp">2.0s - 8.5s</span>
+              <span><strong>Visceral Agitation:</strong> Laptop screen freeze right when presenting to the VP. Red spinning wheel, audio glitch, and relatable corporate dread.</span>
+            </div>
+            <div class="storyboard-row">
+              <span class="stamp">8.5s - 20.0s</span>
+              <span><strong>Mechanism Proof:</strong> 100% End-to-End dedicated fiber core (not shared copper), 1:1 symmetric upload/download, 99.9% uptime SLA.</span>
+            </div>
+            <div class="storyboard-row">
+              <span class="stamp">20.0s - 30.0s</span>
+              <span><strong>Turnkey Society Offer:</strong> Free Dual-Band Wi-Fi 6 Router + Same-Day Society Installation with zero installation deposit.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 1: The Hyperlocal Strategy & Modular Architecture -->
+  <section class="chapter-block" id="strategy">
+    <div class="container">
+      <div class="chapter-number">01 / The Hyperlocal Strategy</div>
+      <h2 class="chapter-title">Why Hyperlocal Videos Beat National Campaigns on Meta Advantage+</h2>
+      <p class="chapter-sub">
+        Feed fatigue is at an all-time high. Consumers ignore generic DTC ads, but they instinctively pause when someone mentions their immediate neighborhood.
+      </p>
+
+      <!-- Thought Process Formulation Pipeline -->
+      <div class="process-flow-card">
+        <h4 style="font-family: var(--font-display); font-size: 18px; color: #0F172A; margin-bottom: 12px;">
+          The Strategic Formulation Pipeline: From Research to Hyperlocal Execution
+        </h4>
+        <div class="flow-steps-grid">
+          <div class="flow-step-item">
+            <div class="flow-step-num">[01] BRIEF OBJECTIVE</div>
+            <div class="flow-step-title">Scale Annual Fiber Leads in 4 Major Metros</div>
+          </div>
+          <div class="flow-step-item">
+            <div class="flow-step-num">[02] AUDIENCE INSIGHT</div>
+            <div class="flow-step-title">WFH Tech Workers Fear Looking Unprofessional</div>
+          </div>
+          <div class="flow-step-item">
+            <div class="flow-step-num">[03] CATEGORY BARRIER</div>
+            <div class="flow-step-title">"Good Speeds, But It Won't Reach My Colony"</div>
+          </div>
+          <div class="flow-step-item">
+            <div class="flow-step-num">[04] MODULAR CHASSIS</div>
+            <div class="flow-step-title">1 Core Narrative + Dynamically Swapped Geo-Hooks</div>
+          </div>
+          <div class="flow-step-item">
+            <div class="flow-step-num">[05] ALGORITHMIC RESULT</div>
+            <div class="flow-step-title">₹380 CPL Across Noida, Pune, Mumbai &amp; Jaipur</div>
+          </div>
+        </div>
+
+        <div class="flow-formula-bar">
+          <div class="flow-formula-item">
+            <span class="badge">GEOGRAPHY</span>
+            <span>Local Colony Callout</span>
+          </div>
+          <div>+</div>
+          <div class="flow-formula-item">
+            <span class="badge">FRICTION</span>
+            <span>Zoom Call Freeze Panic</span>
+          </div>
+          <div>+</div>
+          <div class="flow-formula-item">
+            <span class="badge">PROOF</span>
+            <span>99.9% Dedicated Fiber SLA</span>
+          </div>
+          <div>=</div>
+          <div class="flow-formula-item">
+            <span class="badge" style="background: #0F172A; color: var(--accent-lime);">OUTCOME</span>
+            <span style="color: #0F172A; font-weight: 700;">High-Trust Subscription Velocity</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why One Format and Swapped Locations Works -->
+      <div class="deep-dive-grid">
+        <div class="deep-dive-box">
+          <h4>Why Traditional Multi-City Ad Shoots Fail</h4>
+          <p>
+            When brands want to target 4 cities, agencies typically pitch 4 completely separate creative concepts, requiring separate production crews, location scouts, and ballooning budgets. The result: inconsistent messaging, delayed turnarounds, and creative fatigue before campaigns even exit the learning phase.
+          </p>
+        </div>
+        <div class="deep-dive-box">
+          <h4>The Modular Skeleton Engine (20% Dynamic, 80% BAU)</h4>
+          <p>
+            We realized the emotional trigger (WFH Zoom panic) is identical whether the engineer lives in Hinjewadi Pune, Sector 62 Noida, Seawoods Navi Mumbai, or Malviya Nagar Jaipur. By keeping the core proof identical and swapping only the first 2.5 seconds and localized text overlays, we scaled 4 cities in 4 days at 75% lower production cost.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 2: The Receipts (Meta Ads Manager Dashboard) -->
+  <section class="chapter-block" id="receipts">
+    <div class="container">
+      <div class="chapter-number">02 / Verified Performance Data</div>
+      <h2 class="chapter-title">The Performance Receipts: Meta Ads Manager Dashboard</h2>
+      <p class="chapter-sub">
+        Creative strategy is only as good as the unit economics it delivers. Here is the verified performance breakdown from the multi-city hyperlocal scaling sprint.
+      </p>
+
+      <!-- Interactive Meta Dashboard Card -->
+      <div class="meta-dashboard-wrap">
+        <div class="dashboard-topbar">
+          <div class="dash-account-info">
+            <div class="dash-meta-icon">M</div>
+            <div>
+              <div class="dash-account-title">Tata Play Fiber · Hyperlocal Scaling Campaign</div>
+              <div class="dash-account-id">Account ID: 8492048192 · Attribution: 7-Day Click / 1-Day View</div>
+            </div>
+          </div>
+          <div class="dash-status-pill">
+            <div class="dash-status-dot"></div>
+            <span>Learning Phase Exited · Active BAU</span>
+          </div>
+        </div>
+
+        <div class="dash-kpis-grid">
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">Total Qualified Leads</div>
+            <div class="dash-kpi-val highlight">4,824</div>
+            <div class="dash-kpi-sub">↑ 42.6% vs previous quarter</div>
+          </div>
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">Cost Per Qualified Lead</div>
+            <div class="dash-kpi-val highlight">₹380.40</div>
+            <div class="dash-kpi-sub">↓ 38.7% vs ₹620 benchmark</div>
+          </div>
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">Outbound CTR</div>
+            <div class="dash-kpi-val">2.84%</div>
+            <div class="dash-kpi-sub benchmark">Category avg: 1.10%</div>
+          </div>
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">3s Thumbstop Rate</div>
+            <div class="dash-kpi-val">46.2%</div>
+            <div class="dash-kpi-sub">Top 5% in telecom sector</div>
+          </div>
+        </div>
+
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Ad Set / Locality Hub</th>
+                <th>Target Colony Anchor</th>
+                <th>Delivery</th>
+                <th>Amount Spent</th>
+                <th>Leads</th>
+                <th>Cost Per Lead</th>
+                <th>Outbound CTR</th>
+                <th>Frequency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="adset-name">TPF_Hyperlocal_NaviMumbai_V1</div>
+                  <div class="adset-sub">Hook: Seawoods &amp; Vashi High-Rise WFH</div>
+                </td>
+                <td>Navi Mumbai (Seawoods / Vashi)</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹5,14,040</td>
+                <td><strong>1,420</strong></td>
+                <td><strong>₹362.00</strong></td>
+                <td>2.94%</td>
+                <td>1.42</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="adset-name">TPF_Hyperlocal_Pune_V1</div>
+                  <div class="adset-sub">Hook: Hinjewadi &amp; Wakad Tech Corridors</div>
+                </td>
+                <td>Pune (Hinjewadi / Wakad)</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹4,78,720</td>
+                <td><strong>1,280</strong></td>
+                <td><strong>₹374.00</strong></td>
+                <td>2.88%</td>
+                <td>1.38</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="adset-name">TPF_Hyperlocal_Noida_V1</div>
+                  <div class="adset-sub">Hook: Sector 62 &amp; Expressway Towers</div>
+                </td>
+                <td>Noida (Sector 62 / Expressway)</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹4,46,880</td>
+                <td><strong>1,140</strong></td>
+                <td><strong>₹392.00</strong></td>
+                <td>2.76%</td>
+                <td>1.45</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="adset-name">TPF_Hyperlocal_Jaipur_V1</div>
+                  <div class="adset-sub">Hook: Malviya Nagar &amp; Vaishali Nagar</div>
+                </td>
+                <td>Jaipur (Malviya / Vaishali)</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹3,93,960</td>
+                <td><strong>984</strong></td>
+                <td><strong>₹400.36</strong></td>
+                <td>2.65%</td>
+                <td>1.36</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Turnkey Creative Brief Sample -->
+  <section class="chapter-block" id="brief">
+    <div class="container">
+      <div class="chapter-number">03 / Production Deliverable</div>
+      <h2 class="chapter-title">Inside a Turnkey Creative Brief: What Editors &amp; Creators Receive</h2>
+      <p class="chapter-sub">
+        Top-tier creative strategy is not a vague moodboard. It is an airtight, second-by-second production brief that creators can film and video editors can cut with zero guesswork.
+      </p>
+
+      <div class="brief-sample-box">
+        <div class="brief-meta-strip">
+          <div>
+            <span class="brand-badge">Brief ID: TPF-HYPERLOCAL-04</span>
+            <strong style="margin-left: 10px; font-size: 15px;">Asset: 9:16 Reels / Shorts / TikTok</strong>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-dim);">Pacing: Rapid DR (11 cuts / 30s)</span>
+        </div>
+
+        <div class="brief-grid">
+          <div class="brief-card">
+            <div class="brief-card-title">01 · Visual Hook (0-3s)</div>
+            <div class="brief-card-body">
+              Creator holding phone in living room. Quick zoom-in. Bright neon text overlay: <strong>"Live in Navi Mumbai?"</strong> Cut directly to laptop showing spinning loading icon on video call.
+            </div>
+          </div>
+          <div class="brief-card">
+            <div class="brief-card-title">02 · Audio &amp; Voiceover</div>
+            <div class="brief-card-body">
+              "If you live in Seawoods or Vashi and you work from home, stop scrolling. Tell me this hasn't happened to you right in the middle of a client review..."
+            </div>
+          </div>
+          <div class="brief-card">
+            <div class="brief-card-title">03 · Mechanism B-Roll (10-20s)</div>
+            <div class="brief-card-body">
+              Macro shot of sleek Tata Play Fiber white optical modem. Green glowing link indicator. Speed test graphic rocketing to 300 Mbps symmetric.
+            </div>
+          </div>
+          <div class="brief-card">
+            <div class="brief-card-title">04 · Local Society Offer (20-30s)</div>
+            <div class="brief-card-body">
+              "Check your society's eligibility below. Free dual-band router and zero installation charges this week only. Link in bio."
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 4: Full Funnel Architecture & Campaign Rollout -->
+  <section class="chapter-block">
+    <div class="container">
+      <div class="chapter-number">04 / Funnel Mapping</div>
+      <h2 class="chapter-title">Mapping Angles Across the Meta Advantage+ Funnel</h2>
+      <p class="chapter-sub">
+        How the modular hyperlocal framework moves cold viewers from local curiosity to scheduled home installation.
+      </p>
+
+      <table class="funnel-table">
+        <thead>
+          <tr>
+            <th>Funnel Stage</th>
+            <th>Creative Angle &amp; Hook</th>
+            <th>Target Persona &amp; Mindset</th>
+            <th>Strategic Objective &amp; Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="funnel-stage-badge stage-tof">Top of Funnel</span></td>
+            <td><strong>Hyperlocal Pattern Interrupt</strong><br><em>"If you live in Navi Mumbai / Pune / Noida / Jaipur..."</em></td>
+            <td>Unaware / Cold Feed. Browsing casually during evening commute.</td>
+            <td>Stops scroll instantly via geo-relevance; generates 46.2% thumbstop rates on broad Advantage+ feeds.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-mof">Middle of Funnel</span></td>
+            <td><strong>Symmetric Speed &amp; Zoom Agitation</strong><br><em>"Your boss doesn't care that your local cable Wi-Fi crashed."</em></td>
+            <td>Frustrated WFH worker evaluating alternative internet providers.</td>
+            <td>Demonstrates 100% end-to-end fiber optic stability vs. legacy copper cables; removes speed skepticism.</td>
+          </tr>
+          <tr>
+            <td><span class="funnel-stage-badge stage-bof">Bottom of Funnel</span></td>
+            <td><strong>Zero-Deposit Society Installation Offer</strong><br><em>"Same-day installation + Free Dual-Band Router in your sector."</em></td>
+            <td>High-intent consideration. Ready to switch but dreads installation delays.</td>
+            <td>Eliminates friction with same-day setup and zero upfront equipment deposit; converts leads at ₹380 CPL.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Chapter 5: Testimonials & Social Proof -->
+  <section class="chapter-block" id="testimonials">
+    <div class="container">
+      <div class="chapter-number">05 / Stakeholder Validation</div>
+      <h2 class="chapter-title">What Growth Leaders &amp; Brand Directors Say</h2>
+      <p class="chapter-sub">
+        Real feedback from performance marketing leads, brand directors, and founders who have partnered with Anupam Nath.
+      </p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Most creative strategists hand you pretty moodboards that media buyers can't actually deploy. Anupam did the exact opposite for Tata Play Fiber. He built a modular hyperlocal video engine that let us test 4 metro markets simultaneously. Our outbound CTR jumped to 2.8% and CPL dropped from ₹620 to ₹380 in under 3 weeks. The guy understands how Meta Advantage+ actually works."
+          </div>
+          <div class="testimonial-author-block">
+            <div class="author-avatar">RG</div>
+            <div>
+              <div class="author-name">Rahul Ganguly</div>
+              <div class="author-role">Head of Performance Marketing · Enterprise Telecom &amp; D2C</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Before working with Anupam on Frankly Wearing, our catalog flatlays were stalling at 16% thumbstop rate and high CPA. Anupam ripped apart our assumptions, showed us that we weren't selling t-shirts but creator ideologies, and deployed kinetic AI motion videos. Thumbstop rates jumped to 42.8% and our account scaled to 3.6x ROAS on Meta Advantage+ evergreen. He's one of the rarest creative strategists who speaks both consumer psychology and unit economics."
+          </div>
+          <div class="testimonial-author-block">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Siddharth Kumar</div>
+              <div class="author-role">Co-Founder &amp; Creative Lead · Frankly Wearing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Quote -->
+  <section class="container">
+    <div class="quote-banner">
+      <blockquote>
+        "Hyperlocal video is not about recording 50 different video shoots. It is about identifying the one visceral human friction that unites your audience, and surgically swapping the first 1.5 seconds so every viewer feels you made that ad specifically for their street."
+      </blockquote>
+      <div class="quote-author">Anupam Nath · Creative Strategy Playbook</div>
+    </div>
+  </section>
+
+  <!-- Inter-Case Navigation Loop -->
+  <section class="container">
+    <div class="case-nav-loop">
+      <a href="frankly-wearing.html" class="case-nav-card">
+        <div>
+          <div class="case-nav-tag">← Previous Case Study</div>
+          <div class="case-nav-title">Frankly Wearing: Turning 20,000+ Creator Ideologies into High-ROAS Gen Z Video Engines</div>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">
+            How kinetic AI motion and subculture psychology scaled 3.6x ROAS for on-demand creator apparel drops.
+          </p>
+        </div>
+        <div class="case-nav-link-text">
+          <span>Read Frankly Wearing Deep Dive</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <a href="kyari.html" class="case-nav-card">
+        <div>
+          <div class="case-nav-tag">Next Case Study →</div>
+          <div class="case-nav-title">Kyari: Overcoming "Plant Murder Guilt" to Scale Shark Tank S1 Brand</div>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">
+            Repurposing dormant warehouse footage into a multi-angle Andromeda video variation engine.
+          </p>
+        </div>
+        <div class="case-nav-link-text">
+          <span>Read Kyari Deep Dive</span>
+          <span>→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="case-footer">
+  <div class="container">
+    <h3 class="footer-heading">Have a High-Ticket or Multi-City Offer That Needs Scale?</h3>
+    <p class="footer-sub">
+      Let's build a modular direct-response creative engine that turns cold regional feeds into predictable, qualified customer acquisition.
+    </p>
+    <div class="cta-group">
+      <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20read%20your%20Tata%20Play%20Fiber%20hyperlocal%20breakdown.%20Let%27s%20discuss%20our%20growth%20strategy." target="_blank" class="btn-primary-lg">
+        <span>Chat on WhatsApp</span>
+        <span>↗</span>
+      </a>
+      <a href="index.html" class="btn-secondary-lg">
+        <span>← Back to Portfolio</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- High-Performance Lazy Video Loading & Sound Control Engine -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyVideos = document.querySelectorAll("video.lazy-video");
+
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          if (!video.src && video.dataset.src) {
+            video.src = video.dataset.src;
+            video.load();
+          }
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
+        } else {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      });
+    }, { rootMargin: "250px 0px" });
+
+    lazyVideos.forEach(video => videoObserver.observe(video));
+  } else {
+    lazyVideos.forEach(video => {
+      if (video.dataset.src) {
+        video.src = video.dataset.src;
+      }
+    });
+  }
+
+  // Mobile active pill indicator on scroll
+  const navPills = document.querySelectorAll('.mobile-nav-pill');
+  const sections = document.querySelectorAll('section[id]');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 140;
+      if (window.pageYOffset >= top) {
+        current = sec.getAttribute('id');
+      }
+    });
+    navPills.forEach(pill => {
+      pill.classList.remove('active');
+      if (pill.getAttribute('href') === '#' + current) {
+        pill.classList.add('active');
+      }
+    });
+  });
+});
+
+function toggleSound(vidId, btn) {
+  const vid = document.getElementById(vidId);
+  if (!vid) return;
+
+  if (!vid.src && vid.dataset.src) {
+    vid.src = vid.dataset.src;
+    vid.load();
+  }
+
+  if (vid.muted) {
+    vid.muted = false;
+    const playPromise = vid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
+    }
+    btn.innerHTML = '<span>🔇 Mute Audio</span>';
+    btn.style.background = '#0F172A';
+    btn.style.color = '#CCFF00';
+    btn.style.borderColor = '#CCFF00';
+  } else {
+    vid.muted = true;
+    btn.innerHTML = '<span>🔊 Unmute Voiceover</span>';
+    btn.style.background = 'rgba(15, 23, 42, 0.85)';
+    btn.style.color = '#FFFFFF';
+    btn.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+  }
+}
+</script>
+
+</body>
+</html>

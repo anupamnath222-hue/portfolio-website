@@ -26,6 +26,7 @@
   <!-- Prefetch Deep Dive Case Studies for Instant Zero-Lag Navigation -->
   <link rel="prefetch" href="frankly-wearing.html">
   <link rel="prefetch" href="kyari.html">
+  <link rel="prefetch" href="tata-play-fiber.html">
 
   <style>
     /* ==========================================================================
@@ -1429,6 +1430,207 @@
       .nav-links { display: none; }
       .hero-metrics-bar { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ==========================================================================
+       TESTIMONIALS & SERVICES STYLING
+       ========================================================================== */
+    .testimonials-section {
+      padding: 96px 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-quote {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--text-main);
+      font-style: italic;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .testimonial-author-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 18px;
+    }
+
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #0F172A;
+      color: var(--accent-lime);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .author-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Services & Retainers Section */
+    .services-section {
+      padding: 96px 0;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      border-color: #0F172A;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card.featured {
+      border: 2px solid #0F172A;
+    }
+
+    .service-card.featured::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-lime);
+    }
+
+    .service-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .badge-pop {
+      background: #0F172A;
+      color: var(--accent-lime);
+    }
+
+    .badge-norm {
+      background: #F1F5F9;
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .service-title {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+
+    .service-deliverables-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .service-deliverable-item {
+      display: flex;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    .service-check {
+      color: #16A34A;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .service-card .btn {
+      width: 100%;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    @media (max-width: 900px) {
+      .testimonials-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1450,6 +1652,8 @@
         <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
         <li><a href="#vault" class="nav-link">Archetypes</a></li>
         <li><a href="#methodology" class="nav-link">Framework</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
       </ul>
 
@@ -1720,20 +1924,20 @@
               </div>
             </div>
 
-            <div class="cs-open-deepdive-btn" onclick="openTheatre('tpf-navi-mumbai')">
-              <span>Read Full Creative Strategy Breakdown</span>
+            <a href="tata-play-fiber.html" class="cs-open-deepdive-btn" style="text-decoration:none;">
+              <span>Read Full Hyperlocal Strategy Breakdown</span>
               <span>→</span>
-            </div>
+            </a>
           </div>
 
           <div class="cs-media-column">
-            <div class="cs-media-frame" onclick="openTheatre('tpf-navi-mumbai')">
+            <a href="tata-play-fiber.html" class="cs-media-frame" style="text-decoration: none; display: block;">
               <video preload="none" poster="assets/creatives/posters/tpf_hyperlocal_navi_mumbai.webp" src="assets/creatives/videos/tpf_hyperlocal_navi_mumbai.mp4" muted playsinline loop onmouseover="this.play()" onmouseout="this.pause()"></video>
               <div class="cs-media-play-overlay">
                 <div class="play-btn-circle">▶</div>
-                <span class="play-overlay-caption">Click to Inspect Localized Hook</span>
+                <span class="play-overlay-caption">Click to View Hyperlocal Breakdown</span>
               </div>
-            </div>
+            </a>
             <p class="cs-media-caption">Tata Play Fiber · Multi-City Hyper-Local Video</p>
           </div>
         </div>
@@ -2218,6 +2422,68 @@
   </section>
 
   <!-- ==========================================================================
+       STAKEHOLDER TESTIMONIALS & SOCIAL PROOF SECTION
+       ========================================================================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header-block">
+        <div class="section-eyebrow">
+          <span class="tag-mono tag-lime">Direct-Response Feedback</span>
+          <span class="tag-mono tag-subtle">Proof from Growth Leaders &amp; Founders</span>
+        </div>
+        <h2 class="section-title">What Marketing Directors &amp; Founders Say</h2>
+        <p class="section-subtitle">
+          Real feedback from the growth leads, brand directors, and media buyers who partnered with us to scale on Meta Advantage+.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1: Telecom Growth Lead -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Most creative strategists hand you pretty moodboards that media buyers can't actually deploy. Anupam did the exact opposite for Tata Play Fiber. He built a modular hyperlocal video engine that let us test 4 metro markets simultaneously. Our outbound CTR jumped to 2.8% and CPL dropped from ₹620 to ₹380 in under 3 weeks. The guy understands how Meta Advantage+ actually works."
+          </div>
+          <div class="testimonial-author-block">
+            <div class="author-avatar">RG</div>
+            <div>
+              <div class="author-name">Rahul Ganguly</div>
+              <div class="author-role">Head of Performance Marketing · Enterprise Telecom &amp; D2C</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2: Frankly Wearing Co-Founder -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Before working with Anupam on Frankly Wearing, our catalog flatlays were stalling at 16% thumbstop rate and high CPA. Anupam ripped apart our assumptions, showed us that we weren't selling t-shirts but creator ideologies, and deployed kinetic AI motion videos. Thumbstop rates jumped to 42.8% and our account scaled to 3.6x ROAS on Meta Advantage+ evergreen."
+          </div>
+          <div class="testimonial-author-block">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Siddharth Kumar</div>
+              <div class="author-role">Co-Founder &amp; Creative Lead · Frankly Wearing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3: E-Commerce Growth Consultant -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "What makes Anupam exceptional is his production-ready brief architecture. For Kyari, he pinpointed the silent 'plant murder guilt' that was killing checkout conversions and engineered multi-angle UGC and AI growth proof that solved the objection cold. His briefs are turnkey: creators know exactly what to say, and video editors know the exact 0-3s pacing."
+          </div>
+          <div class="testimonial-author-block">
+            <div class="author-avatar">AK</div>
+            <div>
+              <div class="author-name">Amitabh Kashyap</div>
+              <div class="author-role">Senior E-Commerce Growth Consultant &amp; Ad Account Auditor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        ABOUT ME SECTION
        ========================================================================== -->
   <section class="about-section" id="about" style="background: #FAFCFF; border-top: 1px solid var(--border-subtle);">
@@ -2259,6 +2525,125 @@
               <span class="tool-pill">CapCut / Premiere Pro</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ENGAGEMENT MODELS & SERVICES SECTION
+       ========================================================================== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header-block">
+        <div class="section-eyebrow">
+          <span class="tag-mono tag-lime">How We Partner</span>
+          <span class="tag-mono tag-dark">Turnkey Execution · Zero Fluff</span>
+        </div>
+        <h2 class="section-title">Creative Strategy Engagement Models</h2>
+        <p class="section-subtitle">
+          Choose the exact level of creative horsepower your brand needs: from rapid account teardowns to ongoing monthly creative sprints.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Tier 1: 7-Day Audit -->
+        <div class="service-card">
+          <div>
+            <span class="service-badge badge-norm">Rapid Unstick</span>
+            <h3 class="service-title">7-Day Creative Account Audit</h3>
+            <p class="service-desc">
+              For brands facing creative fatigue, rising CPAs, or plateaued ROAS on Meta Advantage+. We tear down your existing creative and map your competitor angle gaps.
+            </p>
+            <ul class="service-deliverables-list">
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Full audit of top 20 fatigued ads &amp; drop-off timestamps</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Competitor angle gap &amp; white-space matrix</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>5 net-new angle blueprints ready for immediate filming</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>1-hour live strategy handover &amp; media buyer alignment</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20I%20want%20to%20book%20a%207-Day%20Creative%20Account%20Audit." target="_blank" class="btn btn-outline">
+            <span>Book Creative Audit</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Tier 2: Monthly Retainer (Featured) -->
+        <div class="service-card featured">
+          <div>
+            <span class="service-badge badge-pop">Most Popular for Scaling</span>
+            <h3 class="service-title">Monthly Creative Retainer</h3>
+            <p class="service-desc">
+              Continuous direct-response creative pipeline for active DTC brands spending ₹5L to ₹50L/month on Meta. You get an embedded creative director driving your angle velocity.
+            </p>
+            <ul class="service-deliverables-list">
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>8 to 12 production-ready briefs/month (Hooks, UGC scripts, AI motion)</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Second-by-second storyboard guides for video editors</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Weekly iterative sprints based on Meta Ads Manager drop-offs</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Direct Slack/WhatsApp collaboration with your media buyers</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20let%27s%20discuss%20Monthly%20Creative%20Retainer%20availability." target="_blank" class="btn btn-primary">
+            <span>Inquire for Retainer Availability</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Tier 3: Pilot Sprint -->
+        <div class="service-card">
+          <div>
+            <span class="service-badge badge-norm">Zero Lock-In</span>
+            <h3 class="service-title">Concept-to-Execution Pilot</h3>
+            <p class="service-desc">
+              Test our creative strategy engine before committing to an ongoing retainer. We validate 3 core archetypes to prove conversion lift on cold feeds.
+            </p>
+            <ul class="service-deliverables-list">
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>3 high-converting creative concepts across 3 archetypes</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Complete scripting, hook variations, and visual direction</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Guidance on Advantage+ budget split &amp; testing structure</span>
+              </li>
+              <li class="service-deliverable-item">
+                <span class="service-check">✓</span>
+                <span>Post-launch performance review &amp; iteration recommendations</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/918001655088?text=Hi%20Anupam,%20I%20want%20to%20launch%20a%20Concept-to-Execution%20Pilot." target="_blank" class="btn btn-outline">
+            <span>Launch a Pilot Sprint</span>
+            <span>→</span>
+          </a>
         </div>
       </div>
     </div>
