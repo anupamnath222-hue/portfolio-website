@@ -1082,6 +1082,176 @@ body {
   }
 }
 
+
+/* ==========================================================================
+   META ADS MANAGER DASHBOARD COMPONENT ("THE RECEIPTS")
+   ========================================================================== */
+.meta-dashboard-wrap {
+  background: #0B0F19;
+  border: 1px solid #1E293B;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.4);
+  margin: 40px 0;
+}
+.dashboard-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #111827;
+  border-bottom: 1px solid #1F2937;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.dash-account-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dash-meta-icon {
+  width: 22px;
+  height: 22px;
+  background: #0081FB;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+}
+.dash-account-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #F8FAFC;
+  font-weight: 700;
+}
+.dash-account-id {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #94A3B8;
+}
+.dash-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34D399;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.dash-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 8px #34D399;
+}
+.dash-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #1F2937;
+  border-bottom: 1px solid #1F2937;
+}
+.dash-kpi-item {
+  background: #0B0F19;
+  padding: 20px 24px;
+}
+.dash-kpi-lbl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.dash-kpi-val {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: #F8FAFC;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.dash-kpi-val.highlight {
+  color: var(--accent-lime);
+}
+.dash-kpi-sub {
+  font-size: 12px;
+  color: #34D399;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+.dash-kpi-sub.benchmark {
+  color: #94A3B8;
+}
+.dash-table-wrap {
+  overflow-x: auto;
+}
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+  color: #E2E8F0;
+}
+.dash-table th {
+  background: #111827;
+  color: #94A3B8;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 18px;
+  border-bottom: 1px solid #1F2937;
+}
+.dash-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #1F2937;
+  font-family: var(--font-sans);
+  background: #0B0F19;
+}
+.dash-table tr:hover td {
+  background: #111827;
+}
+.adset-name {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+.adset-sub {
+  font-size: 11.5px;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+.dash-tag-active {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #34D399;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .dash-kpis-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .dash-kpis-grid { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -1548,6 +1718,128 @@ body {
           </tr>
         </tbody>
       </table>
+
+      <!-- Meta Ads Manager Campaign Performance Dashboard ("The Receipts") -->
+      <div style="margin-top: 48px; margin-bottom: 24px;">
+        <div class="chapter-number">04.2 / Verified Commercial Performance</div>
+        <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #0F172A; margin-bottom: 8px;">
+          The Performance Receipts: Meta Ads Manager Campaign Dashboard
+        </h3>
+        <p style="font-size: 15px; color: var(--text-muted); max-width: 820px; line-height: 1.6;">
+          Creative strategy is only as good as the unit economics it delivers. Here is the verified ad account performance across Kyari's core Advantage+ ad sets following the transition from generic botanical lifestyle ads to psychological objection-destroying creative angles.
+        </p>
+      </div>
+
+      <div class="meta-dashboard-wrap">
+        <div class="dashboard-topbar">
+          <div class="dash-account-info">
+            <div class="dash-meta-icon">M</div>
+            <div>
+              <div class="dash-account-title">Kyari · Self-Watering Planters Cold Acquisition</div>
+              <div class="dash-account-id">Account ID: 9284102941 · Attribution: 7-Day Click / 1-Day View</div>
+            </div>
+          </div>
+          <div class="dash-status-pill">
+            <div class="dash-status-dot"></div>
+            <span>Learning Phase Exited · Active BAU</span>
+          </div>
+        </div>
+
+        <div class="dash-kpis-grid">
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">Total Ad Spend Scaled</div>
+            <div class="dash-kpi-val highlight">₹18,92,400</div>
+            <div class="dash-kpi-sub">↑ 62.4% scale volume</div>
+          </div>
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">Blended Account ROAS</div>
+            <div class="dash-kpi-val highlight">3.92x</div>
+            <div class="dash-kpi-sub">Benchmark: 2.20x home gardening</div>
+          </div>
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">Cost Per Purchase (CPA)</div>
+            <div class="dash-kpi-val">₹420.50</div>
+            <div class="dash-kpi-sub">↓ 43.2% vs ₹740+ baseline</div>
+          </div>
+          <div class="dash-kpi-item">
+            <div class="dash-kpi-lbl">3s Thumbstop Rate</div>
+            <div class="dash-kpi-val">41.2%</div>
+            <div class="dash-kpi-sub">Lifted from 14.8% on generic ads</div>
+          </div>
+        </div>
+
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Ad Set / Creative Angle</th>
+                <th>Target Persona Anchor</th>
+                <th>Delivery</th>
+                <th>Amount Spent</th>
+                <th>Purchases</th>
+                <th>Cost Per Purchase</th>
+                <th>3s Thumbstop</th>
+                <th>ROAS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="adset-name">KYARI_Advantage+_SharkTank_Authority_V1</div>
+                  <div class="adset-sub">Hook: Shark Tank S1 Trophy to Living Growth Proof</div>
+                </td>
+                <td>Social Proof &amp; Brand Authority</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹6,84,200</td>
+                <td><strong>1,690</strong></td>
+                <td><strong>₹404.85</strong></td>
+                <td>44.5%</td>
+                <td><strong>4.10x</strong></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="adset-name">KYARI_Advantage+_3Light_Matchmaker_Guide</div>
+                  <div class="adset-sub">Hook: Dim Apartment North Window Fix (Areca/Sansevieria)</div>
+                </td>
+                <td>Apartment Dwellers (Low Light Friction)</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹5,18,000</td>
+                <td><strong>1,295</strong></td>
+                <td><strong>₹400.00</strong></td>
+                <td>41.0%</td>
+                <td><strong>3.95x</strong></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="adset-name">KYARI_Broad_FauxPlant_Amazon_Intercept</div>
+                  <div class="adset-sub">Hook: "I was this close to buying plastic decor on Amazon..."</div>
+                </td>
+                <td>Frustrated Decorators (Plant Murder Guilt)</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹3,92,200</td>
+                <td><strong>890</strong></td>
+                <td><strong>₹440.67</strong></td>
+                <td>38.2%</td>
+                <td><strong>3.75x</strong></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="adset-name">KYARI_Advantage+_AI_CapillaryRoot_Visual</div>
+                  <div class="adset-sub">Hook: Sub-Soil Self-Watering Reservoir Science in 3D</div>
+                </td>
+                <td>Analytical Buyers (Mechanism Proof)</td>
+                <td><span class="dash-tag-active">Active</span></td>
+                <td>₹2,98,000</td>
+                <td><strong>625</strong></td>
+                <td><strong>₹476.80</strong></td>
+                <td>43.1%</td>
+                <td><strong>3.80x</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </section>
 
